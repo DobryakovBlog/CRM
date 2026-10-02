@@ -85,7 +85,9 @@
     "reportReason": "Motivo",
     "send": "Enviar",
     "team": "Equipa",
-    "payOnSite": "O pagamento é feito no salão."
+    "payOnSite": "O pagamento é feito no salão.",
+    "viaAstrabela": "marcação pela Astrabela",
+    "viaSalon": "visita confirmada pelo salão"
   },
   "book": {
     "minutes": "{n} min",
@@ -126,7 +128,10 @@
     "rating": "Classificação",
     "reviewText": "Comentário",
     "authorName": "Nome a mostrar",
-    "submitReview": "Publicar avaliação"
+    "submitReview": "Publicar avaliação",
+    "visitOn": "Visita de {date}",
+    "moreTitle": "Outros salões em {city}",
+    "moreLink": "Ver todos os salões"
   },
   "business": {
     "landing": {
@@ -277,7 +282,33 @@
       "hidden": "oculta pela moderação",
       "replyPlaceholder": "Responder publicamente…",
       "updateReply": "Atualizar resposta",
-      "reply": "Responder"
+      "reply": "Responder",
+      "inviteTitle": "Pedir avaliação a um cliente habitual",
+      "inviteHint": "Registe uma visita que já aconteceu e enviamos ao cliente um link pessoal para avaliar o profissional. O cliente não precisa de criar conta.",
+      "inviteMasterService": "Profissional e serviço",
+      "inviteDate": "Data da visita",
+      "inviteClientName": "Nome do cliente",
+      "inviteClientEmail": "E-mail do cliente",
+      "inviteClientPhone": "Telemóvel (opcional)",
+      "inviteLanguage": "Idioma do e-mail",
+      "inviteSend": "Pedir avaliação",
+      "inviteRules": "Um link serve para uma avaliação de uma visita. Visitas dos últimos 90 dias, um pedido por cliente e profissional a cada 30 dias. Estas avaliações aparecem com a nota «visita confirmada pelo salão», e o salão não as pode apagar nem ocultar, mesmo as negativas.",
+      "inviteNoTeam": "Adicione um profissional com serviços no separador Equipa para poder pedir avaliações.",
+      "invited": "Pedido enviado. O cliente recebeu o link por e-mail.",
+      "inviteErrors": {
+        "invalid": "Verifique o nome, o e-mail e a data (até 90 dias atrás, não no futuro).",
+        "not_found": "Profissional ou serviço não encontrado.",
+        "not_allowed": "Não é possível enviar este pedido.",
+        "duplicate": "Já pediu uma avaliação a este cliente para este profissional nos últimos 30 dias.",
+        "limit": "Atingiu o limite de pedidos de hoje. Tente amanhã."
+      },
+      "invitationsTitle": "Pedidos enviados",
+      "invitationWaiting": "a aguardar",
+      "invitationReviewed": "avaliado",
+      "listTitle": "Avaliações",
+      "viaAstrabela": "marcação pela Astrabela",
+      "viaSalon": "visita confirmada pelo salão",
+      "cannotDelete": "As avaliações não podem ser apagadas pelo salão. Pode responder publicamente ou denunciar uma avaliação falsa à moderação."
     },
     "admin": {
       "pending": "Salões a aguardar publicação",

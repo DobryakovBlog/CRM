@@ -34,7 +34,7 @@ export const bookingStatus = pgEnum("booking_status", [
   "no_show",
 ]);
 
-export const bookingSource = pgEnum("booking_source", ["marketplace", "manual"]);
+export const bookingSource = pgEnum("booking_source", ["marketplace", "manual", "invitation"]);
 
 export const salonStatus = pgEnum("salon_status", [
   "draft", // owner still filling in the profile

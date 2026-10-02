@@ -91,7 +91,8 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
                   </span>
                 </div>
                 <p className="mt-1 text-xs text-muted">
-                  {formatDateTime(r.createdAt, salon.timezone, locale, { dateStyle: "medium" })} · {t("verifiedVisit")}
+                  {formatDateTime(r.createdAt, salon.timezone, locale, { dateStyle: "medium" })} ·{" "}
+                  {r.source === "marketplace" ? t("viaAstrabela") : t("viaSalon")}
                 </p>
                 {r.text && <p className="mt-2 whitespace-pre-line text-ink">{r.text}</p>}
                 {r.reply && (

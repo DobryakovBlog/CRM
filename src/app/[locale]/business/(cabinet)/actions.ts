@@ -18,6 +18,8 @@ import {
   updateSalonProfile,
 } from "@/server/cabinet";
 import { CATEGORIES } from "@/server/catalog";
+import { inviteReview } from "@/server/invitations";
+import { sendReviewInvitation } from "@/server/notify";
 import { replyToReview, setReviewStatus } from "@/server/reviews";
 import { localMinuteToDate } from "@/lib/availability";
 
@@ -155,6 +157,28 @@ export async function replyAction(form: FormData) {
   const { salon } = await owner();
   await replyToReview(db, salon.id, s(form, "reviewId"), s(form, "reply"));
   revalidatePath("/[locale]/business/reviews", "page");
+}
+
+export async function inviteAction(form: FormData) {
+  const { salon, locale } = await owner();
+  const back = `/${locale}/business/reviews`;
+  const [staffId = "", serviceId = ""] = s(form, "pair").split("|");
+  let bookingId: string;
+  try {
+    const booking = await inviteReview(db, salon.id, {
+      staffId,
+      serviceId,
+      visitDate: s(form, "visitDate"),
+      client: { name: s(form, "clientName"), email: s(form, "clientEmail"), phone: s(form, "clientPhone") },
+      locale: s(form, "clientLocale"),
+    });
+    bookingId = booking.id;
+  } catch (e) {
+    if (e instanceof BookingError) redirect(`${back}?error=${e.code}`);
+    throw e;
+  }
+  await sendReviewInvitation(db, bookingId);
+  redirect(`${back}?invited=1`);
 }
 
 // --- Platform admin -------------------------------------------------------

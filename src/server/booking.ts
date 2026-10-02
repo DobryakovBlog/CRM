@@ -1,5 +1,5 @@
 import { randomBytes } from "node:crypto";
-import { and, eq, gt, inArray, lt, sql } from "drizzle-orm";
+import { and, eq, gt, inArray, lt, ne, sql } from "drizzle-orm";
 import type { Db } from "@/db";
 import {
   bookings,
@@ -15,7 +15,7 @@ import {
 import { availableSlots, localMinuteToDate, overlaps, type Interval } from "@/lib/availability";
 
 export class BookingError extends Error {
-  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid") {
+  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid" | "duplicate" | "limit") {
     super(code);
   }
 }
@@ -32,6 +32,7 @@ async function busyIntervals(db: Db, staffId: string, from: Date, to: Date): Pro
         and(
           eq(bookings.staffId, staffId),
           inArray(bookings.status, [...BLOCKING_STATUSES]),
+          ne(bookings.source, "invitation"),
           lt(bookings.startsAt, to),
           gt(bookings.endsAt, from),
         ),
@@ -197,6 +198,7 @@ export async function bookingByToken(db: Db, token: string) {
       staff: { id: staff.id, name: staff.name },
       client: { name: clients.name, email: clients.email },
       review: { id: reviews.id },
+      city: salons.city,
     })
     .from(bookings)
     .innerJoin(salons, eq(salons.id, bookings.salonId))

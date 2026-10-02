@@ -1,6 +1,6 @@
 import { and, avg, count, desc, eq } from "drizzle-orm";
 import type { Db } from "@/db";
-import { reviewReports, reviews, salons, staff } from "@/db/schema";
+import { bookings, reviewReports, reviews, salons, staff } from "@/db/schema";
 import { bookingByToken, BookingError } from "./booking";
 
 /** Recomputes cached rating aggregates for a salon and one of its masters. */
@@ -73,9 +73,11 @@ export async function publishedReviews(db: Db, salonId: string, limit = 20) {
       reply: reviews.reply,
       createdAt: reviews.createdAt,
       staffName: staff.name,
+      source: bookings.source,
     })
     .from(reviews)
     .innerJoin(staff, eq(staff.id, reviews.staffId))
+    .innerJoin(bookings, eq(bookings.id, reviews.bookingId))
     .where(and(eq(reviews.salonId, salonId), eq(reviews.status, "published")))
     .orderBy(desc(reviews.createdAt))
     .limit(limit);

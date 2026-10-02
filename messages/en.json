@@ -85,7 +85,9 @@
     "reportReason": "Reason",
     "send": "Send",
     "team": "Team",
-    "payOnSite": "Payment is made at the salon."
+    "payOnSite": "Payment is made at the salon.",
+    "viaAstrabela": "booked on Astrabela",
+    "viaSalon": "visit confirmed by the salon"
   },
   "book": {
     "minutes": "{n} min",
@@ -126,7 +128,10 @@
     "rating": "Rating",
     "reviewText": "Comment",
     "authorName": "Name to show",
-    "submitReview": "Publish review"
+    "submitReview": "Publish review",
+    "visitOn": "Visit on {date}",
+    "moreTitle": "More salons in {city}",
+    "moreLink": "See all salons"
   },
   "business": {
     "landing": {
@@ -277,7 +282,33 @@
       "hidden": "hidden by moderation",
       "replyPlaceholder": "Reply publicly…",
       "updateReply": "Update reply",
-      "reply": "Reply"
+      "reply": "Reply",
+      "inviteTitle": "Ask a regular client for a review",
+      "inviteHint": "Record a visit that already happened and we send the client a personal link to rate the professional. No account needed.",
+      "inviteMasterService": "Professional and service",
+      "inviteDate": "Visit date",
+      "inviteClientName": "Client name",
+      "inviteClientEmail": "Client e-mail",
+      "inviteClientPhone": "Mobile (optional)",
+      "inviteLanguage": "E-mail language",
+      "inviteSend": "Ask for a review",
+      "inviteRules": "One link works for one review of one visit. Visits from the last 90 days, one request per client and professional every 30 days. These reviews are labelled “visit confirmed by the salon”, and the salon cannot delete or hide them, negative ones included.",
+      "inviteNoTeam": "Add a professional with services in the Team tab to ask for reviews.",
+      "invited": "Request sent. The client got the link by e-mail.",
+      "inviteErrors": {
+        "invalid": "Check the name, e-mail and date (up to 90 days ago, not in the future).",
+        "not_found": "Professional or service not found.",
+        "not_allowed": "This request cannot be sent.",
+        "duplicate": "You already asked this client to review this professional in the last 30 days.",
+        "limit": "You reached today's request limit. Try again tomorrow."
+      },
+      "invitationsTitle": "Requests sent",
+      "invitationWaiting": "waiting",
+      "invitationReviewed": "reviewed",
+      "listTitle": "Reviews",
+      "viaAstrabela": "booked on Astrabela",
+      "viaSalon": "visit confirmed by the salon",
+      "cannotDelete": "Salons cannot delete reviews. You can reply publicly or report a fake review to moderation."
     },
     "admin": {
       "pending": "Salons awaiting listing",

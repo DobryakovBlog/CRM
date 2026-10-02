@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, gte, inArray, isNull, lt } from "drizzle-orm";
+import { and, asc, desc, eq, gte, inArray, isNull, lt, ne } from "drizzle-orm";
 import type { Db } from "@/db";
 import {
   bookings,
@@ -37,7 +37,14 @@ export async function dayAgenda(db: Db, salonId: string, timezone: string, date:
     .from(bookings)
     .innerJoin(services, eq(services.id, bookings.serviceId))
     .innerJoin(clients, eq(clients.id, bookings.clientId))
-    .where(and(eq(bookings.salonId, salonId), gte(bookings.startsAt, from), lt(bookings.startsAt, to)))
+    .where(
+      and(
+        eq(bookings.salonId, salonId),
+        ne(bookings.source, "invitation"),
+        gte(bookings.startsAt, from),
+        lt(bookings.startsAt, to),
+      ),
+    )
     .orderBy(asc(bookings.startsAt));
 }
 
@@ -160,9 +167,11 @@ export async function salonReviews(db: Db, salonId: string) {
       status: reviews.status,
       createdAt: reviews.createdAt,
       staffName: staff.name,
+      source: bookings.source,
     })
     .from(reviews)
     .innerJoin(staff, eq(staff.id, reviews.staffId))
+    .innerJoin(bookings, eq(bookings.id, reviews.bookingId))
     .where(eq(reviews.salonId, salonId))
     .orderBy(desc(reviews.createdAt));
 }

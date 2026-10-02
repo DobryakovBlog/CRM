@@ -45,6 +45,10 @@ const texts = {
       subject: `Como correu em ${r.salon.name}?`,
       text: `Olá ${r.client.name},\n\nDeixe a sua avaliação de ${r.staff.name}. Só clientes com visita confirmada podem avaliar.\n${link}`,
     }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} pede a sua opinião`,
+      text: `Olá ${r.client.name},\n\n${r.staff.name}, do salão ${r.salon.name}, agradece a sua visita (${r.service.name}) e gostava de saber a sua opinião na Astrabela. Leva um minuto e não precisa de criar conta.\nEste link é pessoal e serve para uma avaliação: ${link}`,
+    }),
   },
   en: {
     confirmed: (r: Row, when: string, link: string) => ({
@@ -58,6 +62,10 @@ const texts = {
     review: (r: Row, _when: string, link: string) => ({
       subject: `How was ${r.salon.name}?`,
       text: `Hi ${r.client.name},\n\nPlease rate ${r.staff.name}. Only clients with a confirmed visit can leave a review.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} would love your feedback`,
+      text: `Hi ${r.client.name},\n\n${r.staff.name} at ${r.salon.name} thanks you for your visit (${r.service.name}) and would love your review on Astrabela. It takes a minute, no account needed.\nThis link is personal and works for one review: ${link}`,
     }),
   },
 };
@@ -89,6 +97,12 @@ function render(kind: keyof (typeof texts)["pt"], r: Row) {
 export async function sendBookingConfirmation(db: Db, bookingId: string) {
   const [row] = await loadRows(db, and(eq(bookings.id, bookingId)));
   if (row) await sendEmail(render("confirmed", row));
+}
+
+/** Personal review link a master sends to a regular client. */
+export async function sendReviewInvitation(db: Db, bookingId: string) {
+  const [row] = await loadRows(db, and(eq(bookings.id, bookingId)));
+  if (row) await sendEmail(render("invite", row));
 }
 
 /** Periodic job: reminders ~24h ahead and review requests after completed visits. */
