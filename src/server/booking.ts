@@ -222,6 +222,7 @@ export async function setBookingStatus(
   salonId: string,
   bookingId: string,
   status: "completed" | "no_show" | "cancelled" | "confirmed",
+  now = new Date(),
 ) {
   await db.transaction(async (tx) => {
     const [b] = await tx
@@ -231,6 +232,9 @@ export async function setBookingStatus(
       .for("update");
     if (!b) throw new BookingError("not_found");
     if (b.status === status) return;
+    // A visit can only be marked as attended or missed once it has started,
+    // so a review link is never sent for a visit that has not happened.
+    if ((status === "completed" || status === "no_show") && b.startsAt > now) throw new BookingError("not_allowed");
     await tx.update(bookings).set({ status }).where(eq(bookings.id, b.id));
     const delta = (status === "no_show" ? 1 : 0) - (b.status === "no_show" ? 1 : 0);
     if (delta !== 0) {

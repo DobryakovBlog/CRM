@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "title": "Beauty Advisor: beauty salons with online booking",
+    "description": "Find a beauty salon, read verified reviews and book online."
+  },
+  "nav": {
+    "forSalons": "For salons",
+    "footer": "Beauty Advisor · Reviews only from clients with a confirmed visit"
+  },
+  "home": {
+    "title": "Find your beauty salon",
+    "subtitle": "Real client reviews, the best professionals in your city and online booking in seconds.",
+    "why": {
+      "verified": {
+        "title": "Verified reviews",
+        "text": "Only clients who came to a booked visit can leave a review."
+      },
+      "masters": {
+        "title": "Choose the professional",
+        "text": "Every professional has their own rating."
+      },
+      "direct": {
+        "title": "Pay at the salon",
+        "text": "Free booking, no online payments."
+      }
+    }
+  },
+  "search": {
+    "city": "City",
+    "service": "Service",
+    "anyService": "All services",
+    "language": "Language",
+    "anyLanguage": "Any language",
+    "submit": "Search",
+    "resultsTitle": "{count, plural, =0 {No salons} one {# salon} other {# salons}} {city, select, other {in {city}}}",
+    "empty": "No salons match these filters yet.",
+    "new": "New",
+    "from": "From {price}"
+  },
+  "categories": {
+    "hair": "Hair",
+    "nails": "Nails",
+    "brows_lashes": "Brows and lashes",
+    "skin": "Skin care",
+    "makeup": "Make-up",
+    "massage": "Massage",
+    "other": "Other"
+  },
+  "languages": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "it": "Italian",
+    "ru": "Russian",
+    "uk": "Ukrainian"
+  },
+  "weekdays": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  },
+  "salon": {
+    "verifiedNote": "all reviews come from confirmed visits",
+    "services": "Services",
+    "minutes": "{n} min",
+    "book": "Book",
+    "reviews": "Reviews",
+    "reportThanks": "Thank you. We will review the report.",
+    "noReviews": "No reviews yet.",
+    "withMaster": "with {name}",
+    "verifiedVisit": "confirmed visit",
+    "salonReply": "Salon's reply",
+    "report": "Report review",
+    "reportReason": "Reason",
+    "send": "Send",
+    "team": "Team",
+    "payOnSite": "Payment is made at the salon."
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "pay at the salon",
+    "errors": {
+      "invalid": "Please check your details and try again.",
+      "slot_taken": "This time was just taken. Please choose another.",
+      "not_found": "Service or professional unavailable.",
+      "not_allowed": "This professional does not offer this service."
+    },
+    "master": "Professional",
+    "anyMaster": "Any professional",
+    "day": "Day",
+    "time": "Time",
+    "noSlots": "No free times on this day.",
+    "yourDetails": "Your details",
+    "name": "Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "note": "Note for the salon (optional)",
+    "privacy": "I agree that the salon and Beauty Advisor process my data to manage this booking.",
+    "confirm": "Confirm booking"
+  },
+  "booking": {
+    "created": "Booking confirmed! We have sent the details by e-mail.",
+    "reviewThanks": "Thank you for your review!",
+    "error": "The action could not be completed.",
+    "status": {
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "no_show": "No-show"
+    },
+    "with": "with {name}",
+    "payOnSite": "pay at the salon",
+    "cancel": "Cancel booking",
+    "reviewTitle": "Rate your visit with {name}",
+    "rating": "Rating",
+    "reviewText": "Comment",
+    "authorName": "Name to show",
+    "submitReview": "Publish review"
+  },
+  "business": {
+    "landing": {
+      "title": "More clients for your salon",
+      "subtitle": "Online calendar, reminders and verified reviews. No commission, one flat price for the whole team.",
+      "start": "Try {days} days free",
+      "features": {
+        "noCommission": "0% commission on clients",
+        "unlimitedStaff": "Unlimited staff",
+        "calendar": "Online calendar and manual bookings",
+        "reminders": "Automatic client reminders",
+        "verifiedReviews": "Reviews only from real clients",
+        "ownClients": "Your clients stay yours"
+      }
+    },
+    "plans": {
+      "monthly": "Monthly",
+      "semiannual": "6 months",
+      "annual": "12 months",
+      "perMonth": "per month + VAT"
+    },
+    "login": {
+      "title": "Sign in",
+      "error": "Wrong e-mail or password.",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Sign in",
+      "noAccount": "No account yet? Register your salon"
+    },
+    "register": {
+      "title": "Register your salon",
+      "errors": {
+        "invalid": "Please check the fields (password at least 8 characters).",
+        "email_taken": "This e-mail is already registered."
+      },
+      "fields": {
+        "salonName": "Salon name",
+        "city": "City",
+        "address": "Address",
+        "phone": "Salon phone",
+        "name": "Your name",
+        "email": "E-mail",
+        "password": "Password"
+      },
+      "terms": "I accept the terms of use and the data processing agreement (GDPR).",
+      "submit": "Create account"
+    },
+    "salonStatus": {
+      "draft": "Draft",
+      "pending": "Under review",
+      "active": "Listed",
+      "suspended": "Suspended"
+    },
+    "logout": "Sign out",
+    "tabs": {
+      "calendar": "Calendar",
+      "services": "Services",
+      "team": "Team",
+      "reviews": "Reviews",
+      "profile": "Profile",
+      "admin": "Moderation"
+    },
+    "calendar": {
+      "today": "Today",
+      "errors": {
+        "invalid": "Invalid data.",
+        "slot_taken": "This time is already taken.",
+        "not_found": "Service or professional not found.",
+        "not_allowed": "This professional does not offer this service."
+      },
+      "noTeam": "Add professionals in the Team tab.",
+      "free": "No bookings.",
+      "noShows": "{n, plural, one {# no-show} other {# no-shows}}",
+      "mark": {
+        "completed": "Came",
+        "no_show": "No-show",
+        "cancelled": "Cancel"
+      },
+      "manualTitle": "New booking (phone, walk-in)",
+      "master": "Professional",
+      "service": "Service",
+      "time": "Time",
+      "clientName": "Client name",
+      "clientPhone": "Phone",
+      "clientEmail": "E-mail (optional)",
+      "add": "Add"
+    },
+    "services": {
+      "empty": "No services yet.",
+      "disable": "Disable",
+      "enable": "Enable",
+      "addTitle": "New service",
+      "name": "Name",
+      "category": "Category",
+      "duration": "Duration (min)",
+      "price": "Price (€)",
+      "add": "Add"
+    },
+    "team": {
+      "name": "Name",
+      "title": "Role",
+      "titlePlaceholder": "e.g. Colourist",
+      "languages": "Languages",
+      "services": "Services",
+      "noServices": "Add services first.",
+      "schedule": "Weekly schedule",
+      "save": "Save",
+      "servicesCount": "{n, plural, one {# service} other {# services}}",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "add": "Add professional"
+    },
+    "profile": {
+      "welcome": "Welcome! Fill in your profile, add services and your team, then submit the salon for listing.",
+      "saved": "Saved.",
+      "submitted": "Submitted! We will check and list your salon soon.",
+      "notReady": "Before submitting, add at least one professional with services and a schedule.",
+      "listing": "Catalogue listing",
+      "statusHelp": {
+        "draft": "Your salon is not in the catalogue yet.",
+        "pending": "We are checking your salon.",
+        "active": "Your salon is listed and accepts bookings.",
+        "suspended": "Your salon is suspended. Please contact us."
+      },
+      "submit": "Submit for listing",
+      "viewPublic": "View public page",
+      "subscription": "Subscription",
+      "sub": {
+        "trial": "Free trial until {date}.",
+        "active": "Active until {date}.",
+        "past_due": "Payment overdue since {date}.",
+        "cancelled": "Cancelled on {date}."
+      },
+      "details": "Salon details",
+      "fields": {
+        "name": "Name",
+        "district": "Neighbourhood",
+        "address": "Address",
+        "postalCode": "Postal code",
+        "phone": "Phone",
+        "nif": "Tax number (NIF)",
+        "description": "Description"
+      },
+      "save": "Save"
+    },
+    "reviews": {
+      "empty": "No reviews yet.",
+      "hidden": "hidden by moderation",
+      "replyPlaceholder": "Reply publicly…",
+      "updateReply": "Update reply",
+      "reply": "Reply"
+    },
+    "admin": {
+      "pending": "Salons awaiting listing",
+      "none": "Nothing pending.",
+      "approve": "Approve",
+      "reject": "Send back",
+      "reports": "Review reports",
+      "reason": "Reason",
+      "hide": "Hide review",
+      "keep": "Keep"
+    }
+  }
+}

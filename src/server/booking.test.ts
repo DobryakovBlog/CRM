@@ -17,6 +17,7 @@ const db = drizzle(pool, { schema }) as unknown as Db;
 
 // Monday 5 Oct 2026; Lisbon is UTC+1 that day. "now" is the Friday before.
 const NOW = new Date("2026-10-02T12:00:00Z");
+const AFTER_VISITS = new Date("2026-10-06T12:00:00Z");
 const MONDAY = "2026-10-05";
 const at = (hhmm: string) => new Date(`${MONDAY}T${hhmm}:00+01:00`);
 const client = { name: "Rita Alves", email: "Rita@Example.com", phone: "+351910000000" };
@@ -130,7 +131,7 @@ describe("reviews", () => {
     await expect(createReview(db, b.manageToken, { rating: 5, text: "Ótimo", authorName: "Rita" })).rejects.toThrow(
       "not_allowed",
     );
-    await setBookingStatus(db, salonId, b.id, "completed");
+    await setBookingStatus(db, salonId, b.id, "completed", AFTER_VISITS);
     await createReview(db, b.manageToken, { rating: 4, text: "Ótimo", authorName: "Rita" });
     await expect(createReview(db, b.manageToken, { rating: 5, text: "", authorName: "" })).rejects.toThrow(
       "not_allowed",
@@ -144,7 +145,7 @@ describe("reviews", () => {
 
   it("drops hidden reviews from the rating", async () => {
     const b = await book(anaId, at("09:00"));
-    await setBookingStatus(db, salonId, b.id, "completed");
+    await setBookingStatus(db, salonId, b.id, "completed", AFTER_VISITS);
     const r = await createReview(db, b.manageToken, { rating: 1, text: "", authorName: "X" });
     await setReviewStatus(db, r.id, "hidden");
     const [s] = await db.select().from(salons).where(eq(salons.id, salonId));
@@ -152,13 +153,21 @@ describe("reviews", () => {
   });
 });
 
+describe("visit outcome", () => {
+  it("cannot be marked before the visit starts", async () => {
+    const b = await book(anaId, at("09:00"));
+    await expect(setBookingStatus(db, salonId, b.id, "completed", NOW)).rejects.toThrow("not_allowed");
+    await expect(setBookingStatus(db, salonId, b.id, "cancelled", NOW)).resolves.toBeUndefined();
+  });
+});
+
 describe("no-shows", () => {
   it("counts no-shows on the client card and undoes the count on correction", async () => {
     const b = await book(anaId, at("09:00"));
-    await setBookingStatus(db, salonId, b.id, "no_show");
+    await setBookingStatus(db, salonId, b.id, "no_show", AFTER_VISITS);
     let [c] = await db.select().from(clients).where(eq(clients.id, b.clientId));
     expect(c.noShowCount).toBe(1);
-    await setBookingStatus(db, salonId, b.id, "completed");
+    await setBookingStatus(db, salonId, b.id, "completed", AFTER_VISITS);
     [c] = await db.select().from(clients).where(eq(clients.id, b.clientId));
     expect(c.noShowCount).toBe(0);
   });

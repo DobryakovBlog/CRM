@@ -2,6 +2,7 @@ import { createHash, randomBytes } from "node:crypto";
 import bcrypt from "bcryptjs";
 import { and, eq, gt } from "drizzle-orm";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { db, type Db } from "@/db";
 import { salons, sessions, subscriptions, users } from "@/db/schema";
 import { slugify } from "@/lib/slug";
@@ -105,4 +106,11 @@ export async function currentOwner() {
   if (!user) return null;
   const [salon] = await db.select().from(salons).where(eq(salons.ownerId, user.id));
   return salon ? { user, salon } : null;
+}
+
+/** For cabinet pages and actions: the owner or a redirect to the login page. */
+export async function requireOwner(locale: string) {
+  const owner = await currentOwner();
+  if (!owner) redirect(`/${locale}/business/login`);
+  return owner;
 }
