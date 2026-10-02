@@ -35,7 +35,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <header className="sticky top-0 z-20 border-b border-line bg-white/90 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
               <Link href="/" aria-label="Astrabela">
-                <Logo />
+                <Logo className="h-10 w-auto sm:h-12" />
               </Link>
               <nav className="flex items-center gap-3 text-sm sm:gap-6">
                 <Link href="/business" className="hidden text-muted transition-colors hover:text-ink sm:inline">
@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <footer className="bg-plum text-gold-soft/80">
             <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-6">
               <div className="space-y-2">
-                <Logo inverted />
+                <Logo inverted className="h-12 w-auto" />
                 <p className="max-w-sm text-sm">{t("footer")}</p>
               </div>
               <div className="flex gap-6 text-sm">
