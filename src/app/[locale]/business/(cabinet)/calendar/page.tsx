@@ -37,7 +37,7 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
         <Link href={`/business/calendar?date=${prevDate(date)}`} className="btn-outline">←</Link>
         <Link href={`/business/calendar?date=${today}`} className="btn-outline">{t("today")}</Link>
         <Link href={`/business/calendar?date=${nextDate(date)}`} className="btn-outline">→</Link>
-        <h2 className="ml-2 font-semibold capitalize">{heading}</h2>
+        <h2 className="ml-2 font-semibold first-letter:uppercase">{heading}</h2>
       </div>
       {typeof sp.error === "string" && (
         <p className="rounded-lg bg-red-50 p-3 text-sm text-red-800">{t(`errors.${sp.error}` as never)}</p>
