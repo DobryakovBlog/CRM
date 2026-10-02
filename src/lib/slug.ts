@@ -9,15 +9,4 @@ export function slugify(input: string): string {
     .slice(0, 80);
 }
 
-const CITY_NAMES: Record<string, string> = {
-  lisboa: "Lisboa",
-  porto: "Porto",
-  faro: "Faro",
-  braga: "Braga",
-  coimbra: "Coimbra",
-  cascais: "Cascais",
-};
-
-export function cityName(slug: string): string {
-  return CITY_NAMES[slug] ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
+export { cityName } from "./cities";

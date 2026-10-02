@@ -15,6 +15,13 @@
       "when": 1790965812251,
       "tag": "0001_review_invitations",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790967312948,
+      "tag": "0002_barber_category",
+      "breakpoints": true
     }
   ]
 }

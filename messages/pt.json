@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Astrabela: salões de beleza com marcação online",
-    "description": "Encontre um salão de beleza, veja avaliações verificadas e marque online."
+    "title": "Astrabela: salões de beleza e barbearias com marcação online",
+    "description": "Encontre um salão de beleza ou uma barbearia em Portugal, veja avaliações verificadas e marque online."
   },
   "nav": {
     "forSalons": "Para salões",
@@ -11,7 +11,7 @@
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
-    "subtitle": "Os melhores profissionais de beleza de Lisboa, avaliados só por clientes com visita confirmada. Escolha o salão e marque online em segundos.",
+    "subtitle": "Os melhores salões de beleza e barbearias de Portugal, avaliados só por clientes com visita confirmada. Escolha o profissional e marque online em segundos.",
     "why": {
       "verified": {
         "title": "Avaliações verificadas",
@@ -26,9 +26,10 @@
         "text": "Marcação gratuita, sem pagamentos online."
       }
     },
-    "eyebrow": "Lisboa · Salões de beleza",
+    "eyebrow": "Portugal · Salões de beleza e barbearias",
     "featuredEyebrow": "Em destaque",
-    "featuredTitle": "Salões mais bem avaliados"
+    "featuredTitle": "Salões mais bem avaliados",
+    "browse": "Procurar por serviço"
   },
   "search": {
     "city": "Cidade",
@@ -40,10 +41,15 @@
     "resultsTitle": "{count, plural, =0 {Nenhum salão} one {# salão} other {# salões}} {city, select, other {em {city}}}",
     "empty": "Ainda não há salões com estes filtros.",
     "new": "Novo",
-    "from": "Desde {price}"
+    "from": "Desde {price}",
+    "citiesWithSalons": "Com salões",
+    "citiesComingSoon": "Em breve",
+    "cityEmpty": "Ainda não há salões na Astrabela em {city}. Estamos a abrir cidade a cidade.",
+    "cityEmptyCta": "Tem um salão ou barbearia aqui? Junte-se"
   },
   "categories": {
     "hair": "Cabelo",
+    "barber": "Barbearia",
     "nails": "Unhas",
     "brows_lashes": "Sobrancelhas e pestanas",
     "skin": "Estética facial",

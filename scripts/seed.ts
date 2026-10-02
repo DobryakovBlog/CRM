@@ -1,13 +1,14 @@
-// Demo data: a few Lisbon salons so the catalogue is not empty in development.
+// Demo data: a few salons and barbershops in Lisbon and Porto so the catalogue is not empty in development.
+// Safe to re-run: demos whose login already exists are skipped.
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { salons, services, staff, staffServices, workingHours } from "@/db/schema";
+import { salons, services, staff, staffServices, users, workingHours } from "@/db/schema";
 import { registerSalonOwner } from "@/server/auth";
 
 type Demo = {
-  salon: string; district: string; address: string; description: string;
+  salon: string; city?: string; district: string; address: string; description: string;
   team: { name: string; title: string; languages: string[] }[];
-  menu: { category: "hair" | "nails" | "brows_lashes" | "skin"; name: string; minutes: number; euros: number }[];
+  menu: { category: "hair" | "barber" | "nails" | "brows_lashes" | "skin"; name: string; minutes: number; euros: number }[];
 };
 
 const demos: Demo[] = [
@@ -47,13 +48,47 @@ const demos: Demo[] = [
       { category: "skin", name: "Limpeza de pele", minutes: 60, euros: 45 },
     ],
   },
+  {
+    salon: "Barbearia Alfaiate", district: "Bairro Alto", address: "Rua da Rosa 110, 1200-389 Lisboa",
+    description: "Barbearia clássica: corte, barba à navalha e toalha quente.",
+    team: [
+      { name: "Rui Matos", title: "Barbeiro", languages: ["pt", "en"] },
+      { name: "Diogo Pires", title: "Barbeiro", languages: ["pt", "es"] },
+    ],
+    menu: [
+      { category: "barber", name: "Corte masculino", minutes: 30, euros: 18 },
+      { category: "barber", name: "Barba à navalha", minutes: 30, euros: 14 },
+      { category: "barber", name: "Corte e barba", minutes: 60, euros: 28 },
+    ],
+  },
+  {
+    salon: "Ribeira Barber Club", city: "porto", district: "Ribeira", address: "Rua de São João 45, 4050-552 Porto",
+    description: "Barbearia no centro histórico do Porto. We speak English.",
+    team: [{ name: "Tiago Fonseca", title: "Master barber", languages: ["pt", "en", "fr"] }],
+    menu: [
+      { category: "barber", name: "Corte masculino", minutes: 30, euros: 16 },
+      { category: "barber", name: "Fade", minutes: 45, euros: 20 },
+      { category: "barber", name: "Corte e barba", minutes: 60, euros: 25 },
+    ],
+  },
+  {
+    salon: "Atelier Foz", city: "porto", district: "Foz do Douro", address: "Av. do Brasil 300, 4150-153 Porto",
+    description: "Cabelo e unhas junto ao mar.",
+    team: [{ name: "Beatriz Lima", title: "Cabeleireira", languages: ["pt", "en"] }],
+    menu: [
+      { category: "hair", name: "Corte e brushing", minutes: 60, euros: 32 },
+      { category: "nails", name: "Manicure gel", minutes: 60, euros: 24 },
+    ],
+  },
 ];
 
 for (const [i, d] of demos.entries()) {
   const email = `demo${i + 1}@astrabela.local`;
+  const [existing] = await db.select({ id: users.id }).from(users).where(eq(users.email, email));
+  if (existing) continue;
   const { salon } = await registerSalonOwner(db, {
     name: d.team[0].name, email, password: "demo12345", salonName: d.salon,
-    city: "Lisboa", address: d.address, phone: "+351 210 000 00" + i,
+    city: d.city ?? "lisboa", address: d.address, phone: "+351 210 000 00" + i,
   });
   await db.update(salons).set({ status: "active", district: d.district, description: d.description }).where(eq(salons.id, salon.id));
   const menu = await db.insert(services).values(d.menu.map((m) => ({

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SearchForm } from "@/components/SearchForm";
 import { SalonCard } from "@/components/SalonCard";
+import { Link } from "@/i18n/navigation";
 import { db } from "@/db";
 import { cityName } from "@/lib/slug";
 import { CATEGORIES, listedCities, searchSalons, type Category } from "@/server/catalog";
@@ -30,11 +31,21 @@ export default async function SearchPage({ params, searchParams }: PageProps<"/[
 
   return (
     <div className="space-y-8">
-      <SearchForm cities={cities} current={query} />
+      <SearchForm listed={cities} current={query} />
       <h1 className="font-display text-3xl">
         {t("resultsTitle", { count: results.length, city: query.city ? cityName(query.city) : "" })}
       </h1>
-      {results.length === 0 && <p className="text-muted">{t("empty")}</p>}
+      {results.length === 0 &&
+        (query.city && !cities.includes(query.city) ? (
+          <div className="card space-y-3">
+            <p>{t("cityEmpty", { city: cityName(query.city) })}</p>
+            <Link href="/business" className="btn-outline inline-block">
+              {t("cityEmptyCta")}
+            </Link>
+          </div>
+        ) : (
+          <p className="text-muted">{t("empty")}</p>
+        ))}
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {results.map((s) => (
           <li key={s.id}>

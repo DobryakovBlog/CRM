@@ -3,13 +3,15 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SalonCard } from "@/components/SalonCard";
 import { SearchForm } from "@/components/SearchForm";
 import { db } from "@/db";
-import { listedCities, searchSalons } from "@/server/catalog";
+import { Link } from "@/i18n/navigation";
+import { CATEGORIES, listedCities, searchSalons } from "@/server/catalog";
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
   await connection(); // cities and salons come from the database on every request
   const t = await getTranslations("home");
+  const tc = await getTranslations("categories");
   const cities = await listedCities(db);
   const featured = (await searchSalons(db, { city: cities[0] })).slice(0, 3);
 
@@ -20,8 +22,19 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
         <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.08] sm:text-6xl">{t("title")}</h1>
         <p className="mt-5 max-w-xl text-base text-gold-soft/85 sm:text-lg">{t("subtitle")}</p>
         <div className="mt-10">
-          <SearchForm cities={cities} />
+          <SearchForm listed={cities} />
         </div>
+        <nav aria-label={t("browse")} className="mt-5 flex flex-wrap gap-2">
+          {CATEGORIES.filter((c) => c !== "other").map((c) => (
+            <Link
+              key={c}
+              href={`/search?city=${cities[0] ?? "lisboa"}&category=${c}`}
+              className="rounded-full border border-gold/40 px-3.5 py-1.5 text-sm text-gold-soft transition-colors hover:border-gold hover:text-white"
+            >
+              {tc(c)}
+            </Link>
+          ))}
+        </nav>
       </section>
 
       <section className="grid gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3">

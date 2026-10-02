@@ -19,6 +19,7 @@ const createdAt = () =>
 // Service categories offered by beauty salons (MVP scope: beauty salons only).
 export const serviceCategory = pgEnum("service_category", [
   "hair",
+  "barber",
   "nails",
   "brows_lashes",
   "skin",
