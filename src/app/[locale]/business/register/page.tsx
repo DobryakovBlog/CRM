@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { CITY_SLUGS, cityName } from "@/lib/cities";
+import { CityCombobox } from "@/components/CityCombobox";
+import { cityOptions } from "@/lib/cities";
 import { registerAction } from "../actions";
 
 const FIELDS = [
@@ -20,6 +21,7 @@ export default async function RegisterPage({
   setRequestLocale(locale);
   const error = (await searchParams).error;
   const t = await getTranslations("business.register");
+  const ts = await getTranslations("search");
   return (
     <form action={registerAction} className="card mx-auto max-w-md space-y-4">
       <h1 className="font-display text-3xl">{t("title")}</h1>
@@ -32,22 +34,15 @@ export default async function RegisterPage({
             {t(`fields.${name}`)}
           </label>
           {name === "city" ? (
-            <select
+            <CityCombobox
               id="city"
               name="city"
-              required
-              defaultValue="lisboa"
-              autoComplete={auto}
-              className="input"
-            >
-              {[...CITY_SLUGS]
-                .sort((a, b) => cityName(a).localeCompare(cityName(b), "pt"))
-                .map((c) => (
-                  <option key={c} value={c}>
-                    {cityName(c)}
-                  </option>
-                ))}
-            </select>
+              options={cityOptions([])}
+              defaultSlug="lisboa"
+              label={t("fields.city")}
+              placeholder={ts("cityPlaceholder")}
+              noMatch={ts("cityNoMatch")}
+            />
           ) : (
             <input
               id={name}

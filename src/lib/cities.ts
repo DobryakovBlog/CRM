@@ -39,6 +39,30 @@ export const PT_CITIES: Record<string, string> = {
 
 export const CITY_SLUGS = Object.keys(PT_CITIES);
 
+// Countries shown in search. Only Portugal is open; the rest tell visitors where we are heading.
+export const COUNTRIES = [
+  { code: "pt", open: true },
+  { code: "es", open: false },
+  { code: "fr", open: false },
+  { code: "it", open: false },
+  { code: "de", open: false },
+  { code: "nl", open: false },
+  { code: "be", open: false },
+  { code: "ie", open: false },
+  { code: "lu", open: false },
+] as const;
+
+/** Options for the city field: cities with salons first, then the rest, each by name. */
+export function cityOptions(listed: string[]) {
+  const byName = (a: string, b: string) => cityName(a).localeCompare(cityName(b), "pt");
+  const rest = CITY_SLUGS.filter((c) => !listed.includes(c));
+  return [...[...listed].sort(byName), ...rest.sort(byName)].map((slug) => ({
+    slug,
+    name: cityName(slug),
+    hasSalons: listed.includes(slug),
+  }));
+}
+
 export function cityName(slug: string): string {
   return PT_CITIES[slug] ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }

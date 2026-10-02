@@ -42,10 +42,12 @@
     "empty": "Ainda não há salões com estes filtros.",
     "new": "Novo",
     "from": "Desde {price}",
-    "citiesWithSalons": "Com salões",
-    "citiesComingSoon": "Em breve",
     "cityEmpty": "Ainda não há salões na Astrabela em {city}. Estamos a abrir cidade a cidade.",
-    "cityEmptyCta": "Tem um salão ou barbearia aqui? Junte-se"
+    "cityEmptyCta": "Tem um salão ou barbearia aqui? Junte-se",
+    "country": "País",
+    "comingSoon": "em breve",
+    "cityPlaceholder": "Escreva a cidade",
+    "cityNoMatch": "Ainda não estamos nesta cidade"
   },
   "categories": {
     "hair": "Cabelo",
@@ -326,5 +328,16 @@
       "hide": "Ocultar avaliação",
       "keep": "Manter"
     }
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Espanha",
+    "fr": "França",
+    "it": "Itália",
+    "de": "Alemanha",
+    "nl": "Países Baixos",
+    "be": "Bélgica",
+    "ie": "Irlanda",
+    "lu": "Luxemburgo"
   }
 }
