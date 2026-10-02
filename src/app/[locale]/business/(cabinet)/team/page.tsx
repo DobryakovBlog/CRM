@@ -42,7 +42,7 @@ async function StaffForm({ member, services }: { member?: Member; services: Serv
       </fieldset>
       <fieldset>
         <legend className="label">{t("services")}</legend>
-        {services.length === 0 && <p className="text-sm text-stone-500">{t("noServices")}</p>}
+        {services.length === 0 && <p className="text-sm text-muted">{t("noServices")}</p>}
         <div className="grid gap-1 text-sm sm:grid-cols-2">
           {services.map((s) => (
             <label key={s.id} className="flex items-center gap-2">
@@ -95,16 +95,16 @@ export default async function TeamPage({ params }: PageProps<"/[locale]/business
         <details key={m.id} className={`card ${m.isActive ? "" : "opacity-60"}`}>
           <summary className="flex cursor-pointer items-center justify-between">
             <span className="font-medium">
-              {m.name} {m.title && <span className="font-normal text-stone-500">· {m.title}</span>}
+              {m.name} {m.title && <span className="font-normal text-muted">· {m.title}</span>}
             </span>
-            <span className="text-sm text-stone-500">{t("servicesCount", { n: m.serviceIds.length })}</span>
+            <span className="text-sm text-muted">{t("servicesCount", { n: m.serviceIds.length })}</span>
           </summary>
           <div className="mt-4 space-y-4">
             <StaffForm member={m} services={active} />
             <form action={toggleStaffAction}>
               <input type="hidden" name="staffId" value={m.id} />
               <input type="hidden" name="active" value={m.isActive ? "0" : "1"} />
-              <button className="text-sm text-stone-500 underline">{m.isActive ? t("deactivate") : t("activate")}</button>
+              <button className="text-sm text-muted underline">{m.isActive ? t("deactivate") : t("activate")}</button>
             </form>
           </div>
         </details>

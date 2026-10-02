@@ -5,11 +5,13 @@
   },
   "nav": {
     "forSalons": "Para salões",
-    "footer": "Beauty Advisor · Avaliações só de clientes com visita confirmada"
+    "footer": "Beauty Advisor · Avaliações só de clientes com visita confirmada",
+    "language": "Idioma",
+    "forClients": "Encontrar salão"
   },
   "home": {
-    "title": "Encontre o seu salão de beleza",
-    "subtitle": "Avaliações reais de clientes, os melhores profissionais da sua cidade e marcação online em segundos.",
+    "title": "Os melhores profissionais de beleza, avaliados por clientes reais.",
+    "subtitle": "Escolha o salão e o profissional pela classificação de quem lá esteve, e marque online em segundos.",
     "why": {
       "verified": {
         "title": "Avaliações verificadas",
@@ -23,7 +25,10 @@
         "title": "Paga no salão",
         "text": "Marcação gratuita, sem pagamentos online."
       }
-    }
+    },
+    "eyebrow": "Lisboa · Salões de beleza",
+    "featuredEyebrow": "Em destaque",
+    "featuredTitle": "Salões mais bem avaliados"
   },
   "search": {
     "city": "Cidade",

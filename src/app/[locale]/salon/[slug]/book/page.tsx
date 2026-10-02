@@ -50,19 +50,19 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <div>
-        <Link href={`/salon/${salon.slug}`} className="text-sm text-stone-500 hover:underline">
+        <Link href={`/salon/${salon.slug}`} className="text-sm text-muted hover:underline">
           ← {salon.name}
         </Link>
-        <h1 className="mt-1 text-2xl font-bold">{service.name}</h1>
-        <p className="text-stone-600">
+        <h1 className="font-display mt-2 text-4xl">{service.name}</h1>
+        <p className="text-muted">
           {t("minutes", { n: service.durationMinutes })} · {formatPrice(service.priceCents, locale)} · {t("payOnSite")}
         </p>
       </div>
 
-      {error && <p className="rounded-lg bg-red-50 p-3 text-sm text-red-800">{t(`errors.${error}` as never)}</p>}
+      {error && <p className="notice-error">{t(`errors.${error}` as never)}</p>}
 
       <section className="card space-y-3">
-        <h2 className="font-semibold">{t("master")}</h2>
+        <h2 className="eyebrow">{t("master")}</h2>
         <div className="flex flex-wrap gap-2">
           <Link href={href({ staff: null, time: null })} className={staffId ? "btn-outline" : "btn"}>
             {t("anyMaster")}
@@ -76,7 +76,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
       </section>
 
       <section className="card space-y-3">
-        <h2 className="font-semibold">{t("day")}</h2>
+        <h2 className="eyebrow">{t("day")}</h2>
         <div className="flex gap-2 overflow-x-auto pb-1">
           {days.map((d) => (
             <Link key={d} href={href({ date: d, time: null })} className={`${d === date ? "btn" : "btn-outline"} shrink-0`}>
@@ -84,9 +84,9 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             </Link>
           ))}
         </div>
-        <h2 className="pt-2 font-semibold">{t("time")}</h2>
+        <h2 className="eyebrow pt-3">{t("time")}</h2>
         {slots.length === 0 ? (
-          <p className="text-sm text-stone-600">{t("noSlots")}</p>
+          <p className="text-sm text-muted">{t("noSlots")}</p>
         ) : (
           <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
             {slots.map((s) => {
@@ -107,8 +107,8 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
 
       {chosen && (
         <section className="card space-y-4" id="details">
-          <h2 className="font-semibold">{t("yourDetails")}</h2>
-          <p className="text-sm text-stone-700">
+          <h2 className="font-display text-2xl">{t("yourDetails")}</h2>
+          <p className="text-sm text-ink">
             {formatDateTime(chosen.startsAt, salon.timezone, locale)} ·{" "}
             {masters.find((m) => m.id === chosen.staffId)?.name}
           </p>
@@ -136,7 +136,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
               <label className="label" htmlFor="note">{t("note")}</label>
               <textarea id="note" name="note" maxLength={500} rows={2} className="input" />
             </div>
-            <label className="flex items-start gap-2 text-xs text-stone-600">
+            <label className="flex items-start gap-2 text-xs text-muted">
               <input type="checkbox" name="privacy" required className="mt-0.5" />
               {t("privacy")}
             </label>

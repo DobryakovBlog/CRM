@@ -16,13 +16,13 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/busi
 
   return (
     <div className="space-y-6">
-      <ul className="divide-y divide-stone-200 rounded-xl border border-stone-200 bg-white">
-        {services.length === 0 && <li className="p-4 text-stone-500">{t("empty")}</li>}
+      <ul className="divide-y divide-line rounded-xl border border-line bg-white">
+        {services.length === 0 && <li className="p-4 text-muted">{t("empty")}</li>}
         {services.map((s) => (
           <li key={s.id} className={`flex items-center justify-between gap-3 p-4 ${s.isActive ? "" : "opacity-50"}`}>
             <div>
               <p className="font-medium">{s.name}</p>
-              <p className="text-sm text-stone-500">
+              <p className="text-sm text-muted">
                 {tc(s.category)} · {s.durationMinutes} min · {formatPrice(s.priceCents, locale)}
               </p>
             </div>

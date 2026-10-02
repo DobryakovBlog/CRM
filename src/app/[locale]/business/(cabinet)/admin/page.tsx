@@ -17,12 +17,12 @@ export default async function AdminPage({ params }: PageProps<"/[locale]/busines
     <div className="space-y-8">
       <section className="space-y-3">
         <h2 className="font-semibold">{t("pending")}</h2>
-        {salons.length === 0 && <p className="text-sm text-stone-500">{t("none")}</p>}
+        {salons.length === 0 && <p className="text-sm text-muted">{t("none")}</p>}
         {salons.map((s) => (
           <div key={s.id} className="card flex items-center justify-between gap-3">
             <div className="text-sm">
               <p className="font-medium">{s.name}</p>
-              <p className="text-stone-500">{s.address} · {s.phone} · NIF {s.nif || "—"}</p>
+              <p className="text-muted">{s.address} · {s.phone} · NIF {s.nif || "—"}</p>
             </div>
             <div className="flex gap-2">
               {(["approve", "reject"] as const).map((d) => (
@@ -38,10 +38,10 @@ export default async function AdminPage({ params }: PageProps<"/[locale]/busines
       </section>
       <section className="space-y-3">
         <h2 className="font-semibold">{t("reports")}</h2>
-        {reports.length === 0 && <p className="text-sm text-stone-500">{t("none")}</p>}
+        {reports.length === 0 && <p className="text-sm text-muted">{t("none")}</p>}
         {reports.map((r) => (
           <div key={r.id} className="card space-y-2 text-sm">
-            <p className="text-stone-500">{r.salonName} · {"★".repeat(r.rating)}</p>
+            <p className="text-muted">{r.salonName} · {"★".repeat(r.rating)}</p>
             <p>{r.reviewText || "—"}</p>
             <p className="text-red-800">{t("reason")}: {r.reason}</p>
             <div className="flex gap-2">

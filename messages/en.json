@@ -5,11 +5,13 @@
   },
   "nav": {
     "forSalons": "For salons",
-    "footer": "Beauty Advisor · Reviews only from clients with a confirmed visit"
+    "footer": "Beauty Advisor · Reviews only from clients with a confirmed visit",
+    "language": "Language",
+    "forClients": "Find a salon"
   },
   "home": {
-    "title": "Find your beauty salon",
-    "subtitle": "Real client reviews, the best professionals in your city and online booking in seconds.",
+    "title": "The best beauty professionals, rated by real clients.",
+    "subtitle": "Choose your salon and professional by the ratings of people who have been there, and book online in seconds.",
     "why": {
       "verified": {
         "title": "Verified reviews",
@@ -23,7 +25,10 @@
         "title": "Pay at the salon",
         "text": "Free booking, no online payments."
       }
-    }
+    },
+    "eyebrow": "Lisbon · Beauty salons",
+    "featuredEyebrow": "Featured",
+    "featuredTitle": "Top-rated salons"
   },
   "search": {
     "city": "City",

@@ -18,21 +18,21 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
 
   return (
     <div className="space-y-6">
-      {sp.welcome === "1" && <p className="rounded-lg bg-green-50 p-4 text-green-800">{t("welcome")}</p>}
-      {sp.saved === "1" && <p className="rounded-lg bg-green-50 p-3 text-sm text-green-800">{t("saved")}</p>}
-      {sp.submitted === "1" && <p className="rounded-lg bg-green-50 p-3 text-sm text-green-800">{t("submitted")}</p>}
-      {sp.error === "not_ready" && <p className="rounded-lg bg-red-50 p-3 text-sm text-red-800">{t("notReady")}</p>}
+      {sp.welcome === "1" && <p className="notice">{t("welcome")}</p>}
+      {sp.saved === "1" && <p className="notice">{t("saved")}</p>}
+      {sp.submitted === "1" && <p className="notice">{t("submitted")}</p>}
+      {sp.error === "not_ready" && <p className="notice-error">{t("notReady")}</p>}
 
       <div className="card space-y-2">
         <h2 className="font-semibold">{t("listing")}</h2>
-        <p className="text-sm text-stone-700">{t(`statusHelp.${salon.status}`)}</p>
+        <p className="text-sm text-ink">{t(`statusHelp.${salon.status}`)}</p>
         {salon.status === "draft" && (
           <form action={submitForReviewAction}>
             <button className="btn">{t("submit")}</button>
           </form>
         )}
         {salon.status === "active" && (
-          <Link href={`/salon/${salon.slug}`} className="text-sm text-brand-700 underline">
+          <Link href={`/salon/${salon.slug}`} className="text-sm text-gold-deep underline">
             {t("viewPublic")}
           </Link>
         )}

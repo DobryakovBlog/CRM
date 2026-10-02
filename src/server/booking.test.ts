@@ -175,7 +175,9 @@ describe("no-shows", () => {
 
 describe("catalogue", () => {
   it("lists only active salons with a bookable service and a running subscription", async () => {
-    expect((await searchSalons(db, { city: "lisboa" })).map((s) => s.id)).toEqual([salonId]);
+    const [listed] = await searchSalons(db, { city: "lisboa" });
+    expect(listed.id).toBe(salonId);
+    expect(listed.minPriceCents).toBe(3500);
     expect(await searchSalons(db, { city: "lisboa", category: "nails" })).toEqual([]);
     expect(await searchSalons(db, { city: "lisboa", language: "en" })).toHaveLength(1);
     expect(await searchSalons(db, { city: "lisboa", language: "fr" })).toHaveLength(0);

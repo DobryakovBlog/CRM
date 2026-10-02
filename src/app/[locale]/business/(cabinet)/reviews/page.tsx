@@ -14,16 +14,16 @@ export default async function ReviewsPage({ params }: PageProps<"/[locale]/busin
 
   return (
     <div className="space-y-4">
-      {list.length === 0 && <p className="text-stone-600">{t("empty")}</p>}
+      {list.length === 0 && <p className="text-muted">{t("empty")}</p>}
       {list.map((r) => (
         <div key={r.id} className={`card space-y-2 ${r.status === "hidden" ? "opacity-60" : ""}`}>
           <div className="flex justify-between text-sm">
             <span className="font-medium">
               {r.authorName} · {r.staffName}
             </span>
-            <span className="text-amber-500">{"★".repeat(r.rating)}</span>
+            <span className="text-gold">{"★".repeat(r.rating)}</span>
           </div>
-          <p className="text-xs text-stone-500">
+          <p className="text-xs text-muted">
             {formatDateTime(r.createdAt, salon.timezone, locale, { dateStyle: "medium" })}
             {r.status === "hidden" && ` · ${t("hidden")}`}
           </p>

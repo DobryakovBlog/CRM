@@ -37,42 +37,42 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
         <Link href={`/business/calendar?date=${prevDate(date)}`} className="btn-outline">←</Link>
         <Link href={`/business/calendar?date=${today}`} className="btn-outline">{t("today")}</Link>
         <Link href={`/business/calendar?date=${nextDate(date)}`} className="btn-outline">→</Link>
-        <h2 className="ml-2 font-semibold first-letter:uppercase">{heading}</h2>
+        <h2 className="font-display ml-2 text-2xl first-letter:uppercase">{heading}</h2>
       </div>
       {typeof sp.error === "string" && (
-        <p className="rounded-lg bg-red-50 p-3 text-sm text-red-800">{t(`errors.${sp.error}` as never)}</p>
+        <p className="notice-error">{t(`errors.${sp.error}` as never)}</p>
       )}
 
-      {active.length === 0 && <p className="text-stone-600">{t("noTeam")}</p>}
+      {active.length === 0 && <p className="text-muted">{t("noTeam")}</p>}
       <div className="grid gap-4 md:grid-cols-2">
         {active.map((m) => {
           const items = agenda.filter((b) => b.staffId === m.id);
           return (
             <section key={m.id} className="card">
               <h3 className="mb-3 font-semibold">{m.name}</h3>
-              {items.length === 0 && <p className="text-sm text-stone-500">{t("free")}</p>}
+              {items.length === 0 && <p className="text-sm text-muted">{t("free")}</p>}
               <ul className="space-y-3">
                 {items.map((b) => (
                   <li
                     key={b.id}
-                    className={`rounded-lg border p-3 text-sm ${b.status === "cancelled" ? "border-stone-200 opacity-50" : "border-brand-100 bg-brand-50"}`}
+                    className={`rounded-lg border p-3 text-sm ${b.status === "cancelled" ? "border-line opacity-50" : "border-gold-soft bg-sand"}`}
                   >
                     <div className="flex justify-between gap-2">
                       <span className="font-semibold">
                         {formatTime(b.startsAt, salon.timezone)}–{formatTime(b.endsAt, salon.timezone)}
                       </span>
-                      <span className="text-xs uppercase text-stone-500">{tb(b.status)}</span>
+                      <span className="text-xs uppercase text-muted">{tb(b.status)}</span>
                     </div>
                     <p>
                       {b.serviceName} · {formatPrice(b.priceCents, locale)}
                     </p>
-                    <p className="text-stone-600">
+                    <p className="text-muted">
                       {b.clientName} · {b.clientPhone}
                       {b.clientNoShows > 0 && (
                         <span className="ml-1 text-red-700">({t("noShows", { n: b.clientNoShows })})</span>
                       )}
                     </p>
-                    {b.clientNote && <p className="mt-1 italic text-stone-600">“{b.clientNote}”</p>}
+                    {b.clientNote && <p className="mt-1 italic text-muted">“{b.clientNote}”</p>}
                     {b.status === "confirmed" && (
                       <div className="mt-2 flex flex-wrap gap-2">
                         {(b.startsAt <= now ? (["completed", "no_show", "cancelled"] as const) : (["cancelled"] as const)).map((st) => (

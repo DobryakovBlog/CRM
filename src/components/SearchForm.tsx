@@ -16,7 +16,7 @@ export async function SearchForm({
   const tl = await getTranslations("languages");
   const locale = await getLocale();
   return (
-    <form action={`/${locale}/search`} className="grid gap-3 rounded-xl bg-white p-4 shadow-sm sm:grid-cols-[1fr_1fr_1fr_auto]">
+    <form action={`/${locale}/search`} className="grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-[1fr_1fr_1fr_auto] sm:p-4">
       <select name="city" defaultValue={current.city ?? cities[0] ?? ""} className="input" aria-label={t("city")}>
         {cities.map((c) => (
           <option key={c} value={c}>
@@ -40,7 +40,7 @@ export async function SearchForm({
           </option>
         ))}
       </select>
-      <button className="btn">{t("submit")}</button>
+      <button className="btn-gold px-8">{t("submit")}</button>
     </form>
   );
 }

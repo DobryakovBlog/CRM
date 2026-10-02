@@ -70,8 +70,10 @@ export async function searchSalons(db: Db, p: SearchParams) {
       coverImageUrl: salons.coverImageUrl,
       ratingAvg: salons.ratingAvg,
       ratingCount: salons.ratingCount,
-      minPriceCents: sql<number>`(select min(${services.priceCents}) from ${services}
-        where ${services.salonId} = ${salons.id} and ${services.isActive})`.mapWith(Number),
+      // Written with explicit table names: Drizzle leaves columns unqualified in the
+      // select list of a single-table query, which would bind "id" to services.id here.
+      minPriceCents: sql<number>`(select min(s.price_cents) from services s
+        where s.salon_id = "salons"."id" and s.is_active)`.mapWith(Number),
     })
     .from(salons)
     .where(and(...conds))

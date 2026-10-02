@@ -22,22 +22,22 @@ export default async function BookingPage({ params, searchParams }: PageProps<"/
 
   return (
     <div className="mx-auto max-w-xl space-y-6">
-      {sp.new === "1" && <p className="rounded-lg bg-green-50 p-4 text-green-800">{t("created")}</p>}
-      {sp.reviewed === "1" && <p className="rounded-lg bg-green-50 p-4 text-green-800">{t("reviewThanks")}</p>}
-      {typeof sp.error === "string" && <p className="rounded-lg bg-red-50 p-4 text-red-800">{t("error")}</p>}
+      {sp.new === "1" && <p className="notice">{t("created")}</p>}
+      {sp.reviewed === "1" && <p className="notice">{t("reviewThanks")}</p>}
+      {typeof sp.error === "string" && <p className="notice-error">{t("error")}</p>}
 
       <div className="card space-y-2">
-        <p className="text-xs uppercase tracking-wide text-stone-500">{t(`status.${booking.status}`)}</p>
-        <h1 className="text-xl font-semibold">{service.name}</h1>
+        <p className="eyebrow">{t(`status.${booking.status}`)}</p>
+        <h1 className="font-display text-3xl">{service.name}</h1>
         <p>{formatDateTime(booking.startsAt, salon.timezone, locale)}</p>
-        <p className="text-stone-600">
+        <p className="text-muted">
           {t("with", { name: staff.name })} ·{" "}
           <Link href={`/salon/${salon.slug}`} className="underline">
             {salon.name}
           </Link>
         </p>
-        <p className="text-stone-600">{salon.address}</p>
-        <p className="text-stone-600">
+        <p className="text-muted">{salon.address}</p>
+        <p className="text-muted">
           {formatPrice(booking.priceCents, locale)} · {t("payOnSite")}
         </p>
         {canCancel && (
@@ -50,7 +50,7 @@ export default async function BookingPage({ params, searchParams }: PageProps<"/
 
       {canReview && (
         <form action={reviewAction} className="card space-y-3">
-          <h2 className="font-semibold">{t("reviewTitle", { name: staff.name })}</h2>
+          <h2 className="font-display text-2xl">{t("reviewTitle", { name: staff.name })}</h2>
           <input type="hidden" name="token" value={token} />
           <fieldset className="flex gap-3">
             <legend className="label">{t("rating")}</legend>
