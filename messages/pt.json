@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Beauty Advisor: salões de beleza com marcação online",
+    "title": "Astrabela: salões de beleza com marcação online",
     "description": "Encontre um salão de beleza, veja avaliações verificadas e marque online."
   },
   "nav": {
     "forSalons": "Para salões",
-    "footer": "Beauty Advisor · Avaliações só de clientes com visita confirmada",
+    "footer": "Astrabela · Avaliações só de clientes com visita confirmada",
     "language": "Idioma",
     "forClients": "Encontrar salão"
   },
@@ -106,7 +106,7 @@
     "email": "E-mail",
     "phone": "Telemóvel",
     "note": "Nota para o salão (opcional)",
-    "privacy": "Aceito que o salão e o Beauty Advisor tratem os meus dados para gerir esta marcação.",
+    "privacy": "Aceito que o salão e a Astrabela tratem os meus dados para gerir esta marcação.",
     "confirm": "Confirmar marcação"
   },
   "booking": {

@@ -50,7 +50,7 @@ const demos: Demo[] = [
 ];
 
 for (const [i, d] of demos.entries()) {
-  const email = `demo${i + 1}@beautyadvisor.local`;
+  const email = `demo${i + 1}@astrabela.local`;
   const { salon } = await registerSalonOwner(db, {
     name: d.team[0].name, email, password: "demo12345", salonName: d.salon,
     city: "Lisboa", address: d.address, phone: "+351 210 000 00" + i,

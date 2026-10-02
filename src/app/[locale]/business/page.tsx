@@ -17,7 +17,7 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
   return (
     <div className="space-y-10">
       <section className="-mt-10 rounded-b-md bg-plum px-6 pb-14 pt-16 text-center text-white sm:px-12">
-        <p className="eyebrow text-gold">Beauty Advisor Business</p>
+        <p className="eyebrow text-gold">Astrabela Business</p>
         <h1 className="font-display mx-auto mt-4 max-w-2xl text-4xl leading-tight sm:text-5xl">{t("landing.title")}</h1>
         <p className="mx-auto mt-4 max-w-xl text-gold-soft/85">{t("landing.subtitle")}</p>
         <div className="mt-6 flex justify-center gap-3">

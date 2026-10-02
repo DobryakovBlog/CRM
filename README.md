@@ -1,4 +1,4 @@
-# Beauty Advisor
+# Astrabela
 
 Каталог салонов красоты с онлайн-записью и честными отзывами. Старт: Лиссабон, затем Португалия и ЕС.
 
@@ -7,7 +7,7 @@
 - Оплату от клиентов платформа не принимает: клиент платит салону на месте.
 - Салон платит подписку: 12,99 € в месяц, 10,99 € в месяц за 6 месяцев, 9,99 € в месяц за год.
 
-Концепция и исследование рынка лежат в файлах проекта (`research/beauty-advisor-concept.md`).
+Концепция и исследование рынка лежат в файлах проекта (`research/beauty-advisor-concept.md`, рабочее название было Beauty Advisor).
 
 ## Стек
 
@@ -23,7 +23,7 @@ npm run db:seed               # три демо-салона в Лиссабон
 npm run dev                   # http://localhost:3000
 ```
 
-Демо-вход в кабинет салона: `demo1@beautyadvisor.local` / `demo12345`.
+Демо-вход в кабинет салона: `demo1@astrabela.local` / `demo12345`.
 
 Модератор платформы (одобряет салоны и разбирает жалобы на отзывы): `npm run make-admin -- email@example.com`, затем вкладка «Moderação» в кабинете.
 
@@ -34,7 +34,7 @@ npm run dev                   # http://localhost:3000
 ```bash
 npm run typecheck
 npm run lint
-npm test   # нужна база beauty_advisor_test (или TEST_DATABASE_URL)
+npm test   # нужна база astrabela_test (или TEST_DATABASE_URL)
 ```
 
 ## Структура

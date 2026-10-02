@@ -19,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return { title: { default: t("title"), template: `%s · Beauty Advisor` }, description: t("description") };
+  return { title: { default: t("title"), template: `%s · Astrabela` }, description: t("description") };
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
@@ -34,7 +34,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <NextIntlClientProvider>
           <header className="sticky top-0 z-20 border-b border-line bg-white/90 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-              <Link href="/" aria-label="Beauty Advisor">
+              <Link href="/" aria-label="Astrabela">
                 <Logo />
               </Link>
               <nav className="flex items-center gap-3 text-sm sm:gap-6">

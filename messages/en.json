@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Beauty Advisor: beauty salons with online booking",
+    "title": "Astrabela: beauty salons with online booking",
     "description": "Find a beauty salon, read verified reviews and book online."
   },
   "nav": {
     "forSalons": "For salons",
-    "footer": "Beauty Advisor · Reviews only from clients with a confirmed visit",
+    "footer": "Astrabela · Reviews only from clients with a confirmed visit",
     "language": "Language",
     "forClients": "Find a salon"
   },
@@ -106,7 +106,7 @@
     "email": "E-mail",
     "phone": "Phone",
     "note": "Note for the salon (optional)",
-    "privacy": "I agree that the salon and Beauty Advisor process my data to manage this booking.",
+    "privacy": "I agree that the salon and Astrabela process my data to manage this booking.",
     "confirm": "Confirm booking"
   },
   "booking": {

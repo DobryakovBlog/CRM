@@ -11,7 +11,7 @@ import { BookingError, cancelByClient, createBooking, setBookingStatus, slotsFor
 import { searchSalons } from "./catalog";
 import { createReview, setReviewStatus } from "./reviews";
 
-const url = process.env.TEST_DATABASE_URL ?? "postgres://postgres@localhost:5432/beauty_advisor_test";
+const url = process.env.TEST_DATABASE_URL ?? "postgres://postgres@localhost:5432/astrabela_test";
 const pool = new Pool({ connectionString: url });
 const db = drizzle(pool, { schema }) as unknown as Db;
 
