@@ -147,7 +147,7 @@
     "landing": {
       "title": "More clients for your salon",
       "subtitle": "Online calendar, reminders and verified reviews. No commission, one flat price for the whole team.",
-      "start": "Try {days} days free",
+      "start": "Try {months} months free",
       "features": {
         "noCommission": "0% commission on clients",
         "unlimitedStaff": "Unlimited staff",
@@ -159,9 +159,10 @@
       "restaurants": {
         "eyebrow": "Restaurants",
         "title": "Your menu online, always up to date",
-        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time.",
-        "cta": "Register a restaurant"
-      }
+        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time. Free for restaurants.",
+        "cta": "Register a restaurant for free"
+      },
+      "trialNote": "The first {months} months are free. No card needed to start."
     },
     "plans": {
       "monthly": "Monthly",
@@ -310,7 +311,8 @@
           "pending": "We are reviewing the restaurant.",
           "active": "The restaurant is published and its menu is visible.",
           "suspended": "The restaurant is suspended. Please contact us."
-        }
+        },
+        "free": "The digital menu and QR code are free for restaurants."
       }
     },
     "reviews": {

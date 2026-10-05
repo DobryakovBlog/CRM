@@ -6,7 +6,8 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import * as schema from "@/db/schema";
 import { menuItems, salons } from "@/db/schema";
 import type { Db } from "@/db";
-import { registerSalonOwner } from "./auth";
+import { addMonths, registerSalonOwner } from "./auth";
+import { salonSubscription } from "./cabinet";
 import { submitForReview } from "./cabinet";
 import { searchSalons } from "./catalog";
 import {
@@ -55,6 +56,22 @@ beforeEach(async () => {
 
 afterAll(async () => {
   await pool.end();
+});
+
+describe("pricing", () => {
+  it("gives salons three free months and restaurants no subscription at all", async () => {
+    const now = new Date("2026-10-31T10:00:00Z");
+    const { salon } = await registerSalonOwner(
+      db,
+      { name: "S", email: "s@test.pt", password: "secret123", salonName: "Salão", city: "lisboa", address: "Rua 2", phone: "" },
+      now,
+    );
+    const sub = await salonSubscription(db, salon.id);
+    expect(sub?.status).toBe("trial");
+    expect(sub?.currentPeriodEnd.toISOString()).toBe("2027-01-31T10:00:00.000Z");
+    expect(addMonths(new Date("2026-11-30T00:00:00Z"), 3).toISOString()).toBe("2027-02-28T00:00:00.000Z");
+    expect(await salonSubscription(db, restaurantId)).toBeNull();
+  });
 });
 
 describe("restaurant menu", () => {

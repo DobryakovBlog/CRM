@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, redirect } from "@/i18n/navigation";
-import { cabinetHome, currentOwner, TRIAL_DAYS } from "@/server/auth";
+import { cabinetHome, currentOwner, TRIAL_MONTHS } from "@/server/auth";
 
 const PLANS = [
   { key: "monthly", price: "12,99 €" },
@@ -23,13 +23,14 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
         <p className="mx-auto mt-4 max-w-xl text-gold-soft/85">{t("landing.subtitle")}</p>
         <div className="mt-6 flex justify-center gap-3">
           <Link href="/business/register" className="btn-gold">
-            {t("landing.start", { days: TRIAL_DAYS })}
+            {t("landing.start", { months: TRIAL_MONTHS })}
           </Link>
           <Link href="/business/login" className="btn-outline border-white/30 bg-transparent text-white hover:border-white">
             {t("login.title")}
           </Link>
         </div>
       </section>
+      <p className="text-center text-sm text-muted">{t("landing.trialNote", { months: TRIAL_MONTHS })}</p>
       <section className="grid gap-4 sm:grid-cols-3">
         {PLANS.map((p) => (
           <div key={p.key} className="card text-center">

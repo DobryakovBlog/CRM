@@ -42,6 +42,13 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
         )}
       </div>
 
+      {restaurant && (
+        <div className="card text-sm">
+          <h2 className="mb-1 font-semibold">{t("subscription")}</h2>
+          <p>{t("restaurant.free")}</p>
+        </div>
+      )}
+
       {sub && (
         <div className="card text-sm">
           <h2 className="mb-1 font-semibold">{t("subscription")}</h2>

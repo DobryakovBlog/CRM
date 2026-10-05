@@ -1,6 +1,6 @@
 import { and, asc, eq, exists, ilike, or, sql } from "drizzle-orm";
 import type { Db } from "@/db";
-import { menuItems, menuSections, salons, subscriptions } from "@/db/schema";
+import { menuItems, menuSections, salons } from "@/db/schema";
 
 // The 14 allergens restaurants must declare in the EU (Regulation 1169/2011, Annex II).
 export const ALLERGENS = [
@@ -21,16 +21,11 @@ export const ALLERGENS = [
 ] as const;
 export const DISH_TAGS = ["vegetarian", "vegan", "gluten_free", "spicy"] as const;
 
-/** A restaurant is listed when it is approved, paid or on trial, and its menu has a dish. */
-export function restaurantListedCondition(now = new Date()) {
+/** A restaurant is listed when it is approved and its menu has a dish. Menus are free: no subscription. */
+export function restaurantListedCondition() {
   return and(
     eq(salons.kind, "restaurant"),
     eq(salons.status, "active"),
-    exists(
-      sql`(select 1 from ${subscriptions} where ${subscriptions.salonId} = ${salons.id}
-        and ${subscriptions.status} in ('trial', 'active')
-        and ${subscriptions.currentPeriodEnd} >= ${now})`,
-    ),
     exists(sql`(select 1 from ${menuItems} where ${menuItems.salonId} = ${salons.id} and ${menuItems.isAvailable})`),
   );
 }

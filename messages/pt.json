@@ -147,7 +147,7 @@
     "landing": {
       "title": "Mais clientes para o seu salão",
       "subtitle": "Agenda online, lembretes e avaliações verificadas. Sem comissões, preço fixo para toda a equipa.",
-      "start": "Experimentar {days} dias grátis",
+      "start": "Experimentar {months} meses grátis",
       "features": {
         "noCommission": "0% de comissão sobre clientes",
         "unlimitedStaff": "Profissionais ilimitados",
@@ -159,9 +159,10 @@
       "restaurants": {
         "eyebrow": "Restaurantes",
         "title": "O seu menu online, sempre atualizado",
-        "text": "Publique o menu com preços, fotos dos pratos e alergénios, em português e inglês. Imprima o código QR para as mesas e altere preços a qualquer momento.",
-        "cta": "Registar restaurante"
-      }
+        "text": "Publique o menu com preços e alergénios, em português e inglês. Imprima o código QR para as mesas e altere preços a qualquer momento. Gratuito para restaurantes.",
+        "cta": "Registar restaurante grátis"
+      },
+      "trialNote": "Os primeiros {months} meses são grátis. Sem cartão para começar."
     },
     "plans": {
       "monthly": "Mensal",
@@ -310,7 +311,8 @@
           "pending": "Estamos a verificar o restaurante.",
           "active": "O restaurante está publicado e o menu está visível.",
           "suspended": "O restaurante está suspenso. Contacte-nos."
-        }
+        },
+        "free": "O menu digital e o código QR são gratuitos para restaurantes."
       }
     },
     "reviews": {

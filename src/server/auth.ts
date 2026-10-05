@@ -9,7 +9,19 @@ import { slugify } from "@/lib/slug";
 
 const COOKIE = "ba_session";
 const SESSION_DAYS = 30;
-export const TRIAL_DAYS = 30;
+/** Salons start with three free months; restaurant menus are free and need no subscription. */
+export const TRIAL_MONTHS = 3;
+
+/** Same day of the month, N months later (clamped to the month's last day). */
+export function addMonths(date: Date, months: number) {
+  const d = new Date(date);
+  const day = d.getUTCDate();
+  d.setUTCDate(1);
+  d.setUTCMonth(d.getUTCMonth() + months);
+  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
+  d.setUTCDate(Math.min(day, last));
+  return d;
+}
 
 const hashToken = (token: string) => createHash("sha256").update(token).digest("hex");
 
@@ -64,11 +76,13 @@ export async function registerSalonOwner(
       })
       .returning();
 
-    await tx.insert(subscriptions).values({
-      salonId: salon.id,
-      status: "trial",
-      currentPeriodEnd: new Date(now.getTime() + TRIAL_DAYS * 86_400_000),
-    });
+    if (salon.kind === "salon") {
+      await tx.insert(subscriptions).values({
+        salonId: salon.id,
+        status: "trial",
+        currentPeriodEnd: addMonths(now, TRIAL_MONTHS),
+      });
+    }
     return { user, salon };
   });
 }
