@@ -19,6 +19,17 @@ import {
 } from "@/server/cabinet";
 import { CATEGORIES } from "@/server/catalog";
 import { inviteReview } from "@/server/invitations";
+import {
+  addDish,
+  addSection,
+  deleteDish,
+  deleteSection,
+  type DishInput,
+  moveEntry,
+  setDishAvailable,
+  updateDish,
+  updateSection,
+} from "@/server/menu";
 import { sendReviewInvitation } from "@/server/notify";
 import { replyToReview, setReviewStatus } from "@/server/reviews";
 import { localMinuteToDate } from "@/lib/availability";
@@ -137,6 +148,7 @@ export async function saveProfileAction(form: FormData) {
     postalCode: s(form, "postalCode"),
     phone: s(form, "phone"),
     nif: s(form, "nif"),
+    ...(salon.kind === "restaurant" ? { cuisine: s(form, "cuisine").slice(0, 80) } : {}),
   });
   redirect(`/${locale}/business/profile?saved=1`);
 }
@@ -200,4 +212,94 @@ export async function moderateReportAction(form: FormData) {
   if (s(form, "decision") === "hide") await setReviewStatus(db, s(form, "reviewId"), "hidden");
   await resolveReport(db, s(form, "reportId"));
   revalidatePath("/[locale]/business/admin", "page");
+}
+
+// --- Restaurant menu --------------------------------------------------------
+
+async function restaurantOwner() {
+  const locale = await getLocale();
+  return { ...(await requireOwner(locale, "restaurant")), locale };
+}
+
+/** "12,50" or "12.5" -> 1250; NaN when not a sensible price. */
+const toCents = (v: string) => {
+  const n = Number(v.replace(/\s|€/g, "").replace(",", "."));
+  return Number.isFinite(n) && n >= 0 && n < 100_000 ? Math.round(n * 100) : NaN;
+};
+
+function dishFromForm(form: FormData): DishInput {
+  return {
+    name: s(form, "name").slice(0, 120),
+    nameEn: s(form, "nameEn").slice(0, 120),
+    description: s(form, "description").slice(0, 500),
+    descriptionEn: s(form, "descriptionEn").slice(0, 500),
+    priceCents: toCents(s(form, "price")),
+    portion: s(form, "portion").slice(0, 40),
+    allergens: form.getAll("allergens").map(String),
+    tags: form.getAll("tags").map(String),
+  };
+}
+
+const menuPage = (locale: string, anchor = "", error = "") =>
+  `/${locale}/business/menu${error ? `?error=${error}` : ""}${anchor ? `#${anchor}` : ""}`;
+
+export async function addSectionAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const name = s(form, "name").slice(0, 80);
+  if (!name) redirect(menuPage(locale, "", "invalid"));
+  const section = await addSection(db, salon.id, { name, nameEn: s(form, "nameEn").slice(0, 80) });
+  redirect(menuPage(locale, `s-${section.id}`));
+}
+
+export async function updateSectionAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const id = s(form, "sectionId");
+  const name = s(form, "name").slice(0, 80);
+  if (name) await updateSection(db, salon.id, id, { name, nameEn: s(form, "nameEn").slice(0, 80) });
+  redirect(menuPage(locale, `s-${id}`));
+}
+
+export async function deleteSectionAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  await deleteSection(db, salon.id, s(form, "sectionId"));
+  redirect(menuPage(locale));
+}
+
+export async function addDishAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const sectionId = s(form, "sectionId");
+  const dish = dishFromForm(form);
+  if (!dish.name || Number.isNaN(dish.priceCents)) redirect(menuPage(locale, `s-${sectionId}`, "invalid"));
+  await addDish(db, salon.id, sectionId, dish);
+  redirect(menuPage(locale, `s-${sectionId}`));
+}
+
+export async function updateDishAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const id = s(form, "dishId");
+  const dish = dishFromForm(form);
+  if (!dish.name || Number.isNaN(dish.priceCents)) redirect(menuPage(locale, `d-${id}`, "invalid"));
+  await updateDish(db, salon.id, id, dish);
+  redirect(menuPage(locale, `d-${id}`));
+}
+
+export async function toggleDishAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const id = s(form, "dishId");
+  await setDishAvailable(db, salon.id, id, s(form, "available") === "1");
+  redirect(menuPage(locale, `d-${id}`));
+}
+
+export async function deleteDishAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  await deleteDish(db, salon.id, s(form, "dishId"));
+  redirect(menuPage(locale, s(form, "sectionId") ? `s-${s(form, "sectionId")}` : ""));
+}
+
+export async function moveMenuEntryAction(form: FormData) {
+  const { salon, locale } = await restaurantOwner();
+  const kind = s(form, "kind") === "section" ? "section" : "dish";
+  const id = s(form, "id");
+  await moveEntry(db, salon.id, kind, id, s(form, "dir") === "up" ? -1 : 1);
+  redirect(menuPage(locale, `${kind === "section" ? "s" : "d"}-${id}`));
 }

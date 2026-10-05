@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SectionNav } from "@/components/SectionNav";
 import { Logo } from "@/components/Logo";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -37,6 +38,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
               <Link href="/" aria-label="Astrabela">
                 <Logo className="h-10 w-auto sm:h-12" />
               </Link>
+              <div className="hidden md:block">
+                <SectionNav salons={t("salons")} restaurants={t("restaurants")} />
+              </div>
               <nav className="flex items-center gap-3 text-sm sm:gap-6">
                 <Link href="/business" className="hidden text-muted transition-colors hover:text-ink sm:inline">
                   {t("forSalons")}
@@ -45,6 +49,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                   <LanguageSwitcher label={t("language")} />
                 </Suspense>
               </nav>
+            </div>
+            <div className="flex justify-center px-4 pb-3 md:hidden">
+              <SectionNav salons={t("salons")} restaurants={t("restaurants")} />
             </div>
           </header>
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">{children}</main>
@@ -56,6 +63,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
               </div>
               <div className="flex gap-6 text-sm">
                 <Link href="/" className="hover:text-white">{t("forClients")}</Link>
+                <Link href="/restaurants" className="hover:text-white">{t("restaurants")}</Link>
                 <Link href="/business" className="hover:text-white">{t("forSalons")}</Link>
               </div>
             </div>

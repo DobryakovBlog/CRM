@@ -84,7 +84,7 @@ async function StaffForm({ member, services }: { member?: Member; services: Serv
 export default async function TeamPage({ params }: PageProps<"/[locale]/business/team">) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const { salon } = await requireOwner(locale);
+  const { salon } = await requireOwner(locale, "salon");
   const t = await getTranslations("business.team");
   const [team, services] = await Promise.all([salonTeam(db, salon.id), salonServices(db, salon.id)]);
   const active = services.filter((s) => s.isActive);

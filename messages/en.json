@@ -4,10 +4,12 @@
     "description": "Find a beauty salon or barbershop in Portugal, read verified reviews and book online."
   },
   "nav": {
-    "forSalons": "For salons",
+    "forSalons": "For business",
     "footer": "Astrabela · Reviews only from clients with a confirmed visit",
     "language": "Language",
-    "forClients": "Find a salon"
+    "forClients": "Find a salon",
+    "salons": "Salons",
+    "restaurants": "Restaurants"
   },
   "home": {
     "title": "Book the best. Trust the stars.",
@@ -153,6 +155,12 @@
         "reminders": "Automatic client reminders",
         "verifiedReviews": "Reviews only from real clients",
         "ownClients": "Your clients stay yours"
+      },
+      "restaurants": {
+        "eyebrow": "Restaurants",
+        "title": "Your menu online, always up to date",
+        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time.",
+        "cta": "Register a restaurant"
       }
     },
     "plans": {
@@ -170,22 +178,28 @@
       "noAccount": "No account yet? Register your salon"
     },
     "register": {
-      "title": "Register your salon",
+      "title": "Register your business",
       "errors": {
         "invalid": "Please check the fields (password at least 8 characters).",
         "email_taken": "This e-mail is already registered."
       },
       "fields": {
-        "salonName": "Salon name",
+        "salonName": "Business name",
         "city": "City",
         "address": "Address",
-        "phone": "Salon phone",
+        "phone": "Phone",
         "name": "Your name",
         "email": "E-mail",
         "password": "Password"
       },
       "terms": "I accept the terms of use and the data processing agreement (GDPR).",
-      "submit": "Create account"
+      "submit": "Create account",
+      "kind": "Type of business",
+      "kinds": {
+        "salon": "Beauty salon",
+        "barbershop": "Barbershop",
+        "restaurant": "Restaurant"
+      }
     },
     "salonStatus": {
       "draft": "Draft",
@@ -200,7 +214,9 @@
       "team": "Team",
       "reviews": "Reviews",
       "profile": "Profile",
-      "admin": "Moderation"
+      "admin": "Moderation",
+      "menu": "Menu",
+      "qr": "QR code"
     },
     "calendar": {
       "today": "Today",
@@ -281,9 +297,21 @@
         "postalCode": "Postal code",
         "phone": "Phone",
         "nif": "Tax number (NIF)",
-        "description": "Description"
+        "description": "Description",
+        "cuisine": "Cuisine"
       },
-      "save": "Save"
+      "save": "Save",
+      "restaurant": {
+        "welcome": "Welcome! Fill in the profile, build your menu and send the restaurant for publishing.",
+        "notReady": "Add at least one dish to the menu before sending.",
+        "details": "Restaurant details",
+        "statusHelp": {
+          "draft": "The restaurant is not in the catalogue yet.",
+          "pending": "We are reviewing the restaurant.",
+          "active": "The restaurant is published and its menu is visible.",
+          "suspended": "The restaurant is suspended. Please contact us."
+        }
+      }
     },
     "reviews": {
       "empty": "No reviews yet.",
@@ -327,6 +355,40 @@
       "reason": "Reason",
       "hide": "Hide review",
       "keep": "Keep"
+    },
+    "menu": {
+      "hint": "Organise the menu in sections. Changes show up right away on the public page and behind the table QR code.",
+      "viewPublic": "See public menu",
+      "invalid": "Check the name and the price (for example 12.50).",
+      "empty": "Start with a section such as “Starters”, then add dishes.",
+      "editSection": "Edit section",
+      "sectionName": "New section",
+      "sectionNameEn": "English name (optional)",
+      "sectionPlaceholder": "Entradas",
+      "save": "Save",
+      "deleteSection": "Delete section and its dishes",
+      "addSection": "Add section",
+      "addDish": "Add dish",
+      "editDish": "Edit dish",
+      "deleteDish": "Delete dish",
+      "available": "available",
+      "soldOut": "sold out",
+      "dishName": "Dish name",
+      "dishNameEn": "English name (optional)",
+      "description": "Description",
+      "descriptionEn": "English description (optional)",
+      "price": "Price incl. VAT, €",
+      "portion": "Portion (optional)",
+      "portionPlaceholder": "300 g, 0.33 l, for 2",
+      "allergens": "Allergens",
+      "tags": "Tags"
+    },
+    "qr": {
+      "hint": "Print this card and put it on your tables. Guests scan it with their phone camera and the menu opens in their phone's language.",
+      "notListed": "The code already works, but guests can open the menu only once the restaurant is published (Profile tab).",
+      "scan": "Leia o código para ver o menu",
+      "scanEn": "Scan to see the menu",
+      "print": "Print card"
     }
   },
   "countries": {
@@ -339,5 +401,46 @@
     "be": "Belgium",
     "ie": "Ireland",
     "lu": "Luxembourg"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurants and menus",
+    "eyebrow": "Portugal · Restaurants",
+    "title": "See the menu before you sit down.",
+    "subtitle": "Full menus with prices kept up to date by the restaurants themselves, in Portuguese and English, with allergens.",
+    "searchPlaceholder": "Name or cuisine",
+    "resultsTitle": "{count, plural, =0 {No restaurants} one {# restaurant} other {# restaurants}} in {city}",
+    "cityEmpty": "No restaurants on Astrabela in {city} yet.",
+    "noMatch": "No restaurants match this search.",
+    "join": "Own a restaurant? Publish your menu",
+    "dishes": "{count, plural, one {# dish} other {# dishes}}",
+    "from": "From {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Allergens",
+    "vatIncluded": "Prices in euros, VAT included.",
+    "allergyNote": "Any allergies? Please tell the staff before ordering."
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "crustaceans",
+    "eggs": "eggs",
+    "fish": "fish",
+    "peanuts": "peanuts",
+    "soy": "soy",
+    "milk": "milk",
+    "nuts": "tree nuts",
+    "celery": "celery",
+    "mustard": "mustard",
+    "sesame": "sesame",
+    "sulphites": "sulphites",
+    "lupin": "lupin",
+    "molluscs": "molluscs"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "gluten_free": "Gluten free",
+    "spicy": "Spicy"
   }
 }

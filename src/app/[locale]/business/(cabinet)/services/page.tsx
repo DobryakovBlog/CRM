@@ -9,7 +9,7 @@ import { addServiceAction, toggleServiceAction } from "../actions";
 export default async function ServicesPage({ params }: PageProps<"/[locale]/business/services">) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const { salon } = await requireOwner(locale);
+  const { salon } = await requireOwner(locale, "salon");
   const t = await getTranslations("business.services");
   const tc = await getTranslations("categories");
   const services = await salonServices(db, salon.id);

@@ -2,7 +2,7 @@
 // Safe to re-run: demos whose login already exists are skipped.
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { salons, services, staff, staffServices, users, workingHours } from "@/db/schema";
+import { menuItems, menuSections, salons, services, staff, staffServices, users, workingHours } from "@/db/schema";
 import { registerSalonOwner } from "@/server/auth";
 
 type Demo = {
@@ -103,5 +103,75 @@ for (const [i, d] of demos.entries()) {
     })));
   }
   console.log(`seeded ${d.salon} (login ${email} / demo12345)`);
+}
+// --- Restaurants with menus ---------------------------------------------------
+
+type Dish = [name: string, nameEn: string, euros: number, description?: string, extra?: { allergens?: string[]; tags?: string[]; portion?: string; descriptionEn?: string }];
+type RestaurantDemo = {
+  name: string; city: string; district: string; address: string; cuisine: string; description: string; owner: string;
+  menu: { section: string; sectionEn: string; dishes: Dish[] }[];
+};
+
+const restaurants: RestaurantDemo[] = [
+  {
+    name: "Taberna do Largo", city: "lisboa", district: "Alfama", address: "Largo do Chafariz de Dentro 8, 1100-139 Lisboa",
+    cuisine: "Portuguesa", description: "Petiscos e pratos do dia numa taberna de bairro, com fado às sextas.", owner: "Luísa Antunes",
+    menu: [
+      { section: "Petiscos", sectionEn: "Small plates", dishes: [
+        ["Pão, azeite e azeitonas", "Bread, olive oil and olives", 3.5, "Pão da casa e azeite do Alentejo", { allergens: ["gluten"], tags: ["vegan"], descriptionEn: "House bread and Alentejo olive oil" }],
+        ["Pastéis de bacalhau", "Codfish cakes", 6.5, "Quatro unidades", { allergens: ["fish", "eggs", "gluten"], portion: "4 un.", descriptionEn: "Four pieces" }],
+        ["Amêijoas à Bulhão Pato", "Clams Bulhão Pato", 14, "Alho, coentros, limão", { allergens: ["molluscs"], descriptionEn: "Garlic, coriander, lemon" }],
+        ["Peixinhos da horta", "Tempura green beans", 6, "", { allergens: ["gluten", "eggs"], tags: ["vegetarian"] }],
+      ] },
+      { section: "Pratos", sectionEn: "Mains", dishes: [
+        ["Bacalhau à Brás", "Bacalhau à Brás", 15.5, "Bacalhau desfiado, batata palha, ovo e azeitonas", { allergens: ["fish", "eggs"], descriptionEn: "Shredded cod, straw potatoes, egg and olives" }],
+        ["Polvo à lagareiro", "Octopus lagareiro style", 21, "Com batata a murro e grelos", { allergens: ["molluscs"], descriptionEn: "With crushed potatoes and turnip greens" }],
+        ["Bitoque", "Bitoque steak", 13.5, "Bife de vaca, ovo estrelado e batata frita", { allergens: ["eggs"], descriptionEn: "Beef steak, fried egg and chips" }],
+        ["Arroz de legumes", "Vegetable rice", 12, "", { tags: ["vegan", "gluten_free"] }],
+      ] },
+      { section: "Sobremesas", sectionEn: "Desserts", dishes: [
+        ["Pastel de nata", "Custard tart", 1.8, "", { allergens: ["gluten", "milk", "eggs"] }],
+        ["Arroz doce", "Rice pudding", 4.5, "Com canela", { allergens: ["milk", "eggs"], tags: ["vegetarian"], descriptionEn: "With cinnamon" }],
+      ] },
+      { section: "Bebidas", sectionEn: "Drinks", dishes: [
+        ["Vinho da casa, copo", "House wine, glass", 3.5, "Tinto ou branco", { allergens: ["sulphites"], portion: "0,15 l", descriptionEn: "Red or white" }],
+        ["Imperial", "Draught beer", 2.2, "", { allergens: ["gluten"], portion: "0,2 l" }],
+        ["Água mineral", "Mineral water", 1.8, "", { portion: "0,5 l" }],
+      ] },
+    ],
+  },
+  {
+    name: "Mar à Vista", city: "porto", district: "Foz do Douro", address: "Av. do Brasil 455, 4150-153 Porto",
+    cuisine: "Peixe e marisco", description: "Peixe fresco grelhado e marisco com vista para o Atlântico.", owner: "Henrique Sá",
+    menu: [
+      { section: "Entradas", sectionEn: "Starters", dishes: [
+        ["Sapateira recheada", "Stuffed crab", 18, "", { allergens: ["crustaceans", "eggs", "mustard"] }],
+        ["Camarão ao alho", "Garlic prawns", 13, "", { allergens: ["crustaceans"], tags: ["spicy"] }],
+      ] },
+      { section: "Peixe", sectionEn: "Fish", dishes: [
+        ["Robalo grelhado", "Grilled sea bass", 22, "Com legumes salteados", { allergens: ["fish"], tags: ["gluten_free"], descriptionEn: "With sautéed vegetables" }],
+        ["Arroz de marisco", "Seafood rice", 26, "Para duas pessoas", { allergens: ["crustaceans", "molluscs", "fish"], portion: "para 2", descriptionEn: "For two" }],
+      ] },
+    ],
+  },
+];
+
+for (const [i, r] of restaurants.entries()) {
+  const email = `restaurant${i + 1}@astrabela.local`;
+  const [existing] = await db.select({ id: users.id }).from(users).where(eq(users.email, email));
+  if (existing) continue;
+  const { salon } = await registerSalonOwner(db, {
+    name: r.owner, email, password: "demo12345", salonName: r.name, city: r.city, address: r.address,
+    phone: "+351 220 000 00" + i, kind: "restaurant",
+  });
+  await db.update(salons).set({ status: "active", district: r.district, description: r.description, cuisine: r.cuisine }).where(eq(salons.id, salon.id));
+  for (const [si, sec] of r.menu.entries()) {
+    const [section] = await db.insert(menuSections).values({ salonId: salon.id, name: sec.section, nameEn: sec.sectionEn, position: si }).returning();
+    await db.insert(menuItems).values(sec.dishes.map(([name, nameEn, euros, description = "", extra = {}], di) => ({
+      salonId: salon.id, sectionId: section.id, name, nameEn, description, descriptionEn: extra.descriptionEn ?? "",
+      priceCents: Math.round(euros * 100), portion: extra.portion ?? "", allergens: extra.allergens ?? [], tags: extra.tags ?? [], position: di,
+    })));
+  }
+  console.log(`seeded ${r.name} (login ${email} / demo12345)`);
 }
 process.exit(0);

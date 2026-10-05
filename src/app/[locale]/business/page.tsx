@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, redirect } from "@/i18n/navigation";
-import { currentOwner, TRIAL_DAYS } from "@/server/auth";
+import { cabinetHome, currentOwner, TRIAL_DAYS } from "@/server/auth";
 
 const PLANS = [
   { key: "monthly", price: "12,99 €" },
@@ -11,7 +11,8 @@ const PLANS = [
 export default async function BusinessLanding({ params }: PageProps<"/[locale]/business">) {
   const { locale } = await params;
   setRequestLocale(locale);
-  if (await currentOwner()) redirect({ href: "/business/calendar", locale });
+  const owner = await currentOwner();
+  if (owner) redirect({ href: cabinetHome(owner.salon.kind), locale });
   const t = await getTranslations("business");
 
   return (
@@ -43,6 +44,14 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
           <li key={k} className="flex gap-3"><span className="text-gold" aria-hidden>✓</span>{t(`landing.features.${k}`)}</li>
         ))}
       </ul>
+      <section className="card mx-auto max-w-3xl space-y-3">
+        <p className="eyebrow">{t("landing.restaurants.eyebrow")}</p>
+        <h2 className="font-display text-3xl">{t("landing.restaurants.title")}</h2>
+        <p className="text-muted">{t("landing.restaurants.text")}</p>
+        <Link href="/business/register?kind=restaurant" className="btn-outline inline-block">
+          {t("landing.restaurants.cta")}
+        </Link>
+      </section>
     </div>
   );
 }

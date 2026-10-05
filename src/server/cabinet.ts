@@ -14,6 +14,7 @@ import {
 } from "@/db/schema";
 import { localMinuteToDate, nextDate } from "@/lib/availability";
 import type { Category } from "./catalog";
+import { menuHasDishes } from "./menu";
 
 /** All bookings of a salon on a local date, for the day calendar. */
 export async function dayAgenda(db: Db, salonId: string, timezone: string, date: string) {
@@ -135,15 +136,27 @@ export async function setStaffActive(db: Db, salonId: string, staffId: string, i
 export async function updateSalonProfile(
   db: Db,
   salonId: string,
-  input: { name: string; description: string; district: string; address: string; postalCode: string; phone: string; nif: string },
+  input: {
+    name: string;
+    description: string;
+    district: string;
+    address: string;
+    postalCode: string;
+    phone: string;
+    nif: string;
+    cuisine?: string;
+  },
 ) {
   await db.update(salons).set(input).where(eq(salons.id, salonId));
 }
 
-/** Owner asks us to list the salon. Needs at least one bookable service. */
+/** Owner asks us to list the business: a salon needs a bookable service, a restaurant a dish. */
 export async function submitForReview(db: Db, salonId: string) {
-  const team = await salonTeam(db, salonId);
-  const ready = team.some((m) => m.isActive && m.serviceIds.length > 0 && m.hours.length > 0);
+  const [salon] = await db.select({ kind: salons.kind }).from(salons).where(eq(salons.id, salonId));
+  const ready =
+    salon?.kind === "restaurant"
+      ? await menuHasDishes(db, salonId)
+      : (await salonTeam(db, salonId)).some((m) => m.isActive && m.serviceIds.length > 0 && m.hours.length > 0);
   if (!ready) throw new Error("not_ready");
   await db
     .update(salons)

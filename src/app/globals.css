@@ -62,3 +62,12 @@ h1, h2, h3 {
   @apply rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-900;
 }
 }
+
+/* Printing the restaurant table card: only the card goes on paper. */
+@media print {
+  body:has(#qr-card) header,
+  body:has(#qr-card) footer,
+  body:has(#qr-card) main > div > :not(:last-child) {
+    display: none !important;
+  }
+}

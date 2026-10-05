@@ -4,10 +4,12 @@
     "description": "Encontre um salão de beleza ou uma barbearia em Portugal, veja avaliações verificadas e marque online."
   },
   "nav": {
-    "forSalons": "Para salões",
+    "forSalons": "Para negócios",
     "footer": "Astrabela · Avaliações só de clientes com visita confirmada",
     "language": "Idioma",
-    "forClients": "Encontrar salão"
+    "forClients": "Encontrar salão",
+    "salons": "Salões",
+    "restaurants": "Restaurantes"
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
@@ -153,6 +155,12 @@
         "reminders": "Lembretes automáticos aos clientes",
         "verifiedReviews": "Avaliações só de clientes reais",
         "ownClients": "Os seus clientes são seus"
+      },
+      "restaurants": {
+        "eyebrow": "Restaurantes",
+        "title": "O seu menu online, sempre atualizado",
+        "text": "Publique o menu com preços, fotos dos pratos e alergénios, em português e inglês. Imprima o código QR para as mesas e altere preços a qualquer momento.",
+        "cta": "Registar restaurante"
       }
     },
     "plans": {
@@ -170,22 +178,28 @@
       "noAccount": "Ainda não tem conta? Registe o seu salão"
     },
     "register": {
-      "title": "Registar salão",
+      "title": "Registar negócio",
       "errors": {
         "invalid": "Verifique os campos (palavra-passe com pelo menos 8 caracteres).",
         "email_taken": "Este e-mail já está registado."
       },
       "fields": {
-        "salonName": "Nome do salão",
+        "salonName": "Nome do negócio",
         "city": "Cidade",
         "address": "Morada",
-        "phone": "Telefone do salão",
+        "phone": "Telefone",
         "name": "O seu nome",
         "email": "E-mail",
         "password": "Palavra-passe"
       },
       "terms": "Aceito os termos de utilização e o acordo de tratamento de dados (RGPD).",
-      "submit": "Criar conta"
+      "submit": "Criar conta",
+      "kind": "Tipo de negócio",
+      "kinds": {
+        "salon": "Salão de beleza",
+        "barbershop": "Barbearia",
+        "restaurant": "Restaurante"
+      }
     },
     "salonStatus": {
       "draft": "Rascunho",
@@ -200,7 +214,9 @@
       "team": "Equipa",
       "reviews": "Avaliações",
       "profile": "Perfil",
-      "admin": "Moderação"
+      "admin": "Moderação",
+      "menu": "Menu",
+      "qr": "Código QR"
     },
     "calendar": {
       "today": "Hoje",
@@ -281,9 +297,21 @@
         "postalCode": "Código postal",
         "phone": "Telefone",
         "nif": "NIF",
-        "description": "Descrição"
+        "description": "Descrição",
+        "cuisine": "Cozinha"
       },
-      "save": "Guardar"
+      "save": "Guardar",
+      "restaurant": {
+        "welcome": "Bem-vindo! Preencha o perfil, crie o menu e envie o restaurante para publicação.",
+        "notReady": "Antes de enviar, adicione pelo menos um prato ao menu.",
+        "details": "Dados do restaurante",
+        "statusHelp": {
+          "draft": "O restaurante ainda não aparece no catálogo.",
+          "pending": "Estamos a verificar o restaurante.",
+          "active": "O restaurante está publicado e o menu está visível.",
+          "suspended": "O restaurante está suspenso. Contacte-nos."
+        }
+      }
     },
     "reviews": {
       "empty": "Ainda sem avaliações.",
@@ -327,6 +355,40 @@
       "reason": "Motivo",
       "hide": "Ocultar avaliação",
       "keep": "Manter"
+    },
+    "menu": {
+      "hint": "Organize o menu por secções. As alterações aparecem logo na página pública e no código QR das mesas.",
+      "viewPublic": "Ver menu público",
+      "invalid": "Verifique o nome e o preço (por exemplo 12,50).",
+      "empty": "Comece por criar uma secção, por exemplo «Entradas», e adicione os pratos.",
+      "editSection": "Editar secção",
+      "sectionName": "Nova secção",
+      "sectionNameEn": "Nome em inglês (opcional)",
+      "sectionPlaceholder": "Entradas",
+      "save": "Guardar",
+      "deleteSection": "Apagar secção e os seus pratos",
+      "addSection": "Adicionar secção",
+      "addDish": "Adicionar prato",
+      "editDish": "Editar prato",
+      "deleteDish": "Apagar prato",
+      "available": "disponível",
+      "soldOut": "esgotado",
+      "dishName": "Nome do prato",
+      "dishNameEn": "Nome em inglês (opcional)",
+      "description": "Descrição",
+      "descriptionEn": "Descrição em inglês (opcional)",
+      "price": "Preço com IVA, €",
+      "portion": "Dose (opcional)",
+      "portionPlaceholder": "300 g, 0,33 l, para 2",
+      "allergens": "Alergénios",
+      "tags": "Etiquetas"
+    },
+    "qr": {
+      "hint": "Imprima este cartão e coloque-o nas mesas. Os clientes leem o código com a câmara do telemóvel e abrem o menu na língua do telemóvel.",
+      "notListed": "O código já funciona, mas o menu só abre para os clientes depois de o restaurante ser publicado (separador Perfil).",
+      "scan": "Leia o código para ver o menu",
+      "scanEn": "Scan to see the menu",
+      "print": "Imprimir cartão"
     }
   },
   "countries": {
@@ -339,5 +401,46 @@
     "be": "Bélgica",
     "ie": "Irlanda",
     "lu": "Luxemburgo"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurantes e menus",
+    "eyebrow": "Portugal · Restaurantes",
+    "title": "O menu antes da mesa.",
+    "subtitle": "Menus completos com preços atualizados pelos próprios restaurantes, em português e inglês, com alergénios.",
+    "searchPlaceholder": "Nome ou cozinha",
+    "resultsTitle": "{count, plural, =0 {Nenhum restaurante} one {# restaurante} other {# restaurantes}} em {city}",
+    "cityEmpty": "Ainda não há restaurantes na Astrabela em {city}.",
+    "noMatch": "Nenhum restaurante com esta pesquisa.",
+    "join": "Tem um restaurante? Publique o seu menu",
+    "dishes": "{count, plural, one {# prato} other {# pratos}}",
+    "from": "Desde {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Alergénios",
+    "vatIncluded": "Preços em euros com IVA incluído.",
+    "allergyNote": "Tem alguma alergia? Fale com a equipa do restaurante antes de pedir."
+  },
+  "allergens": {
+    "gluten": "glúten",
+    "crustaceans": "crustáceos",
+    "eggs": "ovos",
+    "fish": "peixe",
+    "peanuts": "amendoins",
+    "soy": "soja",
+    "milk": "leite",
+    "nuts": "frutos de casca rija",
+    "celery": "aipo",
+    "mustard": "mostarda",
+    "sesame": "sésamo",
+    "sulphites": "sulfitos",
+    "lupin": "tremoço",
+    "molluscs": "moluscos"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegan",
+    "gluten_free": "Sem glúten",
+    "spicy": "Picante"
   }
 }

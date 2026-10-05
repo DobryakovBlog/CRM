@@ -20,7 +20,16 @@ export async function hashPassword(password: string) {
 /** Creates the owner account, the salon (as draft) and its trial subscription. */
 export async function registerSalonOwner(
   database: Db,
-  input: { name: string; email: string; password: string; salonName: string; city: string; address: string; phone: string },
+  input: {
+    name: string;
+    email: string;
+    password: string;
+    salonName: string;
+    city: string;
+    address: string;
+    phone: string;
+    kind?: "salon" | "restaurant";
+  },
   now = new Date(),
 ) {
   const email = input.email.trim().toLowerCase();
@@ -46,6 +55,7 @@ export async function registerSalonOwner(
       .values({
         ownerId: user.id,
         slug,
+        kind: input.kind ?? "salon",
         name: input.salonName.trim(),
         city: slugify(input.city),
         address: input.address.trim(),
@@ -108,9 +118,16 @@ export async function currentOwner() {
   return salon ? { user, salon } : null;
 }
 
-/** For cabinet pages and actions: the owner or a redirect to the login page. */
-export async function requireOwner(locale: string) {
+/** Where an owner lands in the cabinet: the calendar for salons, the menu for restaurants. */
+export const cabinetHome = (kind: "salon" | "restaurant") => (kind === "restaurant" ? "/business/menu" : "/business/calendar");
+
+/**
+ * For cabinet pages and actions: the owner or a redirect to the login page.
+ * Pages for one kind of business send the other kind to its own cabinet home.
+ */
+export async function requireOwner(locale: string, kind?: "salon" | "restaurant") {
   const owner = await currentOwner();
   if (!owner) redirect(`/${locale}/business/login`);
+  if (kind && owner.salon.kind !== kind) redirect(`/${locale}${cabinetHome(owner.salon.kind)}`);
   return owner;
 }

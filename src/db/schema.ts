@@ -37,6 +37,9 @@ export const bookingStatus = pgEnum("booking_status", [
 
 export const bookingSource = pgEnum("booking_source", ["marketplace", "manual", "invitation"]);
 
+// A listed business is either a beauty salon / barbershop (bookings) or a restaurant (menu).
+export const businessKind = pgEnum("business_kind", ["salon", "restaurant"]);
+
 export const salonStatus = pgEnum("salon_status", [
   "draft", // owner still filling in the profile
   "pending", // waiting for our review
@@ -85,6 +88,7 @@ export const salons = pgTable(
       .notNull()
       .references(() => users.id),
     slug: text("slug").notNull().unique(),
+    kind: businessKind("kind").notNull().default("salon"),
     name: text("name").notNull(),
     description: text("description").notNull().default(""),
     city: text("city").notNull(), // city slug, e.g. "lisboa"
@@ -98,6 +102,7 @@ export const salons = pgTable(
     nif: text("nif").notNull().default(""), // Portuguese tax number
     timezone: text("timezone").notNull().default("Europe/Lisbon"),
     coverImageUrl: text("cover_image_url"),
+    cuisine: text("cuisine").notNull().default(""), // restaurants only, e.g. "Portuguesa · Marisco"
     status: salonStatus("status").notNull().default("draft"),
     // Cached aggregates, recomputed whenever a review changes.
     ratingAvg: integer("rating_avg_x100").notNull().default(0),
@@ -272,3 +277,48 @@ export const reviewReports = pgTable("review_reports", {
   resolvedAt: timestamp("resolved_at", { withTimezone: true }),
   createdAt: createdAt(),
 });
+
+// --- Restaurants: menu --------------------------------------------------------
+
+export const menuSections = pgTable(
+  "menu_sections",
+  {
+    id: id(),
+    salonId: uuid("salon_id")
+      .notNull()
+      .references(() => salons.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    nameEn: text("name_en").notNull().default(""),
+    position: integer("position").notNull().default(0),
+    createdAt: createdAt(),
+  },
+  (t) => [index("menu_sections_salon_idx").on(t.salonId)],
+);
+
+export const menuItems = pgTable(
+  "menu_items",
+  {
+    id: id(),
+    salonId: uuid("salon_id")
+      .notNull()
+      .references(() => salons.id, { onDelete: "cascade" }),
+    sectionId: uuid("section_id")
+      .notNull()
+      .references(() => menuSections.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    nameEn: text("name_en").notNull().default(""),
+    description: text("description").notNull().default(""),
+    descriptionEn: text("description_en").notNull().default(""),
+    priceCents: integer("price_cents").notNull(),
+    // Free text like "250 g" or "0,33 l".
+    portion: text("portion").notNull().default(""),
+    // EU FIC 1169/2011: the 14 allergens, as codes (gluten, milk, eggs, ...).
+    allergens: text("allergens").array().notNull().default([]),
+    // vegetarian, vegan, spicy, gluten_free
+    tags: text("tags").array().notNull().default([]),
+    isAvailable: boolean("is_available").notNull().default(true),
+    position: integer("position").notNull().default(0),
+    createdAt: createdAt(),
+  },
+  (t) => [index("menu_items_section_idx").on(t.sectionId)],
+);

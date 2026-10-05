@@ -10,7 +10,7 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
   const { locale } = await params;
   setRequestLocale(locale);
   const sp = await searchParams;
-  const { salon } = await requireOwner(locale);
+  const { salon } = await requireOwner(locale, "salon");
   const t = await getTranslations("business.reviews");
   const [list, team, services, invitations] = await Promise.all([
     salonReviews(db, salon.id),

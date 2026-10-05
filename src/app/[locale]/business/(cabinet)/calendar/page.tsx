@@ -16,7 +16,7 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
   const { locale } = await params;
   setRequestLocale(locale);
   const sp = await searchParams;
-  const { salon } = await requireOwner(locale);
+  const { salon } = await requireOwner(locale, "salon");
   const t = await getTranslations("business.calendar");
   const tb = await getTranslations("booking.status");
 

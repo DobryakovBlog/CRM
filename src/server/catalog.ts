@@ -11,6 +11,7 @@ export const CATEGORIES = services.category.enumValues;
  */
 export function listedCondition(now = new Date()) {
   return and(
+    eq(salons.kind, "salon"),
     eq(salons.status, "active"),
     exists(
       sql`(select 1 from ${subscriptions} where ${subscriptions.salonId} = ${salons.id}
