@@ -17,7 +17,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
 
   return (
     <div className="space-y-16">
-      <section className="-mt-10 overflow-hidden rounded-b-md bg-plum px-6 pb-10 pt-14 text-white sm:px-12 sm:pb-12 sm:pt-20">
+      <section className="-mt-10 rounded-b-md bg-plum px-6 pb-10 pt-14 text-white sm:px-12 sm:pb-12 sm:pt-20">
         <p className="eyebrow text-gold">{t("eyebrow")}</p>
         <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.08] sm:text-6xl">{t("title")}</h1>
         <p className="mt-5 max-w-xl text-base text-gold-soft/85 sm:text-lg">{t("subtitle")}</p>

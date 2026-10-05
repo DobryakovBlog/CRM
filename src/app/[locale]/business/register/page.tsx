@@ -53,6 +53,7 @@ export default async function RegisterPage({
               id="city"
               name="city"
               options={cityOptions([])}
+              searchUrl="/api/places"
               defaultSlug="lisboa"
               label={t("fields.city")}
               placeholder={ts("cityPlaceholder")}

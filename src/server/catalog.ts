@@ -1,4 +1,5 @@
-import { and, asc, desc, eq, exists, gte, ilike, or, sql } from "drizzle-orm";
+import { and, asc, desc, eq, exists, gte, ilike, inArray, or, sql } from "drizzle-orm";
+import { placesIn } from "@/lib/cities";
 import type { Db } from "@/db";
 import { salons, services, staff, staffServices, subscriptions } from "@/db/schema";
 
@@ -37,7 +38,7 @@ export type SearchParams = {
 
 export async function searchSalons(db: Db, p: SearchParams) {
   const conds = [listedCondition()];
-  if (p.city) conds.push(eq(salons.city, p.city));
+  if (p.city) conds.push(inArray(salons.city, placesIn(p.city)));
   if (p.q) {
     const like = `%${p.q}%`;
     conds.push(or(ilike(salons.name, like), ilike(salons.district, like), ilike(salons.description, like))!);

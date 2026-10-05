@@ -2,7 +2,7 @@
 
 import { getLocale } from "next-intl/server";
 import { z } from "zod";
-import { CITY_SLUGS } from "@/lib/cities";
+import { isPlace } from "@/lib/cities";
 import { db } from "@/db";
 import { redirect } from "@/i18n/navigation";
 import { salons } from "@/db/schema";
@@ -14,7 +14,7 @@ const Register = z.object({
   email: z.email(),
   password: z.string().min(8).max(200),
   salonName: z.string().trim().min(2).max(100),
-  city: z.enum(CITY_SLUGS as [string, ...string[]]),
+  city: z.string().refine(isPlace),
   address: z.string().trim().min(4).max(200),
   phone: z.string().trim().min(6).max(30),
   kind: z.enum(["salon", "barbershop", "restaurant"]).default("salon"),

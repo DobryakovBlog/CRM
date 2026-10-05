@@ -46,7 +46,8 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
           </select>
           <CityCombobox
             name="city"
-            options={cityOptions(cities)}
+            options={cityOptions(cities, city)}
+            searchUrl="/api/places?for=restaurants"
             defaultSlug={city}
             label={ts("city")}
             placeholder={ts("cityPlaceholder")}

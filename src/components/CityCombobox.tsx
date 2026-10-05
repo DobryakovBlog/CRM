@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
-export type CityOption = { slug: string; name: string; hasSalons: boolean };
+export type CityOption = { slug: string; name: string; area?: string; hasSalons: boolean };
 
 const fold = (s: string) =>
   s
@@ -30,7 +30,9 @@ function match(options: CityOption[], query: string) {
 
 /**
  * City field you can type into: suggestions narrow with each letter (accents
- * optional, "evora" finds Évora). Submits the city slug in a hidden input.
+ * optional, "evora" finds Évora). It starts with the given options; with
+ * searchUrl it also asks the server, which knows every town and village.
+ * Submits the place slug in a hidden input.
  */
 export function CityCombobox({
   name,
@@ -40,6 +42,7 @@ export function CityCombobox({
   placeholder,
   noMatch,
   soonLabel,
+  searchUrl,
   id,
 }: {
   name: string;
@@ -49,11 +52,15 @@ export function CityCombobox({
   placeholder: string;
   noMatch: string;
   soonLabel?: string;
+  /** Endpoint answering ?q= with CityOption[]. */
+  searchUrl?: string;
   id?: string;
 }) {
   const byslug = useMemo(() => new Map(options.map((o) => [o.slug, o])), [options]);
-  const [slug, setSlug] = useState(byslug.has(defaultSlug) ? defaultSlug : (options[0]?.slug ?? ""));
-  const [text, setText] = useState(byslug.get(slug)?.name ?? "");
+  const [chosen, setChosen] = useState<CityOption | undefined>(byslug.get(defaultSlug) ?? options[0]);
+  const slug = chosen?.slug ?? "";
+  const [text, setText] = useState(chosen?.name ?? "");
+  const [remote, setRemote] = useState<{ q: string; list: CityOption[] }>({ q: "", list: [] });
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const root = useRef<HTMLDivElement>(null);
@@ -61,11 +68,28 @@ export function CityCombobox({
   const listId = useId();
 
   // While the field shows the chosen city, offer the whole list.
-  const typing = text !== byslug.get(slug)?.name;
-  const list = typing ? match(options, text) : options;
+  const typing = text !== chosen?.name;
+  const local = typing ? match(options, text) : options;
+  const list = typing && searchUrl && remote.q === text.trim() ? remote.list : local;
+
+  useEffect(() => {
+    const q = text.trim();
+    if (!searchUrl || !typing || q.length < 2) return;
+    const ctl = new AbortController();
+    const timer = setTimeout(() => {
+      fetch(`${searchUrl}${searchUrl.includes("?") ? "&" : "?"}q=${encodeURIComponent(q)}`, { signal: ctl.signal })
+        .then((r) => (r.ok ? r.json() : []))
+        .then((found: CityOption[]) => setRemote({ q, list: found }))
+        .catch(() => {});
+    }, 120);
+    return () => {
+      clearTimeout(timer);
+      ctl.abort();
+    };
+  }, [text, typing, searchUrl]);
 
   function choose(o: CityOption) {
-    setSlug(o.slug);
+    setChosen(o);
     setText(o.name);
     setOpen(false);
   }
@@ -74,9 +98,9 @@ export function CityCombobox({
   function settle() {
     setOpen(false);
     if (!typing) return;
-    const best = match(options, text)[0];
+    const best = list[0];
     if (best && text.trim()) choose(best);
-    else setText(byslug.get(slug)?.name ?? "");
+    else setText(chosen?.name ?? "");
   }
 
   useEffect(() => {
@@ -158,10 +182,13 @@ export function CityCombobox({
               onMouseDown={(e) => e.preventDefault()}
               onMouseEnter={() => setActive(i)}
               onClick={() => choose(o)}
-              className={`flex cursor-pointer items-center justify-between gap-3 px-4 py-2 text-sm ${i === active ? "bg-sand" : ""}`}
+              className={`flex cursor-pointer items-center justify-between gap-3 px-4 py-1.5 text-sm ${i === active ? "bg-sand" : ""}`}
             >
-              <span className={o.slug === slug ? "font-semibold" : ""}>{o.name}</span>
-              {soonLabel && !o.hasSalons && <span className="text-xs text-muted">{soonLabel}</span>}
+              <span className="min-w-0">
+                <span className={o.slug === slug ? "font-semibold" : ""}>{o.name}</span>
+                {o.area && <span className="block truncate text-xs text-muted">{o.area}</span>}
+              </span>
+              {soonLabel && !o.hasSalons && <span className="shrink-0 text-xs text-muted">{soonLabel}</span>}
             </li>
           ))}
         </ul>

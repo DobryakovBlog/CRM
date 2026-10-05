@@ -30,7 +30,8 @@ export async function SearchForm({
       </select>
       <CityCombobox
         name="city"
-        options={cityOptions(listed)}
+        options={cityOptions(listed, current.city)}
+        searchUrl="/api/places"
         defaultSlug={current.city ?? listed[0] ?? "lisboa"}
         label={t("city")}
         placeholder={t("cityPlaceholder")}
