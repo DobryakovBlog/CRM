@@ -1,0 +1,79 @@
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { db } from "@/db";
+import { Link } from "@/i18n/navigation";
+import { formatDateTime } from "@/lib/format";
+import { requireOwner } from "@/server/auth";
+import { salonSubscription } from "@/server/cabinet";
+import { saveProfileAction, submitForReviewAction } from "../actions";
+
+const FIELDS = ["name", "district", "address", "postalCode", "phone", "nif"] as const;
+const RESTAURANT_FIELDS = [...FIELDS, "cuisine"] as const;
+
+export default async function ProfilePage({ params, searchParams }: PageProps<"/[locale]/business/profile">) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const sp = await searchParams;
+  const { salon } = await requireOwner(locale);
+  const t = await getTranslations("business.profile");
+  const sub = await salonSubscription(db, salon.id);
+  const restaurant = salon.kind === "restaurant";
+  // Restaurants get their own wording where it differs from salons.
+  const k = (key: string) => (restaurant ? `restaurant.${key}` : key) as never;
+
+  return (
+    <div className="space-y-6">
+      {sp.welcome === "1" && <p className="notice">{t(k("welcome"))}</p>}
+      {sp.saved === "1" && <p className="notice">{t("saved")}</p>}
+      {sp.submitted === "1" && <p className="notice">{t("submitted")}</p>}
+      {sp.error === "not_ready" && <p className="notice-error">{t(k("notReady"))}</p>}
+
+      <div className="card space-y-2">
+        <h2 className="font-semibold">{t("listing")}</h2>
+        <p className="text-sm text-ink">{t(k(`statusHelp.${salon.status}`))}</p>
+        {salon.status === "draft" && (
+          <form action={submitForReviewAction}>
+            <button className="btn">{t("submit")}</button>
+          </form>
+        )}
+        {salon.status === "active" && (
+          <Link href={`/${restaurant ? "restaurant" : "salon"}/${salon.slug}`} className="text-sm text-gold-deep underline">
+            {t("viewPublic")}
+          </Link>
+        )}
+      </div>
+
+      {restaurant && (
+        <div className="card text-sm">
+          <h2 className="mb-1 font-semibold">{t("subscription")}</h2>
+          <p>{t("restaurant.free")}</p>
+        </div>
+      )}
+
+      {sub && (
+        <div className="card text-sm">
+          <h2 className="mb-1 font-semibold">{t("subscription")}</h2>
+          <p>
+            {t(`sub.${sub.status}`, {
+              date: formatDateTime(sub.currentPeriodEnd, salon.timezone, locale, { dateStyle: "long" }),
+            })}
+          </p>
+        </div>
+      )}
+
+      <form action={saveProfileAction} className="card grid gap-3 sm:grid-cols-2">
+        <h2 className="font-semibold sm:col-span-2">{t(k("details"))}</h2>
+        {(restaurant ? RESTAURANT_FIELDS : FIELDS).map((f) => (
+          <div key={f}>
+            <label className="label" htmlFor={f}>{t(`fields.${f}`)}</label>
+            <input id={f} name={f} defaultValue={salon[f]} className="input" />
+          </div>
+        ))}
+        <div className="sm:col-span-2">
+          <label className="label" htmlFor="description">{t("fields.description")}</label>
+          <textarea id="description" name="description" rows={4} defaultValue={salon.description} className="input" />
+        </div>
+        <button className="btn sm:col-span-2">{t("save")}</button>
+      </form>
+    </div>
+  );
+}

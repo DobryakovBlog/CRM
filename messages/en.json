@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "title": "Astrabela: beauty salons and barbershops with online booking",
+    "description": "Find a beauty salon or barbershop in Portugal, read verified reviews and book online."
+  },
+  "nav": {
+    "forSalons": "For business",
+    "footer": "Astrabela · Reviews only from clients with a confirmed visit",
+    "language": "Language",
+    "forClients": "Find a salon",
+    "salons": "Salons",
+    "restaurants": "Restaurants"
+  },
+  "home": {
+    "title": "Book the best. Trust the stars.",
+    "subtitle": "Portugal's best beauty salons and barbershops, rated only by clients with a confirmed visit. Choose your professional and book online in seconds.",
+    "why": {
+      "verified": {
+        "title": "Verified reviews",
+        "text": "Only clients who came to a booked visit can leave a review."
+      },
+      "masters": {
+        "title": "Choose the professional",
+        "text": "Every professional has their own rating."
+      },
+      "direct": {
+        "title": "Pay at the salon",
+        "text": "Free booking, no online payments."
+      }
+    },
+    "eyebrow": "Portugal · Beauty salons and barbershops",
+    "featuredEyebrow": "Featured",
+    "featuredTitle": "Top-rated salons",
+    "browse": "Browse by service"
+  },
+  "search": {
+    "city": "City",
+    "service": "Service",
+    "anyService": "All services",
+    "language": "Language",
+    "anyLanguage": "Any language",
+    "submit": "Search",
+    "resultsTitle": "{count, plural, =0 {No salons} one {# salon} other {# salons}} {city, select, other {in {city}}}",
+    "empty": "No salons match these filters yet.",
+    "new": "New",
+    "from": "From {price}",
+    "cityEmpty": "No salons on Astrabela in {city} yet. We are opening city by city.",
+    "cityEmptyCta": "Own a salon or barbershop here? Join us",
+    "country": "Country",
+    "comingSoon": "coming soon",
+    "cityPlaceholder": "Type a city",
+    "cityNoMatch": "We are not in this city yet"
+  },
+  "categories": {
+    "hair": "Hair",
+    "barber": "Barbershop",
+    "nails": "Nails",
+    "brows_lashes": "Brows and lashes",
+    "skin": "Skin care",
+    "makeup": "Make-up",
+    "massage": "Massage",
+    "other": "Other"
+  },
+  "languages": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "it": "Italian",
+    "ru": "Russian",
+    "uk": "Ukrainian"
+  },
+  "weekdays": {
+    "0": "Sunday",
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday"
+  },
+  "salon": {
+    "verifiedNote": "all reviews come from confirmed visits",
+    "services": "Services",
+    "minutes": "{n} min",
+    "book": "Book",
+    "reviews": "Reviews",
+    "reportThanks": "Thank you. We will review the report.",
+    "noReviews": "No reviews yet.",
+    "withMaster": "with {name}",
+    "verifiedVisit": "confirmed visit",
+    "salonReply": "Salon's reply",
+    "report": "Report review",
+    "reportReason": "Reason",
+    "send": "Send",
+    "team": "Team",
+    "payOnSite": "Payment is made at the salon.",
+    "viaAstrabela": "booked on Astrabela",
+    "viaSalon": "visit confirmed by the salon"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "pay at the salon",
+    "errors": {
+      "invalid": "Please check your details and try again.",
+      "slot_taken": "This time was just taken. Please choose another.",
+      "not_found": "Service or professional unavailable.",
+      "not_allowed": "This professional does not offer this service."
+    },
+    "master": "Professional",
+    "anyMaster": "Any professional",
+    "day": "Day",
+    "time": "Time",
+    "noSlots": "No free times on this day.",
+    "yourDetails": "Your details",
+    "name": "Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "note": "Note for the salon (optional)",
+    "privacy": "I agree that the salon and Astrabela process my data to manage this booking.",
+    "confirm": "Confirm booking"
+  },
+  "booking": {
+    "created": "Booking confirmed! We have sent the details by e-mail.",
+    "reviewThanks": "Thank you for your review!",
+    "error": "The action could not be completed.",
+    "status": {
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "no_show": "No-show"
+    },
+    "with": "with {name}",
+    "payOnSite": "pay at the salon",
+    "cancel": "Cancel booking",
+    "reviewTitle": "Rate your visit with {name}",
+    "rating": "Rating",
+    "reviewText": "Comment",
+    "authorName": "Name to show",
+    "submitReview": "Publish review",
+    "visitOn": "Visit on {date}",
+    "moreTitle": "More salons in {city}",
+    "moreLink": "See all salons"
+  },
+  "business": {
+    "landing": {
+      "title": "More clients for your salon",
+      "subtitle": "Online calendar, reminders and verified reviews. No commission, one flat price for the whole team.",
+      "start": "Try {months} months free",
+      "features": {
+        "noCommission": "0% commission on clients",
+        "unlimitedStaff": "Unlimited staff",
+        "calendar": "Online calendar and manual bookings",
+        "reminders": "Automatic client reminders",
+        "verifiedReviews": "Reviews only from real clients",
+        "ownClients": "Your clients stay yours"
+      },
+      "restaurants": {
+        "eyebrow": "Restaurants",
+        "title": "Your menu online, always up to date",
+        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time. Free for restaurants.",
+        "cta": "Register a restaurant for free"
+      },
+      "trialNote": "The first {months} months are free. No card needed to start."
+    },
+    "plans": {
+      "monthly": "Monthly",
+      "semiannual": "6 months",
+      "annual": "12 months",
+      "perMonth": "per month + VAT"
+    },
+    "login": {
+      "title": "Sign in",
+      "error": "Wrong e-mail or password.",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Sign in",
+      "noAccount": "No account yet? Register your salon"
+    },
+    "register": {
+      "title": "Register your business",
+      "errors": {
+        "invalid": "Please check the fields (password at least 8 characters).",
+        "email_taken": "This e-mail is already registered."
+      },
+      "fields": {
+        "salonName": "Business name",
+        "city": "City",
+        "address": "Address",
+        "phone": "Phone",
+        "name": "Your name",
+        "email": "E-mail",
+        "password": "Password"
+      },
+      "terms": "I accept the terms of use and the data processing agreement (GDPR).",
+      "submit": "Create account",
+      "kind": "Type of business",
+      "kinds": {
+        "salon": "Beauty salon",
+        "barbershop": "Barbershop",
+        "restaurant": "Restaurant"
+      }
+    },
+    "salonStatus": {
+      "draft": "Draft",
+      "pending": "Under review",
+      "active": "Listed",
+      "suspended": "Suspended"
+    },
+    "logout": "Sign out",
+    "tabs": {
+      "calendar": "Calendar",
+      "services": "Services",
+      "team": "Team",
+      "reviews": "Reviews",
+      "profile": "Profile",
+      "admin": "Moderation",
+      "menu": "Menu",
+      "qr": "QR code"
+    },
+    "calendar": {
+      "today": "Today",
+      "errors": {
+        "invalid": "Invalid data.",
+        "slot_taken": "This time is already taken.",
+        "not_found": "Service or professional not found.",
+        "not_allowed": "This professional does not offer this service."
+      },
+      "noTeam": "Add professionals in the Team tab.",
+      "free": "No bookings.",
+      "noShows": "{n, plural, one {# no-show} other {# no-shows}}",
+      "mark": {
+        "completed": "Came",
+        "no_show": "No-show",
+        "cancelled": "Cancel"
+      },
+      "manualTitle": "New booking (phone, walk-in)",
+      "master": "Professional",
+      "service": "Service",
+      "time": "Time",
+      "clientName": "Client name",
+      "clientPhone": "Phone",
+      "clientEmail": "E-mail (optional)",
+      "add": "Add"
+    },
+    "services": {
+      "empty": "No services yet.",
+      "disable": "Disable",
+      "enable": "Enable",
+      "addTitle": "New service",
+      "name": "Name",
+      "category": "Category",
+      "duration": "Duration (min)",
+      "price": "Price (€)",
+      "add": "Add"
+    },
+    "team": {
+      "name": "Name",
+      "title": "Role",
+      "titlePlaceholder": "e.g. Colourist",
+      "languages": "Languages",
+      "services": "Services",
+      "noServices": "Add services first.",
+      "schedule": "Weekly schedule",
+      "save": "Save",
+      "servicesCount": "{n, plural, one {# service} other {# services}}",
+      "deactivate": "Deactivate",
+      "activate": "Activate",
+      "add": "Add professional"
+    },
+    "profile": {
+      "welcome": "Welcome! Fill in your profile, add services and your team, then submit the salon for listing.",
+      "saved": "Saved.",
+      "submitted": "Submitted! We will check and list your salon soon.",
+      "notReady": "Before submitting, add at least one professional with services and a schedule.",
+      "listing": "Catalogue listing",
+      "statusHelp": {
+        "draft": "Your salon is not in the catalogue yet.",
+        "pending": "We are checking your salon.",
+        "active": "Your salon is listed and accepts bookings.",
+        "suspended": "Your salon is suspended. Please contact us."
+      },
+      "submit": "Submit for listing",
+      "viewPublic": "View public page",
+      "subscription": "Subscription",
+      "sub": {
+        "trial": "Free trial until {date}.",
+        "active": "Active until {date}.",
+        "past_due": "Payment overdue since {date}.",
+        "cancelled": "Cancelled on {date}."
+      },
+      "details": "Salon details",
+      "fields": {
+        "name": "Name",
+        "district": "Neighbourhood",
+        "address": "Address",
+        "postalCode": "Postal code",
+        "phone": "Phone",
+        "nif": "Tax number (NIF)",
+        "description": "Description",
+        "cuisine": "Cuisine"
+      },
+      "save": "Save",
+      "restaurant": {
+        "welcome": "Welcome! Fill in the profile, build your menu and send the restaurant for publishing.",
+        "notReady": "Add at least one dish to the menu before sending.",
+        "details": "Restaurant details",
+        "statusHelp": {
+          "draft": "The restaurant is not in the catalogue yet.",
+          "pending": "We are reviewing the restaurant.",
+          "active": "The restaurant is published and its menu is visible.",
+          "suspended": "The restaurant is suspended. Please contact us."
+        },
+        "free": "The digital menu and QR code are free for restaurants."
+      }
+    },
+    "reviews": {
+      "empty": "No reviews yet.",
+      "hidden": "hidden by moderation",
+      "replyPlaceholder": "Reply publicly…",
+      "updateReply": "Update reply",
+      "reply": "Reply",
+      "inviteTitle": "Ask a regular client for a review",
+      "inviteHint": "Record a visit that already happened and we send the client a personal link to rate the professional. No account needed.",
+      "inviteMasterService": "Professional and service",
+      "inviteDate": "Visit date",
+      "inviteClientName": "Client name",
+      "inviteClientEmail": "Client e-mail",
+      "inviteClientPhone": "Mobile (optional)",
+      "inviteLanguage": "E-mail language",
+      "inviteSend": "Ask for a review",
+      "inviteRules": "One link works for one review of one visit. Visits from the last 90 days, one request per client and professional every 30 days. These reviews are labelled “visit confirmed by the salon”, and the salon cannot delete or hide them, negative ones included.",
+      "inviteNoTeam": "Add a professional with services in the Team tab to ask for reviews.",
+      "invited": "Request sent. The client got the link by e-mail.",
+      "inviteErrors": {
+        "invalid": "Check the name, e-mail and date (up to 90 days ago, not in the future).",
+        "not_found": "Professional or service not found.",
+        "not_allowed": "This request cannot be sent.",
+        "duplicate": "You already asked this client to review this professional in the last 30 days.",
+        "limit": "You reached today's request limit. Try again tomorrow."
+      },
+      "invitationsTitle": "Requests sent",
+      "invitationWaiting": "waiting",
+      "invitationReviewed": "reviewed",
+      "listTitle": "Reviews",
+      "viaAstrabela": "booked on Astrabela",
+      "viaSalon": "visit confirmed by the salon",
+      "cannotDelete": "Salons cannot delete reviews. You can reply publicly or report a fake review to moderation."
+    },
+    "admin": {
+      "pending": "Salons awaiting listing",
+      "none": "Nothing pending.",
+      "approve": "Approve",
+      "reject": "Send back",
+      "reports": "Review reports",
+      "reason": "Reason",
+      "hide": "Hide review",
+      "keep": "Keep"
+    },
+    "menu": {
+      "hint": "Organise the menu in sections. Changes show up right away on the public page and behind the table QR code.",
+      "viewPublic": "See public menu",
+      "invalid": "Check the name and the price (for example 12.50).",
+      "empty": "Start with a section such as “Starters”, then add dishes.",
+      "editSection": "Edit section",
+      "sectionName": "New section",
+      "sectionNameEn": "English name (optional)",
+      "sectionPlaceholder": "Entradas",
+      "save": "Save",
+      "deleteSection": "Delete section and its dishes",
+      "addSection": "Add section",
+      "addDish": "Add dish",
+      "editDish": "Edit dish",
+      "deleteDish": "Delete dish",
+      "available": "available",
+      "soldOut": "sold out",
+      "dishName": "Dish name",
+      "dishNameEn": "English name (optional)",
+      "description": "Description",
+      "descriptionEn": "English description (optional)",
+      "price": "Price incl. VAT, €",
+      "portion": "Portion (optional)",
+      "portionPlaceholder": "300 g, 0.33 l, for 2",
+      "allergens": "Allergens",
+      "tags": "Tags"
+    },
+    "qr": {
+      "hint": "Print this card and put it on your tables. Guests scan it with their phone camera and the menu opens in their phone's language.",
+      "notListed": "The code already works, but guests can open the menu only once the restaurant is published (Profile tab).",
+      "scan": "Leia o código para ver o menu",
+      "scanEn": "Scan to see the menu",
+      "print": "Print card"
+    }
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Spain",
+    "fr": "France",
+    "it": "Italy",
+    "de": "Germany",
+    "nl": "Netherlands",
+    "be": "Belgium",
+    "ie": "Ireland",
+    "lu": "Luxembourg"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurants and menus",
+    "eyebrow": "Portugal · Restaurants",
+    "title": "See the menu before you sit down.",
+    "subtitle": "Full menus with prices kept up to date by the restaurants themselves, in Portuguese and English, with allergens.",
+    "searchPlaceholder": "Name or cuisine",
+    "resultsTitle": "{count, plural, =0 {No restaurants} one {# restaurant} other {# restaurants}} in {city}",
+    "cityEmpty": "No restaurants on Astrabela in {city} yet.",
+    "noMatch": "No restaurants match this search.",
+    "join": "Own a restaurant? Publish your menu",
+    "dishes": "{count, plural, one {# dish} other {# dishes}}",
+    "from": "From {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Allergens",
+    "vatIncluded": "Prices in euros, VAT included.",
+    "allergyNote": "Any allergies? Please tell the staff before ordering."
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "crustaceans",
+    "eggs": "eggs",
+    "fish": "fish",
+    "peanuts": "peanuts",
+    "soy": "soy",
+    "milk": "milk",
+    "nuts": "tree nuts",
+    "celery": "celery",
+    "mustard": "mustard",
+    "sesame": "sesame",
+    "sulphites": "sulphites",
+    "lupin": "lupin",
+    "molluscs": "molluscs"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "gluten_free": "Gluten free",
+    "spicy": "Spicy"
+  }
+}

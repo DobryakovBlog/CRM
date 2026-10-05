@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Quiet luxury: porcelain ground, ink type, champagne gold used sparingly for accents. */
+@theme {
+  --color-ink: #1c1a1f;
+  --color-plum: #2a2230;
+  --color-plum-soft: #3a3041;
+  --color-gold: #a8834f;
+  --color-gold-deep: #85663b;
+  --color-gold-soft: #e8dcc6;
+  --color-porcelain: #f8f7f5;
+  --color-sand: #f1ece6;
+  --color-line: #e6e1dc;
+  --color-muted: #6e6772;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-bodoni), "Didot", "Bodoni 72", Georgia, serif;
+}
+
+@layer base {
+body {
+  @apply bg-porcelain text-ink antialiased;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+}
+
+@layer components {
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-deep;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-ink px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-plum-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:opacity-50;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-gold px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-gold-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+}
+.input {
+  @apply w-full rounded-[3px] border border-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold-soft;
+}
+.label {
+  @apply mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-muted;
+}
+.card {
+  @apply rounded-md border border-line bg-white p-6;
+}
+.notice {
+  @apply rounded-md border border-gold-soft bg-sand p-4 text-sm text-ink;
+}
+.notice-error {
+  @apply rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-900;
+}
+}
+
+/* Printing the restaurant table card: only the card goes on paper. */
+@media print {
+  body:has(#qr-card) header,
+  body:has(#qr-card) footer,
+  body:has(#qr-card) main > div > :not(:last-child) {
+    display: none !important;
+  }
+}
