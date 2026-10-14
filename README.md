@@ -35,7 +35,7 @@ npm run dev                   # http://localhost:3000
 - Vercel собирает проект командой `vercel-build`: сначала применяет миграции к базе, потом `next build`.
 - Переменные окружения в Vercel: `DATABASE_URL` (ставится сама при подключении Neon из раздела Storage), `APP_URL=https://astrabela.com`.
 - Сайт закрыт от поисковиков (`noindex` и `robots.txt`), пока не задана `SITE_PUBLIC=1`. После изменения переменной нужен новый деплой.
-- Администратор: `DATABASE_URL=... npx tsx scripts/make-admin.ts email@example.com`.
+- Администраторы: e-mail через запятую в переменной `ADMIN_EMAILS` (вход с этим e-mail открывает вкладку «Administração»), либо `DATABASE_URL=... npx tsx scripts/make-admin.ts email@example.com`.
 - `npm run jobs` на Vercel пока не запускается; его подключим через Vercel Cron вместе с почтовым сервисом.
 
 ## Проверки

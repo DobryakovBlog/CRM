@@ -129,8 +129,15 @@ export async function currentOwner() {
   const user = await currentUser();
   if (!user) return null;
   const [salon] = await db.select().from(salons).where(eq(salons.ownerId, user.id));
-  return salon ? { user, salon } : null;
+  return salon ? { user: { ...user, isAdmin: user.isAdmin || adminEmails().includes(user.email) }, salon } : null;
 }
+
+/** Platform admins named in ADMIN_EMAILS (comma-separated), on top of users flagged in the database. */
+const adminEmails = () =>
+  (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
 
 /** Where an owner lands in the cabinet: the calendar for salons, the menu for restaurants. */
 export const cabinetHome = (kind: "salon" | "restaurant") => (kind === "restaurant" ? "/business/menu" : "/business/calendar");
