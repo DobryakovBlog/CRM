@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { formatDateTime } from "@/lib/format";
+import { SOCIAL_NETWORKS, type SocialNetwork } from "@/lib/social";
 import { requireOwner } from "@/server/auth";
 import { salonSubscription } from "@/server/cabinet";
 import { saveProfileAction, submitForReviewAction } from "../actions";
@@ -15,6 +16,8 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
   const sp = await searchParams;
   const { salon } = await requireOwner(locale);
   const t = await getTranslations("business.profile");
+  const tn = await getTranslations("social");
+  const badNet = SOCIAL_NETWORKS.find((n) => n === sp.net) as SocialNetwork | undefined;
   const sub = await salonSubscription(db, salon.id);
   const restaurant = salon.kind === "restaurant";
   // Restaurants get their own wording where it differs from salons.
@@ -26,6 +29,7 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
       {sp.saved === "1" && <p className="notice">{t("saved")}</p>}
       {sp.submitted === "1" && <p className="notice">{t("submitted")}</p>}
       {sp.error === "not_ready" && <p className="notice-error">{t(k("notReady"))}</p>}
+      {sp.error === "social" && badNet && <p className="notice-error">{t("social.invalid", { network: tn(badNet) })}</p>}
 
       <div className="card space-y-2">
         <h2 className="font-semibold">{t("listing")}</h2>
@@ -72,6 +76,25 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
           <label className="label" htmlFor="description">{t("fields.description")}</label>
           <textarea id="description" name="description" rows={4} defaultValue={salon.description} className="input" />
         </div>
+        <div className="space-y-1 border-t border-line pt-4 sm:col-span-2">
+          <h2 className="font-semibold">{t("social.title")}</h2>
+          <p className="text-sm text-muted">{t("social.hint")}</p>
+        </div>
+        {SOCIAL_NETWORKS.map((n) => (
+          <div key={n}>
+            <label className="label" htmlFor={`social_${n}`}>{tn(n)}</label>
+            <input
+              id={`social_${n}`}
+              name={`social_${n}`}
+              defaultValue={salon.social[n] ?? ""}
+              placeholder={t(`social.placeholders.${n}`)}
+              inputMode={n === "whatsapp" ? "tel" : "url"}
+              autoComplete="off"
+              aria-invalid={badNet === n || undefined}
+              className={`input ${badNet === n ? "border-red-400" : ""}`}
+            />
+          </div>
+        ))}
         <button className="btn sm:col-span-2">{t("save")}</button>
       </form>
     </div>

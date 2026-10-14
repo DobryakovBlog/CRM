@@ -2,6 +2,7 @@ import {
   boolean,
   index,
   integer,
+  jsonb,
   pgEnum,
   pgTable,
   primaryKey,
@@ -11,6 +12,7 @@ import {
   uniqueIndex,
   uuid,
 } from "drizzle-orm/pg-core";
+import type { SocialLinks } from "@/lib/social";
 
 const id = () => uuid("id").primaryKey().defaultRandom();
 const createdAt = () =>
@@ -104,6 +106,7 @@ export const salons = pgTable(
     timezone: text("timezone").notNull().default("Europe/Lisbon"),
     coverImageUrl: text("cover_image_url"),
     cuisine: text("cuisine").notNull().default(""), // restaurants only, e.g. "Portuguesa · Marisco"
+    social: jsonb("social").$type<SocialLinks>().notNull().default({}), // Instagram, Facebook, TikTok, WhatsApp, website
     status: salonStatus("status").notNull().default("draft"),
     // Cached aggregates, recomputed whenever a review changes.
     ratingAvg: integer("rating_avg_x100").notNull().default(0),

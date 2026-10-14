@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SocialLinks } from "@/components/SocialLinks";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Monogram } from "@/components/SalonCard";
@@ -44,6 +45,7 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
             {salon.ratingCount > 0 && <span className="ml-2 text-xs text-muted">{t("verifiedNote")}</span>}
           </div>
           {salon.description && <p className="max-w-2xl text-lg leading-relaxed text-ink">{salon.description}</p>}
+          <SocialLinks links={salon.social} />
         </header>
 
         <section>

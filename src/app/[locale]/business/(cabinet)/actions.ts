@@ -34,6 +34,7 @@ import {
 import { sendReviewInvitation } from "@/server/notify";
 import { replyToReview, setReviewStatus } from "@/server/reviews";
 import { localMinuteToDate } from "@/lib/availability";
+import { normalizeSocial, SOCIAL_NETWORKS, type SocialLinks } from "@/lib/social";
 
 async function owner() {
   const locale = await getLocale();
@@ -141,6 +142,12 @@ export async function toggleStaffAction(form: FormData) {
 
 export async function saveProfileAction(form: FormData) {
   const { salon, locale } = await owner();
+  const social: SocialLinks = {};
+  for (const net of SOCIAL_NETWORKS) {
+    const link = normalizeSocial(net, s(form, `social_${net}`).slice(0, 300));
+    if (link === null) redirect(`/${locale}/business/profile?error=social&net=${net}`);
+    if (link) social[net] = link;
+  }
   await updateSalonProfile(db, salon.id, {
     name: s(form, "name") || salon.name,
     description: s(form, "description").slice(0, 2000),
@@ -150,6 +157,7 @@ export async function saveProfileAction(form: FormData) {
     phone: s(form, "phone"),
     nif: s(form, "nif"),
     ...(salon.kind === "restaurant" ? { cuisine: s(form, "cuisine").slice(0, 80) } : {}),
+    social,
   });
   redirect(`/${locale}/business/profile?saved=1`);
 }

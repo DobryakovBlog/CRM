@@ -36,6 +36,13 @@
       "when": 1792010450803,
       "tag": "0004_complimentary_subscriptions",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792010903140,
+      "tag": "0005_social_links",
+      "breakpoints": true
     }
   ]
 }

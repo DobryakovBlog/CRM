@@ -314,6 +314,18 @@
           "suspended": "O restaurante está suspenso. Contacte-nos."
         },
         "free": "O menu digital e o código QR são gratuitos para restaurantes."
+      },
+      "social": {
+        "title": "Redes sociais",
+        "hint": "Aparecem na página pública. Pode escrever o nome de utilizador (@exemplo) ou colar a ligação.",
+        "invalid": "Não conseguimos reconhecer a ligação de {network}. Verifique e guarde de novo.",
+        "placeholders": {
+          "instagram": "@o_seu_salao",
+          "facebook": "facebook.com/o-seu-salao",
+          "tiktok": "@o_seu_salao",
+          "whatsapp": "912 345 678",
+          "website": "www.o-seu-salao.pt"
+        }
       }
     },
     "reviews": {
@@ -480,5 +492,12 @@
     "vegan": "Vegan",
     "gluten_free": "Sem glúten",
     "spicy": "Picante"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Site"
   }
 }

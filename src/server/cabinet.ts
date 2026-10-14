@@ -1,4 +1,5 @@
 import { and, asc, desc, eq, gte, inArray, isNull, lt, ne } from "drizzle-orm";
+import type { SocialLinks } from "@/lib/social";
 import type { Db } from "@/db";
 import {
   bookings,
@@ -145,6 +146,7 @@ export async function updateSalonProfile(
     phone: string;
     nif: string;
     cuisine?: string;
+    social?: SocialLinks;
   },
 ) {
   await db.update(salons).set(input).where(eq(salons.id, salonId));

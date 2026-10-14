@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SocialLinks } from "@/components/SocialLinks";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
@@ -43,6 +44,7 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
             </>
           )}
         </p>
+        <SocialLinks links={r.social} onDark className="mt-5 justify-center" />
       </header>
 
       {sections.length > 1 && (

@@ -1,9 +1,17 @@
 // Demo data: a few salons and barbershops in Lisbon and Porto so the catalogue is not empty in development.
 // Safe to re-run: demos whose login already exists are skipped.
+import type { SocialLinks } from "@/lib/social";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { menuItems, menuSections, salons, services, staff, staffServices, users, workingHours } from "@/db/schema";
 import { registerSalonOwner } from "@/server/auth";
+
+// Demo social links, keyed by business name (fictional accounts).
+const DEMO_SOCIAL: Record<string, SocialLinks> = {
+  "Salão Lumière": { instagram: "https://www.instagram.com/salaolumiere.demo", facebook: "https://www.facebook.com/salaolumiere.demo", website: "https://salaolumiere.example/" },
+  "Barbearia Alfaiate": { instagram: "https://www.instagram.com/alfaiate.barber.demo", tiktok: "https://www.tiktok.com/@alfaiate.barber.demo", whatsapp: "https://wa.me/351910000004" },
+  "Taberna do Largo": { instagram: "https://www.instagram.com/tabernadolargo.demo", facebook: "https://www.facebook.com/tabernadolargo.demo" },
+};
 
 type Demo = {
   salon: string; city?: string; district: string; address: string; description: string;
@@ -90,7 +98,7 @@ for (const [i, d] of demos.entries()) {
     name: d.team[0].name, email, password: "demo12345", salonName: d.salon,
     city: d.city ?? "lisboa", address: d.address, phone: "+351 210 000 00" + i,
   });
-  await db.update(salons).set({ status: "active", district: d.district, description: d.description }).where(eq(salons.id, salon.id));
+  await db.update(salons).set({ status: "active", district: d.district, description: d.description, social: DEMO_SOCIAL[d.salon] ?? {} }).where(eq(salons.id, salon.id));
   const menu = await db.insert(services).values(d.menu.map((m) => ({
     salonId: salon.id, category: m.category, name: m.name, durationMinutes: m.minutes, priceCents: m.euros * 100,
   }))).returning();
@@ -164,7 +172,7 @@ for (const [i, r] of restaurants.entries()) {
     name: r.owner, email, password: "demo12345", salonName: r.name, city: r.city, address: r.address,
     phone: "+351 220 000 00" + i, kind: "restaurant",
   });
-  await db.update(salons).set({ status: "active", district: r.district, description: r.description, cuisine: r.cuisine }).where(eq(salons.id, salon.id));
+  await db.update(salons).set({ status: "active", district: r.district, description: r.description, cuisine: r.cuisine, social: DEMO_SOCIAL[r.name] ?? {} }).where(eq(salons.id, salon.id));
   for (const [si, sec] of r.menu.entries()) {
     const [section] = await db.insert(menuSections).values({ salonId: salon.id, name: sec.section, nameEn: sec.sectionEn, position: si }).returning();
     await db.insert(menuItems).values(sec.dishes.map(([name, nameEn, euros, description = "", extra = {}], di) => ({

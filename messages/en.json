@@ -314,6 +314,18 @@
           "suspended": "The restaurant is suspended. Please contact us."
         },
         "free": "The digital menu and QR code are free for restaurants."
+      },
+      "social": {
+        "title": "Social media",
+        "hint": "Shown on your public page. Type the username (@example) or paste the link.",
+        "invalid": "We couldn't recognise the {network} link. Check it and save again.",
+        "placeholders": {
+          "instagram": "@your_salon",
+          "facebook": "facebook.com/your-salon",
+          "tiktok": "@your_salon",
+          "whatsapp": "912 345 678",
+          "website": "www.your-salon.pt"
+        }
       }
     },
     "reviews": {
@@ -480,5 +492,12 @@
     "vegan": "Vegan",
     "gluten_free": "Gluten free",
     "spicy": "Spicy"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Website"
   }
 }
