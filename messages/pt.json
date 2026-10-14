@@ -215,7 +215,7 @@
       "team": "Equipa",
       "reviews": "Avaliações",
       "profile": "Perfil",
-      "admin": "Moderação",
+      "admin": "Administração",
       "menu": "Menu",
       "qr": "Código QR"
     },
@@ -288,7 +288,8 @@
         "trial": "Período de experiência até {date}.",
         "active": "Ativa até {date}.",
         "past_due": "Pagamento em atraso desde {date}.",
-        "cancelled": "Cancelada em {date}."
+        "cancelled": "Cancelada em {date}.",
+        "complimentary": "Oferta Astrabela até {date}."
       },
       "details": "Dados do salão",
       "fields": {
@@ -356,7 +357,42 @@
       "reports": "Denúncias de avaliações",
       "reason": "Motivo",
       "hide": "Ocultar avaliação",
-      "keep": "Manter"
+      "keep": "Manter",
+      "subs": {
+        "title": "Subscrições dos salões",
+        "hint": "Ofereça meses grátis ou defina até quando a subscrição é gratuita. A oferta começa quando terminar o tempo que o salão já tem.",
+        "search": "Procurar por nome, cidade ou NIF",
+        "find": "Procurar",
+        "empty": "Nenhum salão encontrado.",
+        "none": "Sem subscrição",
+        "manage": "Gerir",
+        "months": "Meses grátis",
+        "monthsN": "{n, plural, one {# mês} other {# meses}}",
+        "note": "Nota (opcional)",
+        "notePlaceholder": "Ex.: parceiro fundador",
+        "grant": "Oferecer",
+        "until": "Grátis até",
+        "set": "Definir data",
+        "cancel": "Terminar subscrição agora",
+        "cancelHint": "O salão deixa de aparecer na pesquisa até voltar a subscrever.",
+        "saved": "Subscrição atualizada.",
+        "invalid": "Escolha uma data futura.",
+        "salonStatus": {
+          "draft": "Rascunho",
+          "pending": "A aguardar",
+          "active": "Publicado",
+          "suspended": "Suspenso"
+        },
+        "status": {
+          "trial": "Experiência",
+          "active": "Ativa",
+          "past_due": "Em atraso",
+          "cancelled": "Cancelada",
+          "complimentary": "Oferta"
+        },
+        "endsOn": "até {date}",
+        "endedOn": "desde {date}"
+      }
     },
     "menu": {
       "hint": "Organize o menu por secções. As alterações aparecem logo na página pública e no código QR das mesas.",

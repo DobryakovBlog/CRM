@@ -18,6 +18,7 @@ import {
   updateSalonProfile,
 } from "@/server/cabinet";
 import { CATEGORIES } from "@/server/catalog";
+import { cancelSubscription, grantFreeMonths, setFreeUntil } from "@/server/subscriptions";
 import { inviteReview } from "@/server/invitations";
 import {
   addDish,
@@ -212,6 +213,35 @@ export async function moderateReportAction(form: FormData) {
   if (s(form, "decision") === "hide") await setReviewStatus(db, s(form, "reviewId"), "hidden");
   await resolveReport(db, s(form, "reportId"));
   revalidatePath("/[locale]/business/admin", "page");
+}
+
+async function adminBack(form: FormData, done: string) {
+  const { locale } = await admin();
+  revalidatePath("/[locale]/business/admin", "page");
+  const q = s(form, "q");
+  redirect(`/${locale}/business/admin?${new URLSearchParams({ ...(q && { q }), sub: done })}#subs`);
+}
+
+export async function grantFreeAction(form: FormData) {
+  await admin();
+  await grantFreeMonths(db, s(form, "salonId"), Number(s(form, "months")), s(form, "note"));
+  await adminBack(form, "saved");
+}
+
+export async function freeUntilAction(form: FormData) {
+  await admin();
+  try {
+    await setFreeUntil(db, s(form, "salonId"), s(form, "until"), s(form, "note"));
+  } catch {
+    return adminBack(form, "invalid");
+  }
+  await adminBack(form, "saved");
+}
+
+export async function cancelSubscriptionAction(form: FormData) {
+  await admin();
+  await cancelSubscription(db, s(form, "salonId"));
+  await adminBack(form, "saved");
 }
 
 // --- Restaurant menu --------------------------------------------------------

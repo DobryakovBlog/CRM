@@ -58,6 +58,7 @@ export const subscriptionStatus = pgEnum("subscription_status", [
   "active",
   "past_due",
   "cancelled",
+  "complimentary", // free months granted by a platform admin
 ]);
 
 export const reviewStatus = pgEnum("review_status", ["published", "hidden"]);
@@ -123,6 +124,8 @@ export const subscriptions = pgTable("subscriptions", {
   currentPeriodEnd: timestamp("current_period_end", {
     withTimezone: true,
   }).notNull(),
+  /** Admin's reason for a free period, e.g. "first 100 salons". */
+  note: text("note").notNull().default(""),
   createdAt: createdAt(),
 });
 

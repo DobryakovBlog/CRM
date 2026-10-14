@@ -16,7 +16,7 @@ export function listedCondition(now = new Date()) {
     eq(salons.status, "active"),
     exists(
       sql`(select 1 from ${subscriptions} where ${subscriptions.salonId} = ${salons.id}
-        and ${subscriptions.status} in ('trial', 'active')
+        and ${subscriptions.status} in ('trial', 'active', 'complimentary')
         and ${subscriptions.currentPeriodEnd} >= ${now})`,
     ),
     exists(

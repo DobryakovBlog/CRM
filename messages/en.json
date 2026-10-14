@@ -215,7 +215,7 @@
       "team": "Team",
       "reviews": "Reviews",
       "profile": "Profile",
-      "admin": "Moderation",
+      "admin": "Admin",
       "menu": "Menu",
       "qr": "QR code"
     },
@@ -288,7 +288,8 @@
         "trial": "Free trial until {date}.",
         "active": "Active until {date}.",
         "past_due": "Payment overdue since {date}.",
-        "cancelled": "Cancelled on {date}."
+        "cancelled": "Cancelled on {date}.",
+        "complimentary": "Free from Astrabela until {date}."
       },
       "details": "Salon details",
       "fields": {
@@ -356,7 +357,42 @@
       "reports": "Review reports",
       "reason": "Reason",
       "hide": "Hide review",
-      "keep": "Keep"
+      "keep": "Keep",
+      "subs": {
+        "title": "Salon subscriptions",
+        "hint": "Give free months or set the date the free subscription runs until. A gift starts when the time the salon already has runs out.",
+        "search": "Search by name, city or NIF",
+        "find": "Search",
+        "empty": "No salons found.",
+        "none": "No subscription",
+        "manage": "Manage",
+        "months": "Free months",
+        "monthsN": "{n, plural, one {# month} other {# months}}",
+        "note": "Note (optional)",
+        "notePlaceholder": "E.g. founding partner",
+        "grant": "Give",
+        "until": "Free until",
+        "set": "Set date",
+        "cancel": "End subscription now",
+        "cancelHint": "The salon leaves search until it subscribes again.",
+        "saved": "Subscription updated.",
+        "invalid": "Choose a future date.",
+        "salonStatus": {
+          "draft": "Draft",
+          "pending": "Pending",
+          "active": "Listed",
+          "suspended": "Suspended"
+        },
+        "status": {
+          "trial": "Trial",
+          "active": "Active",
+          "past_due": "Overdue",
+          "cancelled": "Cancelled",
+          "complimentary": "Free"
+        },
+        "endsOn": "until {date}",
+        "endedOn": "since {date}"
+      }
     },
     "menu": {
       "hint": "Organise the menu in sections. Changes show up right away on the public page and behind the table QR code.",
