@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteIsPublic } from "@/lib/indexing";
 import { Bodoni_Moda, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -20,7 +21,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return { title: { default: t("title"), template: `%s · Astrabela` }, description: t("description") };
+  return {
+    title: { default: t("title"), template: `%s · Astrabela` },
+    description: t("description"),
+    ...(siteIsPublic() ? {} : { robots: { index: false, follow: false } }),
+  };
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
