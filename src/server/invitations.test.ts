@@ -92,6 +92,16 @@ describe("review invitations", () => {
     expect(await code(invite({ serviceId: otherServiceId }))).toBe("not_allowed");
   });
 
+  it("works without an e-mail, so the salon can send the link itself", async () => {
+    const noEmail = { name: "Joana", email: "", phone: "912345678" };
+    expect(await code(invite({ client: noEmail }))).toBe("ok");
+    // The same phone is the same client, so the 30-day rule still holds.
+    expect(await code(invite({ client: noEmail, visitDate: "2026-10-01" }))).toBe("duplicate");
+    expect(await code(invite({ client: { name: "Rui", email: "", phone: "" } }))).toBe("ok");
+    const [first] = await salonInvitations(db, salonId);
+    expect(first.manageToken).toBeTruthy();
+  });
+
   it("does not let the owner invite themselves", async () => {
     expect(await code(invite({ client: { ...client, email: "Owner@test.pt" } }))).toBe("not_allowed");
   });
