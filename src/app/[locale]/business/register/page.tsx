@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CityCombobox } from "@/components/CityCombobox";
 import { cityOptions } from "@/lib/cities";
@@ -74,7 +75,18 @@ export default async function RegisterPage({
       ))}
       <label className="flex items-start gap-2 text-xs text-muted">
         <input type="checkbox" required className="mt-0.5" />
-        {t("terms")}
+        <span>{t.rich("terms", {
+                privacy: (chunks) => (
+                  <Link href="/privacy" target="_blank" className="underline hover:text-ink">
+                    {chunks}
+                  </Link>
+                ),
+                terms: (chunks) => (
+                  <Link href="/terms" target="_blank" className="underline hover:text-ink">
+                    {chunks}
+                  </Link>
+                ),
+              })}</span>
       </label>
       <button className="btn w-full">{t("submit")}</button>
     </form>

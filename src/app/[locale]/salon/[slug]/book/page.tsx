@@ -138,7 +138,18 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             </div>
             <label className="flex items-start gap-2 text-xs text-muted">
               <input type="checkbox" name="privacy" required className="mt-0.5" />
-              {t("privacy")}
+              <span>{t.rich("privacy", {
+                privacy: (chunks) => (
+                  <Link href="/privacy" target="_blank" className="underline hover:text-ink">
+                    {chunks}
+                  </Link>
+                ),
+                terms: (chunks) => (
+                  <Link href="/terms" target="_blank" className="underline hover:text-ink">
+                    {chunks}
+                  </Link>
+                ),
+              })}</span>
             </label>
             <button className="btn w-full">{t("confirm")}</button>
           </form>

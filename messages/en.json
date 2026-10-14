@@ -9,7 +9,9 @@
     "language": "Language",
     "forClients": "Find a salon",
     "salons": "Salons",
-    "restaurants": "Restaurants"
+    "restaurants": "Restaurants",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
   "home": {
     "title": "Book the best. Trust the stars.",
@@ -118,7 +120,7 @@
     "email": "E-mail",
     "phone": "Phone",
     "note": "Note for the salon (optional)",
-    "privacy": "I agree that the salon and Astrabela process my data to manage this booking.",
+    "privacy": "I agree that the salon and Astrabela process my data to manage this booking (<privacy>privacy policy</privacy>).",
     "confirm": "Confirm booking"
   },
   "booking": {
@@ -193,7 +195,7 @@
         "email": "E-mail",
         "password": "Password"
       },
-      "terms": "I accept the terms of use and the data processing agreement (GDPR).",
+      "terms": "I accept the <terms>terms of use</terms>, including the data processing agreement (GDPR), and the <privacy>privacy policy</privacy>.",
       "submit": "Create account",
       "kind": "Type of business",
       "kinds": {

@@ -36,6 +36,8 @@ npm run dev                   # http://localhost:3000
 - Переменные окружения в Vercel: `DATABASE_URL` (ставится сама при подключении Neon из раздела Storage), `APP_URL=https://astrabela.com`.
 - Сайт закрыт от поисковиков (`noindex` и `robots.txt`), пока не задана `SITE_PUBLIC=1`. После изменения переменной нужен новый деплой.
 - Администраторы: e-mail через запятую в переменной `ADMIN_EMAILS` (вход с этим e-mail открывает вкладку «Administração»), либо `DATABASE_URL=... npx tsx scripts/make-admin.ts email@example.com`.
+- Страницы /privacy и /terms: кто ведёт сайт, берётся из `LEGAL_NAME`, `LEGAL_NIF`, `LEGAL_ADDRESS`, `LEGAL_EMAIL` (по умолчанию «Astrabela» и contacto@astrabela.com); после изменения нужен Redeploy.
+- `vercel.json` держит серверные функции во Франкфурте (`fra1`), рядом с базой Neon.
 - `npm run jobs` на Vercel пока не запускается; его подключим через Vercel Cron вместе с почтовым сервисом.
 
 ## Проверки

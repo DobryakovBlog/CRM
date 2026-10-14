@@ -66,10 +66,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                 <Logo inverted className="h-12 w-auto" />
                 <p className="max-w-sm text-sm">{t("footer")}</p>
               </div>
-              <div className="flex gap-6 text-sm">
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
                 <Link href="/" className="hover:text-white">{t("forClients")}</Link>
                 <Link href="/restaurants" className="hover:text-white">{t("restaurants")}</Link>
                 <Link href="/business" className="hover:text-white">{t("forSalons")}</Link>
+                <Link href="/privacy" className="hover:text-white">{t("privacy")}</Link>
+                <Link href="/terms" className="hover:text-white">{t("terms")}</Link>
               </div>
             </div>
           </footer>

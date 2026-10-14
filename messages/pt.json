@@ -9,7 +9,9 @@
     "language": "Idioma",
     "forClients": "Encontrar salão",
     "salons": "Salões",
-    "restaurants": "Restaurantes"
+    "restaurants": "Restaurantes",
+    "privacy": "Privacidade",
+    "terms": "Termos"
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
@@ -118,7 +120,7 @@
     "email": "E-mail",
     "phone": "Telemóvel",
     "note": "Nota para o salão (opcional)",
-    "privacy": "Aceito que o salão e a Astrabela tratem os meus dados para gerir esta marcação.",
+    "privacy": "Aceito que o salão e a Astrabela tratem os meus dados para gerir esta marcação (<privacy>política de privacidade</privacy>).",
     "confirm": "Confirmar marcação"
   },
   "booking": {
@@ -193,7 +195,7 @@
         "email": "E-mail",
         "password": "Palavra-passe"
       },
-      "terms": "Aceito os termos de utilização e o acordo de tratamento de dados (RGPD).",
+      "terms": "Aceito os <terms>termos de utilização</terms>, incluindo o acordo de tratamento de dados (RGPD), e a <privacy>política de privacidade</privacy>.",
       "submit": "Criar conta",
       "kind": "Tipo de negócio",
       "kinds": {

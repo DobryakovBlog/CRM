@@ -1,0 +1,398 @@
+/**
+ * Privacy policy and terms of use, in Portuguese and English.
+ * Who runs the site comes from the environment (LEGAL_NAME, LEGAL_NIF, LEGAL_ADDRESS,
+ * LEGAL_EMAIL), so it can be filled in on Vercel once the business is registered.
+ */
+
+export type LegalBlock = string | string[]; // a paragraph, or a bullet list
+export type LegalDoc = { title: string; updated: string; intro: string; sections: { title: string; body: LegalBlock[] }[] };
+
+export function operator() {
+  const name = process.env.LEGAL_NAME?.trim() || "Astrabela";
+  const nif = process.env.LEGAL_NIF?.trim();
+  const address = process.env.LEGAL_ADDRESS?.trim();
+  const email = process.env.LEGAL_EMAIL?.trim() || "contacto@astrabela.com";
+  return { name, nif, address, email };
+}
+
+function who() {
+  const o = operator();
+  return [o.name, o.nif && `NIF ${o.nif}`, o.address].filter(Boolean).join(", ");
+}
+
+const PRICES = {
+  pt: ["12,99 € por mês, com pagamento mensal;", "10,99 € por mês, com pagamento semestral;", "9,99 € por mês, com pagamento anual."],
+  en: ["€12.99 a month, billed monthly;", "€10.99 a month, billed every 6 months;", "€9.99 a month, billed yearly."],
+};
+
+export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
+  const o = operator();
+  if (locale === "en") {
+    return {
+      title: "Privacy policy",
+      updated: "Last updated: 15 October 2026",
+      intro:
+        "Astrabela is a catalogue of beauty salons, barbershops and restaurants in Portugal, with online booking and reviews from clients with a confirmed visit. This policy explains what personal data we process, why, and what your rights are under the GDPR.",
+      sections: [
+        { title: "1. Who we are", body: [`The site astrabela.com is run by ${who()}. For any question about your data, write to ${o.email}.`] },
+        {
+          title: "2. What data we process",
+          body: [
+            "When you book or review (clients):",
+            [
+              "name, e-mail and phone number you give when booking, and the note you leave for the salon;",
+              "the booking itself: salon, professional, service, date, time and status;",
+              "your review: rating, text and the name you choose to show.",
+            ],
+            "When a salon or restaurant uses Astrabela (businesses):",
+            [
+              "the account holder's name and e-mail, and the password (stored only as an encrypted hash);",
+              "business details: name, address, phone, e-mail, tax number (NIF), team, services, prices, opening hours, menu and social media links.",
+            ],
+            "Technical data: a session cookie for business accounts, a language cookie, and server logs (such as IP address and time of the request) kept for security.",
+          ],
+        },
+        {
+          title: "3. Why and on what legal basis",
+          body: [
+            [
+              "to make, manage and remind you of a booking: performance of a contract (Art. 6(1)(b) GDPR);",
+              "to run business accounts and subscriptions: performance of a contract;",
+              "to publish verified reviews and prevent fake ones: our legitimate interest in a trustworthy catalogue (Art. 6(1)(f));",
+              "to keep the site secure: legitimate interest;",
+              "to meet tax and accounting rules: legal obligation (Art. 6(1)(c)).",
+            ],
+            "We do not sell personal data and we do not use it for advertising.",
+          ],
+        },
+        {
+          title: "4. The salon's role and ours",
+          body: [
+            "For bookings, the salon you choose decides how its client data is used and is the controller of that data. Astrabela processes it on the salon's behalf as a processor (Art. 28 GDPR), only to provide the service. For reviews, the public catalogue and the security of the site, Astrabela is the controller.",
+          ],
+        },
+        {
+          title: "5. Who receives the data",
+          body: [
+            "The salon or restaurant you book with. We also use these service providers, bound by data processing agreements:",
+            [
+              "Vercel Inc. – hosting; the site runs in Frankfurt (EU). Vercel is a US company, so any transfer outside the EU is covered by the EU Standard Contractual Clauses and the EU–US Data Privacy Framework;",
+              "Neon – database, stored in Frankfurt (EU);",
+              "Cloudflare – domain name service (DNS).",
+            ],
+          ],
+        },
+        {
+          title: "6. How long we keep it",
+          body: [
+            [
+              "client data and bookings: while the salon's account is active, and at most 2 years after your last visit;",
+              "reviews: while the salon is listed on Astrabela;",
+              "business accounts: until the account is closed;",
+              "invoices and billing records: 10 years, as Portuguese tax law requires;",
+              "business login sessions: 30 days.",
+            ],
+          ],
+        },
+        {
+          title: "7. Cookies",
+          body: [
+            "We only use cookies the site needs to work: one to keep business users signed in and one to remember your language. We do not use analytics or advertising cookies, so we do not ask for cookie consent.",
+          ],
+        },
+        {
+          title: "8. Your rights",
+          body: [
+            `You can ask us to access, correct or delete your data, to restrict or object to its processing, and to receive it in a portable format. Write to ${o.email}; we answer within one month. If the data was given to a salon, we will also pass your request on to it. You can also complain to the Portuguese data protection authority, CNPD (www.cnpd.pt).`,
+          ],
+        },
+        {
+          title: "9. Security",
+          body: [
+            "The site is served only over HTTPS, passwords are stored encrypted, and booking and review links are personal and hard to guess. Do not share your personal link with others.",
+          ],
+        },
+        {
+          title: "10. Changes",
+          body: ["If we change this policy, we will publish the new version here with its date. Important changes will be announced on the site."],
+        },
+      ],
+    };
+  }
+  return {
+    title: "Política de privacidade",
+    updated: "Última atualização: 15 de outubro de 2026",
+    intro:
+      "A Astrabela é um catálogo de salões de beleza, barbearias e restaurantes em Portugal, com marcação online e avaliações de clientes com visita confirmada. Esta política explica que dados pessoais tratamos, para quê e quais são os seus direitos ao abrigo do RGPD.",
+    sections: [
+      { title: "1. Quem somos", body: [`O site astrabela.com é gerido por ${who()}. Para qualquer questão sobre os seus dados, escreva para ${o.email}.`] },
+      {
+        title: "2. Que dados tratamos",
+        body: [
+          "Quando faz uma marcação ou uma avaliação (clientes):",
+          [
+            "nome, e-mail e telemóvel que indica na marcação, e a nota que deixa ao salão;",
+            "a própria marcação: salão, profissional, serviço, data, hora e estado;",
+            "a sua avaliação: nota, texto e o nome que escolhe mostrar.",
+          ],
+          "Quando um salão ou restaurante usa a Astrabela (empresas):",
+          [
+            "nome e e-mail do titular da conta, e a palavra-passe (guardada apenas cifrada);",
+            "dados do negócio: nome, morada, telefone, e-mail, NIF, equipa, serviços, preços, horários, menu e ligações às redes sociais.",
+          ],
+          "Dados técnicos: um cookie de sessão para contas de empresa, um cookie de idioma e registos do servidor (como endereço IP e hora do pedido), guardados por segurança.",
+        ],
+      },
+      {
+        title: "3. Para quê e com que fundamento",
+        body: [
+          [
+            "fazer, gerir e lembrar a marcação: execução de contrato (art. 6.º, n.º 1, al. b) do RGPD);",
+            "gerir contas e subscrições das empresas: execução de contrato;",
+            "publicar avaliações verificadas e impedir avaliações falsas: interesse legítimo num catálogo de confiança (art. 6.º, n.º 1, al. f));",
+            "manter o site seguro: interesse legítimo;",
+            "cumprir obrigações fiscais e contabilísticas: obrigação legal (art. 6.º, n.º 1, al. c)).",
+          ],
+          "Não vendemos dados pessoais nem os usamos para publicidade.",
+        ],
+      },
+      {
+        title: "4. O papel do salão e o nosso",
+        body: [
+          "Nas marcações, o salão que escolhe decide como usa os dados dos seus clientes e é o responsável pelo tratamento desses dados. A Astrabela trata-os por conta do salão, como subcontratante (art. 28.º do RGPD), apenas para prestar o serviço. Nas avaliações, no catálogo público e na segurança do site, a Astrabela é a responsável pelo tratamento.",
+        ],
+      },
+      {
+        title: "5. Quem recebe os dados",
+        body: [
+          "O salão ou restaurante onde faz a marcação. Usamos também estes prestadores de serviços, vinculados por acordos de tratamento de dados:",
+          [
+            "Vercel Inc. – alojamento; o site funciona em Frankfurt (UE). A Vercel é uma empresa dos EUA, por isso qualquer transferência para fora da UE está coberta pelas Cláusulas Contratuais-Tipo da UE e pelo Quadro de Privacidade de Dados UE-EUA;",
+            "Neon – base de dados, guardada em Frankfurt (UE);",
+            "Cloudflare – serviço de nomes de domínio (DNS).",
+          ],
+        ],
+      },
+      {
+        title: "6. Durante quanto tempo",
+        body: [
+          [
+            "dados de clientes e marcações: enquanto a conta do salão estiver ativa e, no máximo, 2 anos após a sua última visita;",
+            "avaliações: enquanto o salão estiver na Astrabela;",
+            "contas de empresa: até ao encerramento da conta;",
+            "faturas e registos de faturação: 10 anos, como exige a lei fiscal portuguesa;",
+            "sessões de acesso das empresas: 30 dias.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookies",
+        body: [
+          "Usamos apenas os cookies necessários ao funcionamento do site: um para manter as empresas com sessão iniciada e outro para lembrar o idioma. Não usamos cookies de análise nem de publicidade, por isso não pedimos consentimento para cookies.",
+        ],
+      },
+      {
+        title: "8. Os seus direitos",
+        body: [
+          `Pode pedir acesso, retificação ou apagamento dos seus dados, a limitação ou oposição ao tratamento, e recebê-los num formato portável. Escreva para ${o.email}; respondemos no prazo de um mês. Se os dados foram dados a um salão, encaminhamos-lhe também o seu pedido. Pode ainda apresentar queixa à Comissão Nacional de Proteção de Dados, CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Segurança",
+        body: [
+          "O site funciona apenas com HTTPS, as palavras-passe são guardadas cifradas e os links de marcação e de avaliação são pessoais e difíceis de adivinhar. Não partilhe o seu link pessoal com outras pessoas.",
+        ],
+      },
+      {
+        title: "10. Alterações",
+        body: ["Se alterarmos esta política, publicamos aqui a nova versão com a respetiva data. As alterações importantes serão anunciadas no site."],
+      },
+    ],
+  };
+}
+
+export function termsOfUse(locale: "pt" | "en"): LegalDoc {
+  const o = operator();
+  if (locale === "en") {
+    return {
+      title: "Terms of use",
+      updated: "Last updated: 15 October 2026",
+      intro: `These terms govern the use of astrabela.com, run by ${who()}. By using the site or creating a business account you accept them.`,
+      sections: [
+        {
+          title: "1. The service",
+          body: [
+            "Astrabela lets clients find beauty salons, barbershops and restaurants, book appointments online, leave reviews after a confirmed visit and see restaurant menus. Salons and restaurants manage their profile, team, services, calendar and menu in their business account.",
+          ],
+        },
+        {
+          title: "2. For clients",
+          body: [
+            [
+              "Using Astrabela is free and needs no account.",
+              "A booking is an agreement between you and the salon. Services, prices and duration are set by the salon, and the service is provided by the salon, not by Astrabela.",
+              "Astrabela does not take payments: you pay the salon directly.",
+              "You can cancel through the personal link you receive. Please cancel if you cannot come.",
+            ],
+          ],
+        },
+        {
+          title: "3. Reviews",
+          body: [
+            "Only clients with a visit booked through Astrabela or confirmed by the salon can leave a review, once per visit, through their personal link. A review must:",
+            [
+              "describe your own real experience;",
+              "contain no insults, threats or discrimination;",
+              "contain no personal data of other people, and no advertising or links.",
+            ],
+            "We may hide reviews that break these rules. The salon cannot delete or edit reviews; it can reply publicly or report a review to our moderation.",
+          ],
+        },
+        {
+          title: "4. For salons and restaurants",
+          body: [
+            [
+              "The information in your profile, prices and menu must be true and kept up to date. You are responsible for it and for the services you provide.",
+              "Keep your password secret; you are responsible for activity in your account.",
+              "Do not create fake bookings, reviews or invitations, and do not ask for reviews in exchange for rewards.",
+              "Only listings with an active subscription or free period appear in search.",
+            ],
+          ],
+        },
+        {
+          title: "5. Prices",
+          body: [
+            "For salons and barbershops the first 3 months are free and no card is needed to start. After that, staying listed needs a subscription:",
+            PRICES.en,
+            "Restaurant menus are free. Payment terms are shown before any charge. We may change prices with at least 30 days' notice; the change applies from your next billing period.",
+          ],
+        },
+        {
+          title: "6. Data processing agreement (businesses)",
+          body: [
+            "For client data in bookings, the business is the controller and Astrabela is its processor (Art. 28 GDPR). Astrabela:",
+            [
+              "processes this data only to provide the service and on the business's instructions given through the site;",
+              "keeps it confidential and protected with appropriate security measures;",
+              "uses only the sub-processors listed in the privacy policy and informs businesses before adding new ones;",
+              "helps the business answer clients' requests and report data breaches;",
+              "deletes or returns the data when the account is closed, except what the law requires us to keep.",
+            ],
+          ],
+        },
+        {
+          title: "7. Suspension and closing an account",
+          body: [
+            "You can close your business account at any time by writing to us. We may suspend or remove a listing that breaks these terms, the law or the rights of others, and we will explain why.",
+          ],
+        },
+        {
+          title: "8. Liability",
+          body: [
+            "We work to keep the site available and correct, but we cannot guarantee it is always free of interruptions or errors. Astrabela is not a party to the agreement between client and salon and is not liable for the services provided by salons. Nothing in these terms limits the rights consumers have under the law.",
+          ],
+        },
+        {
+          title: "9. Law and complaints",
+          body: [
+            `These terms are governed by Portuguese law. For any complaint write to ${o.email}. Consumers may also use the electronic complaints book (www.livroreclamacoes.pt) and, in a dispute, an alternative dispute resolution entity such as CNIACC (www.cniacc.pt).`,
+          ],
+        },
+        {
+          title: "10. Changes",
+          body: ["We may update these terms. The new version is published here with its date; businesses will be told about important changes in advance."],
+        },
+      ],
+    };
+  }
+  return {
+    title: "Termos de utilização",
+    updated: "Última atualização: 15 de outubro de 2026",
+    intro: `Estes termos regulam a utilização de astrabela.com, gerido por ${who()}. Ao usar o site ou ao criar uma conta de empresa, aceita-os.`,
+    sections: [
+      {
+        title: "1. O serviço",
+        body: [
+          "A Astrabela permite aos clientes encontrar salões de beleza, barbearias e restaurantes, marcar serviços online, avaliar depois de uma visita confirmada e consultar menus de restaurantes. Os salões e restaurantes gerem o perfil, a equipa, os serviços, a agenda e o menu na sua conta de empresa.",
+        ],
+      },
+      {
+        title: "2. Para clientes",
+        body: [
+          [
+            "Usar a Astrabela é gratuito e não precisa de conta.",
+            "A marcação é um acordo entre si e o salão. Os serviços, preços e duração são definidos pelo salão, e o serviço é prestado pelo salão, não pela Astrabela.",
+            "A Astrabela não recebe pagamentos: paga diretamente ao salão.",
+            "Pode cancelar através do link pessoal que recebe. Cancele, por favor, se não puder comparecer.",
+          ],
+        ],
+      },
+      {
+        title: "3. Avaliações",
+        body: [
+          "Só podem avaliar clientes com uma visita marcada pela Astrabela ou confirmada pelo salão, uma vez por visita, através do seu link pessoal. Uma avaliação deve:",
+          [
+            "descrever a sua própria experiência real;",
+            "não conter insultos, ameaças nem discriminação;",
+            "não conter dados pessoais de outras pessoas, publicidade ou links.",
+          ],
+          "Podemos ocultar avaliações que violem estas regras. O salão não pode apagar nem editar avaliações; pode responder publicamente ou denunciar uma avaliação à moderação.",
+        ],
+      },
+      {
+        title: "4. Para salões e restaurantes",
+        body: [
+          [
+            "A informação do perfil, os preços e o menu devem ser verdadeiros e estar atualizados. É responsável por eles e pelos serviços que presta.",
+            "Mantenha a palavra-passe em segredo; é responsável pela atividade na sua conta.",
+            "Não crie marcações, avaliações ou pedidos de avaliação falsos, nem peça avaliações em troca de recompensas.",
+            "Só aparecem na pesquisa os perfis com subscrição ativa ou período gratuito.",
+          ],
+        ],
+      },
+      {
+        title: "5. Preços",
+        body: [
+          "Para salões e barbearias, os primeiros 3 meses são grátis e não é preciso cartão para começar. Depois, para continuar visível é necessária uma subscrição:",
+          PRICES.pt,
+          "Os menus de restaurantes são gratuitos. As condições de pagamento são apresentadas antes de qualquer cobrança. Podemos alterar os preços com pelo menos 30 dias de aviso; a alteração aplica-se a partir do período de faturação seguinte.",
+        ],
+      },
+      {
+        title: "6. Acordo de tratamento de dados (empresas)",
+        body: [
+          "Quanto aos dados dos clientes nas marcações, a empresa é a responsável pelo tratamento e a Astrabela é a sua subcontratante (art. 28.º do RGPD). A Astrabela:",
+          [
+            "trata estes dados apenas para prestar o serviço e segundo as instruções que a empresa dá através do site;",
+            "mantém-nos confidenciais e protegidos com medidas de segurança adequadas;",
+            "usa apenas os subcontratantes indicados na política de privacidade e informa as empresas antes de acrescentar outros;",
+            "ajuda a empresa a responder aos pedidos dos clientes e a comunicar violações de dados;",
+            "apaga ou devolve os dados quando a conta é encerrada, exceto o que a lei nos obrigue a guardar.",
+          ],
+        ],
+      },
+      {
+        title: "7. Suspensão e encerramento da conta",
+        body: [
+          "Pode encerrar a sua conta de empresa a qualquer momento, escrevendo-nos. Podemos suspender ou retirar um perfil que viole estes termos, a lei ou os direitos de terceiros, explicando o motivo.",
+        ],
+      },
+      {
+        title: "8. Responsabilidade",
+        body: [
+          "Esforçamo-nos por manter o site disponível e correto, mas não podemos garantir que funcione sempre sem interrupções ou erros. A Astrabela não é parte no acordo entre cliente e salão e não responde pelos serviços prestados pelos salões. Nada nestes termos limita os direitos que a lei garante aos consumidores.",
+        ],
+      },
+      {
+        title: "9. Lei aplicável e reclamações",
+        body: [
+          `Estes termos regem-se pela lei portuguesa. Para qualquer reclamação, escreva para ${o.email}. Os consumidores podem também usar o Livro de Reclamações Eletrónico (www.livroreclamacoes.pt) e, em caso de litígio, recorrer a uma entidade de resolução alternativa de litígios, como o CNIACC (www.cniacc.pt).`,
+        ],
+      },
+      {
+        title: "10. Alterações",
+        body: ["Podemos atualizar estes termos. A nova versão é publicada aqui com a respetiva data; as empresas serão avisadas com antecedência das alterações importantes."],
+      },
+    ],
+  };
+}
