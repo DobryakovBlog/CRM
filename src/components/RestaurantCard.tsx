@@ -13,7 +13,7 @@ export async function RestaurantCard({ restaurant: r }: { restaurant: Restaurant
   return (
     <Link
       href={`/restaurant/${r.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-white transition-shadow hover:shadow-[0_18px_40px_-24px_rgb(28_26_31/0.45)]"
+      className="group flex h-full flex-col overflow-hidden rounded-md border border-line bg-white transition-shadow hover:shadow-[0_18px_40px_-24px_rgb(20_35_60/0.45)]"
     >
       <Monogram name={r.name} className="aspect-[16/9] w-full" />
       <div className="flex flex-1 flex-col gap-2 p-5">

@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
-/* Quiet luxury: porcelain ground, ink type, champagne gold used sparingly for accents. */
+/* Azulejo: ivory ground, deep tile-blue for type and hero bands, gold kept for the star and accents. */
 @theme {
-  --color-ink: #1c1a1f;
-  --color-plum: #2a2230;
-  --color-plum-soft: #3a3041;
-  --color-gold: #a8834f;
-  --color-gold-deep: #85663b;
-  --color-gold-soft: #e8dcc6;
-  --color-porcelain: #f8f7f5;
-  --color-sand: #f1ece6;
-  --color-line: #e6e1dc;
-  --color-muted: #6e6772;
+  --color-ink: #14233c;
+  --color-navy: #14233c;
+  --color-navy-soft: #22385e;
+  --color-cobalt: #2f5da8;
+  --color-gold: #c9a24a;
+  --color-gold-deep: #876616;
+  --color-gold-soft: #e8d9b0;
+  --color-mist: #c3cad6;
+  --color-porcelain: #f8f5ef;
+  --color-sand: #efeadf;
+  --color-line: #e3e0d8;
+  --color-muted: #5d6b80;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: var(--font-bodoni), "Didot", "Bodoni 72", Georgia, serif;
 }
@@ -38,13 +40,13 @@ h1, h2, h3 {
 }
 
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-ink px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-plum-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-ink px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-navy-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:opacity-50;
 }
 .btn-outline {
   @apply inline-flex items-center justify-center gap-2 rounded-[3px] border border-line bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
 }
 .btn-gold {
-  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-gold px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-colors hover:bg-gold-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  @apply inline-flex items-center justify-center gap-2 rounded-[3px] bg-gold px-5 py-2.5 text-sm font-semibold tracking-wide text-navy transition-colors hover:bg-gold-deep hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
 }
 .input {
   @apply w-full rounded-[3px] border border-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold-soft;

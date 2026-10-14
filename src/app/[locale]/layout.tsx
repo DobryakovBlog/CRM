@@ -55,7 +55,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
             </div>
           </header>
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">{children}</main>
-          <footer className="bg-plum text-gold-soft/80">
+          <footer className="bg-navy text-mist">
             <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-6">
               <div className="space-y-2">
                 <Logo inverted className="h-12 w-auto" />

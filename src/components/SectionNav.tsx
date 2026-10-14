@@ -9,7 +9,7 @@ export function SectionNav({ salons, restaurants }: { salons: string; restaurant
   // The business cabinet belongs to neither section.
   const inSalons = !inRestaurants && !path.startsWith("/business");
   const item = (active: boolean) =>
-    `rounded-full px-3 py-1.5 text-sm transition-colors sm:px-4 ${active ? "bg-plum text-white" : "text-muted hover:text-ink"}`;
+    `rounded-full px-3 py-1.5 text-sm transition-colors sm:px-4 ${active ? "bg-navy text-white" : "text-muted hover:text-ink"}`;
   return (
     <nav className="flex items-center rounded-full border border-line bg-white p-0.5">
       <Link href="/" className={item(inSalons)} aria-current={inSalons ? "page" : undefined}>

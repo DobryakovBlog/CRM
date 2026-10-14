@@ -28,11 +28,11 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
 
   return (
     <div className="mx-auto max-w-3xl space-y-8">
-      <header className="-mx-4 -mt-10 bg-plum px-6 pb-10 pt-12 text-center text-white sm:mx-0 sm:rounded-b-md sm:px-12">
+      <header className="-mx-4 -mt-10 bg-navy px-6 pb-10 pt-12 text-center text-white sm:mx-0 sm:rounded-b-md sm:px-12">
         <p className="eyebrow text-gold">{[r.cuisine, r.district, cityName(r.city)].filter(Boolean).join(" · ")}</p>
         <h1 className="font-display mt-4 text-4xl leading-tight sm:text-5xl">{r.name}</h1>
-        {r.description && <p className="mx-auto mt-4 max-w-xl text-gold-soft/85">{r.description}</p>}
-        <p className="mt-5 text-sm text-gold-soft/70">
+        {r.description && <p className="mx-auto mt-4 max-w-xl text-mist">{r.description}</p>}
+        <p className="mt-5 text-sm text-mist/80">
           {r.address}
           {r.phone && (
             <>

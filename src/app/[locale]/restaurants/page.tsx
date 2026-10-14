@@ -28,10 +28,10 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
 
   return (
     <div className="space-y-12">
-      <section className="-mt-10 rounded-b-md bg-plum px-6 pb-10 pt-14 text-white sm:px-12 sm:pb-12 sm:pt-16">
+      <section className="-mt-10 rounded-b-md bg-navy px-6 pb-10 pt-14 text-white sm:px-12 sm:pb-12 sm:pt-16">
         <p className="eyebrow text-gold">{t("eyebrow")}</p>
         <h1 className="font-display mt-4 max-w-3xl text-4xl leading-[1.08] sm:text-5xl">{t("title")}</h1>
-        <p className="mt-5 max-w-xl text-base text-gold-soft/85 sm:text-lg">{t("subtitle")}</p>
+        <p className="mt-5 max-w-xl text-base text-mist sm:text-lg">{t("subtitle")}</p>
         <form
           action={`/${await getLocale()}/restaurants`}
           className="mt-8 grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-2 sm:p-4 lg:grid-cols-[0.8fr_1.2fr_1.4fr_auto]"

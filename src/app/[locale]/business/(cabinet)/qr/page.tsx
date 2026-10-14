@@ -12,7 +12,7 @@ export default async function QrPage({ params }: PageProps<"/[locale]/business/q
   const t = await getTranslations("business.qr");
   // No locale in the link: each guest gets the menu in their phone's language.
   const url = `${await siteOrigin()}/restaurant/${salon.slug}`;
-  const svg = await QRCode.toString(url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#2a2230", light: "#ffffff" } });
+  const svg = await QRCode.toString(url, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#14233c", light: "#ffffff" } });
 
   return (
     <div className="space-y-6">

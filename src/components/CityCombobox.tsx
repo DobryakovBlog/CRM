@@ -170,7 +170,7 @@ export function CityCombobox({
           id={listId}
           role="listbox"
           aria-label={label}
-          className="absolute left-0 right-0 z-30 mt-1 max-h-72 overflow-auto rounded-md border border-line bg-white py-1 text-ink shadow-[0_12px_32px_-12px_rgb(28_26_31/0.35)]"
+          className="absolute left-0 right-0 z-30 mt-1 max-h-72 overflow-auto rounded-md border border-line bg-white py-1 text-ink shadow-[0_12px_32px_-12px_rgb(20_35_60/0.35)]"
         >
           {list.length === 0 && <li className="px-4 py-2.5 text-sm text-muted">{noMatch}</li>}
           {list.map((o, i) => (
