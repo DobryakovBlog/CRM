@@ -7,6 +7,7 @@ import { INVITE_MAX_AGE_DAYS, salonInvitations } from "@/server/invitations";
 import { invitationMessage } from "@/server/notify";
 import { normalizeSocial } from "@/lib/social";
 import { ShareInvite } from "@/components/ShareInvite";
+import { PhoneInput } from "@/components/PhoneInput";
 import { inviteAction, replyAction } from "../actions";
 
 export default async function ReviewsPage({ params, searchParams }: PageProps<"/[locale]/business/reviews">) {
@@ -65,8 +66,7 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
               <input id="clientEmail" name="clientEmail" type="email" maxLength={120} className="input" />
             </div>
             <div>
-              <label className="label" htmlFor="clientPhone">{t("inviteClientPhone")}</label>
-              <input id="clientPhone" name="clientPhone" type="tel" maxLength={30} className="input" />
+              <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("inviteClientPhone")} invalidText={t("inviteErrors.phone")} required={false} />
             </div>
             <div>
               <label className="label" htmlFor="clientLocale">{t("inviteLanguage")}</label>

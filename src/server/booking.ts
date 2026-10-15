@@ -13,9 +13,10 @@ import {
   workingHours,
 } from "@/db/schema";
 import { availableSlots, localMinuteToDate, overlaps, type Interval } from "@/lib/availability";
+import { normalizePhone } from "@/lib/phone";
 
 export class BookingError extends Error {
-  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid" | "duplicate" | "limit") {
+  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid" | "duplicate" | "limit" | "phone") {
     super(code);
   }
 }
@@ -157,11 +158,20 @@ export async function createBooking(db: Db, input: NewBooking) {
       }
     }
 
+    // Every visit needs a phone number that can exist; it also identifies returning clients.
+    const phone = normalizePhone(input.client.phone);
+    if (!phone) throw new BookingError("phone");
     const email = input.client.email.trim().toLowerCase();
-    const phone = input.client.phone.trim();
     let [client] = email
       ? await tx.select().from(clients).where(and(eq(clients.salonId, input.salonId), eq(clients.email, email)))
       : [];
+    if (!client) {
+      [client] = await tx
+        .select()
+        .from(clients)
+        .where(and(eq(clients.salonId, input.salonId), eq(clients.phone, phone)))
+        .limit(1);
+    }
     if (!client) {
       [client] = await tx
         .insert(clients)

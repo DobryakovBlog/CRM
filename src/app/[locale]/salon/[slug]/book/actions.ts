@@ -16,7 +16,7 @@ const Input = z.object({
   back: z.string().startsWith("/salon/"),
   name: z.string().trim().min(2).max(80),
   email: z.email(),
-  phone: z.string().trim().min(6).max(30),
+  phone: z.string().trim().max(30),
   note: z.string().max(500).optional().default(""),
 });
 

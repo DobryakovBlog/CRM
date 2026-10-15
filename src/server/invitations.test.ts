@@ -93,7 +93,7 @@ describe("review invitations", () => {
   });
 
   it("works without an e-mail, so the salon can send the link itself", async () => {
-    const noEmail = { name: "Joana", email: "", phone: "912345678" };
+    const noEmail = { name: "Joana", email: "", phone: "912000222" };
     expect(await code(invite({ client: noEmail }))).toBe("ok");
     // The same phone is the same client, so the 30-day rule still holds.
     expect(await code(invite({ client: noEmail, visitDate: "2026-10-01" }))).toBe("duplicate");
