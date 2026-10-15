@@ -43,6 +43,13 @@
       "when": 1792010903140,
       "tag": "0005_social_links",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792025794380,
+      "tag": "0006_customer_accounts",
+      "breakpoints": true
     }
   ]
 }

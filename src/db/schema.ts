@@ -69,7 +69,7 @@ export const reviewStatus = pgEnum("review_status", ["published", "hidden"]);
 export const users = pgTable("users", {
   id: id(),
   email: text("email").notNull().unique(),
-  passwordHash: text("password_hash").notNull(),
+  passwordHash: text("password_hash"), // null for accounts created with Google
   name: text("name").notNull(),
   isAdmin: boolean("is_admin").notNull().default(false),
   createdAt: createdAt(),
@@ -80,6 +80,24 @@ export const sessions = pgTable("sessions", {
   userId: uuid("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+});
+
+// Clients who signed in (with Google) to see their bookings across salons.
+// Bookings stay with each salon; they are found by the verified e-mail.
+export const customers = pgTable("customers", {
+  id: id(),
+  email: text("email").notNull().unique(),
+  name: text("name").notNull(),
+  googleId: text("google_id").unique(),
+  createdAt: createdAt(),
+});
+
+export const customerSessions = pgTable("customer_sessions", {
+  id: text("id").primaryKey(), // sha256 of the cookie token
+  customerId: uuid("customer_id")
+    .notNull()
+    .references(() => customers.id, { onDelete: "cascade" }),
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
 });
 

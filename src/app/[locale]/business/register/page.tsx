@@ -3,6 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CityCombobox } from "@/components/CityCombobox";
 import { cityOptions } from "@/lib/cities";
 import { registerAction } from "../actions";
+import { cookies } from "next/headers";
+import { GoogleButton } from "@/components/GoogleButton";
+import { GOOGLE_SIGNUP_COOKIE, googleConfigured, readGoogleSignup } from "@/server/google";
 
 const FIELDS = [
   ["salonName", "text", "organization"],
@@ -24,6 +27,9 @@ export default async function RegisterPage({
   const error = sp.error;
   const kind = sp.kind === "restaurant" ? "restaurant" : "salon";
   const t = await getTranslations("business.register");
+  const ta = await getTranslations("account");
+  const google = readGoogleSignup((await cookies()).get(GOOGLE_SIGNUP_COOKIE)?.value);
+  const fields = FIELDS.filter(([name]) => !google || (name !== "email" && name !== "password"));
   const ts = await getTranslations("search");
   return (
     <form action={registerAction} className="card mx-auto max-w-md space-y-4">
@@ -45,7 +51,17 @@ export default async function RegisterPage({
         </div>
         <p className="mt-2 text-xs text-muted">{t("kindHint")}</p>
       </fieldset>
-      {FIELDS.map(([name, type, auto]) => (
+      {google ? (
+        <p className="notice">{t("googleAs", { email: google.email })}</p>
+      ) : (
+        googleConfigured() && (
+          <>
+            <GoogleButton href={`/api/auth/google/start?as=business&locale=${locale}`} label={ta("google")} />
+            <p className="text-center text-xs uppercase tracking-widest text-muted">{ta("or")}</p>
+          </>
+        )
+      )}
+      {fields.map(([name, type, auto]) => (
         <div key={name}>
           <label className="label" htmlFor={name}>
             {t(`fields.${name}`)}
@@ -68,6 +84,7 @@ export default async function RegisterPage({
               type={type}
               required
               autoComplete={auto}
+              defaultValue={name === "name" ? google?.name : undefined}
               minLength={name === "password" ? 8 : undefined}
               className="input"
             />

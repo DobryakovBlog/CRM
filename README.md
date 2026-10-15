@@ -37,6 +37,8 @@ npm run dev                   # http://localhost:3000
 - Сайт закрыт от поисковиков (`noindex` и `robots.txt`), пока не задана `SITE_PUBLIC=1`. После изменения переменной нужен новый деплой.
 - Администраторы: e-mail через запятую в переменной `ADMIN_EMAILS` (вход с этим e-mail открывает вкладку «Administração»), либо `DATABASE_URL=... npx tsx scripts/make-admin.ts email@example.com`.
 - Страницы /privacy и /terms: кто ведёт сайт, берётся из `LEGAL_NAME`, `LEGAL_NIF`, `LEGAL_ADDRESS`, `LEGAL_EMAIL` (по умолчанию «Astrabela» и contacto@astrabela.com); после изменения нужен Redeploy.
+- Вход через Google (клиенты и бизнес): переменные `GOOGLE_CLIENT_ID` и `GOOGLE_CLIENT_SECRET` из Google Cloud Console (OAuth client, тип Web application, redirect URI `https://astrabela.com/api/auth/google/callback`). Без них кнопки Google скрыты.
+- Миграции базы применяются только при production-деплое (`VERCEL_ENV=production`); превью их пропускают, потому что используют ту же базу.
 - `vercel.json` держит серверные функции во Франкфурте (`fra1`), рядом с базой Neon.
 - `npm run jobs` на Vercel пока не запускается; его подключим через Vercel Cron вместе с почтовым сервисом.
 

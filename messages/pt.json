@@ -11,7 +11,8 @@
     "salons": "Salões",
     "restaurants": "Restaurantes",
     "privacy": "Privacidade",
-    "terms": "Termos"
+    "terms": "Termos",
+    "signIn": "Entrar"
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
@@ -121,7 +122,8 @@
     "phone": "Telemóvel",
     "note": "Nota para o salão (opcional)",
     "privacy": "Aceito que o salão e a Astrabela tratem os meus dados para gerir esta marcação (<privacy>política de privacidade</privacy>).",
-    "confirm": "Confirmar marcação"
+    "confirm": "Confirmar marcação",
+    "googleFill": "Tem conta Google? Entre e preenchemos os seus dados."
   },
   "booking": {
     "created": "Marcação confirmada! Enviámos os detalhes por e-mail.",
@@ -202,7 +204,8 @@
         "salon": "Salão",
         "restaurant": "Restaurante"
       },
-      "kindHint": "Salões de beleza, barbearias, unhas e estética escolhem «Salão». Depois indique as categorias dos serviços, por exemplo «Barbearia»."
+      "kindHint": "Salões de beleza, barbearias, unhas e estética escolhem «Salão». Depois indique as categorias dos serviços, por exemplo «Barbearia».",
+      "googleAs": "A registar com Google como {email}. Não precisa de palavra-passe."
     },
     "salonStatus": {
       "draft": "Rascunho",
@@ -505,5 +508,36 @@
     "tiktok": "TikTok",
     "whatsapp": "WhatsApp",
     "website": "Site"
+  },
+  "account": {
+    "title": "Entrar",
+    "google": "Continuar com Google",
+    "or": "ou",
+    "googleSoon": "O início de sessão com Google fica disponível em breve.",
+    "googleError": "Não foi possível entrar com Google. Tente novamente.",
+    "clientsEyebrow": "Para clientes",
+    "clientsTitle": "A sua conta Astrabela",
+    "clientsBenefit1": "Todas as suas marcações num só lugar, em qualquer salão.",
+    "clientsBenefit2": "Marque mais depressa: nome e e-mail já preenchidos.",
+    "clientsBenefit3": "Avalie as visitas e reveja as suas avaliações.",
+    "noAccountNeeded": "Também pode marcar sem conta.",
+    "businessEyebrow": "Para negócios",
+    "businessTitle": "Salões e restaurantes",
+    "businessText": "Gira a agenda, a equipa, os serviços, o menu e as avaliações do seu negócio.",
+    "businessLogin": "Entrar",
+    "businessRegister": "Registar negócio",
+    "openCabinet": "Abrir o painel do negócio",
+    "hello": "Olá, {name}",
+    "logout": "Terminar sessão",
+    "upcoming": "Próximas marcações",
+    "noUpcoming": "Não tem marcações futuras.",
+    "findSalon": "Encontrar um salão",
+    "past": "Marcações anteriores",
+    "open": "Ver",
+    "bookingsHint": "Aqui aparecem as marcações feitas com o seu e-mail do Google.",
+    "deleteTitle": "Apagar a conta",
+    "deleteText": "A conta e o início de sessão são apagados. As marcações continuam nos salões, que as guardam para prestar o serviço.",
+    "deleteConfirm": "Apagar a minha conta",
+    "deleted": "A sua conta foi apagada."
   }
 }
