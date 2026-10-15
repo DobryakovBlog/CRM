@@ -199,10 +199,10 @@
       "submit": "Criar conta",
       "kind": "Tipo de negócio",
       "kinds": {
-        "salon": "Salão de beleza",
-        "barbershop": "Barbearia",
+        "salon": "Salão",
         "restaurant": "Restaurante"
-      }
+      },
+      "kindHint": "Salões de beleza, barbearias, unhas e estética escolhem «Salão». Depois indique as categorias dos serviços, por exemplo «Barbearia»."
     },
     "salonStatus": {
       "draft": "Rascunho",

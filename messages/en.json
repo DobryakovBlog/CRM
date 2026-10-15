@@ -199,10 +199,10 @@
       "submit": "Create account",
       "kind": "Type of business",
       "kinds": {
-        "salon": "Beauty salon",
-        "barbershop": "Barbershop",
+        "salon": "Salon",
         "restaurant": "Restaurant"
-      }
+      },
+      "kindHint": "Beauty salons, barbershops, nails and aesthetics choose “Salon”. Then pick your service categories, such as “Barbershop”."
     },
     "salonStatus": {
       "draft": "Draft",
