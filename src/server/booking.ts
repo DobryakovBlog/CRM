@@ -110,6 +110,7 @@ export type NewBooking = {
   note?: string;
   locale?: string;
   source?: "marketplace" | "manual";
+  customerId?: string | null;
   now?: Date;
 };
 
@@ -193,6 +194,7 @@ export async function createBooking(db: Db, input: NewBooking) {
         clientNote: input.note ?? "",
         locale: input.locale ?? "pt",
         source: input.source ?? "marketplace",
+        customerId: input.customerId ?? null,
       })
       .returning();
     return booking;

@@ -5,9 +5,7 @@ import { z } from "zod";
 import { isPlace } from "@/lib/cities";
 import { db } from "@/db";
 import { redirect } from "@/i18n/navigation";
-import { salons } from "@/db/schema";
-import { cabinetHome, endSession, registerSalonOwner, startSession, verifyCredentials } from "@/server/auth";
-import { eq } from "drizzle-orm";
+import { endSession, registerSalonOwner, startSession } from "@/server/auth";
 import { cookies } from "next/headers";
 import { GOOGLE_SIGNUP_COOKIE, readGoogleSignup } from "@/server/google";
 
@@ -45,15 +43,6 @@ export async function registerAction(form: FormData) {
   if (google) jar.delete(GOOGLE_SIGNUP_COOKIE);
   await startSession(userId);
   redirect({ href: "/business/profile?welcome=1", locale });
-}
-
-export async function loginAction(form: FormData) {
-  const locale = await getLocale();
-  const user = await verifyCredentials(db, String(form.get("email") ?? ""), String(form.get("password") ?? ""));
-  if (!user) return redirect({ href: "/business/login?error=1", locale });
-  await startSession(user.id);
-  const [salon] = await db.select({ kind: salons.kind }).from(salons).where(eq(salons.ownerId, user.id));
-  redirect({ href: cabinetHome(salon?.kind ?? "salon"), locale });
 }
 
 export async function logoutAction() {

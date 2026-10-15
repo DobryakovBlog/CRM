@@ -25,7 +25,7 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
           <Link href="/business/register" className="btn-gold">
             {t("landing.start", { months: TRIAL_MONTHS })}
           </Link>
-          <Link href="/business/login" className="btn-outline border-white/30 bg-transparent text-white hover:border-white">
+          <Link href="/account" className="btn-outline border-white/30 bg-transparent text-white hover:border-white">
             {t("login.title")}
           </Link>
         </div>

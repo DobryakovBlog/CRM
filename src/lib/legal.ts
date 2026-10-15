@@ -43,7 +43,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
               "name, e-mail and phone number you give when booking, and the note you leave for the salon;",
               "the booking itself: salon, professional, service, date, time and status;",
               "your review: rating, text and the name you choose to show;",
-              "if you create a client account with Google: your name, e-mail and Google account ID (we never see your Google password).",
+              "if you create a client account: your name and e-mail, plus a password stored only as a secure hash, or, with Google, your Google account ID (we never see your Google password).",
             ],
             "When a salon or restaurant uses Astrabela (businesses):",
             [
@@ -137,7 +137,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
             "nome, e-mail e telemóvel que indica na marcação, e a nota que deixa ao salão;",
             "a própria marcação: salão, profissional, serviço, data, hora e estado;",
             "a sua avaliação: nota, texto e o nome que escolhe mostrar;",
-            "se criar uma conta de cliente com Google: nome, e-mail e identificador da conta Google (nunca vemos a sua palavra-passe Google).",
+            "se criar uma conta de cliente: nome e e-mail, e uma palavra-passe guardada apenas em forma cifrada (hash) ou, com Google, o identificador da conta Google (nunca vemos a sua palavra-passe Google).",
           ],
           "Quando um salão ou restaurante usa a Astrabela (empresas):",
           [

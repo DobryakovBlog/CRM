@@ -42,7 +42,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
   const error = str(sp.error);
   const customer = chosen ? await currentCustomer() : null;
   // Before the details form, a guest is offered to sign in first; skipping is one tap.
-  const offerAccount = Boolean(chosen && !customer && googleConfigured() && sp.as !== "guest");
+  const offerAccount = Boolean(chosen && !customer && sp.as !== "guest");
 
   const href = (over: Record<string, string | null>) => {
     const q = new URLSearchParams({ service: service.id, date, ...(staffId ? { staff: staffId } : {}) });
@@ -124,13 +124,20 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             <div className="space-y-3">
               <h3 className="font-semibold">{t("gateTitle")}</h3>
               <p className="text-sm text-muted">{t("gateText")}</p>
-              <GoogleButton
-                href={`/api/auth/google/start?as=client&locale=${locale}&next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`}
-                label={ta("google")}
-              />
-              <Link href={`${href({ time: chosen.startsAt.toISOString(), as: "guest" })}#details`} className="btn-outline block w-full text-center">
-                {t("guest")}
-              </Link>
+              <div className="grid grid-cols-2 gap-3">
+                <Link href={`/account?next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`} className="btn text-center">
+                  {t("signIn")}
+                </Link>
+                <Link href={`${href({ time: chosen.startsAt.toISOString(), as: "guest" })}#details`} className="btn-outline text-center">
+                  {t("guest")}
+                </Link>
+              </div>
+              {googleConfigured() && (
+                <GoogleButton
+                  href={`/api/auth/google/start?as=client&locale=${locale}&next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`}
+                  label={ta("google")}
+                />
+              )}
             </div>
           ) : (
           <form action={bookAction} className="space-y-3">

@@ -90,6 +90,9 @@ export const customers = pgTable("customers", {
   email: text("email").notNull().unique(),
   name: text("name").notNull(),
   googleId: text("google_id").unique(),
+  // Null for Google-only accounts. A password account's e-mail is not verified (no e-mails yet).
+  passwordHash: text("password_hash"),
+  isAdmin: boolean("is_admin").notNull().default(false),
   createdAt: createdAt(),
 });
 
@@ -250,6 +253,8 @@ export const bookings = pgTable(
     clientId: uuid("client_id")
       .notNull()
       .references(() => clients.id),
+    // The client's Astrabela account, when they booked signed in.
+    customerId: uuid("customer_id").references(() => customers.id, { onDelete: "set null" }),
     startsAt: timestamp("starts_at", { withTimezone: true }).notNull(),
     endsAt: timestamp("ends_at", { withTimezone: true }).notNull(),
     status: bookingStatus("status").notNull().default("confirmed"),

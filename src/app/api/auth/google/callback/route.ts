@@ -5,7 +5,7 @@ import type { NextRequest } from "next/server";
 import { db } from "@/db";
 import { salons, users } from "@/db/schema";
 import { cabinetHome, startSession } from "@/server/auth";
-import { startCustomerSession, upsertGoogleCustomer } from "@/server/customers";
+import { isAdminCustomer, startCustomerSession, upsertGoogleCustomer } from "@/server/customers";
 import {
   finishGoogleSignIn,
   GOOGLE_SIGNUP_COOKIE,
@@ -34,14 +34,15 @@ export async function GET(request: NextRequest) {
     redirect(`/${locale}/account?error=google`);
   }
 
-  if (saved.as === "client") {
+  // The shared sign-in page: a business owner's e-mail opens their cabinet.
+  const [user] = await db.select({ id: users.id }).from(users).where(eq(users.email, profile.email));
+  if (saved.as === "client" && (saved.next || !user)) {
     const customer = await upsertGoogleCustomer(db, profile);
     await startCustomerSession(customer.id, customer.name);
-    redirect(saved.next ? `/${locale}${saved.next}` : `/${locale}/account`);
+    redirect(`/${locale}${saved.next || (isAdminCustomer(customer) ? "/admin" : "/account")}`);
   }
 
   // Business: sign in to an existing account with that e-mail, or finish signing up.
-  const [user] = await db.select({ id: users.id }).from(users).where(eq(users.email, profile.email));
   if (user) {
     await startSession(user.id);
     const [salon] = await db.select({ kind: salons.kind }).from(salons).where(eq(salons.ownerId, user.id));
