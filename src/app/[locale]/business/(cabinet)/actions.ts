@@ -199,7 +199,7 @@ export async function inviteAction(form: FormData) {
     throw e;
   }
   await sendReviewInvitation(db, bookingId);
-  redirect(`${back}?invited=1`);
+  redirect(`${back}?invited=${bookingId}#invite-${bookingId}`);
 }
 
 // --- Platform admin -------------------------------------------------------

@@ -87,9 +87,32 @@ async function loadRows(db: Db, where: ReturnType<typeof and>) {
     .where(where);
 }
 
+/** The client's personal page for a booking: manage it, or review it after the visit. */
+export const bookingLink = (manageToken: string, locale: string) => `${appUrl()}/${locale}/booking/${manageToken}`;
+
+/** Review invitation as text the salon can send itself (WhatsApp, SMS), with its link. */
+export function invitationMessage(i: {
+  locale: string;
+  manageToken: string;
+  clientName: string;
+  staffName: string;
+  salonName: string;
+  serviceName: string;
+}) {
+  const locale = i.locale === "en" ? "en" : "pt";
+  const link = bookingLink(i.manageToken, locale);
+  const row = {
+    client: { name: i.clientName },
+    staff: { name: i.staffName },
+    salon: { name: i.salonName },
+    service: { name: i.serviceName },
+  } as Row;
+  return { link, text: texts[locale].invite(row, "", link).text };
+}
+
 function render(kind: keyof (typeof texts)["pt"], r: Row) {
   const locale = r.booking.locale === "en" ? "en" : "pt";
-  const link = `${appUrl()}/${locale}/booking/${r.booking.manageToken}`;
+  const link = bookingLink(r.booking.manageToken, locale);
   const msg = texts[locale][kind](r, formatWhen(r.booking.startsAt, r.salon.timezone, locale), link);
   return { to: r.client.email, ...msg };
 }

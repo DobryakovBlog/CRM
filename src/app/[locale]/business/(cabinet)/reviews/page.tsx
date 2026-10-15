@@ -4,6 +4,9 @@ import { formatDateTime, localDate } from "@/lib/format";
 import { requireOwner } from "@/server/auth";
 import { salonReviews, salonServices, salonTeam } from "@/server/cabinet";
 import { INVITE_MAX_AGE_DAYS, salonInvitations } from "@/server/invitations";
+import { invitationMessage } from "@/server/notify";
+import { normalizeSocial } from "@/lib/social";
+import { ShareInvite } from "@/components/ShareInvite";
 import { inviteAction, replyAction } from "../actions";
 
 export default async function ReviewsPage({ params, searchParams }: PageProps<"/[locale]/business/reviews">) {
@@ -35,7 +38,7 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
           <h2 className="font-display text-2xl">{t("inviteTitle")}</h2>
           <p className="mt-1 text-sm text-muted">{t("inviteHint")}</p>
         </div>
-        {sp.invited === "1" && <p className="notice">{t("invited")}</p>}
+        {typeof sp.invited === "string" && <p className="notice">{t("invited")}</p>}
         {typeof sp.error === "string" && <p className="notice-error">{t(`inviteErrors.${sp.error}` as never)}</p>}
         {pairs.length === 0 ? (
           <p className="text-sm text-muted">{t("inviteNoTeam")}</p>
@@ -59,7 +62,7 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
             </div>
             <div>
               <label className="label" htmlFor="clientEmail">{t("inviteClientEmail")}</label>
-              <input id="clientEmail" name="clientEmail" type="email" required maxLength={120} className="input" />
+              <input id="clientEmail" name="clientEmail" type="email" maxLength={120} className="input" />
             </div>
             <div>
               <label className="label" htmlFor="clientPhone">{t("inviteClientPhone")}</label>
@@ -83,13 +86,27 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
             <h3 className="mb-2 text-sm font-semibold">{t("invitationsTitle")}</h3>
             <ul className="divide-y divide-line text-sm">
               {invitations.map((i) => (
-                <li key={i.id} className="flex flex-wrap justify-between gap-2 py-2">
-                  <span>
-                    {i.clientName} <span className="text-muted">· {i.staffName} · {i.serviceName} · {day(i.startsAt)}</span>
-                  </span>
-                  <span className={i.reviewId ? "text-gold-deep" : "text-muted"}>
-                    {i.reviewId ? t("invitationReviewed") : t("invitationWaiting")}
-                  </span>
+                <li
+                  key={i.id}
+                  id={`invite-${i.id}`}
+                  className={`scroll-mt-40 space-y-2 py-2 ${sp.invited === i.id ? "-mx-2 rounded bg-sand px-2" : ""}`}
+                >
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <span>
+                      {i.clientName} <span className="text-muted">· {i.staffName} · {i.serviceName} · {day(i.startsAt)}</span>
+                    </span>
+                    <span className={i.reviewId ? "text-gold-deep" : "text-muted"}>
+                      {i.reviewId ? t("invitationReviewed") : t("invitationWaiting")}
+                    </span>
+                  </div>
+                  {!i.reviewId && (
+                    <ShareInvite
+                      text={invitationMessage(i).text}
+                      whatsapp={i.clientPhone ? normalizeSocial("whatsapp", i.clientPhone) : null}
+                      phone={i.clientPhone}
+                      labels={{ copy: t("shareCopy"), copied: t("shareCopied"), whatsapp: t("shareWhatsapp"), sms: t("shareSms") }}
+                    />
+                  )}
                 </li>
               ))}
             </ul>

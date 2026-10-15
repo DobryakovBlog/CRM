@@ -49,9 +49,11 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
       .where(and(eq(staffServices.staffId, member.id), eq(staffServices.serviceId, service.id)));
     if (!link) throw new BookingError("not_allowed");
 
+    // The salon can send the link itself (WhatsApp, SMS), so the e-mail is optional.
     const email = input.client.email.trim().toLowerCase();
+    const phone = input.client.phone.trim();
     const name = input.client.name.trim();
-    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new BookingError("invalid");
+    if (!name || (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))) throw new BookingError("invalid");
 
     // The visit must have happened, and not too long ago.
     const today = localDate(now, salon.timezone);
@@ -62,7 +64,7 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
 
     // The salon owner cannot invite themselves.
     const [owner] = await tx.select({ email: users.email }).from(users).where(eq(users.id, salon.ownerId));
-    if (owner && owner.email.toLowerCase() === email) throw new BookingError("not_allowed");
+    if (email && owner && owner.email.toLowerCase() === email) throw new BookingError("not_allowed");
 
     const dayAgo = new Date(now.getTime() - DAY);
     const [{ n }] = await tx
@@ -71,7 +73,14 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
       .where(and(eq(bookings.salonId, salonId), eq(bookings.source, "invitation"), gte(bookings.createdAt, dayAgo)));
     if (n >= INVITE_DAILY_LIMIT) throw new BookingError("limit");
 
-    let [client] = await tx.select().from(clients).where(and(eq(clients.salonId, salonId), eq(clients.email, email)));
+    // Same client again: matched by e-mail, or by phone when there is no e-mail.
+    let [client] =
+      email || phone
+        ? await tx
+            .select()
+            .from(clients)
+            .where(and(eq(clients.salonId, salonId), email ? eq(clients.email, email) : eq(clients.phone, phone)))
+        : [];
     if (client) {
       const since = new Date(now.getTime() - INVITE_REPEAT_DAYS * DAY);
       const [recent] = await tx
@@ -89,7 +98,7 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
     } else {
       [client] = await tx
         .insert(clients)
-        .values({ salonId, name, email, phone: input.client.phone.trim() })
+        .values({ salonId, name, email, phone })
         .returning();
     }
 
@@ -125,6 +134,11 @@ export async function salonInvitations(db: Db, salonId: string, limit = 20) {
       startsAt: bookings.startsAt,
       createdAt: bookings.createdAt,
       clientName: clients.name,
+      clientEmail: clients.email,
+      clientPhone: clients.phone,
+      manageToken: bookings.manageToken,
+      locale: bookings.locale,
+      salonName: salons.name,
       staffName: staff.name,
       serviceName: services.name,
       reviewId: reviews.id,
@@ -133,6 +147,7 @@ export async function salonInvitations(db: Db, salonId: string, limit = 20) {
     .innerJoin(clients, eq(clients.id, bookings.clientId))
     .innerJoin(staff, eq(staff.id, bookings.staffId))
     .innerJoin(services, eq(services.id, bookings.serviceId))
+    .innerJoin(salons, eq(salons.id, bookings.salonId))
     .leftJoin(reviews, eq(reviews.bookingId, bookings.id))
     .where(and(eq(bookings.salonId, salonId), eq(bookings.source, "invitation")))
     .orderBy(desc(bookings.createdAt))
