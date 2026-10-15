@@ -17,7 +17,7 @@ const Register = z.object({
   city: z.string().refine(isPlace),
   address: z.string().trim().min(4).max(200),
   phone: z.string().trim().min(6).max(30),
-  kind: z.enum(["salon", "barbershop", "restaurant"]).default("salon"),
+  kind: z.enum(["salon", "restaurant"]).default("salon"),
 });
 
 export async function registerAction(form: FormData) {
@@ -26,10 +26,7 @@ export async function registerAction(form: FormData) {
   if (!parsed.success) return redirect({ href: "/business/register?error=invalid", locale });
   let userId: string;
   try {
-    ({ user: { id: userId } } = await registerSalonOwner(db, {
-      ...parsed.data,
-      kind: parsed.data.kind === "restaurant" ? "restaurant" : "salon",
-    }));
+    ({ user: { id: userId } } = await registerSalonOwner(db, parsed.data));
   } catch (e) {
     if (e instanceof Error && e.message === "email_taken") {
       return redirect({ href: "/business/register?error=email_taken", locale });
