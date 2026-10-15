@@ -4,10 +4,11 @@ import { GoogleButton } from "@/components/GoogleButton";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { formatDateTime } from "@/lib/format";
-import { currentUser } from "@/server/auth";
-import { currentCustomer, customerBookings } from "@/server/customers";
+import { currentOwner } from "@/server/auth";
+import { safeNext } from "@/lib/next-path";
+import { currentCustomer, customerBookings, isAdminCustomer } from "@/server/customers";
 import { googleConfigured } from "@/server/google";
-import { customerLogoutAction, deleteCustomerAction } from "./actions";
+import { customerLogoutAction, deleteCustomerAction, signInAction } from "./actions";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/account">): Promise<Metadata> {
   const t = await getTranslations({ locale: (await params).locale, namespace: "account" });
@@ -20,11 +21,12 @@ export default async function AccountPage({ params, searchParams }: PageProps<"/
   const sp = await searchParams;
   const t = await getTranslations("account");
   const tb = await getTranslations("booking");
-  const [customer, owner] = await Promise.all([currentCustomer(), currentUser()]);
+  const [customer, owner] = await Promise.all([currentCustomer(), currentOwner()]);
   const google = googleConfigured();
+  const next = safeNext(sp.next);
 
   if (customer) {
-    const list = await customerBookings(db, customer.email);
+    const list = await customerBookings(db, customer);
     const now = new Date();
     const upcoming = list.filter((b) => b.status === "confirmed" && b.startsAt >= now).reverse();
     const past = list.filter((b) => !upcoming.includes(b));
@@ -52,10 +54,18 @@ export default async function AccountPage({ params, searchParams }: PageProps<"/
             <h1 className="font-display text-4xl">{t("hello", { name: customer.name.split(" ")[0] })}</h1>
             <p className="text-sm text-muted">{customer.email}</p>
           </div>
-          <form action={customerLogoutAction}>
-            <button className="btn-outline text-sm">{t("logout")}</button>
-          </form>
+          <div className="flex gap-2">
+            {isAdminCustomer(customer) && (
+              <Link href="/admin" className="btn text-sm">
+                {t("adminPanel")}
+              </Link>
+            )}
+            <form action={customerLogoutAction}>
+              <button className="btn-outline text-sm">{t("logout")}</button>
+            </form>
+          </div>
         </div>
+        {sp.welcome === "1" && <p className="notice">{t("welcome")}</p>}
         <section className="card space-y-2">
           <h2 className="font-display text-2xl">{t("upcoming")}</h2>
           {upcoming.length ? (
@@ -75,7 +85,7 @@ export default async function AccountPage({ params, searchParams }: PageProps<"/
             <ul className="divide-y divide-line">{past.map(row)}</ul>
           </section>
         )}
-        <p className="text-xs text-muted">{t("bookingsHint")}</p>
+        <p className="text-xs text-muted">{t(customer.googleId ? "bookingsHintGoogle" : "bookingsHint")}</p>
         <details className="text-sm">
           <summary className="cursor-pointer text-muted">{t("deleteTitle")}</summary>
           <form action={deleteCustomerAction} className="mt-3 space-y-2">
@@ -87,52 +97,58 @@ export default async function AccountPage({ params, searchParams }: PageProps<"/
     );
   }
 
+  const googleHref = `/api/auth/google/start?as=client&locale=${locale}${next ? `&next=${encodeURIComponent(next)}` : ""}`;
   return (
-    <div className="mx-auto max-w-4xl space-y-6">
-      <h1 className="font-display text-4xl">{t("title")}</h1>
-      {sp.error === "google" && <p className="notice-error">{t("googleError")}</p>}
+    <div className="mx-auto max-w-sm space-y-5">
       {sp.deleted === "1" && <p className="notice">{t("deleted")}</p>}
-      <div className="grid gap-6 md:grid-cols-2">
-        <section className="card space-y-4">
-          <p className="eyebrow">{t("clientsEyebrow")}</p>
-          <h2 className="font-display text-2xl">{t("clientsTitle")}</h2>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-muted">
-            <li>{t("clientsBenefit1")}</li>
-            <li>{t("clientsBenefit2")}</li>
-            <li>{t("clientsBenefit3")}</li>
-          </ul>
-          {google ? (
-            <GoogleButton href={`/api/auth/google/start?as=client&locale=${locale}`} label={t("google")} />
-          ) : (
-            <p className="notice">{t("googleSoon")}</p>
-          )}
-          <p className="text-xs text-muted">{t("noAccountNeeded")}</p>
-        </section>
-        <section className="card space-y-4">
-          <p className="eyebrow">{t("businessEyebrow")}</p>
-          <h2 className="font-display text-2xl">{t("businessTitle")}</h2>
-          <p className="text-sm text-muted">{t("businessText")}</p>
-          {owner ? (
-            <Link href="/business/calendar" className="btn w-full">
+      {owner && (
+        <div className="card space-y-3 text-sm">
+          <p>{t("signedInBusiness", { name: owner.salon.name })}</p>
+          <div className="flex gap-2">
+            <Link href="/business/calendar" className="btn flex-1 text-center">
               {t("openCabinet")}
             </Link>
-          ) : (
-            <div className="space-y-3">
-              {google && (
-                <GoogleButton href={`/api/auth/google/start?as=business&locale=${locale}`} label={t("google")} />
-              )}
-              <div className="grid grid-cols-2 gap-3">
-                <Link href="/business/login" className="btn-outline text-center">
-                  {t("businessLogin")}
-                </Link>
-                <Link href="/business/register" className="btn-gold text-center">
-                  {t("businessRegister")}
-                </Link>
-              </div>
-            </div>
-          )}
-        </section>
-      </div>
+            {owner.user.isAdmin && (
+              <Link href="/admin" className="btn-outline flex-1 text-center">
+                {t("adminPanel")}
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
+      <form action={signInAction} className="card space-y-4">
+        <h1 className="font-display text-3xl">{t("title")}</h1>
+        {sp.error === "login" && <p className="notice-error">{t("loginError")}</p>}
+        {sp.error === "google" && <p className="notice-error">{t("googleError")}</p>}
+        <input type="hidden" name="next" value={next} />
+        <div>
+          <label className="label" htmlFor="email">{t("email")}</label>
+          <input id="email" name="email" type="email" required autoComplete="email" className="input" />
+        </div>
+        <div>
+          <label className="label" htmlFor="password">{t("password")}</label>
+          <input id="password" name="password" type="password" required autoComplete="current-password" className="input" />
+        </div>
+        <button className="btn w-full">{t("submit")}</button>
+        {google && (
+          <>
+            <p className="text-center text-xs uppercase tracking-widest text-muted">{t("or")}</p>
+            <GoogleButton href={googleHref} label={t("google")} />
+          </>
+        )}
+        <p className="border-t border-line pt-4 text-center text-sm">
+          {t("noAccount")}{" "}
+          <Link href={`/account/register${next ? `?next=${encodeURIComponent(next)}` : ""}`} className="font-medium text-gold-deep underline">
+            {t("createAccount")}
+          </Link>
+        </p>
+      </form>
+      <p className="text-center text-sm text-muted">
+        {t("businessQuestion")}{" "}
+        <Link href="/business" className="text-gold-deep underline">
+          {t("businessLink")}
+        </Link>
+      </p>
     </div>
   );
 }

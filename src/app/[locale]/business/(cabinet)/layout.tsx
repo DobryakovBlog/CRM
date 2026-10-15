@@ -26,7 +26,7 @@ export default async function CabinetLayout({ children, params }: LayoutProps<"/
       </div>
       <nav className="flex gap-1 overflow-x-auto border-b border-line text-sm">
         {[...TABS[salon.kind], ...(user.isAdmin ? (["admin"] as const) : [])].map((tab) => (
-          <Link key={tab} href={`/business/${tab}`} className="whitespace-nowrap border-b-2 border-transparent px-3 py-2.5 text-muted transition-colors hover:border-gold hover:text-ink">
+          <Link key={tab} href={tab === "admin" ? "/admin" : `/business/${tab}`} className="whitespace-nowrap border-b-2 border-transparent px-3 py-2.5 text-muted transition-colors hover:border-gold hover:text-ink">
             {t(`tabs.${tab}`)}
           </Link>
         ))}

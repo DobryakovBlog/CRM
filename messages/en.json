@@ -126,7 +126,8 @@
     "confirm": "Confirm booking",
     "gateTitle": "How would you like to continue?",
     "gateText": "With an account you see all your bookings in one place and never type your details again.",
-    "guest": "As guest"
+    "guest": "As guest",
+    "signIn": "Sign in"
   },
   "booking": {
     "created": "Booking confirmed! We have sent the details by e-mail.",
@@ -418,7 +419,8 @@
         },
         "endsOn": "until {date}",
         "endedOn": "since {date}"
-      }
+      },
+      "title": "Admin"
     },
     "menu": {
       "hint": "Organise the menu in sections. Changes show up right away on the public page and behind the table QR code.",
@@ -518,19 +520,7 @@
     "title": "Sign in",
     "google": "Continue with Google",
     "or": "or",
-    "googleSoon": "Sign-in with Google is coming soon.",
     "googleError": "Couldn't sign in with Google. Please try again.",
-    "clientsEyebrow": "For clients",
-    "clientsTitle": "Your Astrabela account",
-    "clientsBenefit1": "All your bookings in one place, at any salon.",
-    "clientsBenefit2": "Book faster: name and e-mail already filled in.",
-    "clientsBenefit3": "Review your visits and see your reviews.",
-    "noAccountNeeded": "You can also book without an account.",
-    "businessEyebrow": "For businesses",
-    "businessTitle": "Salons and restaurants",
-    "businessText": "Manage your calendar, team, services, menu and reviews.",
-    "businessLogin": "Sign in",
-    "businessRegister": "Register a business",
     "openCabinet": "Open your business dashboard",
     "hello": "Hello, {name}",
     "logout": "Sign out",
@@ -539,10 +529,32 @@
     "findSalon": "Find a salon",
     "past": "Past bookings",
     "open": "View",
-    "bookingsHint": "Bookings made with your Google e-mail appear here.",
+    "bookingsHint": "Bookings you made while signed in show up here.",
     "deleteTitle": "Delete account",
     "deleteText": "Your account and sign-in are deleted. Bookings stay with the salons, which keep them to provide the service.",
     "deleteConfirm": "Delete my account",
-    "deleted": "Your account was deleted."
+    "deleted": "Your account was deleted.",
+    "email": "E-mail",
+    "password": "Password",
+    "submit": "Sign in",
+    "loginError": "Wrong e-mail or password.",
+    "noAccount": "No account yet?",
+    "createAccount": "Create account",
+    "businessQuestion": "Own a salon or restaurant?",
+    "businessLink": "Astrabela for business",
+    "signedInBusiness": "Signed in as {name}.",
+    "adminPanel": "Admin",
+    "welcome": "Account created. Bookings you make while signed in show up here.",
+    "bookingsHintGoogle": "Bookings you made while signed in or with your Google e-mail show up here.",
+    "registerTitle": "Create account",
+    "name": "Name",
+    "passwordHint": "At least 8 characters.",
+    "terms": "I accept the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>.",
+    "registerSubmit": "Create account",
+    "haveAccount": "Already have an account?",
+    "registerErrors": {
+      "invalid": "Check your name, e-mail and password (at least 8 characters).",
+      "email_taken": "An account with this e-mail already exists. Sign in with it."
+    }
   }
 }

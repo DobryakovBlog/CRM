@@ -152,7 +152,7 @@ export async function currentOwner() {
 }
 
 /** Platform admins named in ADMIN_EMAILS (comma-separated), on top of users flagged in the database. */
-const adminEmails = () =>
+export const adminEmails = () =>
   (process.env.ADMIN_EMAILS ?? "")
     .split(",")
     .map((e) => e.trim().toLowerCase())
@@ -167,7 +167,7 @@ export const cabinetHome = (kind: "salon" | "restaurant") => (kind === "restaura
  */
 export async function requireOwner(locale: string, kind?: "salon" | "restaurant") {
   const owner = await currentOwner();
-  if (!owner) redirect(`/${locale}/business/login`);
+  if (!owner) redirect(`/${locale}/account`);
   if (kind && owner.salon.kind !== kind) redirect(`/${locale}${cabinetHome(owner.salon.kind)}`);
   return owner;
 }

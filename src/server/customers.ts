@@ -1,9 +1,10 @@
 import { randomBytes } from "node:crypto";
-import { and, desc, eq, gt, sql } from "drizzle-orm";
+import bcrypt from "bcryptjs";
+import { and, desc, eq, gt, or, sql } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { db, type Db } from "@/db";
 import { bookings, clients, customerSessions, customers, salons, services, staff } from "@/db/schema";
-import { hashToken, setWhoCookie, WHO_COOKIE } from "./auth";
+import { adminEmails, hashPassword, hashToken, setWhoCookie, WHO_COOKIE } from "./auth";
 
 const COOKIE = "ba_client";
 const SESSION_DAYS = 90;
@@ -18,16 +19,41 @@ export async function upsertGoogleCustomer(database: Db, profile: GoogleProfile)
   if (byGoogle) return byGoogle;
   const [byEmail] = await database.select().from(customers).where(eq(customers.email, email));
   if (byEmail) {
+    // Google proves the e-mail is theirs. A password set before was never verified and may
+    // belong to someone who registered this address first, so it and its sessions go.
     const [linked] = await database
       .update(customers)
-      .set({ googleId: profile.sub })
+      .set({ googleId: profile.sub, passwordHash: null })
       .where(eq(customers.id, byEmail.id))
       .returning();
+    if (byEmail.passwordHash) await database.delete(customerSessions).where(eq(customerSessions.customerId, byEmail.id));
     return linked;
   }
   const [created] = await database.insert(customers).values({ email, name, googleId: profile.sub }).returning();
   return created;
 }
+
+/** Creates a client account with e-mail and password. */
+export async function registerCustomer(database: Db, input: { name: string; email: string; password: string }) {
+  const email = input.email.trim().toLowerCase();
+  const [taken] = await database.select({ id: customers.id }).from(customers).where(eq(customers.email, email));
+  if (taken) throw new Error("email_taken");
+  const [created] = await database
+    .insert(customers)
+    .values({ email, name: input.name.trim(), passwordHash: await hashPassword(input.password) })
+    .returning();
+  return created;
+}
+
+export async function verifyCustomer(database: Db, email: string, password: string) {
+  const [customer] = await database.select().from(customers).where(eq(customers.email, email.trim().toLowerCase()));
+  if (!customer?.passwordHash) return null; // Google-only account
+  return (await bcrypt.compare(password, customer.passwordHash)) ? customer : null;
+}
+
+/** Platform admins: flagged in the database or named in ADMIN_EMAILS. */
+export const isAdminCustomer = (customer: { email: string; isAdmin: boolean }) =>
+  customer.isAdmin || adminEmails().includes(customer.email);
 
 export async function startCustomerSession(customerId: string, name: string) {
   const token = randomBytes(32).toString("base64url");
@@ -67,8 +93,16 @@ export async function deleteCustomer(database: Db, customerId: string) {
   await database.delete(customers).where(eq(customers.id, customerId));
 }
 
-/** The client's bookings in every salon, found by the e-mail Google verified. */
-export async function customerBookings(database: Db, email: string, limit = 50) {
+/**
+ * The client's bookings in every salon: those made while signed in and, once Google has
+ * verified the e-mail, also those made with that e-mail as a guest.
+ */
+export async function customerBookings(
+  database: Db,
+  customer: { id: string; email: string; googleId: string | null },
+  limit = 50,
+) {
+  const mine = eq(bookings.customerId, customer.id);
   return database
     .select({
       id: bookings.id,
@@ -86,7 +120,7 @@ export async function customerBookings(database: Db, email: string, limit = 50) 
     .innerJoin(salons, eq(salons.id, bookings.salonId))
     .innerJoin(services, eq(services.id, bookings.serviceId))
     .innerJoin(staff, eq(staff.id, bookings.staffId))
-    .where(eq(sql`lower(${clients.email})`, email.toLowerCase()))
+    .where(customer.googleId ? or(mine, eq(sql`lower(${clients.email})`, customer.email.toLowerCase())) : mine)
     .orderBy(desc(bookings.startsAt))
     .limit(limit);
 }

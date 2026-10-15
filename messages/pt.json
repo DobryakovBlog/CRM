@@ -126,7 +126,8 @@
     "confirm": "Confirmar marcação",
     "gateTitle": "Como quer continuar?",
     "gateText": "Com conta vê todas as suas marcações num só sítio e não volta a escrever os seus dados.",
-    "guest": "Sem conta"
+    "guest": "Sem conta",
+    "signIn": "Entrar"
   },
   "booking": {
     "created": "Marcação confirmada! Enviámos os detalhes por e-mail.",
@@ -418,7 +419,8 @@
         },
         "endsOn": "até {date}",
         "endedOn": "desde {date}"
-      }
+      },
+      "title": "Administração"
     },
     "menu": {
       "hint": "Organize o menu por secções. As alterações aparecem logo na página pública e no código QR das mesas.",
@@ -518,19 +520,7 @@
     "title": "Entrar",
     "google": "Continuar com Google",
     "or": "ou",
-    "googleSoon": "O início de sessão com Google fica disponível em breve.",
     "googleError": "Não foi possível entrar com Google. Tente novamente.",
-    "clientsEyebrow": "Para clientes",
-    "clientsTitle": "A sua conta Astrabela",
-    "clientsBenefit1": "Todas as suas marcações num só lugar, em qualquer salão.",
-    "clientsBenefit2": "Marque mais depressa: nome e e-mail já preenchidos.",
-    "clientsBenefit3": "Avalie as visitas e reveja as suas avaliações.",
-    "noAccountNeeded": "Também pode marcar sem conta.",
-    "businessEyebrow": "Para negócios",
-    "businessTitle": "Salões e restaurantes",
-    "businessText": "Gira a agenda, a equipa, os serviços, o menu e as avaliações do seu negócio.",
-    "businessLogin": "Entrar",
-    "businessRegister": "Registar negócio",
     "openCabinet": "Abrir o painel do negócio",
     "hello": "Olá, {name}",
     "logout": "Terminar sessão",
@@ -539,10 +529,32 @@
     "findSalon": "Encontrar um salão",
     "past": "Marcações anteriores",
     "open": "Ver",
-    "bookingsHint": "Aqui aparecem as marcações feitas com o seu e-mail do Google.",
+    "bookingsHint": "Aqui aparecem as marcações feitas com sessão iniciada.",
     "deleteTitle": "Apagar a conta",
     "deleteText": "A conta e o início de sessão são apagados. As marcações continuam nos salões, que as guardam para prestar o serviço.",
     "deleteConfirm": "Apagar a minha conta",
-    "deleted": "A sua conta foi apagada."
+    "deleted": "A sua conta foi apagada.",
+    "email": "E-mail",
+    "password": "Palavra-passe",
+    "submit": "Entrar",
+    "loginError": "E-mail ou palavra-passe incorretos.",
+    "noAccount": "Ainda não tem conta?",
+    "createAccount": "Criar conta",
+    "businessQuestion": "Tem um salão ou restaurante?",
+    "businessLink": "Astrabela para negócios",
+    "signedInBusiness": "Entrou como {name}.",
+    "adminPanel": "Administração",
+    "welcome": "Conta criada. As marcações que fizer com sessão iniciada aparecem aqui.",
+    "bookingsHintGoogle": "Aqui aparecem as marcações feitas com sessão iniciada ou com o seu e-mail do Google.",
+    "registerTitle": "Criar conta",
+    "name": "Nome",
+    "passwordHint": "Pelo menos 8 caracteres.",
+    "terms": "Aceito os <terms>termos de utilização</terms> e a <privacy>política de privacidade</privacy>.",
+    "registerSubmit": "Criar conta",
+    "haveAccount": "Já tem conta?",
+    "registerErrors": {
+      "invalid": "Verifique o nome, o e-mail e a palavra-passe (mínimo 8 caracteres).",
+      "email_taken": "Já existe uma conta com este e-mail. Entre com ele."
+    }
   }
 }

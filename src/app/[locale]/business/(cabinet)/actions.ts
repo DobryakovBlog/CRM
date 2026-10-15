@@ -9,16 +9,13 @@ import { BookingError, createBooking, setBookingStatus } from "@/server/booking"
 import { requireOwner } from "@/server/auth";
 import {
   addService,
-  resolveReport,
   saveStaff,
-  setSalonStatus,
   setServiceActive,
   setStaffActive,
   submitForReview,
   updateSalonProfile,
 } from "@/server/cabinet";
 import { CATEGORIES } from "@/server/catalog";
-import { cancelSubscription, grantFreeMonths, setFreeUntil } from "@/server/subscriptions";
 import { inviteReview } from "@/server/invitations";
 import {
   addDish,
@@ -32,7 +29,7 @@ import {
   updateSection,
 } from "@/server/menu";
 import { sendReviewInvitation } from "@/server/notify";
-import { replyToReview, setReviewStatus } from "@/server/reviews";
+import { replyToReview } from "@/server/reviews";
 import { localMinuteToDate } from "@/lib/availability";
 import { normalizeSocial, SOCIAL_NETWORKS, type SocialLinks } from "@/lib/social";
 
@@ -200,56 +197,6 @@ export async function inviteAction(form: FormData) {
   }
   await sendReviewInvitation(db, bookingId);
   redirect(`${back}?invited=${bookingId}#invite-${bookingId}`);
-}
-
-// --- Platform admin -------------------------------------------------------
-
-async function admin() {
-  const o = await owner();
-  if (!o.user.isAdmin) redirect(`/${o.locale}/business/calendar`);
-  return o;
-}
-
-export async function approveSalonAction(form: FormData) {
-  await admin();
-  await setSalonStatus(db, s(form, "salonId"), s(form, "decision") === "approve" ? "active" : "draft");
-  revalidatePath("/[locale]/business/admin", "page");
-}
-
-export async function moderateReportAction(form: FormData) {
-  await admin();
-  if (s(form, "decision") === "hide") await setReviewStatus(db, s(form, "reviewId"), "hidden");
-  await resolveReport(db, s(form, "reportId"));
-  revalidatePath("/[locale]/business/admin", "page");
-}
-
-async function adminBack(form: FormData, done: string) {
-  const { locale } = await admin();
-  revalidatePath("/[locale]/business/admin", "page");
-  const q = s(form, "q");
-  redirect(`/${locale}/business/admin?${new URLSearchParams({ ...(q && { q }), sub: done })}#subs`);
-}
-
-export async function grantFreeAction(form: FormData) {
-  await admin();
-  await grantFreeMonths(db, s(form, "salonId"), Number(s(form, "months")), s(form, "note"));
-  await adminBack(form, "saved");
-}
-
-export async function freeUntilAction(form: FormData) {
-  await admin();
-  try {
-    await setFreeUntil(db, s(form, "salonId"), s(form, "until"), s(form, "note"));
-  } catch {
-    return adminBack(form, "invalid");
-  }
-  await adminBack(form, "saved");
-}
-
-export async function cancelSubscriptionAction(form: FormData) {
-  await admin();
-  await cancelSubscription(db, s(form, "salonId"));
-  await adminBack(form, "saved");
 }
 
 // --- Restaurant menu --------------------------------------------------------

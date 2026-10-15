@@ -7,6 +7,7 @@ import { db } from "@/db";
 import { BookingError, createBooking } from "@/server/booking";
 import { salonBySlug } from "@/server/catalog";
 import { sendBookingConfirmation } from "@/server/notify";
+import { currentCustomer } from "@/server/customers";
 
 const Input = z.object({
   slug: z.string().min(1),
@@ -40,6 +41,7 @@ export async function bookAction(form: FormData) {
       client: { name: input.name, email: input.email, phone: input.phone },
       note: input.note,
       locale,
+      customerId: (await currentCustomer())?.id,
     });
     await sendBookingConfirmation(db, booking.id);
     token = booking.manageToken;
