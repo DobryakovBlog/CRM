@@ -9,6 +9,8 @@ import { salonBySlug } from "@/server/catalog";
 import { bookAction } from "./actions";
 import { currentCustomer } from "@/server/customers";
 import { googleConfigured } from "@/server/google";
+import { PhoneInput } from "@/components/PhoneInput";
+import { GoogleButton } from "@/components/GoogleButton";
 
 const DAYS_AHEAD = 14;
 const str = (v: string | string[] | undefined) => (typeof v === "string" && v ? v : undefined);
@@ -21,6 +23,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
   if (!data) notFound();
   const { salon } = data;
   const t = await getTranslations("book");
+  const ta = await getTranslations("account");
 
   const service = data.services.find((s) => s.id === str(sp.service));
   if (!service) notFound();
@@ -38,6 +41,8 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
   const chosen = str(sp.time) ? slots.find((s) => s.startsAt.toISOString() === sp.time) : undefined;
   const error = str(sp.error);
   const customer = chosen ? await currentCustomer() : null;
+  // Before the details form, a guest is offered to sign in first; skipping is one tap.
+  const offerAccount = Boolean(chosen && !customer && googleConfigured() && sp.as !== "guest");
 
   const href = (over: Record<string, string | null>) => {
     const q = new URLSearchParams({ service: service.id, date, ...(staffId ? { staff: staffId } : {}) });
@@ -115,22 +120,25 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             {formatDateTime(chosen.startsAt, salon.timezone, locale)} ·{" "}
             {masters.find((m) => m.id === chosen.staffId)?.name}
           </p>
+          {offerAccount ? (
+            <div className="space-y-3">
+              <h3 className="font-semibold">{t("gateTitle")}</h3>
+              <p className="text-sm text-muted">{t("gateText")}</p>
+              <GoogleButton
+                href={`/api/auth/google/start?as=client&locale=${locale}&next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`}
+                label={ta("google")}
+              />
+              <Link href={`${href({ time: chosen.startsAt.toISOString(), as: "guest" })}#details`} className="btn-outline block w-full text-center">
+                {t("guest")}
+              </Link>
+            </div>
+          ) : (
           <form action={bookAction} className="space-y-3">
             <input type="hidden" name="slug" value={salon.slug} />
             <input type="hidden" name="serviceId" value={service.id} />
             <input type="hidden" name="staffId" value={chosen.staffId} />
             <input type="hidden" name="startsAt" value={chosen.startsAt.toISOString()} />
             <input type="hidden" name="back" value={href({})} />
-            {!customer && googleConfigured() && (
-              <p className="text-sm text-muted">
-                <a
-                  className="text-gold-deep underline"
-                  href={`/api/auth/google/start?as=client&locale=${locale}&next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`}
-                >
-                  {t("googleFill")}
-                </a>
-              </p>
-            )}
             <div>
               <label className="label" htmlFor="name">{t("name")}</label>
               <input id="name" name="name" required maxLength={80} autoComplete="name" defaultValue={customer?.name} className="input" />
@@ -140,10 +148,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
                 <label className="label" htmlFor="email">{t("email")}</label>
                 <input id="email" name="email" type="email" required autoComplete="email" defaultValue={customer?.email} className="input" />
               </div>
-              <div>
-                <label className="label" htmlFor="phone">{t("phone")}</label>
-                <input id="phone" name="phone" type="tel" required autoComplete="tel" className="input" />
-              </div>
+              <PhoneInput name="phone" id="phone" locale={locale} label={t("phone")} invalidText={t("errors.phone")} />
             </div>
             <div>
               <label className="label" htmlFor="note">{t("note")}</label>
@@ -166,6 +171,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             </label>
             <button className="btn w-full">{t("confirm")}</button>
           </form>
+          )}
         </section>
       )}
     </div>

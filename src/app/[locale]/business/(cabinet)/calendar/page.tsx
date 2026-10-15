@@ -6,6 +6,8 @@ import { formatDateTime, formatPrice, formatTime, localDate } from "@/lib/format
 import { requireOwner } from "@/server/auth";
 import { dayAgenda, salonServices, salonTeam } from "@/server/cabinet";
 import { manualBookingAction, setStatusAction } from "../actions";
+import { PhoneInput } from "@/components/PhoneInput";
+import { formatPhone } from "@/lib/phone";
 
 function prevDate(date: string) {
   const [y, m, d] = date.split("-").map(Number);
@@ -67,7 +69,7 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
                       {b.serviceName} · {formatPrice(b.priceCents, locale)}
                     </p>
                     <p className="text-muted">
-                      {b.clientName} · {b.clientPhone}
+                      {b.clientName} · <a href={`tel:${b.clientPhone}`} className="underline">{formatPhone(b.clientPhone)}</a>
                       {b.clientNoShows > 0 && (
                         <span className="ml-1 text-red-700">({t("noShows", { n: b.clientNoShows })})</span>
                       )}
@@ -107,9 +109,11 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
             ))}
           </select>
           <input name="time" type="time" required step={300} className="input" aria-label={t("time")} />
-          <input name="clientName" required placeholder={t("clientName")} className="input" />
-          <input name="clientPhone" placeholder={t("clientPhone")} className="input" />
+          <input name="clientName" required placeholder={t("clientName")} className="input sm:col-span-2" />
           <input name="clientEmail" type="email" placeholder={t("clientEmail")} className="input" />
+          <div className="sm:col-span-3">
+            <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("clientPhone")} invalidText={t("errors.phone")} />
+          </div>
           <button className="btn sm:col-span-3">{t("add")}</button>
         </form>
       )}

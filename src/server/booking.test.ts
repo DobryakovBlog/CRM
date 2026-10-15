@@ -20,7 +20,7 @@ const NOW = new Date("2026-10-02T12:00:00Z");
 const AFTER_VISITS = new Date("2026-10-06T12:00:00Z");
 const MONDAY = "2026-10-05";
 const at = (hhmm: string) => new Date(`${MONDAY}T${hhmm}:00+01:00`);
-const client = { name: "Rita Alves", email: "Rita@Example.com", phone: "+351910000000" };
+const client = { name: "Rita Alves", email: "Rita@Example.com", phone: "+351912000111" };
 
 let salonId: string, serviceId: string, anaId: string, joanaId: string;
 
@@ -104,6 +104,16 @@ describe("createBooking", () => {
   it("reuses the client card on the next booking", async () => {
     const a = await book(anaId, at("09:00"));
     const b = await book(anaId, at("10:00"));
+    expect(b.clientId).toBe(a.clientId);
+  });
+
+  it("needs a real phone number and finds a phone-only client again", async () => {
+    const noEmail = (phone: string, startsAt: Date) =>
+      createBooking(db, { salonId, serviceId, staffId: anaId, startsAt, client: { name: "Rui", email: "", phone }, source: "manual", now: NOW });
+    await expect(noEmail("", at("09:00"))).rejects.toThrow("phone");
+    await expect(noEmail("999999999", at("09:00"))).rejects.toThrow("phone");
+    const a = await noEmail("912 000 333", at("09:00"));
+    const b = await noEmail("+351912000333", at("10:00"));
     expect(b.clientId).toBe(a.clientId);
   });
 

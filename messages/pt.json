@@ -109,7 +109,8 @@
       "invalid": "Verifique os dados e tente novamente.",
       "slot_taken": "Este horário acabou de ser ocupado. Escolha outro.",
       "not_found": "Serviço ou profissional indisponível.",
-      "not_allowed": "Este profissional não faz este serviço."
+      "not_allowed": "Este profissional não faz este serviço.",
+      "phone": "Indique um número de telemóvel válido, com o indicativo do país."
     },
     "master": "Profissional",
     "anyMaster": "Qualquer profissional",
@@ -123,7 +124,9 @@
     "note": "Nota para o salão (opcional)",
     "privacy": "Aceito que o salão e a Astrabela tratem os meus dados para gerir esta marcação (<privacy>política de privacidade</privacy>).",
     "confirm": "Confirmar marcação",
-    "googleFill": "Tem conta Google? Entre e preenchemos os seus dados."
+    "gateTitle": "Como quer continuar?",
+    "gateText": "Com conta vê todas as suas marcações num só sítio e não volta a escrever os seus dados.",
+    "guest": "Sem conta"
   },
   "booking": {
     "created": "Marcação confirmada! Enviámos os detalhes por e-mail.",
@@ -230,7 +233,8 @@
         "invalid": "Dados inválidos.",
         "slot_taken": "Este horário já está ocupado.",
         "not_found": "Serviço ou profissional não encontrado.",
-        "not_allowed": "Este profissional não faz este serviço."
+        "not_allowed": "Este profissional não faz este serviço.",
+        "phone": "Número de telefone inválido. Escolha o país e escreva o número completo."
       },
       "noTeam": "Adicione profissionais no separador Equipa.",
       "free": "Sem marcações.",
@@ -356,7 +360,8 @@
         "not_found": "Profissional ou serviço não encontrado.",
         "not_allowed": "Não é possível enviar este pedido.",
         "duplicate": "Já pediu uma avaliação a este cliente para este profissional nos últimos 30 dias.",
-        "limit": "Atingiu o limite de pedidos de hoje. Tente amanhã."
+        "limit": "Atingiu o limite de pedidos de hoje. Tente amanhã.",
+        "phone": "Número de telefone inválido. Escolha o país e escreva o número completo."
       },
       "invitationsTitle": "Pedidos enviados",
       "invitationWaiting": "a aguardar",

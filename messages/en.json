@@ -109,7 +109,8 @@
       "invalid": "Please check your details and try again.",
       "slot_taken": "This time was just taken. Please choose another.",
       "not_found": "Service or professional unavailable.",
-      "not_allowed": "This professional does not offer this service."
+      "not_allowed": "This professional does not offer this service.",
+      "phone": "Enter a valid mobile number with the right country code."
     },
     "master": "Professional",
     "anyMaster": "Any professional",
@@ -123,7 +124,9 @@
     "note": "Note for the salon (optional)",
     "privacy": "I agree that the salon and Astrabela process my data to manage this booking (<privacy>privacy policy</privacy>).",
     "confirm": "Confirm booking",
-    "googleFill": "Have a Google account? Sign in and we'll fill in your details."
+    "gateTitle": "How would you like to continue?",
+    "gateText": "With an account you see all your bookings in one place and never type your details again.",
+    "guest": "As guest"
   },
   "booking": {
     "created": "Booking confirmed! We have sent the details by e-mail.",
@@ -230,7 +233,8 @@
         "invalid": "Invalid data.",
         "slot_taken": "This time is already taken.",
         "not_found": "Service or professional not found.",
-        "not_allowed": "This professional does not offer this service."
+        "not_allowed": "This professional does not offer this service.",
+        "phone": "Invalid phone number. Pick the country and type the full number."
       },
       "noTeam": "Add professionals in the Team tab.",
       "free": "No bookings.",
@@ -356,7 +360,8 @@
         "not_found": "Professional or service not found.",
         "not_allowed": "This request cannot be sent.",
         "duplicate": "You already asked this client to review this professional in the last 30 days.",
-        "limit": "You reached today's request limit. Try again tomorrow."
+        "limit": "You reached today's request limit. Try again tomorrow.",
+        "phone": "Invalid phone number. Pick the country and type the full number."
       },
       "invitationsTitle": "Requests sent",
       "invitationWaiting": "waiting",

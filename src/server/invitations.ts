@@ -2,6 +2,7 @@ import { randomBytes } from "node:crypto";
 import { and, count, desc, eq, gte } from "drizzle-orm";
 import type { Db } from "@/db";
 import { bookings, clients, reviews, salons, services, staff, staffServices, users } from "@/db/schema";
+import { normalizePhone } from "@/lib/phone";
 import { localDate } from "@/lib/format";
 import { localMinuteToDate } from "@/lib/availability";
 import { BookingError } from "./booking";
@@ -51,7 +52,9 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
 
     // The salon can send the link itself (WhatsApp, SMS), so the e-mail is optional.
     const email = input.client.email.trim().toLowerCase();
-    const phone = input.client.phone.trim();
+    const rawPhone = input.client.phone.trim();
+    const phone = rawPhone ? normalizePhone(rawPhone) : "";
+    if (phone === null) throw new BookingError("phone");
     const name = input.client.name.trim();
     if (!name || (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))) throw new BookingError("invalid");
 
