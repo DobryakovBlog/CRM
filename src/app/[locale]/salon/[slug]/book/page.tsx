@@ -7,6 +7,8 @@ import { formatDateTime, formatPrice, formatTime, localDate } from "@/lib/format
 import { slotsForDate } from "@/server/booking";
 import { salonBySlug } from "@/server/catalog";
 import { bookAction } from "./actions";
+import { currentCustomer } from "@/server/customers";
+import { googleConfigured } from "@/server/google";
 
 const DAYS_AHEAD = 14;
 const str = (v: string | string[] | undefined) => (typeof v === "string" && v ? v : undefined);
@@ -35,6 +37,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
   const slots = await slotsForDate(db, { salonId: salon.id, serviceId: service.id, staffId, date });
   const chosen = str(sp.time) ? slots.find((s) => s.startsAt.toISOString() === sp.time) : undefined;
   const error = str(sp.error);
+  const customer = chosen ? await currentCustomer() : null;
 
   const href = (over: Record<string, string | null>) => {
     const q = new URLSearchParams({ service: service.id, date, ...(staffId ? { staff: staffId } : {}) });
@@ -118,14 +121,24 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
             <input type="hidden" name="staffId" value={chosen.staffId} />
             <input type="hidden" name="startsAt" value={chosen.startsAt.toISOString()} />
             <input type="hidden" name="back" value={href({})} />
+            {!customer && googleConfigured() && (
+              <p className="text-sm text-muted">
+                <a
+                  className="text-gold-deep underline"
+                  href={`/api/auth/google/start?as=client&locale=${locale}&next=${encodeURIComponent(href({ time: chosen.startsAt.toISOString() }))}`}
+                >
+                  {t("googleFill")}
+                </a>
+              </p>
+            )}
             <div>
               <label className="label" htmlFor="name">{t("name")}</label>
-              <input id="name" name="name" required maxLength={80} autoComplete="name" className="input" />
+              <input id="name" name="name" required maxLength={80} autoComplete="name" defaultValue={customer?.name} className="input" />
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
                 <label className="label" htmlFor="email">{t("email")}</label>
-                <input id="email" name="email" type="email" required autoComplete="email" className="input" />
+                <input id="email" name="email" type="email" required autoComplete="email" defaultValue={customer?.email} className="input" />
               </div>
               <div>
                 <label className="label" htmlFor="phone">{t("phone")}</label>

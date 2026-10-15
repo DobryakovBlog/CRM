@@ -11,7 +11,8 @@
     "salons": "Salons",
     "restaurants": "Restaurants",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "signIn": "Sign in"
   },
   "home": {
     "title": "Book the best. Trust the stars.",
@@ -121,7 +122,8 @@
     "phone": "Phone",
     "note": "Note for the salon (optional)",
     "privacy": "I agree that the salon and Astrabela process my data to manage this booking (<privacy>privacy policy</privacy>).",
-    "confirm": "Confirm booking"
+    "confirm": "Confirm booking",
+    "googleFill": "Have a Google account? Sign in and we'll fill in your details."
   },
   "booking": {
     "created": "Booking confirmed! We have sent the details by e-mail.",
@@ -202,7 +204,8 @@
         "salon": "Salon",
         "restaurant": "Restaurant"
       },
-      "kindHint": "Beauty salons, barbershops, nails and aesthetics choose “Salon”. Then pick your service categories, such as “Barbershop”."
+      "kindHint": "Beauty salons, barbershops, nails and aesthetics choose “Salon”. Then pick your service categories, such as “Barbershop”.",
+      "googleAs": "Signing up with Google as {email}. No password needed."
     },
     "salonStatus": {
       "draft": "Draft",
@@ -505,5 +508,36 @@
     "tiktok": "TikTok",
     "whatsapp": "WhatsApp",
     "website": "Website"
+  },
+  "account": {
+    "title": "Sign in",
+    "google": "Continue with Google",
+    "or": "or",
+    "googleSoon": "Sign-in with Google is coming soon.",
+    "googleError": "Couldn't sign in with Google. Please try again.",
+    "clientsEyebrow": "For clients",
+    "clientsTitle": "Your Astrabela account",
+    "clientsBenefit1": "All your bookings in one place, at any salon.",
+    "clientsBenefit2": "Book faster: name and e-mail already filled in.",
+    "clientsBenefit3": "Review your visits and see your reviews.",
+    "noAccountNeeded": "You can also book without an account.",
+    "businessEyebrow": "For businesses",
+    "businessTitle": "Salons and restaurants",
+    "businessText": "Manage your calendar, team, services, menu and reviews.",
+    "businessLogin": "Sign in",
+    "businessRegister": "Register a business",
+    "openCabinet": "Open your business dashboard",
+    "hello": "Hello, {name}",
+    "logout": "Sign out",
+    "upcoming": "Upcoming bookings",
+    "noUpcoming": "You have no upcoming bookings.",
+    "findSalon": "Find a salon",
+    "past": "Past bookings",
+    "open": "View",
+    "bookingsHint": "Bookings made with your Google e-mail appear here.",
+    "deleteTitle": "Delete account",
+    "deleteText": "Your account and sign-in are deleted. Bookings stay with the salons, which keep them to provide the service.",
+    "deleteConfirm": "Delete my account",
+    "deleted": "Your account was deleted."
   }
 }

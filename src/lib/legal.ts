@@ -42,14 +42,15 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
             [
               "name, e-mail and phone number you give when booking, and the note you leave for the salon;",
               "the booking itself: salon, professional, service, date, time and status;",
-              "your review: rating, text and the name you choose to show.",
+              "your review: rating, text and the name you choose to show;",
+              "if you create a client account with Google: your name, e-mail and Google account ID (we never see your Google password).",
             ],
             "When a salon or restaurant uses Astrabela (businesses):",
             [
               "the account holder's name and e-mail, and the password (stored only as an encrypted hash);",
               "business details: name, address, phone, e-mail, tax number (NIF), team, services, prices, opening hours, menu and social media links.",
             ],
-            "Technical data: a session cookie for business accounts, a language cookie, and server logs (such as IP address and time of the request) kept for security.",
+            "Technical data: session cookies for signed-in accounts, a language cookie, and server logs (such as IP address and time of the request) kept for security.",
           ],
         },
         {
@@ -78,7 +79,8 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
             [
               "Vercel Inc. – hosting; the site runs in Frankfurt (EU). Vercel is a US company, so any transfer outside the EU is covered by the EU Standard Contractual Clauses and the EU–US Data Privacy Framework;",
               "Neon – database, stored in Frankfurt (EU);",
-              "Cloudflare – domain name service (DNS).",
+              "Cloudflare – domain name service (DNS);",
+              "Google – only if you choose to sign in with Google.",
             ],
           ],
         },
@@ -88,6 +90,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
             [
               "client data and bookings: while the salon's account is active, and at most 2 years after your last visit;",
               "reviews: while the salon is listed on Astrabela;",
+              "client accounts: until you delete them (button on the account page);",
               "business accounts: until the account is closed;",
               "invoices and billing records: 10 years, as Portuguese tax law requires;",
               "business login sessions: 30 days.",
@@ -97,7 +100,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
         {
           title: "7. Cookies",
           body: [
-            "We only use cookies the site needs to work: one to keep business users signed in and one to remember your language. We do not use analytics or advertising cookies, so we do not ask for cookie consent.",
+            "We only use cookies the site needs to work: ones that keep you signed in (and show your first name in the menu) and one to remember your language. We do not use analytics or advertising cookies, so we do not ask for cookie consent.",
           ],
         },
         {
@@ -133,14 +136,15 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
           [
             "nome, e-mail e telemóvel que indica na marcação, e a nota que deixa ao salão;",
             "a própria marcação: salão, profissional, serviço, data, hora e estado;",
-            "a sua avaliação: nota, texto e o nome que escolhe mostrar.",
+            "a sua avaliação: nota, texto e o nome que escolhe mostrar;",
+            "se criar uma conta de cliente com Google: nome, e-mail e identificador da conta Google (nunca vemos a sua palavra-passe Google).",
           ],
           "Quando um salão ou restaurante usa a Astrabela (empresas):",
           [
             "nome e e-mail do titular da conta, e a palavra-passe (guardada apenas cifrada);",
             "dados do negócio: nome, morada, telefone, e-mail, NIF, equipa, serviços, preços, horários, menu e ligações às redes sociais.",
           ],
-          "Dados técnicos: um cookie de sessão para contas de empresa, um cookie de idioma e registos do servidor (como endereço IP e hora do pedido), guardados por segurança.",
+          "Dados técnicos: cookies de sessão para contas com sessão iniciada, um cookie de idioma e registos do servidor (como endereço IP e hora do pedido), guardados por segurança.",
         ],
       },
       {
@@ -169,7 +173,8 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
           [
             "Vercel Inc. – alojamento; o site funciona em Frankfurt (UE). A Vercel é uma empresa dos EUA, por isso qualquer transferência para fora da UE está coberta pelas Cláusulas Contratuais-Tipo da UE e pelo Quadro de Privacidade de Dados UE-EUA;",
             "Neon – base de dados, guardada em Frankfurt (UE);",
-            "Cloudflare – serviço de nomes de domínio (DNS).",
+            "Cloudflare – serviço de nomes de domínio (DNS);",
+            "Google – apenas se escolher entrar com Google.",
           ],
         ],
       },
@@ -179,6 +184,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
           [
             "dados de clientes e marcações: enquanto a conta do salão estiver ativa e, no máximo, 2 anos após a sua última visita;",
             "avaliações: enquanto o salão estiver na Astrabela;",
+            "contas de cliente: até as apagar (botão na página da conta);",
             "contas de empresa: até ao encerramento da conta;",
             "faturas e registos de faturação: 10 anos, como exige a lei fiscal portuguesa;",
             "sessões de acesso das empresas: 30 dias.",
@@ -188,7 +194,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
       {
         title: "7. Cookies",
         body: [
-          "Usamos apenas os cookies necessários ao funcionamento do site: um para manter as empresas com sessão iniciada e outro para lembrar o idioma. Não usamos cookies de análise nem de publicidade, por isso não pedimos consentimento para cookies.",
+          "Usamos apenas os cookies necessários ao funcionamento do site: os que mantêm a sessão iniciada (e mostram o seu primeiro nome no menu) e um para lembrar o idioma. Não usamos cookies de análise nem de publicidade, por isso não pedimos consentimento para cookies.",
         ],
       },
       {

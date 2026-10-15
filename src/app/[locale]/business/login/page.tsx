@@ -1,16 +1,25 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { loginAction } from "../actions";
+import { GoogleButton } from "@/components/GoogleButton";
+import { googleConfigured } from "@/server/google";
 
 export default async function LoginPage({ params, searchParams }: PageProps<"/[locale]/business/login">) {
   const { locale } = await params;
   setRequestLocale(locale);
   const error = (await searchParams).error;
   const t = await getTranslations("business.login");
+  const ta = await getTranslations("account");
   return (
     <form action={loginAction} className="card mx-auto max-w-sm space-y-4">
       <h1 className="font-display text-3xl">{t("title")}</h1>
       {error && <p className="notice-error">{t("error")}</p>}
+      {googleConfigured() && (
+        <>
+          <GoogleButton href={`/api/auth/google/start?as=business&locale=${locale}`} label={ta("google")} />
+          <p className="text-center text-xs uppercase tracking-widest text-muted">{ta("or")}</p>
+        </>
+      )}
       <div>
         <label className="label" htmlFor="email">{t("email")}</label>
         <input id="email" name="email" type="email" required autoComplete="email" className="input" />

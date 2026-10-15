@@ -23,7 +23,7 @@ export function addMonths(date: Date, months: number) {
   return d;
 }
 
-const hashToken = (token: string) => createHash("sha256").update(token).digest("hex");
+export const hashToken = (token: string) => createHash("sha256").update(token).digest("hex");
 
 export async function hashPassword(password: string) {
   return bcrypt.hash(password, 10);
@@ -35,7 +35,7 @@ export async function registerSalonOwner(
   input: {
     name: string;
     email: string;
-    password: string;
+    password?: string; // absent when the e-mail was verified by Google
     salonName: string;
     city: string;
     address: string;
@@ -51,7 +51,11 @@ export async function registerSalonOwner(
 
     const [user] = await tx
       .insert(users)
-      .values({ email, name: input.name.trim(), passwordHash: await hashPassword(input.password) })
+      .values({
+        email,
+        name: input.name.trim(),
+        passwordHash: input.password ? await hashPassword(input.password) : null,
+      })
       .returning();
 
     const base = slugify(`${input.salonName} ${input.city}`) || "salao";
@@ -89,14 +93,28 @@ export async function registerSalonOwner(
 
 export async function verifyCredentials(database: Db, email: string, password: string) {
   const [user] = await database.select().from(users).where(eq(users.email, email.trim().toLowerCase()));
-  if (!user) return null;
+  if (!user?.passwordHash) return null; // Google-only account
   return (await bcrypt.compare(password, user.passwordHash)) ? user : null;
+}
+
+/** First name for the header's account link; readable by the browser, holds nothing secret. */
+export const WHO_COOKIE = "ba_who";
+
+export async function setWhoCookie(name: string, expires: Date) {
+  (await cookies()).set(WHO_COOKIE, encodeURIComponent(name.trim().split(/\s+/)[0] ?? ""), {
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    expires,
+  });
 }
 
 export async function startSession(userId: string) {
   const token = randomBytes(32).toString("base64url");
   const expiresAt = new Date(Date.now() + SESSION_DAYS * 86_400_000);
   await db.insert(sessions).values({ id: hashToken(token), userId, expiresAt });
+  const [user] = await db.select({ name: users.name }).from(users).where(eq(users.id, userId));
+  if (user) await setWhoCookie(user.name, expiresAt);
   (await cookies()).set(COOKIE, token, {
     httpOnly: true,
     sameSite: "lax",
@@ -111,6 +129,7 @@ export async function endSession() {
   const token = jar.get(COOKIE)?.value;
   if (token) await db.delete(sessions).where(eq(sessions.id, hashToken(token)));
   jar.delete(COOKIE);
+  jar.delete(WHO_COOKIE);
 }
 
 export async function currentUser() {

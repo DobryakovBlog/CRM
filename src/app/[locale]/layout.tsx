@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
+import { AccountLink } from "@/components/AccountLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionNav } from "@/components/SectionNav";
 import { Logo } from "@/components/Logo";
@@ -38,7 +39,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     <html lang={locale} className={`${bodoni.variable} ${manrope.variable}`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
-          <header className="sticky top-0 z-20 border-b border-line bg-white/90 backdrop-blur">
+          <header className="z-20 border-b border-line bg-white/90 backdrop-blur md:sticky md:top-0">
             <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
               <Link href="/" aria-label="Astrabela">
                 <Logo className="h-10 w-auto sm:h-12" />
@@ -50,6 +51,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                 <Link href="/business" className="hidden text-muted transition-colors hover:text-ink sm:inline">
                   {t("forSalons")}
                 </Link>
+                <AccountLink label={t("signIn")} />
                 <Suspense fallback={<div className="h-8 w-24" />}>
                   <LanguageSwitcher label={t("language")} />
                 </Suspense>
