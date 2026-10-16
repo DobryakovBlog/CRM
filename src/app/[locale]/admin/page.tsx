@@ -5,9 +5,11 @@ import { openReports, pendingSalons } from "@/server/cabinet";
 import { cityName } from "@/lib/cities";
 import { formatDateTime } from "@/lib/format";
 import { FREE_PERIODS, listSubscriptions } from "@/server/subscriptions";
+import { botToken, supportChatId } from "@/server/telegram";
 import {
   approveSalonAction,
   cancelSubscriptionAction,
+  connectTelegramAction,
   freeUntilAction,
   grantFreeAction,
   moderateReportAction,
@@ -23,7 +25,14 @@ export default async function AdminPage({ params, searchParams }: PageProps<"/[l
   const q = str(sp.q);
   const done = str(sp.sub);
   const t = await getTranslations("business.admin");
-  const [salons, reports, subs] = await Promise.all([pendingSalons(db), openReports(db), listSubscriptions(db, q)]);
+  const [salons, reports, subs, tgChat] = await Promise.all([
+    pendingSalons(db),
+    openReports(db),
+    listSubscriptions(db, q),
+    supportChatId(db),
+  ]);
+  const tgCode = str(sp.tg);
+  const tgBot = str(sp.bot) ?? "astrabela_bot";
   const now = new Date();
   const date = (d: Date) => formatDateTime(d, "Europe/Lisbon", locale, { dateStyle: "medium" });
   const tomorrow = new Date(now.getTime() + 86_400_000).toISOString().slice(0, 10);
@@ -154,6 +163,26 @@ export default async function AdminPage({ params, searchParams }: PageProps<"/[l
             </div>
           );
         })}
+      </section>
+      <section id="telegram" className="space-y-3">
+        <h2 className="font-semibold">{t("telegram.title")}</h2>
+        <p className="text-sm text-muted">
+          {!botToken() ? t("telegram.noToken") : tgChat ? t("telegram.linked") : t("telegram.notLinked")}
+        </p>
+        {tgCode === "error" && <p className="text-sm text-red-800">{t("telegram.error")}</p>}
+        {tgCode && tgCode !== "error" && (
+          <div className="card space-y-2 text-sm">
+            <p>{t("telegram.connected")}</p>
+            <p>{t("telegram.sendCode", { bot: tgBot })}</p>
+            <p className="font-mono text-lg">/link {tgCode}</p>
+            <p className="text-xs text-muted">{t("telegram.codeHint")}</p>
+          </div>
+        )}
+        {botToken() && (
+          <form action={connectTelegramAction}>
+            <button className="btn-gold">{t("telegram.connect")}</button>
+          </form>
+        )}
       </section>
     </div>
   );
