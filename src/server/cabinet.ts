@@ -147,6 +147,7 @@ export async function updateSalonProfile(
     nif: string;
     cuisine?: string;
     social?: SocialLinks;
+    petFriendly?: boolean;
   },
 ) {
   await db.update(salons).set(input).where(eq(salons.id, salonId));

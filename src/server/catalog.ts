@@ -72,6 +72,7 @@ export async function searchSalons(db: Db, p: SearchParams) {
       coverImageUrl: salons.coverImageUrl,
       ratingAvg: salons.ratingAvg,
       ratingCount: salons.ratingCount,
+      petFriendly: salons.petFriendly,
       // Written with explicit table names: Drizzle leaves columns unqualified in the
       // select list of a single-table query, which would bind "id" to services.id here.
       minPriceCents: sql<number>`(select min(s.price_cents) from services s

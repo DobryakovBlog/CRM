@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { requireOwner } from "@/server/auth";
+import { SupportLink } from "@/components/SupportLink";
 import { logoutAction } from "../actions";
 
 const TABS = {
@@ -20,9 +21,12 @@ export default async function CabinetLayout({ children, params }: LayoutProps<"/
           <p className="eyebrow">{t(`salonStatus.${salon.status}`)}</p>
           <h1 className="font-display text-3xl">{salon.name}</h1>
         </div>
-        <form action={logoutAction}>
-          <button className="text-sm text-muted hover:underline">{t("logout")}</button>
-        </form>
+        <div className="flex items-center gap-5">
+          <SupportLink label={t("support")} className="text-sm text-muted hover:text-ink" />
+          <form action={logoutAction}>
+            <button className="text-sm text-muted hover:underline">{t("logout")}</button>
+          </form>
+        </div>
       </div>
       <nav className="flex gap-1 overflow-x-auto border-b border-line text-sm">
         {[...TABS[salon.kind], ...(user.isAdmin ? (["admin"] as const) : [])].map((tab) => (

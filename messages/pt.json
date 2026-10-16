@@ -12,7 +12,8 @@
     "restaurants": "Restaurantes",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "signIn": "Entrar"
+    "signIn": "Entrar",
+    "support": "Suporte"
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
@@ -420,7 +421,18 @@
         "endsOn": "até {date}",
         "endedOn": "desde {date}"
       },
-      "title": "Administração"
+      "title": "Administração",
+      "telegram": {
+        "title": "Bot de suporte no Telegram",
+        "noToken": "O bot ainda não está ativo: adicione TELEGRAM_BOT_TOKEN nas variáveis do Vercel e faça redeploy.",
+        "linked": "O bot está ligado e as mensagens dos clientes chegam ao seu Telegram.",
+        "notLinked": "O bot ainda não está ligado ao seu Telegram.",
+        "connect": "Ligar o bot",
+        "connected": "Bot configurado: idiomas, descrição e comandos atualizados.",
+        "sendCode": "Agora envie esta mensagem a @{bot} a partir do seu Telegram:",
+        "codeHint": "O código vale 1 hora. A partir daí, as mensagens dos clientes chegam a esse chat.",
+        "error": "Não foi possível ligar o bot. Verifique o token no Vercel."
+      }
     },
     "menu": {
       "hint": "Organize o menu por secções. As alterações aparecem logo na página pública e no código QR das mesas.",
@@ -455,7 +467,8 @@
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
       "print": "Imprimir cartão"
-    }
+    },
+    "support": "Suporte"
   },
   "countries": {
     "pt": "Portugal",
@@ -556,5 +569,9 @@
       "invalid": "Verifique o nome, o e-mail e a palavra-passe (mínimo 8 caracteres).",
       "email_taken": "Já existe uma conta com este e-mail. Entre com ele."
     }
+  },
+  "petFriendly": {
+    "label": "Pet friendly",
+    "hint": "Animais de estimação são bem-vindos."
   }
 }

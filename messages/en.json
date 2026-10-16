@@ -12,7 +12,8 @@
     "restaurants": "Restaurants",
     "privacy": "Privacy",
     "terms": "Terms",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "support": "Support"
   },
   "home": {
     "title": "Book the best. Trust the stars.",
@@ -420,7 +421,18 @@
         "endsOn": "until {date}",
         "endedOn": "since {date}"
       },
-      "title": "Admin"
+      "title": "Admin",
+      "telegram": {
+        "title": "Telegram support bot",
+        "noToken": "The bot is not active yet: add TELEGRAM_BOT_TOKEN to the Vercel environment variables and redeploy.",
+        "linked": "The bot is connected and client messages reach your Telegram.",
+        "notLinked": "The bot is not linked to your Telegram yet.",
+        "connect": "Connect the bot",
+        "connected": "Bot set up: languages, description and commands updated.",
+        "sendCode": "Now send this message to @{bot} from your Telegram:",
+        "codeHint": "The code is valid for 1 hour. From then on, client messages arrive in that chat.",
+        "error": "Could not connect the bot. Check the token in Vercel."
+      }
     },
     "menu": {
       "hint": "Organise the menu in sections. Changes show up right away on the public page and behind the table QR code.",
@@ -455,7 +467,8 @@
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
       "print": "Print card"
-    }
+    },
+    "support": "Support"
   },
   "countries": {
     "pt": "Portugal",
@@ -556,5 +569,9 @@
       "invalid": "Check your name, e-mail and password (at least 8 characters).",
       "email_taken": "An account with this e-mail already exists. Sign in with it."
     }
+  },
+  "petFriendly": {
+    "label": "Pet friendly",
+    "hint": "Pets are welcome."
   }
 }

@@ -4,6 +4,7 @@ import { formatPrice } from "@/lib/format";
 import { cityName } from "@/lib/slug";
 import type { searchRestaurants } from "@/server/menu";
 import { Monogram } from "./SalonCard";
+import { PawIcon } from "./PetFriendly";
 
 type Restaurant = Awaited<ReturnType<typeof searchRestaurants>>[number];
 
@@ -19,7 +20,15 @@ export async function RestaurantCard({ restaurant: r }: { restaurant: Restaurant
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h2 className="font-display text-xl leading-tight group-hover:text-gold-deep">{r.name}</h2>
         {r.cuisine && <p className="text-sm text-ink">{r.cuisine}</p>}
-        <p className="text-sm text-muted">{[r.district, cityName(r.city)].filter(Boolean).join(" · ")}</p>
+        <p className="flex items-center gap-2 text-sm text-muted">
+          {[r.district, cityName(r.city)].filter(Boolean).join(" · ")}
+          {r.petFriendly && (
+            <span title="Pet friendly" className="text-gold-deep">
+              <PawIcon className="h-4 w-4" />
+              <span className="sr-only">Pet friendly</span>
+            </span>
+          )}
+        </p>
         <p className="mt-auto flex justify-between pt-3 text-sm">
           <span>{t("dishes", { count: r.dishes })}</span>
           <span>{t("from", { price: formatPrice(r.minPriceCents, locale) })}</span>
