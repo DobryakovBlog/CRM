@@ -12,7 +12,8 @@
     "restaurants": "Restaurantes",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "signIn": "Entrar"
+    "signIn": "Entrar",
+    "support": "Suporte"
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
@@ -455,7 +456,8 @@
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
       "print": "Imprimir cartão"
-    }
+    },
+    "support": "Suporte"
   },
   "countries": {
     "pt": "Portugal",

@@ -12,7 +12,8 @@
     "restaurants": "Restaurants",
     "privacy": "Privacy",
     "terms": "Terms",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "support": "Support"
   },
   "home": {
     "title": "Book the best. Trust the stars.",
@@ -455,7 +456,8 @@
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
       "print": "Print card"
-    }
+    },
+    "support": "Support"
   },
   "countries": {
     "pt": "Portugal",
