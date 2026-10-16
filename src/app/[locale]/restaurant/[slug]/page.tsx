@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SocialLinks } from "@/components/SocialLinks";
+import { PetFriendlyBadge } from "@/components/PetFriendly";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
@@ -23,6 +24,7 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
   const t = await getTranslations("restaurant");
   const ta = await getTranslations("allergens");
   const tt = await getTranslations("dishTags");
+  const tp = await getTranslations("petFriendly");
   // English names are optional; fall back to Portuguese.
   const en = locale === "en";
   const pick = (pt: string, eng: string) => (en && eng ? eng : pt);
@@ -44,6 +46,11 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
             </>
           )}
         </p>
+        {r.petFriendly && (
+          <div className="mt-5">
+            <PetFriendlyBadge label={tp("label")} onDark />
+          </div>
+        )}
         <SocialLinks links={r.social} onDark className="mt-5 justify-center" />
       </header>
 

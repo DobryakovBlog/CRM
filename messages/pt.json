@@ -556,5 +556,9 @@
       "invalid": "Verifique o nome, o e-mail e a palavra-passe (mínimo 8 caracteres).",
       "email_taken": "Já existe uma conta com este e-mail. Entre com ele."
     }
+  },
+  "petFriendly": {
+    "label": "Pet friendly",
+    "hint": "Animais de estimação são bem-vindos."
   }
 }

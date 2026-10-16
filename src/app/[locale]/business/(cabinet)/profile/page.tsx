@@ -3,6 +3,7 @@ import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { formatDateTime } from "@/lib/format";
 import { SOCIAL_NETWORKS, type SocialNetwork } from "@/lib/social";
+import { PetFriendlyToggle } from "@/components/PetFriendly";
 import { requireOwner } from "@/server/auth";
 import { salonSubscription } from "@/server/cabinet";
 import { saveProfileAction, submitForReviewAction } from "../actions";
@@ -17,6 +18,7 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
   const { salon } = await requireOwner(locale);
   const t = await getTranslations("business.profile");
   const tn = await getTranslations("social");
+  const tp = await getTranslations("petFriendly");
   const badNet = SOCIAL_NETWORKS.find((n) => n === sp.net) as SocialNetwork | undefined;
   const sub = await salonSubscription(db, salon.id);
   const restaurant = salon.kind === "restaurant";
@@ -95,6 +97,9 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
             />
           </div>
         ))}
+        <div className="border-t border-line pt-4 sm:col-span-2">
+          <PetFriendlyToggle label={tp("label")} hint={tp("hint")} defaultChecked={salon.petFriendly} />
+        </div>
         <button className="btn sm:col-span-2">{t("save")}</button>
       </form>
     </div>

@@ -4,6 +4,7 @@ import { formatPrice } from "@/lib/format";
 import { cityName } from "@/lib/slug";
 import type { searchSalons } from "@/server/catalog";
 import { Stars } from "./Stars";
+import { PawIcon } from "./PetFriendly";
 
 type Salon = Awaited<ReturnType<typeof searchSalons>>[number];
 
@@ -36,7 +37,15 @@ export async function SalonCard({ salon }: { salon: Salon }) {
           <h2 className="font-display text-xl leading-tight group-hover:text-gold-deep">{salon.name}</h2>
           <Stars x100={salon.ratingAvg} count={salon.ratingCount} newLabel={t("new")} />
         </div>
-        <p className="text-sm text-muted">{[salon.district, cityName(salon.city)].filter(Boolean).join(" · ")}</p>
+        <p className="flex items-center gap-2 text-sm text-muted">
+          {[salon.district, cityName(salon.city)].filter(Boolean).join(" · ")}
+          {salon.petFriendly && (
+            <span title="Pet friendly" className="text-gold-deep">
+              <PawIcon className="h-4 w-4" />
+              <span className="sr-only">Pet friendly</span>
+            </span>
+          )}
+        </p>
         <p className="mt-auto pt-3 text-sm font-semibold text-cobalt">{t("from", { price: formatPrice(salon.minPriceCents, locale) })}</p>
       </div>
     </Link>

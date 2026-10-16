@@ -556,5 +556,9 @@
       "invalid": "Check your name, e-mail and password (at least 8 characters).",
       "email_taken": "An account with this e-mail already exists. Sign in with it."
     }
+  },
+  "petFriendly": {
+    "label": "Pet friendly",
+    "hint": "Pets are welcome."
   }
 }

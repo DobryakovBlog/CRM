@@ -33,6 +33,7 @@ export async function registerAction(form: FormData) {
     ({ user: { id: userId } } = await registerSalonOwner(db, {
       ...(parsed.data as z.infer<typeof Register>),
       ...(google ? { email: google.email, password: undefined } : {}),
+      petFriendly: form.get("petFriendly") === "on",
     }));
   } catch (e) {
     if (e instanceof Error && e.message === "email_taken") {

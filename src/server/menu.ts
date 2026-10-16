@@ -46,6 +46,7 @@ export async function searchRestaurants(db: Db, p: { city?: string; q?: string }
       city: salons.city,
       district: salons.district,
       cuisine: salons.cuisine,
+      petFriendly: salons.petFriendly,
       dishes: sql<number>`(select count(*) from menu_items m
         where m.salon_id = "salons"."id" and m.is_available)`.mapWith(Number),
       minPriceCents: sql<number>`(select min(m.price_cents) from menu_items m
