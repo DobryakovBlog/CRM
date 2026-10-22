@@ -128,6 +128,7 @@ export const salons = pgTable(
     coverImageUrl: text("cover_image_url"),
     cuisine: text("cuisine").notNull().default(""), // restaurants only, e.g. "Portuguesa · Marisco"
     social: jsonb("social").$type<SocialLinks>().notNull().default({}), // Instagram, Facebook, TikTok, WhatsApp, website
+    petFriendly: boolean("pet_friendly").notNull().default(false),
     status: salonStatus("status").notNull().default("draft"),
     // Cached aggregates, recomputed whenever a review changes.
     ratingAvg: integer("rating_avg_x100").notNull().default(0),

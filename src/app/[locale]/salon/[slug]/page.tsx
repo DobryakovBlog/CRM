@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SocialLinks } from "@/components/SocialLinks";
+import { PetFriendlyBadge } from "@/components/PetFriendly";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Monogram } from "@/components/SalonCard";
@@ -29,6 +30,7 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
   const tc = await getTranslations("categories");
   const tl = await getTranslations("languages");
   const ts = await getTranslations("search");
+  const tp = await getTranslations("petFriendly");
 
   const byCategory = Object.groupBy(services, (s) => s.category);
 
@@ -45,6 +47,7 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
             {salon.ratingCount > 0 && <span className="ml-2 text-xs text-muted">{t("verifiedNote")}</span>}
           </div>
           {salon.description && <p className="max-w-2xl text-lg leading-relaxed text-ink">{salon.description}</p>}
+          {salon.petFriendly && <PetFriendlyBadge label={tp("label")} />}
           <SocialLinks links={salon.social} />
         </header>
 

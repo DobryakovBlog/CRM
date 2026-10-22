@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import { AccountLink } from "@/components/AccountLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionNav } from "@/components/SectionNav";
+import { SupportLink } from "@/components/SupportLink";
 import { Logo } from "@/components/Logo";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -74,6 +75,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                 <Link href="/business" className="hover:text-white">{t("forSalons")}</Link>
                 <Link href="/privacy" className="hover:text-white">{t("privacy")}</Link>
                 <Link href="/terms" className="hover:text-white">{t("terms")}</Link>
+                <SupportLink label={t("support")} className="hover:text-white" />
               </div>
             </div>
           </footer>

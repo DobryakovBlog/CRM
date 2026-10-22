@@ -5,6 +5,7 @@ import { cityOptions } from "@/lib/cities";
 import { registerAction } from "../actions";
 import { cookies } from "next/headers";
 import { GoogleButton } from "@/components/GoogleButton";
+import { PetFriendlyToggle } from "@/components/PetFriendly";
 import { GOOGLE_SIGNUP_COOKIE, googleConfigured, readGoogleSignup } from "@/server/google";
 
 const FIELDS = [
@@ -31,6 +32,7 @@ export default async function RegisterPage({
   const google = readGoogleSignup((await cookies()).get(GOOGLE_SIGNUP_COOKIE)?.value);
   const fields = FIELDS.filter(([name]) => !google || (name !== "email" && name !== "password"));
   const ts = await getTranslations("search");
+  const tp = await getTranslations("petFriendly");
   return (
     <form action={registerAction} className="card mx-auto max-w-md space-y-4">
       <h1 className="font-display text-3xl">{t("title")}</h1>
@@ -91,6 +93,7 @@ export default async function RegisterPage({
           )}
         </div>
       ))}
+      <PetFriendlyToggle label={tp("label")} hint={tp("hint")} />
       <label className="flex items-start gap-2 text-xs text-muted">
         <input type="checkbox" required className="mt-0.5" />
         <span>{t.rich("terms", {

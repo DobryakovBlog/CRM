@@ -57,6 +57,13 @@
       "when": 1792031324218,
       "tag": "0007_client_passwords",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792164554651,
+      "tag": "0008_pet_friendly",
+      "breakpoints": true
     }
   ]
 }

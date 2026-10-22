@@ -155,6 +155,7 @@ export async function saveProfileAction(form: FormData) {
     nif: s(form, "nif"),
     ...(salon.kind === "restaurant" ? { cuisine: s(form, "cuisine").slice(0, 80) } : {}),
     social,
+    petFriendly: form.get("petFriendly") === "on",
   });
   redirect(`/${locale}/business/profile?saved=1`);
 }

@@ -1,0 +1,1 @@
+ALTER TABLE "salons" ADD COLUMN "pet_friendly" boolean DEFAULT false NOT NULL;

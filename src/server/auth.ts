@@ -41,6 +41,7 @@ export async function registerSalonOwner(
     address: string;
     phone: string;
     kind?: "salon" | "restaurant";
+    petFriendly?: boolean;
   },
   now = new Date(),
 ) {
@@ -77,6 +78,7 @@ export async function registerSalonOwner(
         address: input.address.trim(),
         phone: input.phone.trim(),
         email,
+        petFriendly: input.petFriendly ?? false,
       })
       .returning();
 
