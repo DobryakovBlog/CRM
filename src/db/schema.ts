@@ -1,5 +1,4 @@
 import {
-  bigint,
   boolean,
   index,
   integer,
@@ -353,29 +352,3 @@ export const menuItems = pgTable(
   },
   (t) => [index("menu_items_section_idx").on(t.sectionId)],
 );
-
-// --- Telegram support bot -------------------------------------------------------
-
-/** People who wrote to the support bot, with the language they picked. */
-export const telegramChats = pgTable("telegram_chats", {
-  chatId: bigint("chat_id", { mode: "number" }).primaryKey(),
-  lang: text("lang"),
-  name: text("name").notNull().default(""),
-  username: text("username").notNull().default(""),
-  lastAckAt: timestamp("last_ack_at", { withTimezone: true }),
-  createdAt: createdAt(),
-});
-
-/** Which client a message forwarded into the support chat came from, so replies go back. */
-export const telegramRelays = pgTable("telegram_relays", {
-  supportMessageId: bigint("support_message_id", { mode: "number" }).primaryKey(),
-  userChatId: bigint("user_chat_id", { mode: "number" }).notNull(),
-  createdAt: createdAt(),
-});
-
-/** Bot settings: the support chat id and the one-time code that links it. */
-export const telegramSettings = pgTable("telegram_settings", {
-  key: text("key").primaryKey(),
-  value: text("value").notNull(),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
-});

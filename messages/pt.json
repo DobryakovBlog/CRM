@@ -421,18 +421,7 @@
         "endsOn": "até {date}",
         "endedOn": "desde {date}"
       },
-      "title": "Administração",
-      "telegram": {
-        "title": "Bot de suporte no Telegram",
-        "noToken": "O bot ainda não está ativo: adicione TELEGRAM_BOT_TOKEN nas variáveis do Vercel e faça redeploy.",
-        "linked": "O bot está ligado e as mensagens dos clientes chegam ao seu Telegram.",
-        "notLinked": "O bot ainda não está ligado ao seu Telegram.",
-        "connect": "Ligar o bot",
-        "connected": "Bot configurado: idiomas, descrição e comandos atualizados.",
-        "sendCode": "Agora envie esta mensagem a @{bot} a partir do seu Telegram:",
-        "codeHint": "O código vale 1 hora. A partir daí, as mensagens dos clientes chegam a esse chat.",
-        "error": "Não foi possível ligar o bot. Verifique o token no Vercel."
-      }
+      "title": "Administração"
     },
     "menu": {
       "hint": "Organize o menu por secções. As alterações aparecem logo na página pública e no código QR das mesas.",

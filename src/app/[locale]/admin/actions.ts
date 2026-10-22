@@ -8,8 +8,6 @@ import { requireAdmin } from "@/server/admin";
 import { resolveReport, setSalonStatus } from "@/server/cabinet";
 import { setReviewStatus } from "@/server/reviews";
 import { cancelSubscription, grantFreeMonths, setFreeUntil } from "@/server/subscriptions";
-import { siteOrigin } from "@/lib/origin";
-import { botToken, connectBot, newLinkCode, telegramApi } from "@/server/telegram";
 
 const s = (form: FormData, key: string) => String(form.get(key) ?? "").trim();
 
@@ -59,12 +57,4 @@ export async function cancelSubscriptionAction(form: FormData) {
   await admin();
   await cancelSubscription(db, s(form, "salonId"));
   await adminBack(form, "saved");
-}
-
-export async function connectTelegramAction() {
-  const { locale } = await admin();
-  const token = botToken();
-  const bot = token ? await connectBot(telegramApi(token), await siteOrigin(), token) : null;
-  const tg = bot ? await newLinkCode(db) : "error";
-  redirect(`/${locale}/admin?${new URLSearchParams({ tg, ...(bot?.username && { bot: bot.username }) })}#telegram`);
 }
