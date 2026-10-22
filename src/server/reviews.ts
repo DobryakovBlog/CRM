@@ -1,6 +1,6 @@
-import { and, avg, count, desc, eq } from "drizzle-orm";
+import { and, avg, count, desc, eq, gt } from "drizzle-orm";
 import type { Db } from "@/db";
-import { bookings, reviewReports, reviews, salons, staff } from "@/db/schema";
+import { bookings, customers, reviewReports, reviews, salons, staff } from "@/db/schema";
 import { bookingByToken, BookingError } from "./booking";
 
 /** Recomputes cached rating aggregates for a salon and one of its masters. */
@@ -45,6 +45,52 @@ export async function createReview(
   return review;
 }
 
+const OPEN_REVIEW_GAP_MS = 30 * 86_400_000;
+
+/**
+ * Any signed-in client can review a master of a listed salon, once every 30 days per master.
+ * These reviews have no booking, so they show without the confirmed-visit label.
+ */
+export async function createOpenReview(
+  db: Db,
+  customer: typeof customers.$inferSelect,
+  input: { salonId: string; staffId: string; rating: number; text: string },
+  now = new Date(),
+) {
+  if (!Number.isInteger(input.rating) || input.rating < 1 || input.rating > 5) throw new BookingError("invalid");
+  const [master] = await db
+    .select({ id: staff.id })
+    .from(staff)
+    .innerJoin(salons, eq(salons.id, staff.salonId))
+    .where(and(eq(staff.id, input.staffId), eq(staff.salonId, input.salonId), eq(staff.isActive, true), eq(salons.kind, "salon")));
+  if (!master) throw new BookingError("invalid");
+  const [recent] = await db
+    .select({ id: reviews.id })
+    .from(reviews)
+    .where(
+      and(
+        eq(reviews.customerId, customer.id),
+        eq(reviews.staffId, input.staffId),
+        gt(reviews.createdAt, new Date(now.getTime() - OPEN_REVIEW_GAP_MS)),
+      ),
+    );
+  if (recent) throw new BookingError("too_soon");
+
+  const [review] = await db
+    .insert(reviews)
+    .values({
+      customerId: customer.id,
+      salonId: input.salonId,
+      staffId: input.staffId,
+      rating: input.rating,
+      text: input.text.trim().slice(0, 2000),
+      authorName: customer.name.trim().split(/\s+/)[0]?.slice(0, 60) || "Cliente",
+    })
+    .returning();
+  await refreshRatings(db, review.salonId, review.staffId);
+  return review;
+}
+
 export async function replyToReview(db: Db, salonId: string, reviewId: string, reply: string) {
   await db
     .update(reviews)
@@ -77,7 +123,7 @@ export async function publishedReviews(db: Db, salonId: string, limit = 20) {
     })
     .from(reviews)
     .innerJoin(staff, eq(staff.id, reviews.staffId))
-    .innerJoin(bookings, eq(bookings.id, reviews.bookingId))
+    .leftJoin(bookings, eq(bookings.id, reviews.bookingId))
     .where(and(eq(reviews.salonId, salonId), eq(reviews.status, "published")))
     .orderBy(desc(reviews.createdAt))
     .limit(limit);

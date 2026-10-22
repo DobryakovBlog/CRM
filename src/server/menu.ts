@@ -1,7 +1,7 @@
-import { and, asc, eq, exists, ilike, inArray, or, sql } from "drizzle-orm";
+import { and, asc, count, eq, exists, ilike, inArray, or, sql } from "drizzle-orm";
 import { placesIn } from "@/lib/cities";
 import type { Db } from "@/db";
-import { menuItems, menuSections, salons } from "@/db/schema";
+import { menuItemLikes, menuItems, menuSections, salons, subscriptions } from "@/db/schema";
 
 // The 14 allergens restaurants must declare in the EU (Regulation 1169/2011, Annex II).
 export const ALLERGENS = [
@@ -22,11 +22,16 @@ export const ALLERGENS = [
 ] as const;
 export const DISH_TAGS = ["vegetarian", "vegan", "gluten_free", "spicy"] as const;
 
-/** A restaurant is listed when it is approved and its menu has a dish. Menus are free: no subscription. */
-export function restaurantListedCondition() {
+/** A restaurant is listed when it is approved, has a running trial or subscription, and its menu has a dish. */
+export function restaurantListedCondition(now = new Date()) {
   return and(
     eq(salons.kind, "restaurant"),
     eq(salons.status, "active"),
+    exists(
+      sql`(select 1 from ${subscriptions} where ${subscriptions.salonId} = ${salons.id}
+        and ${subscriptions.status} in ('trial', 'active', 'complimentary')
+        and ${subscriptions.currentPeriodEnd} >= ${now})`,
+    ),
     exists(sql`(select 1 from ${menuItems} where ${menuItems.salonId} = ${salons.id} and ${menuItems.isAvailable})`),
   );
 }
@@ -200,3 +205,36 @@ export async function menuHasDishes(db: Db, salonId: string) {
   return Boolean(row);
 }
 
+
+// --- Dish likes ------------------------------------------------------------------
+
+/** Like counts for a restaurant's dishes, and which of them this visitor liked. */
+export async function dishLikes(db: Db, salonId: string, visitorId?: string) {
+  const counts = await db
+    .select({ itemId: menuItemLikes.itemId, n: count() })
+    .from(menuItemLikes)
+    .innerJoin(menuItems, eq(menuItems.id, menuItemLikes.itemId))
+    .where(eq(menuItems.salonId, salonId))
+    .groupBy(menuItemLikes.itemId);
+  const mine = visitorId
+    ? await db
+        .select({ itemId: menuItemLikes.itemId })
+        .from(menuItemLikes)
+        .innerJoin(menuItems, eq(menuItems.id, menuItemLikes.itemId))
+        .where(and(eq(menuItems.salonId, salonId), eq(menuItemLikes.visitorId, visitorId)))
+    : [];
+  return { counts: new Map(counts.map((c) => [c.itemId, c.n])), liked: new Set(mine.map((m) => m.itemId)) };
+}
+
+/** Likes or un-likes a dish for one visitor; returns the new state. */
+export async function toggleDishLike(db: Db, itemId: string, visitorId: string) {
+  const [item] = await db.select({ id: menuItems.id }).from(menuItems).where(eq(menuItems.id, itemId));
+  if (!item) return null;
+  const removed = await db
+    .delete(menuItemLikes)
+    .where(and(eq(menuItemLikes.itemId, itemId), eq(menuItemLikes.visitorId, visitorId)))
+    .returning();
+  if (removed.length === 0) await db.insert(menuItemLikes).values({ itemId, visitorId }).onConflictDoNothing();
+  const [{ n }] = await db.select({ n: count() }).from(menuItemLikes).where(eq(menuItemLikes.itemId, itemId));
+  return { liked: removed.length === 0, count: n };
+}

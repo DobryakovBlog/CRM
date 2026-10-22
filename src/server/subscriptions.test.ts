@@ -45,18 +45,20 @@ describe("admin subscription tools", () => {
     expect((await salonSubscription(db, salonId))?.currentPeriodEnd.toISOString()).toBe("2028-10-20T12:00:00.000Z");
   });
 
-  it("sets an exact end date and refuses past dates and restaurants", async () => {
+  it("sets an exact end date and refuses past dates", async () => {
     const now = new Date("2026-10-14T12:00:00Z");
     await setFreeUntil(db, salonId, "2030-12-31", "", now);
     expect((await salonSubscription(db, salonId))?.currentPeriodEnd.toISOString()).toBe("2030-12-31T23:59:59.000Z");
     await expect(setFreeUntil(db, salonId, "2026-10-01", "", now)).rejects.toThrow("invalid_date");
-    await expect(grantFreeMonths(db, restaurantId, 12)).rejects.toThrow("not_a_salon");
     await expect(grantFreeMonths(db, salonId, 0)).rejects.toThrow("invalid_months");
   });
 
-  it("lists salons only and finds them by name", async () => {
+  it("gives restaurants a trial too and lists both kinds", async () => {
+    expect((await salonSubscription(db, restaurantId))?.status).toBe("trial");
+    await grantFreeMonths(db, restaurantId, 12);
+    expect((await salonSubscription(db, restaurantId))?.status).toBe("complimentary");
     const all = await listSubscriptions(db);
-    expect(all.map((r) => r.name)).toEqual(["Salão Azul"]);
+    expect(all.map((r) => r.name)).toEqual(["Salão Azul", "Taberna"]);
     expect(await listSubscriptions(db, "azul")).toHaveLength(1);
     expect(await listSubscriptions(db, "nada")).toHaveLength(0);
   });

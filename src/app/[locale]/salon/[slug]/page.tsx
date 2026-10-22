@@ -11,7 +11,8 @@ import { formatDateTime, formatPrice } from "@/lib/format";
 import { cityName } from "@/lib/slug";
 import { salonBySlug } from "@/server/catalog";
 import { publishedReviews } from "@/server/reviews";
-import { reportReviewAction } from "./actions";
+import { currentCustomer } from "@/server/customers";
+import { openReviewAction, reportReviewAction } from "./actions";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/salon/[slug]">): Promise<Metadata> {
   const data = await salonBySlug(db, (await params).slug);
@@ -25,7 +26,10 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
   if (!data) notFound();
   const { salon, services, staff } = data;
   const reviews = await publishedReviews(db, salon.id);
-  const reported = (await searchParams).reported === "1";
+  const sp = await searchParams;
+  const reported = sp.reported === "1";
+  const reviewResult = typeof sp.review === "string" ? sp.review : "";
+  const customer = await currentCustomer();
   const t = await getTranslations("salon");
   const tc = await getTranslations("categories");
   const tl = await getTranslations("languages");
@@ -79,9 +83,52 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
           </div>
         </section>
 
-        <section>
+        <section id="reviews" className="scroll-mt-24">
           <h2 className="font-display mb-4 text-2xl">{t("reviews")}</h2>
           {reported && <p className="mb-3 notice">{t("reportThanks")}</p>}
+          {reviewResult === "ok" && <p className="mb-3 notice">{t("reviewThanks")}</p>}
+          {reviewResult === "too_soon" && <p className="mb-3 notice-error">{t("reviewTooSoon")}</p>}
+          {reviewResult === "invalid" && <p className="mb-3 notice-error">{t("reviewInvalid")}</p>}
+          {staff.length > 0 && (
+            <details className="card mb-4" open={reviewResult === "invalid" || undefined}>
+              <summary className="cursor-pointer font-medium text-gold-deep">{t("writeReview")}</summary>
+              {customer ? (
+                <form action={openReviewAction} className="mt-3 space-y-3">
+                  <input type="hidden" name="slug" value={salon.slug} />
+                  <input type="hidden" name="salonId" value={salon.id} />
+                  <div>
+                    <label className="label" htmlFor="review-staff">{t("master")}</label>
+                    <select id="review-staff" name="staffId" required className="input" defaultValue="">
+                      <option value="" disabled>—</option>
+                      {staff.map((m) => (
+                        <option key={m.id} value={m.id}>{m.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <fieldset className="flex flex-wrap gap-3">
+                    <legend className="label">{t("rating")}</legend>
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <label key={n} className="flex items-center gap-1 text-sm">
+                        <input type="radio" name="rating" value={n} required /> {n}<span className="text-gold">★</span>
+                      </label>
+                    ))}
+                  </fieldset>
+                  <div>
+                    <label className="label" htmlFor="review-text">{t("yourReview")}</label>
+                    <textarea id="review-text" name="text" rows={4} maxLength={2000} className="input" />
+                  </div>
+                  <button className="btn">{t("publish")}</button>
+                </form>
+              ) : (
+                <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+                  <p className="text-muted">{t("signInToReview")}</p>
+                  <Link href={`/account?next=${encodeURIComponent(`/salon/${salon.slug}#reviews`)}`} className="btn-outline">
+                    {t("signIn")}
+                  </Link>
+                </div>
+              )}
+            </details>
+          )}
           {reviews.length === 0 && <p className="text-muted">{t("noReviews")}</p>}
           <ul className="space-y-4">
             {reviews.map((r) => (
@@ -97,7 +144,7 @@ export default async function SalonPage({ params, searchParams }: PageProps<"/[l
                 </div>
                 <p className="mt-1 text-xs text-muted">
                   {formatDateTime(r.createdAt, salon.timezone, locale, { dateStyle: "medium" })} ·{" "}
-                  {r.source === "marketplace" ? t("viaAstrabela") : t("viaSalon")}
+                  {!r.source ? t("viaClient") : r.source === "marketplace" ? t("viaAstrabela") : t("viaSalon")}
                 </p>
                 {r.text && <p className="mt-2 whitespace-pre-line text-ink">{r.text}</p>}
                 {r.reply && (

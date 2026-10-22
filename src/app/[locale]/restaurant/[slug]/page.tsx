@@ -6,7 +6,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
 import { formatPrice } from "@/lib/format";
 import { cityName } from "@/lib/slug";
-import { restaurantBySlug } from "@/server/menu";
+import { cookies } from "next/headers";
+import { LikeButton } from "@/components/LikeButton";
+import { dishLikes, restaurantBySlug } from "@/server/menu";
+import { VISITOR_COOKIE } from "@/lib/visitor";
+import { likeDishAction } from "./actions";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/restaurant/[slug]">): Promise<Metadata> {
   const data = await restaurantBySlug(db, (await params).slug);
@@ -21,6 +25,7 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
   const data = await restaurantBySlug(db, slug);
   if (!data) notFound();
   const { restaurant: r, sections } = data;
+  const likes = await dishLikes(db, r.id, (await cookies()).get(VISITOR_COOKIE)?.value);
   const t = await getTranslations("restaurant");
   const ta = await getTranslations("allergens");
   const tt = await getTranslations("dishTags");
@@ -88,20 +93,25 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
                     {d.portion && <span className="whitespace-nowrap">{d.description ? " · " : ""}{d.portion}</span>}
                   </p>
                 )}
-                {(d.tags.length > 0 || d.allergens.length > 0) && (
-                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-xs">
-                    {d.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-gold-soft px-2 py-0.5 text-gold-deep">
-                        {tt(tag as never)}
-                      </span>
-                    ))}
-                    {d.allergens.length > 0 && (
-                      <span className="text-muted">
-                        {t("allergens")}: {d.allergens.map((a) => ta(a as never)).join(", ")}
-                      </span>
-                    )}
-                  </div>
-                )}
+                <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-xs">
+                  {d.tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-gold-soft px-2 py-0.5 text-gold-deep">
+                      {tt(tag as never)}
+                    </span>
+                  ))}
+                  {d.allergens.length > 0 && (
+                    <span className="rounded-full bg-sand px-2 py-0.5 text-ink">
+                      ⚠︎ {t("allergens")}: {d.allergens.map((a) => ta(a as never)).join(", ")}
+                    </span>
+                  )}
+                  <span className="ml-auto">
+                    <LikeButton
+                      initial={{ liked: likes.liked.has(d.id), count: likes.counts.get(d.id) ?? 0 }}
+                      label={t("like")}
+                      onToggle={likeDishAction.bind(null, d.id)}
+                    />
+                  </span>
+                </div>
               </li>
             ))}
           </ul>

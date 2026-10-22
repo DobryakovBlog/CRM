@@ -3,7 +3,7 @@ import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { formatPrice } from "@/lib/format";
 import { requireOwner } from "@/server/auth";
-import { restaurantMenu } from "@/server/menu";
+import { dishLikes, restaurantMenu } from "@/server/menu";
 import {
   addDishAction,
   addSectionAction,
@@ -33,7 +33,7 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
   const sp = await searchParams;
   const { salon } = await requireOwner(locale, "restaurant");
   const t = await getTranslations("business.menu");
-  const sections = await restaurantMenu(db, salon.id, { publicView: false });
+  const [sections, likes] = await Promise.all([restaurantMenu(db, salon.id, { publicView: false }), dishLikes(db, salon.id)]);
 
   return (
     <div className="space-y-6">
@@ -87,6 +87,9 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
                     {d.description && <p className="text-sm text-muted">{d.description}</p>}
                   </div>
                   <div className="flex items-center gap-3 text-sm">
+                    {(likes.counts.get(d.id) ?? 0) > 0 && (
+                      <span className="text-xs text-red-700" title={t("likes")}>♥ {likes.counts.get(d.id)}</span>
+                    )}
                     <span className="font-semibold tabular-nums">{formatPrice(d.priceCents, locale)}</span>
                     <form action={toggleDishAction}>
                       <input type="hidden" name="dishId" value={d.id} />

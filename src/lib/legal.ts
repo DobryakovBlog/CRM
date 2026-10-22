@@ -32,7 +32,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
       title: "Privacy policy",
       updated: "Last updated: 15 October 2026",
       intro:
-        "Astrabela is a catalogue of beauty salons, barbershops and restaurants in Portugal, with online booking and reviews from clients with a confirmed visit. This policy explains what personal data we process, why, and what your rights are under the GDPR.",
+        "Astrabela is a catalogue of beauty salons, barbershops and restaurants in Portugal, with online booking and client reviews of each professional. This policy explains what personal data we process, why, and what your rights are under the GDPR.",
       sections: [
         { title: "1. Who we are", body: [`The site astrabela.com is run by ${who()}. For any question about your data, write to ${o.email}.`] },
         {
@@ -59,7 +59,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
             [
               "to make, manage and remind you of a booking: performance of a contract (Art. 6(1)(b) GDPR);",
               "to run business accounts and subscriptions: performance of a contract;",
-              "to publish verified reviews and prevent fake ones: our legitimate interest in a trustworthy catalogue (Art. 6(1)(f));",
+              "to publish reviews and prevent fake ones: our legitimate interest in a trustworthy catalogue (Art. 6(1)(f));",
               "to keep the site secure: legitimate interest;",
               "to meet tax and accounting rules: legal obligation (Art. 6(1)(c)).",
             ],
@@ -126,7 +126,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
     title: "Política de privacidade",
     updated: "Última atualização: 15 de outubro de 2026",
     intro:
-      "A Astrabela é um catálogo de salões de beleza, barbearias e restaurantes em Portugal, com marcação online e avaliações de clientes com visita confirmada. Esta política explica que dados pessoais tratamos, para quê e quais são os seus direitos ao abrigo do RGPD.",
+      "A Astrabela é um catálogo de salões de beleza, barbearias e restaurantes em Portugal, com marcação online e avaliações de clientes sobre cada profissional. Esta política explica que dados pessoais tratamos, para quê e quais são os seus direitos ao abrigo do RGPD.",
     sections: [
       { title: "1. Quem somos", body: [`O site astrabela.com é gerido por ${who()}. Para qualquer questão sobre os seus dados, escreva para ${o.email}.`] },
       {
@@ -153,7 +153,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
           [
             "fazer, gerir e lembrar a marcação: execução de contrato (art. 6.º, n.º 1, al. b) do RGPD);",
             "gerir contas e subscrições das empresas: execução de contrato;",
-            "publicar avaliações verificadas e impedir avaliações falsas: interesse legítimo num catálogo de confiança (art. 6.º, n.º 1, al. f));",
+            "publicar avaliações e impedir avaliações falsas: interesse legítimo num catálogo de confiança (art. 6.º, n.º 1, al. f));",
             "manter o site seguro: interesse legítimo;",
             "cumprir obrigações fiscais e contabilísticas: obrigação legal (art. 6.º, n.º 1, al. c)).",
           ],
@@ -228,7 +228,7 @@ export function termsOfUse(locale: "pt" | "en"): LegalDoc {
         {
           title: "1. The service",
           body: [
-            "Astrabela lets clients find beauty salons, barbershops and restaurants, book appointments online, leave reviews after a confirmed visit and see restaurant menus. Salons and restaurants manage their profile, team, services, calendar and menu in their business account.",
+            "Astrabela lets clients find beauty salons, barbershops and restaurants, book appointments online, review the professionals and see restaurant menus. Salons and restaurants manage their profile, team, services, calendar and menu in their business account.",
           ],
         },
         {
@@ -245,7 +245,7 @@ export function termsOfUse(locale: "pt" | "en"): LegalDoc {
         {
           title: "3. Reviews",
           body: [
-            "Only clients with a visit booked through Astrabela or confirmed by the salon can leave a review, once per visit, through their personal link. A review must:",
+            "Any client signed in to an Astrabela account can review a professional of a salon, once every 30 days per professional. Clients with a visit booked through Astrabela or confirmed by the salon can also review through their personal link, and those reviews carry a confirmed-visit label. A review must:",
             [
               "describe your own real experience;",
               "contain no insults, threats or discrimination;",
@@ -319,7 +319,7 @@ export function termsOfUse(locale: "pt" | "en"): LegalDoc {
       {
         title: "1. O serviço",
         body: [
-          "A Astrabela permite aos clientes encontrar salões de beleza, barbearias e restaurantes, marcar serviços online, avaliar depois de uma visita confirmada e consultar menus de restaurantes. Os salões e restaurantes gerem o perfil, a equipa, os serviços, a agenda e o menu na sua conta de empresa.",
+          "A Astrabela permite aos clientes encontrar salões de beleza, barbearias e restaurantes, marcar serviços online, avaliar os profissionais e consultar menus de restaurantes. Os salões e restaurantes gerem o perfil, a equipa, os serviços, a agenda e o menu na sua conta de empresa.",
         ],
       },
       {
@@ -336,7 +336,7 @@ export function termsOfUse(locale: "pt" | "en"): LegalDoc {
       {
         title: "3. Avaliações",
         body: [
-          "Só podem avaliar clientes com uma visita marcada pela Astrabela ou confirmada pelo salão, uma vez por visita, através do seu link pessoal. Uma avaliação deve:",
+          "Qualquer cliente com sessão iniciada numa conta Astrabela pode avaliar um profissional de um salão, uma vez a cada 30 dias por profissional. Os clientes com uma visita marcada pela Astrabela ou confirmada pelo salão também podem avaliar através do seu link pessoal, e essas avaliações têm a marca de visita confirmada. Uma avaliação deve:",
           [
             "descrever a sua própria experiência real;",
             "não conter insultos, ameaças nem discriminação;",

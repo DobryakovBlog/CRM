@@ -92,7 +92,7 @@ export default async function AdminPage({ params, searchParams }: PageProps<"/[l
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <p>
                   <span className="font-medium">{r.name}</span>
-                  <span className="text-muted"> · {cityName(r.city)} · {t(`subs.salonStatus.${r.salonStatus}`)}</span>
+                  <span className="text-muted"> · {t(`subs.kind.${r.kind}`)} · {cityName(r.city)} · {t(`subs.salonStatus.${r.salonStatus}`)}</span>
                 </p>
                 <p>
                   {r.status ? (

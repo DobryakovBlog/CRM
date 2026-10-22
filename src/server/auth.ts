@@ -9,7 +9,7 @@ import { slugify } from "@/lib/slug";
 
 const COOKIE = "ba_session";
 const SESSION_DAYS = 30;
-/** Salons start with three free months; restaurant menus are free and need no subscription. */
+/** Salons and restaurants start with three free months, then a paid subscription. */
 export const TRIAL_MONTHS = 3;
 
 /** Same day of the month, N months later (clamped to the month's last day). */
@@ -82,13 +82,11 @@ export async function registerSalonOwner(
       })
       .returning();
 
-    if (salon.kind === "salon") {
-      await tx.insert(subscriptions).values({
-        salonId: salon.id,
-        status: "trial",
-        currentPeriodEnd: addMonths(now, TRIAL_MONTHS),
-      });
-    }
+    await tx.insert(subscriptions).values({
+      salonId: salon.id,
+      status: "trial",
+      currentPeriodEnd: addMonths(now, TRIAL_MONTHS),
+    });
     return { user, salon };
   });
 }

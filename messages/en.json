@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Astrabela: beauty salons and barbershops with online booking",
-    "description": "Find a beauty salon or barbershop in Portugal, read verified reviews and book online."
+    "description": "Find a beauty salon or barbershop in Portugal, read client reviews of each professional and book online."
   },
   "nav": {
     "forSalons": "For business",
-    "footer": "Astrabela · Reviews only from clients with a confirmed visit",
+    "footer": "Astrabela · Client reviews of every professional",
     "language": "Language",
     "forClients": "Find a salon",
     "salons": "Salons",
@@ -17,11 +17,11 @@
   },
   "home": {
     "title": "Book the best. Trust the stars.",
-    "subtitle": "Portugal's best beauty salons and barbershops, rated only by clients with a confirmed visit. Choose your professional and book online in seconds.",
+    "subtitle": "Portugal's best beauty salons and barbershops, rated by clients professional by professional. Choose and book online in seconds.",
     "why": {
       "verified": {
-        "title": "Verified reviews",
-        "text": "Only clients who came to a booked visit can leave a review."
+        "title": "Reviews per professional",
+        "text": "Every review is about one professional. Confirmed visits get their own badge."
       },
       "masters": {
         "title": "Choose the professional",
@@ -85,7 +85,7 @@
     "6": "Saturday"
   },
   "salon": {
-    "verifiedNote": "all reviews come from confirmed visits",
+    "verifiedNote": "client reviews, per professional",
     "services": "Services",
     "minutes": "{n} min",
     "book": "Book",
@@ -101,7 +101,18 @@
     "team": "Team",
     "payOnSite": "Payment is made at the salon.",
     "viaAstrabela": "booked on Astrabela",
-    "viaSalon": "visit confirmed by the salon"
+    "viaSalon": "visit confirmed by the salon",
+    "writeReview": "Review a professional",
+    "master": "Professional",
+    "rating": "Rating",
+    "yourReview": "Your review (optional)",
+    "publish": "Publish review",
+    "signInToReview": "Sign in to leave a review.",
+    "signIn": "Sign in",
+    "reviewThanks": "Thank you! Your review is published.",
+    "reviewTooSoon": "You already reviewed this professional in the last 30 days.",
+    "reviewInvalid": "Choose the professional and a rating.",
+    "viaClient": "client review"
   },
   "book": {
     "minutes": "{n} min",
@@ -155,21 +166,21 @@
   "business": {
     "landing": {
       "title": "More clients for your salon",
-      "subtitle": "Online calendar, reminders and verified reviews. No commission, one flat price for the whole team.",
+      "subtitle": "Online calendar, reminders and client reviews. No commission, one flat price for the whole team.",
       "start": "Try {months} months free",
       "features": {
         "noCommission": "0% commission on clients",
         "unlimitedStaff": "Unlimited staff",
         "calendar": "Online calendar and manual bookings",
         "reminders": "Automatic client reminders",
-        "verifiedReviews": "Reviews only from real clients",
+        "verifiedReviews": "Reviews per professional",
         "ownClients": "Your clients stay yours"
       },
       "restaurants": {
         "eyebrow": "Restaurants",
         "title": "Your menu online, always up to date",
-        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time. Free for restaurants.",
-        "cta": "Register a restaurant for free"
+        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time. The first 3 months are free.",
+        "cta": "Try 3 months free"
       },
       "trialNote": "The first {months} months are free. No card needed to start."
     },
@@ -323,8 +334,7 @@
           "pending": "We are reviewing the restaurant.",
           "active": "The restaurant is published and its menu is visible.",
           "suspended": "The restaurant is suspended. Please contact us."
-        },
-        "free": "The digital menu and QR code are free for restaurants."
+        }
       },
       "social": {
         "title": "Social media",
@@ -375,7 +385,8 @@
       "shareCopy": "Copy message",
       "shareCopied": "Copied ✓",
       "shareWhatsapp": "WhatsApp",
-      "shareSms": "SMS"
+      "shareSms": "SMS",
+      "viaClient": "client review"
     },
     "admin": {
       "pending": "Salons awaiting listing",
@@ -387,7 +398,7 @@
       "hide": "Hide review",
       "keep": "Keep",
       "subs": {
-        "title": "Salon subscriptions",
+        "title": "Subscriptions",
         "hint": "Give free months or set the date the free subscription runs until. A gift starts when the time the salon already has runs out.",
         "search": "Search by name, city or NIF",
         "find": "Search",
@@ -419,7 +430,11 @@
           "complimentary": "Free"
         },
         "endsOn": "until {date}",
-        "endedOn": "since {date}"
+        "endedOn": "since {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restaurant"
+        }
       },
       "title": "Admin"
     },
@@ -448,14 +463,21 @@
       "portion": "Portion (optional)",
       "portionPlaceholder": "300 g, 0.33 l, for 2",
       "allergens": "Allergens",
-      "tags": "Tags"
+      "tags": "Tags",
+      "likes": "Likes from guests"
     },
     "qr": {
       "hint": "Print this card and put it on your tables. Guests scan it with their phone camera and the menu opens in their phone's language.",
       "notListed": "The code already works, but guests can open the menu only once the restaurant is published (Profile tab).",
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
-      "print": "Print card"
+      "print": "Print card",
+      "salon": {
+        "hint": "Print this card and put it at the reception or by the mirror. Clients scan it with their phone camera, book their next visit and review their professional.",
+        "notListed": "The code already works, but clients can open the page only once the salon is published (Profile tab).",
+        "scan": "Marque online e avalie o seu profissional",
+        "scanEn": "Book online and review your professional"
+      }
     },
     "support": "Support"
   },
@@ -487,7 +509,8 @@
     "menu": "Menu",
     "allergens": "Allergens",
     "vatIncluded": "Prices in euros, VAT included.",
-    "allergyNote": "Any allergies? Please tell the staff before ordering."
+    "allergyNote": "Any allergies? Please tell the staff before ordering.",
+    "like": "Like"
   },
   "allergens": {
     "gluten": "gluten",

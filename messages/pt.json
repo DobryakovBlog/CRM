@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Astrabela: salões de beleza e barbearias com marcação online",
-    "description": "Encontre um salão de beleza ou uma barbearia em Portugal, veja avaliações verificadas e marque online."
+    "description": "Encontre um salão de beleza ou uma barbearia em Portugal, leia avaliações de clientes sobre cada profissional e marque online."
   },
   "nav": {
     "forSalons": "Para negócios",
-    "footer": "Astrabela · Avaliações só de clientes com visita confirmada",
+    "footer": "Astrabela · Avaliações de clientes sobre cada profissional",
     "language": "Idioma",
     "forClients": "Encontrar salão",
     "salons": "Salões",
@@ -17,11 +17,11 @@
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
-    "subtitle": "Os melhores salões de beleza e barbearias de Portugal, avaliados só por clientes com visita confirmada. Escolha o profissional e marque online em segundos.",
+    "subtitle": "Os melhores salões de beleza e barbearias de Portugal, avaliados pelos clientes, profissional a profissional. Escolha e marque online em segundos.",
     "why": {
       "verified": {
-        "title": "Avaliações verificadas",
-        "text": "Só quem fez uma visita marcada pode avaliar."
+        "title": "Avaliações por profissional",
+        "text": "Cada avaliação é sobre um profissional concreto. As visitas confirmadas têm uma marca própria."
       },
       "masters": {
         "title": "Escolha o profissional",
@@ -85,7 +85,7 @@
     "6": "Sábado"
   },
   "salon": {
-    "verifiedNote": "todas as avaliações são de visitas confirmadas",
+    "verifiedNote": "avaliações de clientes, por profissional",
     "services": "Serviços",
     "minutes": "{n} min",
     "book": "Marcar",
@@ -101,7 +101,18 @@
     "team": "Equipa",
     "payOnSite": "O pagamento é feito no salão.",
     "viaAstrabela": "marcação pela Astrabela",
-    "viaSalon": "visita confirmada pelo salão"
+    "viaSalon": "visita confirmada pelo salão",
+    "writeReview": "Avaliar um profissional",
+    "master": "Profissional",
+    "rating": "Nota",
+    "yourReview": "A sua avaliação (opcional)",
+    "publish": "Publicar avaliação",
+    "signInToReview": "Entre na sua conta para deixar uma avaliação.",
+    "signIn": "Entrar",
+    "reviewThanks": "Obrigado! A sua avaliação foi publicada.",
+    "reviewTooSoon": "Já avaliou este profissional nos últimos 30 dias.",
+    "reviewInvalid": "Escolha o profissional e a nota.",
+    "viaClient": "avaliação de cliente"
   },
   "book": {
     "minutes": "{n} min",
@@ -155,21 +166,21 @@
   "business": {
     "landing": {
       "title": "Mais clientes para o seu salão",
-      "subtitle": "Agenda online, lembretes e avaliações verificadas. Sem comissões, preço fixo para toda a equipa.",
+      "subtitle": "Agenda online, lembretes e avaliações dos clientes. Sem comissões, preço fixo para toda a equipa.",
       "start": "Experimentar {months} meses grátis",
       "features": {
         "noCommission": "0% de comissão sobre clientes",
         "unlimitedStaff": "Profissionais ilimitados",
         "calendar": "Agenda online e marcações manuais",
         "reminders": "Lembretes automáticos aos clientes",
-        "verifiedReviews": "Avaliações só de clientes reais",
+        "verifiedReviews": "Avaliações por profissional",
         "ownClients": "Os seus clientes são seus"
       },
       "restaurants": {
         "eyebrow": "Restaurantes",
         "title": "O seu menu online, sempre atualizado",
-        "text": "Publique o menu com preços e alergénios, em português e inglês. Imprima o código QR para as mesas e altere preços a qualquer momento. Gratuito para restaurantes.",
-        "cta": "Registar restaurante grátis"
+        "text": "Publique o menu com preços e alergénios, em português e inglês. Imprima o código QR para as mesas e altere preços a qualquer momento. Os primeiros 3 meses são grátis.",
+        "cta": "Experimentar 3 meses grátis"
       },
       "trialNote": "Os primeiros {months} meses são grátis. Sem cartão para começar."
     },
@@ -323,8 +334,7 @@
           "pending": "Estamos a verificar o restaurante.",
           "active": "O restaurante está publicado e o menu está visível.",
           "suspended": "O restaurante está suspenso. Contacte-nos."
-        },
-        "free": "O menu digital e o código QR são gratuitos para restaurantes."
+        }
       },
       "social": {
         "title": "Redes sociais",
@@ -375,7 +385,8 @@
       "shareCopy": "Copiar mensagem",
       "shareCopied": "Copiada ✓",
       "shareWhatsapp": "WhatsApp",
-      "shareSms": "SMS"
+      "shareSms": "SMS",
+      "viaClient": "avaliação de cliente"
     },
     "admin": {
       "pending": "Salões a aguardar publicação",
@@ -387,7 +398,7 @@
       "hide": "Ocultar avaliação",
       "keep": "Manter",
       "subs": {
-        "title": "Subscrições dos salões",
+        "title": "Subscrições",
         "hint": "Ofereça meses grátis ou defina até quando a subscrição é gratuita. A oferta começa quando terminar o tempo que o salão já tem.",
         "search": "Procurar por nome, cidade ou NIF",
         "find": "Procurar",
@@ -419,7 +430,11 @@
           "complimentary": "Oferta"
         },
         "endsOn": "até {date}",
-        "endedOn": "desde {date}"
+        "endedOn": "desde {date}",
+        "kind": {
+          "salon": "Salão",
+          "restaurant": "Restaurante"
+        }
       },
       "title": "Administração"
     },
@@ -448,14 +463,21 @@
       "portion": "Dose (opcional)",
       "portionPlaceholder": "300 g, 0,33 l, para 2",
       "allergens": "Alergénios",
-      "tags": "Etiquetas"
+      "tags": "Etiquetas",
+      "likes": "Gostos dos clientes"
     },
     "qr": {
       "hint": "Imprima este cartão e coloque-o nas mesas. Os clientes leem o código com a câmara do telemóvel e abrem o menu na língua do telemóvel.",
       "notListed": "O código já funciona, mas o menu só abre para os clientes depois de o restaurante ser publicado (separador Perfil).",
       "scan": "Leia o código para ver o menu",
       "scanEn": "Scan to see the menu",
-      "print": "Imprimir cartão"
+      "print": "Imprimir cartão",
+      "salon": {
+        "hint": "Imprima este cartão e coloque-o na receção ou no espelho. Os clientes leem o código com a câmara do telemóvel, marcam a próxima visita e avaliam o profissional.",
+        "notListed": "O código já funciona, mas a página só abre para os clientes depois de o salão ser publicado (separador Perfil).",
+        "scan": "Marque online e avalie o seu profissional",
+        "scanEn": "Book online and review your professional"
+      }
     },
     "support": "Suporte"
   },
@@ -487,7 +509,8 @@
     "menu": "Menu",
     "allergens": "Alergénios",
     "vatIncluded": "Preços em euros com IVA incluído.",
-    "allergyNote": "Tem alguma alergia? Fale com a equipa do restaurante antes de pedir."
+    "allergyNote": "Tem alguma alergia? Fale com a equipa do restaurante antes de pedir.",
+    "like": "Gosto"
   },
   "allergens": {
     "gluten": "glúten",
