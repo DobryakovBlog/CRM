@@ -277,9 +277,9 @@ export const reviews = pgTable(
   "reviews",
   {
     id: id(),
-    bookingId: uuid("booking_id")
-      .notNull()
-      .references(() => bookings.id, { onDelete: "cascade" }),
+    // Set when the review comes from a booked visit; open reviews from signed-in clients have none.
+    bookingId: uuid("booking_id").references(() => bookings.id, { onDelete: "cascade" }),
+    customerId: uuid("customer_id").references(() => customers.id, { onDelete: "set null" }),
     salonId: uuid("salon_id")
       .notNull()
       .references(() => salons.id, { onDelete: "cascade" }),
@@ -294,7 +294,7 @@ export const reviews = pgTable(
     status: reviewStatus("status").notNull().default("published"),
     createdAt: createdAt(),
   },
-  (t) => [uniqueIndex("reviews_booking_unique").on(t.bookingId)],
+  (t) => [uniqueIndex("reviews_booking_unique").on(t.bookingId), index("reviews_customer_idx").on(t.customerId)],
 );
 
 export const reviewReports = pgTable("review_reports", {
@@ -351,4 +351,17 @@ export const menuItems = pgTable(
     createdAt: createdAt(),
   },
   (t) => [index("menu_items_section_idx").on(t.sectionId)],
+);
+
+/** One like per dish per visitor (an anonymous cookie id). */
+export const menuItemLikes = pgTable(
+  "menu_item_likes",
+  {
+    itemId: uuid("item_id")
+      .notNull()
+      .references(() => menuItems.id, { onDelete: "cascade" }),
+    visitorId: text("visitor_id").notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [primaryKey({ columns: [t.itemId, t.visitorId] })],
 );

@@ -13,11 +13,13 @@ import { searchSalons } from "./catalog";
 import {
   addDish,
   addSection,
+  dishLikes,
   moveEntry,
   restaurantBySlug,
   restaurantMenu,
   searchRestaurants,
   setDishAvailable,
+  toggleDishLike,
   updateDish,
   type DishInput,
 } from "./menu";
@@ -59,7 +61,7 @@ afterAll(async () => {
 });
 
 describe("pricing", () => {
-  it("gives salons three free months and restaurants no subscription at all", async () => {
+  it("gives salons and restaurants three free months", async () => {
     const now = new Date("2026-10-31T10:00:00Z");
     const { salon } = await registerSalonOwner(
       db,
@@ -70,7 +72,7 @@ describe("pricing", () => {
     expect(sub?.status).toBe("trial");
     expect(sub?.currentPeriodEnd.toISOString()).toBe("2027-01-31T10:00:00.000Z");
     expect(addMonths(new Date("2026-11-30T00:00:00Z"), 3).toISOString()).toBe("2027-02-28T00:00:00.000Z");
-    expect(await salonSubscription(db, restaurantId)).toBeNull();
+    expect((await salonSubscription(db, restaurantId))?.status).toBe("trial");
   });
 });
 
@@ -123,4 +125,26 @@ describe("restaurant menu", () => {
     const [still] = await db.select().from(menuItems).where(eq(menuItems.id, d.id));
     expect(still.name).toBe("Polvo");
   });
+
+  it("counts one like per visitor and lets them take it back", async () => {
+    const section = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    const item = await addDish(db, restaurantId, section.id, dish("Bacalhau", 14));
+    expect(await toggleDishLike(db, item.id, "v1")).toEqual({ liked: true, count: 1 });
+    expect(await toggleDishLike(db, item.id, "v2")).toEqual({ liked: true, count: 2 });
+    expect(await toggleDishLike(db, item.id, "v1")).toEqual({ liked: false, count: 1 });
+    const likes = await dishLikes(db, restaurantId, "v2");
+    expect(likes.counts.get(item.id)).toBe(1);
+    expect(likes.liked.has(item.id)).toBe(true);
+  });
+
+  it("hides a restaurant whose trial ran out", async () => {
+    expect((await salonSubscription(db, restaurantId))?.status).toBe("trial");
+    const section = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    await addDish(db, restaurantId, section.id, dish("Bacalhau", 14));
+    await db.update(salons).set({ status: "active" }).where(eq(salons.id, restaurantId));
+    expect(await restaurantBySlug(db, slug)).not.toBeNull();
+    await db.execute(sql`update subscriptions set current_period_end = now() - interval '1 day' where salon_id = ${restaurantId}`);
+    expect(await restaurantBySlug(db, slug)).toBeNull();
+  });
 });
+

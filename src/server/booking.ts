@@ -16,7 +16,7 @@ import { availableSlots, localMinuteToDate, overlaps, type Interval } from "@/li
 import { normalizePhone } from "@/lib/phone";
 
 export class BookingError extends Error {
-  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid" | "duplicate" | "limit" | "phone") {
+  constructor(public code: "slot_taken" | "not_found" | "not_allowed" | "invalid" | "duplicate" | "limit" | "phone" | "too_soon") {
     super(code);
   }
 }

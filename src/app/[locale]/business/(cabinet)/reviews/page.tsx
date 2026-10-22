@@ -126,7 +126,7 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
               <span className="text-gold">{"★".repeat(r.rating)}</span>
             </div>
             <p className="text-xs text-muted">
-              {day(r.createdAt)} · {r.source === "marketplace" ? t("viaAstrabela") : t("viaSalon")}
+              {day(r.createdAt)} · {!r.source ? t("viaClient") : r.source === "marketplace" ? t("viaAstrabela") : t("viaSalon")}
               {r.status === "hidden" && ` · ${t("hidden")}`}
             </p>
             {r.text && <p className="whitespace-pre-line">{r.text}</p>}

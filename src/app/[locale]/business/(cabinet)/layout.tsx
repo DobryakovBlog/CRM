@@ -5,7 +5,7 @@ import { SupportLink } from "@/components/SupportLink";
 import { logoutAction } from "../actions";
 
 const TABS = {
-  salon: ["calendar", "services", "team", "reviews", "profile"],
+  salon: ["calendar", "services", "team", "reviews", "qr", "profile"],
   restaurant: ["menu", "qr", "profile"],
 } as const;
 

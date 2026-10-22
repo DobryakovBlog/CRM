@@ -187,7 +187,7 @@ export async function salonReviews(db: Db, salonId: string) {
     })
     .from(reviews)
     .innerJoin(staff, eq(staff.id, reviews.staffId))
-    .innerJoin(bookings, eq(bookings.id, reviews.bookingId))
+    .leftJoin(bookings, eq(bookings.id, reviews.bookingId))
     .where(eq(reviews.salonId, salonId))
     .orderBy(desc(reviews.createdAt));
 }

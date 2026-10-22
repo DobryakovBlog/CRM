@@ -3,13 +3,12 @@ import type { Db } from "@/db";
 import { salons, subscriptions } from "@/db/schema";
 import { addMonths } from "./auth";
 
-// Platform admin tools for salon subscriptions: free periods, end dates, cancelling.
-// Restaurants have no subscription (their menus are free), so only salons appear here.
+// Platform admin tools for salon and restaurant subscriptions: free periods, end dates, cancelling.
 
 export const FREE_PERIODS = [3, 6, 12, 24, 36, 60] as const;
 
 export async function listSubscriptions(db: Db, q?: string) {
-  const conds = [eq(salons.kind, "salon")];
+  const conds = [];
   if (q) {
     const like = `%${q}%`;
     conds.push(or(ilike(salons.name, like), ilike(salons.city, like), ilike(salons.nif, like))!);
@@ -18,6 +17,7 @@ export async function listSubscriptions(db: Db, q?: string) {
     .select({
       salonId: salons.id,
       name: salons.name,
+      kind: salons.kind,
       city: salons.city,
       salonStatus: salons.status,
       status: subscriptions.status,
@@ -33,8 +33,8 @@ export async function listSubscriptions(db: Db, q?: string) {
 }
 
 async function upsert(db: Db, salonId: string, values: { status: "complimentary" | "cancelled"; currentPeriodEnd: Date; note?: string }) {
-  const [salon] = await db.select({ kind: salons.kind }).from(salons).where(eq(salons.id, salonId));
-  if (salon?.kind !== "salon") throw new Error("not_a_salon");
+  const [salon] = await db.select({ id: salons.id }).from(salons).where(eq(salons.id, salonId));
+  if (!salon) throw new Error("not_found");
   await db
     .insert(subscriptions)
     .values({ salonId, ...values })
