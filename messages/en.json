@@ -166,13 +166,12 @@
   "business": {
     "landing": {
       "title": "More clients for your salon",
-      "subtitle": "Online calendar, reminders and client reviews. No commission, one flat price for the whole team.",
+      "subtitle": "Online calendar and client reviews. No commission, one flat price for the whole team.",
       "start": "Try {months} months free",
       "features": {
         "noCommission": "0% commission on clients",
         "unlimitedStaff": "Unlimited staff",
         "calendar": "Online calendar and manual bookings",
-        "reminders": "Automatic client reminders",
         "verifiedReviews": "Reviews per professional",
         "ownClients": "Your clients stay yours"
       },

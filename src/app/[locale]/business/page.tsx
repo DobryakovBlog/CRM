@@ -41,7 +41,7 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
         ))}
       </section>
       <ul className="mx-auto grid max-w-3xl gap-2 text-ink sm:grid-cols-2">
-        {(["noCommission", "unlimitedStaff", "calendar", "reminders", "verifiedReviews", "ownClients"] as const).map((k) => (
+        {(["noCommission", "unlimitedStaff", "calendar", "verifiedReviews", "ownClients"] as const).map((k) => (
           <li key={k} className="flex gap-3"><span className="text-gold" aria-hidden>✓</span>{t(`landing.features.${k}`)}</li>
         ))}
       </ul>
