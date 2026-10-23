@@ -100,7 +100,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
         {
           title: "7. Cookies",
           body: [
-            "We only use cookies the site needs to work: ones that keep you signed in (and show your first name in the menu) and one to remember your language. We do not use analytics or advertising cookies, so we do not ask for cookie consent.",
+            "We only use cookies the site needs to work: ones that keep you signed in (and show your first name in the menu), short-lived ones during Google sign-in, one to remember your language, and one that remembers which dishes you liked on a restaurant menu (set only when you press ♥; it holds a random code, not your name). We do not use analytics or advertising cookies, so we do not ask for cookie consent.",
           ],
         },
         {
@@ -194,7 +194,7 @@ export function privacyPolicy(locale: "pt" | "en"): LegalDoc {
       {
         title: "7. Cookies",
         body: [
-          "Usamos apenas os cookies necessários ao funcionamento do site: os que mantêm a sessão iniciada (e mostram o seu primeiro nome no menu) e um para lembrar o idioma. Não usamos cookies de análise nem de publicidade, por isso não pedimos consentimento para cookies.",
+          "Usamos apenas os cookies necessários ao funcionamento do site: os que mantêm a sessão iniciada (e mostram o seu primeiro nome no menu), outros de curta duração durante o início de sessão com a Google, um para lembrar o idioma e um que lembra os pratos de que gostou num menu de restaurante (criado só quando carrega em ♥; contém um código aleatório, não o seu nome). Não usamos cookies de análise nem de publicidade, por isso não pedimos consentimento para cookies.",
         ],
       },
       {
