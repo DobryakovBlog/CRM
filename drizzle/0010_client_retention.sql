@@ -1,0 +1,1 @@
+ALTER TABLE "clients" ADD COLUMN "anonymised_at" timestamp with time zone;

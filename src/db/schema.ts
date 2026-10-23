@@ -233,6 +233,8 @@ export const clients = pgTable(
     notes: text("notes").notNull().default(""),
     marketingConsent: boolean("marketing_consent").notNull().default(false),
     noShowCount: integer("no_show_count").notNull().default(0),
+    // Set when contacts were erased 2 years after the last visit (privacy policy, section 6).
+    anonymisedAt: timestamp("anonymised_at", { withTimezone: true }),
     createdAt: createdAt(),
   },
   (t) => [index("clients_salon_email_idx").on(t.salonId, t.email)],

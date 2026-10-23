@@ -166,13 +166,12 @@
   "business": {
     "landing": {
       "title": "Mais clientes para o seu salão",
-      "subtitle": "Agenda online, lembretes e avaliações dos clientes. Sem comissões, preço fixo para toda a equipa.",
+      "subtitle": "Agenda online e avaliações dos clientes. Sem comissões, preço fixo para toda a equipa.",
       "start": "Experimentar {months} meses grátis",
       "features": {
         "noCommission": "0% de comissão sobre clientes",
         "unlimitedStaff": "Profissionais ilimitados",
         "calendar": "Agenda online e marcações manuais",
-        "reminders": "Lembretes automáticos aos clientes",
         "verifiedReviews": "Avaliações por profissional",
         "ownClients": "Os seus clientes são seus"
       },

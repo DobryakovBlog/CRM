@@ -84,6 +84,7 @@ export async function createOpenReview(
       staffId: input.staffId,
       rating: input.rating,
       text: input.text.trim().slice(0, 2000),
+      createdAt: now,
       authorName: customer.name.trim().split(/\s+/)[0]?.slice(0, 60) || "Cliente",
     })
     .returning();
