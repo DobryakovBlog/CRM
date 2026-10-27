@@ -4,7 +4,7 @@ import { CountryCity } from "@/components/CountryCity";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
-import { COUNTRIES, cityFieldSetup, cityName } from "@/lib/cities";
+import { COUNTRIES, cityFieldSetup, cityName, localeCountry } from "@/lib/cities";
 import { listedRestaurantCities, searchRestaurants } from "@/server/menu";
 
 const str = (v: string | string[] | undefined) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
@@ -22,7 +22,7 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
   const ts = await getTranslations("search");
   const tn = await getTranslations("countries");
   const cities = await listedRestaurantCities(db);
-  const city = str(sp.city) ?? cityFieldSetup(cities, undefined, locale).defaultSlugs[locale === "es" ? "es" : "pt"];
+  const city = str(sp.city) ?? cityFieldSetup(cities, undefined, locale).defaultSlugs[localeCountry(locale)];
   const q = str(sp.q);
   const results = await searchRestaurants(db, { city, q });
 

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela: salones de belleza y barberías con reserva online",
-    "description": "Encuentra un salón de belleza o una barbería en España y Portugal, lee las valoraciones de clientes sobre cada profesional y reserva online."
+    "description": "Encuentra un salón de belleza o una barbería en España, Portugal y Francia, lee las valoraciones de clientes sobre cada profesional y reserva online."
   },
   "nav": {
     "forSalons": "Para negocios",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Reserva lo mejor. Confía en las estrellas.",
-    "subtitle": "Los mejores salones de belleza y barberías de España y Portugal, valorados por los clientes, profesional a profesional. Elige y reserva online en segundos.",
+    "subtitle": "Los mejores salones de belleza y barberías de España, Portugal y Francia, valorados por los clientes, profesional a profesional. Elige y reserva online en segundos.",
     "why": {
       "verified": {
         "title": "Valoraciones por profesional",
@@ -32,7 +32,7 @@
         "text": "Reserva gratuita, sin pagos online."
       }
     },
-    "eyebrow": "España y Portugal · Salones de belleza y barberías",
+    "eyebrow": "España, Portugal y Francia · Salones de belleza y barberías",
     "featuredEyebrow": "Destacados",
     "featuredTitle": "Salones mejor valorados",
     "browse": "Buscar por servicio"
@@ -493,7 +493,7 @@
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",
-    "eyebrow": "España y Portugal · Restaurantes",
+    "eyebrow": "España, Portugal y Francia · Restaurantes",
     "title": "La carta antes de la mesa.",
     "subtitle": "Cartas completas con precios actualizados por los propios restaurantes, en su idioma y en inglés, con alérgenos.",
     "searchPlaceholder": "Nombre o cocina",
