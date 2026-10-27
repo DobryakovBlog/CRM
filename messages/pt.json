@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela: salões de beleza e barbearias com marcação online",
-    "description": "Encontre um salão de beleza ou uma barbearia em Portugal, leia avaliações de clientes sobre cada profissional e marque online."
+    "description": "Encontre um salão de beleza ou uma barbearia em Portugal e Espanha, leia avaliações de clientes sobre cada profissional e marque online."
   },
   "nav": {
     "forSalons": "Para negócios",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
-    "subtitle": "Os melhores salões de beleza e barbearias de Portugal, avaliados pelos clientes, profissional a profissional. Escolha e marque online em segundos.",
+    "subtitle": "Os melhores salões de beleza e barbearias de Portugal e Espanha, avaliados pelos clientes, profissional a profissional. Escolha e marque online em segundos.",
     "why": {
       "verified": {
         "title": "Avaliações por profissional",
@@ -32,7 +32,7 @@
         "text": "Marcação gratuita, sem pagamentos online."
       }
     },
-    "eyebrow": "Portugal · Salões de beleza e barbearias",
+    "eyebrow": "Portugal e Espanha · Salões de beleza e barbearias",
     "featuredEyebrow": "Em destaque",
     "featuredTitle": "Salões mais bem avaliados",
     "browse": "Procurar por serviço"
@@ -493,9 +493,9 @@
   },
   "restaurants": {
     "metaTitle": "Restaurantes e menus",
-    "eyebrow": "Portugal · Restaurantes",
+    "eyebrow": "Portugal e Espanha · Restaurantes",
     "title": "O menu antes da mesa.",
-    "subtitle": "Menus completos com preços atualizados pelos próprios restaurantes, em português e inglês, com alergénios.",
+    "subtitle": "Menus completos com preços atualizados pelos próprios restaurantes, na língua do restaurante e em inglês, com alergénios.",
     "searchPlaceholder": "Nome ou cozinha",
     "resultsTitle": "{count, plural, =0 {Nenhum restaurante} one {# restaurante} other {# restaurantes}} em {city}",
     "cityEmpty": "Ainda não há restaurantes na Astrabela em {city}.",

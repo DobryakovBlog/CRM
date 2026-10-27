@@ -17,8 +17,8 @@ function match(options: CityOption[], query: string) {
   if (!q) return options;
   const rank = (o: CityOption) => {
     const n = fold(o.name);
-    if (n.startsWith(q)) return 0;
-    if (n.split(/[\s-]+/).some((w) => w.startsWith(q))) return 1;
+    if (n.split("/").some((part) => part.startsWith(q))) return 0;
+    if (n.split(/[\s/'-]+/).some((w) => w.startsWith(q))) return 1;
     return n.includes(q) ? 2 : -1;
   };
   return options

@@ -11,6 +11,14 @@ export function Flag({ locale, className = "h-3.5 w-5" }: { locale: string; clas
       </svg>
     );
   }
+  if (locale === "es") {
+    return (
+      <svg viewBox="0 0 30 20" className={`${className} shrink-0 rounded-[2px] ring-1 ring-black/10`} aria-hidden>
+        <rect width="30" height="20" fill="#AA151B" />
+        <rect y="5" width="30" height="10" fill="#F1BF00" />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 60 30" className={`${className} shrink-0 rounded-[2px] ring-1 ring-black/10`} aria-hidden>
       <clipPath id="uk-t">

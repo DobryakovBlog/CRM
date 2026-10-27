@@ -5,7 +5,7 @@ import { getCountries, getCountryCallingCode, parsePhoneNumberFromString, type C
 import { DEFAULT_PHONE_COUNTRY, looksMadeUp } from "@/lib/phone-rules";
 
 /**
- * Country code picker (Portugal first) plus the rest of the number. Posts the full number
+ * Country code picker (the salon's country first) plus the rest of the number. Posts the full number
  * as `name`; the server checks it again against the complete numbering plan.
  */
 const noop = () => () => {};
@@ -17,6 +17,7 @@ export function PhoneInput({
   label,
   invalidText,
   required = true,
+  defaultCountry = DEFAULT_PHONE_COUNTRY,
 }: {
   name: string;
   id: string;
@@ -24,8 +25,10 @@ export function PhoneInput({
   label: string;
   invalidText: string;
   required?: boolean;
+  /** Country the picker starts on and lists first: the salon's country. */
+  defaultCountry?: CountryCode;
 }) {
-  const [country, setCountry] = useState<CountryCode>(DEFAULT_PHONE_COUNTRY);
+  const [country, setCountry] = useState<CountryCode>(defaultCountry);
   const [rest, setRest] = useState("");
   const [touched, setTouched] = useState(false);
 
@@ -38,9 +41,9 @@ export function PhoneInput({
     const all = getCountries()
       .map((code) => ({ code, label: `${names.of(code) ?? code} +${getCountryCallingCode(code)}` }))
       .sort((a, b) => a.label.localeCompare(b.label, locale));
-    const first = all.find((c) => c.code === DEFAULT_PHONE_COUNTRY)!;
+    const first = all.find((c) => c.code === defaultCountry)!;
     return [first, ...all.filter((c) => c !== first)];
-  }, [locale, mounted, country]);
+  }, [locale, mounted, country, defaultCountry]);
 
   const digits = rest.replace(/[^\d+]/g, "");
   // A number pasted with its own +code wins over the picker.

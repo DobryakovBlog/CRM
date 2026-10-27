@@ -1,5 +1,8 @@
+const DATE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-GB", es: "es-ES" };
+const PRICE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-IE", es: "es-ES" };
+
 export function formatPrice(cents: number, locale: string) {
-  return new Intl.NumberFormat(locale === "en" ? "en-IE" : "pt-PT", { style: "currency", currency: "EUR" }).format(
+  return new Intl.NumberFormat(PRICE_LOCALES[locale] ?? "pt-PT", { style: "currency", currency: "EUR" }).format(
     cents / 100,
   );
 }
@@ -10,7 +13,7 @@ export function formatRating(x100: number) {
 }
 
 export function formatDateTime(date: Date, timezone: string, locale: string, opts?: Intl.DateTimeFormatOptions) {
-  return new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "pt-PT", {
+  return new Intl.DateTimeFormat(DATE_LOCALES[locale] ?? "pt-PT", {
     timeZone: timezone,
     ...(opts ?? { dateStyle: "full", timeStyle: "short" }),
   }).format(date);

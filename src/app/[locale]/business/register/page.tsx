@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { CityCombobox } from "@/components/CityCombobox";
-import { cityOptions } from "@/lib/cities";
+import { CountryCity } from "@/components/CountryCity";
+import { OPEN_COUNTRIES, cityFieldSetup } from "@/lib/cities";
 import { registerAction } from "../actions";
 import { cookies } from "next/headers";
 import { GoogleButton } from "@/components/GoogleButton";
@@ -33,6 +33,7 @@ export default async function RegisterPage({
   const fields = FIELDS.filter(([name]) => !google || (name !== "email" && name !== "password"));
   const ts = await getTranslations("search");
   const tp = await getTranslations("petFriendly");
+  const tn = await getTranslations("countries");
   return (
     <form action={registerAction} className="card mx-auto max-w-md space-y-4">
       <h1 className="font-display text-3xl">{t("title")}</h1>
@@ -69,16 +70,18 @@ export default async function RegisterPage({
             {t(`fields.${name}`)}
           </label>
           {name === "city" ? (
-            <CityCombobox
-              id="city"
-              name="city"
-              options={cityOptions([])}
-              searchUrl="/api/places"
-              defaultSlug="lisboa"
-              label={t("fields.city")}
-              placeholder={ts("cityPlaceholder")}
-              noMatch={ts("cityNoMatch")}
-            />
+            <div className="grid gap-2 sm:grid-cols-[0.8fr_1.2fr]">
+              <CountryCity
+                {...cityFieldSetup([], undefined, locale)}
+                id="city"
+                countries={OPEN_COUNTRIES.map((c) => ({ code: c, open: true, label: tn(c) }))}
+                searchUrl="/api/places"
+                countryLabel={ts("country")}
+                cityLabel={t("fields.city")}
+                placeholder={ts("cityPlaceholder")}
+                noMatch={ts("cityNoMatch")}
+              />
+            </div>
           ) : (
             <input
               id={name}

@@ -1,6 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { COUNTRIES, cityOptions } from "@/lib/cities";
-import { CityCombobox } from "./CityCombobox";
+import { COUNTRIES, cityFieldSetup } from "@/lib/cities";
+import { CountryCity } from "./CountryCity";
 import { CATEGORIES } from "@/server/catalog";
 
 export const LANGUAGES = ["en", "es", "fr", "de", "it", "ru", "uk"] as const;
@@ -20,20 +20,12 @@ export async function SearchForm({
   const tn = await getTranslations("countries");
   return (
     <form action={`/${locale}/search`} className="grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-2 lg:grid-cols-[0.8fr_1.2fr_1fr_1fr_auto] sm:p-4">
-      <select name="country" defaultValue="pt" className="input" aria-label={t("country")}>
-        {COUNTRIES.map((c) => (
-          <option key={c.code} value={c.code} disabled={!c.open}>
-            {tn(c.code)}
-            {c.open ? "" : ` · ${t("comingSoon")}`}
-          </option>
-        ))}
-      </select>
-      <CityCombobox
-        name="city"
-        options={cityOptions(listed, current.city)}
+      <CountryCity
+        {...cityFieldSetup(listed, current.city, locale)}
+        countries={COUNTRIES.map((c) => ({ code: c.code, open: c.open, label: c.open ? tn(c.code) : `${tn(c.code)} · ${t("comingSoon")}` }))}
         searchUrl="/api/places"
-        defaultSlug={current.city ?? listed[0] ?? "lisboa"}
-        label={t("city")}
+        countryLabel={t("country")}
+        cityLabel={t("city")}
         placeholder={t("cityPlaceholder")}
         noMatch={t("cityNoMatch")}
         soonLabel={t("comingSoon")}

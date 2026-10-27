@@ -1,3 +1,4 @@
+import { phoneCountry } from "@/lib/cities";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
@@ -112,7 +113,7 @@ export default async function CalendarPage({ params, searchParams }: PageProps<"
           <input name="clientName" required placeholder={t("clientName")} className="input sm:col-span-2" />
           <input name="clientEmail" type="email" placeholder={t("clientEmail")} className="input" />
           <div className="sm:col-span-3">
-            <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("clientPhone")} invalidText={t("errors.phone")} />
+            <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("clientPhone")} invalidText={t("errors.phone")} defaultCountry={phoneCountry(salon.city)} />
           </div>
           <button className="btn sm:col-span-3">{t("add")}</button>
         </form>

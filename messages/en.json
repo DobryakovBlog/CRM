@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela: beauty salons and barbershops with online booking",
-    "description": "Find a beauty salon or barbershop in Portugal, read client reviews of each professional and book online."
+    "description": "Find a beauty salon or barbershop in Portugal and Spain, read client reviews of each professional and book online."
   },
   "nav": {
     "forSalons": "For business",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Book the best. Trust the stars.",
-    "subtitle": "Portugal's best beauty salons and barbershops, rated by clients professional by professional. Choose and book online in seconds.",
+    "subtitle": "The best beauty salons and barbershops in Portugal and Spain, rated by clients professional by professional. Choose and book online in seconds.",
     "why": {
       "verified": {
         "title": "Reviews per professional",
@@ -32,7 +32,7 @@
         "text": "Free booking, no online payments."
       }
     },
-    "eyebrow": "Portugal · Beauty salons and barbershops",
+    "eyebrow": "Portugal and Spain · Beauty salons and barbershops",
     "featuredEyebrow": "Featured",
     "featuredTitle": "Top-rated salons",
     "browse": "Browse by service"
@@ -493,9 +493,9 @@
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",
-    "eyebrow": "Portugal · Restaurants",
+    "eyebrow": "Portugal and Spain · Restaurants",
     "title": "See the menu before you sit down.",
-    "subtitle": "Full menus with prices kept up to date by the restaurants themselves, in Portuguese and English, with allergens.",
+    "subtitle": "Full menus with prices kept up to date by the restaurants themselves, in the local language and English, with allergens.",
     "searchPlaceholder": "Name or cuisine",
     "resultsTitle": "{count, plural, =0 {No restaurants} one {# restaurant} other {# restaurants}} in {city}",
     "cityEmpty": "No restaurants on Astrabela in {city} yet.",

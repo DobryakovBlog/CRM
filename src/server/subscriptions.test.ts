@@ -63,3 +63,15 @@ describe("admin subscription tools", () => {
     expect(await listSubscriptions(db, "nada")).toHaveLength(0);
   });
 });
+
+describe("businesses in Spain", () => {
+  it("get the local time zone and the same free trial", async () => {
+    const madrid = await registerSalonOwner(db, { ...owner, email: "m@test.es", salonName: "Peluquería Sol", city: "madrid" });
+    const canarias = await registerSalonOwner(db, { ...owner, email: "c@test.es", salonName: "Barbería Mar", city: "las-palmas-de-gran-canaria" });
+    expect(madrid.salon).toMatchObject({ city: "madrid", timezone: "Europe/Madrid" });
+    expect(canarias.salon.timezone).toBe("Atlantic/Canary");
+    expect((await salonSubscription(db, madrid.salon.id))?.status).toBe("trial");
+    const lisboa = await salonSubscription(db, salonId);
+    expect(lisboa?.status).toBe("trial");
+  });
+});
