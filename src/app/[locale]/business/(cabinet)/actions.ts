@@ -1,5 +1,6 @@
 "use server";
 
+import { placeCountry } from "@/lib/cities";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { getLocale } from "next-intl/server";
@@ -141,7 +142,7 @@ export async function saveProfileAction(form: FormData) {
   const { salon, locale } = await owner();
   const social: SocialLinks = {};
   for (const net of SOCIAL_NETWORKS) {
-    const link = normalizeSocial(net, s(form, `social_${net}`).slice(0, 300));
+    const link = normalizeSocial(net, s(form, `social_${net}`).slice(0, 300), placeCountry(salon.city));
     if (link === null) redirect(`/${locale}/business/profile?error=social&net=${net}`);
     if (link) social[net] = link;
   }

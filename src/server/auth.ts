@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { db, type Db } from "@/db";
 import { salons, sessions, subscriptions, users } from "@/db/schema";
+import { placeTimezone } from "@/lib/cities";
 import { slugify } from "@/lib/slug";
 
 const COOKIE = "ba_session";
@@ -75,6 +76,7 @@ export async function registerSalonOwner(
         kind: input.kind ?? "salon",
         name: input.salonName.trim(),
         city: slugify(input.city),
+        timezone: placeTimezone(slugify(input.city)),
         address: input.address.trim(),
         phone: input.phone.trim(),
         email,

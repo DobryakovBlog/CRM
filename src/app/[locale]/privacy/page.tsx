@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { LegalPage } from "@/components/LegalPage";
+import { toLocale } from "@/i18n/routing";
 import { privacyPolicy } from "@/lib/legal";
 
-const lang = (locale: string) => (locale === "en" ? "en" : "pt");
+const lang = toLocale;
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/privacy">): Promise<Metadata> {
   return { title: privacyPolicy(lang((await params).locale)).title };

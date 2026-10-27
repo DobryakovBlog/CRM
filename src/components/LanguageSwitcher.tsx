@@ -4,10 +4,8 @@ import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { LOCALE_NAMES, routing, toLocale } from "@/i18n/routing";
 import { Flag } from "./Flag";
-
-const NAMES: Record<string, string> = { pt: "Português", en: "English" };
 
 export function LanguageSwitcher({ label }: { label: string }) {
   const locale = useLocale();
@@ -49,7 +47,7 @@ export function LanguageSwitcher({ label }: { label: string }) {
         className={`flex items-center gap-2 rounded-[3px] border border-line bg-white px-3 py-1.5 text-sm text-ink transition-colors hover:border-ink ${pending ? "opacity-60" : ""}`}
       >
         <Flag locale={locale} />
-        <span className="hidden sm:inline">{NAMES[locale]}</span>
+        <span className="hidden sm:inline">{LOCALE_NAMES[toLocale(locale)]}</span>
         <span className="sm:hidden uppercase">{locale}</span>
         <svg viewBox="0 0 12 12" className={`h-3 w-3 text-muted transition-transform ${open ? "rotate-180" : ""}`} aria-hidden>
           <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -71,7 +69,7 @@ export function LanguageSwitcher({ label }: { label: string }) {
                 className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-ink hover:bg-sand"
               >
                 <Flag locale={l} />
-                <span className="flex-1">{NAMES[l]}</span>
+                <span className="flex-1">{LOCALE_NAMES[l]}</span>
                 {l === locale && (
                   <svg viewBox="0 0 12 12" className="h-3 w-3 text-gold" aria-hidden>
                     <path d="M2 6.5 5 9l5-6" fill="none" stroke="currentColor" strokeWidth="1.6" />

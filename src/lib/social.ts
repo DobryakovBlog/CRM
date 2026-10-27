@@ -29,13 +29,15 @@ const onHost = (url: URL, hosts: string[]) =>
   hosts.some((h) => url.hostname === h || url.hostname.endsWith(`.${h}`));
 
 /** Clean link for the network, "" for an empty field, or null when the value isn't valid. */
-export function normalizeSocial(network: SocialNetwork, raw: string): string | null {
+/** country: the business's country, for WhatsApp numbers typed without their +code. */
+export function normalizeSocial(network: SocialNetwork, raw: string, country: "pt" | "es" = "pt"): string | null {
   const value = raw.trim();
   if (!value) return "";
   if (network === "whatsapp") {
     const url = /wa\.me|whatsapp\.com/i.test(value) ? parseUrl(value) : null;
     let digits = (url ? url.pathname + url.search : value).replace(/\D/g, "");
-    if (digits.length === 9 && /^[29]/.test(digits)) digits = `351${digits}`; // Portuguese number without +351
+    if (digits.length === 9 && country === "pt" && /^[29]/.test(digits)) digits = `351${digits}`; // Portuguese number without +351
+    if (digits.length === 9 && country === "es" && /^[6789]/.test(digits)) digits = `34${digits}`; // Spanish number without +34
     return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}` : null;
   }
   if (network === "website") {

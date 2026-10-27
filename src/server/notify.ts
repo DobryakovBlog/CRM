@@ -1,5 +1,6 @@
 import { and, eq, gt, isNull, lt } from "drizzle-orm";
 import type { Db } from "@/db";
+import { toLocale } from "@/i18n/routing";
 import { bookings, clients, salons, services, staff } from "@/db/schema";
 
 export type Email = { to: string; subject: string; text: string };
@@ -24,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "pt-PT", {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -68,6 +69,24 @@ const texts = {
       text: `Hi ${r.client.name},\n\n${r.staff.name} at ${r.salon.name} thanks you for your visit (${r.service.name}) and would love your review on Astrabela. It takes a minute, no account needed.\nThis link is personal and works for one review: ${link}`,
     }),
   },
+  es: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Cita confirmada: ${r.salon.name}`,
+      text: `Hola, ${r.client.name}:\n\n${r.service.name} con ${r.staff.name}\n${when}\n${r.salon.address}\n\nGestionar o cancelar: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Recordatorio: mañana en ${r.salon.name}`,
+      text: `Hola, ${r.client.name}:\n\nTe recordamos tu cita: ${r.service.name} con ${r.staff.name}, ${when}.\nSi no puedes venir, cancélala aquí: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `¿Qué tal en ${r.salon.name}?`,
+      text: `Hola, ${r.client.name}:\n\nDeja tu valoración de ${r.staff.name}. Solo los clientes con visita confirmada pueden valorar.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} quiere saber tu opinión`,
+      text: `Hola, ${r.client.name}:\n\n${r.staff.name}, de ${r.salon.name}, te agradece tu visita (${r.service.name}) y le gustaría conocer tu opinión en Astrabela. Es un minuto y no hace falta crear una cuenta.\nEste enlace es personal y sirve para una valoración: ${link}`,
+    }),
+  },
 };
 
 async function loadRows(db: Db, where: ReturnType<typeof and>) {
@@ -99,7 +118,7 @@ export function invitationMessage(i: {
   salonName: string;
   serviceName: string;
 }) {
-  const locale = i.locale === "en" ? "en" : "pt";
+  const locale = toLocale(i.locale);
   const link = bookingLink(i.manageToken, locale);
   const row = {
     client: { name: i.clientName },
@@ -111,7 +130,7 @@ export function invitationMessage(i: {
 }
 
 function render(kind: keyof (typeof texts)["pt"], r: Row) {
-  const locale = r.booking.locale === "en" ? "en" : "pt";
+  const locale = toLocale(r.booking.locale);
   const link = bookingLink(r.booking.manageToken, locale);
   const msg = texts[locale][kind](r, formatWhen(r.booking.startsAt, r.salon.timezone, locale), link);
   return { to: r.client.email, ...msg };

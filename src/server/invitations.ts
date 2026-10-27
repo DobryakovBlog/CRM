@@ -1,6 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { and, count, desc, eq, gte } from "drizzle-orm";
 import type { Db } from "@/db";
+import { toLocale } from "@/i18n/routing";
 import { bookings, clients, reviews, salons, services, staff, staffServices, users } from "@/db/schema";
 import { normalizePhone } from "@/lib/phone";
 import { localDate } from "@/lib/format";
@@ -120,7 +121,7 @@ export async function inviteReview(db: Db, salonId: string, input: Invitation, n
         status: "completed",
         source: "invitation",
         manageToken: randomBytes(24).toString("base64url"),
-        locale: input.locale === "en" ? "en" : "pt",
+        locale: toLocale(input.locale),
         reviewRequestSentAt: now,
         createdAt: now,
       })

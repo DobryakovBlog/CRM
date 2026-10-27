@@ -1,5 +1,7 @@
+import { phoneCountry } from "@/lib/cities";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
+import { LOCALE_NAMES, routing } from "@/i18n/routing";
 import { formatDateTime, localDate } from "@/lib/format";
 import { requireOwner } from "@/server/auth";
 import { salonReviews, salonServices, salonTeam } from "@/server/cabinet";
@@ -66,13 +68,16 @@ export default async function ReviewsPage({ params, searchParams }: PageProps<"/
               <input id="clientEmail" name="clientEmail" type="email" maxLength={120} className="input" />
             </div>
             <div>
-              <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("inviteClientPhone")} invalidText={t("inviteErrors.phone")} required={false} />
+              <PhoneInput name="clientPhone" id="clientPhone" locale={locale} label={t("inviteClientPhone")} invalidText={t("inviteErrors.phone")} required={false} defaultCountry={phoneCountry(salon.city)} />
             </div>
             <div>
               <label className="label" htmlFor="clientLocale">{t("inviteLanguage")}</label>
               <select id="clientLocale" name="clientLocale" defaultValue={locale} className="input">
-                <option value="pt">Português</option>
-                <option value="en">English</option>
+                {routing.locales.map((l) => (
+                  <option key={l} value={l}>
+                    {LOCALE_NAMES[l]}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="flex items-end">

@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import type { NextRequest } from "next/server";
 import { db } from "@/db";
+import { toLocale } from "@/i18n/routing";
 import { salons, users } from "@/db/schema";
 import { cabinetHome, startSession } from "@/server/auth";
 import { isAdminCustomer, startCustomerSession, upsertGoogleCustomer } from "@/server/customers";
@@ -23,7 +24,7 @@ export async function GET(request: NextRequest) {
     saved = raw ? JSON.parse(raw) : null;
   } catch {}
   const sp = request.nextUrl.searchParams;
-  const locale = saved?.locale === "en" ? "en" : "pt";
+  const locale = toLocale(saved?.locale);
   const code = sp.get("code");
   if (!saved || !code || sp.get("state") !== saved.state) redirect(`/${locale}/account?error=google`);
 

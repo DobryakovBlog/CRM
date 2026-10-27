@@ -1,3 +1,4 @@
+import { phoneCountry } from "@/lib/cities";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { db } from "@/db";
@@ -155,7 +156,7 @@ export default async function BookPage({ params, searchParams }: PageProps<"/[lo
                 <label className="label" htmlFor="email">{t("email")}</label>
                 <input id="email" name="email" type="email" required autoComplete="email" defaultValue={customer?.email} className="input" />
               </div>
-              <PhoneInput name="phone" id="phone" locale={locale} label={t("phone")} invalidText={t("errors.phone")} />
+              <PhoneInput name="phone" id="phone" locale={locale} label={t("phone")} invalidText={t("errors.phone")} defaultCountry={phoneCountry(salon.city)} />
             </div>
             <div>
               <label className="label" htmlFor="note">{t("note")}</label>

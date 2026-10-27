@@ -10,6 +10,8 @@ describe("social links", () => {
     expect(normalizeSocial("website", "salaolumiere.pt")).toBe("https://salaolumiere.pt/");
     expect(normalizeSocial("whatsapp", "912 345 678")).toBe("https://wa.me/351912345678");
     expect(normalizeSocial("whatsapp", "+351 912 345 678")).toBe("https://wa.me/351912345678");
+    expect(normalizeSocial("whatsapp", "612 345 678", "es")).toBe("https://wa.me/34612345678");
+    expect(normalizeSocial("whatsapp", "+351 912 345 678", "es")).toBe("https://wa.me/351912345678");
     expect(normalizeSocial("instagram", "  ")).toBe("");
   });
 

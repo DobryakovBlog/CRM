@@ -4,6 +4,7 @@ import { SalonCard } from "@/components/SalonCard";
 import { SearchForm } from "@/components/SearchForm";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
+import { cityFieldSetup } from "@/lib/cities";
 import { CATEGORIES, listedCities, searchSalons } from "@/server/catalog";
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
@@ -13,7 +14,10 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("home");
   const tc = await getTranslations("categories");
   const cities = await listedCities(db);
-  const featured = (await searchSalons(db, { city: cities[0] })).slice(0, 3);
+  // Spanish visitors start in Spain, everyone else in Portugal.
+  const start = cityFieldSetup(cities, undefined, locale);
+  const city = start.defaultSlugs[start.defaultCountry];
+  const featured = (await searchSalons(db, { city })).slice(0, 3);
 
   return (
     <div className="space-y-16">
@@ -28,7 +32,7 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
           {CATEGORIES.filter((c) => c !== "other").map((c) => (
             <Link
               key={c}
-              href={`/search?city=${cities[0] ?? "lisboa"}&category=${c}`}
+              href={`/search?city=${city}&category=${c}`}
               className="rounded-full border border-gold/40 px-3.5 py-1.5 text-sm text-gold-soft transition-colors hover:border-gold hover:text-white"
             >
               {tc(c)}

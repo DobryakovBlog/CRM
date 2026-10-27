@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
-import { CityCombobox } from "@/components/CityCombobox";
+import { CountryCity } from "@/components/CountryCity";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
-import { COUNTRIES, cityName, cityOptions } from "@/lib/cities";
+import { COUNTRIES, cityFieldSetup, cityName } from "@/lib/cities";
 import { listedRestaurantCities, searchRestaurants } from "@/server/menu";
 
 const str = (v: string | string[] | undefined) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
@@ -22,7 +22,7 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
   const ts = await getTranslations("search");
   const tn = await getTranslations("countries");
   const cities = await listedRestaurantCities(db);
-  const city = str(sp.city) ?? cities[0] ?? "lisboa";
+  const city = str(sp.city) ?? cityFieldSetup(cities, undefined, locale).defaultSlugs[locale === "es" ? "es" : "pt"];
   const q = str(sp.q);
   const results = await searchRestaurants(db, { city, q });
 
@@ -36,20 +36,12 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
           action={`/${await getLocale()}/restaurants`}
           className="mt-8 grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-2 sm:p-4 lg:grid-cols-[0.8fr_1.2fr_1.4fr_auto]"
         >
-          <select name="country" defaultValue="pt" className="input" aria-label={ts("country")}>
-            {COUNTRIES.map((c) => (
-              <option key={c.code} value={c.code} disabled={!c.open}>
-                {tn(c.code)}
-                {c.open ? "" : ` · ${ts("comingSoon")}`}
-              </option>
-            ))}
-          </select>
-          <CityCombobox
-            name="city"
-            options={cityOptions(cities, city)}
+          <CountryCity
+            {...cityFieldSetup(cities, city, locale)}
+            countries={COUNTRIES.map((c) => ({ code: c.code, open: c.open, label: c.open ? tn(c.code) : `${tn(c.code)} · ${ts("comingSoon")}` }))}
             searchUrl="/api/places?for=restaurants"
-            defaultSlug={city}
-            label={ts("city")}
+            countryLabel={ts("country")}
+            cityLabel={ts("city")}
             placeholder={ts("cityPlaceholder")}
             noMatch={ts("cityNoMatch")}
             soonLabel={ts("comingSoon")}
