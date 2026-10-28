@@ -2,16 +2,17 @@ import data from "@/data/pt-places.json";
 import esData from "@/data/es-places.json";
 import frData from "@/data/fr-places.json";
 import itData from "@/data/it-places.json";
+import deData from "@/data/de-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
 // (about 33,000), built by scripts/build-places.ts. A municipality's slug is its
 // name ("lisboa"); a locality's slug adds its municipality ("alfama-lisboa").
 // Other countries: every municipality, built by scripts/build-<country>-places.ts
-// (Spain 8,132, France 34,875 communes, Italy 7,904 comuni). Its slug is its name ("madrid"), with the
+// (Spain 8,132, France 34,875 communes, Italy 7,904 comuni, Germany 11,054 Gemeinden). Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it";
+export type Country = "pt" | "es" | "fr" | "it" | "de";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -19,6 +20,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["es", esData],
   ["fr", frData],
   ["it", itData],
+  ["de", deData],
 ];
 
 export type Place = {
@@ -42,6 +44,7 @@ export const fold = (s: string) =>
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
+    .replace(/ß/g, "ss")
     .trim();
 
 type Index = {
@@ -114,7 +117,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -135,10 +138,10 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
-const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it" };
+const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de" };
 export const localeCountry = (locale: string): Country => LOCALE_COUNTRY[locale] ?? "pt";
 
 export function cityName(slug: string): string {
@@ -150,13 +153,13 @@ export function placesIn(slug: string): string[] {
   return places().members.get(slug) ?? [slug];
 }
 
-// Countries shown in search. Portugal, Spain, France and Italy are open; the rest tell visitors where we are heading.
+// Countries shown in search. Portugal, Spain, France, Italy and Germany are open; the rest tell visitors where we are heading.
 export const COUNTRIES = [
   { code: "pt", open: true },
   { code: "es", open: true },
   { code: "fr", open: true },
   { code: "it", open: true },
-  { code: "de", open: false },
+  { code: "de", open: true },
   { code: "nl", open: false },
   { code: "be", open: false },
   { code: "ie", open: false },
@@ -209,14 +212,16 @@ export function searchPlaces(query: string, listed: string[] = [], limit = 30, c
   const q = fold(query);
   if (!q) return [];
   const has = withSalons(listed);
+  // Germans without an umlaut key type "muenchen" for "München".
+  const qs = country === "de" ? [...new Set([q, q.replace(/([aou])e/g, "$1")])] : [q];
   const hits: { p: Place; r: number }[] = [];
   for (const p of places().all) {
     if (country && p.country !== country) continue;
     let r = -1;
     // "Donostia/San Sebastián": either official name counts as the start.
-    if (p.folded.split("/").some((n) => n.startsWith(q))) r = 0;
-    else if (p.folded.split(/[\s/'-]+/).some((w) => w.startsWith(q))) r = 1;
-    else if (q.length >= 3 && p.folded.includes(q)) r = 2;
+    if (p.folded.split("/").some((n) => qs.some((v) => n.startsWith(v)))) r = 0;
+    else if (p.folded.split(/[\s/'-]+/).some((w) => qs.some((v) => w.startsWith(v)))) r = 1;
+    else if (q.length >= 3 && qs.some((v) => p.folded.includes(v))) r = 2;
     if (r >= 0) hits.push({ p, r: r * 4 + (has.has(p.slug) ? 0 : 2) + (p.isMunicipality ? 0 : 1) });
   }
   return hits
@@ -247,4 +252,4 @@ export function cityFieldSetup(listed: string[], current: string | undefined, lo
 }
 
 /** Phone country code a business in this place most likely shares with its clients. */
-export const phoneCountry = (slug: string) => placeCountry(slug).toUpperCase() as "PT" | "ES" | "FR" | "IT";
+export const phoneCountry = (slug: string) => placeCountry(slug).toUpperCase() as "PT" | "ES" | "FR" | "IT" | "DE";

@@ -1,7 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["pt", "en", "es", "fr", "it"],
+  locales: ["pt", "en", "es", "fr", "it", "de"],
   defaultLocale: "pt",
 });
 
@@ -12,4 +12,4 @@ export const toLocale = (value: string | null | undefined): Locale =>
   (routing.locales as readonly string[]).includes(value ?? "") ? (value as Locale) : routing.defaultLocale;
 
 /** Locale names in their own language, for language pickers. */
-export const LOCALE_NAMES: Record<Locale, string> = { pt: "Português", en: "English", es: "Español", fr: "Français", it: "Italiano" };
+export const LOCALE_NAMES: Record<Locale, string> = { pt: "Português", en: "English", es: "Español", fr: "Français", it: "Italiano", de: "Deutsch" };

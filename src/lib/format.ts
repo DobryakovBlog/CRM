@@ -1,5 +1,5 @@
-const DATE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT" };
-const PRICE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-IE", es: "es-ES", fr: "fr-FR", it: "it-IT" };
+const DATE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE" };
+const PRICE_LOCALES: Record<string, string> = { pt: "pt-PT", en: "en-IE", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE" };
 
 export function formatPrice(cents: number, locale: string) {
   return new Intl.NumberFormat(PRICE_LOCALES[locale] ?? "pt-PT", { style: "currency", currency: "EUR" }).format(

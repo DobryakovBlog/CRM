@@ -142,3 +142,22 @@ describe("Italian places", () => {
     expect(phoneCountry("torino")).toBe("IT");
   });
 });
+
+describe("German places", () => {
+  it("covers every Gemeinde under the name people use", () => {
+    expect(placeBySlug("berlin")).toMatchObject({ name: "Berlin", country: "de" });
+    expect(placeBySlug("munchen")).toMatchObject({ name: "München" });
+    expect(searchPlaces("frankfurt", [], 30, "de")[0].name).toBe("Frankfurt am Main");
+    expect(searchPlaces("muenchen", [], 30, "de")[0].name).toBe("München");
+    expect(searchPlaces("giessen", [], 30, "de")[0].name).toBe("Gießen");
+    const hausen = searchPlaces("hausen", [], 50, "de").filter((p) => p.name === "Hausen").map((p) => p.slug);
+    expect(hausen.length).toBeGreaterThan(1);
+    expect(new Set(hausen).size).toBe(hausen.length);
+  });
+
+  it("uses Berlin time and starts German visitors in Berlin", () => {
+    expect(placeTimezone("berlin")).toBe("Europe/Berlin");
+    expect(cityFieldSetup([], undefined, "de")).toMatchObject({ defaultCountry: "de", defaultSlugs: { de: "berlin" } });
+    expect(phoneCountry("hamburg")).toBe("DE");
+  });
+});
