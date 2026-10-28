@@ -1,14 +1,23 @@
 import data from "@/data/pt-places.json";
 import esData from "@/data/es-places.json";
+import frData from "@/data/fr-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
 // (about 33,000), built by scripts/build-places.ts. A municipality's slug is its
 // name ("lisboa"); a locality's slug adds its municipality ("alfama-lisboa").
-// Spain: every municipality (8,132), built by scripts/build-es-places.ts. Its slug is
-// its name ("madrid"), with the province added when the name is taken ("castejon-navarra").
+// Other countries: every municipality, built by scripts/build-<country>-places.ts
+// (Spain 8,132, France 34,875 communes). Its slug is its name ("madrid"), with the
+// province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es";
+export type Country = "pt" | "es" | "fr";
+
+type MunicipalData = { areas: string[]; municipalities: unknown };
+// Order matters: a name already taken by an earlier country gets its area added.
+const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
+  ["es", esData],
+  ["fr", frData],
+];
 
 export type Place = {
   slug: string;
@@ -78,19 +87,23 @@ function build(): Index {
     });
     members.get(mun.slug)!.push(slug);
   }
-  const rows = esData.municipalities as [string, number, number][];
-  const taken = new Map<string, number>();
-  for (const [name] of rows) taken.set(slugify(name), (taken.get(slugify(name)) ?? 0) + 1);
-  const spain = rows.map(([name, province, size]) => {
-    const area = esData.provinces[province];
-    let slug = slugify(name);
-    if (taken.get(slug)! > 1 || bySlug.has(slug)) slug = slugify(`${name} ${area.split("/")[0]}`);
-    const p: Place = { slug, country: "es", name, municipality: slug, area, isMunicipality: true, size, folded: fold(name) };
-    bySlug.set(slug, p);
-    members.set(slug, [slug]);
-    return p;
-  });
-  return { bySlug, municipalities: { pt: municipalities, es: spain }, all: [...bySlug.values()], members };
+  const byCountry = { pt: municipalities } as Record<Country, Place[]>;
+  for (const [country, data] of MUNICIPAL) {
+    const rows = data.municipalities as [string, number, number][];
+    const taken = new Map<string, number>();
+    for (const [name] of rows) taken.set(slugify(name), (taken.get(slugify(name)) ?? 0) + 1);
+    byCountry[country] = rows.map(([name, a, size], i) => {
+      const area = data.areas[a];
+      let slug = slugify(name);
+      if (taken.get(slug)! > 1 || bySlug.has(slug)) slug = slugify(`${name} ${area.split("/")[0]}`);
+      if (bySlug.has(slug)) slug = `${slug}-${i}`; // same name twice in one area
+      const p: Place = { slug, country, name, municipality: slug, area, isMunicipality: true, size, folded: fold(name) };
+      bySlug.set(slug, p);
+      members.set(slug, [slug]);
+      return p;
+    });
+  }
+  return { bySlug, municipalities: byCountry, all: [...bySlug.values()], members };
 }
 
 const places = () => (index ??= build());
@@ -99,15 +112,32 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-/** Time zone for a business in this place: the Canaries keep Atlantic time. */
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris" };
+// Areas on another clock than their country's capital.
+const AREA_TIMEZONES: Record<string, string> = {
+  "Açores": "Atlantic/Azores",
+  "Las Palmas": "Atlantic/Canary",
+  "Santa Cruz de Tenerife": "Atlantic/Canary",
+  Guadeloupe: "America/Guadeloupe",
+  Martinique: "America/Martinique",
+  Guyane: "America/Cayenne",
+  "La Réunion": "Indian/Reunion",
+  Mayotte: "Indian/Mayotte",
+};
+
+/** Time zone for a business in this place: the Azores, Canaries and French overseas departments keep their own. */
 export function placeTimezone(slug: string) {
   const p = placeBySlug(slug);
-  if (p?.country !== "es") return "Europe/Lisbon";
-  return /^(Las Palmas|Santa Cruz de Tenerife)$/.test(p.area) ? "Atlantic/Canary" : "Europe/Madrid";
+  if (!p) return TIMEZONES.pt;
+  return AREA_TIMEZONES[placeBySlug(p.municipality)?.area ?? p.area] ?? TIMEZONES[p.country];
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris" };
+
+/** Country a visitor reading this language most likely searches in; Portugal otherwise. */
+const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr" };
+export const localeCountry = (locale: string): Country => LOCALE_COUNTRY[locale] ?? "pt";
 
 export function cityName(slug: string): string {
   return placeBySlug(slug)?.name ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -118,11 +148,11 @@ export function placesIn(slug: string): string[] {
   return places().members.get(slug) ?? [slug];
 }
 
-// Countries shown in search. Portugal and Spain are open; the rest tell visitors where we are heading.
+// Countries shown in search. Portugal, Spain and France are open; the rest tell visitors where we are heading.
 export const COUNTRIES = [
   { code: "pt", open: true },
   { code: "es", open: true },
-  { code: "fr", open: false },
+  { code: "fr", open: true },
   { code: "it", open: false },
   { code: "de", open: false },
   { code: "nl", open: false },
@@ -149,8 +179,8 @@ const option = (p: Place, has: Set<string>): CityOption => ({
 
 /**
  * Options the city field starts with: places with salons first, then every
- * Portuguese municipality, or Spain's bigger cities and provincial capitals
- * (8,000 municipalities are too many to send), by name. The rest come from
+ * Portuguese municipality, or another country's biggest cities (thousands of
+ * municipalities are too many to send), by name. The rest come from
  * searchPlaces as the visitor types.
  */
 export function cityOptions(listed: string[], current?: string, country: Country = "pt"): CityOption[] {
@@ -159,7 +189,8 @@ export function cityOptions(listed: string[], current?: string, country: Country
   const first = [...has, ...(current ? [current] : [])]
     .map(placeBySlug)
     .filter((p): p is Place => p?.country === country);
-  const base = places().municipalities[country].filter((p) => country === "pt" || p.size > 1);
+  const all = places().municipalities[country];
+  const base = country === "pt" ? all : all.filter((p) => p.size > 1).sort((a, b) => b.size - a.size).slice(0, 120);
   const seen = new Set<string>();
   return [...first.sort(byName), ...base.slice().sort(byName)]
     .filter((p) => !seen.has(p.slug) && seen.add(p.slug))
@@ -193,14 +224,16 @@ export function searchPlaces(query: string, listed: string[] = [], limit = 30, c
 }
 
 export const OPEN_COUNTRIES = COUNTRIES.filter((c) => c.open).map((c) => c.code as Country);
+export const isOpenCountry = (code: string | null | undefined): code is Country =>
+  (OPEN_COUNTRIES as string[]).includes(code ?? "");
 
 /**
  * Everything the country + city fields start with: the country of the current city
- * (or Spain for Spanish visitors), and for each open country its city list and the
+ * (or the visitor's language's country), and for each open country its city list and the
  * city picked first (the current one, one with businesses, or the capital).
  */
 export function cityFieldSetup(listed: string[], current: string | undefined, locale: string) {
-  const defaultCountry: Country = current && isPlace(current) ? placeCountry(current) : locale === "es" ? "es" : "pt";
+  const defaultCountry: Country = current && isPlace(current) ? placeCountry(current) : localeCountry(locale);
   const options = {} as Record<Country, CityOption[]>;
   const defaultSlugs = {} as Record<Country, string>;
   for (const c of OPEN_COUNTRIES) {
@@ -212,4 +245,4 @@ export function cityFieldSetup(listed: string[], current: string | undefined, lo
 }
 
 /** Phone country code a business in this place most likely shares with its clients. */
-export const phoneCountry = (slug: string) => (placeCountry(slug) === "es" ? "ES" : "PT");
+export const phoneCountry = (slug: string) => placeCountry(slug).toUpperCase() as "PT" | "ES" | "FR";

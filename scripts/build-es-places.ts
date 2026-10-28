@@ -68,7 +68,7 @@ writeFileSync(
   "src/data/es-places.json",
   JSON.stringify({
     source: "INE municipalities 2026 via github.com/codeforspain/ds-organizacion-administrativa",
-    provinces: provinces.map((p) => display(p.nombre)),
+    areas: provinces.map((p) => display(p.nombre)),
     municipalities: rows,
   }),
 );

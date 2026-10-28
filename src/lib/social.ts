@@ -3,6 +3,8 @@
 // and only accept the network's own domains, so a page can't link anywhere else
 // under an Instagram icon.
 
+import type { Country } from "./cities";
+
 export const SOCIAL_NETWORKS = ["instagram", "facebook", "tiktok", "whatsapp", "website"] as const;
 export type SocialNetwork = (typeof SOCIAL_NETWORKS)[number];
 export type SocialLinks = Partial<Record<SocialNetwork, string>>;
@@ -25,19 +27,27 @@ function parseUrl(input: string): URL | null {
   }
 }
 
+// National numbers typed without the country code: Portuguese 9xx/2xx, Spanish 6xx-9xx,
+// French 0x xx xx xx xx (the leading 0 drops after +33).
+const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp }> = {
+  pt: { code: "351", pattern: /^[29]\d{8}$/ },
+  es: { code: "34", pattern: /^[6789]\d{8}$/ },
+  fr: { code: "33", pattern: /^0[1-9]\d{8}$/ },
+};
+
 const onHost = (url: URL, hosts: string[]) =>
   hosts.some((h) => url.hostname === h || url.hostname.endsWith(`.${h}`));
 
 /** Clean link for the network, "" for an empty field, or null when the value isn't valid. */
 /** country: the business's country, for WhatsApp numbers typed without their +code. */
-export function normalizeSocial(network: SocialNetwork, raw: string, country: "pt" | "es" = "pt"): string | null {
+export function normalizeSocial(network: SocialNetwork, raw: string, country: Country = "pt"): string | null {
   const value = raw.trim();
   if (!value) return "";
   if (network === "whatsapp") {
     const url = /wa\.me|whatsapp\.com/i.test(value) ? parseUrl(value) : null;
     let digits = (url ? url.pathname + url.search : value).replace(/\D/g, "");
-    if (digits.length === 9 && country === "pt" && /^[29]/.test(digits)) digits = `351${digits}`; // Portuguese number without +351
-    if (digits.length === 9 && country === "es" && /^[6789]/.test(digits)) digits = `34${digits}`; // Spanish number without +34
+    const local = LOCAL_NUMBER[country];
+    if (local.pattern.test(digits)) digits = local.code + digits.replace(/^0/, "");
     return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}` : null;
   }
   if (network === "website") {

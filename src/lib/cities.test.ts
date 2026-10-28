@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cityFieldSetup, cityName, cityOptions, isPlace, placeBySlug, placeTimezone, placesIn, searchPlaces } from "./cities";
+import { cityFieldSetup, cityName, cityOptions, isPlace, placeBySlug, phoneCountry, placeTimezone, placesIn, searchPlaces } from "./cities";
 
 // Slugs salons were registered with before the full list existed.
 const OLD_SLUGS = [
@@ -86,5 +86,41 @@ describe("Spanish places", () => {
       defaultCountry: "es",
       defaultSlugs: { pt: "porto", es: "sevilla" },
     });
+  });
+});
+
+describe("French places", () => {
+  it("covers every commune, with the department when a name repeats", () => {
+    expect(placeBySlug("paris")).toMatchObject({ name: "Paris", area: "Paris", country: "fr" });
+    expect(placeBySlug("marseille")).toMatchObject({ area: "Bouches-du-Rhône" });
+    expect(placeBySlug("saint-denis-la-reunion")).toMatchObject({ name: "Saint-Denis", area: "La Réunion" });
+    // Spanish and Portuguese slugs stay as they were.
+    expect(placeBySlug("madrid")?.country).toBe("es");
+    expect(placeBySlug("lisboa")?.country).toBe("pt");
+  });
+
+  it("finds big cities first, accents optional", () => {
+    expect(searchPlaces("lyon", [], 30, "fr")[0].slug).toBe("lyon");
+    expect(searchPlaces("nimes", [], 30, "fr")[0].name).toBe("Nîmes");
+    expect(searchPlaces("saint-denis", [], 30, "fr")[0].area).toBe("La Réunion");
+    expect(searchPlaces("paris", [], 30, "es")).toEqual([]);
+  });
+
+  it("starts with the biggest cities", () => {
+    const options = cityOptions([], undefined, "fr");
+    expect(options.length).toBe(120);
+    expect(options.some((o) => o.slug === "bordeaux")).toBe(true);
+  });
+
+  it("uses Paris time, or the overseas department's own", () => {
+    expect(placeTimezone("paris")).toBe("Europe/Paris");
+    expect(placeTimezone("saint-denis-la-reunion")).toBe("Indian/Reunion");
+    expect(placeTimezone("fort-de-france")).toBe("America/Martinique");
+    expect(placeTimezone("ponta-delgada")).toBe("Atlantic/Azores");
+  });
+
+  it("starts French visitors in Paris", () => {
+    expect(cityFieldSetup([], undefined, "fr")).toMatchObject({ defaultCountry: "fr", defaultSlugs: { fr: "paris" } });
+    expect(phoneCountry("lyon")).toBe("FR");
   });
 });

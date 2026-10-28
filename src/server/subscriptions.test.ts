@@ -75,3 +75,13 @@ describe("businesses in Spain", () => {
     expect(lisboa?.status).toBe("trial");
   });
 });
+
+describe("businesses in France", () => {
+  it("get Paris time, or the overseas department's", async () => {
+    const paris = await registerSalonOwner(db, { ...owner, email: "p@test.fr", salonName: "Salon Lumière", city: "paris" });
+    const reunion = await registerSalonOwner(db, { ...owner, email: "r@test.fr", salonName: "Barbier Océan", city: "saint-denis-la-reunion" });
+    expect(paris.salon).toMatchObject({ city: "paris", timezone: "Europe/Paris" });
+    expect(reunion.salon.timezone).toBe("Indian/Reunion");
+    expect((await salonSubscription(db, paris.salon.id))?.status).toBe("trial");
+  });
+});
