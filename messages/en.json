@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela: beauty salons and barbershops with online booking",
-    "description": "Find a beauty salon or barbershop in Portugal, Spain and France, read client reviews of each professional and book online."
+    "description": "Find a beauty salon or barbershop in Europe, read client reviews of each professional and book online."
   },
   "nav": {
     "forSalons": "For business",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Book the best. Trust the stars.",
-    "subtitle": "The best beauty salons and barbershops in Portugal, Spain and France, rated by clients professional by professional. Choose and book online in seconds.",
+    "subtitle": "The best beauty salons and barbershops in Europe, rated by clients professional by professional. Choose and book online in seconds.",
     "why": {
       "verified": {
         "title": "Reviews per professional",
@@ -32,7 +32,7 @@
         "text": "Free booking, no online payments."
       }
     },
-    "eyebrow": "Portugal, Spain and France · Beauty salons and barbershops",
+    "eyebrow": "Europe · Beauty salons and barbershops",
     "featuredEyebrow": "Featured",
     "featuredTitle": "Top-rated salons",
     "browse": "Browse by service"
@@ -493,7 +493,7 @@
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",
-    "eyebrow": "Portugal, Spain and France · Restaurants",
+    "eyebrow": "Europe · Restaurants",
     "title": "See the menu before you sit down.",
     "subtitle": "Full menus with prices kept up to date by the restaurants themselves, in the local language and English, with allergens.",
     "searchPlaceholder": "Name or cuisine",

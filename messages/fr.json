@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela : salons de beauté et barbiers avec réservation en ligne",
-    "description": "Trouvez un salon de beauté ou un barbier en France, au Portugal et en Espagne, lisez les avis clients sur chaque professionnel et réservez en ligne."
+    "description": "Trouvez un salon de beauté ou un barbier en Europe, lisez les avis clients sur chaque professionnel et réservez en ligne."
   },
   "nav": {
     "forSalons": "Pour les pros",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Réservez le meilleur. Fiez-vous aux étoiles.",
-    "subtitle": "Les meilleurs salons de beauté et barbiers de France, du Portugal et d'Espagne, notés par les clients, professionnel par professionnel. Choisissez et réservez en ligne en quelques secondes.",
+    "subtitle": "Les meilleurs salons de beauté et barbiers d'Europe, notés par les clients, professionnel par professionnel. Choisissez et réservez en ligne en quelques secondes.",
     "why": {
       "verified": {
         "title": "Des avis par professionnel",
@@ -32,7 +32,7 @@
         "text": "Réservation gratuite, aucun paiement en ligne."
       }
     },
-    "eyebrow": "France, Portugal et Espagne · Salons de beauté et barbiers",
+    "eyebrow": "Europe · Salons de beauté et barbiers",
     "featuredEyebrow": "À la une",
     "featuredTitle": "Les salons les mieux notés",
     "browse": "Parcourir par prestation"
@@ -493,7 +493,7 @@
   },
   "restaurants": {
     "metaTitle": "Restaurants et cartes",
-    "eyebrow": "France, Portugal et Espagne · Restaurants",
+    "eyebrow": "Europe · Restaurants",
     "title": "Consultez la carte avant de vous asseoir.",
     "subtitle": "Des cartes complètes avec des prix tenus à jour par les restaurants eux-mêmes, dans la langue du pays et en anglais, avec les allergènes.",
     "searchPlaceholder": "Nom ou cuisine",

@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -103,6 +103,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} aimerait avoir votre avis`,
       text: `Bonjour ${r.client.name},\n\n${r.staff.name}, de ${r.salon.name}, vous remercie de votre visite (${r.service.name}) et aimerait connaître votre avis sur Astrabela. Cela prend une minute, sans créer de compte.\nCe lien est personnel et sert pour un seul avis : ${link}`,
+    }),
+  },
+  it: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Prenotazione confermata: ${r.salon.name}`,
+      text: `Ciao ${r.client.name},\n\n${r.service.name} con ${r.staff.name}\n${when}\n${r.salon.address}\n\nGestisci o annulla: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Promemoria: domani da ${r.salon.name}`,
+      text: `Ciao ${r.client.name},\n\nTi ricordiamo la tua prenotazione: ${r.service.name} con ${r.staff.name}, ${when}.\nNon puoi venire? Annulla qui: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Com'è andata da ${r.salon.name}?`,
+      text: `Ciao ${r.client.name},\n\nLascia la tua recensione di ${r.staff.name}. Solo i clienti con una visita confermata possono recensire.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} vorrebbe la tua opinione`,
+      text: `Ciao ${r.client.name},\n\n${r.staff.name}, di ${r.salon.name}, ti ringrazia per la visita (${r.service.name}) e vorrebbe conoscere la tua opinione su Astrabela. Ci vuole un minuto e non serve creare un account.\nQuesto link è personale e vale per una recensione: ${link}`,
     }),
   },
 };

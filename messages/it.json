@@ -1,0 +1,588 @@
+{
+  "meta": {
+    "title": "Astrabela: saloni di bellezza e barbieri con prenotazione online",
+    "description": "Trova un salone di bellezza o un barbiere in Europa, leggi le recensioni dei clienti su ogni professionista e prenota online."
+  },
+  "nav": {
+    "forSalons": "Per le attività",
+    "footer": "Astrabela · Recensioni dei clienti su ogni professionista",
+    "language": "Lingua",
+    "forClients": "Trova un salone",
+    "salons": "Saloni",
+    "restaurants": "Ristoranti",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "signIn": "Accedi",
+    "support": "Assistenza"
+  },
+  "home": {
+    "title": "Prenota il meglio. Fidati delle stelle.",
+    "subtitle": "I migliori saloni di bellezza e barbieri d'Europa, valutati dai clienti, professionista per professionista. Scegli e prenota online in pochi secondi.",
+    "why": {
+      "verified": {
+        "title": "Recensioni per professionista",
+        "text": "Ogni recensione riguarda un professionista. Le visite confermate hanno un badge apposito."
+      },
+      "masters": {
+        "title": "Scegli il professionista",
+        "text": "Ogni professionista ha la sua valutazione."
+      },
+      "direct": {
+        "title": "Paghi in salone",
+        "text": "Prenotazione gratuita, nessun pagamento online."
+      }
+    },
+    "eyebrow": "Europa · Saloni di bellezza e barbieri",
+    "featuredEyebrow": "In evidenza",
+    "featuredTitle": "I saloni più votati",
+    "browse": "Cerca per servizio"
+  },
+  "search": {
+    "city": "Città",
+    "service": "Servizio",
+    "anyService": "Tutti i servizi",
+    "language": "Lingua",
+    "anyLanguage": "Qualsiasi lingua",
+    "submit": "Cerca",
+    "resultsTitle": "{count, plural, =0 {Nessun salone} one {# salone} other {# saloni}} {city, select, other {a {city}}}",
+    "empty": "Nessun salone corrisponde ancora a questi filtri.",
+    "new": "Nuovo",
+    "from": "Da {price}",
+    "cityEmpty": "Non ci sono ancora saloni su Astrabela a {city}. Apriamo città per città.",
+    "cityEmptyCta": "Hai un salone o un barbiere qui? Unisciti a noi",
+    "country": "Paese",
+    "comingSoon": "presto",
+    "cityPlaceholder": "Scrivi una città",
+    "cityNoMatch": "Non siamo ancora in questa città"
+  },
+  "categories": {
+    "hair": "Capelli",
+    "barber": "Barbiere",
+    "nails": "Unghie",
+    "brows_lashes": "Sopracciglia e ciglia",
+    "skin": "Cura del viso",
+    "makeup": "Trucco",
+    "massage": "Massaggi",
+    "other": "Altro"
+  },
+  "languages": {
+    "pt": "Portoghese",
+    "en": "Inglese",
+    "es": "Spagnolo",
+    "fr": "Francese",
+    "de": "Tedesco",
+    "it": "Italiano",
+    "ru": "Russo",
+    "uk": "Ucraino"
+  },
+  "weekdays": {
+    "0": "Domenica",
+    "1": "Lunedì",
+    "2": "Martedì",
+    "3": "Mercoledì",
+    "4": "Giovedì",
+    "5": "Venerdì",
+    "6": "Sabato"
+  },
+  "salon": {
+    "verifiedNote": "recensioni dei clienti, per professionista",
+    "services": "Servizi",
+    "minutes": "{n} min",
+    "book": "Prenota",
+    "reviews": "Recensioni",
+    "reportThanks": "Grazie. Esamineremo la segnalazione.",
+    "noReviews": "Ancora nessuna recensione.",
+    "withMaster": "con {name}",
+    "verifiedVisit": "visita confermata",
+    "salonReply": "Risposta del salone",
+    "report": "Segnala recensione",
+    "reportReason": "Motivo",
+    "send": "Invia",
+    "team": "Team",
+    "payOnSite": "Il pagamento si fa in salone.",
+    "viaAstrabela": "prenotato su Astrabela",
+    "viaSalon": "visita confermata dal salone",
+    "writeReview": "Recensisci un professionista",
+    "master": "Professionista",
+    "rating": "Valutazione",
+    "yourReview": "La tua recensione (facoltativa)",
+    "publish": "Pubblica recensione",
+    "signInToReview": "Accedi per lasciare una recensione.",
+    "signIn": "Accedi",
+    "reviewThanks": "Grazie! La tua recensione è pubblicata.",
+    "reviewTooSoon": "Hai già recensito questo professionista negli ultimi 30 giorni.",
+    "reviewInvalid": "Scegli il professionista e una valutazione.",
+    "viaClient": "recensione cliente"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "pagamento in salone",
+    "errors": {
+      "invalid": "Controlla i tuoi dati e riprova.",
+      "slot_taken": "Questo orario è appena stato preso. Scegline un altro.",
+      "not_found": "Servizio o professionista non disponibile.",
+      "not_allowed": "Questo professionista non offre questo servizio.",
+      "phone": "Inserisci un numero di cellulare valido con il prefisso corretto."
+    },
+    "master": "Professionista",
+    "anyMaster": "Qualsiasi professionista",
+    "day": "Giorno",
+    "time": "Ora",
+    "noSlots": "Nessun orario libero in questo giorno.",
+    "yourDetails": "I tuoi dati",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefono",
+    "note": "Nota per il salone (facoltativa)",
+    "privacy": "Accetto che il salone e Astrabela trattino i miei dati per gestire questa prenotazione (<privacy>informativa sulla privacy</privacy>).",
+    "confirm": "Conferma prenotazione",
+    "gateTitle": "Come vuoi continuare?",
+    "gateText": "Con un account vedi tutte le tue prenotazioni in un unico posto e non devi più inserire i tuoi dati.",
+    "guest": "Senza account",
+    "signIn": "Accedi"
+  },
+  "booking": {
+    "created": "Prenotazione confermata! Ti abbiamo inviato i dettagli via e-mail.",
+    "reviewThanks": "Grazie per la tua recensione!",
+    "error": "Non è stato possibile completare l'azione.",
+    "status": {
+      "confirmed": "Confermata",
+      "cancelled": "Annullata",
+      "completed": "Completata",
+      "no_show": "Non presentato"
+    },
+    "with": "con {name}",
+    "payOnSite": "pagamento in salone",
+    "cancel": "Annulla prenotazione",
+    "reviewTitle": "Valuta la tua visita con {name}",
+    "rating": "Valutazione",
+    "reviewText": "Commento",
+    "authorName": "Nome da mostrare",
+    "submitReview": "Pubblica recensione",
+    "visitOn": "Visita del {date}",
+    "moreTitle": "Altri saloni a {city}",
+    "moreLink": "Vedi tutti i saloni"
+  },
+  "business": {
+    "landing": {
+      "title": "Più clienti per il tuo salone",
+      "subtitle": "Agenda online e recensioni dei clienti. Nessuna commissione, un prezzo unico per tutto il team.",
+      "start": "Prova {months} mesi gratis",
+      "features": {
+        "noCommission": "0% di commissione sui clienti",
+        "unlimitedStaff": "Team illimitato",
+        "calendar": "Agenda online e prenotazioni manuali",
+        "verifiedReviews": "Recensioni per professionista",
+        "ownClients": "I tuoi clienti restano tuoi"
+      },
+      "restaurants": {
+        "eyebrow": "Ristoranti",
+        "title": "Il tuo menu online, sempre aggiornato",
+        "text": "Pubblica il menu con prezzi e allergeni, nella tua lingua e in inglese. Stampa il codice QR per i tavoli e cambia i prezzi quando vuoi. I primi 3 mesi sono gratis.",
+        "cta": "Prova 3 mesi gratis"
+      },
+      "trialNote": "I primi {months} mesi sono gratis. Nessuna carta per iniziare."
+    },
+    "plans": {
+      "monthly": "Mensile",
+      "semiannual": "6 mesi",
+      "annual": "12 mesi",
+      "perMonth": "al mese + IVA"
+    },
+    "login": {
+      "title": "Accedi",
+      "error": "E-mail o password errata.",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Accedi",
+      "noAccount": "Non hai un account? Registra il tuo salone"
+    },
+    "register": {
+      "title": "Registra la tua attività",
+      "errors": {
+        "invalid": "Controlla i campi (password di almeno 8 caratteri).",
+        "email_taken": "Questa e-mail è già registrata."
+      },
+      "fields": {
+        "salonName": "Nome dell'attività",
+        "city": "Città",
+        "address": "Indirizzo",
+        "phone": "Telefono",
+        "name": "Il tuo nome",
+        "email": "E-mail",
+        "password": "Password"
+      },
+      "terms": "Accetto i <terms>termini di utilizzo</terms>, compreso l'accordo sul trattamento dei dati (GDPR), e l'<privacy>informativa sulla privacy</privacy>.",
+      "submit": "Crea account",
+      "kind": "Tipo di attività",
+      "kinds": {
+        "salon": "Salone",
+        "restaurant": "Ristorante"
+      },
+      "kindHint": "Saloni di bellezza, barbieri, centri unghie ed estetici scelgono «Salone». Poi scegli le categorie dei servizi, come «Barbiere».",
+      "googleAs": "Registrazione con Google come {email}. Non serve una password."
+    },
+    "salonStatus": {
+      "draft": "Bozza",
+      "pending": "In revisione",
+      "active": "Pubblicato",
+      "suspended": "Sospeso"
+    },
+    "logout": "Esci",
+    "tabs": {
+      "calendar": "Agenda",
+      "services": "Servizi",
+      "team": "Team",
+      "reviews": "Recensioni",
+      "profile": "Profilo",
+      "admin": "Amministrazione",
+      "menu": "Menu",
+      "qr": "Codice QR"
+    },
+    "calendar": {
+      "today": "Oggi",
+      "errors": {
+        "invalid": "Dati non validi.",
+        "slot_taken": "Questo orario è già occupato.",
+        "not_found": "Servizio o professionista non trovato.",
+        "not_allowed": "Questo professionista non offre questo servizio.",
+        "phone": "Numero non valido. Scegli il paese e scrivi il numero completo."
+      },
+      "noTeam": "Aggiungi i professionisti nella scheda Team.",
+      "free": "Nessuna prenotazione.",
+      "noShows": "{n, plural, one {# assenza} other {# assenze}}",
+      "mark": {
+        "completed": "Venuto",
+        "no_show": "Assente",
+        "cancelled": "Annulla"
+      },
+      "manualTitle": "Nuova prenotazione (telefono, di persona)",
+      "master": "Professionista",
+      "service": "Servizio",
+      "time": "Ora",
+      "clientName": "Nome del cliente",
+      "clientPhone": "Telefono",
+      "clientEmail": "E-mail (facoltativa)",
+      "add": "Aggiungi"
+    },
+    "services": {
+      "empty": "Ancora nessun servizio.",
+      "disable": "Disattiva",
+      "enable": "Attiva",
+      "addTitle": "Nuovo servizio",
+      "name": "Nome",
+      "category": "Categoria",
+      "duration": "Durata (min)",
+      "price": "Prezzo (€)",
+      "add": "Aggiungi"
+    },
+    "team": {
+      "name": "Nome",
+      "title": "Ruolo",
+      "titlePlaceholder": "es. Colorista",
+      "languages": "Lingue",
+      "services": "Servizi",
+      "noServices": "Aggiungi prima i servizi.",
+      "schedule": "Orario settimanale",
+      "save": "Salva",
+      "servicesCount": "{n, plural, one {# servizio} other {# servizi}}",
+      "deactivate": "Disattiva",
+      "activate": "Attiva",
+      "add": "Aggiungi professionista"
+    },
+    "profile": {
+      "welcome": "Benvenuto! Compila il profilo, aggiungi servizi e team, poi invia il salone per la pubblicazione.",
+      "saved": "Salvato.",
+      "submitted": "Inviato! Controlleremo e pubblicheremo presto il tuo salone.",
+      "notReady": "Prima di inviare, aggiungi almeno un professionista con servizi e orario.",
+      "listing": "Pubblicazione nel catalogo",
+      "statusHelp": {
+        "draft": "Il tuo salone non è ancora nel catalogo.",
+        "pending": "Stiamo verificando il tuo salone.",
+        "active": "Il tuo salone è pubblicato e accetta prenotazioni.",
+        "suspended": "Il tuo salone è sospeso. Contattaci."
+      },
+      "submit": "Invia per la pubblicazione",
+      "viewPublic": "Vedi la pagina pubblica",
+      "subscription": "Abbonamento",
+      "sub": {
+        "trial": "Prova gratuita fino al {date}.",
+        "active": "Attivo fino al {date}.",
+        "past_due": "Pagamento scaduto dal {date}.",
+        "cancelled": "Annullato il {date}.",
+        "complimentary": "Offerto da Astrabela fino al {date}."
+      },
+      "details": "Dati del salone",
+      "fields": {
+        "name": "Nome",
+        "district": "Quartiere",
+        "address": "Indirizzo",
+        "postalCode": "CAP",
+        "phone": "Telefono",
+        "nif": "Partita IVA",
+        "description": "Descrizione",
+        "cuisine": "Cucina"
+      },
+      "save": "Salva",
+      "restaurant": {
+        "welcome": "Benvenuto! Compila il profilo, crea il menu e invia il ristorante per la pubblicazione.",
+        "notReady": "Aggiungi almeno un piatto al menu prima di inviare.",
+        "details": "Dati del ristorante",
+        "statusHelp": {
+          "draft": "Il ristorante non è ancora nel catalogo.",
+          "pending": "Stiamo verificando il ristorante.",
+          "active": "Il ristorante è pubblicato e il menu è visibile.",
+          "suspended": "Il ristorante è sospeso. Contattaci."
+        }
+      },
+      "social": {
+        "title": "Social",
+        "hint": "Mostrati sulla tua pagina pubblica. Scrivi il nome utente (@esempio) o incolla il link.",
+        "invalid": "Non abbiamo riconosciuto il link di {network}. Controllalo e salva di nuovo.",
+        "placeholders": {
+          "instagram": "@il_tuo_salone",
+          "facebook": "facebook.com/il-tuo-salone",
+          "tiktok": "@il_tuo_salone",
+          "whatsapp": "312 345 6789",
+          "website": "www.iltuosalone.it"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Ancora nessuna recensione.",
+      "hidden": "nascosta dalla moderazione",
+      "replyPlaceholder": "Rispondi pubblicamente…",
+      "updateReply": "Aggiorna risposta",
+      "reply": "Rispondi",
+      "inviteTitle": "Chiedi una recensione a un cliente abituale",
+      "inviteHint": "Registra una visita già avvenuta e ottieni un link personale perché il cliente valuti il professionista. Invialo su WhatsApp, via SMS o come preferisci. Non serve un account.",
+      "inviteMasterService": "Professionista e servizio",
+      "inviteDate": "Data della visita",
+      "inviteClientName": "Nome del cliente",
+      "inviteClientEmail": "E-mail (facoltativa)",
+      "inviteClientPhone": "Cellulare (facoltativo)",
+      "inviteLanguage": "Lingua del messaggio",
+      "inviteSend": "Chiedi una recensione",
+      "inviteRules": "Un link vale per una recensione di una visita. Visite degli ultimi 90 giorni, una richiesta per cliente e professionista ogni 30 giorni. Queste recensioni portano la dicitura «visita confermata dal salone» e il salone non può eliminarle né nasconderle, anche se negative.",
+      "inviteNoTeam": "Aggiungi un professionista con servizi nella scheda Team per chiedere recensioni.",
+      "invited": "Richiesta creata. Ora invia il messaggio al cliente: copialo o apri WhatsApp con i pulsanti qui sotto.",
+      "inviteErrors": {
+        "invalid": "Controlla il nome, l'e-mail (se indicata) e la data (fino a 90 giorni fa, non nel futuro).",
+        "not_found": "Professionista o servizio non trovato.",
+        "not_allowed": "Questa richiesta non può essere inviata.",
+        "duplicate": "Hai già chiesto a questo cliente di recensire questo professionista negli ultimi 30 giorni.",
+        "limit": "Hai raggiunto il limite di richieste di oggi. Riprova domani.",
+        "phone": "Numero non valido. Scegli il paese e scrivi il numero completo."
+      },
+      "invitationsTitle": "Richieste inviate",
+      "invitationWaiting": "in attesa",
+      "invitationReviewed": "recensito",
+      "listTitle": "Recensioni",
+      "viaAstrabela": "prenotato su Astrabela",
+      "viaSalon": "visita confermata dal salone",
+      "cannotDelete": "I saloni non possono eliminare le recensioni. Puoi rispondere pubblicamente o segnalare una recensione falsa alla moderazione.",
+      "shareCopy": "Copia messaggio",
+      "shareCopied": "Copiato ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "recensione cliente"
+    },
+    "admin": {
+      "pending": "Saloni in attesa di pubblicazione",
+      "none": "Niente in attesa.",
+      "approve": "Approva",
+      "reject": "Rimanda indietro",
+      "reports": "Segnalazioni di recensioni",
+      "reason": "Motivo",
+      "hide": "Nascondi recensione",
+      "keep": "Mantieni",
+      "subs": {
+        "title": "Abbonamenti",
+        "hint": "Regala mesi gratis o imposta la data fino a cui vale l'abbonamento gratuito. Un regalo inizia quando finisce il periodo che il salone ha già.",
+        "search": "Cerca per nome, città o NIF",
+        "find": "Cerca",
+        "empty": "Nessun salone trovato.",
+        "none": "Nessun abbonamento",
+        "manage": "Gestisci",
+        "months": "Mesi gratis",
+        "monthsN": "{n, plural, one {# mese} other {# mesi}}",
+        "note": "Nota (facoltativa)",
+        "notePlaceholder": "Es. partner fondatore",
+        "grant": "Regala",
+        "until": "Gratis fino al",
+        "set": "Imposta data",
+        "cancel": "Termina abbonamento ora",
+        "cancelHint": "Il salone esce dalla ricerca finché non si abbona di nuovo.",
+        "saved": "Abbonamento aggiornato.",
+        "invalid": "Scegli una data futura.",
+        "salonStatus": {
+          "draft": "Bozza",
+          "pending": "In attesa",
+          "active": "Pubblicato",
+          "suspended": "Sospeso"
+        },
+        "status": {
+          "trial": "Prova",
+          "active": "Attivo",
+          "past_due": "Scaduto",
+          "cancelled": "Annullato",
+          "complimentary": "Gratis"
+        },
+        "endsOn": "fino al {date}",
+        "endedOn": "dal {date}",
+        "kind": {
+          "salon": "Salone",
+          "restaurant": "Ristorante"
+        }
+      },
+      "title": "Amministrazione"
+    },
+    "menu": {
+      "hint": "Organizza il menu in sezioni. Le modifiche appaiono subito sulla pagina pubblica e dietro il codice QR dei tavoli.",
+      "viewPublic": "Vedi il menu pubblico",
+      "invalid": "Controlla il nome e il prezzo (per esempio 12,50).",
+      "empty": "Inizia con una sezione come «Antipasti», poi aggiungi i piatti.",
+      "editSection": "Modifica sezione",
+      "sectionName": "Nuova sezione",
+      "sectionNameEn": "Nome in inglese (facoltativo)",
+      "sectionPlaceholder": "Antipasti",
+      "save": "Salva",
+      "deleteSection": "Elimina la sezione e i suoi piatti",
+      "addSection": "Aggiungi sezione",
+      "addDish": "Aggiungi piatto",
+      "editDish": "Modifica piatto",
+      "deleteDish": "Elimina piatto",
+      "available": "disponibile",
+      "soldOut": "esaurito",
+      "dishName": "Nome del piatto",
+      "dishNameEn": "Nome in inglese (facoltativo)",
+      "description": "Descrizione",
+      "descriptionEn": "Descrizione in inglese (facoltativa)",
+      "price": "Prezzo IVA inclusa, €",
+      "portion": "Porzione (facoltativa)",
+      "portionPlaceholder": "300 g, 0,33 l, per 2",
+      "allergens": "Allergeni",
+      "tags": "Etichette",
+      "likes": "Mi piace degli ospiti"
+    },
+    "qr": {
+      "hint": "Stampa questa scheda e mettila sui tavoli. Gli ospiti la inquadrano con la fotocamera del telefono e il menu si apre nella lingua del telefono.",
+      "notListed": "Il codice funziona già, ma gli ospiti potranno aprire il menu solo quando il ristorante sarà pubblicato (scheda Profilo).",
+      "scan": "Inquadra il codice per vedere il menu",
+      "scanEn": "Scan to see the menu",
+      "print": "Stampa scheda",
+      "salon": {
+        "hint": "Stampa questa scheda e mettila alla reception o vicino allo specchio. I clienti la inquadrano con il telefono, prenotano la prossima visita e recensiscono il loro professionista.",
+        "notListed": "Il codice funziona già, ma i clienti potranno aprire la pagina solo quando il salone sarà pubblicato (scheda Profilo).",
+        "scan": "Prenota online e recensisci il tuo professionista",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Assistenza"
+  },
+  "countries": {
+    "pt": "Portogallo",
+    "es": "Spagna",
+    "fr": "Francia",
+    "it": "Italia",
+    "de": "Germania",
+    "nl": "Paesi Bassi",
+    "be": "Belgio",
+    "ie": "Irlanda",
+    "lu": "Lussemburgo"
+  },
+  "restaurants": {
+    "metaTitle": "Ristoranti e menu",
+    "eyebrow": "Europa · Ristoranti",
+    "title": "Guarda il menu prima di sederti.",
+    "subtitle": "Menu completi con prezzi aggiornati dai ristoranti stessi, nella lingua del posto e in inglese, con gli allergeni.",
+    "searchPlaceholder": "Nome o cucina",
+    "resultsTitle": "{count, plural, =0 {Nessun ristorante} one {# ristorante} other {# ristoranti}} a {city}",
+    "cityEmpty": "Non ci sono ancora ristoranti su Astrabela a {city}.",
+    "noMatch": "Nessun ristorante corrisponde a questa ricerca.",
+    "join": "Hai un ristorante? Pubblica il tuo menu",
+    "dishes": "{count, plural, one {# piatto} other {# piatti}}",
+    "from": "Da {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Allergeni",
+    "vatIncluded": "Prezzi in euro, IVA inclusa.",
+    "allergyNote": "Allergie? Avvisa il personale prima di ordinare.",
+    "like": "Mi piace"
+  },
+  "allergens": {
+    "gluten": "glutine",
+    "crustaceans": "crostacei",
+    "eggs": "uova",
+    "fish": "pesce",
+    "peanuts": "arachidi",
+    "soy": "soia",
+    "milk": "latte",
+    "nuts": "frutta a guscio",
+    "celery": "sedano",
+    "mustard": "senape",
+    "sesame": "sesamo",
+    "sulphites": "solfiti",
+    "lupin": "lupini",
+    "molluscs": "molluschi"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano",
+    "gluten_free": "Senza glutine",
+    "spicy": "Piccante"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Sito web"
+  },
+  "account": {
+    "title": "Accedi",
+    "google": "Continua con Google",
+    "or": "oppure",
+    "googleError": "Accesso con Google non riuscito. Riprova.",
+    "openCabinet": "Apri l'area attività",
+    "hello": "Ciao, {name}",
+    "logout": "Esci",
+    "upcoming": "Prossime prenotazioni",
+    "noUpcoming": "Non hai prenotazioni in programma.",
+    "findSalon": "Trova un salone",
+    "past": "Prenotazioni passate",
+    "open": "Vedi",
+    "bookingsHint": "Qui compaiono le prenotazioni fatte con l'accesso attivo.",
+    "deleteTitle": "Elimina account",
+    "deleteText": "Il tuo account e l'accesso vengono eliminati. Le prenotazioni restano ai saloni, che le conservano per fornire il servizio.",
+    "deleteConfirm": "Elimina il mio account",
+    "deleted": "Il tuo account è stato eliminato.",
+    "email": "E-mail",
+    "password": "Password",
+    "submit": "Accedi",
+    "loginError": "E-mail o password errata.",
+    "noAccount": "Non hai un account?",
+    "createAccount": "Crea account",
+    "businessQuestion": "Hai un salone o un ristorante?",
+    "businessLink": "Astrabela per le attività",
+    "signedInBusiness": "Accesso come {name}.",
+    "adminPanel": "Amministrazione",
+    "welcome": "Account creato. Qui compaiono le prenotazioni fatte con l'accesso attivo.",
+    "bookingsHintGoogle": "Qui compaiono le prenotazioni fatte con l'accesso attivo o con la tua e-mail Google.",
+    "registerTitle": "Crea account",
+    "name": "Nome",
+    "passwordHint": "Almeno 8 caratteri.",
+    "terms": "Accetto i <terms>termini di utilizzo</terms> e l'<privacy>informativa sulla privacy</privacy>.",
+    "registerSubmit": "Crea account",
+    "haveAccount": "Hai già un account?",
+    "registerErrors": {
+      "invalid": "Controlla nome, e-mail e password (almeno 8 caratteri).",
+      "email_taken": "Esiste già un account con questa e-mail. Accedi con quella."
+    }
+  },
+  "petFriendly": {
+    "label": "Animali benvenuti",
+    "hint": "Gli animali sono i benvenuti."
+  }
+}
