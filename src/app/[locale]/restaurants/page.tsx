@@ -4,7 +4,8 @@ import { CountryCity } from "@/components/CountryCity";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
-import { COUNTRIES, cityFieldSetup, cityName, localeCountry } from "@/lib/cities";
+import { COUNTRIES, cityFieldSetup, cityName } from "@/lib/cities";
+import { visitorCountry } from "@/server/visitor";
 import { listedRestaurantCities, searchRestaurants } from "@/server/menu";
 
 const str = (v: string | string[] | undefined) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
@@ -22,7 +23,9 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
   const ts = await getTranslations("search");
   const tn = await getTranslations("countries");
   const cities = await listedRestaurantCities(db);
-  const city = str(sp.city) ?? cityFieldSetup(cities, undefined, locale).defaultSlugs[localeCountry(locale)];
+  const visitor = await visitorCountry();
+  const start = cityFieldSetup(cities, undefined, locale, visitor);
+  const city = str(sp.city) ?? start.defaultSlugs[start.defaultCountry];
   const q = str(sp.q);
   const results = await searchRestaurants(db, { city, q });
 
@@ -37,7 +40,7 @@ export default async function RestaurantsPage({ params, searchParams }: PageProp
           className="mt-8 grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-2 sm:p-4 lg:grid-cols-[0.8fr_1.2fr_1.4fr_auto]"
         >
           <CountryCity
-            {...cityFieldSetup(cities, city, locale)}
+            {...cityFieldSetup(cities, city, locale, visitor)}
             countries={COUNTRIES.map((c) => ({ code: c.code, open: c.open, label: c.open ? tn(c.code) : `${tn(c.code)} · ${ts("comingSoon")}` }))}
             searchUrl="/api/places?for=restaurants"
             countryLabel={ts("country")}

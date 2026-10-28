@@ -6,6 +6,7 @@ import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { cityFieldSetup } from "@/lib/cities";
 import { CATEGORIES, listedCities, searchSalons } from "@/server/catalog";
+import { visitorCountry } from "@/server/visitor";
 
 export default async function Home({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
@@ -14,8 +15,8 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("home");
   const tc = await getTranslations("categories");
   const cities = await listedCities(db);
-  // Spanish visitors start in Spain, everyone else in Portugal.
-  const start = cityFieldSetup(cities, undefined, locale);
+  // Visitors start in the country they are in, or their language's country.
+  const start = cityFieldSetup(cities, undefined, locale, await visitorCountry());
   const city = start.defaultSlugs[start.defaultCountry];
   const featured = (await searchSalons(db, { city })).slice(0, 3);
 

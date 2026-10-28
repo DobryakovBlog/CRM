@@ -235,12 +235,18 @@ export const isOpenCountry = (code: string | null | undefined): code is Country 
   (OPEN_COUNTRIES as string[]).includes(code ?? "");
 
 /**
- * Everything the country + city fields start with: the country of the current city
- * (or the visitor's language's country), and for each open country its city list and the
- * city picked first (the current one, one with businesses, or the capital).
+ * Everything the country + city fields start with: the country of the current city, else
+ * the country the visitor is in (from their IP, when we are open there), else their
+ * language's country; and for each open country its city list and the city picked first
+ * (the current one, one with businesses, or the capital).
  */
-export function cityFieldSetup(listed: string[], current: string | undefined, locale: string) {
-  const defaultCountry: Country = current && isPlace(current) ? placeCountry(current) : localeCountry(locale);
+export function cityFieldSetup(listed: string[], current: string | undefined, locale: string, visitorCountry?: string) {
+  const defaultCountry: Country =
+    current && isPlace(current)
+      ? placeCountry(current)
+      : isOpenCountry(visitorCountry)
+        ? visitorCountry
+        : localeCountry(locale);
   const options = {} as Record<Country, CityOption[]>;
   const defaultSlugs = {} as Record<Country, string>;
   for (const c of OPEN_COUNTRIES) {

@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { COUNTRIES, cityFieldSetup } from "@/lib/cities";
 import { CountryCity } from "./CountryCity";
 import { CATEGORIES } from "@/server/catalog";
+import { visitorCountry } from "@/server/visitor";
 
 export const LANGUAGES = ["en", "es", "fr", "de", "it", "ru", "uk"] as const;
 
@@ -21,7 +22,7 @@ export async function SearchForm({
   return (
     <form action={`/${locale}/search`} className="grid gap-3 rounded-md border border-line bg-white p-3 text-ink shadow-[0_24px_60px_-30px_rgb(0_0_0/0.6)] sm:grid-cols-2 lg:grid-cols-[0.8fr_1.2fr_1fr_1fr_auto] sm:p-4">
       <CountryCity
-        {...cityFieldSetup(listed, current.city, locale)}
+        {...cityFieldSetup(listed, current.city, locale, await visitorCountry())}
         countries={COUNTRIES.map((c) => ({ code: c.code, open: c.open, label: c.open ? tn(c.code) : `${tn(c.code)} · ${t("comingSoon")}` }))}
         searchUrl="/api/places"
         countryLabel={t("country")}
