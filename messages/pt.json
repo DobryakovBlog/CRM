@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Astrabela: salões de beleza e barbearias com marcação online",
-    "description": "Encontre um salão de beleza ou uma barbearia em Portugal, Espanha e França, leia avaliações de clientes sobre cada profissional e marque online."
+    "description": "Encontre um salão de beleza ou uma barbearia na Europa, leia avaliações de clientes sobre cada profissional e marque online."
   },
   "nav": {
     "forSalons": "Para negócios",
@@ -17,7 +17,7 @@
   },
   "home": {
     "title": "Reserve o melhor. Confie nas estrelas.",
-    "subtitle": "Os melhores salões de beleza e barbearias de Portugal, Espanha e França, avaliados pelos clientes, profissional a profissional. Escolha e marque online em segundos.",
+    "subtitle": "Os melhores salões de beleza e barbearias da Europa, avaliados pelos clientes, profissional a profissional. Escolha e marque online em segundos.",
     "why": {
       "verified": {
         "title": "Avaliações por profissional",
@@ -32,7 +32,7 @@
         "text": "Marcação gratuita, sem pagamentos online."
       }
     },
-    "eyebrow": "Portugal, Espanha e França · Salões de beleza e barbearias",
+    "eyebrow": "Europa · Salões de beleza e barbearias",
     "featuredEyebrow": "Em destaque",
     "featuredTitle": "Salões mais bem avaliados",
     "browse": "Procurar por serviço"
@@ -493,7 +493,7 @@
   },
   "restaurants": {
     "metaTitle": "Restaurantes e menus",
-    "eyebrow": "Portugal, Espanha e França · Restaurantes",
+    "eyebrow": "Europa · Restaurantes",
     "title": "O menu antes da mesa.",
     "subtitle": "Menus completos com preços atualizados pelos próprios restaurantes, na língua do restaurante e em inglês, com alergénios.",
     "searchPlaceholder": "Nome ou cozinha",

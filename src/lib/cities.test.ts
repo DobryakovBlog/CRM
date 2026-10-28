@@ -124,3 +124,21 @@ describe("French places", () => {
     expect(phoneCountry("lyon")).toBe("FR");
   });
 });
+
+describe("Italian places", () => {
+  it("covers every comune, with the province when a name repeats", () => {
+    expect(placeBySlug("roma")).toMatchObject({ name: "Roma", area: "Roma", country: "it" });
+    expect(placeBySlug("milano")?.country).toBe("it");
+    expect(searchPlaces("bolzano", [], 30, "it")[0]).toMatchObject({ slug: "bolzano", area: "Bolzano/Bozen" });
+    const castro = searchPlaces("castro", [], 30, "it").filter((p) => p.name === "Castro").map((p) => p.slug);
+    expect(castro.length).toBe(2);
+    expect(new Set(castro).size).toBe(2);
+  });
+
+  it("finds big cities first and uses Rome time", () => {
+    expect(searchPlaces("napo", [], 30, "it")[0].slug).toBe("napoli");
+    expect(placeTimezone("firenze")).toBe("Europe/Rome");
+    expect(cityFieldSetup([], undefined, "it")).toMatchObject({ defaultCountry: "it", defaultSlugs: { it: "roma" } });
+    expect(phoneCountry("torino")).toBe("IT");
+  });
+});
