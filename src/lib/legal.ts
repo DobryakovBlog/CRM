@@ -1,5 +1,5 @@
 /**
- * Privacy policy and terms of use, in Portuguese, English, Spanish, French and Italian.
+ * Privacy policy and terms of use, in Portuguese, English, Spanish, French, Italian and German.
  * Who runs the site comes from the environment (LEGAL_NAME, LEGAL_NIF, LEGAL_ADDRESS,
  * LEGAL_EMAIL), so it can be filled in on Vercel once the business is registered.
  */
@@ -28,6 +28,7 @@ const PRICES = {
   es: ["12,99 € al mes, con pago mensual;", "10,99 € al mes, con pago semestral;", "9,99 € al mes, con pago anual."],
   fr: ["12,99 € par mois, en paiement mensuel ;", "10,99 € par mois, en paiement semestriel ;", "9,99 € par mois, en paiement annuel."],
   it: ["12,99 € al mese, con pagamento mensile;", "10,99 € al mese, con pagamento semestrale;", "9,99 € al mese, con pagamento annuale."],
+  de: ["12,99 € pro Monat bei monatlicher Zahlung;", "10,99 € pro Monat bei halbjährlicher Zahlung;", "9,99 € pro Monat bei jährlicher Zahlung."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -35,6 +36,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "es") return privacyEs();
   if (locale === "fr") return privacyFr();
   if (locale === "it") return privacyIt();
+  if (locale === "de") return privacyDe();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -230,6 +232,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "es") return termsEs();
   if (locale === "fr") return termsFr();
   if (locale === "it") return termsIt();
+  if (locale === "de") return termsDe();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -982,6 +985,197 @@ function termsIt(): LegalDoc {
       {
         title: "10. Modifiche",
         body: ["Possiamo aggiornare questi termini. La nuova versione è pubblicata qui con la sua data; avviseremo in anticipo le attività delle modifiche importanti."],
+      },
+    ],
+  };
+}
+
+function privacyDe(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Datenschutzerklärung",
+    updated: "Stand: 28. Oktober 2026",
+    intro:
+      "Astrabela ist ein Katalog von Beautysalons, Barbershops und Restaurants in der Europäischen Union, mit Online-Buchung und Kundenbewertungen zu jedem Profi. Diese Erklärung beschreibt, welche personenbezogenen Daten wir verarbeiten, warum, und welche Rechte Sie nach der DSGVO haben.",
+    sections: [
+      { title: "1. Wer wir sind", body: [`Die Website astrabela.com wird betrieben von ${who()}. Bei Fragen zu Ihren Daten schreiben Sie an ${o.email}.`] },
+      {
+        title: "2. Welche Daten wir verarbeiten",
+        body: [
+          "Wenn Sie buchen oder bewerten (Kunden):",
+          [
+            "Name, E-Mail und Handynummer, die Sie bei der Buchung angeben, und Ihre Nachricht an den Salon;",
+            "die Buchung selbst: Salon, Profi, Leistung, Datum, Uhrzeit und Status;",
+            "Ihre Bewertung: Sterne, Text und der Name, den Sie anzeigen möchten;",
+            "wenn Sie ein Kundenkonto anlegen: Name und E-Mail sowie ein Passwort, das nur verschlüsselt (gehasht) gespeichert wird, oder bei Google die Kennung Ihres Google-Kontos (Ihr Google-Passwort sehen wir nie).",
+          ],
+          "Wenn ein Salon oder Restaurant Astrabela nutzt (Unternehmen):",
+          [
+            "Name und E-Mail des Kontoinhabers sowie das Passwort (nur verschlüsselt gespeichert);",
+            "Unternehmensdaten: Name, Adresse, Telefon, E-Mail, Steuernummer, Team, Leistungen, Preise, Öffnungszeiten, Speisekarte und Links zu sozialen Netzwerken.",
+          ],
+          "Technische Daten: Sitzungs-Cookies für angemeldete Konten, ein Sprach-Cookie und Server-Protokolle (etwa IP-Adresse und Zeitpunkt der Anfrage), die aus Sicherheitsgründen gespeichert werden.",
+        ],
+      },
+      {
+        title: "3. Zwecke und Rechtsgrundlagen",
+        body: [
+          [
+            "Buchungen durchführen und verwalten: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO);",
+            "Konten und Abonnements der Unternehmen verwalten: Vertragserfüllung;",
+            "Bewertungen veröffentlichen und gefälschte verhindern: berechtigtes Interesse an einem vertrauenswürdigen Katalog (Art. 6 Abs. 1 lit. f);",
+            "die Website sicher betreiben: berechtigtes Interesse;",
+            "steuerliche und buchhalterische Pflichten erfüllen: rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c).",
+          ],
+          "Wir verkaufen keine personenbezogenen Daten und nutzen sie nicht für Werbung.",
+        ],
+      },
+      {
+        title: "4. Die Rolle des Salons und unsere",
+        body: [
+          "Bei Buchungen entscheidet der von Ihnen gewählte Salon, wie er die Daten seiner Kunden nutzt, und ist dafür Verantwortlicher. Astrabela verarbeitet diese Daten im Auftrag des Salons als Auftragsverarbeiter (Art. 28 DSGVO) und nur, um den Dienst zu erbringen. Für Bewertungen, den öffentlichen Katalog und die Sicherheit der Website ist Astrabela Verantwortlicher.",
+        ],
+      },
+      {
+        title: "5. Empfänger der Daten",
+        body: [
+          "Der Salon oder das Restaurant, bei dem Sie buchen. Außerdem nutzen wir folgende Dienstleister, die an Verträge zur Auftragsverarbeitung gebunden sind:",
+          [
+            "Vercel Inc. – Hosting; die Website läuft in Frankfurt (EU). Vercel ist ein US-Unternehmen; Übermittlungen außerhalb der EU sind durch die EU-Standardvertragsklauseln und das EU-US Data Privacy Framework abgesichert;",
+            "Neon – Datenbank, gespeichert in Frankfurt (EU);",
+            "Cloudflare – Domain-Namensdienst (DNS);",
+            "Google – nur wenn Sie sich mit Google anmelden.",
+          ],
+        ],
+      },
+      {
+        title: "6. Speicherdauer",
+        body: [
+          [
+            "Kunden- und Buchungsdaten: solange das Konto des Salons aktiv ist und höchstens 2 Jahre nach Ihrem letzten Besuch;",
+            "Bewertungen: solange der Salon auf Astrabela ist;",
+            "Kundenkonten: bis Sie sie löschen (Button auf der Kontoseite);",
+            "Unternehmenskonten: bis zur Schließung des Kontos;",
+            "Rechnungen und Abrechnungsdaten: 10 Jahre, wie es das portugiesische Steuerrecht verlangt;",
+            "Anmeldesitzungen der Unternehmen: 30 Tage.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookies",
+        body: [
+          "Wir verwenden nur Cookies, die für den Betrieb der Website nötig sind: solche, die Sie angemeldet halten (und Ihren Namen im Menü zeigen), kurzlebige während der Anmeldung mit Google, eines für die Sprache und eines, das sich Gerichte merkt, die Ihnen auf der Speisekarte eines Restaurants gefallen haben (es entsteht erst, wenn Sie ♥ antippen, und enthält einen Zufallscode, nicht Ihren Namen). Wir verwenden keine Analyse- oder Werbe-Cookies und fragen deshalb keine Cookie-Einwilligung ab.",
+        ],
+      },
+      {
+        title: "8. Ihre Rechte",
+        body: [
+          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
+        ],
+      },
+      {
+        title: "9. Sicherheit",
+        body: [
+          "Die Website läuft nur über HTTPS, Passwörter werden verschlüsselt gespeichert, und Buchungs- und Bewertungslinks sind persönlich und schwer zu erraten. Geben Sie Ihren persönlichen Link nicht weiter.",
+        ],
+      },
+      {
+        title: "10. Änderungen",
+        body: ["Wenn wir diese Erklärung ändern, veröffentlichen wir die neue Fassung hier mit Datum. Wichtige Änderungen kündigen wir auf der Website an."],
+      },
+    ],
+  };
+}
+
+function termsDe(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Nutzungsbedingungen",
+    updated: "Stand: 28. Oktober 2026",
+    intro: `Diese Bedingungen regeln die Nutzung von astrabela.com, betrieben von ${who()}. Mit der Nutzung der Website oder dem Anlegen eines Unternehmenskontos akzeptieren Sie sie.`,
+    sections: [
+      {
+        title: "1. Der Dienst",
+        body: [
+          "Mit Astrabela finden Kunden Beautysalons, Barbershops und Restaurants, buchen Leistungen online, bewerten Profis und sehen Speisekarten von Restaurants ein. Salons und Restaurants verwalten Profil, Team, Leistungen, Kalender und Speisekarte in ihrem Unternehmenskonto.",
+        ],
+      },
+      {
+        title: "2. Für Kunden",
+        body: [
+          [
+            "Die Nutzung von Astrabela ist kostenlos und erfordert kein Konto.",
+            "Die Buchung ist eine Vereinbarung zwischen Ihnen und dem Salon. Leistungen, Preise und Dauer legt der Salon fest, und die Leistung erbringt der Salon, nicht Astrabela.",
+            "Astrabela nimmt keine Zahlungen entgegen: Sie bezahlen direkt beim Salon.",
+            "Sie können über den persönlichen Link absagen, den Sie erhalten. Bitte sagen Sie ab, wenn Sie nicht kommen können.",
+          ],
+        ],
+      },
+      {
+        title: "3. Bewertungen",
+        body: [
+          "Jeder bei Astrabela angemeldete Kunde kann einen Profi eines Salons bewerten, einmal alle 30 Tage pro Profi. Kunden mit einem über Astrabela gebuchten oder vom Salon bestätigten Besuch können auch über ihren persönlichen Link bewerten; diese Bewertungen tragen den Hinweis auf den bestätigten Besuch. Eine Bewertung muss:",
+          [
+            "Ihre eigene, echte Erfahrung beschreiben;",
+            "frei von Beleidigungen, Drohungen und Diskriminierung sein;",
+            "keine personenbezogenen Daten Dritter, keine Werbung und keine Links enthalten.",
+          ],
+          "Wir können Bewertungen ausblenden, die gegen diese Regeln verstoßen. Der Salon kann Bewertungen weder löschen noch ändern; er kann öffentlich antworten oder eine Bewertung der Moderation melden.",
+        ],
+      },
+      {
+        title: "4. Für Salons und Restaurants",
+        body: [
+          [
+            "Profilangaben, Preise und Speisekarte müssen wahr und aktuell sein. Sie sind dafür und für Ihre Leistungen verantwortlich.",
+            "Halten Sie Ihr Passwort geheim; Sie sind für die Aktivitäten in Ihrem Konto verantwortlich.",
+            "Erstellen Sie keine gefälschten Buchungen, Bewertungen oder Bewertungsanfragen und bitten Sie nicht gegen Belohnung um Bewertungen.",
+            "In der Suche erscheinen nur Profile mit aktivem Abonnement oder kostenlosem Zeitraum.",
+          ],
+        ],
+      },
+      {
+        title: "5. Preise",
+        body: [
+          "Für Salons, Barbershops und Restaurants sind die ersten 3 Monate kostenlos, ohne Karte zum Start. Danach ist für die Sichtbarkeit ein Abonnement nötig:",
+          PRICES.de,
+          "Die Zahlungsbedingungen werden vor jeder Abbuchung angezeigt. Wir können die Preise mit mindestens 30 Tagen Vorankündigung ändern; die Änderung gilt ab dem nächsten Abrechnungszeitraum.",
+        ],
+      },
+      {
+        title: "6. Vereinbarung zur Auftragsverarbeitung (Unternehmen)",
+        body: [
+          "Für die Kundendaten in Buchungen ist das Unternehmen Verantwortlicher und Astrabela sein Auftragsverarbeiter (Art. 28 DSGVO). Astrabela:",
+          [
+            "verarbeitet diese Daten nur zur Erbringung des Dienstes und nach den Weisungen, die das Unternehmen über die Website erteilt;",
+            "behandelt sie vertraulich und schützt sie mit angemessenen Sicherheitsmaßnahmen;",
+            "setzt nur die in der Datenschutzerklärung genannten Unterauftragsverarbeiter ein und informiert die Unternehmen, bevor weitere hinzukommen;",
+            "unterstützt das Unternehmen bei Anfragen von Kunden und bei der Meldung von Datenschutzverletzungen;",
+            "löscht oder übergibt die Daten bei Schließung des Kontos, soweit wir sie nicht gesetzlich aufbewahren müssen.",
+          ],
+        ],
+      },
+      {
+        title: "7. Sperrung und Schließung des Kontos",
+        body: [
+          "Sie können Ihr Unternehmenskonto jederzeit schließen, indem Sie uns schreiben. Wir können ein Profil sperren oder entfernen, das gegen diese Bedingungen, das Gesetz oder Rechte Dritter verstößt, und nennen dabei den Grund.",
+        ],
+      },
+      {
+        title: "8. Haftung",
+        body: [
+          "Wir bemühen uns, die Website verfügbar und korrekt zu halten, können aber nicht garantieren, dass sie immer ohne Unterbrechungen oder Fehler funktioniert. Astrabela ist nicht Partei der Vereinbarung zwischen Kunde und Salon und haftet nicht für die Leistungen der Salons. Nichts in diesen Bedingungen schränkt die gesetzlichen Rechte von Verbrauchern ein.",
+        ],
+      },
+      {
+        title: "9. Anwendbares Recht und Beschwerden",
+        body: [
+          `Diese Bedingungen unterliegen portugiesischem Recht, unbeschadet des Schutzes, den Ihnen das Recht Ihres Wohnsitzlandes als Verbraucher gewährt. Für Beschwerden schreiben Sie an ${o.email}. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.`,
+        ],
+      },
+      {
+        title: "10. Änderungen",
+        body: ["Wir können diese Bedingungen aktualisieren. Die neue Fassung wird hier mit Datum veröffentlicht; Unternehmen informieren wir vorab über wichtige Änderungen."],
       },
     ],
   };

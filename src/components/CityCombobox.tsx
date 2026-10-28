@@ -9,6 +9,7 @@ const fold = (s: string) =>
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
+    .replace(/ß/g, "ss")
     .trim();
 
 /** Rank: name starts with the query, then a word starts with it, then it appears anywhere. */

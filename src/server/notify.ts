@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -121,6 +121,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} vorrebbe la tua opinione`,
       text: `Ciao ${r.client.name},\n\n${r.staff.name}, di ${r.salon.name}, ti ringrazia per la visita (${r.service.name}) e vorrebbe conoscere la tua opinione su Astrabela. Ci vuole un minuto e non serve creare un account.\nQuesto link è personale e vale per una recensione: ${link}`,
+    }),
+  },
+  de: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Termin bestätigt: ${r.salon.name}`,
+      text: `Hallo ${r.client.name},\n\n${r.service.name} bei ${r.staff.name}\n${when}\n${r.salon.address}\n\nVerwalten oder absagen: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Erinnerung: morgen bei ${r.salon.name}`,
+      text: `Hallo ${r.client.name},\n\nwir erinnern Sie an Ihren Termin: ${r.service.name} bei ${r.staff.name}, ${when}.\nSie können nicht kommen? Hier absagen: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Wie war es bei ${r.salon.name}?`,
+      text: `Hallo ${r.client.name},\n\nbewerten Sie ${r.staff.name}. Nur Kunden mit bestätigtem Besuch können bewerten.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} freut sich über Ihre Meinung`,
+      text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
     }),
   },
 };
