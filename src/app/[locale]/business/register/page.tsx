@@ -6,6 +6,7 @@ import { registerAction } from "../actions";
 import { cookies } from "next/headers";
 import { GoogleButton } from "@/components/GoogleButton";
 import { PetFriendlyToggle } from "@/components/PetFriendly";
+import { visitorCountry } from "@/server/visitor";
 import { GOOGLE_SIGNUP_COOKIE, googleConfigured, readGoogleSignup } from "@/server/google";
 
 const FIELDS = [
@@ -34,6 +35,7 @@ export default async function RegisterPage({
   const ts = await getTranslations("search");
   const tp = await getTranslations("petFriendly");
   const tn = await getTranslations("countries");
+  const citySetup = cityFieldSetup([], undefined, locale, await visitorCountry());
   return (
     <form action={registerAction} className="card mx-auto max-w-md space-y-4">
       <h1 className="font-display text-3xl">{t("title")}</h1>
@@ -72,7 +74,7 @@ export default async function RegisterPage({
           {name === "city" ? (
             <div className="grid gap-2 sm:grid-cols-[0.8fr_1.2fr]">
               <CountryCity
-                {...cityFieldSetup([], undefined, locale)}
+                {...citySetup}
                 id="city"
                 countries={OPEN_COUNTRIES.map((c) => ({ code: c, open: true, label: tn(c) }))}
                 searchUrl="/api/places"

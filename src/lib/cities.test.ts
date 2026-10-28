@@ -82,6 +82,11 @@ describe("Spanish places", () => {
   it("starts Spanish visitors in Spain and keeps the current city's country", () => {
     expect(cityFieldSetup([], undefined, "es")).toMatchObject({ defaultCountry: "es", defaultSlugs: { pt: "lisboa", es: "madrid" } });
     expect(cityFieldSetup([], undefined, "en").defaultCountry).toBe("pt");
+    // The visitor's country (from the IP) wins over the language when we are open there.
+    expect(cityFieldSetup([], undefined, "en", "es").defaultCountry).toBe("es");
+    expect(cityFieldSetup([], undefined, "es", "pt").defaultCountry).toBe("pt");
+    expect(cityFieldSetup([], undefined, "es", "pl").defaultCountry).toBe("es");
+    expect(cityFieldSetup([], "porto", "en", "es").defaultCountry).toBe("pt");
     expect(cityFieldSetup(["porto", "sevilla"], "sevilla", "pt")).toMatchObject({
       defaultCountry: "es",
       defaultSlugs: { pt: "porto", es: "sevilla" },
