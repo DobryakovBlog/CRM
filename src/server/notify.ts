@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  nl: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Afspraak bevestigd: ${r.salon.name}`,
+      text: `Hoi ${r.client.name},\n\n${r.service.name} bij ${r.staff.name}\n${when}\n${r.salon.address}\n\nBeheren of annuleren: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Herinnering: morgen bij ${r.salon.name}`,
+      text: `Hoi ${r.client.name},\n\nEven een herinnering aan je afspraak: ${r.service.name} bij ${r.staff.name}, ${when}.\nKun je niet komen? Annuleer hier: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Hoe was het bij ${r.salon.name}?`,
+      text: `Hoi ${r.client.name},\n\nBeoordeel ${r.staff.name}. Alleen klanten met een bevestigd bezoek kunnen een review geven.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} hoort graag je mening`,
+      text: `Hoi ${r.client.name},\n\n${r.staff.name} van ${r.salon.name} bedankt je voor je bezoek (${r.service.name}) en hoort graag wat je ervan vond op Astrabela. Het kost een minuut en je hebt geen account nodig.\nDeze link is persoonlijk en geldt voor één review: ${link}`,
     }),
   },
 };

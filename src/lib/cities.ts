@@ -3,16 +3,18 @@ import esData from "@/data/es-places.json";
 import frData from "@/data/fr-places.json";
 import itData from "@/data/it-places.json";
 import deData from "@/data/de-places.json";
+import nlData from "@/data/nl-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
 // (about 33,000), built by scripts/build-places.ts. A municipality's slug is its
 // name ("lisboa"); a locality's slug adds its municipality ("alfama-lisboa").
 // Other countries: every municipality, built by scripts/build-<country>-places.ts
-// (Spain 8,132, France 34,875 communes, Italy 7,904 comuni, Germany 11,054 Gemeinden). Its slug is its name ("madrid"), with the
+// (Spain 8,132, France 34,875 communes, Italy 7,904 comuni, Germany 11,054 Gemeinden,
+// the Netherlands 342 gemeenten). Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -21,6 +23,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["fr", frData],
   ["it", itData],
   ["de", deData],
+  ["nl", nlData],
 ];
 
 export type Place = {
@@ -117,7 +120,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -138,10 +141,10 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
-const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de" };
+const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl" };
 export const localeCountry = (locale: string): Country => LOCALE_COUNTRY[locale] ?? "pt";
 
 export function cityName(slug: string): string {
@@ -153,14 +156,14 @@ export function placesIn(slug: string): string[] {
   return places().members.get(slug) ?? [slug];
 }
 
-// Countries shown in search. Portugal, Spain, France, Italy and Germany are open; the rest tell visitors where we are heading.
+// Countries shown in search. Portugal, Spain, France, Italy, Germany and the Netherlands are open; the rest tell visitors where we are heading.
 export const COUNTRIES = [
   { code: "pt", open: true },
   { code: "es", open: true },
   { code: "fr", open: true },
   { code: "it", open: true },
   { code: "de", open: true },
-  { code: "nl", open: false },
+  { code: "nl", open: true },
   { code: "be", open: false },
   { code: "ie", open: false },
   { code: "lu", open: false },
@@ -258,4 +261,4 @@ export function cityFieldSetup(listed: string[], current: string | undefined, lo
 }
 
 /** Phone country code a business in this place most likely shares with its clients. */
-export const phoneCountry = (slug: string) => placeCountry(slug).toUpperCase() as "PT" | "ES" | "FR" | "IT" | "DE";
+export const phoneCountry = (slug: string) => placeCountry(slug).toUpperCase() as Uppercase<Country>;

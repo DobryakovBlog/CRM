@@ -27,7 +27,7 @@ describe("Portuguese places", () => {
 
   it("ranks the municipality first and ignores accents", () => {
     expect(searchPlaces("evora")[0].slug).toBe("evora");
-    expect(searchPlaces("Sint")[0].slug).toBe("sintra");
+    expect(searchPlaces("Sint", [], 30, "pt")[0].slug).toBe("sintra");
     expect(searchPlaces("x")).not.toHaveLength(0);
     expect(searchPlaces("")).toEqual([]);
   });
@@ -164,5 +164,23 @@ describe("German places", () => {
     expect(placeTimezone("berlin")).toBe("Europe/Berlin");
     expect(cityFieldSetup([], undefined, "de")).toMatchObject({ defaultCountry: "de", defaultSlugs: { de: "berlin" } });
     expect(phoneCountry("hamburg")).toBe("DE");
+  });
+});
+
+describe("Dutch places", () => {
+  it("covers every gemeente under its official name", () => {
+    expect(placeBySlug("amsterdam")).toMatchObject({ name: "Amsterdam", country: "nl", area: "Noord-Holland" });
+    expect(searchPlaces("den haag", [], 30, "nl")[0].name).toBe("Den Haag");
+    expect(searchPlaces("hertogenbosch", [], 30, "nl")[0].name).toBe("'s-Hertogenbosch");
+    expect(searchPlaces("sudwest", [], 30, "nl")[0].name).toBe("Súdwest-Fryslân");
+    const bergen = searchPlaces("bergen", [], 50, "nl").filter((p) => p.name === "Bergen").map((p) => p.slug);
+    expect(bergen.length).toBe(2);
+    expect(new Set(bergen).size).toBe(2);
+  });
+
+  it("uses Amsterdam time and starts Dutch visitors in Amsterdam", () => {
+    expect(placeTimezone("rotterdam")).toBe("Europe/Amsterdam");
+    expect(cityFieldSetup([], undefined, "nl")).toMatchObject({ defaultCountry: "nl", defaultSlugs: { nl: "amsterdam" } });
+    expect(phoneCountry("utrecht")).toBe("NL");
   });
 });

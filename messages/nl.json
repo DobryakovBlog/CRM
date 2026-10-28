@@ -1,0 +1,589 @@
+{
+  "meta": {
+    "title": "Astrabela: schoonheidssalons en barbershops met online boeken",
+    "description": "Vind een schoonheidssalon of barbershop in Europa, lees klantreviews van elke professional en boek online."
+  },
+  "nav": {
+    "forSalons": "Voor bedrijven",
+    "footer": "Astrabela · Klantreviews van elke professional",
+    "language": "Taal",
+    "forClients": "Vind een salon",
+    "salons": "Salons",
+    "restaurants": "Restaurants",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "signIn": "Inloggen",
+    "support": "Support"
+  },
+  "home": {
+    "title": "Boek de beste. Vertrouw op de sterren.",
+    "subtitle": "De beste schoonheidssalons en barbershops in Europa, per professional beoordeeld door klanten. Kies en boek online in een paar seconden.",
+    "why": {
+      "verified": {
+        "title": "Reviews per professional",
+        "text": "Elke review gaat over één professional. Bevestigde bezoeken krijgen een eigen label."
+      },
+      "masters": {
+        "title": "Kies je professional",
+        "text": "Elke professional heeft een eigen beoordeling."
+      },
+      "direct": {
+        "title": "Betaal in de salon",
+        "text": "Gratis boeken, geen online betalingen."
+      }
+    },
+    "eyebrow": "Europa · Schoonheidssalons en barbershops",
+    "featuredEyebrow": "Uitgelicht",
+    "featuredTitle": "Best beoordeelde salons",
+    "browse": "Zoek op behandeling"
+  },
+  "search": {
+    "city": "Plaats",
+    "service": "Behandeling",
+    "anyService": "Alle behandelingen",
+    "language": "Taal",
+    "anyLanguage": "Elke taal",
+    "submit": "Zoeken",
+    "resultsTitle": "{count, plural, =0 {Geen salons} one {# salon} other {# salons}} {city, select, other {in {city}}}",
+    "empty": "Nog geen salons met deze filters.",
+    "new": "Nieuw",
+    "from": "Vanaf {price}",
+    "cityEmpty": "Nog geen salons op Astrabela in {city}. We openen plaats voor plaats.",
+    "cityEmptyCta": "Heb je hier een salon of barbershop? Doe mee",
+    "country": "Land",
+    "comingSoon": "binnenkort",
+    "cityPlaceholder": "Typ een plaats",
+    "cityNoMatch": "We zijn nog niet in deze plaats"
+  },
+  "categories": {
+    "hair": "Haar",
+    "barber": "Barbershop",
+    "nails": "Nagels",
+    "brows_lashes": "Wenkbrauwen en wimpers",
+    "skin": "Huidverzorging",
+    "makeup": "Make-up",
+    "massage": "Massage",
+    "other": "Overig"
+  },
+  "languages": {
+    "pt": "Portugees",
+    "en": "Engels",
+    "es": "Spaans",
+    "fr": "Frans",
+    "de": "Duits",
+    "it": "Italiaans",
+    "nl": "Nederlands",
+    "ru": "Russisch",
+    "uk": "Oekraïens"
+  },
+  "weekdays": {
+    "0": "Zondag",
+    "1": "Maandag",
+    "2": "Dinsdag",
+    "3": "Woensdag",
+    "4": "Donderdag",
+    "5": "Vrijdag",
+    "6": "Zaterdag"
+  },
+  "salon": {
+    "verifiedNote": "klantreviews, per professional",
+    "services": "Behandelingen",
+    "minutes": "{n} min",
+    "book": "Boeken",
+    "reviews": "Reviews",
+    "reportThanks": "Bedankt. We bekijken je melding.",
+    "noReviews": "Nog geen reviews.",
+    "withMaster": "bij {name}",
+    "verifiedVisit": "bevestigd bezoek",
+    "salonReply": "Reactie van de salon",
+    "report": "Review melden",
+    "reportReason": "Reden",
+    "send": "Versturen",
+    "team": "Team",
+    "payOnSite": "Je betaalt in de salon.",
+    "viaAstrabela": "geboekt via Astrabela",
+    "viaSalon": "bezoek bevestigd door de salon",
+    "writeReview": "Beoordeel een professional",
+    "master": "Professional",
+    "rating": "Beoordeling",
+    "yourReview": "Je review (optioneel)",
+    "publish": "Review plaatsen",
+    "signInToReview": "Log in om een review te geven.",
+    "signIn": "Inloggen",
+    "reviewThanks": "Bedankt! Je review is geplaatst.",
+    "reviewTooSoon": "Je hebt deze professional de afgelopen 30 dagen al beoordeeld.",
+    "reviewInvalid": "Kies de professional en een beoordeling.",
+    "viaClient": "klantreview"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "betalen in de salon",
+    "errors": {
+      "invalid": "Controleer je gegevens en probeer het opnieuw.",
+      "slot_taken": "Deze tijd is net bezet. Kies een andere.",
+      "not_found": "Behandeling of professional niet beschikbaar.",
+      "not_allowed": "Deze professional biedt deze behandeling niet aan.",
+      "phone": "Vul een geldig mobiel nummer in met de juiste landcode."
+    },
+    "master": "Professional",
+    "anyMaster": "Elke professional",
+    "day": "Dag",
+    "time": "Tijd",
+    "noSlots": "Geen vrije tijden op deze dag.",
+    "yourDetails": "Je gegevens",
+    "name": "Naam",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "note": "Bericht voor de salon (optioneel)",
+    "privacy": "Ik ga ermee akkoord dat de salon en Astrabela mijn gegevens verwerken om deze boeking te beheren (<privacy>privacyverklaring</privacy>).",
+    "confirm": "Boeking bevestigen",
+    "gateTitle": "Hoe wil je verdergaan?",
+    "gateText": "Met een account zie je al je boekingen op één plek en hoef je je gegevens nooit opnieuw in te vullen.",
+    "guest": "Als gast",
+    "signIn": "Inloggen"
+  },
+  "booking": {
+    "created": "Boeking bevestigd! We hebben de gegevens per e-mail gestuurd.",
+    "reviewThanks": "Bedankt voor je review!",
+    "error": "De actie kon niet worden uitgevoerd.",
+    "status": {
+      "confirmed": "Bevestigd",
+      "cancelled": "Geannuleerd",
+      "completed": "Afgerond",
+      "no_show": "Niet verschenen"
+    },
+    "with": "bij {name}",
+    "payOnSite": "betalen in de salon",
+    "cancel": "Boeking annuleren",
+    "reviewTitle": "Beoordeel je bezoek bij {name}",
+    "rating": "Beoordeling",
+    "reviewText": "Opmerking",
+    "authorName": "Naam die we tonen",
+    "submitReview": "Review plaatsen",
+    "visitOn": "Bezoek op {date}",
+    "moreTitle": "Meer salons in {city}",
+    "moreLink": "Alle salons bekijken"
+  },
+  "business": {
+    "landing": {
+      "title": "Meer klanten voor je salon",
+      "subtitle": "Online agenda en klantreviews. Geen commissie, één vaste prijs voor het hele team.",
+      "start": "Probeer {months} maanden gratis",
+      "features": {
+        "noCommission": "0% commissie op klanten",
+        "unlimitedStaff": "Onbeperkt aantal medewerkers",
+        "calendar": "Online agenda en handmatige boekingen",
+        "verifiedReviews": "Reviews per professional",
+        "ownClients": "Je klanten blijven van jou"
+      },
+      "restaurants": {
+        "eyebrow": "Restaurants",
+        "title": "Je menukaart online, altijd actueel",
+        "text": "Publiceer je menukaart met prijzen en allergenen, in je eigen taal en in het Engels. Print de QR-code voor je tafels en pas prijzen op elk moment aan. De eerste 3 maanden zijn gratis.",
+        "cta": "Probeer 3 maanden gratis"
+      },
+      "trialNote": "De eerste {months} maanden zijn gratis. Geen kaart nodig om te beginnen."
+    },
+    "plans": {
+      "monthly": "Maandelijks",
+      "semiannual": "6 maanden",
+      "annual": "12 maanden",
+      "perMonth": "per maand + btw"
+    },
+    "login": {
+      "title": "Inloggen",
+      "error": "Onjuist e-mailadres of wachtwoord.",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "submit": "Inloggen",
+      "noAccount": "Nog geen account? Registreer je salon"
+    },
+    "register": {
+      "title": "Registreer je bedrijf",
+      "errors": {
+        "invalid": "Controleer de velden (wachtwoord minstens 8 tekens).",
+        "email_taken": "Dit e-mailadres is al geregistreerd."
+      },
+      "fields": {
+        "salonName": "Bedrijfsnaam",
+        "city": "Plaats",
+        "address": "Adres",
+        "phone": "Telefoon",
+        "name": "Je naam",
+        "email": "E-mail",
+        "password": "Wachtwoord"
+      },
+      "terms": "Ik accepteer de <terms>gebruiksvoorwaarden</terms>, inclusief de verwerkersovereenkomst (AVG), en de <privacy>privacyverklaring</privacy>.",
+      "submit": "Account aanmaken",
+      "kind": "Soort bedrijf",
+      "kinds": {
+        "salon": "Salon",
+        "restaurant": "Restaurant"
+      },
+      "kindHint": "Schoonheidssalons, barbershops, nagelstudio's en schoonheidsspecialisten kiezen „Salon”. Kies daarna je categorieën, zoals „Barbershop”.",
+      "googleAs": "Je registreert met Google als {email}. Geen wachtwoord nodig."
+    },
+    "salonStatus": {
+      "draft": "Concept",
+      "pending": "In behandeling",
+      "active": "Gepubliceerd",
+      "suspended": "Opgeschort"
+    },
+    "logout": "Uitloggen",
+    "tabs": {
+      "calendar": "Agenda",
+      "services": "Behandelingen",
+      "team": "Team",
+      "reviews": "Reviews",
+      "profile": "Profiel",
+      "admin": "Beheer",
+      "menu": "Menukaart",
+      "qr": "QR-code"
+    },
+    "calendar": {
+      "today": "Vandaag",
+      "errors": {
+        "invalid": "Ongeldige gegevens.",
+        "slot_taken": "Deze tijd is al bezet.",
+        "not_found": "Behandeling of professional niet gevonden.",
+        "not_allowed": "Deze professional biedt deze behandeling niet aan.",
+        "phone": "Ongeldig telefoonnummer. Kies het land en typ het volledige nummer."
+      },
+      "noTeam": "Voeg professionals toe in het tabblad Team.",
+      "free": "Geen boekingen.",
+      "noShows": "{n, plural, one {# keer niet verschenen} other {# keer niet verschenen}}",
+      "mark": {
+        "completed": "Gekomen",
+        "no_show": "Niet verschenen",
+        "cancelled": "Annuleren"
+      },
+      "manualTitle": "Nieuwe boeking (telefoon, binnenloper)",
+      "master": "Professional",
+      "service": "Behandeling",
+      "time": "Tijd",
+      "clientName": "Naam klant",
+      "clientPhone": "Telefoon",
+      "clientEmail": "E-mail (optioneel)",
+      "add": "Toevoegen"
+    },
+    "services": {
+      "empty": "Nog geen behandelingen.",
+      "disable": "Uitschakelen",
+      "enable": "Inschakelen",
+      "addTitle": "Nieuwe behandeling",
+      "name": "Naam",
+      "category": "Categorie",
+      "duration": "Duur (min)",
+      "price": "Prijs (€)",
+      "add": "Toevoegen"
+    },
+    "team": {
+      "name": "Naam",
+      "title": "Functie",
+      "titlePlaceholder": "bijv. Colorist",
+      "languages": "Talen",
+      "services": "Behandelingen",
+      "noServices": "Voeg eerst behandelingen toe.",
+      "schedule": "Weekrooster",
+      "save": "Opslaan",
+      "servicesCount": "{n, plural, one {# behandeling} other {# behandelingen}}",
+      "deactivate": "Deactiveren",
+      "activate": "Activeren",
+      "add": "Professional toevoegen"
+    },
+    "profile": {
+      "welcome": "Welkom! Vul je profiel in, voeg behandelingen en je team toe en stuur de salon daarna in voor publicatie.",
+      "saved": "Opgeslagen.",
+      "submitted": "Ingestuurd! We controleren je salon en publiceren hem snel.",
+      "notReady": "Voeg voor het insturen minstens één professional toe met behandelingen en een rooster.",
+      "listing": "Vermelding in het overzicht",
+      "statusHelp": {
+        "draft": "Je salon staat nog niet in het overzicht.",
+        "pending": "We controleren je salon.",
+        "active": "Je salon is gepubliceerd en neemt boekingen aan.",
+        "suspended": "Je salon is opgeschort. Neem contact met ons op."
+      },
+      "submit": "Insturen voor publicatie",
+      "viewPublic": "Openbare pagina bekijken",
+      "subscription": "Abonnement",
+      "sub": {
+        "trial": "Gratis proefperiode tot {date}.",
+        "active": "Actief tot {date}.",
+        "past_due": "Betaling achterstallig sinds {date}.",
+        "cancelled": "Opgezegd op {date}.",
+        "complimentary": "Gratis van Astrabela tot {date}."
+      },
+      "details": "Gegevens van de salon",
+      "fields": {
+        "name": "Naam",
+        "district": "Wijk",
+        "address": "Adres",
+        "postalCode": "Postcode",
+        "phone": "Telefoon",
+        "nif": "Fiscaal nummer",
+        "description": "Beschrijving",
+        "cuisine": "Keuken"
+      },
+      "save": "Opslaan",
+      "restaurant": {
+        "welcome": "Welkom! Vul het profiel in, stel je menukaart samen en stuur het restaurant in voor publicatie.",
+        "notReady": "Voeg minstens één gerecht toe aan de menukaart voordat je instuurt.",
+        "details": "Gegevens van het restaurant",
+        "statusHelp": {
+          "draft": "Het restaurant staat nog niet in het overzicht.",
+          "pending": "We controleren het restaurant.",
+          "active": "Het restaurant is gepubliceerd en de menukaart is zichtbaar.",
+          "suspended": "Het restaurant is opgeschort. Neem contact met ons op."
+        }
+      },
+      "social": {
+        "title": "Sociale media",
+        "hint": "Te zien op je openbare pagina. Typ de gebruikersnaam (@voorbeeld) of plak de link.",
+        "invalid": "We herkennen de link van {network} niet. Controleer hem en sla opnieuw op.",
+        "placeholders": {
+          "instagram": "@jouw_salon",
+          "facebook": "facebook.com/jouw-salon",
+          "tiktok": "@jouw_salon",
+          "whatsapp": "06 12345678",
+          "website": "www.jouw-salon.nl"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Nog geen reviews.",
+      "hidden": "verborgen door moderatie",
+      "replyPlaceholder": "Reageer openbaar…",
+      "updateReply": "Reactie bijwerken",
+      "reply": "Reageren",
+      "inviteTitle": "Vraag een vaste klant om een review",
+      "inviteHint": "Leg een bezoek vast dat al heeft plaatsgevonden en krijg een persoonlijke link waarmee de klant de professional kan beoordelen. Stuur hem via WhatsApp, sms of hoe je maar wilt. Geen account nodig.",
+      "inviteMasterService": "Professional en behandeling",
+      "inviteDate": "Datum van het bezoek",
+      "inviteClientName": "Naam klant",
+      "inviteClientEmail": "E-mail (optioneel)",
+      "inviteClientPhone": "Mobiel (optioneel)",
+      "inviteLanguage": "Taal van het bericht",
+      "inviteSend": "Review vragen",
+      "inviteRules": "Eén link geldt voor één review van één bezoek. Bezoeken van de afgelopen 90 dagen, één verzoek per klant en professional per 30 dagen. Deze reviews krijgen het label „bezoek bevestigd door de salon”, en de salon kan ze niet verwijderen of verbergen, ook negatieve niet.",
+      "inviteNoTeam": "Voeg in het tabblad Team een professional met behandelingen toe om reviews te vragen.",
+      "invited": "Verzoek aangemaakt. Stuur het bericht nu naar de klant: kopieer het of open WhatsApp met de knoppen hieronder.",
+      "inviteErrors": {
+        "invalid": "Controleer de naam, het e-mailadres (als ingevuld) en de datum (maximaal 90 dagen geleden, niet in de toekomst).",
+        "not_found": "Professional of behandeling niet gevonden.",
+        "not_allowed": "Dit verzoek kan niet worden verstuurd.",
+        "duplicate": "Je hebt deze klant de afgelopen 30 dagen al gevraagd deze professional te beoordelen.",
+        "limit": "Je hebt het maximum aantal verzoeken voor vandaag bereikt. Probeer het morgen opnieuw.",
+        "phone": "Ongeldig telefoonnummer. Kies het land en typ het volledige nummer."
+      },
+      "invitationsTitle": "Verstuurde verzoeken",
+      "invitationWaiting": "wacht",
+      "invitationReviewed": "beoordeeld",
+      "listTitle": "Reviews",
+      "viaAstrabela": "geboekt via Astrabela",
+      "viaSalon": "bezoek bevestigd door de salon",
+      "cannotDelete": "Salons kunnen geen reviews verwijderen. Je kunt openbaar reageren of een nepreview melden voor moderatie.",
+      "shareCopy": "Bericht kopiëren",
+      "shareCopied": "Gekopieerd ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "Sms",
+      "viaClient": "klantreview"
+    },
+    "admin": {
+      "pending": "Salons die wachten op publicatie",
+      "none": "Niets in behandeling.",
+      "approve": "Goedkeuren",
+      "reject": "Terugsturen",
+      "reports": "Gemelde reviews",
+      "reason": "Reden",
+      "hide": "Review verbergen",
+      "keep": "Behouden",
+      "subs": {
+        "title": "Abonnementen",
+        "hint": "Geef gratis maanden of stel de datum in tot wanneer het gratis abonnement loopt. Een cadeau begint als de tijd die de salon al heeft afloopt.",
+        "search": "Zoek op naam, plaats of fiscaal nummer",
+        "find": "Zoeken",
+        "empty": "Geen salons gevonden.",
+        "none": "Geen abonnement",
+        "manage": "Beheren",
+        "months": "Gratis maanden",
+        "monthsN": "{n, plural, one {# maand} other {# maanden}}",
+        "note": "Notitie (optioneel)",
+        "notePlaceholder": "Bijv. partner van het eerste uur",
+        "grant": "Geven",
+        "until": "Gratis tot",
+        "set": "Datum instellen",
+        "cancel": "Abonnement nu beëindigen",
+        "cancelHint": "De salon verdwijnt uit de zoekresultaten tot hij opnieuw een abonnement neemt.",
+        "saved": "Abonnement bijgewerkt.",
+        "invalid": "Kies een datum in de toekomst.",
+        "salonStatus": {
+          "draft": "Concept",
+          "pending": "In behandeling",
+          "active": "Gepubliceerd",
+          "suspended": "Opgeschort"
+        },
+        "status": {
+          "trial": "Proefperiode",
+          "active": "Actief",
+          "past_due": "Achterstallig",
+          "cancelled": "Opgezegd",
+          "complimentary": "Gratis"
+        },
+        "endsOn": "tot {date}",
+        "endedOn": "sinds {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restaurant"
+        }
+      },
+      "title": "Beheer"
+    },
+    "menu": {
+      "hint": "Deel de menukaart in secties in. Wijzigingen zijn direct te zien op de openbare pagina en achter de QR-code op tafel.",
+      "viewPublic": "Openbare menukaart bekijken",
+      "invalid": "Controleer de naam en de prijs (bijvoorbeeld 12,50).",
+      "empty": "Begin met een sectie zoals „Voorgerechten” en voeg daarna gerechten toe.",
+      "editSection": "Sectie bewerken",
+      "sectionName": "Nieuwe sectie",
+      "sectionNameEn": "Naam in het Engels (optioneel)",
+      "sectionPlaceholder": "Voorgerechten",
+      "save": "Opslaan",
+      "deleteSection": "Sectie en gerechten verwijderen",
+      "addSection": "Sectie toevoegen",
+      "addDish": "Gerecht toevoegen",
+      "editDish": "Gerecht bewerken",
+      "deleteDish": "Gerecht verwijderen",
+      "available": "beschikbaar",
+      "soldOut": "uitverkocht",
+      "dishName": "Naam van het gerecht",
+      "dishNameEn": "Naam in het Engels (optioneel)",
+      "description": "Beschrijving",
+      "descriptionEn": "Beschrijving in het Engels (optioneel)",
+      "price": "Prijs incl. btw, €",
+      "portion": "Portie (optioneel)",
+      "portionPlaceholder": "300 g, 0,33 l, voor 2",
+      "allergens": "Allergenen",
+      "tags": "Labels",
+      "likes": "Likes van gasten"
+    },
+    "qr": {
+      "hint": "Print deze kaart en zet hem op je tafels. Gasten scannen hem met de camera van hun telefoon en de menukaart opent in de taal van hun telefoon.",
+      "notListed": "De code werkt al, maar gasten kunnen de menukaart pas openen als het restaurant gepubliceerd is (tabblad Profiel).",
+      "scan": "Scan de code voor de menukaart",
+      "scanEn": "Scan to see the menu",
+      "print": "Kaart printen",
+      "salon": {
+        "hint": "Print deze kaart en leg hem bij de balie of naast de spiegel. Klanten scannen hem met hun telefoon, boeken hun volgende bezoek en beoordelen hun professional.",
+        "notListed": "De code werkt al, maar klanten kunnen de pagina pas openen als de salon gepubliceerd is (tabblad Profiel).",
+        "scan": "Boek online en beoordeel je professional",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Support"
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Spanje",
+    "fr": "Frankrijk",
+    "it": "Italië",
+    "de": "Duitsland",
+    "nl": "Nederland",
+    "be": "België",
+    "ie": "Ierland",
+    "lu": "Luxemburg"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurants en menukaarten",
+    "eyebrow": "Europa · Restaurants",
+    "title": "Bekijk de menukaart voordat je gaat zitten.",
+    "subtitle": "Volledige menukaarten met actuele prijzen, bijgehouden door de restaurants zelf, in de eigen taal en in het Engels, met allergenen.",
+    "searchPlaceholder": "Naam of keuken",
+    "resultsTitle": "{count, plural, =0 {Geen restaurants} one {# restaurant} other {# restaurants}} in {city}",
+    "cityEmpty": "Nog geen restaurants op Astrabela in {city}.",
+    "noMatch": "Geen restaurants gevonden voor deze zoekopdracht.",
+    "join": "Heb je een restaurant? Publiceer je menukaart",
+    "dishes": "{count, plural, one {# gerecht} other {# gerechten}}",
+    "from": "Vanaf {price}"
+  },
+  "restaurant": {
+    "menu": "Menukaart",
+    "allergens": "Allergenen",
+    "vatIncluded": "Prijzen in euro, inclusief btw.",
+    "allergyNote": "Allergieën? Meld het aan het personeel voordat je bestelt.",
+    "like": "Lekker"
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "schaaldieren",
+    "eggs": "eieren",
+    "fish": "vis",
+    "peanuts": "pinda's",
+    "soy": "soja",
+    "milk": "melk",
+    "nuts": "noten",
+    "celery": "selderij",
+    "mustard": "mosterd",
+    "sesame": "sesam",
+    "sulphites": "sulfiet",
+    "lupin": "lupine",
+    "molluscs": "weekdieren"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarisch",
+    "vegan": "Veganistisch",
+    "gluten_free": "Glutenvrij",
+    "spicy": "Pittig"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Website"
+  },
+  "account": {
+    "title": "Inloggen",
+    "google": "Doorgaan met Google",
+    "or": "of",
+    "googleError": "Inloggen met Google is niet gelukt. Probeer het opnieuw.",
+    "openCabinet": "Open je bedrijfsomgeving",
+    "hello": "Hallo, {name}",
+    "logout": "Uitloggen",
+    "upcoming": "Komende boekingen",
+    "noUpcoming": "Je hebt geen komende boekingen.",
+    "findSalon": "Vind een salon",
+    "past": "Eerdere boekingen",
+    "open": "Bekijken",
+    "bookingsHint": "Boekingen die je ingelogd hebt gemaakt, verschijnen hier.",
+    "deleteTitle": "Account verwijderen",
+    "deleteText": "Je account en inloggegevens worden verwijderd. Boekingen blijven bij de salons, die ze bewaren om de dienst te leveren.",
+    "deleteConfirm": "Mijn account verwijderen",
+    "deleted": "Je account is verwijderd.",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "submit": "Inloggen",
+    "loginError": "Onjuist e-mailadres of wachtwoord.",
+    "noAccount": "Nog geen account?",
+    "createAccount": "Account aanmaken",
+    "businessQuestion": "Heb je een salon of restaurant?",
+    "businessLink": "Astrabela voor bedrijven",
+    "signedInBusiness": "Ingelogd als {name}.",
+    "adminPanel": "Beheer",
+    "welcome": "Account aangemaakt. Boekingen die je ingelogd maakt, verschijnen hier.",
+    "bookingsHintGoogle": "Boekingen die je ingelogd of met je Google-e-mailadres hebt gemaakt, verschijnen hier.",
+    "registerTitle": "Account aanmaken",
+    "name": "Naam",
+    "passwordHint": "Minstens 8 tekens.",
+    "terms": "Ik accepteer de <terms>gebruiksvoorwaarden</terms> en de <privacy>privacyverklaring</privacy>.",
+    "registerSubmit": "Account aanmaken",
+    "haveAccount": "Heb je al een account?",
+    "registerErrors": {
+      "invalid": "Controleer je naam, e-mailadres en wachtwoord (minstens 8 tekens).",
+      "email_taken": "Er bestaat al een account met dit e-mailadres. Log daarmee in."
+    }
+  },
+  "petFriendly": {
+    "label": "Huisdiervriendelijk",
+    "hint": "Huisdieren zijn welkom."
+  }
+}
