@@ -29,6 +29,7 @@ const PRICES = {
   fr: ["12,99 € par mois, en paiement mensuel ;", "10,99 € par mois, en paiement semestriel ;", "9,99 € par mois, en paiement annuel."],
   it: ["12,99 € al mese, con pagamento mensile;", "10,99 € al mese, con pagamento semestrale;", "9,99 € al mese, con pagamento annuale."],
   de: ["12,99 € pro Monat bei monatlicher Zahlung;", "10,99 € pro Monat bei halbjährlicher Zahlung;", "9,99 € pro Monat bei jährlicher Zahlung."],
+  nl: ["€ 12,99 per maand bij maandelijkse betaling;", "€ 10,99 per maand bij halfjaarlijkse betaling;", "€ 9,99 per maand bij jaarlijkse betaling."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -37,6 +38,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "fr") return privacyFr();
   if (locale === "it") return privacyIt();
   if (locale === "de") return privacyDe();
+  if (locale === "nl") return privacyNl();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -233,6 +235,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "fr") return termsFr();
   if (locale === "it") return termsIt();
   if (locale === "de") return termsDe();
+  if (locale === "nl") return termsNl();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -1176,6 +1179,197 @@ function termsDe(): LegalDoc {
       {
         title: "10. Änderungen",
         body: ["Wir können diese Bedingungen aktualisieren. Die neue Fassung wird hier mit Datum veröffentlicht; Unternehmen informieren wir vorab über wichtige Änderungen."],
+      },
+    ],
+  };
+}
+
+function privacyNl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Privacyverklaring",
+    updated: "Laatst bijgewerkt: 28 oktober 2026",
+    intro:
+      "Astrabela is een overzicht van schoonheidssalons, barbershops en restaurants in de Europese Unie, met online boeken en klantreviews van elke professional. Deze verklaring legt uit welke persoonsgegevens we verwerken, waarom, en welke rechten je hebt onder de AVG.",
+    sections: [
+      { title: "1. Wie we zijn", body: [`De website astrabela.com wordt beheerd door ${who()}. Vragen over je gegevens kun je sturen naar ${o.email}.`] },
+      {
+        title: "2. Welke gegevens we verwerken",
+        body: [
+          "Als je boekt of een review geeft (klanten):",
+          [
+            "naam, e-mail en mobiel nummer die je bij het boeken invult, en je bericht aan de salon;",
+            "de boeking zelf: salon, professional, behandeling, datum, tijd en status;",
+            "je review: sterren, tekst en de naam die je wilt tonen;",
+            "als je een klantaccount aanmaakt: naam en e-mail en een wachtwoord dat alleen versleuteld (gehasht) wordt opgeslagen, of bij Google de ID van je Google-account (je Google-wachtwoord zien we nooit).",
+          ],
+          "Als een salon of restaurant Astrabela gebruikt (bedrijven):",
+          [
+            "naam en e-mail van de accounthouder en het wachtwoord (alleen versleuteld opgeslagen);",
+            "bedrijfsgegevens: naam, adres, telefoon, e-mail, fiscaal nummer, team, behandelingen, prijzen, openingstijden, menukaart en links naar sociale media.",
+          ],
+          "Technische gegevens: sessiecookies voor ingelogde accounts, een taalcookie en serverlogs (zoals IP-adres en tijdstip van het verzoek), die we om veiligheidsredenen bewaren.",
+        ],
+      },
+      {
+        title: "3. Doelen en grondslagen",
+        body: [
+          [
+            "boekingen uitvoeren en beheren: uitvoering van een overeenkomst (art. 6 lid 1 sub b AVG);",
+            "accounts en abonnementen van bedrijven beheren: uitvoering van een overeenkomst;",
+            "reviews publiceren en nepreviews voorkomen: gerechtvaardigd belang bij een betrouwbaar overzicht (art. 6 lid 1 sub f);",
+            "de website veilig houden: gerechtvaardigd belang;",
+            "fiscale en boekhoudkundige verplichtingen nakomen: wettelijke verplichting (art. 6 lid 1 sub c).",
+          ],
+          "We verkopen geen persoonsgegevens en gebruiken ze niet voor reclame.",
+        ],
+      },
+      {
+        title: "4. De rol van de salon en die van ons",
+        body: [
+          "Bij boekingen bepaalt de salon die je kiest hoe hij de gegevens van zijn klanten gebruikt; de salon is daarvoor verwerkingsverantwoordelijke. Astrabela verwerkt die gegevens namens de salon als verwerker (art. 28 AVG) en alleen om de dienst te leveren. Voor reviews, het openbare overzicht en de beveiliging van de website is Astrabela verwerkingsverantwoordelijke.",
+        ],
+      },
+      {
+        title: "5. Ontvangers van de gegevens",
+        body: [
+          "De salon of het restaurant waar je boekt. Daarnaast gebruiken we deze dienstverleners, die gebonden zijn aan verwerkersovereenkomsten:",
+          [
+            "Vercel Inc. – hosting; de website draait in Frankfurt (EU). Vercel is een Amerikaans bedrijf; doorgiften buiten de EU vallen onder de modelcontractbepalingen van de EU en het EU-US Data Privacy Framework;",
+            "Neon – database, opgeslagen in Frankfurt (EU);",
+            "Cloudflare – domeinnaamdienst (DNS);",
+            "Google – alleen als je inlogt met Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Bewaartermijnen",
+        body: [
+          [
+            "klant- en boekingsgegevens: zolang het account van de salon actief is en uiterlijk 2 jaar na je laatste bezoek;",
+            "reviews: zolang de salon op Astrabela staat;",
+            "klantaccounts: tot je ze verwijdert (knop op de accountpagina);",
+            "bedrijfsaccounts: tot het account wordt gesloten;",
+            "facturen en betaalgegevens: 10 jaar, zoals de Portugese belastingwet vereist;",
+            "inlogsessies van bedrijven: 30 dagen.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookies",
+        body: [
+          "We gebruiken alleen cookies die nodig zijn om de website te laten werken: cookies die je ingelogd houden (en je naam in het menu tonen), kortdurende cookies tijdens het inloggen met Google, één voor de taal en één die onthoudt welke gerechten je leuk vond op de menukaart van een restaurant (die ontstaat pas als je op ♥ tikt en bevat een willekeurige code, niet je naam). We gebruiken geen analytische of advertentiecookies en vragen daarom geen toestemming voor cookies.",
+        ],
+      },
+      {
+        title: "8. Je rechten",
+        body: [
+          `Je kunt vragen om inzage, correctie of verwijdering van je gegevens, om beperking van of bezwaar tegen de verwerking, en om je gegevens in een overdraagbaar formaat te ontvangen. Schrijf naar ${o.email}; we antwoorden binnen een maand. Zijn de gegevens aan een salon gegeven, dan sturen we je verzoek ook aan die salon door. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens (www.autoriteitpersoonsgegevens.nl) of bij de Portugese toezichthouder CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Beveiliging",
+        body: [
+          "De website werkt alleen via HTTPS, wachtwoorden worden versleuteld opgeslagen en links voor boekingen en reviews zijn persoonlijk en moeilijk te raden. Deel je persoonlijke link niet met anderen.",
+        ],
+      },
+      {
+        title: "10. Wijzigingen",
+        body: ["Als we deze verklaring wijzigen, publiceren we de nieuwe versie hier met datum. Belangrijke wijzigingen kondigen we aan op de website."],
+      },
+    ],
+  };
+}
+
+function termsNl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Gebruiksvoorwaarden",
+    updated: "Laatst bijgewerkt: 28 oktober 2026",
+    intro: `Deze voorwaarden gelden voor het gebruik van astrabela.com, beheerd door ${who()}. Door de website te gebruiken of een bedrijfsaccount aan te maken, ga je ermee akkoord.`,
+    sections: [
+      {
+        title: "1. De dienst",
+        body: [
+          "Met Astrabela vinden klanten schoonheidssalons, barbershops en restaurants, boeken ze online behandelingen, beoordelen ze professionals en bekijken ze menukaarten van restaurants. Salons en restaurants beheren hun profiel, team, behandelingen, agenda en menukaart in hun bedrijfsaccount.",
+        ],
+      },
+      {
+        title: "2. Voor klanten",
+        body: [
+          [
+            "Astrabela gebruiken is gratis en je hebt geen account nodig.",
+            "Een boeking is een afspraak tussen jou en de salon. De salon bepaalt behandelingen, prijzen en duur, en de salon voert de behandeling uit, niet Astrabela.",
+            "Astrabela ontvangt geen betalingen: je betaalt rechtstreeks bij de salon.",
+            "Je kunt annuleren via de persoonlijke link die je krijgt. Annuleer alsjeblieft als je niet kunt komen.",
+          ],
+        ],
+      },
+      {
+        title: "3. Reviews",
+        body: [
+          "Elke ingelogde klant van Astrabela kan een professional van een salon beoordelen, één keer per 30 dagen per professional. Klanten met een bezoek dat via Astrabela is geboekt of door de salon is bevestigd, kunnen ook via hun persoonlijke link een review geven; die reviews krijgen het label van een bevestigd bezoek. Een review moet:",
+          [
+            "je eigen, echte ervaring beschrijven;",
+            "vrij zijn van beledigingen, bedreigingen en discriminatie;",
+            "geen persoonsgegevens van anderen, reclame of links bevatten.",
+          ],
+          "We kunnen reviews verbergen die deze regels overtreden. De salon kan reviews niet verwijderen of wijzigen; hij kan openbaar reageren of een review melden voor moderatie.",
+        ],
+      },
+      {
+        title: "4. Voor salons en restaurants",
+        body: [
+          [
+            "Profielgegevens, prijzen en menukaart moeten juist en actueel zijn. Je bent daarvoor en voor je diensten verantwoordelijk.",
+            "Houd je wachtwoord geheim; je bent verantwoordelijk voor wat er in je account gebeurt.",
+            "Maak geen nepboekingen, nepreviews of nepverzoeken om reviews, en vraag niet om reviews in ruil voor een beloning.",
+            "Alleen profielen met een actief abonnement of gratis periode verschijnen in de zoekresultaten.",
+          ],
+        ],
+      },
+      {
+        title: "5. Prijzen",
+        body: [
+          "Voor salons, barbershops en restaurants zijn de eerste 3 maanden gratis, zonder kaart om te beginnen. Daarna is een abonnement nodig om zichtbaar te blijven:",
+          PRICES.nl,
+          "De betalingsvoorwaarden worden vóór elke afschrijving getoond. We kunnen de prijzen wijzigen met minstens 30 dagen vooraankondiging; de wijziging geldt vanaf de volgende betaalperiode.",
+        ],
+      },
+      {
+        title: "6. Verwerkersovereenkomst (bedrijven)",
+        body: [
+          "Voor de klantgegevens in boekingen is het bedrijf verwerkingsverantwoordelijke en Astrabela zijn verwerker (art. 28 AVG). Astrabela:",
+          [
+            "verwerkt die gegevens alleen om de dienst te leveren en volgens de instructies die het bedrijf via de website geeft;",
+            "behandelt ze vertrouwelijk en beschermt ze met passende beveiligingsmaatregelen;",
+            "schakelt alleen de subverwerkers in die in de privacyverklaring staan en informeert bedrijven voordat er nieuwe bijkomen;",
+            "helpt het bedrijf bij verzoeken van klanten en bij het melden van datalekken;",
+            "verwijdert of levert de gegevens bij sluiting van het account, tenzij we ze wettelijk moeten bewaren.",
+          ],
+        ],
+      },
+      {
+        title: "7. Opschorting en sluiting van het account",
+        body: [
+          "Je kunt je bedrijfsaccount op elk moment sluiten door ons te schrijven. We kunnen een profiel opschorten of verwijderen dat deze voorwaarden, de wet of rechten van anderen schendt, en vermelden daarbij de reden.",
+        ],
+      },
+      {
+        title: "8. Aansprakelijkheid",
+        body: [
+          "We doen ons best om de website beschikbaar en juist te houden, maar kunnen niet garanderen dat hij altijd zonder onderbrekingen of fouten werkt. Astrabela is geen partij bij de afspraak tussen klant en salon en is niet aansprakelijk voor de diensten van salons. Niets in deze voorwaarden beperkt de wettelijke rechten van consumenten.",
+        ],
+      },
+      {
+        title: "9. Toepasselijk recht en klachten",
+        body: [
+          `Op deze voorwaarden is Portugees recht van toepassing, onverminderd de bescherming die het recht van je woonland je als consument biedt. Klachten kun je sturen naar ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Wijzigingen",
+        body: ["We kunnen deze voorwaarden bijwerken. De nieuwe versie wordt hier met datum gepubliceerd; bedrijven informeren we vooraf over belangrijke wijzigingen."],
       },
     ],
   };
