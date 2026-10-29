@@ -184,3 +184,20 @@ describe("Dutch places", () => {
     expect(phoneCountry("utrecht")).toBe("NL");
   });
 });
+
+describe("Belgian places", () => {
+  it("covers every municipality in its region's language, with the other name too", () => {
+    expect(placeBySlug("bruxelles-brussel")).toMatchObject({ name: "Bruxelles/Brussel", country: "be" });
+    expect(searchPlaces("anvers", [], 30, "be")[0].name).toBe("Antwerpen/Anvers");
+    expect(searchPlaces("luik", [], 30, "be")[0].name).toBe("Liège/Luik");
+    expect(searchPlaces("ixelles", [], 30, "be")[0].area).toBe("Bruxelles-Capitale/Brussel-Hoofdstad");
+    expect(searchPlaces("sankt", [], 30, "be")[0].name).toBe("Sankt Vith/Saint-Vith");
+    expect(searchPlaces("hasselt", [], 30, "be")[0].area).toBe("Limburg");
+  });
+
+  it("uses Brussels time and starts Belgian visitors in Brussels", () => {
+    expect(placeTimezone("gent-gand")).toBe("Europe/Brussels");
+    expect(cityFieldSetup([], undefined, "nl", "be")).toMatchObject({ defaultCountry: "be", defaultSlugs: { be: "bruxelles-brussel" } });
+    expect(phoneCountry("charleroi")).toBe("BE");
+  });
+});
