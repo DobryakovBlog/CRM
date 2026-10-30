@@ -615,7 +615,7 @@ function privacyFr(): LegalDoc {
   const o = operator();
   return {
     title: "Politique de confidentialité",
-    updated: "Dernière mise à jour : 28 octobre 2026",
+    updated: "Dernière mise à jour : 29 octobre 2026",
     intro:
       "Astrabela est un catalogue de salons de beauté, de barbiers et de restaurants dans l'Union européenne, avec réservation en ligne et avis clients sur chaque professionnel. Cette politique explique quelles données personnelles nous traitons, pourquoi, et quels sont vos droits au titre du RGPD.",
     sections: [
@@ -691,7 +691,7 @@ function privacyFr(): LegalDoc {
       {
         title: "8. Vos droits",
         body: [
-          `Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, la limitation du traitement ou vous y opposer, et les recevoir dans un format portable. Écrivez à ${o.email} ; nous répondons dans un délai d'un mois. Si les données ont été communiquées à un salon, nous lui transmettons aussi votre demande. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr) ou de l'autorité portugaise, la CNPD (www.cnpd.pt).`,
+          `Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, la limitation du traitement ou vous y opposer, et les recevoir dans un format portable. Écrivez à ${o.email} ; nous répondons dans un délai d'un mois. Si les données ont été communiquées à un salon, nous lui transmettons aussi votre demande. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr) en France, de l'Autorité de protection des données (www.autoriteprotectiondonnees.be) en Belgique ou de l'autorité portugaise, la CNPD (www.cnpd.pt).`,
         ],
       },
       {
@@ -997,7 +997,7 @@ function privacyDe(): LegalDoc {
   const o = operator();
   return {
     title: "Datenschutzerklärung",
-    updated: "Stand: 28. Oktober 2026",
+    updated: "Stand: 29. Oktober 2026",
     intro:
       "Astrabela ist ein Katalog von Beautysalons, Barbershops und Restaurants in der Europäischen Union, mit Online-Buchung und Kundenbewertungen zu jedem Profi. Diese Erklärung beschreibt, welche personenbezogenen Daten wir verarbeiten, warum, und welche Rechte Sie nach der DSGVO haben.",
     sections: [
@@ -1073,7 +1073,7 @@ function privacyDe(): LegalDoc {
       {
         title: "8. Ihre Rechte",
         body: [
-          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
+          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes, in Belgien bei der Datenschutzbehörde (www.datenschutzbehorde.be), oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
         ],
       },
       {
@@ -1188,7 +1188,7 @@ function privacyNl(): LegalDoc {
   const o = operator();
   return {
     title: "Privacyverklaring",
-    updated: "Laatst bijgewerkt: 28 oktober 2026",
+    updated: "Laatst bijgewerkt: 29 oktober 2026",
     intro:
       "Astrabela is een overzicht van schoonheidssalons, barbershops en restaurants in de Europese Unie, met online boeken en klantreviews van elke professional. Deze verklaring legt uit welke persoonsgegevens we verwerken, waarom, en welke rechten je hebt onder de AVG.",
     sections: [
@@ -1264,7 +1264,7 @@ function privacyNl(): LegalDoc {
       {
         title: "8. Je rechten",
         body: [
-          `Je kunt vragen om inzage, correctie of verwijdering van je gegevens, om beperking van of bezwaar tegen de verwerking, en om je gegevens in een overdraagbaar formaat te ontvangen. Schrijf naar ${o.email}; we antwoorden binnen een maand. Zijn de gegevens aan een salon gegeven, dan sturen we je verzoek ook aan die salon door. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens (www.autoriteitpersoonsgegevens.nl) of bij de Portugese toezichthouder CNPD (www.cnpd.pt).`,
+          `Je kunt vragen om inzage, correctie of verwijdering van je gegevens, om beperking van of bezwaar tegen de verwerking, en om je gegevens in een overdraagbaar formaat te ontvangen. Schrijf naar ${o.email}; we antwoorden binnen een maand. Zijn de gegevens aan een salon gegeven, dan sturen we je verzoek ook aan die salon door. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens (www.autoriteitpersoonsgegevens.nl) in Nederland, de Gegevensbeschermingsautoriteit (www.gegevensbeschermingsautoriteit.be) in België of bij de Portugese toezichthouder CNPD (www.cnpd.pt).`,
         ],
       },
       {
