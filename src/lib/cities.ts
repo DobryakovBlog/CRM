@@ -5,6 +5,7 @@ import itData from "@/data/it-places.json";
 import deData from "@/data/de-places.json";
 import nlData from "@/data/nl-places.json";
 import beData from "@/data/be-places.json";
+import ieData from "@/data/ie-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
@@ -12,10 +13,11 @@ import { slugify } from "./slug";
 // name ("lisboa"); a locality's slug adds its municipality ("alfama-lisboa").
 // Other countries: every municipality, built by scripts/build-<country>-places.ts
 // (Spain 8,132, France 34,875 communes, Italy 7,904 comuni, Germany 11,054 Gemeinden,
-// the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten). Its slug is its name ("madrid"), with the
+// the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten;
+// Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county). Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -26,6 +28,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["de", deData],
   ["nl", nlData],
   ["be", beData],
+  ["ie", ieData],
 ];
 
 export type Place = {
@@ -122,7 +125,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -143,7 +146,7 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
 const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl" };
@@ -158,7 +161,7 @@ export function placesIn(slug: string): string[] {
   return places().members.get(slug) ?? [slug];
 }
 
-// Countries shown in search. Portugal, Spain, France, Italy, Germany, the Netherlands and Belgium are open; the rest tell visitors where we are heading.
+// Countries shown in search. Portugal, Spain, France, Italy, Germany, the Netherlands, Belgium and Ireland are open; the rest tell visitors where we are heading.
 export const COUNTRIES = [
   { code: "pt", open: true },
   { code: "es", open: true },
@@ -167,7 +170,7 @@ export const COUNTRIES = [
   { code: "de", open: true },
   { code: "nl", open: true },
   { code: "be", open: true },
-  { code: "ie", open: false },
+  { code: "ie", open: true },
   { code: "lu", open: false },
 ] as const;
 
