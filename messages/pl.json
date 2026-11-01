@@ -79,6 +79,7 @@
     "hu": "Węgierski",
     "sl": "Słoweński",
     "hr": "Chorwacki",
+    "ro": "Rumuński",
     "ru": "Rosyjski",
     "uk": "Ukraiński"
   },
@@ -504,7 +505,8 @@
     "sk": "Słowacja",
     "hu": "Węgry",
     "si": "Słowenia",
-    "hr": "Chorwacja"
+    "hr": "Chorwacja",
+    "ro": "Rumunia"
   },
   "restaurants": {
     "metaTitle": "Restauracje i menu",

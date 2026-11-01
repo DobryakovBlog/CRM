@@ -347,3 +347,17 @@ describe("Croatian places", () => {
     expect(phoneCountry("osijek")).toBe("HR");
   });
 });
+
+describe("Romanian places", () => {
+  it("lists GeoNames towns by county with comma-below letters", () => {
+    expect(placeBySlug("bucuresti")).toMatchObject({ name: "București", country: "ro", area: "București" });
+    expect(searchPlaces("cluj", [], 30, "ro")[0]).toMatchObject({ name: "Cluj-Napoca", area: "Cluj" });
+    expect(searchPlaces("timisoara", [], 30, "ro")[0].name).toBe("Timișoara");
+  });
+
+  it("uses Bucharest time and starts Romanian visitors in Bucharest", () => {
+    expect(placeTimezone("iasi")).toBe("Europe/Bucharest");
+    expect(cityFieldSetup([], undefined, "ro")).toMatchObject({ defaultCountry: "ro", defaultSlugs: { ro: "bucuresti" } });
+    expect(phoneCountry("constanta")).toBe("RO");
+  });
+});

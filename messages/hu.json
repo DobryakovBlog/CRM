@@ -79,6 +79,7 @@
     "hu": "Magyar",
     "sl": "Szlovén",
     "hr": "Horvát",
+    "ro": "Román",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -504,7 +505,8 @@
     "sk": "Szlovákia",
     "hu": "Magyarország",
     "si": "Szlovénia",
-    "hr": "Horvátország"
+    "hr": "Horvátország",
+    "ro": "Románia"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",

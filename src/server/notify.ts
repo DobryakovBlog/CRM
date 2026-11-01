@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  ro: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Programare confirmată: ${r.salon.name}`,
+      text: `Bună ziua, ${r.client.name},\n\n${r.service.name} cu ${r.staff.name}\n${when}\n${r.salon.address}\n\nGestionați sau anulați: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Reamintire: mâine la ${r.salon.name}`,
+      text: `Bună ziua, ${r.client.name},\n\nvă reamintim programarea: ${r.service.name} cu ${r.staff.name}, ${when}.\nNu puteți veni? Anulați aici: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Cum a fost la ${r.salon.name}?`,
+      text: `Bună ziua, ${r.client.name},\n\nevaluați-l pe ${r.staff.name}. Doar clienții cu o vizită confirmată pot lăsa recenzii.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} vă roagă să lăsați o recenzie`,
+      text: `Bună ziua, ${r.client.name},\n\n${r.staff.name} de la ${r.salon.name} vă mulțumește pentru vizită (${r.service.name}) și ar dori să afle părerea dvs. pe Astrabela. Durează un minut și nu aveți nevoie de cont.\nAcest link este personal și valabil pentru o singură recenzie: ${link}`,
     }),
   },
   hr: {

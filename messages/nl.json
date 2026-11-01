@@ -79,6 +79,7 @@
     "hu": "Hongaars",
     "sl": "Sloveens",
     "hr": "Kroatisch",
+    "ro": "Roemeens",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -504,7 +505,8 @@
     "sk": "Slowakije",
     "hu": "Hongarije",
     "si": "Slovenië",
-    "hr": "Kroatië"
+    "hr": "Kroatië",
+    "ro": "Roemenië"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",
