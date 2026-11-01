@@ -18,6 +18,15 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Vienna: "Wien" },
   },
+  ch: {
+    regions: {
+      AG: "Aargau", AI: "Appenzell Innerrhoden", AR: "Appenzell Ausserrhoden", BE: "Bern", BL: "Basel-Landschaft",
+      BS: "Basel-Stadt", FR: "Fribourg", GE: "Genève", GL: "Glarus", GR: "Graubünden", JU: "Jura", LU: "Luzern",
+      NE: "Neuchâtel", NW: "Nidwalden", OW: "Obwalden", SG: "St. Gallen", SH: "Schaffhausen", SO: "Solothurn",
+      SZ: "Schwyz", TG: "Thurgau", TI: "Ticino", UR: "Uri", VD: "Vaud", VS: "Valais", ZG: "Zug", ZH: "Zürich",
+    },
+    names: { Sitten: "Sion", "Sankt Gallen": "St. Gallen" },
+  },
 };
 
 const [cc, atcDir, cjDir] = process.argv.slice(2);

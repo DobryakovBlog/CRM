@@ -691,7 +691,7 @@ function privacyFr(): LegalDoc {
       {
         title: "8. Vos droits",
         body: [
-          `Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, la limitation du traitement ou vous y opposer, et les recevoir dans un format portable. Écrivez à ${o.email} ; nous répondons dans un délai d'un mois. Si les données ont été communiquées à un salon, nous lui transmettons aussi votre demande. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr) en France, de l'Autorité de protection des données (www.autoriteprotectiondonnees.be) en Belgique, de la CNPD (www.cnpd.lu) au Luxembourg ou de l'autorité portugaise, la CNPD (www.cnpd.pt).`,
+          `Vous pouvez demander l'accès à vos données, leur rectification ou leur effacement, la limitation du traitement ou vous y opposer, et les recevoir dans un format portable. Écrivez à ${o.email} ; nous répondons dans un délai d'un mois. Si les données ont été communiquées à un salon, nous lui transmettons aussi votre demande. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr) en France, de l'Autorité de protection des données (www.autoriteprotectiondonnees.be) en Belgique, de la CNPD (www.cnpd.lu) au Luxembourg, du PFPDT (www.edoeb.admin.ch) en Suisse ou de l'autorité portugaise, la CNPD (www.cnpd.pt).`,
         ],
       },
       {
@@ -806,7 +806,7 @@ function privacyIt(): LegalDoc {
   const o = operator();
   return {
     title: "Informativa sulla privacy",
-    updated: "Ultimo aggiornamento: 28 ottobre 2026",
+    updated: "Ultimo aggiornamento: 1° novembre 2026",
     intro:
       "Astrabela è un catalogo di saloni di bellezza, barbieri e ristoranti nell'Unione europea, con prenotazione online e recensioni dei clienti su ogni professionista. Questa informativa spiega quali dati personali trattiamo, perché e quali sono i tuoi diritti secondo il GDPR.",
     sections: [
@@ -882,7 +882,7 @@ function privacyIt(): LegalDoc {
       {
         title: "8. I tuoi diritti",
         body: [
-          `Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati, la limitazione del trattamento o opporti a esso, e riceverli in un formato portabile. Scrivi a ${o.email}; rispondiamo entro un mese. Se i dati sono stati forniti a un salone, gli inoltriamo anche la tua richiesta. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it) o all'autorità portoghese, la CNPD (www.cnpd.pt).`,
+          `Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati, la limitazione del trattamento o opporti a esso, e riceverli in un formato portabile. Scrivi a ${o.email}; rispondiamo entro un mese. Se i dati sono stati forniti a un salone, gli inoltriamo anche la tua richiesta. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it) in Italia, all'IFPDT (www.edoeb.admin.ch) in Svizzera o all'autorità portoghese, la CNPD (www.cnpd.pt).`,
         ],
       },
       {
@@ -1073,7 +1073,7 @@ function privacyDe(): LegalDoc {
       {
         title: "8. Ihre Rechte",
         body: [
-          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes, in Belgien bei der Datenschutzbehörde (www.datenschutzbehorde.be), in Luxemburg bei der CNPD (www.cnpd.lu), in Österreich bei der Datenschutzbehörde (www.dsb.gv.at), oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
+          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes, in Belgien bei der Datenschutzbehörde (www.datenschutzbehorde.be), in Luxemburg bei der CNPD (www.cnpd.lu), in Österreich bei der Datenschutzbehörde (www.dsb.gv.at), in der Schweiz beim EDÖB (www.edoeb.admin.ch), oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
         ],
       },
       {
