@@ -1,0 +1,617 @@
+{
+  "meta": {
+    "title": "Astrabela: ilusalongid ja barbershopid veebibroneeringuga",
+    "description": "Leia Euroopas ilusalong või barbershop, loe klientide arvustusi iga teenindaja kohta ja broneeri veebis."
+  },
+  "nav": {
+    "forSalons": "Ettevõtetele",
+    "footer": "Astrabela · Klientide arvustused iga teenindaja kohta",
+    "language": "Keel",
+    "forClients": "Leia salong",
+    "salons": "Salongid",
+    "restaurants": "Restoranid",
+    "privacy": "Privaatsus",
+    "terms": "Tingimused",
+    "signIn": "Logi sisse",
+    "support": "Abi"
+  },
+  "home": {
+    "title": "Broneeri parim. Usalda tähti.",
+    "subtitle": "Euroopa parimad ilusalongid ja barbershopid, mida kliendid hindavad iga teenindaja kaupa. Vali ja broneeri veebis mõne sekundiga.",
+    "why": {
+      "verified": {
+        "title": "Arvustused iga teenindaja kohta",
+        "text": "Iga arvustus käib ühe teenindaja kohta. Kinnitatud külastustel on oma märge."
+      },
+      "masters": {
+        "title": "Vali teenindaja",
+        "text": "Igal teenindajal on oma hinne."
+      },
+      "direct": {
+        "title": "Maksad salongis",
+        "text": "Tasuta broneering, veebimakset pole."
+      }
+    },
+    "eyebrow": "Euroopa · Ilusalongid ja barbershopid",
+    "featuredEyebrow": "Soovitame",
+    "featuredTitle": "Parima hindega salongid",
+    "browse": "Otsi teenuse järgi"
+  },
+  "search": {
+    "city": "Asula",
+    "service": "Teenus",
+    "anyService": "Kõik teenused",
+    "language": "Keel",
+    "anyLanguage": "Mis tahes keel",
+    "submit": "Otsi",
+    "resultsTitle": "{count, plural, =0 {Salonge pole} one {# salong} other {# salongi}} {city, select, other {asulas {city}}}",
+    "empty": "Nendele filtritele ei vasta veel ükski salong.",
+    "new": "Uus",
+    "from": "Alates {price}",
+    "cityEmpty": "Asulas {city} pole veel Astrabelas salonge. Laieneme asula kaupa.",
+    "cityEmptyCta": "Kas sul on siin salong või barbershop? Liitu",
+    "country": "Riik",
+    "comingSoon": "varsti",
+    "cityPlaceholder": "Kirjuta asula",
+    "cityNoMatch": "Me pole veel selles asulas"
+  },
+  "categories": {
+    "hair": "Juuksed",
+    "barber": "Barbershop",
+    "nails": "Küüned",
+    "brows_lashes": "Kulmud ja ripsmed",
+    "skin": "Näohooldus",
+    "makeup": "Meik",
+    "massage": "Massaaž",
+    "other": "Muu"
+  },
+  "languages": {
+    "pt": "Portugali",
+    "en": "Inglise",
+    "es": "Hispaania",
+    "fr": "Prantsuse",
+    "de": "Saksa",
+    "it": "Itaalia",
+    "nl": "Hollandi",
+    "pl": "Poola",
+    "cs": "Tšehhi",
+    "sk": "Slovaki",
+    "hu": "Ungari",
+    "sl": "Sloveeni",
+    "hr": "Horvaadi",
+    "ro": "Rumeenia",
+    "bg": "Bulgaaria",
+    "da": "Taani",
+    "sv": "Rootsi",
+    "nb": "Norra",
+    "fi": "Soome",
+    "et": "Eesti",
+    "ru": "Vene",
+    "uk": "Ukraina"
+  },
+  "weekdays": {
+    "0": "Pühapäev",
+    "1": "Esmaspäev",
+    "2": "Teisipäev",
+    "3": "Kolmapäev",
+    "4": "Neljapäev",
+    "5": "Reede",
+    "6": "Laupäev"
+  },
+  "salon": {
+    "verifiedNote": "klientide arvustused iga teenindaja kohta",
+    "services": "Teenused",
+    "minutes": "{n} min",
+    "book": "Broneeri",
+    "reviews": "Arvustused",
+    "reportThanks": "Aitäh. Vaatame teate üle.",
+    "noReviews": "Arvustusi veel pole.",
+    "withMaster": "teenindaja {name}",
+    "verifiedVisit": "kinnitatud külastus",
+    "salonReply": "Salongi vastus",
+    "report": "Teata arvustusest",
+    "reportReason": "Põhjus",
+    "send": "Saada",
+    "team": "Meeskond",
+    "payOnSite": "Makse salongis.",
+    "viaAstrabela": "broneeritud Astrabela kaudu",
+    "viaSalon": "salongi kinnitatud külastus",
+    "writeReview": "Hinda teenindajat",
+    "master": "Teenindaja",
+    "rating": "Hinne",
+    "yourReview": "Sinu arvamus (valikuline)",
+    "publish": "Avalda arvustus",
+    "signInToReview": "Arvustuse kirjutamiseks logi sisse.",
+    "signIn": "Logi sisse",
+    "reviewThanks": "Aitäh! Sinu arvustus on avaldatud.",
+    "reviewTooSoon": "Oled seda teenindajat viimase 30 päeva jooksul juba hinnanud.",
+    "reviewInvalid": "Vali teenindaja ja hinne.",
+    "viaClient": "kliendi arvustus"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "makse salongis",
+    "errors": {
+      "invalid": "Kontrolli oma andmeid ja proovi uuesti.",
+      "slot_taken": "See aeg broneeriti just ära. Vali teine.",
+      "not_found": "Teenus või teenindaja pole saadaval.",
+      "not_allowed": "See teenindaja ei paku seda teenust.",
+      "phone": "Sisesta kehtiv mobiilinumber õige riigikoodiga."
+    },
+    "master": "Teenindaja",
+    "anyMaster": "Ükskõik milline teenindaja",
+    "day": "Päev",
+    "time": "Kellaaeg",
+    "noSlots": "Sel päeval vabu aegu pole.",
+    "yourDetails": "Sinu andmed",
+    "name": "Nimi",
+    "email": "E-post",
+    "phone": "Telefon",
+    "note": "Sõnum salongile (valikuline)",
+    "privacy": "Nõustun, et salong ja Astrabela töötlevad minu andmeid selle broneeringu jaoks (<privacy>privaatsuspoliitika</privacy>).",
+    "confirm": "Kinnita broneering",
+    "gateTitle": "Kuidas soovid jätkata?",
+    "gateText": "Kontoga näed kõiki oma broneeringuid ühes kohas ega pea andmeid uuesti sisestama.",
+    "guest": "Ilma kontota",
+    "signIn": "Logi sisse"
+  },
+  "booking": {
+    "created": "Broneering kinnitatud! Saatsime üksikasjad e-postiga.",
+    "reviewThanks": "Aitäh arvustuse eest!",
+    "error": "Toimingut ei õnnestunud teha.",
+    "status": {
+      "confirmed": "Kinnitatud",
+      "cancelled": "Tühistatud",
+      "completed": "Toimunud",
+      "no_show": "Ei tulnud"
+    },
+    "with": "teenindaja {name}",
+    "payOnSite": "makse salongis",
+    "cancel": "Tühista broneering",
+    "reviewTitle": "Hinda külastust: {name}",
+    "rating": "Hinne",
+    "reviewText": "Kommentaar",
+    "authorName": "Kuvatav nimi",
+    "submitReview": "Avalda arvustus",
+    "visitOn": "Külastus {date}",
+    "moreTitle": "Veel salonge asulas {city}",
+    "moreLink": "Vaata kõiki salonge"
+  },
+  "business": {
+    "landing": {
+      "title": "Rohkem kliente sinu salongile",
+      "subtitle": "Veebikalender ja klientide arvustused. Ilma vahendustasuta, üks fikseeritud hind kogu meeskonnale.",
+      "start": "Proovi {months} kuud tasuta",
+      "features": {
+        "noCommission": "0 % vahendustasu klientidelt",
+        "unlimitedStaff": "Piiramatu arv töötajaid",
+        "calendar": "Veebikalender ja käsitsi broneeringud",
+        "verifiedReviews": "Arvustused iga teenindaja kohta",
+        "ownClients": "Sinu kliendid jäävad sinu omaks"
+      },
+      "restaurants": {
+        "eyebrow": "Restoranid",
+        "title": "Sinu menüü veebis, alati ajakohane",
+        "text": "Avalda menüü hindade ja allergeenidega oma keeles ja inglise keeles. Prindi laudadele QR-kood ja muuda hindu, millal soovid. Esimesed 3 kuud on tasuta.",
+        "cta": "Proovi 3 kuud tasuta"
+      },
+      "trialNote": "Esimesed {months} kuud on tasuta. Alustamiseks pole kaarti vaja."
+    },
+    "plans": {
+      "monthly": "Kuupõhine",
+      "semiannual": "6 kuud",
+      "annual": "12 kuud",
+      "perMonth": "kuus + käibemaks"
+    },
+    "login": {
+      "title": "Logi sisse",
+      "error": "Vale e-post või parool.",
+      "email": "E-post",
+      "password": "Parool",
+      "submit": "Logi sisse",
+      "noAccount": "Kontot veel pole? Registreeri oma salong"
+    },
+    "register": {
+      "title": "Registreeri oma ettevõte",
+      "errors": {
+        "invalid": "Kontrolli välju (paroolis vähemalt 8 märki).",
+        "email_taken": "See e-post on juba registreeritud."
+      },
+      "fields": {
+        "salonName": "Ettevõtte nimi",
+        "city": "Asula",
+        "address": "Aadress",
+        "phone": "Telefon",
+        "name": "Sinu nimi",
+        "email": "E-post",
+        "password": "Parool"
+      },
+      "terms": "Nõustun <terms>kasutustingimustega</terms>, sealhulgas andmetöötluslepinguga (GDPR), ja <privacy>privaatsuspoliitikaga</privacy>.",
+      "submit": "Loo konto",
+      "kind": "Ettevõtte tüüp",
+      "kinds": {
+        "salon": "Salong",
+        "restaurant": "Restoran"
+      },
+      "kindHint": "Ilusalongid, barbershopid, küüne- ja iluteenused valivad „Salong“. Seejärel vali oma teenuste kategooriad, näiteks „Barbershop“.",
+      "googleAs": "Registreerud Google'iga aadressil {email}. Parooli pole vaja."
+    },
+    "salonStatus": {
+      "draft": "Mustand",
+      "pending": "Ülevaatusel",
+      "active": "Avaldatud",
+      "suspended": "Peatatud"
+    },
+    "logout": "Logi välja",
+    "tabs": {
+      "calendar": "Kalender",
+      "services": "Teenused",
+      "team": "Meeskond",
+      "reviews": "Arvustused",
+      "profile": "Profiil",
+      "admin": "Haldus",
+      "menu": "Menüü",
+      "qr": "QR-kood"
+    },
+    "calendar": {
+      "today": "Täna",
+      "errors": {
+        "invalid": "Vigased andmed.",
+        "slot_taken": "See aeg on juba broneeritud.",
+        "not_found": "Teenust või teenindajat ei leitud.",
+        "not_allowed": "See teenindaja ei paku seda teenust.",
+        "phone": "Vigane telefoninumber. Vali riik ja kirjuta kogu number."
+      },
+      "noTeam": "Lisa teenindajad vahekaardil Meeskond.",
+      "free": "Broneeringuid pole.",
+      "noShows": "{n, plural, one {# kohale ilmumata jätmine} other {# kohale ilmumata jätmist}}",
+      "mark": {
+        "completed": "Tuli",
+        "no_show": "Ei tulnud",
+        "cancelled": "Tühista"
+      },
+      "manualTitle": "Uus broneering (telefon, kohapeal)",
+      "master": "Teenindaja",
+      "service": "Teenus",
+      "time": "Kellaaeg",
+      "clientName": "Kliendi nimi",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-post (valikuline)",
+      "add": "Lisa"
+    },
+    "services": {
+      "empty": "Teenuseid veel pole.",
+      "disable": "Lülita välja",
+      "enable": "Lülita sisse",
+      "addTitle": "Uus teenus",
+      "name": "Nimetus",
+      "category": "Kategooria",
+      "duration": "Kestus (min)",
+      "price": "Hind (€)",
+      "add": "Lisa"
+    },
+    "team": {
+      "name": "Nimi",
+      "title": "Roll",
+      "titlePlaceholder": "nt kolorist",
+      "languages": "Keeled",
+      "services": "Teenused",
+      "noServices": "Lisa esmalt teenused.",
+      "schedule": "Nädalagraafik",
+      "save": "Salvesta",
+      "servicesCount": "{n, plural, one {# teenus} other {# teenust}}",
+      "deactivate": "Deaktiveeri",
+      "activate": "Aktiveeri",
+      "add": "Lisa teenindaja"
+    },
+    "profile": {
+      "welcome": "Tere tulemast! Täida profiil, lisa teenused ja meeskond ning saada seejärel salong avaldamiseks.",
+      "saved": "Salvestatud.",
+      "submitted": "Saadetud! Kontrollime ja avaldame sinu salongi peagi.",
+      "notReady": "Enne saatmist lisa vähemalt üks teenindaja koos teenuste ja graafikuga.",
+      "listing": "Avaldamine kataloogis",
+      "statusHelp": {
+        "draft": "Sinu salong pole veel kataloogis.",
+        "pending": "Kontrollime sinu salongi.",
+        "active": "Sinu salong on avaldatud ja võtab broneeringuid vastu.",
+        "suspended": "Sinu salong on peatatud. Võta meiega ühendust."
+      },
+      "submit": "Saada avaldamiseks",
+      "viewPublic": "Vaata avalikku lehte",
+      "subscription": "Tellimus",
+      "sub": {
+        "trial": "Tasuta prooviperiood kuni {date}.",
+        "active": "Aktiivne kuni {date}.",
+        "past_due": "Makse hilinenud alates {date}.",
+        "cancelled": "Tühistatud {date}.",
+        "complimentary": "Astrabela poolt tasuta kuni {date}."
+      },
+      "details": "Salongi andmed",
+      "fields": {
+        "name": "Nimi",
+        "district": "Linnaosa",
+        "address": "Aadress",
+        "postalCode": "Postiindeks",
+        "phone": "Telefon",
+        "nif": "Registrikood",
+        "description": "Kirjeldus",
+        "cuisine": "Köök"
+      },
+      "save": "Salvesta",
+      "restaurant": {
+        "welcome": "Tere tulemast! Täida profiil, koosta menüü ja saada restoran avaldamiseks.",
+        "notReady": "Lisa enne saatmist menüüsse vähemalt üks roog.",
+        "details": "Restorani andmed",
+        "statusHelp": {
+          "draft": "Restoran pole veel kataloogis.",
+          "pending": "Vaatame restorani üle.",
+          "active": "Restoran on avaldatud ja menüü on nähtav.",
+          "suspended": "Restoran on peatatud. Võta meiega ühendust."
+        }
+      },
+      "social": {
+        "title": "Sotsiaalmeedia",
+        "hint": "Kuvatakse sinu avalikul lehel. Kirjuta kasutajanimi (@näide) või kleebi link.",
+        "invalid": "Me ei tundnud {network} linki ära. Kontrolli seda ja salvesta uuesti.",
+        "placeholders": {
+          "instagram": "@sinu_salong",
+          "facebook": "facebook.com/sinu-salong",
+          "tiktok": "@sinu_salong",
+          "whatsapp": "5123 4567",
+          "website": "www.sinu-salong.ee"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Arvustusi veel pole.",
+      "hidden": "modereerimisega peidetud",
+      "replyPlaceholder": "Vasta avalikult…",
+      "updateReply": "Uuenda vastust",
+      "reply": "Vasta",
+      "inviteTitle": "Palu püsikliendilt arvustust",
+      "inviteHint": "Sisesta juba toimunud külastus ja saad isikliku lingi, millega klient saab teenindajat hinnata. Saada see WhatsAppi, SMS-i või muul viisil. Kontot pole vaja.",
+      "inviteMasterService": "Teenindaja ja teenus",
+      "inviteDate": "Külastuse kuupäev",
+      "inviteClientName": "Kliendi nimi",
+      "inviteClientEmail": "E-post (valikuline)",
+      "inviteClientPhone": "Mobiil (valikuline)",
+      "inviteLanguage": "Sõnumi keel",
+      "inviteSend": "Palu arvustust",
+      "inviteRules": "Üks link kehtib ühe külastuse ühe arvustuse jaoks. Külastused viimase 90 päeva jooksul, üks palve kliendi ja teenindaja kohta iga 30 päeva järel. Neil arvustustel on märge „salongi kinnitatud külastus“ ning salong ei saa neid kustutada ega peita, ka negatiivseid mitte.",
+      "inviteNoTeam": "Arvustuste palumiseks lisa vahekaardil Meeskond teenustega teenindaja.",
+      "invited": "Palve loodud. Nüüd saada sõnum kliendile: kopeeri see või ava WhatsApp allolevate nuppudega.",
+      "inviteErrors": {
+        "invalid": "Kontrolli nime, e-posti (kui on sisestatud) ja kuupäeva (kuni 90 päeva tagasi, mitte tulevikus).",
+        "not_found": "Teenindajat või teenust ei leitud.",
+        "not_allowed": "Seda palvet ei saa saata.",
+        "duplicate": "Oled juba palunud sellel kliendil seda teenindajat viimase 30 päeva jooksul hinnata.",
+        "limit": "Tänane palvete limiit on täis. Proovi homme uuesti.",
+        "phone": "Vigane telefoninumber. Vali riik ja kirjuta kogu number."
+      },
+      "invitationsTitle": "Saadetud palved",
+      "invitationWaiting": "ootel",
+      "invitationReviewed": "hinnatud",
+      "listTitle": "Arvustused",
+      "viaAstrabela": "broneeritud Astrabela kaudu",
+      "viaSalon": "salongi kinnitatud külastus",
+      "cannotDelete": "Salongid ei saa arvustusi kustutada. Võid vastata avalikult või teatada võltsarvustusest modereerimiseks.",
+      "shareCopy": "Kopeeri sõnum",
+      "shareCopied": "Kopeeritud ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "kliendi arvustus"
+    },
+    "admin": {
+      "pending": "Avaldamist ootavad salongid",
+      "none": "Midagi pole ootel.",
+      "approve": "Kinnita",
+      "reject": "Saada tagasi",
+      "reports": "Teatatud arvustused",
+      "reason": "Põhjus",
+      "hide": "Peida arvustus",
+      "keep": "Jäta alles",
+      "subs": {
+        "title": "Tellimused",
+        "hint": "Anna tasuta kuid või määra kuupäev, milleni tasuta tellimus kehtib. Kingitus algab, kui salongi praegune periood lõpeb.",
+        "search": "Otsi nime, asula või registrikoodi järgi",
+        "find": "Otsi",
+        "empty": "Salonge ei leitud.",
+        "none": "Tellimust pole",
+        "manage": "Halda",
+        "months": "Tasuta kuud",
+        "monthsN": "{n, plural, one {# kuu} other {# kuud}}",
+        "note": "Märkus (valikuline)",
+        "notePlaceholder": "Nt asutajapartner",
+        "grant": "Anna",
+        "until": "Tasuta kuni",
+        "set": "Määra kuupäev",
+        "cancel": "Lõpeta tellimus kohe",
+        "cancelHint": "Salong kaob otsingust, kuni tellib uuesti.",
+        "saved": "Tellimus uuendatud.",
+        "invalid": "Vali tulevane kuupäev.",
+        "salonStatus": {
+          "draft": "Mustand",
+          "pending": "Ootel",
+          "active": "Avaldatud",
+          "suspended": "Peatatud"
+        },
+        "status": {
+          "trial": "Proov",
+          "active": "Aktiivne",
+          "past_due": "Hilinenud",
+          "cancelled": "Tühistatud",
+          "complimentary": "Tasuta"
+        },
+        "endsOn": "kuni {date}",
+        "endedOn": "alates {date}",
+        "kind": {
+          "salon": "Salong",
+          "restaurant": "Restoran"
+        }
+      },
+      "title": "Haldus"
+    },
+    "menu": {
+      "hint": "Jaga menüü jaotisteks. Muudatused ilmuvad kohe avalikule lehele ja laudade QR-koodi taha.",
+      "viewPublic": "Vaata avalikku menüüd",
+      "invalid": "Kontrolli nime ja hinda (näiteks 12,50).",
+      "empty": "Alusta jaotisega, näiteks „Eelroad“, ja lisa siis road.",
+      "editSection": "Muuda jaotist",
+      "sectionName": "Uus jaotis",
+      "sectionNameEn": "Nimi inglise keeles (valikuline)",
+      "sectionPlaceholder": "Eelroad",
+      "save": "Salvesta",
+      "deleteSection": "Kustuta jaotis koos roogadega",
+      "addSection": "Lisa jaotis",
+      "addDish": "Lisa roog",
+      "editDish": "Muuda rooga",
+      "deleteDish": "Kustuta roog",
+      "available": "saadaval",
+      "soldOut": "otsas",
+      "dishName": "Roa nimi",
+      "dishNameEn": "Nimi inglise keeles (valikuline)",
+      "description": "Kirjeldus",
+      "descriptionEn": "Kirjeldus inglise keeles (valikuline)",
+      "price": "Hind koos käibemaksuga, €",
+      "portion": "Portsjon (valikuline)",
+      "portionPlaceholder": "300 g, 0,33 l, kahele",
+      "allergens": "Allergeenid",
+      "tags": "Sildid",
+      "likes": "Külaliste meeldimised"
+    },
+    "qr": {
+      "hint": "Prindi see kaart ja pane see laudadele. Külalised skannivad selle telefoni kaameraga ja menüü avaneb telefoni keeles.",
+      "notListed": "Kood juba töötab, kuid külalised saavad menüü avada alles pärast restorani avaldamist (vahekaart Profiil).",
+      "scan": "Skanni kood, et näha menüüd",
+      "scanEn": "Scan to see the menu",
+      "print": "Prindi kaart",
+      "salon": {
+        "hint": "Prindi see kaart ja pane see vastuvõttu või peegli juurde. Kliendid skannivad selle telefoni kaameraga, broneerivad järgmise külastuse ja hindavad oma teenindajat.",
+        "notListed": "Kood juba töötab, kuid kliendid saavad lehe avada alles pärast salongi avaldamist (vahekaart Profiil).",
+        "scan": "Broneeri veebis ja hinda oma teenindajat",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Abi"
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Hispaania",
+    "fr": "Prantsusmaa",
+    "it": "Itaalia",
+    "de": "Saksamaa",
+    "nl": "Holland",
+    "be": "Belgia",
+    "ie": "Iirimaa",
+    "lu": "Luksemburg",
+    "at": "Austria",
+    "ch": "Šveits",
+    "pl": "Poola",
+    "cz": "Tšehhi",
+    "sk": "Slovakkia",
+    "hu": "Ungari",
+    "si": "Sloveenia",
+    "hr": "Horvaatia",
+    "ro": "Rumeenia",
+    "bg": "Bulgaaria",
+    "dk": "Taani",
+    "se": "Rootsi",
+    "no": "Norra",
+    "fi": "Soome",
+    "ee": "Eesti"
+  },
+  "restaurants": {
+    "metaTitle": "Restoranid ja menüüd",
+    "eyebrow": "Euroopa · Restoranid",
+    "title": "Vaata menüüd enne, kui lauda istud.",
+    "subtitle": "Täielikud menüüd hindadega, mida restoranid ise ajakohasena hoiavad, kohalikus keeles ja inglise keeles, allergeenidega.",
+    "searchPlaceholder": "Nimi või köök",
+    "resultsTitle": "{count, plural, =0 {Restorane pole} one {# restoran} other {# restorani}} asulas {city}",
+    "cityEmpty": "Asulas {city} pole veel Astrabelas restorane.",
+    "noMatch": "Sellele otsingule ei vasta ükski restoran.",
+    "join": "Kas sul on restoran? Avalda oma menüü",
+    "dishes": "{count, plural, one {# roog} other {# rooga}}",
+    "from": "Alates {price}"
+  },
+  "restaurant": {
+    "menu": "Menüü",
+    "allergens": "Allergeenid",
+    "vatIncluded": "Hinnad eurodes koos käibemaksuga.",
+    "allergyNote": "Kas sul on allergiaid? Ütle teenindajale enne tellimist.",
+    "like": "Meeldib"
+  },
+  "allergens": {
+    "gluten": "gluteen",
+    "crustaceans": "koorikloomad",
+    "eggs": "munad",
+    "fish": "kala",
+    "peanuts": "maapähklid",
+    "soy": "soja",
+    "milk": "piim",
+    "nuts": "pähklid",
+    "celery": "seller",
+    "mustard": "sinep",
+    "sesame": "seesam",
+    "sulphites": "sulfitid",
+    "lupin": "lupiin",
+    "molluscs": "molluskid"
+  },
+  "dishTags": {
+    "vegetarian": "Taimetoit",
+    "vegan": "Vegan",
+    "gluten_free": "Gluteenivaba",
+    "spicy": "Vürtsikas"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Veebileht"
+  },
+  "account": {
+    "title": "Logi sisse",
+    "google": "Jätka Google'iga",
+    "or": "või",
+    "googleError": "Google'iga sisselogimine ebaõnnestus. Proovi uuesti.",
+    "openCabinet": "Ava ettevõtte konto",
+    "hello": "Tere, {name}",
+    "logout": "Logi välja",
+    "upcoming": "Tulevased broneeringud",
+    "noUpcoming": "Sul pole tulevasi broneeringuid.",
+    "findSalon": "Leia salong",
+    "past": "Varasemad broneeringud",
+    "open": "Vaata",
+    "bookingsHint": "Siin on broneeringud, mille tegid sisselogituna.",
+    "deleteTitle": "Kustuta konto",
+    "deleteText": "Sinu konto ja sisselogimisandmed kustutatakse. Broneeringud jäävad salongidele, kes hoiavad neid teenuse osutamiseks.",
+    "deleteConfirm": "Kustuta minu konto",
+    "deleted": "Sinu konto on kustutatud.",
+    "email": "E-post",
+    "password": "Parool",
+    "submit": "Logi sisse",
+    "loginError": "Vale e-post või parool.",
+    "noAccount": "Kontot veel pole?",
+    "createAccount": "Loo konto",
+    "businessQuestion": "Kas sul on salong või restoran?",
+    "businessLink": "Astrabela ettevõtetele",
+    "signedInBusiness": "Sisse logitud kui {name}.",
+    "adminPanel": "Haldus",
+    "welcome": "Konto loodud. Siin on broneeringud, mille teed sisselogituna.",
+    "bookingsHintGoogle": "Siin on broneeringud, mille tegid sisselogituna või oma Google'i e-postiga.",
+    "registerTitle": "Loo konto",
+    "name": "Nimi",
+    "passwordHint": "Vähemalt 8 märki.",
+    "terms": "Nõustun <terms>kasutustingimustega</terms> ja <privacy>privaatsuspoliitikaga</privacy>.",
+    "registerSubmit": "Loo konto",
+    "haveAccount": "Kas sul on juba konto?",
+    "registerErrors": {
+      "invalid": "Kontrolli nime, e-posti ja parooli (vähemalt 8 märki).",
+      "email_taken": "Selle e-postiga konto on juba olemas. Logi sellega sisse."
+    }
+  },
+  "petFriendly": {
+    "label": "Lemmikloomasõbralik",
+    "hint": "Lemmikloomad on oodatud."
+  }
+}

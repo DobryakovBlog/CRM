@@ -42,6 +42,7 @@ const PRICES = {
   sv: ["12,99 € per månad vid månadsbetalning;", "10,99 € per månad vid betalning för 6 månader;", "9,99 € per månad vid årsbetalning."],
   nb: ["12,99 € per måned ved månedlig betaling;", "10,99 € per måned ved betaling for 6 måneder;", "9,99 € per måned ved årlig betaling."],
   fi: ["12,99 € kuukaudessa kuukausimaksulla;", "10,99 € kuukaudessa 6 kuukauden maksulla;", "9,99 € kuukaudessa vuosimaksulla."],
+  et: ["12,99 € kuus igakuise maksega;", "10,99 € kuus 6 kuu maksega;", "9,99 € kuus aastamaksega."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -63,6 +64,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "sv") return privacySv();
   if (locale === "nb") return privacyNb();
   if (locale === "fi") return privacyFi();
+  if (locale === "et") return privacyEt();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -272,6 +274,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "sv") return termsSv();
   if (locale === "nb") return termsNb();
   if (locale === "fi") return termsFi();
+  if (locale === "et") return termsEt();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -3698,6 +3701,197 @@ function termsFi(): LegalDoc {
       {
         title: "10. Muutokset",
         body: ["Voimme päivittää näitä ehtoja. Uusi versio julkaistaan tässä päivämäärän kanssa; tärkeistä muutoksista ilmoitamme yrityksille etukäteen."],
+      },
+    ],
+  };
+}
+
+function privacyEt(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Privaatsuspoliitika",
+    updated: "Viimati uuendatud: 1. november 2026",
+    intro:
+      "Astrabela on Euroopa ilusalongide, juuksurite-barbershoppide ja restoranide kataloog, kus saab broneerida veebis ja lugeda klientide arvustusi iga teenindaja kohta. See poliitika selgitab, milliseid isikuandmeid me töötleme, miks ja millised on sinu õigused GDPR-i järgi.",
+    sections: [
+      { title: "1. Kes me oleme", body: [`Teenust astrabela.com haldab ${who()}. Küsimused oma andmete kohta saad saata aadressile ${o.email}.`] },
+      {
+        title: "2. Milliseid andmeid me töötleme",
+        body: [
+          "Kui broneerid või kirjutad arvustuse (kliendid):",
+          [
+            "broneerimisel sisestatud nimi, e-post ja mobiilinumber ning sinu sõnum salongile;",
+            "broneering ise: salong, teenindaja, teenus, kuupäev, kellaaeg ja olek;",
+            "sinu arvustus: tärnid, tekst ja nimi, mida soovid näidata;",
+            "kui lood kliendikonto: nimi ja e-post ning parool, mida hoitakse ainult krüpteeritult (räsi), või Google'iga sisselogimisel sinu Google'i konto identifikaator (sinu Google'i parooli me kunagi ei näe).",
+          ],
+          "Kui salong või restoran kasutab Astrabelat (ettevõtted):",
+          [
+            "konto omaniku nimi ja e-post ning parool (hoitakse ainult krüpteeritult);",
+            "ettevõtte andmed: nimi, aadress, telefon, e-post, registrikood, meeskond, teenused, hinnad, lahtiolekuajad, menüü ja lingid sotsiaalmeediale.",
+          ],
+          "Tehnilised andmed: sisselogimise küpsised, keele küpsis ja serverilogid (nt IP-aadress ja päringu aeg), mida hoiame turvalisuse huvides.",
+        ],
+      },
+      {
+        title: "3. Eesmärgid ja õiguslikud alused",
+        body: [
+          [
+            "broneeringute tegemine ja haldamine: lepingu täitmine (GDPR art 6 lg 1 p b);",
+            "ettevõtete kontode ja tellimuste haldamine: lepingu täitmine;",
+            "arvustuste avaldamine ja võltsarvustuste ennetamine: õigustatud huvi usaldusväärse kataloogi vastu (art 6 lg 1 p f);",
+            "teenuse turvaline toimimine: õigustatud huvi;",
+            "maksu- ja raamatupidamiskohustused: juriidiline kohustus (art 6 lg 1 p c).",
+          ],
+          "Me ei müü isikuandmeid ega kasuta neid reklaamiks.",
+        ],
+      },
+      {
+        title: "4. Salongi roll ja meie roll",
+        body: [
+          "Broneeringute puhul otsustab sinu valitud salong, kuidas tema klientide andmeid kasutatakse, ja on nende vastutav töötleja. Astrabela töötleb neid andmeid salongi nimel volitatud töötlejana (GDPR art 28) ja ainult teenuse osutamiseks. Arvustuste, avaliku kataloogi ja teenuse turvalisuse osas on vastutav töötleja Astrabela.",
+        ],
+      },
+      {
+        title: "5. Andmete saajad",
+        body: [
+          "Salong või restoran, kus broneerid. Kasutame ka järgmisi teenusepakkujaid, keda seovad andmetöötluslepingud:",
+          [
+            "Vercel Inc. – majutus; teenus töötab Frankfurdis (EL). Vercel on Ameerika ettevõte; andmete edastamine väljapoole ELi on kaetud ELi tüüptingimuste ja EU-US Data Privacy Frameworkiga;",
+            "Neon – andmebaas Frankfurdis (EL);",
+            "Cloudflare – domeeninimeteenus (DNS);",
+            "Google – ainult siis, kui logid sisse Google'iga.",
+          ],
+        ],
+      },
+      {
+        title: "6. Säilitamise aeg",
+        body: [
+          [
+            "klientide ja broneeringute andmed: kuni salongi konto on aktiivne, kuid mitte kauem kui 2 aastat pärast sinu viimast külastust;",
+            "arvustused: kuni salong on Astrabelas;",
+            "kliendikontod: kuni kustutamiseni (nupp konto lehel);",
+            "ettevõtete kontod: kuni konto sulgemiseni;",
+            "arved ja makseandmed: 10 aastat Portugali maksuõiguse järgi;",
+            "ettevõtete registreerimistaotlused: 30 päeva.",
+          ],
+        ],
+      },
+      {
+        title: "7. Küpsised",
+        body: [
+          "Kasutame ainult teenuse toimimiseks vajalikke küpsiseid: sisselogituna püsimiseks (ja sinu nime näitamiseks menüüs), lühiajalisi Google'iga sisselogimisel, ühte keele jaoks ja ühte, mis jätab meelde restorani menüüs sulle meeldinud road (see luuakse alles siis, kui puudutad ♥, ja sisaldab juhuslikku koodi, mitte sinu nime). Me ei kasuta analüütika- ega reklaamiküpsiseid ega küsi seetõttu küpsiste jaoks nõusolekut.",
+        ],
+      },
+      {
+        title: "8. Sinu õigused",
+        body: [
+          `Võid taotleda juurdepääsu oma andmetele, nende parandamist või kustutamist, töötlemise piiramist, esitada vastuväiteid ja saada oma andmed ülekantavas vormingus. Kirjuta aadressile ${o.email}; vastame ühe kuu jooksul. Kui andmed on edastatud salongile, edastame ka sinu taotluse talle. Kaebuse võid esitada ka Andmekaitse Inspektsioonile (www.aki.ee) või Portugali järelevalveasutusele CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Turvalisus",
+        body: [
+          "Teenus töötab ainult HTTPS-i kaudu, paroole hoitakse krüpteeritult ning broneeringute ja arvustuste lingid on isiklikud ja raskesti äraarvatavad. Ära jaga oma isiklikku linki teistega.",
+        ],
+      },
+      {
+        title: "10. Muudatused",
+        body: ["Kui muudame seda poliitikat, avaldame siin uue versiooni koos kuupäevaga. Olulistest muudatustest teatame teenuses."],
+      },
+    ],
+  };
+}
+
+function termsEt(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Kasutustingimused",
+    updated: "Viimati uuendatud: 1. november 2026",
+    intro: `Need tingimused reguleerivad teenuse astrabela.com kasutamist. Teenust haldab ${who()}. Teenust kasutades või ettevõtte kontot luues nõustud nendega.`,
+    sections: [
+      {
+        title: "1. Teenus",
+        body: [
+          "Astrabela võimaldab klientidel leida ilusalonge, barbershoppe ja restorane, broneerida teenuseid veebis, hinnata teenindajaid ja vaadata restoranide menüüsid. Salongid ja restoranid haldavad ettevõtte kontol oma profiili, meeskonda, teenuseid, kalendrit ja menüüd.",
+        ],
+      },
+      {
+        title: "2. Klientidele",
+        body: [
+          [
+            "Astrabela kasutamine on tasuta ega nõua kontot.",
+            "Broneering on leping sinu ja salongi vahel. Teenused, hinnad ja kestuse määrab salong ning teenust osutab salong, mitte Astrabela.",
+            "Astrabela ei võta makseid vastu: maksad otse salongis.",
+            "Külastuse saad tühistada saadud isikliku lingi kaudu. Palun tühista, kui sa ei saa tulla.",
+          ],
+        ],
+      },
+      {
+        title: "3. Arvustused",
+        body: [
+          "Iga Astrabelasse sisse logitud klient võib hinnata salongi teenindajat üks kord 30 päeva jooksul sama teenindaja kohta. Kliendid, kelle külastus on broneeritud Astrabela kaudu või salongi poolt kinnitatud, võivad arvustada ka isikliku lingi kaudu; neil arvustustel on kinnitatud külastuse märge. Arvustus peab:",
+          [
+            "kirjeldama sinu enda tegelikku kogemust;",
+            "olema vaba solvangutest, ähvardustest ja diskrimineerimisest;",
+            "mitte sisaldama teiste isikuandmeid, reklaami ega linke.",
+          ],
+          "Võime peita arvustused, mis neid reegleid rikuvad. Salong ei saa arvustusi kustutada ega muuta; ta võib vastata avalikult või teatada arvustusest modereerimiseks.",
+        ],
+      },
+      {
+        title: "4. Salongidele ja restoranidele",
+        body: [
+          [
+            "Profiili andmed, hinnad ja menüü peavad olema õiged ja ajakohased. Vastutad nende ja oma teenuste eest.",
+            "Hoia oma parool turvaliselt; vastutad oma kontol toimuva eest.",
+            "Ära loo võltsbroneeringuid, -arvustusi ega -arvustuse palveid ega küsi arvustusi tasu eest.",
+            "Otsingus kuvatakse ainult aktiivse tellimuse või prooviperioodiga profiile.",
+          ],
+        ],
+      },
+      {
+        title: "5. Hinnad",
+        body: [
+          "Salongidele, barbershoppidele ja restoranidele on esimesed 3 kuud tasuta, alustamiseks pole kaarti vaja. Seejärel on nähtavaks jäämiseks vaja tellimust:",
+          PRICES.et,
+          "Maksetingimused kuvatakse enne iga makset. Võime hindu muuta vähemalt 30-päevase etteteatamisega; muudatus kehtib järgmisest arveldusperioodist.",
+        ],
+      },
+      {
+        title: "6. Andmetöötlusleping (ettevõtted)",
+        body: [
+          "Broneeringutes olevate kliendiandmete puhul on ettevõte vastutav töötleja ja Astrabela volitatud töötleja (GDPR art 28). Astrabela:",
+          [
+            "töötleb neid andmeid ainult teenuse osutamiseks ja ettevõtte poolt teenuse kaudu antud juhiste järgi;",
+            "hoiab need konfidentsiaalsena ja kaitseb neid sobivate turvameetmetega;",
+            "kasutab ainult privaatsuspoliitikas nimetatud alamtöötlejaid ja teavitab ettevõtteid uutest ette;",
+            "aitab ettevõtet klientide taotluste ja andmetega seotud rikkumistest teatamise korral;",
+            "kustutab või annab andmed üle pärast konto sulgemist, välja arvatud juhul, kui seadus nõuab nende säilitamist.",
+          ],
+        ],
+      },
+      {
+        title: "7. Konto peatamine ja sulgemine",
+        body: [
+          "Saad ettevõtte konto igal ajal sulgeda, kui meile kirjutad. Võime peatada või eemaldada profiili, mis rikub neid tingimusi, seadust või teiste õigusi, põhjust märkides.",
+        ],
+      },
+      {
+        title: "8. Vastutus",
+        body: [
+          "Püüame, et teenus oleks kättesaadav ja õige, kuid ei saa tagada, et see töötab alati katkestuste ja vigadeta. Astrabela ei ole kliendi ja salongi vahelise lepingu pool ega vastuta salongi teenuste eest. Miski nendes tingimustes ei piira tarbijate seadusest tulenevaid õigusi.",
+        ],
+      },
+      {
+        title: "9. Kohaldatav õigus ja kaebused",
+        body: [
+          `Tingimustele kohaldatakse Portugali õigust, ilma et see piiraks kaitset, mis sul on tarbijana oma elukohariigi õiguse järgi. Kaebused saada aadressile ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Muudatused",
+        body: ["Võime neid tingimusi uuendada. Uus versioon avaldatakse siin koos kuupäevaga; olulistest muudatustest teavitame ettevõtteid ette."],
       },
     ],
   };

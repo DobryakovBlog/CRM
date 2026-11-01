@@ -85,6 +85,7 @@
     "sv": "Švedščina",
     "nb": "Norveščina",
     "fi": "Finščina",
+    "et": "Estonščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -516,7 +517,8 @@
     "dk": "Danska",
     "se": "Švedska",
     "no": "Norveška",
-    "fi": "Finska"
+    "fi": "Finska",
+    "ee": "Estonija"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",
