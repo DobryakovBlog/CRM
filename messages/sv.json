@@ -83,6 +83,7 @@
     "bg": "Bulgariska",
     "da": "Danska",
     "sv": "Svenska",
+    "nb": "Norska",
     "ru": "Ryska",
     "uk": "Ukrainska"
   },
@@ -512,7 +513,8 @@
     "ro": "Rumänien",
     "bg": "Bulgarien",
     "dk": "Danmark",
-    "se": "Sverige"
+    "se": "Sverige",
+    "no": "Norge"
   },
   "restaurants": {
     "metaTitle": "Restauranger och menyer",

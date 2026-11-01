@@ -405,3 +405,18 @@ describe("Swedish places", () => {
     expect(phoneCountry("orebro")).toBe("SE");
   });
 });
+
+describe("Norwegian places", () => {
+  it("lists GeoNames towns by part of the country", () => {
+    // German Osloß already has the slug "oslo".
+    expect(placeBySlug("oslo-oslo")).toMatchObject({ name: "Oslo", country: "no", area: "Oslo" });
+    expect(searchPlaces("bergen", [], 30, "no")[0]).toMatchObject({ name: "Bergen", area: "Vestlandet" });
+    expect(searchPlaces("tromso", [], 30, "no")[0]).toMatchObject({ name: "Tromsø", area: "Nord-Norge" });
+  });
+
+  it("uses Oslo time and starts Norwegian visitors in Oslo", () => {
+    expect(placeTimezone("trondheim")).toBe("Europe/Oslo");
+    expect(cityFieldSetup([], undefined, "nb")).toMatchObject({ defaultCountry: "no", defaultSlugs: { no: "oslo-oslo" } });
+    expect(phoneCountry("stavanger")).toBe("NO");
+  });
+});

@@ -29,7 +29,7 @@ function parseUrl(input: string): URL | null {
 
 // National numbers typed without the country code: Portuguese 9xx/2xx, Spanish 6xx-9xx,
 // French 0x xx xx xx xx (the leading 0 drops after +33), Italian mobiles 3xx xxx xxxx,
-// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx, Swiss mobiles 07x xxx xx xx, Polish mobiles xxx xxx xxx, Czech mobiles 6xx/7xx xxx xxx, Slovak mobiles 09xx xxx xxx (the leading 0 drops after +421), Hungarian mobiles 06 20/30/31/50/70 xxx xxxx (the leading 06 drops after +36), Slovenian mobiles 0xx xxx xxx (the leading 0 drops after +386), Croatian mobiles 09x xxx xxxx (the leading 0 drops after +385), Romanian mobiles 07xx xxx xxx (the leading 0 drops after +40), Bulgarian mobiles 08x xxx xxxx (the leading 0 drops after +359), Danish numbers xx xx xx xx (no trunk 0), Swedish mobiles 07x xxx xx xx (the leading 0 drops after +46).
+// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx, Swiss mobiles 07x xxx xx xx, Polish mobiles xxx xxx xxx, Czech mobiles 6xx/7xx xxx xxx, Slovak mobiles 09xx xxx xxx (the leading 0 drops after +421), Hungarian mobiles 06 20/30/31/50/70 xxx xxxx (the leading 06 drops after +36), Slovenian mobiles 0xx xxx xxx (the leading 0 drops after +386), Croatian mobiles 09x xxx xxxx (the leading 0 drops after +385), Romanian mobiles 07xx xxx xxx (the leading 0 drops after +40), Bulgarian mobiles 08x xxx xxxx (the leading 0 drops after +359), Danish numbers xx xx xx xx (no trunk 0), Swedish mobiles 07x xxx xx xx (the leading 0 drops after +46), Norwegian mobiles 4xx xx xxx / 9xx xx xxx.
 const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp; trunk?: RegExp }> = {
   pt: { code: "351", pattern: /^[29]\d{8}$/ },
   es: { code: "34", pattern: /^[6789]\d{8}$/ },
@@ -51,6 +51,7 @@ const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp; trunk?: Reg
   bg: { code: "359", pattern: /^0?8[789]\d{7}$/ },
   dk: { code: "45", pattern: /^[2-9]\d{7}$/ },
   se: { code: "46", pattern: /^0?7[02369]\d{7}$/ },
+  no: { code: "47", pattern: /^[49]\d{7}$/ },
   hu: { code: "36", pattern: /^(06)?(20|30|31|50|70)\d{7}$/, trunk: /^06/ },
 };
 

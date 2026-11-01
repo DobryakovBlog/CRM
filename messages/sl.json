@@ -83,6 +83,7 @@
     "bg": "Bolgarščina",
     "da": "Danščina",
     "sv": "Švedščina",
+    "nb": "Norveščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -512,7 +513,8 @@
     "ro": "Romunija",
     "bg": "Bolgarija",
     "dk": "Danska",
-    "se": "Švedska"
+    "se": "Švedska",
+    "no": "Norveška"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",

@@ -40,6 +40,7 @@ const PRICES = {
   bg: ["12,99 € на месец при месечно плащане;", "10,99 € на месец при плащане за 6 месеца;", "9,99 € на месец при годишно плащане."],
   da: ["12,99 € om måneden ved månedlig betaling;", "10,99 € om måneden ved betaling for 6 måneder;", "9,99 € om måneden ved årlig betaling."],
   sv: ["12,99 € per månad vid månadsbetalning;", "10,99 € per månad vid betalning för 6 månader;", "9,99 € per månad vid årsbetalning."],
+  nb: ["12,99 € per måned ved månedlig betaling;", "10,99 € per måned ved betaling for 6 måneder;", "9,99 € per måned ved årlig betaling."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -59,6 +60,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "bg") return privacyBg();
   if (locale === "da") return privacyDa();
   if (locale === "sv") return privacySv();
+  if (locale === "nb") return privacyNb();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -266,6 +268,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "bg") return termsBg();
   if (locale === "da") return termsDa();
   if (locale === "sv") return termsSv();
+  if (locale === "nb") return termsNb();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -3310,6 +3313,197 @@ function termsSv(): LegalDoc {
       {
         title: "10. Ändringar",
         body: ["Vi kan uppdatera dessa villkor. Den nya versionen publiceras här med datum; om viktiga ändringar meddelar vi företagen i förväg."],
+      },
+    ],
+  };
+}
+
+function privacyNb(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Personvernerklæring",
+    updated: "Sist oppdatert: 1. november 2026",
+    intro:
+      "Astrabela er en katalog over skjønnhetssalonger, barbersjapper og restauranter i Europa med nettbestilling og kundeanmeldelser av hver behandler. Denne erklæringen forklarer hvilke personopplysninger vi behandler, hvorfor, og hvilke rettigheter du har etter GDPR.",
+    sections: [
+      { title: "1. Hvem vi er", body: [`Tjenesten astrabela.com drives av ${who()}. Spørsmål om opplysningene dine kan sendes til ${o.email}.`] },
+      {
+        title: "2. Hvilke opplysninger vi behandler",
+        body: [
+          "Når du bestiller eller skriver en anmeldelse (kunder):",
+          [
+            "navn, e-post og mobilnummer som du oppgir ved bestilling, samt meldingen din til salongen;",
+            "selve bestillingen: salong, behandler, behandling, dato, klokkeslett og status;",
+            "anmeldelsen din: stjerner, tekst og navnet du vil vise;",
+            "hvis du oppretter en kundekonto: navn og e-post samt et passord som bare lagres kryptert (hash), eller ved innlogging med Google ID-en til Google-kontoen din (vi ser aldri Google-passordet ditt).",
+          ],
+          "Når en salong eller restaurant bruker Astrabela (bedrifter):",
+          [
+            "kontoinnehaverens navn og e-post samt passord (bare lagret kryptert);",
+            "bedriftens opplysninger: navn, adresse, telefon, e-post, organisasjonsnummer, team, behandlinger, priser, åpningstider, meny og lenker til sosiale medier.",
+          ],
+          "Tekniske opplysninger: informasjonskapsler for innlogging, en informasjonskapsel for språk og serverlogger (f.eks. IP-adresse og tidspunkt for forespørselen), som vi lagrer av sikkerhetshensyn.",
+        ],
+      },
+      {
+        title: "3. Formål og rettslig grunnlag",
+        body: [
+          [
+            "gjennomføring og administrasjon av bestillinger: oppfyllelse av avtale (art. 6 nr. 1 bokstav b i GDPR);",
+            "administrasjon av bedriftenes kontoer og abonnementer: oppfyllelse av avtale;",
+            "publisering av anmeldelser og forebygging av falske anmeldelser: berettiget interesse i en pålitelig katalog (art. 6 nr. 1 bokstav f);",
+            "sikker drift av tjenesten: berettiget interesse;",
+            "skatte- og regnskapsplikter: rettslig forpliktelse (art. 6 nr. 1 bokstav c).",
+          ],
+          "Vi selger ikke personopplysninger og bruker dem ikke til reklame.",
+        ],
+      },
+      {
+        title: "4. Salongens rolle og vår rolle",
+        body: [
+          "Ved bestillinger er det salongen du velger, som bestemmer hvordan kundenes opplysninger brukes, og som er behandlingsansvarlig for dem. Astrabela behandler disse opplysningene på vegne av salongen som databehandler (art. 28 i GDPR) og bare for å levere tjenesten. For anmeldelser, den offentlige katalogen og tjenestens sikkerhet er Astrabela behandlingsansvarlig.",
+        ],
+      },
+      {
+        title: "5. Mottakere av opplysningene",
+        body: [
+          "Salongen eller restauranten du bestiller hos. Vi bruker også følgende leverandører, som er bundet av databehandleravtaler:",
+          [
+            "Vercel Inc. – drift; tjenesten kjører i Frankfurt (EU). Vercel er et amerikansk selskap; overføring utenfor EU/EØS er dekket av EUs standard personvernbestemmelser og EU-US Data Privacy Framework;",
+            "Neon – database i Frankfurt (EU);",
+            "Cloudflare – domenenavntjeneste (DNS);",
+            "Google – bare hvis du logger inn med Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Lagringstid",
+        body: [
+          [
+            "kunde- og bestillingsopplysninger: så lenge salongens konto er aktiv, høyst 2 år etter ditt siste besøk;",
+            "anmeldelser: så lenge salongen er på Astrabela;",
+            "kundekontoer: til de slettes (knapp på kontosiden);",
+            "bedriftskontoer: til kontoen avsluttes;",
+            "fakturaer og betalingsopplysninger: 10 år etter portugisisk skatterett;",
+            "bedrifters registreringsforespørsler: 30 dager.",
+          ],
+        ],
+      },
+      {
+        title: "7. Informasjonskapsler",
+        body: [
+          "Vi bruker bare informasjonskapsler som er nødvendige for tjenesten: for å holde deg innlogget (og vise navnet ditt i menyen), kortvarige ved innlogging med Google, én for språket og én som husker rettene du liker i en restaurants meny (den opprettes først når du trykker på ♥, og inneholder en tilfeldig kode, ikke navnet ditt). Vi bruker ikke analyse- eller reklamekapsler og ber derfor ikke om samtykke til informasjonskapsler.",
+        ],
+      },
+      {
+        title: "8. Dine rettigheter",
+        body: [
+          `Du kan be om innsyn i opplysningene dine, retting eller sletting av dem, begrensning av behandlingen, protestere og få opplysningene dine i et overførbart format. Skriv til ${o.email}; vi svarer innen en måned. Hvis opplysningene er gitt videre til en salong, sender vi også forespørselen din videre dit. Du kan også klage til Datatilsynet (www.datatilsynet.no) eller til den portugisiske myndigheten CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Sikkerhet",
+        body: [
+          "Tjenesten kjører bare over HTTPS, passord lagres kryptert, og lenker til bestillinger og anmeldelser er personlige og vanskelige å gjette. Ikke del den personlige lenken din med andre.",
+        ],
+      },
+      {
+        title: "10. Endringer",
+        body: ["Hvis vi endrer denne erklæringen, publiserer vi den nye versjonen her med dato. Om viktige endringer gir vi beskjed i tjenesten."],
+      },
+    ],
+  };
+}
+
+function termsNb(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Vilkår for bruk",
+    updated: "Sist oppdatert: 1. november 2026",
+    intro: `Disse vilkårene gjelder for bruken av tjenesten astrabela.com, som drives av ${who()}. Ved å bruke tjenesten eller opprette en bedriftskonto godtar du dem.`,
+    sections: [
+      {
+        title: "1. Tjenesten",
+        body: [
+          "Astrabela lar kunder finne skjønnhetssalonger, barbersjapper og restauranter, bestille behandlinger på nett, vurdere behandlere og se restaurantenes menyer. Salonger og restauranter administrerer profil, team, behandlinger, kalender og meny i bedriftskontoen.",
+        ],
+      },
+      {
+        title: "2. For kunder",
+        body: [
+          [
+            "Det er gratis å bruke Astrabela, og det krever ingen konto.",
+            "En bestilling er en avtale mellom deg og salongen. Behandlinger, priser og varighet fastsettes av salongen, og behandlingen utføres av salongen, ikke av Astrabela.",
+            "Astrabela tar ikke imot betaling: du betaler direkte i salongen.",
+            "Du kan avbestille besøket via den personlige lenken du får. Avbestill gjerne hvis du ikke kan komme.",
+          ],
+        ],
+      },
+      {
+        title: "3. Anmeldelser",
+        body: [
+          "Alle kunder som er logget inn på Astrabela, kan vurdere en behandler i en salong, én gang hver 30. dag for samme behandler. Kunder med et besøk bestilt via Astrabela eller bekreftet av salongen kan også anmelde via en personlig lenke; disse anmeldelsene er merket som bekreftet besøk. En anmeldelse skal:",
+          [
+            "beskrive din egen, reelle opplevelse;",
+            "være fri for fornærmelser, trusler og diskriminering;",
+            "ikke inneholde andres personopplysninger, reklame eller lenker.",
+          ],
+          "Vi kan skjule anmeldelser som bryter disse reglene. Salongen kan ikke slette eller endre anmeldelser; den kan svare offentlig eller melde en anmeldelse til moderering.",
+        ],
+      },
+      {
+        title: "4. For salonger og restauranter",
+        body: [
+          [
+            "Opplysninger i profilen, priser og meny skal være riktige og oppdaterte. Du er ansvarlig for dem og for tjenestene dine.",
+            "Ta vare på passordet ditt; du er ansvarlig for aktiviteten på kontoen din.",
+            "Ikke lag falske bestillinger, anmeldelser eller forespørsler om anmeldelser, og ikke be om anmeldelser mot en belønning.",
+            "Bare profiler med aktivt abonnement eller i prøveperioden vises i søket.",
+          ],
+        ],
+      },
+      {
+        title: "5. Priser",
+        body: [
+          "For salonger, barbersjapper og restauranter er de første 3 månedene gratis, uten kort for å komme i gang. Deretter kreves et abonnement for å bli vist:",
+          PRICES.nb,
+          "Betalingsvilkårene vises før hver belastning. Vi kan endre prisene med minst 30 dagers varsel; endringen gjelder fra neste faktureringsperiode.",
+        ],
+      },
+      {
+        title: "6. Databehandleravtale (bedrifter)",
+        body: [
+          "For kundeopplysninger i bestillinger er bedriften behandlingsansvarlig og Astrabela databehandler (art. 28 i GDPR). Astrabela:",
+          [
+            "behandler opplysningene bare for å levere tjenesten og etter instruksene bedriften gir via tjenesten;",
+            "holder dem konfidensielle og beskytter dem med egnede sikkerhetstiltak;",
+            "bruker bare underleverandørene som er nevnt i personvernerklæringen, og varsler bedriftene på forhånd om nye;",
+            "hjelper bedriften med kunders forespørsler og varsling av brudd på personopplysningssikkerheten;",
+            "sletter eller utleverer opplysningene når kontoen avsluttes, med mindre loven krever at de oppbevares.",
+          ],
+        ],
+      },
+      {
+        title: "7. Suspensjon og avslutning av konto",
+        body: [
+          "Du kan når som helst avslutte bedriftskontoen din ved å skrive til oss. Vi kan suspendere eller fjerne en profil som bryter disse vilkårene, loven eller andres rettigheter, med angivelse av grunnen.",
+        ],
+      },
+      {
+        title: "8. Ansvar",
+        body: [
+          "Vi gjør vårt beste for at tjenesten skal være tilgjengelig og korrekt, men kan ikke garantere at den alltid fungerer uten avbrudd og feil. Astrabela er ikke part i avtalen mellom kunde og salong og er ikke ansvarlig for salongens tjenester. Ingenting i disse vilkårene begrenser forbrukeres lovfestede rettigheter.",
+        ],
+      },
+      {
+        title: "9. Lovvalg og klager",
+        body: [
+          `Vilkårene er underlagt portugisisk rett, uten at det påvirker vernet du som forbruker har etter loven i landet der du bor. Klager kan sendes til ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Endringer",
+        body: ["Vi kan oppdatere disse vilkårene. Den nye versjonen publiseres her med dato; om viktige endringer varsler vi bedriftene på forhånd."],
       },
     ],
   };

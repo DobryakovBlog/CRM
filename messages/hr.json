@@ -83,6 +83,7 @@
     "bg": "Bugarski",
     "da": "Danski",
     "sv": "Švedski",
+    "nb": "Norveški",
     "ru": "Ruski",
     "uk": "Ukrajinski"
   },
@@ -512,7 +513,8 @@
     "ro": "Rumunjska",
     "bg": "Bugarska",
     "dk": "Danska",
-    "se": "Švedska"
+    "se": "Švedska",
+    "no": "Norveška"
   },
   "restaurants": {
     "metaTitle": "Restorani i jelovnici",

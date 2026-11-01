@@ -94,6 +94,15 @@ const COUNTRIES: Record<string, Config> = {
       "27": "Skåne län", "28": "Västra Götalands län",
     },
   },
+  no: {
+    // all-the-cities still has the 2020–2023 counties (Viken, Vestfold og Telemark, Troms og Finnmark), split up again in
+    // 2024, so towns are grouped by the five traditional parts of the country instead, with Oslo on its own.
+    regions: {
+      "12": "Oslo", "01": "Østlandet", "04": "Østlandet", "13": "Østlandet", "17": "Østlandet", "20": "Østlandet",
+      "30": "Østlandet", "34": "Østlandet", "38": "Østlandet", "42": "Sørlandet", "08": "Vestlandet", "14": "Vestlandet",
+      "46": "Vestlandet", "21": "Trøndelag", "05": "Nord-Norge", "09": "Nord-Norge", "18": "Nord-Norge", "54": "Nord-Norge",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

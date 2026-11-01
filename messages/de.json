@@ -83,6 +83,7 @@
     "bg": "Bulgarisch",
     "da": "Dänisch",
     "sv": "Schwedisch",
+    "nb": "Norwegisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -512,7 +513,8 @@
     "ro": "Rumänien",
     "bg": "Bulgarien",
     "dk": "Dänemark",
-    "se": "Schweden"
+    "se": "Schweden",
+    "no": "Norwegen"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",

@@ -83,6 +83,7 @@
     "bg": "Bułgarski",
     "da": "Duński",
     "sv": "Szwedzki",
+    "nb": "Norweski",
     "ru": "Rosyjski",
     "uk": "Ukraiński"
   },
@@ -512,7 +513,8 @@
     "ro": "Rumunia",
     "bg": "Bułgaria",
     "dk": "Dania",
-    "se": "Szwecja"
+    "se": "Szwecja",
+    "no": "Norwegia"
   },
   "restaurants": {
     "metaTitle": "Restauracje i menu",
