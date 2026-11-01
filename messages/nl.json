@@ -83,6 +83,7 @@
     "bg": "Bulgaars",
     "da": "Deens",
     "sv": "Zweeds",
+    "nb": "Noors",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -512,7 +513,8 @@
     "ro": "Roemenië",
     "bg": "Bulgarije",
     "dk": "Denemarken",
-    "se": "Zweden"
+    "se": "Zweden",
+    "no": "Noorwegen"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

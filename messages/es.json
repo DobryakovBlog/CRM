@@ -83,6 +83,7 @@
     "bg": "Búlgaro",
     "da": "Danés",
     "sv": "Sueco",
+    "nb": "Noruego",
     "ru": "Ruso",
     "uk": "Ucraniano"
   },
@@ -512,7 +513,8 @@
     "ro": "Rumanía",
     "bg": "Bulgaria",
     "dk": "Dinamarca",
-    "se": "Suecia"
+    "se": "Suecia",
+    "no": "Noruega"
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",

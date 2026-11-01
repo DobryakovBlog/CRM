@@ -83,6 +83,7 @@
     "bg": "Bulgară",
     "da": "Daneză",
     "sv": "Suedeză",
+    "nb": "Norvegiană",
     "ru": "Rusă",
     "uk": "Ucraineană"
   },
@@ -512,7 +513,8 @@
     "ro": "România",
     "bg": "Bulgaria",
     "dk": "Danemarca",
-    "se": "Suedia"
+    "se": "Suedia",
+    "no": "Norvegia"
   },
   "restaurants": {
     "metaTitle": "Restaurante și meniuri",
