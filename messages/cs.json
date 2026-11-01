@@ -80,6 +80,7 @@
     "sl": "Slovinština",
     "hr": "Chorvatština",
     "ro": "Rumunština",
+    "bg": "Bulharština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -506,7 +507,8 @@
     "hu": "Maďarsko",
     "si": "Slovinsko",
     "hr": "Chorvatsko",
-    "ro": "Rumunsko"
+    "ro": "Rumunsko",
+    "bg": "Bulharsko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

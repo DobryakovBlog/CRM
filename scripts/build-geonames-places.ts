@@ -70,6 +70,17 @@ const COUNTRIES: Record<string, Config> = {
     names: { Bucharest: "București" },
     commaBelow: true,
   },
+  bg: {
+    // Official Latin spellings (Bulgarian search folds Cyrillic queries to them).
+    regions: {
+      "38": "Blagoevgrad", "39": "Burgas", "40": "Dobrich", "41": "Gabrovo", "42": "Sofia-grad", "43": "Haskovo",
+      "44": "Kardzhali", "45": "Kyustendil", "46": "Lovech", "47": "Montana", "48": "Pazardzhik", "49": "Pernik",
+      "50": "Pleven", "51": "Plovdiv", "52": "Razgrad", "53": "Ruse", "54": "Shumen", "55": "Silistra", "56": "Sliven",
+      "57": "Smolyan", "58": "Sofia oblast", "59": "Stara Zagora", "60": "Targovishte", "61": "Varna",
+      "62": "Veliko Tarnovo", "63": "Vidin", "64": "Vratsa", "65": "Yambol",
+    },
+    names: { "Veliko Tŭrnovo": "Veliko Tarnovo", "Gŭlŭbovo": "Galabovo" },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

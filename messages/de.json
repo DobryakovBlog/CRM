@@ -80,6 +80,7 @@
     "sl": "Slowenisch",
     "hr": "Kroatisch",
     "ro": "Rumänisch",
+    "bg": "Bulgarisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -506,7 +507,8 @@
     "hu": "Ungarn",
     "si": "Slowenien",
     "hr": "Kroatien",
-    "ro": "Rumänien"
+    "ro": "Rumänien",
+    "bg": "Bulgarien"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",
