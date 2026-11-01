@@ -2,14 +2,16 @@
 // fetch: every GeoNames town of 1,000+ people, grouped by region, ordered by population.
 // Sources: the npm packages all-the-cities 3.1.0 (cities.pbf: name, region code, population) and
 // cities.json (admin1.json: region names). Big cities carry their English name in GeoNames, so
-// NAMES gives them back their local one; REGIONS gives the regions their local name.
+// NAMES gives them back their local one; REGIONS gives the regions their local name. A country whose
+// GeoNames regions are already its municipalities with local names (Slovenia) uses "admin1" instead:
+// the GeoNames names with "Municipality of" dropped, fixed where GeoNames lost a diacritic.
 // Usage:
 //   npm pack all-the-cities@3.1.0 cities.json && tar xzf all-the-cities-*.tgz && mkdir cj && tar xzf cities.json-*.tgz -C cj
 //   npx tsx scripts/build-geonames-places.ts at package cj/package
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-type Config = { regions: Record<string, string>; names?: Record<string, string> };
+type Config = { regions: Record<string, string> | "admin1"; regionFixes?: Record<string, string>; names?: Record<string, string> };
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -45,6 +47,7 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Prague: "Praha", Pilsen: "Plzeň", Vysehrad: "Vyšehrad" },
   },
+  si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
       "01": "Banskobystrický kraj", "02": "Bratislavský kraj", "03": "Košický kraj", "04": "Nitriansky kraj",
@@ -94,19 +97,21 @@ function* readCities(buf: Buffer) {
 }
 
 // Region names straight from GeoNames, for checking that REGIONS covers every code.
-const known = new Set(
-  (JSON.parse(readFileSync(join(cjDir, "admin1.json"), "utf8")) as { code: string }[])
-    .filter((r) => r.code.startsWith(`${cc.toUpperCase()}.`))
-    .map((r) => r.code.split(".")[1]),
-);
-const missingRegions = [...known].filter((r) => !config.regions[r]);
+const admin1 = (JSON.parse(readFileSync(join(cjDir, "admin1.json"), "utf8")) as { code: string; name: string }[])
+  .filter((r) => r.code.startsWith(`${cc.toUpperCase()}.`))
+  .map((r) => [r.code.split(".")[1], r.name.replace(/^(Urban )?Municipality of /, "")] as const);
+const regions: Record<string, string> =
+  config.regions === "admin1"
+    ? Object.fromEntries(admin1.map(([code, name]) => [code, config.regionFixes?.[name] ?? name]))
+    : config.regions;
+const missingRegions = admin1.map(([code]) => code).filter((r) => !regions[r]);
 if (missingRegions.length) throw new Error(`no local name for regions ${missingRegions.join(", ")}`);
 
-const areas = [...new Set(Object.values(config.regions))].sort((a, b) => a.localeCompare(b, cc));
+const areas = [...new Set(Object.values(regions))].sort((a, b) => a.localeCompare(b, cc));
 const best = new Map<string, [string, number, number]>();
 for (const c of readCities(readFileSync(join(atcDir, "cities.pbf")))) {
   if (c.country !== cc.toUpperCase()) continue;
-  const area = config.regions[c.region];
+  const area = regions[c.region];
   if (!area) throw new Error(`unknown region ${c.region} for ${c.name}`);
   const name = config.names?.[c.name] ?? c.name;
   const size = Math.max(1, Math.round(c.population / 1000));

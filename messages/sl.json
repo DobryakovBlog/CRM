@@ -1,0 +1,601 @@
+{
+  "meta": {
+    "title": "Astrabela: kozmetični saloni in brivnice s spletno rezervacijo",
+    "description": "Poiščite kozmetični salon ali brivnico v Evropi, preberite ocene strank za vsakega strokovnjaka in rezervirajte na spletu."
+  },
+  "nav": {
+    "forSalons": "Za podjetja",
+    "footer": "Astrabela · Ocene strank za vsakega strokovnjaka",
+    "language": "Jezik",
+    "forClients": "Poišči salon",
+    "salons": "Saloni",
+    "restaurants": "Restavracije",
+    "privacy": "Zasebnost",
+    "terms": "Pogoji",
+    "signIn": "Prijava",
+    "support": "Pomoč"
+  },
+  "home": {
+    "title": "Rezervirajte najboljše. Zaupajte zvezdicam.",
+    "subtitle": "Najboljši kozmetični saloni in brivnice v Evropi, ki jih stranke ocenjujejo za vsakega strokovnjaka posebej. Izberite in rezervirajte na spletu v nekaj sekundah.",
+    "why": {
+      "verified": {
+        "title": "Ocene za vsakega strokovnjaka",
+        "text": "Vsaka ocena velja za enega strokovnjaka. Potrjeni obiski imajo lastno oznako."
+      },
+      "masters": {
+        "title": "Izberite strokovnjaka",
+        "text": "Vsak strokovnjak ima svojo oceno."
+      },
+      "direct": {
+        "title": "Plačate v salonu",
+        "text": "Brezplačna rezervacija, brez spletnega plačila."
+      }
+    },
+    "eyebrow": "Evropa · Kozmetični saloni in brivnice",
+    "featuredEyebrow": "Priporočamo",
+    "featuredTitle": "Najbolje ocenjeni saloni",
+    "browse": "Iskanje po storitvi"
+  },
+  "search": {
+    "city": "Kraj",
+    "service": "Storitev",
+    "anyService": "Vse storitve",
+    "language": "Jezik",
+    "anyLanguage": "Kateri koli jezik",
+    "submit": "Iskanje",
+    "resultsTitle": "{count, plural, =0 {Ni salonov} one {# salon} two {# salona} few {# saloni} other {# salonov}} {city, select, other {v kraju {city}}}",
+    "empty": "Tem filtrom še ne ustreza noben salon.",
+    "new": "Novo",
+    "from": "Od {price}",
+    "cityEmpty": "V kraju {city} na Astrabeli še ni salonov. Odpiramo se mesto za mestom.",
+    "cityEmptyCta": "Imate tukaj salon ali brivnico? Pridružite se",
+    "country": "Država",
+    "comingSoon": "kmalu",
+    "cityPlaceholder": "Vpišite kraj",
+    "cityNoMatch": "V tem kraju še nismo prisotni"
+  },
+  "categories": {
+    "hair": "Lasje",
+    "barber": "Brivnica",
+    "nails": "Nohti",
+    "brows_lashes": "Obrvi in trepalnice",
+    "skin": "Nega obraza",
+    "makeup": "Ličenje",
+    "massage": "Masaža",
+    "other": "Drugo"
+  },
+  "languages": {
+    "pt": "Portugalščina",
+    "en": "Angleščina",
+    "es": "Španščina",
+    "fr": "Francoščina",
+    "de": "Nemščina",
+    "it": "Italijanščina",
+    "nl": "Nizozemščina",
+    "pl": "Poljščina",
+    "cs": "Češčina",
+    "sk": "Slovaščina",
+    "hu": "Madžarščina",
+    "sl": "Slovenščina",
+    "ru": "Ruščina",
+    "uk": "Ukrajinščina"
+  },
+  "weekdays": {
+    "0": "Nedelja",
+    "1": "Ponedeljek",
+    "2": "Torek",
+    "3": "Sreda",
+    "4": "Četrtek",
+    "5": "Petek",
+    "6": "Sobota"
+  },
+  "salon": {
+    "verifiedNote": "ocene strank za vsakega strokovnjaka",
+    "services": "Storitve",
+    "minutes": "{n} min",
+    "book": "Rezerviraj",
+    "reviews": "Ocene",
+    "reportThanks": "Hvala. Prijavo bomo preverili.",
+    "noReviews": "Še ni ocen.",
+    "withMaster": "pri: {name}",
+    "verifiedVisit": "potrjen obisk",
+    "salonReply": "Odgovor salona",
+    "report": "Prijavi oceno",
+    "reportReason": "Razlog",
+    "send": "Pošlji",
+    "team": "Ekipa",
+    "payOnSite": "Plačilo v salonu.",
+    "viaAstrabela": "rezervacija prek Astrabele",
+    "viaSalon": "obisk potrdil salon",
+    "writeReview": "Oceni strokovnjaka",
+    "master": "Strokovnjak",
+    "rating": "Ocena",
+    "yourReview": "Vaše mnenje (neobvezno)",
+    "publish": "Objavi oceno",
+    "signInToReview": "Za oceno se prijavite.",
+    "signIn": "Prijava",
+    "reviewThanks": "Hvala! Vaša ocena je objavljena.",
+    "reviewTooSoon": "Tega strokovnjaka ste v zadnjih 30 dneh že ocenili.",
+    "reviewInvalid": "Izberite strokovnjaka in oceno.",
+    "viaClient": "ocena stranke"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "plačilo v salonu",
+    "errors": {
+      "invalid": "Preverite svoje podatke in poskusite znova.",
+      "slot_taken": "Ta termin je bil pravkar zaseden. Izberite drugega.",
+      "not_found": "Storitev ali strokovnjak ni na voljo.",
+      "not_allowed": "Ta strokovnjak ne izvaja te storitve.",
+      "phone": "Vpišite veljavno številko mobilnega telefona s pravilno kodo države."
+    },
+    "master": "Strokovnjak",
+    "anyMaster": "Kateri koli strokovnjak",
+    "day": "Dan",
+    "time": "Ura",
+    "noSlots": "Ta dan ni prostih terminov.",
+    "yourDetails": "Vaši podatki",
+    "name": "Ime",
+    "email": "E-pošta",
+    "phone": "Telefon",
+    "note": "Sporočilo salonu (neobvezno)",
+    "privacy": "Strinjam se, da salon in Astrabela obdelujeta moje podatke za izvedbo te rezervacije (<privacy>politika zasebnosti</privacy>).",
+    "confirm": "Potrdi rezervacijo",
+    "gateTitle": "Kako želite nadaljevati?",
+    "gateText": "Z računom vidite vse rezervacije na enem mestu in vam podatkov ni treba vpisovati znova.",
+    "guest": "Brez računa",
+    "signIn": "Prijava"
+  },
+  "booking": {
+    "created": "Rezervacija potrjena! Podrobnosti smo poslali po e-pošti.",
+    "reviewThanks": "Hvala za oceno!",
+    "error": "Tega dejanja ni bilo mogoče izvesti.",
+    "status": {
+      "confirmed": "Potrjena",
+      "cancelled": "Odpovedana",
+      "completed": "Opravljena",
+      "no_show": "Ni prišel(-la)"
+    },
+    "with": "pri: {name}",
+    "payOnSite": "plačilo v salonu",
+    "cancel": "Odpovej rezervacijo",
+    "reviewTitle": "Ocenite obisk pri: {name}",
+    "rating": "Ocena",
+    "reviewText": "Komentar",
+    "authorName": "Prikazano ime",
+    "submitReview": "Objavi oceno",
+    "visitOn": "Obisk {date}",
+    "moreTitle": "Več salonov v kraju {city}",
+    "moreLink": "Prikaži vse salone"
+  },
+  "business": {
+    "landing": {
+      "title": "Več strank za vaš salon",
+      "subtitle": "Spletni koledar in ocene strank. Brez provizij, ena fiksna cena za vso ekipo.",
+      "start": "Preizkusite {months} mesece brezplačno",
+      "features": {
+        "noCommission": "0 % provizije od strank",
+        "unlimitedStaff": "Neomejeno število zaposlenih",
+        "calendar": "Spletni koledar in ročne rezervacije",
+        "verifiedReviews": "Ocene za vsakega strokovnjaka",
+        "ownClients": "Vaše stranke ostanejo vaše"
+      },
+      "restaurants": {
+        "eyebrow": "Restavracije",
+        "title": "Vaš jedilnik na spletu, vedno posodobljen",
+        "text": "Objavite jedilnik s cenami in alergeni v svojem jeziku in v angleščini. Natisnite kodo QR za mize in spreminjajte cene kadar koli. Prvi 3 meseci so brezplačni.",
+        "cta": "Preizkusite 3 mesece brezplačno"
+      },
+      "trialNote": "Prvi {months} meseci so brezplačni. Za začetek ne potrebujete kartice."
+    },
+    "plans": {
+      "monthly": "Mesečno",
+      "semiannual": "6 mesecev",
+      "annual": "12 mesecev",
+      "perMonth": "na mesec + DDV"
+    },
+    "login": {
+      "title": "Prijava",
+      "error": "Napačen e-naslov ali geslo.",
+      "email": "E-pošta",
+      "password": "Geslo",
+      "submit": "Prijava",
+      "noAccount": "Nimate računa? Registrirajte salon"
+    },
+    "register": {
+      "title": "Registracija podjetja",
+      "errors": {
+        "invalid": "Preverite polja (geslo vsaj 8 znakov).",
+        "email_taken": "Ta e-naslov je že registriran."
+      },
+      "fields": {
+        "salonName": "Ime podjetja",
+        "city": "Kraj",
+        "address": "Naslov",
+        "phone": "Telefon",
+        "name": "Vaše ime",
+        "email": "E-pošta",
+        "password": "Geslo"
+      },
+      "terms": "Sprejemam <terms>pogoje</terms>, vključno s pogodbo o obdelavi osebnih podatkov (GDPR), in <privacy>politiko zasebnosti</privacy>.",
+      "submit": "Ustvari račun",
+      "kind": "Vrsta dejavnosti",
+      "kinds": {
+        "salon": "Salon",
+        "restaurant": "Restavracija"
+      },
+      "kindHint": "Kozmetični saloni, brivnice, saloni za nohte in kozmetičarke izberejo »Salon«. Nato izberite kategorije storitev, npr. »Brivnica«.",
+      "googleAs": "Registrirate se prek Googla kot {email}. Geslo ni potrebno."
+    },
+    "salonStatus": {
+      "draft": "Osnutek",
+      "pending": "V pregledu",
+      "active": "Objavljeno",
+      "suspended": "Začasno ustavljeno"
+    },
+    "logout": "Odjava",
+    "tabs": {
+      "calendar": "Koledar",
+      "services": "Storitve",
+      "team": "Ekipa",
+      "reviews": "Ocene",
+      "profile": "Profil",
+      "admin": "Administracija",
+      "menu": "Jedilnik",
+      "qr": "Koda QR"
+    },
+    "calendar": {
+      "today": "Danes",
+      "errors": {
+        "invalid": "Neveljavni podatki.",
+        "slot_taken": "Ta termin je že zaseden.",
+        "not_found": "Storitve ali strokovnjaka ni mogoče najti.",
+        "not_allowed": "Ta strokovnjak ne izvaja te storitve.",
+        "phone": "Neveljavna telefonska številka. Izberite državo in vpišite celotno številko."
+      },
+      "noTeam": "Dodajte strokovnjake v zavihku Ekipa.",
+      "free": "Ni rezervacij.",
+      "noShows": "{n, plural, one {# neprihod} two {# neprihoda} few {# neprihodi} other {# neprihodov}}",
+      "mark": {
+        "completed": "Prišel(-la)",
+        "no_show": "Ni prišel(-la)",
+        "cancelled": "Odpovej"
+      },
+      "manualTitle": "Nova rezervacija (telefon, brez naročila)",
+      "master": "Strokovnjak",
+      "service": "Storitev",
+      "time": "Ura",
+      "clientName": "Ime stranke",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-pošta (neobvezno)",
+      "add": "Dodaj"
+    },
+    "services": {
+      "empty": "Še ni storitev.",
+      "disable": "Izklopi",
+      "enable": "Vklopi",
+      "addTitle": "Nova storitev",
+      "name": "Ime",
+      "category": "Kategorija",
+      "duration": "Trajanje (min)",
+      "price": "Cena (€)",
+      "add": "Dodaj"
+    },
+    "team": {
+      "name": "Ime",
+      "title": "Delovno mesto",
+      "titlePlaceholder": "npr. Koloristka",
+      "languages": "Jeziki",
+      "services": "Storitve",
+      "noServices": "Najprej dodajte storitve.",
+      "schedule": "Tedenski urnik",
+      "save": "Shrani",
+      "servicesCount": "{n, plural, one {# storitev} two {# storitvi} few {# storitve} other {# storitev}}",
+      "deactivate": "Deaktiviraj",
+      "activate": "Aktiviraj",
+      "add": "Dodaj strokovnjaka"
+    },
+    "profile": {
+      "welcome": "Dobrodošli! Izpolnite profil, dodajte storitve in ekipo, nato pošljite salon v objavo.",
+      "saved": "Shranjeno.",
+      "submitted": "Poslano! Salon bomo preverili in ga kmalu objavili.",
+      "notReady": "Pred pošiljanjem dodajte vsaj enega strokovnjaka s storitvami in urnikom.",
+      "listing": "Vidnost v katalogu",
+      "statusHelp": {
+        "draft": "Vašega salona še ni v katalogu.",
+        "pending": "Vaš salon preverjamo.",
+        "active": "Vaš salon je objavljen in sprejema rezervacije.",
+        "suspended": "Vaš salon je začasno ustavljen. Pišite nam."
+      },
+      "submit": "Pošlji v objavo",
+      "viewPublic": "Ogled javne strani",
+      "subscription": "Naročnina",
+      "sub": {
+        "trial": "Brezplačno preizkusno obdobje do {date}.",
+        "active": "Aktivna do {date}.",
+        "past_due": "Neplačano od {date}.",
+        "cancelled": "Preklicana {date}.",
+        "complimentary": "Brezplačno od Astrabele do {date}."
+      },
+      "details": "Podatki o salonu",
+      "fields": {
+        "name": "Ime",
+        "district": "Četrt",
+        "address": "Naslov",
+        "postalCode": "Poštna številka",
+        "phone": "Telefon",
+        "nif": "Davčna številka",
+        "description": "Opis",
+        "cuisine": "Kuhinja"
+      },
+      "save": "Shrani",
+      "restaurant": {
+        "welcome": "Dobrodošli! Izpolnite profil, pripravite jedilnik in nato pošljite restavracijo v objavo.",
+        "notReady": "Pred pošiljanjem dodajte v jedilnik vsaj eno jed.",
+        "details": "Podatki o restavraciji",
+        "statusHelp": {
+          "draft": "Restavracije še ni v katalogu.",
+          "pending": "Restavracijo preverjamo.",
+          "active": "Restavracija je objavljena in jedilnik je viden.",
+          "suspended": "Restavracija je začasno ustavljena. Pišite nam."
+        }
+      },
+      "social": {
+        "title": "Družbena omrežja",
+        "hint": "Prikazano na vaši javni strani. Vpišite uporabniško ime (@primer) ali prilepite povezavo.",
+        "invalid": "Povezave na {network} nismo prepoznali. Preverite jo in shranite znova.",
+        "placeholders": {
+          "instagram": "@vas_salon",
+          "facebook": "facebook.com/vas-salon",
+          "tiktok": "@vas_salon",
+          "whatsapp": "041 123 456",
+          "website": "www.vas-salon.si"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Še ni ocen.",
+      "hidden": "skrito zaradi moderiranja",
+      "replyPlaceholder": "Odgovorite javno…",
+      "updateReply": "Posodobi odgovor",
+      "reply": "Odgovori",
+      "inviteTitle": "Prosite stalno stranko za oceno",
+      "inviteHint": "Vpišite obisk, ki je že bil, in dobite osebno povezavo, prek katere stranka oceni strokovnjaka. Pošljite jo prek WhatsAppa, SMS-a ali kakor želite. Račun ni potreben.",
+      "inviteMasterService": "Strokovnjak in storitev",
+      "inviteDate": "Datum obiska",
+      "inviteClientName": "Ime stranke",
+      "inviteClientEmail": "E-pošta (neobvezno)",
+      "inviteClientPhone": "Mobilni telefon (neobvezno)",
+      "inviteLanguage": "Jezik sporočila",
+      "inviteSend": "Prosi za oceno",
+      "inviteRules": "Ena povezava velja za eno oceno enega obiska. Obiski iz zadnjih 90 dni, ena prošnja na stranko in strokovnjaka vsakih 30 dni. Te ocene imajo oznako »obisk potrdil salon« in jih salon ne more izbrisati ali skriti, tudi negativnih ne.",
+      "inviteNoTeam": "Za prošnje za oceno dodajte v zavihku Ekipa strokovnjaka s storitvami.",
+      "invited": "Prošnja ustvarjena. Zdaj pošljite sporočilo stranki: kopirajte ga ali odprite WhatsApp z gumbi spodaj.",
+      "inviteErrors": {
+        "invalid": "Preverite ime, e-naslov (če je vpisan) in datum (največ 90 dni nazaj, ne v prihodnosti).",
+        "not_found": "Strokovnjaka ali storitve ni mogoče najti.",
+        "not_allowed": "Te prošnje ni mogoče poslati.",
+        "duplicate": "V zadnjih 30 dneh ste to stranko že prosili za oceno tega strokovnjaka.",
+        "limit": "Današnja omejitev prošenj je dosežena. Poskusite jutri.",
+        "phone": "Neveljavna telefonska številka. Izberite državo in vpišite celotno številko."
+      },
+      "invitationsTitle": "Poslane prošnje",
+      "invitationWaiting": "čaka",
+      "invitationReviewed": "ocenjeno",
+      "listTitle": "Ocene",
+      "viaAstrabela": "rezervacija prek Astrabele",
+      "viaSalon": "obisk potrdil salon",
+      "cannotDelete": "Saloni ne morejo brisati ocen. Lahko odgovorite javno ali lažno oceno prijavite v moderiranje.",
+      "shareCopy": "Kopiraj sporočilo",
+      "shareCopied": "Kopirano ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "ocena stranke"
+    },
+    "admin": {
+      "pending": "Saloni, ki čakajo na objavo",
+      "none": "Nič ne čaka.",
+      "approve": "Odobri",
+      "reject": "Vrni",
+      "reports": "Prijavljene ocene",
+      "reason": "Razlog",
+      "hide": "Skrij oceno",
+      "keep": "Obdrži",
+      "subs": {
+        "title": "Naročnine",
+        "hint": "Podarite brezplačne mesece ali nastavite datum, do katerega je naročnina brezplačna. Darilo se začne, ko poteče čas, ki ga salon že ima.",
+        "search": "Iskanje po imenu, kraju ali davčni številki",
+        "find": "Išči",
+        "empty": "Ni najdenih salonov.",
+        "none": "Brez naročnine",
+        "manage": "Upravljaj",
+        "months": "Brezplačni meseci",
+        "monthsN": "{n, plural, one {# mesec} two {# meseca} few {# meseci} other {# mesecev}}",
+        "note": "Opomba (neobvezno)",
+        "notePlaceholder": "Npr. partner od začetka",
+        "grant": "Podari",
+        "until": "Brezplačno do",
+        "set": "Nastavi datum",
+        "cancel": "Takoj končaj naročnino",
+        "cancelHint": "Salon izgine iz iskanja, dokler znova ne kupi naročnine.",
+        "saved": "Naročnina posodobljena.",
+        "invalid": "Izberite datum v prihodnosti.",
+        "salonStatus": {
+          "draft": "Osnutek",
+          "pending": "Čaka",
+          "active": "Objavljeno",
+          "suspended": "Začasno ustavljeno"
+        },
+        "status": {
+          "trial": "Preizkus",
+          "active": "Aktivna",
+          "past_due": "Neplačano",
+          "cancelled": "Preklicana",
+          "complimentary": "Brezplačna"
+        },
+        "endsOn": "do {date}",
+        "endedOn": "od {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restavracija"
+        }
+      },
+      "title": "Administracija"
+    },
+    "menu": {
+      "hint": "Razdelite jedilnik na razdelke. Spremembe se takoj prikažejo na javni strani in za kodo QR na mizi.",
+      "viewPublic": "Ogled javnega jedilnika",
+      "invalid": "Preverite ime in ceno (na primer 12,50).",
+      "empty": "Začnite z razdelkom, npr. »Predjedi«, nato dodajte jedi.",
+      "editSection": "Uredi razdelek",
+      "sectionName": "Nov razdelek",
+      "sectionNameEn": "Ime v angleščini (neobvezno)",
+      "sectionPlaceholder": "Predjedi",
+      "save": "Shrani",
+      "deleteSection": "Izbriši razdelek in njegove jedi",
+      "addSection": "Dodaj razdelek",
+      "addDish": "Dodaj jed",
+      "editDish": "Uredi jed",
+      "deleteDish": "Izbriši jed",
+      "available": "na voljo",
+      "soldOut": "razprodano",
+      "dishName": "Ime jedi",
+      "dishNameEn": "Ime v angleščini (neobvezno)",
+      "description": "Opis",
+      "descriptionEn": "Opis v angleščini (neobvezno)",
+      "price": "Cena z DDV, €",
+      "portion": "Porcija (neobvezno)",
+      "portionPlaceholder": "300 g, 0,33 l, za 2 osebi",
+      "allergens": "Alergeni",
+      "tags": "Oznake",
+      "likes": "Všečki gostov"
+    },
+    "qr": {
+      "hint": "Natisnite ta list in ga postavite na mize. Gostje ga skenirajo s kamero telefona in jedilnik se odpre v jeziku njihovega telefona.",
+      "notListed": "Koda že deluje, a gostje bodo jedilnik videli šele po objavi restavracije (zavihek Profil).",
+      "scan": "Skenirajte kodo za jedilnik",
+      "scanEn": "Scan to see the menu",
+      "print": "Natisni list",
+      "salon": {
+        "hint": "Natisnite ta list in ga postavite na recepcijo ali ob ogledalo. Stranke ga skenirajo s telefonom, rezervirajo naslednji obisk in ocenijo svojega strokovnjaka.",
+        "notListed": "Koda že deluje, a stranke bodo stran videle šele po objavi salona (zavihek Profil).",
+        "scan": "Rezervirajte na spletu in ocenite svojega strokovnjaka",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Pomoč"
+  },
+  "countries": {
+    "pt": "Portugalska",
+    "es": "Španija",
+    "fr": "Francija",
+    "it": "Italija",
+    "de": "Nemčija",
+    "nl": "Nizozemska",
+    "be": "Belgija",
+    "ie": "Irska",
+    "lu": "Luksemburg",
+    "at": "Avstrija",
+    "ch": "Švica",
+    "pl": "Poljska",
+    "cz": "Češka",
+    "sk": "Slovaška",
+    "hu": "Madžarska",
+    "si": "Slovenija"
+  },
+  "restaurants": {
+    "metaTitle": "Restavracije in jedilniki",
+    "eyebrow": "Evropa · Restavracije",
+    "title": "Oglejte si jedilnik, preden sedete.",
+    "subtitle": "Celotni jedilniki z aktualnimi cenami, ki jih vodijo restavracije same, v lokalnem jeziku in v angleščini, z alergeni.",
+    "searchPlaceholder": "Ime ali kuhinja",
+    "resultsTitle": "{count, plural, =0 {Ni restavracij} one {# restavracija} two {# restavraciji} few {# restavracije} other {# restavracij}} v kraju {city}",
+    "cityEmpty": "V kraju {city} na Astrabeli še ni restavracij.",
+    "noMatch": "Iskanju ne ustreza nobena restavracija.",
+    "join": "Imate restavracijo? Objavite svoj jedilnik",
+    "dishes": "{count, plural, one {# jed} two {# jedi} few {# jedi} other {# jedi}}",
+    "from": "Od {price}"
+  },
+  "restaurant": {
+    "menu": "Jedilnik",
+    "allergens": "Alergeni",
+    "vatIncluded": "Cene v evrih, z DDV.",
+    "allergyNote": "Imate alergijo? Pred naročilom povejte osebju.",
+    "like": "Všeč mi je"
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "raki",
+    "eggs": "jajca",
+    "fish": "ribe",
+    "peanuts": "arašidi",
+    "soy": "soja",
+    "milk": "mleko",
+    "nuts": "oreščki",
+    "celery": "zelena",
+    "mustard": "gorčica",
+    "sesame": "sezam",
+    "sulphites": "sulfiti",
+    "lupin": "volčji bob",
+    "molluscs": "mehkužci"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarijansko",
+    "vegan": "Vegansko",
+    "gluten_free": "Brez glutena",
+    "spicy": "Pekoče"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Spletna stran"
+  },
+  "account": {
+    "title": "Prijava",
+    "google": "Nadaljuj z Googlom",
+    "or": "ali",
+    "googleError": "Prijava z Googlom ni uspela. Poskusite znova.",
+    "openCabinet": "Odpri poslovni račun",
+    "hello": "Pozdravljeni, {name}",
+    "logout": "Odjava",
+    "upcoming": "Prihajajoče rezervacije",
+    "noUpcoming": "Nimate prihajajočih rezervacij.",
+    "findSalon": "Poišči salon",
+    "past": "Pretekle rezervacije",
+    "open": "Ogled",
+    "bookingsHint": "Tukaj so prikazane rezervacije, opravljene po prijavi.",
+    "deleteTitle": "Izbriši račun",
+    "deleteText": "Vaš račun in podatki za prijavo bodo izbrisani. Rezervacije ostanejo pri salonih, ki jih hranijo za izvedbo storitve.",
+    "deleteConfirm": "Izbriši moj račun",
+    "deleted": "Vaš račun je izbrisan.",
+    "email": "E-pošta",
+    "password": "Geslo",
+    "submit": "Prijava",
+    "loginError": "Napačen e-naslov ali geslo.",
+    "noAccount": "Nimate računa?",
+    "createAccount": "Ustvari račun",
+    "businessQuestion": "Imate salon ali restavracijo?",
+    "businessLink": "Astrabela za podjetja",
+    "signedInBusiness": "Prijavljeni kot {name}.",
+    "adminPanel": "Administracija",
+    "welcome": "Račun ustvarjen. Tukaj se bodo prikazale rezervacije, opravljene po prijavi.",
+    "bookingsHintGoogle": "Tukaj so prikazane rezervacije, opravljene po prijavi ali z vašim e-naslovom Google.",
+    "registerTitle": "Ustvari račun",
+    "name": "Ime",
+    "passwordHint": "Vsaj 8 znakov.",
+    "terms": "Sprejemam <terms>pogoje</terms> in <privacy>politiko zasebnosti</privacy>.",
+    "registerSubmit": "Ustvari račun",
+    "haveAccount": "Že imate račun?",
+    "registerErrors": {
+      "invalid": "Preverite ime, e-naslov in geslo (vsaj 8 znakov).",
+      "email_taken": "Račun s tem e-naslovom že obstaja. Prijavite se z njim."
+    }
+  },
+  "petFriendly": {
+    "label": "Prijazno do živali",
+    "hint": "Živali so dobrodošle."
+  }
+}

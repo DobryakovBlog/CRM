@@ -319,3 +319,17 @@ describe("Hungarian places", () => {
     expect(phoneCountry("szeged")).toBe("HU");
   });
 });
+
+describe("Slovenian places", () => {
+  it("lists GeoNames towns by municipality", () => {
+    expect(placeBySlug("ljubljana")).toMatchObject({ name: "Ljubljana", country: "si", area: "Ljubljana" });
+    expect(searchPlaces("sentjur", [], 30, "si")[0]).toMatchObject({ name: "Šentjur", area: "Šentjur" });
+    expect(searchPlaces("novo mesto", [], 30, "si")[0].name).toBe("Novo mesto");
+  });
+
+  it("uses Ljubljana time and starts Slovenian visitors in Ljubljana", () => {
+    expect(placeTimezone("maribor")).toBe("Europe/Ljubljana");
+    expect(cityFieldSetup([], undefined, "sl")).toMatchObject({ defaultCountry: "si", defaultSlugs: { si: "ljubljana" } });
+    expect(phoneCountry("celje")).toBe("SI");
+  });
+});
