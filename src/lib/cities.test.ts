@@ -217,3 +217,18 @@ describe("Irish places", () => {
     expect(phoneCountry("galway")).toBe("IE");
   });
 });
+
+describe("Luxembourg places", () => {
+  it("lists today's 100 communes by canton", () => {
+    expect(placeBySlug("luxembourg")).toMatchObject({ name: "Luxembourg", country: "lu", area: "Luxembourg" });
+    expect(searchPlaces("esch", [], 30, "lu")[0].name).toBe("Esch-sur-Alzette");
+    expect(searchPlaces("rosport", [], 30, "lu").map((p) => p.name)).toEqual(["Rosport-Mompach"]);
+    expect(searchPlaces("ernz", [], 30, "lu")[0].name).toBe("Vallée de l'Ernz");
+  });
+
+  it("uses Luxembourg time and starts visitors from Luxembourg in the capital", () => {
+    expect(placeTimezone("differdange")).toBe("Europe/Luxembourg");
+    expect(cityFieldSetup([], undefined, "fr", "lu")).toMatchObject({ defaultCountry: "lu", defaultSlugs: { lu: "luxembourg" } });
+    expect(phoneCountry("dudelange")).toBe("LU");
+  });
+});
