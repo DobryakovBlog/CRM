@@ -78,6 +78,7 @@
     "sk": "Slowaaks",
     "hu": "Hongaars",
     "sl": "Sloveens",
+    "hr": "Kroatisch",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -502,7 +503,8 @@
     "cz": "Tsjechië",
     "sk": "Slowakije",
     "hu": "Hongarije",
-    "si": "Slovenië"
+    "si": "Slovenië",
+    "hr": "Kroatië"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

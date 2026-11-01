@@ -78,6 +78,7 @@
     "sk": "Slovenčina",
     "hu": "Maďarčina",
     "sl": "Slovinčina",
+    "hr": "Chorvátčina",
     "ru": "Ruština",
     "uk": "Ukrajinčina"
   },
@@ -502,7 +503,8 @@
     "cz": "Česko",
     "sk": "Slovensko",
     "hu": "Maďarsko",
-    "si": "Slovinsko"
+    "si": "Slovinsko",
+    "hr": "Chorvátsko"
   },
   "restaurants": {
     "metaTitle": "Reštaurácie a menu",

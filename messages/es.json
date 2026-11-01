@@ -78,6 +78,7 @@
     "sk": "Eslovaco",
     "hu": "Húngaro",
     "sl": "Esloveno",
+    "hr": "Croata",
     "ru": "Ruso",
     "uk": "Ucraniano"
   },
@@ -502,7 +503,8 @@
     "cz": "Chequia",
     "sk": "Eslovaquia",
     "hu": "Hungría",
-    "si": "Eslovenia"
+    "si": "Eslovenia",
+    "hr": "Croacia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",

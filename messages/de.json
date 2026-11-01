@@ -78,6 +78,7 @@
     "sk": "Slowakisch",
     "hu": "Ungarisch",
     "sl": "Slowenisch",
+    "hr": "Kroatisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -502,7 +503,8 @@
     "cz": "Tschechien",
     "sk": "Slowakei",
     "hu": "Ungarn",
-    "si": "Slowenien"
+    "si": "Slowenien",
+    "hr": "Kroatien"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",
