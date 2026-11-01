@@ -248,3 +248,18 @@ describe("Austrian places", () => {
     expect(phoneCountry("linz")).toBe("AT");
   });
 });
+
+describe("Swiss places", () => {
+  it("lists GeoNames towns by canton under their local names", () => {
+    expect(placeBySlug("zurich")).toMatchObject({ name: "Zürich", country: "ch", area: "Zürich" });
+    expect(searchPlaces("geneve", [], 30, "ch")[0]).toMatchObject({ name: "Genève", area: "Genève" });
+    expect(searchPlaces("sion", [], 30, "ch")[0]).toMatchObject({ name: "Sion", area: "Valais" });
+    expect(searchPlaces("lugano", [], 30, "ch")[0].area).toBe("Ticino");
+  });
+
+  it("uses Zurich time and starts Swiss visitors in Zurich", () => {
+    expect(placeTimezone("lausanne")).toBe("Europe/Zurich");
+    expect(cityFieldSetup([], undefined, "fr", "ch")).toMatchObject({ defaultCountry: "ch", defaultSlugs: { ch: "zurich" } });
+    expect(phoneCountry("bern")).toBe("CH");
+  });
+});

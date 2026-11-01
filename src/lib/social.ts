@@ -29,7 +29,7 @@ function parseUrl(input: string): URL | null {
 
 // National numbers typed without the country code: Portuguese 9xx/2xx, Spanish 6xx-9xx,
 // French 0x xx xx xx xx (the leading 0 drops after +33), Italian mobiles 3xx xxx xxxx,
-// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx.
+// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx, Swiss mobiles 07x xxx xx xx.
 const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp }> = {
   pt: { code: "351", pattern: /^[29]\d{8}$/ },
   es: { code: "34", pattern: /^[6789]\d{8}$/ },
@@ -41,6 +41,7 @@ const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp }> = {
   ie: { code: "353", pattern: /^08\d{8}$/ },
   lu: { code: "352", pattern: /^6\d{8}$/ },
   at: { code: "43", pattern: /^06\d{8,11}$/ },
+  ch: { code: "41", pattern: /^07[5-9]\d{7}$/ },
 };
 
 const onHost = (url: URL, hosts: string[]) =>

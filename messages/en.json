@@ -491,7 +491,8 @@
     "be": "Belgium",
     "ie": "Ireland",
     "lu": "Luxembourg",
-    "at": "Austria"
+    "at": "Austria",
+    "ch": "Switzerland"
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",
