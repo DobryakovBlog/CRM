@@ -79,6 +79,7 @@
     "hu": "Madžarščina",
     "sl": "Slovenščina",
     "hr": "Hrvaščina",
+    "ro": "Romunščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -504,7 +505,8 @@
     "sk": "Slovaška",
     "hu": "Madžarska",
     "si": "Slovenija",
-    "hr": "Hrvaška"
+    "hr": "Hrvaška",
+    "ro": "Romunija"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",

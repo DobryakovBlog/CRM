@@ -79,6 +79,7 @@
     "hu": "Ungherese",
     "sl": "Sloveno",
     "hr": "Croato",
+    "ro": "Rumeno",
     "ru": "Russo",
     "uk": "Ucraino"
   },
@@ -504,7 +505,8 @@
     "sk": "Slovacchia",
     "hu": "Ungheria",
     "si": "Slovenia",
-    "hr": "Croazia"
+    "hr": "Croazia",
+    "ro": "Romania"
   },
   "restaurants": {
     "metaTitle": "Ristoranti e menu",

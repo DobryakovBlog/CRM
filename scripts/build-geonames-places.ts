@@ -11,7 +11,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-type Config = { regions: Record<string, string> | "admin1"; regionFixes?: Record<string, string>; names?: Record<string, string> };
+// commaBelow: GeoNames often spells Romanian ș/ț with a cedilla (ş/ţ); the builder writes the correct letters.
+type Config = { regions: Record<string, string> | "admin1"; regionFixes?: Record<string, string>; names?: Record<string, string>; commaBelow?: boolean };
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -56,6 +57,18 @@ const COUNTRIES: Record<string, Config> = {
       "17": "Virovitičko-podravska", "18": "Vukovarsko-srijemska", "19": "Zadarska", "20": "Zagrebačka", "21": "Grad Zagreb",
     },
     names: { "Biograd na Moru": "Biograd na moru" },
+  },
+  ro: {
+    regions: {
+      "01": "Alba", "02": "Arad", "03": "Argeș", "04": "Bacău", "05": "Bihor", "06": "Bistrița-Năsăud", "07": "Botoșani",
+      "08": "Brăila", "09": "Brașov", "10": "București", "11": "Buzău", "12": "Caraș-Severin", "13": "Cluj", "14": "Constanța",
+      "15": "Covasna", "16": "Dâmbovița", "17": "Dolj", "18": "Galați", "19": "Gorj", "20": "Harghita", "21": "Hunedoara",
+      "22": "Ialomița", "23": "Iași", "25": "Maramureș", "26": "Mehedinți", "27": "Mureș", "28": "Neamț", "29": "Olt",
+      "30": "Prahova", "31": "Sălaj", "32": "Satu Mare", "33": "Sibiu", "34": "Suceava", "35": "Teleorman", "36": "Timiș",
+      "37": "Tulcea", "38": "Vaslui", "39": "Vâlcea", "40": "Vrancea", "41": "Călărași", "42": "Giurgiu", "43": "Ilfov",
+    },
+    names: { Bucharest: "București" },
+    commaBelow: true,
   },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
@@ -123,9 +136,12 @@ for (const c of readCities(readFileSync(join(atcDir, "cities.pbf")))) {
   if (c.country !== cc.toUpperCase()) continue;
   const area = regions[c.region];
   if (!area) throw new Error(`unknown region ${c.region} for ${c.name}`);
-  const name = config.names?.[c.name] ?? c.name;
+  const raw = config.names?.[c.name] ?? c.name;
+  const name = config.commaBelow ? raw.replace(/ş/g, "ș").replace(/Ş/g, "Ș").replace(/ţ/g, "ț").replace(/Ţ/g, "Ț") : raw;
   const size = Math.max(1, Math.round(c.population / 1000));
-  const key = `${name}|${area}`;
+  // Romanian GeoNames lists some towns twice, with and without diacritics (Bucuresti, București): keep the bigger one.
+  // Elsewhere such pairs can be two real villages (two Świętajno in Warmia), so names stay exact.
+  const key = `${config.commaBelow ? name.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : name}|${area}`;
   if ((best.get(key)?.[2] ?? 0) < size) best.set(key, [name, areas.indexOf(area), size]);
 }
 const rows = [...best.values()].sort((a, b) => a[0].localeCompare(b[0], cc));

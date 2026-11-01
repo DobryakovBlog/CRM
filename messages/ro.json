@@ -1,0 +1,605 @@
+{
+  "meta": {
+    "title": "Astrabela: saloane de înfrumusețare și frizerii cu programare online",
+    "description": "Găsiți un salon de înfrumusețare sau o frizerie în Europa, citiți recenziile clienților pentru fiecare specialist și programați-vă online."
+  },
+  "nav": {
+    "forSalons": "Pentru afaceri",
+    "footer": "Astrabela · Recenzii ale clienților pentru fiecare specialist",
+    "language": "Limbă",
+    "forClients": "Găsiți un salon",
+    "salons": "Saloane",
+    "restaurants": "Restaurante",
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "signIn": "Autentificare",
+    "support": "Asistență"
+  },
+  "home": {
+    "title": "Rezervați ce e mai bun. Aveți încredere în stele.",
+    "subtitle": "Cele mai bune saloane de înfrumusețare și frizerii din Europa, evaluate de clienți pentru fiecare specialist în parte. Alegeți și programați-vă online în câteva secunde.",
+    "why": {
+      "verified": {
+        "title": "Recenzii pentru fiecare specialist",
+        "text": "Fiecare recenzie se referă la un singur specialist. Vizitele confirmate au propria etichetă."
+      },
+      "masters": {
+        "title": "Alegeți specialistul",
+        "text": "Fiecare specialist are propria notă."
+      },
+      "direct": {
+        "title": "Plătiți la salon",
+        "text": "Programare gratuită, fără plată online."
+      }
+    },
+    "eyebrow": "Europa · Saloane de înfrumusețare și frizerii",
+    "featuredEyebrow": "Recomandări",
+    "featuredTitle": "Cele mai bine evaluate saloane",
+    "browse": "Căutare după serviciu"
+  },
+  "search": {
+    "city": "Localitate",
+    "service": "Serviciu",
+    "anyService": "Toate serviciile",
+    "language": "Limbă",
+    "anyLanguage": "Orice limbă",
+    "submit": "Caută",
+    "resultsTitle": "{count, plural, =0 {Niciun salon} one {# salon} few {# saloane} other {# de saloane}} {city, select, other {în {city}}}",
+    "empty": "Niciun salon nu corespunde încă acestor filtre.",
+    "new": "Nou",
+    "from": "De la {price}",
+    "cityEmpty": "În {city} nu există încă saloane pe Astrabela. Ne extindem oraș cu oraș.",
+    "cityEmptyCta": "Aveți aici un salon sau o frizerie? Alăturați-vă",
+    "country": "Țară",
+    "comingSoon": "în curând",
+    "cityPlaceholder": "Scrieți localitatea",
+    "cityNoMatch": "Nu suntem încă prezenți în această localitate"
+  },
+  "categories": {
+    "hair": "Păr",
+    "barber": "Frizerie",
+    "nails": "Unghii",
+    "brows_lashes": "Sprâncene și gene",
+    "skin": "Îngrijirea tenului",
+    "makeup": "Machiaj",
+    "massage": "Masaj",
+    "other": "Altele"
+  },
+  "languages": {
+    "pt": "Portugheză",
+    "en": "Engleză",
+    "es": "Spaniolă",
+    "fr": "Franceză",
+    "de": "Germană",
+    "it": "Italiană",
+    "nl": "Neerlandeză",
+    "pl": "Poloneză",
+    "cs": "Cehă",
+    "sk": "Slovacă",
+    "hu": "Maghiară",
+    "sl": "Slovenă",
+    "hr": "Croată",
+    "ro": "Română",
+    "ru": "Rusă",
+    "uk": "Ucraineană"
+  },
+  "weekdays": {
+    "0": "Duminică",
+    "1": "Luni",
+    "2": "Marți",
+    "3": "Miercuri",
+    "4": "Joi",
+    "5": "Vineri",
+    "6": "Sâmbătă"
+  },
+  "salon": {
+    "verifiedNote": "recenzii ale clienților pentru fiecare specialist",
+    "services": "Servicii",
+    "minutes": "{n} min",
+    "book": "Programează",
+    "reviews": "Recenzii",
+    "reportThanks": "Mulțumim. Vom verifica semnalarea.",
+    "noReviews": "Încă nu există recenzii.",
+    "withMaster": "cu {name}",
+    "verifiedVisit": "vizită confirmată",
+    "salonReply": "Răspunsul salonului",
+    "report": "Semnalează recenzia",
+    "reportReason": "Motiv",
+    "send": "Trimite",
+    "team": "Echipa",
+    "payOnSite": "Plata la salon.",
+    "viaAstrabela": "programare prin Astrabela",
+    "viaSalon": "vizită confirmată de salon",
+    "writeReview": "Evaluează un specialist",
+    "master": "Specialist",
+    "rating": "Notă",
+    "yourReview": "Părerea dvs. (opțional)",
+    "publish": "Publică recenzia",
+    "signInToReview": "Autentificați-vă pentru a lăsa o recenzie.",
+    "signIn": "Autentificare",
+    "reviewThanks": "Mulțumim! Recenzia dvs. a fost publicată.",
+    "reviewTooSoon": "Ați evaluat deja acest specialist în ultimele 30 de zile.",
+    "reviewInvalid": "Alegeți specialistul și nota.",
+    "viaClient": "recenzie de client"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "plata la salon",
+    "errors": {
+      "invalid": "Verificați datele și încercați din nou.",
+      "slot_taken": "Această oră tocmai a fost ocupată. Alegeți alta.",
+      "not_found": "Serviciul sau specialistul nu este disponibil.",
+      "not_allowed": "Acest specialist nu oferă acest serviciu.",
+      "phone": "Introduceți un număr de mobil valid, cu prefixul corect al țării."
+    },
+    "master": "Specialist",
+    "anyMaster": "Orice specialist",
+    "day": "Ziua",
+    "time": "Ora",
+    "noSlots": "Nu există ore libere în această zi.",
+    "yourDetails": "Datele dvs.",
+    "name": "Nume",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "note": "Mesaj pentru salon (opțional)",
+    "privacy": "Sunt de acord ca salonul și Astrabela să prelucreze datele mele pentru această programare (<privacy>politica de confidențialitate</privacy>).",
+    "confirm": "Confirmă programarea",
+    "gateTitle": "Cum doriți să continuați?",
+    "gateText": "Cu un cont vedeți toate programările într-un singur loc și nu mai introduceți datele din nou.",
+    "guest": "Fără cont",
+    "signIn": "Autentificare"
+  },
+  "booking": {
+    "created": "Programare confirmată! V-am trimis detaliile pe e-mail.",
+    "reviewThanks": "Mulțumim pentru recenzie!",
+    "error": "Această acțiune nu a putut fi efectuată.",
+    "status": {
+      "confirmed": "Confirmată",
+      "cancelled": "Anulată",
+      "completed": "Efectuată",
+      "no_show": "Nu s-a prezentat"
+    },
+    "with": "cu {name}",
+    "payOnSite": "plata la salon",
+    "cancel": "Anulează programarea",
+    "reviewTitle": "Evaluați vizita la {name}",
+    "rating": "Notă",
+    "reviewText": "Comentariu",
+    "authorName": "Nume afișat",
+    "submitReview": "Publică recenzia",
+    "visitOn": "Vizită din {date}",
+    "moreTitle": "Alte saloane în {city}",
+    "moreLink": "Vezi toate saloanele"
+  },
+  "business": {
+    "landing": {
+      "title": "Mai mulți clienți pentru salonul dvs.",
+      "subtitle": "Calendar online și recenzii ale clienților. Fără comisioane, un preț fix pentru toată echipa.",
+      "start": "Încercați gratuit {months} luni",
+      "features": {
+        "noCommission": "0 % comision din clienți",
+        "unlimitedStaff": "Număr nelimitat de angajați",
+        "calendar": "Calendar online și programări manuale",
+        "verifiedReviews": "Recenzii pentru fiecare specialist",
+        "ownClients": "Clienții dvs. rămân ai dvs."
+      },
+      "restaurants": {
+        "eyebrow": "Restaurante",
+        "title": "Meniul dvs. online, mereu actualizat",
+        "text": "Publicați meniul cu prețuri și alergeni în limba dvs. și în engleză. Tipăriți un cod QR pentru mese și schimbați prețurile oricând doriți. Primele 3 luni sunt gratuite.",
+        "cta": "Încercați gratuit 3 luni"
+      },
+      "trialNote": "Primele {months} luni sunt gratuite. Nu aveți nevoie de card pentru a începe."
+    },
+    "plans": {
+      "monthly": "Lunar",
+      "semiannual": "6 luni",
+      "annual": "12 luni",
+      "perMonth": "pe lună + TVA"
+    },
+    "login": {
+      "title": "Autentificare",
+      "error": "E-mail sau parolă greșită.",
+      "email": "E-mail",
+      "password": "Parolă",
+      "submit": "Autentificare",
+      "noAccount": "Nu aveți încă un cont? Înregistrați-vă salonul"
+    },
+    "register": {
+      "title": "Înregistrați-vă afacerea",
+      "errors": {
+        "invalid": "Verificați câmpurile (parola are cel puțin 8 caractere).",
+        "email_taken": "Acest e-mail este deja înregistrat."
+      },
+      "fields": {
+        "salonName": "Denumirea afacerii",
+        "city": "Localitate",
+        "address": "Adresă",
+        "phone": "Telefon",
+        "name": "Numele dvs.",
+        "email": "E-mail",
+        "password": "Parolă"
+      },
+      "terms": "Accept <terms>termenii și condițiile</terms>, inclusiv acordul de prelucrare a datelor (GDPR), și <privacy>politica de confidențialitate</privacy>.",
+      "submit": "Creează cont",
+      "kind": "Tipul afacerii",
+      "kinds": {
+        "salon": "Salon",
+        "restaurant": "Restaurant"
+      },
+      "kindHint": "Saloanele de înfrumusețare, frizeriile, unghiile și estetica aleg „Salon”. Apoi alegeți categoriile de servicii, de exemplu „Frizerie”.",
+      "googleAs": "Vă înregistrați cu Google ca {email}. Nu aveți nevoie de parolă."
+    },
+    "salonStatus": {
+      "draft": "Ciornă",
+      "pending": "În verificare",
+      "active": "Publicat",
+      "suspended": "Suspendat"
+    },
+    "logout": "Deconectare",
+    "tabs": {
+      "calendar": "Calendar",
+      "services": "Servicii",
+      "team": "Echipa",
+      "reviews": "Recenzii",
+      "profile": "Profil",
+      "admin": "Administrare",
+      "menu": "Meniu",
+      "qr": "Cod QR"
+    },
+    "calendar": {
+      "today": "Azi",
+      "errors": {
+        "invalid": "Date nevalide.",
+        "slot_taken": "Această oră este deja ocupată.",
+        "not_found": "Serviciul sau specialistul nu a fost găsit.",
+        "not_allowed": "Acest specialist nu oferă acest serviciu.",
+        "phone": "Număr de telefon nevalid. Alegeți țara și scrieți numărul complet."
+      },
+      "noTeam": "Adăugați specialiști în fila Echipa.",
+      "free": "Nicio programare.",
+      "noShows": "{n, plural, one {# neprezentare} few {# neprezentări} other {# de neprezentări}}",
+      "mark": {
+        "completed": "A venit",
+        "no_show": "Nu a venit",
+        "cancelled": "Anulează"
+      },
+      "manualTitle": "Programare nouă (telefon, direct la salon)",
+      "master": "Specialist",
+      "service": "Serviciu",
+      "time": "Ora",
+      "clientName": "Numele clientului",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-mail (opțional)",
+      "add": "Adaugă"
+    },
+    "services": {
+      "empty": "Încă nu există servicii.",
+      "disable": "Dezactivează",
+      "enable": "Activează",
+      "addTitle": "Serviciu nou",
+      "name": "Denumire",
+      "category": "Categorie",
+      "duration": "Durată (min)",
+      "price": "Preț (€)",
+      "add": "Adaugă"
+    },
+    "team": {
+      "name": "Nume",
+      "title": "Funcție",
+      "titlePlaceholder": "de ex. Colorist",
+      "languages": "Limbi",
+      "services": "Servicii",
+      "noServices": "Adăugați mai întâi servicii.",
+      "schedule": "Program săptămânal",
+      "save": "Salvează",
+      "servicesCount": "{n, plural, one {# serviciu} few {# servicii} other {# de servicii}}",
+      "deactivate": "Dezactivează",
+      "activate": "Activează",
+      "add": "Adaugă specialist"
+    },
+    "profile": {
+      "welcome": "Bine ați venit! Completați profilul, adăugați serviciile și echipa, apoi trimiteți salonul spre publicare.",
+      "saved": "Salvat.",
+      "submitted": "Trimis! Vom verifica și vom publica salonul dvs. în curând.",
+      "notReady": "Înainte de trimitere, adăugați cel puțin un specialist cu servicii și program.",
+      "listing": "Publicare în catalog",
+      "statusHelp": {
+        "draft": "Salonul dvs. nu este încă în catalog.",
+        "pending": "Verificăm salonul dvs.",
+        "active": "Salonul dvs. este publicat și primește programări.",
+        "suspended": "Salonul dvs. este suspendat. Vă rugăm să ne contactați."
+      },
+      "submit": "Trimite spre publicare",
+      "viewPublic": "Vezi pagina publică",
+      "subscription": "Abonament",
+      "sub": {
+        "trial": "Perioadă de probă gratuită până la {date}.",
+        "active": "Activ până la {date}.",
+        "past_due": "Plată restantă din {date}.",
+        "cancelled": "Anulat pe {date}.",
+        "complimentary": "Gratuit din partea Astrabela până la {date}."
+      },
+      "details": "Datele salonului",
+      "fields": {
+        "name": "Denumire",
+        "district": "Cartier",
+        "address": "Adresă",
+        "postalCode": "Cod poștal",
+        "phone": "Telefon",
+        "nif": "Cod fiscal (CUI)",
+        "description": "Descriere",
+        "cuisine": "Bucătărie"
+      },
+      "save": "Salvează",
+      "restaurant": {
+        "welcome": "Bine ați venit! Completați profilul, creați meniul și trimiteți restaurantul spre publicare.",
+        "notReady": "Adăugați cel puțin un preparat în meniu înainte de trimitere.",
+        "details": "Datele restaurantului",
+        "statusHelp": {
+          "draft": "Restaurantul nu este încă în catalog.",
+          "pending": "Verificăm restaurantul.",
+          "active": "Restaurantul este publicat și meniul este vizibil.",
+          "suspended": "Restaurantul este suspendat. Vă rugăm să ne contactați."
+        }
+      },
+      "social": {
+        "title": "Rețele sociale",
+        "hint": "Apar pe pagina dvs. publică. Scrieți numele de utilizator (@exemplu) sau lipiți linkul.",
+        "invalid": "Nu am recunoscut linkul {network}. Verificați-l și salvați din nou.",
+        "placeholders": {
+          "instagram": "@salonul_tau",
+          "facebook": "facebook.com/salonul-tau",
+          "tiktok": "@salonul_tau",
+          "whatsapp": "0712 345 678",
+          "website": "www.salonul-tau.ro"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Încă nu există recenzii.",
+      "hidden": "ascunsă de moderare",
+      "replyPlaceholder": "Răspundeți public…",
+      "updateReply": "Actualizează răspunsul",
+      "reply": "Răspunde",
+      "inviteTitle": "Cereți o recenzie unui client fidel",
+      "inviteHint": "Înregistrați o vizită care a avut deja loc și obțineți un link personal prin care clientul poate evalua specialistul. Trimiteți-l prin WhatsApp, SMS sau cum doriți. Nu este nevoie de cont.",
+      "inviteMasterService": "Specialist și serviciu",
+      "inviteDate": "Data vizitei",
+      "inviteClientName": "Numele clientului",
+      "inviteClientEmail": "E-mail (opțional)",
+      "inviteClientPhone": "Mobil (opțional)",
+      "inviteLanguage": "Limba mesajului",
+      "inviteSend": "Cere o recenzie",
+      "inviteRules": "Un link este valabil pentru o singură recenzie a unei singure vizite. Vizite din ultimele 90 de zile, o cerere pentru fiecare client și specialist la fiecare 30 de zile. Aceste recenzii poartă eticheta „vizită confirmată de salon”, iar salonul nu le poate șterge sau ascunde, nici pe cele negative.",
+      "inviteNoTeam": "Adăugați un specialist cu servicii în fila Echipa pentru a cere recenzii.",
+      "invited": "Cerere creată. Acum trimiteți mesajul clientului: copiați-l sau deschideți WhatsApp cu butoanele de mai jos.",
+      "inviteErrors": {
+        "invalid": "Verificați numele, e-mailul (dacă este completat) și data (până la 90 de zile în urmă, nu în viitor).",
+        "not_found": "Specialistul sau serviciul nu a fost găsit.",
+        "not_allowed": "Această cerere nu poate fi trimisă.",
+        "duplicate": "Ați cerut deja acestui client o recenzie pentru acest specialist în ultimele 30 de zile.",
+        "limit": "Ați atins limita de cereri pentru azi. Încercați din nou mâine.",
+        "phone": "Număr de telefon nevalid. Alegeți țara și scrieți numărul complet."
+      },
+      "invitationsTitle": "Cereri trimise",
+      "invitationWaiting": "în așteptare",
+      "invitationReviewed": "evaluat",
+      "listTitle": "Recenzii",
+      "viaAstrabela": "programare prin Astrabela",
+      "viaSalon": "vizită confirmată de salon",
+      "cannotDelete": "Saloanele nu pot șterge recenziile. Puteți răspunde public sau semnala o recenzie falsă pentru moderare.",
+      "shareCopy": "Copiază mesajul",
+      "shareCopied": "Copiat ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "recenzie de client"
+    },
+    "admin": {
+      "pending": "Saloane în așteptarea publicării",
+      "none": "Nimic în așteptare.",
+      "approve": "Aprobă",
+      "reject": "Trimite înapoi",
+      "reports": "Recenzii semnalate",
+      "reason": "Motiv",
+      "hide": "Ascunde recenzia",
+      "keep": "Păstrează",
+      "subs": {
+        "title": "Abonamente",
+        "hint": "Oferiți luni gratuite sau stabiliți data până la care abonamentul gratuit este valabil. Cadoul începe când se termină perioada pe care salonul o are deja.",
+        "search": "Căutare după nume, localitate sau cod fiscal",
+        "find": "Caută",
+        "empty": "Niciun salon găsit.",
+        "none": "Fără abonament",
+        "manage": "Gestionează",
+        "months": "Luni gratuite",
+        "monthsN": "{n, plural, one {# lună} few {# luni} other {# de luni}}",
+        "note": "Notă (opțional)",
+        "notePlaceholder": "De ex. partener fondator",
+        "grant": "Oferă",
+        "until": "Gratuit până la",
+        "set": "Setează data",
+        "cancel": "Încheie abonamentul acum",
+        "cancelHint": "Salonul dispare din căutare până la un nou abonament.",
+        "saved": "Abonament actualizat.",
+        "invalid": "Alegeți o dată din viitor.",
+        "salonStatus": {
+          "draft": "Ciornă",
+          "pending": "În așteptare",
+          "active": "Publicat",
+          "suspended": "Suspendat"
+        },
+        "status": {
+          "trial": "Probă",
+          "active": "Activ",
+          "past_due": "Restant",
+          "cancelled": "Anulat",
+          "complimentary": "Gratuit"
+        },
+        "endsOn": "până la {date}",
+        "endedOn": "din {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restaurant"
+        }
+      },
+      "title": "Administrare"
+    },
+    "menu": {
+      "hint": "Organizați meniul pe secțiuni. Modificările apar imediat pe pagina publică și în spatele codului QR de pe mese.",
+      "viewPublic": "Vezi meniul public",
+      "invalid": "Verificați denumirea și prețul (de exemplu 12,50).",
+      "empty": "Începeți cu o secțiune, de exemplu „Aperitive”, apoi adăugați preparate.",
+      "editSection": "Editează secțiunea",
+      "sectionName": "Secțiune nouă",
+      "sectionNameEn": "Denumire în engleză (opțional)",
+      "sectionPlaceholder": "Aperitive",
+      "save": "Salvează",
+      "deleteSection": "Șterge secțiunea și preparatele ei",
+      "addSection": "Adaugă secțiune",
+      "addDish": "Adaugă preparat",
+      "editDish": "Editează preparatul",
+      "deleteDish": "Șterge preparatul",
+      "available": "disponibil",
+      "soldOut": "epuizat",
+      "dishName": "Denumirea preparatului",
+      "dishNameEn": "Denumire în engleză (opțional)",
+      "description": "Descriere",
+      "descriptionEn": "Descriere în engleză (opțional)",
+      "price": "Preț cu TVA, €",
+      "portion": "Porție (opțional)",
+      "portionPlaceholder": "300 g, 0,33 l, pentru 2 persoane",
+      "allergens": "Alergeni",
+      "tags": "Etichete",
+      "likes": "Aprecieri de la clienți"
+    },
+    "qr": {
+      "hint": "Tipăriți acest card și puneți-l pe mese. Clienții îl scanează cu camera telefonului, iar meniul se deschide în limba telefonului lor.",
+      "notListed": "Codul funcționează deja, dar clienții pot deschide meniul doar după publicarea restaurantului (fila Profil).",
+      "scan": "Scanați codul pentru a vedea meniul",
+      "scanEn": "Scan to see the menu",
+      "print": "Tipărește cardul",
+      "salon": {
+        "hint": "Tipăriți acest card și puneți-l la recepție sau lângă oglindă. Clienții îl scanează cu camera telefonului, se programează pentru următoarea vizită și își evaluează specialistul.",
+        "notListed": "Codul funcționează deja, dar clienții pot deschide pagina doar după publicarea salonului (fila Profil).",
+        "scan": "Programați-vă online și evaluați-vă specialistul",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Asistență"
+  },
+  "countries": {
+    "pt": "Portugalia",
+    "es": "Spania",
+    "fr": "Franța",
+    "it": "Italia",
+    "de": "Germania",
+    "nl": "Țările de Jos",
+    "be": "Belgia",
+    "ie": "Irlanda",
+    "lu": "Luxemburg",
+    "at": "Austria",
+    "ch": "Elveția",
+    "pl": "Polonia",
+    "cz": "Cehia",
+    "sk": "Slovacia",
+    "hu": "Ungaria",
+    "si": "Slovenia",
+    "hr": "Croația",
+    "ro": "România"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurante și meniuri",
+    "eyebrow": "Europa · Restaurante",
+    "title": "Vedeți meniul înainte să vă așezați la masă.",
+    "subtitle": "Meniuri complete cu prețuri actualizate chiar de restaurante, în limba locală și în engleză, cu alergeni.",
+    "searchPlaceholder": "Nume sau bucătărie",
+    "resultsTitle": "{count, plural, =0 {Niciun restaurant} one {# restaurant} few {# restaurante} other {# de restaurante}} în {city}",
+    "cityEmpty": "În {city} nu există încă restaurante pe Astrabela.",
+    "noMatch": "Niciun restaurant nu corespunde acestei căutări.",
+    "join": "Aveți un restaurant? Publicați-vă meniul",
+    "dishes": "{count, plural, one {# preparat} few {# preparate} other {# de preparate}}",
+    "from": "De la {price}"
+  },
+  "restaurant": {
+    "menu": "Meniu",
+    "allergens": "Alergeni",
+    "vatIncluded": "Prețuri în euro, TVA inclus.",
+    "allergyNote": "Aveți alergii? Spuneți-le personalului înainte de a comanda.",
+    "like": "Îmi place"
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "crustacee",
+    "eggs": "ouă",
+    "fish": "pește",
+    "peanuts": "arahide",
+    "soy": "soia",
+    "milk": "lapte",
+    "nuts": "fructe cu coajă lemnoasă",
+    "celery": "țelină",
+    "mustard": "muștar",
+    "sesame": "susan",
+    "sulphites": "sulfiți",
+    "lupin": "lupin",
+    "molluscs": "moluște"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "gluten_free": "Fără gluten",
+    "spicy": "Picant"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Site web"
+  },
+  "account": {
+    "title": "Autentificare",
+    "google": "Continuă cu Google",
+    "or": "sau",
+    "googleError": "Autentificarea cu Google nu a reușit. Încercați din nou.",
+    "openCabinet": "Deschide contul de afacere",
+    "hello": "Bună ziua, {name}",
+    "logout": "Deconectare",
+    "upcoming": "Programări viitoare",
+    "noUpcoming": "Nu aveți programări viitoare.",
+    "findSalon": "Găsiți un salon",
+    "past": "Programări anterioare",
+    "open": "Vezi",
+    "bookingsHint": "Aici apar programările făcute cât timp ați fost autentificat.",
+    "deleteTitle": "Șterge contul",
+    "deleteText": "Contul și datele de autentificare se șterg. Programările rămân la saloane, care le păstrează pentru a presta serviciul.",
+    "deleteConfirm": "Șterge contul meu",
+    "deleted": "Contul dvs. a fost șters.",
+    "email": "E-mail",
+    "password": "Parolă",
+    "submit": "Autentificare",
+    "loginError": "E-mail sau parolă greșită.",
+    "noAccount": "Nu aveți încă un cont?",
+    "createAccount": "Creează cont",
+    "businessQuestion": "Aveți un salon sau un restaurant?",
+    "businessLink": "Astrabela pentru afaceri",
+    "signedInBusiness": "Autentificat ca {name}.",
+    "adminPanel": "Administrare",
+    "welcome": "Cont creat. Aici apar programările făcute cât timp sunteți autentificat.",
+    "bookingsHintGoogle": "Aici apar programările făcute cât timp ați fost autentificat sau cu e-mailul dvs. Google.",
+    "registerTitle": "Creează cont",
+    "name": "Nume",
+    "passwordHint": "Cel puțin 8 caractere.",
+    "terms": "Accept <terms>termenii și condițiile</terms> și <privacy>politica de confidențialitate</privacy>.",
+    "registerSubmit": "Creează cont",
+    "haveAccount": "Aveți deja un cont?",
+    "registerErrors": {
+      "invalid": "Verificați numele, e-mailul și parola (cel puțin 8 caractere).",
+      "email_taken": "Există deja un cont cu acest e-mail. Autentificați-vă cu el."
+    }
+  },
+  "petFriendly": {
+    "label": "Animale acceptate",
+    "hint": "Animalele de companie sunt binevenite."
+  }
+}

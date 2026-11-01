@@ -36,6 +36,7 @@ const PRICES = {
   hu: ["havi 12,99 € havi fizetés esetén;", "havi 10,99 € féléves fizetés esetén;", "havi 9,99 € éves fizetés esetén."],
   sl: ["12,99 € na mesec pri mesečnem plačilu;", "10,99 € na mesec pri plačilu za 6 mesecev;", "9,99 € na mesec pri letnem plačilu."],
   hr: ["12,99 € mjesečno uz mjesečno plaćanje;", "10,99 € mjesečno uz plaćanje za 6 mjeseci;", "9,99 € mjesečno uz godišnje plaćanje."],
+  ro: ["12,99 € pe lună cu plată lunară;", "10,99 € pe lună cu plată la 6 luni;", "9,99 € pe lună cu plată anuală."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -51,6 +52,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "hu") return privacyHu();
   if (locale === "sl") return privacySl();
   if (locale === "hr") return privacyHr();
+  if (locale === "ro") return privacyRo();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -254,6 +256,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "hu") return termsHu();
   if (locale === "sl") return termsSl();
   if (locale === "hr") return termsHr();
+  if (locale === "ro") return termsRo();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -2534,6 +2537,197 @@ function termsHr(): LegalDoc {
       {
         title: "10. Izmjene",
         body: ["Ove uvjete možemo ažurirati. Nova verzija bit će objavljena ovdje s datumom; o važnim izmjenama tvrtke obavještavamo unaprijed."],
+      },
+    ],
+  };
+}
+
+function privacyRo(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Politica de confidențialitate",
+    updated: "Ultima actualizare: 1 noiembrie 2026",
+    intro:
+      "Astrabela este un catalog de saloane de înfrumusețare, frizerii și restaurante din Europa, cu programare online și recenzii ale clienților pentru fiecare specialist. Această politică explică ce date personale prelucrăm, în ce scop și ce drepturi aveți conform GDPR.",
+    sections: [
+      { title: "1. Cine suntem", body: [`Serviciul astrabela.com este operat de ${who()}. Întrebările despre datele dvs. le puteți trimite la ${o.email}.`] },
+      {
+        title: "2. Ce date prelucrăm",
+        body: [
+          "Când faceți o programare sau lăsați o recenzie (clienți):",
+          [
+            "numele, e-mailul și numărul de telefon mobil introduse la programare, precum și mesajul dvs. către salon;",
+            "programarea propriu-zisă: salonul, specialistul, serviciul, data, ora și starea;",
+            "recenzia dvs.: stelele, textul și numele pe care doriți să-l afișați;",
+            "dacă vă creați un cont de client: numele și e-mailul, iar parola stocată doar în formă criptată (hash) sau, la autentificarea cu Google, identificatorul contului dvs. Google (nu vedem niciodată parola dvs. Google).",
+          ],
+          "Când un salon sau un restaurant folosește Astrabela (afaceri):",
+          [
+            "numele și e-mailul titularului contului și parola (stocată doar criptat);",
+            "datele afacerii: denumirea, adresa, telefonul, e-mailul, codul fiscal, echipa, serviciile, prețurile, programul, meniul și linkurile către rețelele sociale.",
+          ],
+          "Date tehnice: cookie-uri de autentificare, un cookie pentru limbă și jurnale ale serverului (de exemplu adresa IP și ora cererii), păstrate din motive de securitate.",
+        ],
+      },
+      {
+        title: "3. Scopuri și temeiuri juridice",
+        body: [
+          [
+            "efectuarea și gestionarea programărilor: executarea unui contract (art. 6 alin. (1) lit. (b) GDPR);",
+            "gestionarea conturilor și abonamentelor afacerilor: executarea unui contract;",
+            "publicarea recenziilor și prevenirea recenziilor false: interesul legitim pentru un catalog de încredere (art. 6 alin. (1) lit. (f));",
+            "funcționarea în siguranță a serviciului: interes legitim;",
+            "obligații fiscale și contabile: obligație legală (art. 6 alin. (1) lit. (c)).",
+          ],
+          "Nu vindem datele personale și nu le folosim în scopuri publicitare.",
+        ],
+      },
+      {
+        title: "4. Rolul salonului și rolul nostru",
+        body: [
+          "Pentru programări, salonul pe care îl alegeți decide cum sunt folosite datele clienților săi și este operatorul acestora. Astrabela prelucrează aceste date în numele salonului, ca persoană împuternicită (art. 28 GDPR), doar pentru a furniza serviciul. Pentru recenzii, catalogul public și securitatea serviciului, operatorul este Astrabela.",
+        ],
+      },
+      {
+        title: "5. Destinatarii datelor",
+        body: [
+          "Salonul sau restaurantul la care faceți programarea. Folosim și următorii furnizori, legați prin contracte de prelucrare a datelor:",
+          [
+            "Vercel Inc. – găzduire; serviciul rulează în Frankfurt (UE). Vercel este o companie americană; transferul în afara UE este acoperit de clauzele contractuale standard ale UE și de cadrul EU-US Data Privacy Framework;",
+            "Neon – baza de date din Frankfurt (UE);",
+            "Cloudflare – serviciul de nume de domeniu (DNS);",
+            "Google – doar dacă vă autentificați cu Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Perioada de păstrare",
+        body: [
+          [
+            "datele clienților și ale programărilor: cât timp contul salonului este activ, cel mult 2 ani de la ultima dvs. vizită;",
+            "recenziile: cât timp salonul este pe Astrabela;",
+            "conturile clienților: până la ștergere (butonul de pe pagina contului);",
+            "conturile afacerilor: până la închiderea contului;",
+            "facturile și datele de plată: 10 ani, conform legislației fiscale portugheze;",
+            "cererile de înregistrare ale afacerilor: 30 de zile.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookie-uri",
+        body: [
+          "Folosim doar cookie-uri necesare funcționării serviciului: pentru a vă menține autentificat (și a afișa numele dvs. în meniu), unele de scurtă durată la autentificarea cu Google, unul pentru limbă și unul care reține preparatele care vă plac din meniul unui restaurant (apare doar când atingeți ♥ și conține un cod aleatoriu, nu numele dvs.). Nu folosim cookie-uri de analiză sau de publicitate, așa că nu vă cerem consimțământul pentru cookie-uri.",
+        ],
+      },
+      {
+        title: "8. Drepturile dvs.",
+        body: [
+          `Puteți solicita accesul la datele dvs., rectificarea sau ștergerea lor, restricționarea prelucrării, vă puteți opune prelucrării și puteți primi datele într-un format portabil. Scrieți-ne la ${o.email}; răspundem în termen de o lună. Dacă datele au fost transmise unui salon, îi vom transmite și cererea dvs. Puteți depune și o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (www.dataprotection.ro) sau la autoritatea portugheză CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Securitate",
+        body: [
+          "Serviciul funcționează doar prin HTTPS, parolele sunt stocate criptat, iar linkurile pentru programări și recenzii sunt personale și greu de ghicit. Nu vă partajați linkul personal cu alte persoane.",
+        ],
+      },
+      {
+        title: "10. Modificări",
+        body: ["Dacă modificăm această politică, vom publica aici noua versiune cu data. Despre modificările importante vă vom informa în cadrul serviciului."],
+      },
+    ],
+  };
+}
+
+function termsRo(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Termeni și condiții",
+    updated: "Ultima actualizare: 1 noiembrie 2026",
+    intro: `Acești termeni reglementează utilizarea serviciului astrabela.com, operat de ${who()}. Prin utilizarea serviciului sau crearea unui cont de afacere îi acceptați.`,
+    sections: [
+      {
+        title: "1. Serviciul",
+        body: [
+          "Astrabela permite clienților să găsească saloane de înfrumusețare, frizerii și restaurante, să programeze servicii online, să evalueze specialiștii și să consulte meniurile restaurantelor. Saloanele și restaurantele își gestionează în contul de afacere profilul, echipa, serviciile, calendarul și meniul.",
+        ],
+      },
+      {
+        title: "2. Pentru clienți",
+        body: [
+          [
+            "Folosirea Astrabela este gratuită și nu necesită cont.",
+            "Programarea este un contract între dvs. și salon. Serviciile, prețurile și durata sunt stabilite de salon, iar serviciul este prestat de salon, nu de Astrabela.",
+            "Astrabela nu primește plăți: plătiți direct la salon.",
+            "Puteți anula vizita prin linkul personal pe care îl primiți. Vă rugăm să o anulați dacă nu puteți veni.",
+          ],
+        ],
+      },
+      {
+        title: "3. Recenzii",
+        body: [
+          "Orice client autentificat pe Astrabela poate evalua un specialist al salonului, o dată la 30 de zile pentru același specialist. Clienții cu o vizită programată prin Astrabela sau confirmată de salon pot lăsa recenzii și printr-un link personal; aceste recenzii poartă eticheta de vizită confirmată. O recenzie trebuie:",
+          [
+            "să descrie propria dvs. experiență reală;",
+            "să nu conțină insulte, amenințări sau discriminare;",
+            "să nu conțină date personale ale altor persoane, reclame sau linkuri.",
+          ],
+          "Putem ascunde recenziile care încalcă aceste reguli. Salonul nu poate șterge sau modifica recenziile; poate răspunde public sau poate semnala o recenzie pentru moderare.",
+        ],
+      },
+      {
+        title: "4. Pentru saloane și restaurante",
+        body: [
+          [
+            "Datele din profil, prețurile și meniul trebuie să fie corecte și actualizate. Dvs. răspundeți pentru ele și pentru serviciile dvs.",
+            "Păstrați-vă parola în siguranță; răspundeți pentru activitatea din contul dvs.",
+            "Nu creați programări, recenzii sau cereri de recenzie false și nu cereți recenzii în schimbul unei recompense.",
+            "În căutare apar doar profilurile cu abonament activ sau aflate în perioada de probă.",
+          ],
+        ],
+      },
+      {
+        title: "5. Prețuri",
+        body: [
+          "Pentru saloane, frizerii și restaurante primele 3 luni sunt gratuite, fără card la început. După aceea, pentru a fi afișat este necesar un abonament:",
+          PRICES.ro,
+          "Condițiile de plată sunt afișate înainte de fiecare debitare. Putem modifica prețurile cu un preaviz de cel puțin 30 de zile; modificarea se aplică de la următoarea perioadă de facturare.",
+        ],
+      },
+      {
+        title: "6. Acord de prelucrare a datelor (afaceri)",
+        body: [
+          "Pentru datele clienților din programări, afacerea este operator, iar Astrabela este persoană împuternicită (art. 28 GDPR). Astrabela:",
+          [
+            "prelucrează aceste date doar pentru a furniza serviciul și conform instrucțiunilor pe care afacerea le dă prin intermediul serviciului;",
+            "le păstrează confidențialitatea și le protejează prin măsuri de securitate adecvate;",
+            "folosește doar subîmputerniciții enumerați în politica de confidențialitate și informează în prealabil afacerile despre cei noi;",
+            "ajută afacerea în privința cererilor clienților și a notificării încălcărilor securității datelor;",
+            "după închiderea contului șterge sau predă datele, cu excepția cazului în care legea impune păstrarea lor.",
+          ],
+        ],
+      },
+      {
+        title: "7. Suspendarea și închiderea contului",
+        body: [
+          "Puteți închide contul de afacere oricând, scriindu-ne. Putem suspenda sau elimina un profil care încalcă acești termeni, legea sau drepturile altora, indicând motivul.",
+        ],
+      },
+      {
+        title: "8. Răspundere",
+        body: [
+          "Ne străduim ca serviciul să fie disponibil și corect, dar nu putem garanta că va funcționa mereu fără întreruperi sau erori. Astrabela nu este parte la contractul dintre client și salon și nu răspunde pentru serviciile salonului. Nimic din acești termeni nu limitează drepturile legale ale consumatorilor.",
+        ],
+      },
+      {
+        title: "9. Legea aplicabilă și reclamații",
+        body: [
+          `Acestor termeni li se aplică legea portugheză, fără a aduce atingere protecției pe care v-o oferă, în calitate de consumator, legea țării dvs. de reședință. Reclamațiile le puteți trimite la ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Modificări",
+        body: ["Putem actualiza acești termeni. Noua versiune va fi publicată aici cu data; despre modificările importante informăm afacerile în prealabil."],
       },
     ],
   };
