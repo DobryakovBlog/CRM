@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  sv: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Bokning bekräftad: ${r.salon.name}`,
+      text: `Hej ${r.client.name},\n\n${r.service.name} hos ${r.staff.name}\n${when}\n${r.salon.address}\n\nHantera eller avboka: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Påminnelse: i morgon hos ${r.salon.name}`,
+      text: `Hej ${r.client.name},\n\nvi påminner om din bokning: ${r.service.name} hos ${r.staff.name}, ${when}.\nKan du inte komma? Avboka här: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Hur var ditt besök hos ${r.salon.name}?`,
+      text: `Hej ${r.client.name},\n\nbetygsätt ${r.staff.name}. Bara kunder med ett bekräftat besök kan skriva omdömen.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} ber om ditt omdöme`,
+      text: `Hej ${r.client.name},\n\n${r.staff.name} på ${r.salon.name} tackar för ditt besök (${r.service.name}) och vill gärna höra vad du tyckte på Astrabela. Det tar en minut och du behöver inget konto.\nLänken är personlig och gäller ett omdöme: ${link}`,
     }),
   },
   da: {

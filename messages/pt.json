@@ -82,6 +82,7 @@
     "ro": "Romeno",
     "bg": "Búlgaro",
     "da": "Dinamarquês",
+    "sv": "Sueco",
     "ru": "Russo",
     "uk": "Ucraniano"
   },
@@ -510,7 +511,8 @@
     "hr": "Croácia",
     "ro": "Roménia",
     "bg": "Bulgária",
-    "dk": "Dinamarca"
+    "dk": "Dinamarca",
+    "se": "Suécia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes e menus",

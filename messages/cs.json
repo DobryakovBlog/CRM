@@ -82,6 +82,7 @@
     "ro": "Rumunština",
     "bg": "Bulharština",
     "da": "Dánština",
+    "sv": "Švédština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -510,7 +511,8 @@
     "hr": "Chorvatsko",
     "ro": "Rumunsko",
     "bg": "Bulharsko",
-    "dk": "Dánsko"
+    "dk": "Dánsko",
+    "se": "Švédsko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",
