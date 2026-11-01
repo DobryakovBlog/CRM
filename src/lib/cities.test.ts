@@ -201,3 +201,19 @@ describe("Belgian places", () => {
     expect(phoneCountry("charleroi")).toBe("BE");
   });
 });
+
+describe("Irish places", () => {
+  it("lists towns by county under their English names", () => {
+    expect(placeBySlug("dublin")).toMatchObject({ name: "Dublin", country: "ie", area: "Dublin" });
+    expect(searchPlaces("mullingar", [], 30, "ie")[0]).toMatchObject({ name: "Mullingar", area: "Westmeath" });
+    expect(searchPlaces("tallaght", [], 30, "ie")[0].area).toBe("Dublin");
+    const ballina = searchPlaces("ballina", [], 30, "ie").filter((p) => p.name === "Ballina").map((p) => p.area);
+    expect(ballina.sort()).toEqual(["Mayo", "Tipperary"]);
+  });
+
+  it("uses Dublin time and starts Irish visitors in Dublin", () => {
+    expect(placeTimezone("cork")).toBe("Europe/Dublin");
+    expect(cityFieldSetup([], undefined, "en", "ie")).toMatchObject({ defaultCountry: "ie", defaultSlugs: { ie: "dublin" } });
+    expect(phoneCountry("galway")).toBe("IE");
+  });
+});

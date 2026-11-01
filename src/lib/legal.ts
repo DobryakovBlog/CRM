@@ -42,7 +42,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "en") {
     return {
       title: "Privacy policy",
-      updated: "Last updated: 28 October 2026",
+      updated: "Last updated: 30 October 2026",
       intro:
         "Astrabela is a catalogue of beauty salons, barbershops and restaurants in the European Union, with online booking and client reviews of each professional. This policy explains what personal data we process, why, and what your rights are under the GDPR.",
       sections: [
@@ -118,7 +118,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
         {
           title: "8. Your rights",
           body: [
-            `You can ask us to access, correct or delete your data, to restrict or object to its processing, and to receive it in a portable format. Write to ${o.email}; we answer within one month. If the data was given to a salon, we will also pass your request on to it. You can also complain to the Portuguese data protection authority, CNPD (www.cnpd.pt), or to the data protection authority of the country where you live, such as the Spanish AEPD (www.aepd.es), the French CNIL (www.cnil.fr) or the Italian Garante (www.garanteprivacy.it).`,
+            `You can ask us to access, correct or delete your data, to restrict or object to its processing, and to receive it in a portable format. Write to ${o.email}; we answer within one month. If the data was given to a salon, we will also pass your request on to it. You can also complain to the Portuguese data protection authority, CNPD (www.cnpd.pt), or to the data protection authority of the country where you live, such as the Spanish AEPD (www.aepd.es), the French CNIL (www.cnil.fr), the Italian Garante (www.garanteprivacy.it) or the Irish Data Protection Commission (www.dataprotection.ie).`,
           ],
         },
         {
@@ -136,7 +136,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   }
   return {
     title: "Política de privacidade",
-    updated: "Última atualização: 28 de outubro de 2026",
+    updated: "Última atualização: 30 de outubro de 2026",
     intro:
       "A Astrabela é um catálogo de salões de beleza, barbearias e restaurantes na União Europeia, com marcação online e avaliações de clientes sobre cada profissional. Esta política explica que dados pessoais tratamos, para quê e quais são os seus direitos ao abrigo do RGPD.",
     sections: [
@@ -212,7 +212,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
       {
         title: "8. Os seus direitos",
         body: [
-          `Pode pedir acesso, retificação ou apagamento dos seus dados, a limitação ou oposição ao tratamento, e recebê-los num formato portável. Escreva para ${o.email}; respondemos no prazo de um mês. Se os dados foram dados a um salão, encaminhamos-lhe também o seu pedido. Pode ainda apresentar queixa à Comissão Nacional de Proteção de Dados, CNPD (www.cnpd.pt), ou à autoridade de proteção de dados do país onde vive, como a AEPD em Espanha (www.aepd.es), a CNIL em França (www.cnil.fr) ou o Garante em Itália (www.garanteprivacy.it).`,
+          `Pode pedir acesso, retificação ou apagamento dos seus dados, a limitação ou oposição ao tratamento, e recebê-los num formato portável. Escreva para ${o.email}; respondemos no prazo de um mês. Se os dados foram dados a um salão, encaminhamos-lhe também o seu pedido. Pode ainda apresentar queixa à Comissão Nacional de Proteção de Dados, CNPD (www.cnpd.pt), ou à autoridade de proteção de dados do país onde vive, como a AEPD em Espanha (www.aepd.es), a CNIL em França (www.cnil.fr), o Garante em Itália (www.garanteprivacy.it) ou a Data Protection Commission na Irlanda (www.dataprotection.ie).`,
         ],
       },
       {
