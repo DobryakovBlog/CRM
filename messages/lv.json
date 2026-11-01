@@ -87,6 +87,7 @@
     "fi": "Somu",
     "et": "Igauņu",
     "lv": "Latviešu",
+    "lt": "Lietuviešu",
     "ru": "Krievu",
     "uk": "Ukraiņu"
   },
@@ -520,7 +521,8 @@
     "no": "Norvēģija",
     "fi": "Somija",
     "ee": "Igaunija",
-    "lv": "Latvija"
+    "lv": "Latvija",
+    "lt": "Lietuva"
   },
   "restaurants": {
     "metaTitle": "Restorāni un ēdienkartes",

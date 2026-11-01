@@ -44,6 +44,7 @@ const PRICES = {
   fi: ["12,99 € kuukaudessa kuukausimaksulla;", "10,99 € kuukaudessa 6 kuukauden maksulla;", "9,99 € kuukaudessa vuosimaksulla."],
   et: ["12,99 € kuus igakuise maksega;", "10,99 € kuus 6 kuu maksega;", "9,99 € kuus aastamaksega."],
   lv: ["12,99 € mēnesī, maksājot katru mēnesi;", "10,99 € mēnesī, maksājot par 6 mēnešiem;", "9,99 € mēnesī, maksājot par gadu."],
+  lt: ["12,99 € per mėnesį mokant kas mėnesį;", "10,99 € per mėnesį mokant už 6 mėnesius;", "9,99 € per mėnesį mokant už metus."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -67,6 +68,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "fi") return privacyFi();
   if (locale === "et") return privacyEt();
   if (locale === "lv") return privacyLv();
+  if (locale === "lt") return privacyLt();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -278,6 +280,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "fi") return termsFi();
   if (locale === "et") return termsEt();
   if (locale === "lv") return termsLv();
+  if (locale === "lt") return termsLt();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -4086,6 +4089,197 @@ function termsLv(): LegalDoc {
       {
         title: "10. Izmaiņas",
         body: ["Mēs varam atjaunināt šos noteikumus. Jaunā versija tiks publicēta šeit ar datumu; par būtiskām izmaiņām uzņēmumus informējam iepriekš."],
+      },
+    ],
+  };
+}
+
+function privacyLt(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Privatumo politika",
+    updated: "Paskutinį kartą atnaujinta: 2026 m. lapkričio 1 d.",
+    intro:
+      "Astrabela yra Europos grožio salonų, barbershopų ir restoranų katalogas su registracija internetu ir klientų atsiliepimais apie kiekvieną specialistą. Ši politika paaiškina, kokius asmens duomenis tvarkome, kodėl ir kokias teises Jūs turite pagal BDAR.",
+    sections: [
+      { title: "1. Kas mes esame", body: [`Paslaugą astrabela.com valdo ${who()}. Klausimus apie savo duomenis galite siųsti adresu ${o.email}.`] },
+      {
+        title: "2. Kokius duomenis tvarkome",
+        body: [
+          "Kai registruojatės arba rašote atsiliepimą (klientai):",
+          [
+            "registracijoje nurodytas vardas, el. paštas ir mobiliojo telefono numeris bei Jūsų žinutė salonui;",
+            "pati registracija: salonas, specialistas, paslauga, data, laikas ir būsena;",
+            "Jūsų atsiliepimas: žvaigždutės, tekstas ir vardas, kurį norite rodyti;",
+            "jei susikuriate kliento paskyrą: vardas ir el. paštas bei slaptažodis, saugomas tik užšifruotas (maišos reikšmė), arba, jei prisijungiate per Google, Jūsų Google paskyros identifikatorius (Jūsų Google slaptažodžio niekada nematome).",
+          ],
+          "Kai salonas ar restoranas naudojasi Astrabela (verslas):",
+          [
+            "paskyros savininko vardas ir el. paštas bei slaptažodis (saugomas tik užšifruotas);",
+            "verslo duomenys: pavadinimas, adresas, telefonas, el. paštas, įmonės kodas, komanda, paslaugos, kainos, darbo laikas, meniu ir nuorodos į socialinius tinklus.",
+          ],
+          "Techniniai duomenys: prisijungimo slapukai, kalbos slapukas ir serverio žurnalai (pvz., IP adresas ir užklausos laikas), saugomi saugumo tikslais.",
+        ],
+      },
+      {
+        title: "3. Tikslai ir teisinis pagrindas",
+        body: [
+          [
+            "registracijų atlikimas ir valdymas: sutarties vykdymas (BDAR 6 straipsnio 1 dalies b punktas);",
+            "verslo paskyrų ir prenumeratų valdymas: sutarties vykdymas;",
+            "atsiliepimų skelbimas ir netikrų atsiliepimų prevencija: teisėtas interesas turėti patikimą katalogą (6 straipsnio 1 dalies f punktas);",
+            "saugus paslaugos veikimas: teisėtas interesas;",
+            "mokesčių ir apskaitos pareigos: teisinė prievolė (6 straipsnio 1 dalies c punktas).",
+          ],
+          "Asmens duomenų neparduodame ir nenaudojame reklamai.",
+        ],
+      },
+      {
+        title: "4. Salono ir mūsų vaidmuo",
+        body: [
+          "Registracijų atveju Jūsų pasirinktas salonas nustato, kaip naudojami jo klientų duomenys, ir yra jų valdytojas. Astrabela tvarko šiuos duomenis salono vardu kaip duomenų tvarkytoja (BDAR 28 straipsnis) ir tik paslaugai teikti. Atsiliepimų, viešo katalogo ir paslaugos saugumo atžvilgiu valdytoja yra Astrabela.",
+        ],
+      },
+      {
+        title: "5. Duomenų gavėjai",
+        body: [
+          "Salonas ar restoranas, kuriame registruojatės. Taip pat naudojamės šiais paslaugų teikėjais, su kuriais sudarytos duomenų tvarkymo sutartys:",
+          [
+            "Vercel Inc. – talpinimas; paslauga veikia Frankfurte (ES). Vercel yra JAV bendrovė; duomenų perdavimą už ES ribų užtikrina ES standartinės sutarčių sąlygos ir EU-US Data Privacy Framework;",
+            "Neon – duomenų bazė Frankfurte (ES);",
+            "Cloudflare – domenų vardų paslauga (DNS);",
+            "Google – tik jei prisijungiate per Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Saugojimo terminai",
+        body: [
+          [
+            "klientų ir registracijų duomenys: kol salono paskyra aktyvi, ne ilgiau kaip 2 metus po Jūsų paskutinio apsilankymo;",
+            "atsiliepimai: kol salonas yra Astrabela;",
+            "klientų paskyros: kol jas ištrinsite (mygtukas paskyros puslapyje);",
+            "verslo paskyros: kol paskyra uždaroma;",
+            "sąskaitos ir mokėjimų duomenys: 10 metų pagal Portugalijos mokesčių teisę;",
+            "verslo registracijos paraiškos: 30 dienų.",
+          ],
+        ],
+      },
+      {
+        title: "7. Slapukai",
+        body: [
+          "Naudojame tik paslaugos veikimui būtinus slapukus: kad liktumėte prisijungę (ir Jūsų vardas būtų matomas meniu), trumpalaikius prisijungiant per Google, vieną kalbai ir vieną, kuris įsimena restorano meniu Jums patikusius patiekalus (sukuriamas tik paspaudus ♥ ir jame yra atsitiktinis kodas, o ne Jūsų vardas). Analitikos ar reklamos slapukų nenaudojame, todėl sutikimo dėl slapukų neprašome.",
+        ],
+      },
+      {
+        title: "8. Jūsų teisės",
+        body: [
+          `Galite prašyti susipažinti su savo duomenimis, juos ištaisyti ar ištrinti, apriboti tvarkymą, nesutikti su tvarkymu ir gauti savo duomenis perkeliamu formatu. Rašykite adresu ${o.email}; atsakome per vieną mėnesį. Jei duomenys perduoti salonui, Jūsų prašymą persiųsime ir jam. Skundą taip pat galite pateikti Valstybinei duomenų apsaugos inspekcijai (vdai.lrv.lt) arba Portugalijos priežiūros institucijai CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Saugumas",
+        body: [
+          "Paslauga veikia tik per HTTPS, slaptažodžiai saugomi užšifruoti, o registracijų ir atsiliepimų nuorodos yra asmeninės ir sunkiai atspėjamos. Nesidalykite savo asmenine nuoroda su kitais.",
+        ],
+      },
+      {
+        title: "10. Pakeitimai",
+        body: ["Jei pakeisime šią politiką, naują versiją su data paskelbsime čia. Apie esminius pakeitimus pranešime paslaugoje."],
+      },
+    ],
+  };
+}
+
+function termsLt(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Naudojimo sąlygos",
+    updated: "Paskutinį kartą atnaujintos: 2026 m. lapkričio 1 d.",
+    intro: `Šios sąlygos reglamentuoja paslaugos astrabela.com naudojimą. Paslaugą valdo ${who()}. Naudodamiesi paslauga arba susikurdami verslo paskyrą, Jūs su jomis sutinkate.`,
+    sections: [
+      {
+        title: "1. Paslauga",
+        body: [
+          "Astrabela leidžia klientams rasti grožio salonus, barbershopus ir restoranus, registruotis paslaugoms internetu, vertinti specialistus ir peržiūrėti restoranų meniu. Salonai ir restoranai verslo paskyroje valdo savo profilį, komandą, paslaugas, kalendorių ir meniu.",
+        ],
+      },
+      {
+        title: "2. Klientams",
+        body: [
+          [
+            "Astrabela naudotis nemokama ir paskyros nereikia.",
+            "Registracija yra sutartis tarp Jūsų ir salono. Paslaugas, kainas ir trukmę nustato salonas, ir paslaugą teikia salonas, o ne Astrabela.",
+            "Astrabela nepriima mokėjimų: mokate tiesiogiai salone.",
+            "Apsilankymą galite atšaukti gauta asmenine nuoroda. Prašome atšaukti, jei negalite atvykti.",
+          ],
+        ],
+      },
+      {
+        title: "3. Atsiliepimai",
+        body: [
+          "Kiekvienas prisijungęs Astrabela klientas gali įvertinti salono specialistą kartą per 30 dienų už tą patį specialistą. Klientai, kurių apsilankymas užregistruotas per Astrabela arba patvirtintas salone, atsiliepimus gali rašyti ir asmenine nuoroda; tokie atsiliepimai pažymimi kaip patvirtinto apsilankymo. Atsiliepimas turi būti:",
+          [
+            "apie Jūsų pačių tikrą patirtį;",
+            "be įžeidimų, grasinimų ir diskriminacijos;",
+            "be kitų asmenų duomenų, reklamos ar nuorodų.",
+          ],
+          "Galime paslėpti šias sąlygas pažeidžiančius atsiliepimus. Salonas negali ištrinti ar keisti atsiliepimų; jis gali atsakyti viešai arba pranešti apie atsiliepimą moderatoriams.",
+        ],
+      },
+      {
+        title: "4. Salonams ir restoranams",
+        body: [
+          [
+            "Profilio duomenys, kainos ir meniu turi būti teisingi ir aktualūs. Už juos ir savo paslaugas atsakote Jūs.",
+            "Saugokite slaptažodį; už veiksmus savo paskyroje atsakote Jūs.",
+            "Nekurkite netikrų registracijų, atsiliepimų ar atsiliepimų prašymų ir neprašykite atsiliepimų už atlygį.",
+            "Paieškoje rodomi tik profiliai su aktyvia prenumerata arba bandomuoju laikotarpiu.",
+          ],
+        ],
+      },
+      {
+        title: "5. Kainos",
+        body: [
+          "Salonams, barbershopams ir restoranams pirmieji 3 mėnesiai nemokami, pradėti galima be kortelės. Vėliau, kad profilis būtų matomas, reikia prenumeratos:",
+          PRICES.lt,
+          "Mokėjimo sąlygos rodomos prieš kiekvieną nuskaitymą. Kainas galime keisti įspėję bent prieš 30 dienų; pakeitimai galioja nuo kito atsiskaitymo laikotarpio.",
+        ],
+      },
+      {
+        title: "6. Duomenų tvarkymo sutartis (verslas)",
+        body: [
+          "Klientų duomenų registracijose atžvilgiu verslas yra valdytojas, o Astrabela – tvarkytoja (BDAR 28 straipsnis). Astrabela:",
+          [
+            "tvarko šiuos duomenis tik paslaugai teikti ir pagal nurodymus, kuriuos verslas pateikia paslaugoje;",
+            "užtikrina jų konfidencialumą ir saugo juos tinkamomis saugumo priemonėmis;",
+            "naudojasi tik privatumo politikoje nurodytais pagalbiniais tvarkytojais ir apie naujus iš anksto informuoja verslą;",
+            "padeda verslui atsakyti į klientų prašymus ir pranešti apie duomenų saugumo pažeidimus;",
+            "uždarius paskyrą duomenis ištrina arba perduoda, nebent įstatymas reikalauja juos saugoti.",
+          ],
+        ],
+      },
+      {
+        title: "7. Paskyros sustabdymas ir uždarymas",
+        body: [
+          "Verslo paskyrą galite uždaryti bet kada, parašę mums. Galime sustabdyti arba pašalinti profilį, pažeidžiantį šias sąlygas, įstatymus ar kitų teises, nurodydami priežastį.",
+        ],
+      },
+      {
+        title: "8. Atsakomybė",
+        body: [
+          "Stengiamės, kad paslauga būtų prieinama ir tiksli, tačiau negalime garantuoti, kad ji visada veiks be pertrūkių ir klaidų. Astrabela nėra kliento ir salono sutarties šalis ir neatsako už salono paslaugas. Niekas šiose sąlygose neriboja vartotojų įstatyminių teisių.",
+        ],
+      },
+      {
+        title: "9. Taikytina teisė ir skundai",
+        body: [
+          `Sąlygoms taikoma Portugalijos teisė, nepažeidžiant apsaugos, kurią Jums kaip vartotojui suteikia Jūsų gyvenamosios šalies teisė. Skundus siųskite adresu ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Pakeitimai",
+        body: ["Šias sąlygas galime atnaujinti. Nauja versija bus paskelbta čia su data; apie esminius pakeitimus verslą informuojame iš anksto."],
       },
     ],
   };

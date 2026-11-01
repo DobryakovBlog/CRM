@@ -87,6 +87,7 @@
     "fi": "Finščina",
     "et": "Estonščina",
     "lv": "Latvijščina",
+    "lt": "Litovščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -520,7 +521,8 @@
     "no": "Norveška",
     "fi": "Finska",
     "ee": "Estonija",
-    "lv": "Latvija"
+    "lv": "Latvija",
+    "lt": "Litva"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",

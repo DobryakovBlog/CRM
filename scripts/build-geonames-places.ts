@@ -151,6 +151,19 @@ const COUNTRIES: Record<string, Config> = {
       Aglona: "Latgale", Balvi: "Latgale", Baltinava: "Latgale", Cibla: "Latgale", Dagda: "Latgale", Daugavpils: "Latgale", "Ilūkste": "Latgale", Jaunaglona: "Latgale", "Kārsava": "Latgale", "Krāslava": "Latgale", "Līvāni": "Latgale", Ludza: "Latgale", "Preiļi": "Latgale", "Rēzekne": "Latgale", "Riebiņi": "Latgale", "Rugāji": "Latgale", "Varakļāni": "Latgale", "Vecvārkava": "Latgale", "Viļaka": "Latgale", "Viļāni": "Latgale", Zilupe: "Latgale",
     },
   },
+  lt: {
+    regions: {
+      "56": "Alytaus apskritis", "57": "Kauno apskritis", "58": "Klaipėdos apskritis", "59": "Marijampolės apskritis",
+      "60": "Panevėžio apskritis", "61": "Šiaulių apskritis", "62": "Tauragės apskritis", "63": "Telšių apskritis",
+      "64": "Utenos apskritis", "65": "Vilniaus apskritis",
+    },
+    names: {
+      "Akademija (Kaunas)": "Akademija", "Dainava (Kaunas)": "Dainava", Aukstadvaris: "Aukštadvaris", Birzai: "Biržai",
+      Kupiskis: "Kupiškis", Mastaiciai: "Mastaičiai", Mazeikiai: "Mažeikiai", "Naujoji Akmene": "Naujoji Akmenė",
+      Plunge: "Plungė", Radviliskis: "Radviliškis", Silute: "Šilutė", Taurage: "Tauragė", Telsiai: "Telšiai",
+      Ukmerge: "Ukmergė", Vilkaviskis: "Vilkaviškis",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

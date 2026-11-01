@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "title": "Astrabela: grožio salonai ir barbershopai su registracija internetu",
+    "description": "Raskite grožio saloną ar barbershopą Europoje, skaitykite klientų atsiliepimus apie kiekvieną specialistą ir užsiregistruokite internetu."
+  },
+  "nav": {
+    "forSalons": "Verslui",
+    "footer": "Astrabela · Klientų atsiliepimai apie kiekvieną specialistą",
+    "language": "Kalba",
+    "forClients": "Rasti saloną",
+    "salons": "Salonai",
+    "restaurants": "Restoranai",
+    "privacy": "Privatumas",
+    "terms": "Sąlygos",
+    "signIn": "Prisijungti",
+    "support": "Pagalba"
+  },
+  "home": {
+    "title": "Rinkitės geriausius. Pasitikėkite žvaigždėmis.",
+    "subtitle": "Geriausi Europos grožio salonai ir barbershopai, kuriuos klientai vertina pagal kiekvieną specialistą. Išsirinkite ir užsiregistruokite internetu per kelias sekundes.",
+    "why": {
+      "verified": {
+        "title": "Atsiliepimai apie specialistus",
+        "text": "Kiekvienas atsiliepimas skirtas vienam specialistui. Patvirtinti apsilankymai pažymėti atskirai."
+      },
+      "masters": {
+        "title": "Pasirinkite specialistą",
+        "text": "Kiekvienas specialistas turi savo įvertinimą."
+      },
+      "direct": {
+        "title": "Mokėkite salone",
+        "text": "Registracija nemokama, jokių mokėjimų internetu."
+      }
+    },
+    "eyebrow": "Europa · Grožio salonai ir barbershopai",
+    "featuredEyebrow": "Rekomenduojami",
+    "featuredTitle": "Geriausiai įvertinti salonai",
+    "browse": "Paslaugos"
+  },
+  "search": {
+    "city": "Miestas",
+    "service": "Paslauga",
+    "anyService": "Visos paslaugos",
+    "language": "Kalba",
+    "anyLanguage": "Bet kokia kalba",
+    "submit": "Ieškoti",
+    "resultsTitle": "{count, plural, =0 {Salonų nėra} one {# salonas} few {# salonai} many {# salono} other {# salonų}} {city, select, other {mieste {city}}}",
+    "empty": "Pagal šiuos filtrus salonų dar nėra.",
+    "new": "Naujas",
+    "from": "Nuo {price}",
+    "cityEmpty": "Mieste {city} Astrabela salonų dar nėra. Atidarome miestą po miesto.",
+    "cityEmptyCta": "Turite saloną ar barbershopą čia? Prisijunkite",
+    "country": "Šalis",
+    "comingSoon": "netrukus",
+    "cityPlaceholder": "Įveskite miestą",
+    "cityNoMatch": "Šiame mieste mūsų dar nėra"
+  },
+  "categories": {
+    "hair": "Plaukai",
+    "barber": "Barbershopas",
+    "nails": "Nagai",
+    "brows_lashes": "Antakiai ir blakstienos",
+    "skin": "Veido priežiūra",
+    "makeup": "Makiažas",
+    "massage": "Masažas",
+    "other": "Kita"
+  },
+  "languages": {
+    "pt": "Portugalų",
+    "en": "Anglų",
+    "es": "Ispanų",
+    "fr": "Prancūzų",
+    "de": "Vokiečių",
+    "it": "Italų",
+    "nl": "Olandų",
+    "pl": "Lenkų",
+    "cs": "Čekų",
+    "sk": "Slovakų",
+    "hu": "Vengrų",
+    "sl": "Slovėnų",
+    "hr": "Kroatų",
+    "ro": "Rumunų",
+    "bg": "Bulgarų",
+    "da": "Danų",
+    "sv": "Švedų",
+    "nb": "Norvegų",
+    "fi": "Suomių",
+    "et": "Estų",
+    "lv": "Latvių",
+    "lt": "Lietuvių",
+    "ru": "Rusų",
+    "uk": "Ukrainiečių"
+  },
+  "weekdays": {
+    "0": "Sekmadienis",
+    "1": "Pirmadienis",
+    "2": "Antradienis",
+    "3": "Trečiadienis",
+    "4": "Ketvirtadienis",
+    "5": "Penktadienis",
+    "6": "Šeštadienis"
+  },
+  "salon": {
+    "verifiedNote": "klientų atsiliepimai apie kiekvieną specialistą",
+    "services": "Paslaugos",
+    "minutes": "{n} min.",
+    "book": "Registruotis",
+    "reviews": "Atsiliepimai",
+    "reportThanks": "Ačiū. Pranešimą peržiūrėsime.",
+    "noReviews": "Atsiliepimų dar nėra.",
+    "withMaster": "pas {name}",
+    "verifiedVisit": "patvirtintas apsilankymas",
+    "salonReply": "Salono atsakymas",
+    "report": "Pranešti apie atsiliepimą",
+    "reportReason": "Priežastis",
+    "send": "Siųsti",
+    "team": "Komanda",
+    "payOnSite": "Mokama salone.",
+    "viaAstrabela": "registracija per Astrabela",
+    "viaSalon": "apsilankymą patvirtino salonas",
+    "writeReview": "Įvertinkite specialistą",
+    "master": "Specialistas",
+    "rating": "Įvertinimas",
+    "yourReview": "Jūsų atsiliepimas (neprivaloma)",
+    "publish": "Paskelbti atsiliepimą",
+    "signInToReview": "Prisijunkite, kad paliktumėte atsiliepimą.",
+    "signIn": "Prisijungti",
+    "reviewThanks": "Ačiū! Jūsų atsiliepimas paskelbtas.",
+    "reviewTooSoon": "Šį specialistą jau vertinote per pastarąsias 30 dienų.",
+    "reviewInvalid": "Pasirinkite specialistą ir įvertinimą.",
+    "viaClient": "kliento atsiliepimas"
+  },
+  "book": {
+    "minutes": "{n} min.",
+    "payOnSite": "mokama salone",
+    "errors": {
+      "invalid": "Patikrinkite duomenis ir bandykite dar kartą.",
+      "slot_taken": "Šis laikas ką tik užimtas. Pasirinkite kitą.",
+      "not_found": "Paslauga arba specialistas nepasiekiami.",
+      "not_allowed": "Šis specialistas šios paslaugos neteikia.",
+      "phone": "Įveskite teisingą mobiliojo telefono numerį su tinkamu šalies kodu."
+    },
+    "master": "Specialistas",
+    "anyMaster": "Bet kuris specialistas",
+    "day": "Diena",
+    "time": "Laikas",
+    "noSlots": "Šią dieną laisvo laiko nėra.",
+    "yourDetails": "Jūsų duomenys",
+    "name": "Vardas",
+    "email": "El. paštas",
+    "phone": "Telefonas",
+    "note": "Pastaba salonui (neprivaloma)",
+    "privacy": "Sutinku, kad salonas ir Astrabela tvarkytų mano duomenis šiai registracijai valdyti (<privacy>privatumo politika</privacy>).",
+    "confirm": "Patvirtinti registraciją",
+    "gateTitle": "Kaip norite tęsti?",
+    "gateText": "Su paskyra visas registracijas matysite vienoje vietoje ir duomenų daugiau vesti nereikės.",
+    "guest": "Be paskyros",
+    "signIn": "Prisijungti"
+  },
+  "booking": {
+    "created": "Registracija patvirtinta! Informaciją išsiuntėme el. paštu.",
+    "reviewThanks": "Ačiū už atsiliepimą!",
+    "error": "Veiksmo atlikti nepavyko.",
+    "status": {
+      "confirmed": "Patvirtinta",
+      "cancelled": "Atšaukta",
+      "completed": "Įvykdyta",
+      "no_show": "Neatvyko"
+    },
+    "with": "pas {name}",
+    "payOnSite": "mokama salone",
+    "cancel": "Atšaukti registraciją",
+    "reviewTitle": "Įvertinkite apsilankymą pas {name}",
+    "rating": "Įvertinimas",
+    "reviewText": "Komentaras",
+    "authorName": "Rodomas vardas",
+    "submitReview": "Paskelbti atsiliepimą",
+    "visitOn": "Apsilankymas {date}",
+    "moreTitle": "Daugiau salonų mieste {city}",
+    "moreLink": "Visi salonai"
+  },
+  "business": {
+    "landing": {
+      "title": "Daugiau klientų Jūsų salonui",
+      "subtitle": "Kalendorius internete ir klientų atsiliepimai. Jokių komisinių, viena kaina visai komandai.",
+      "start": "Išbandykite {months} mėn. nemokamai",
+      "features": {
+        "noCommission": "0 % komisinių nuo klientų",
+        "unlimitedStaff": "Neribotas darbuotojų skaičius",
+        "calendar": "Kalendorius internete ir rankinės registracijos",
+        "verifiedReviews": "Atsiliepimai apie kiekvieną specialistą",
+        "ownClients": "Klientai lieka Jūsų"
+      },
+      "restaurants": {
+        "eyebrow": "Restoranai",
+        "title": "Jūsų meniu internete, visada aktualus",
+        "text": "Paskelbkite meniu su kainomis ir alergenais savo kalba ir anglų kalba. Atsispausdinkite QR kodą staliukams ir keiskite kainas bet kada. Pirmieji 3 mėnesiai nemokami.",
+        "cta": "Išbandykite 3 mėn. nemokamai"
+      },
+      "trialNote": "Pirmieji {months} mėn. nemokami. Pradėti galima be kortelės."
+    },
+    "plans": {
+      "monthly": "Kas mėnesį",
+      "semiannual": "6 mėnesiai",
+      "annual": "12 mėnesių",
+      "perMonth": "per mėnesį + PVM"
+    },
+    "login": {
+      "title": "Prisijungti",
+      "error": "Neteisingas el. paštas arba slaptažodis.",
+      "email": "El. paštas",
+      "password": "Slaptažodis",
+      "submit": "Prisijungti",
+      "noAccount": "Dar neturite paskyros? Užregistruokite saloną"
+    },
+    "register": {
+      "title": "Užregistruokite verslą",
+      "errors": {
+        "invalid": "Patikrinkite laukus (slaptažodis bent 8 simbolių).",
+        "email_taken": "Šis el. paštas jau užregistruotas."
+      },
+      "fields": {
+        "salonName": "Verslo pavadinimas",
+        "city": "Miestas",
+        "address": "Adresas",
+        "phone": "Telefonas",
+        "name": "Jūsų vardas",
+        "email": "El. paštas",
+        "password": "Slaptažodis"
+      },
+      "terms": "Sutinku su <terms>naudojimo sąlygomis</terms>, įskaitant duomenų tvarkymo sutartį (BDAR), ir <privacy>privatumo politika</privacy>.",
+      "submit": "Sukurti paskyrą",
+      "kind": "Verslo tipas",
+      "kinds": {
+        "salon": "Salonas",
+        "restaurant": "Restoranas"
+      },
+      "kindHint": "Grožio salonai, barbershopai, nagų ir estetikos studijos renkasi „Salonas“. Tada pasirinkite paslaugų kategorijas, pvz., „Barbershopas“.",
+      "googleAs": "Registruojatės per Google kaip {email}. Slaptažodžio nereikia."
+    },
+    "salonStatus": {
+      "draft": "Juodraštis",
+      "pending": "Tikrinamas",
+      "active": "Paskelbtas",
+      "suspended": "Sustabdytas"
+    },
+    "logout": "Atsijungti",
+    "tabs": {
+      "calendar": "Kalendorius",
+      "services": "Paslaugos",
+      "team": "Komanda",
+      "reviews": "Atsiliepimai",
+      "profile": "Profilis",
+      "admin": "Administravimas",
+      "menu": "Meniu",
+      "qr": "QR kodas"
+    },
+    "calendar": {
+      "today": "Šiandien",
+      "errors": {
+        "invalid": "Neteisingi duomenys.",
+        "slot_taken": "Šis laikas jau užimtas.",
+        "not_found": "Paslauga arba specialistas nerasti.",
+        "not_allowed": "Šis specialistas šios paslaugos neteikia.",
+        "phone": "Neteisingas telefono numeris. Pasirinkite šalį ir įveskite visą numerį."
+      },
+      "noTeam": "Pridėkite specialistus skiltyje „Komanda“.",
+      "free": "Registracijų nėra.",
+      "noShows": "{n, plural, one {# neatvykimas} few {# neatvykimai} many {# neatvykimo} other {# neatvykimų}}",
+      "mark": {
+        "completed": "Atvyko",
+        "no_show": "Neatvyko",
+        "cancelled": "Atšaukti"
+      },
+      "manualTitle": "Nauja registracija (telefonu, atėjus)",
+      "master": "Specialistas",
+      "service": "Paslauga",
+      "time": "Laikas",
+      "clientName": "Kliento vardas",
+      "clientPhone": "Telefonas",
+      "clientEmail": "El. paštas (neprivaloma)",
+      "add": "Pridėti"
+    },
+    "services": {
+      "empty": "Paslaugų dar nėra.",
+      "disable": "Išjungti",
+      "enable": "Įjungti",
+      "addTitle": "Nauja paslauga",
+      "name": "Pavadinimas",
+      "category": "Kategorija",
+      "duration": "Trukmė (min.)",
+      "price": "Kaina (€)",
+      "add": "Pridėti"
+    },
+    "team": {
+      "name": "Vardas",
+      "title": "Pareigos",
+      "titlePlaceholder": "pvz., koloristė",
+      "languages": "Kalbos",
+      "services": "Paslaugos",
+      "noServices": "Pirmiausia pridėkite paslaugas.",
+      "schedule": "Savaitės grafikas",
+      "save": "Išsaugoti",
+      "servicesCount": "{n, plural, one {# paslauga} few {# paslaugos} many {# paslaugos} other {# paslaugų}}",
+      "deactivate": "Išjungti",
+      "activate": "Įjungti",
+      "add": "Pridėti specialistą"
+    },
+    "profile": {
+      "welcome": "Sveiki! Užpildykite profilį, pridėkite paslaugas ir komandą, tada pateikite saloną paskelbti.",
+      "saved": "Išsaugota.",
+      "submitted": "Pateikta! Netrukus patikrinsime ir paskelbsime Jūsų saloną.",
+      "notReady": "Prieš pateikdami pridėkite bent vieną specialistą su paslaugomis ir grafiku.",
+      "listing": "Paskelbimas kataloge",
+      "statusHelp": {
+        "draft": "Jūsų salono kataloge dar nėra.",
+        "pending": "Tikriname Jūsų saloną.",
+        "active": "Jūsų salonas paskelbtas ir priima registracijas.",
+        "suspended": "Jūsų salonas sustabdytas. Susisiekite su mumis."
+      },
+      "submit": "Pateikti paskelbti",
+      "viewPublic": "Peržiūrėti viešą puslapį",
+      "subscription": "Prenumerata",
+      "sub": {
+        "trial": "Nemokamas laikotarpis iki {date}.",
+        "active": "Galioja iki {date}.",
+        "past_due": "Mokėjimas vėluoja nuo {date}.",
+        "cancelled": "Atšaukta {date}.",
+        "complimentary": "Astrabela dovana iki {date}."
+      },
+      "details": "Salono duomenys",
+      "fields": {
+        "name": "Pavadinimas",
+        "district": "Rajonas",
+        "address": "Adresas",
+        "postalCode": "Pašto kodas",
+        "phone": "Telefonas",
+        "nif": "Įmonės kodas",
+        "description": "Aprašymas",
+        "cuisine": "Virtuvė"
+      },
+      "save": "Išsaugoti",
+      "restaurant": {
+        "welcome": "Sveiki! Užpildykite profilį, sukurkite meniu ir pateikite restoraną paskelbti.",
+        "notReady": "Prieš pateikdami pridėkite į meniu bent vieną patiekalą.",
+        "details": "Restorano duomenys",
+        "statusHelp": {
+          "draft": "Restorano kataloge dar nėra.",
+          "pending": "Tikriname restoraną.",
+          "active": "Restoranas paskelbtas, jo meniu matomas.",
+          "suspended": "Restoranas sustabdytas. Susisiekite su mumis."
+        }
+      },
+      "social": {
+        "title": "Socialiniai tinklai",
+        "hint": "Rodoma Jūsų viešame puslapyje. Įveskite naudotojo vardą (@pavyzdys) arba įklijuokite nuorodą.",
+        "invalid": "Nepavyko atpažinti {network} nuorodos. Patikrinkite ir išsaugokite dar kartą.",
+        "placeholders": {
+          "instagram": "@jusu_salonas",
+          "facebook": "facebook.com/jusu-salonas",
+          "tiktok": "@jusu_salonas",
+          "whatsapp": "8612 34567",
+          "website": "www.jusu-salonas.lt"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Atsiliepimų dar nėra.",
+      "hidden": "paslėpta moderatorių",
+      "replyPlaceholder": "Atsakykite viešai…",
+      "updateReply": "Atnaujinti atsakymą",
+      "reply": "Atsakyti",
+      "inviteTitle": "Paprašykite nuolatinio kliento atsiliepimo",
+      "inviteHint": "Įrašykite jau įvykusį apsilankymą ir gaukite asmeninę nuorodą, kad klientas įvertintų specialistą. Siųskite per WhatsApp, SMS ar kaip patogu. Paskyros nereikia.",
+      "inviteMasterService": "Specialistas ir paslauga",
+      "inviteDate": "Apsilankymo data",
+      "inviteClientName": "Kliento vardas",
+      "inviteClientEmail": "El. paštas (neprivaloma)",
+      "inviteClientPhone": "Mobilusis (neprivaloma)",
+      "inviteLanguage": "Žinutės kalba",
+      "inviteSend": "Paprašyti atsiliepimo",
+      "inviteRules": "Viena nuoroda tinka vienam atsiliepimui apie vieną apsilankymą. Apsilankymai per pastarąsias 90 dienų, vienas prašymas tam pačiam klientui ir specialistui kas 30 dienų. Tokie atsiliepimai pažymimi „apsilankymą patvirtino salonas“, o salonas negali jų ištrinti ar paslėpti, net neigiamų.",
+      "inviteNoTeam": "Kad galėtumėte prašyti atsiliepimų, skiltyje „Komanda“ pridėkite specialistą su paslaugomis.",
+      "invited": "Prašymas sukurtas. Dabar nusiųskite žinutę klientui: nukopijuokite ją arba atidarykite WhatsApp mygtukais žemiau.",
+      "inviteErrors": {
+        "invalid": "Patikrinkite vardą, el. paštą (jei nurodytas) ir datą (ne seniau kaip prieš 90 dienų ir ne ateityje).",
+        "not_found": "Specialistas arba paslauga nerasti.",
+        "not_allowed": "Šio prašymo išsiųsti negalima.",
+        "duplicate": "Per pastarąsias 30 dienų jau prašėte šio kliento įvertinti šį specialistą.",
+        "limit": "Pasiekėte šiandienos prašymų ribą. Bandykite rytoj.",
+        "phone": "Neteisingas telefono numeris. Pasirinkite šalį ir įveskite visą numerį."
+      },
+      "invitationsTitle": "Išsiųsti prašymai",
+      "invitationWaiting": "laukiama",
+      "invitationReviewed": "įvertinta",
+      "listTitle": "Atsiliepimai",
+      "viaAstrabela": "registracija per Astrabela",
+      "viaSalon": "apsilankymą patvirtino salonas",
+      "cannotDelete": "Salonai negali ištrinti atsiliepimų. Galite atsakyti viešai arba pranešti moderatoriams apie netikrą atsiliepimą.",
+      "shareCopy": "Kopijuoti žinutę",
+      "shareCopied": "Nukopijuota ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "kliento atsiliepimas"
+    },
+    "admin": {
+      "pending": "Salonai, laukiantys paskelbimo",
+      "none": "Nieko nelaukia.",
+      "approve": "Patvirtinti",
+      "reject": "Grąžinti",
+      "reports": "Pranešimai apie atsiliepimus",
+      "reason": "Priežastis",
+      "hide": "Paslėpti atsiliepimą",
+      "keep": "Palikti",
+      "subs": {
+        "title": "Prenumeratos",
+        "hint": "Dovanokite nemokamų mėnesių arba nustatykite datą, iki kurios galioja nemokama prenumerata. Dovana prasideda, kai baigiasi salono jau turimas laikas.",
+        "search": "Ieškoti pagal pavadinimą, miestą ar kodą",
+        "find": "Ieškoti",
+        "empty": "Salonų nerasta.",
+        "none": "Prenumeratos nėra",
+        "manage": "Valdyti",
+        "months": "Nemokami mėnesiai",
+        "monthsN": "{n, plural, one {# mėnuo} few {# mėnesiai} many {# mėnesio} other {# mėnesių}}",
+        "note": "Pastaba (neprivaloma)",
+        "notePlaceholder": "Pvz., partneris nuo pradžių",
+        "grant": "Dovanoti",
+        "until": "Nemokamai iki",
+        "set": "Nustatyti datą",
+        "cancel": "Baigti prenumeratą dabar",
+        "cancelHint": "Salonas dingsta iš paieškos, kol vėl užsiprenumeruos.",
+        "saved": "Prenumerata atnaujinta.",
+        "invalid": "Pasirinkite būsimą datą.",
+        "salonStatus": {
+          "draft": "Juodraštis",
+          "pending": "Laukia",
+          "active": "Paskelbtas",
+          "suspended": "Sustabdytas"
+        },
+        "status": {
+          "trial": "Bandomasis",
+          "active": "Aktyvi",
+          "past_due": "Vėluoja",
+          "cancelled": "Atšaukta",
+          "complimentary": "Nemokama"
+        },
+        "endsOn": "iki {date}",
+        "endedOn": "nuo {date}",
+        "kind": {
+          "salon": "Salonas",
+          "restaurant": "Restoranas"
+        }
+      },
+      "title": "Administravimas"
+    },
+    "menu": {
+      "hint": "Suskirstykite meniu į skyrius. Pakeitimai iškart matomi viešame puslapyje ir per QR kodą ant staliuko.",
+      "viewPublic": "Peržiūrėti viešą meniu",
+      "invalid": "Patikrinkite pavadinimą ir kainą (pvz., 12,50).",
+      "empty": "Pradėkite nuo skyriaus, pvz., „Užkandžiai“, tada pridėkite patiekalų.",
+      "editSection": "Redaguoti skyrių",
+      "sectionName": "Naujas skyrius",
+      "sectionNameEn": "Pavadinimas anglų kalba (neprivaloma)",
+      "sectionPlaceholder": "Užkandžiai",
+      "save": "Išsaugoti",
+      "deleteSection": "Ištrinti skyrių ir jo patiekalus",
+      "addSection": "Pridėti skyrių",
+      "addDish": "Pridėti patiekalą",
+      "editDish": "Redaguoti patiekalą",
+      "deleteDish": "Ištrinti patiekalą",
+      "available": "yra",
+      "soldOut": "išparduota",
+      "dishName": "Patiekalo pavadinimas",
+      "dishNameEn": "Pavadinimas anglų kalba (neprivaloma)",
+      "description": "Aprašymas",
+      "descriptionEn": "Aprašymas anglų kalba (neprivaloma)",
+      "price": "Kaina su PVM, €",
+      "portion": "Porcija (neprivaloma)",
+      "portionPlaceholder": "300 g, 0,33 l, dviem",
+      "allergens": "Alergenai",
+      "tags": "Žymos",
+      "likes": "Svečių patiktukai"
+    },
+    "qr": {
+      "hint": "Atsispausdinkite šią kortelę ir padėkite ant staliukų. Svečiai ją nuskenuoja telefono kamera, o meniu atsidaro telefono kalba.",
+      "notListed": "Kodas jau veikia, bet svečiai galės atidaryti meniu tik paskelbus restoraną (skiltis „Profilis“).",
+      "scan": "Nuskenuokite kodą ir pamatysite meniu",
+      "scanEn": "Scan to see the menu",
+      "print": "Spausdinti kortelę",
+      "salon": {
+        "hint": "Atsispausdinkite šią kortelę ir padėkite registratūroje ar prie veidrodžio. Klientai ją nuskenuoja telefono kamera, užsiregistruoja kitam apsilankymui ir įvertina savo specialistą.",
+        "notListed": "Kodas jau veikia, bet klientai galės atidaryti puslapį tik paskelbus saloną (skiltis „Profilis“).",
+        "scan": "Registruokitės internetu ir įvertinkite savo specialistą",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Pagalba"
+  },
+  "countries": {
+    "pt": "Portugalija",
+    "es": "Ispanija",
+    "fr": "Prancūzija",
+    "it": "Italija",
+    "de": "Vokietija",
+    "nl": "Nyderlandai",
+    "be": "Belgija",
+    "ie": "Airija",
+    "lu": "Liuksemburgas",
+    "at": "Austrija",
+    "ch": "Šveicarija",
+    "pl": "Lenkija",
+    "cz": "Čekija",
+    "sk": "Slovakija",
+    "hu": "Vengrija",
+    "si": "Slovėnija",
+    "hr": "Kroatija",
+    "ro": "Rumunija",
+    "bg": "Bulgarija",
+    "dk": "Danija",
+    "se": "Švedija",
+    "no": "Norvegija",
+    "fi": "Suomija",
+    "ee": "Estija",
+    "lv": "Latvija",
+    "lt": "Lietuva"
+  },
+  "restaurants": {
+    "metaTitle": "Restoranai ir meniu",
+    "eyebrow": "Europa · Restoranai",
+    "title": "Pamatykite meniu dar prieš atsisėsdami.",
+    "subtitle": "Pilni meniu su kainomis, kuriuos atnaujina patys restoranai, vietine ir anglų kalba, su alergenais.",
+    "searchPlaceholder": "Pavadinimas arba virtuvė",
+    "resultsTitle": "{count, plural, =0 {Restoranų nėra} one {# restoranas} few {# restoranai} many {# restorano} other {# restoranų}} mieste {city}",
+    "cityEmpty": "Mieste {city} Astrabela restoranų dar nėra.",
+    "noMatch": "Pagal šią paiešką restoranų nėra.",
+    "join": "Turite restoraną? Paskelbkite meniu",
+    "dishes": "{count, plural, one {# patiekalas} few {# patiekalai} many {# patiekalo} other {# patiekalų}}",
+    "from": "Nuo {price}"
+  },
+  "restaurant": {
+    "menu": "Meniu",
+    "allergens": "Alergenai",
+    "vatIncluded": "Kainos eurais su PVM.",
+    "allergyNote": "Turite alergijų? Prieš užsisakydami pasakykite personalui.",
+    "like": "Patinka"
+  },
+  "allergens": {
+    "gluten": "glitimas",
+    "crustaceans": "vėžiagyviai",
+    "eggs": "kiaušiniai",
+    "fish": "žuvis",
+    "peanuts": "žemės riešutai",
+    "soy": "soja",
+    "milk": "pienas",
+    "nuts": "riešutai",
+    "celery": "salierai",
+    "mustard": "garstyčios",
+    "sesame": "sezamas",
+    "sulphites": "sulfitai",
+    "lupin": "lubinai",
+    "molluscs": "moliuskai"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetariškas",
+    "vegan": "Veganiškas",
+    "gluten_free": "Be glitimo",
+    "spicy": "Aštrus"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Svetainė"
+  },
+  "account": {
+    "title": "Prisijungti",
+    "google": "Tęsti su Google",
+    "or": "arba",
+    "googleError": "Nepavyko prisijungti per Google. Bandykite dar kartą.",
+    "openCabinet": "Atidaryti verslo paskyrą",
+    "hello": "Sveiki, {name}",
+    "logout": "Atsijungti",
+    "upcoming": "Būsimos registracijos",
+    "noUpcoming": "Būsimų registracijų neturite.",
+    "findSalon": "Rasti saloną",
+    "past": "Ankstesnės registracijos",
+    "open": "Peržiūrėti",
+    "bookingsHint": "Čia matysite registracijas, atliktas prisijungus.",
+    "deleteTitle": "Ištrinti paskyrą",
+    "deleteText": "Jūsų paskyra ir prisijungimas ištrinami. Registracijos lieka salonuose, kurie jas saugo paslaugai suteikti.",
+    "deleteConfirm": "Ištrinti mano paskyrą",
+    "deleted": "Jūsų paskyra ištrinta.",
+    "email": "El. paštas",
+    "password": "Slaptažodis",
+    "submit": "Prisijungti",
+    "loginError": "Neteisingas el. paštas arba slaptažodis.",
+    "noAccount": "Dar neturite paskyros?",
+    "createAccount": "Sukurti paskyrą",
+    "businessQuestion": "Turite saloną ar restoraną?",
+    "businessLink": "Astrabela verslui",
+    "signedInBusiness": "Prisijungta kaip {name}.",
+    "adminPanel": "Administravimas",
+    "welcome": "Paskyra sukurta. Čia matysite registracijas, atliktas prisijungus.",
+    "bookingsHintGoogle": "Čia matysite registracijas, atliktas prisijungus arba nurodžius Jūsų Google el. paštą.",
+    "registerTitle": "Sukurti paskyrą",
+    "name": "Vardas",
+    "passwordHint": "Bent 8 simboliai.",
+    "terms": "Sutinku su <terms>naudojimo sąlygomis</terms> ir <privacy>privatumo politika</privacy>.",
+    "registerSubmit": "Sukurti paskyrą",
+    "haveAccount": "Jau turite paskyrą?",
+    "registerErrors": {
+      "invalid": "Patikrinkite vardą, el. paštą ir slaptažodį (bent 8 simboliai).",
+      "email_taken": "Paskyra su šiu el. paštu jau yra. Prisijunkite su juo."
+    }
+  },
+  "petFriendly": {
+    "label": "Draugiška gyvūnams",
+    "hint": "Augintiniai laukiami."
+  }
+}
