@@ -85,6 +85,7 @@
     "sv": "Ruotsi",
     "nb": "Norja",
     "fi": "Suomi",
+    "et": "Viro",
     "ru": "Venäjä",
     "uk": "Ukraina"
   },
@@ -516,7 +517,8 @@
     "dk": "Tanska",
     "se": "Ruotsi",
     "no": "Norja",
-    "fi": "Suomi"
+    "fi": "Suomi",
+    "ee": "Viro"
   },
   "restaurants": {
     "metaTitle": "Ravintolat ja ruokalistat",

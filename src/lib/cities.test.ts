@@ -435,3 +435,17 @@ describe("Finnish places", () => {
     expect(phoneCountry("turku")).toBe("FI");
   });
 });
+
+describe("Estonian places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("tallinn")).toMatchObject({ name: "Tallinn", country: "ee", area: "Harjumaa" });
+    expect(searchPlaces("tartu", [], 30, "ee")[0]).toMatchObject({ name: "Tartu", area: "Tartumaa" });
+    expect(searchPlaces("parnu", [], 30, "ee")[0].name).toBe("Pärnu");
+  });
+
+  it("uses Tallinn time and starts Estonian visitors in Tallinn", () => {
+    expect(placeTimezone("narva")).toBe("Europe/Tallinn");
+    expect(cityFieldSetup([], undefined, "et")).toMatchObject({ defaultCountry: "ee", defaultSlugs: { ee: "tallinn" } });
+    expect(phoneCountry("viljandi")).toBe("EE");
+  });
+});

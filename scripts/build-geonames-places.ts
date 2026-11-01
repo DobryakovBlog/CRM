@@ -118,6 +118,13 @@ const COUNTRIES: Record<string, Config> = {
       Nykarleby: "Nykarleby/Uusikaarlepyy", Kronoby: "Kronoby/Kruunupyy", Vörå: "Vörå/Vöyri", Pernå: "Pernå/Pernaja",
     },
   },
+  ee: {
+    regions: {
+      "01": "Harjumaa", "02": "Hiiumaa", "03": "Ida-Virumaa", "04": "Järvamaa", "05": "Jõgevamaa", "07": "Läänemaa",
+      "08": "Lääne-Virumaa", "11": "Pärnumaa", "12": "Põlvamaa", "13": "Raplamaa", "14": "Saaremaa", "18": "Tartumaa",
+      "19": "Valgamaa", "20": "Viljandimaa", "21": "Võrumaa",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
