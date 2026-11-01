@@ -76,6 +76,7 @@
     "pl": "Polacco",
     "cs": "Ceco",
     "sk": "Slovacco",
+    "hu": "Ungherese",
     "ru": "Russo",
     "uk": "Ucraino"
   },
@@ -498,7 +499,8 @@
     "ch": "Svizzera",
     "pl": "Polonia",
     "cz": "Cechia",
-    "sk": "Slovacchia"
+    "sk": "Slovacchia",
+    "hu": "Ungheria"
   },
   "restaurants": {
     "metaTitle": "Ristoranti e menu",

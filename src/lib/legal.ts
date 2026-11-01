@@ -33,6 +33,7 @@ const PRICES = {
   pl: ["12,99 € miesięcznie przy płatności miesięcznej;", "10,99 € miesięcznie przy płatności co 6 miesięcy;", "9,99 € miesięcznie przy płatności rocznej."],
   cs: ["12,99 € měsíčně při měsíční platbě;", "10,99 € měsíčně při platbě na 6 měsíců;", "9,99 € měsíčně při roční platbě."],
   sk: ["12,99 € mesačne pri mesačnej platbe;", "10,99 € mesačne pri platbe na 6 mesiacov;", "9,99 € mesačne pri ročnej platbe."],
+  hu: ["havi 12,99 € havi fizetés esetén;", "havi 10,99 € féléves fizetés esetén;", "havi 9,99 € éves fizetés esetén."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -45,6 +46,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "pl") return privacyPl();
   if (locale === "cs") return privacyCs();
   if (locale === "sk") return privacySk();
+  if (locale === "hu") return privacyHu();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -245,6 +247,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "pl") return termsPl();
   if (locale === "cs") return termsCs();
   if (locale === "sk") return termsSk();
+  if (locale === "hu") return termsHu();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -1952,6 +1955,197 @@ function termsSk(): LegalDoc {
       {
         title: "10. Zmeny",
         body: ["Tieto podmienky môžeme aktualizovať. Nová verzia bude zverejnená tu s dátumom; o dôležitých zmenách informujeme firmy vopred."],
+      },
+    ],
+  };
+}
+
+function privacyHu(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Adatvédelmi tájékoztató",
+    updated: "Utolsó frissítés: 2026. november 1.",
+    intro:
+      "Az Astrabela európai szépségszalonok, borbélyok és éttermek katalógusa online foglalással és szakemberenkénti vendégértékelésekkel. Ez a tájékoztató elmagyarázza, milyen személyes adatokat kezelünk, milyen célból, és milyen jogaid vannak a GDPR alapján.",
+    sections: [
+      { title: "1. Kik vagyunk", body: [`Az astrabela.com szolgáltatást ${who()} üzemelteti. Az adataiddal kapcsolatos kérdéseidet a(z) ${o.email} címre küldd.`] },
+      {
+        title: "2. Milyen adatokat kezelünk",
+        body: [
+          "Foglaláskor vagy értékeléskor (vendégek):",
+          [
+            "a foglaláskor megadott név, e-mail-cím és mobilszám, valamint a szalonnak írt üzeneted;",
+            "maga a foglalás: szalon, szakember, szolgáltatás, dátum, időpont és állapot;",
+            "az értékelésed: csillagok, szöveg és a megjeleníteni kívánt név;",
+            "ha vendégfiókot hozol létre: név és e-mail-cím, valamint a jelszó, kizárólag titkosított (hash) formában, vagy Google-belépésnél a Google-fiókod azonosítója (a Google-jelszavadat soha nem látjuk).",
+          ],
+          "Ha szalon vagy étterem használja az Astrabelát (vállalkozások):",
+          [
+            "a fióktulajdonos neve, e-mail-címe és jelszava (kizárólag titkosítva tárolva);",
+            "a vállalkozás adatai: név, cím, telefon, e-mail, adószám, csapat, szolgáltatások, árak, nyitvatartás, étlap és közösségimédia-linkek.",
+          ],
+          "Technikai adatok: a belépést fenntartó sütik, egy nyelvi süti és szervernaplók (pl. IP-cím és a kérés időpontja), amelyeket biztonsági okból őrzünk.",
+        ],
+      },
+      {
+        title: "3. Célok és jogalapok",
+        body: [
+          [
+            "foglalások teljesítése és kezelése: szerződés teljesítése (GDPR 6. cikk (1) b));",
+            "vállalkozói fiókok és előfizetések kezelése: szerződés teljesítése;",
+            "értékelések közzététele és a hamis értékelések megelőzése: jogos érdek egy megbízható katalógushoz (6. cikk (1) f));",
+            "a szolgáltatás biztonságos működése: jogos érdek;",
+            "adózási és számviteli kötelezettségek: jogi kötelezettség (6. cikk (1) c)).",
+          ],
+          "Személyes adatokat nem adunk el, és nem használunk reklámcélra.",
+        ],
+      },
+      {
+        title: "4. A szalon és a mi szerepünk",
+        body: [
+          "Foglalásoknál a választott szalon dönt arról, hogyan használja vendégei adatait, így ő az adatkezelő. Az Astrabela ezeket az adatokat a szalon nevében, adatfeldolgozóként (GDPR 28. cikk) és kizárólag a szolgáltatás nyújtásához kezeli. Az értékelések, a nyilvános katalógus és a szolgáltatás biztonsága tekintetében az Astrabela az adatkezelő.",
+        ],
+      },
+      {
+        title: "5. Az adatok címzettjei",
+        body: [
+          "A szalon vagy étterem, ahol foglalsz. Emellett az alábbi, adatfeldolgozási szerződéssel kötött szolgáltatókat vesszük igénybe:",
+          [
+            "Vercel Inc. – tárhely; a szolgáltatás Frankfurtban (EU) fut. A Vercel amerikai cég; az EU-n kívüli adattovábbítást az EU általános szerződési feltételei és az EU–USA adatvédelmi keretrendszer (Data Privacy Framework) biztosítják;",
+            "Neon – Frankfurtban (EU) tárolt adatbázis;",
+            "Cloudflare – domainnév-szolgáltatás (DNS);",
+            "Google – csak ha Google-lel lépsz be.",
+          ],
+        ],
+      },
+      {
+        title: "6. Megőrzési idő",
+        body: [
+          [
+            "vendég- és foglalási adatok: amíg a szalon fiókja aktív, legfeljebb 2 évig az utolsó látogatásodtól;",
+            "értékelések: amíg a szalon az Astrabelán van;",
+            "vendégfiókok: törlésükig (gomb a fiók oldalán);",
+            "vállalkozói fiókok: a fiók megszüntetéséig;",
+            "számlák és számlázási adatok: 10 évig, a portugál adójog szerint;",
+            "vállalkozói belépések: 30 nap.",
+          ],
+        ],
+      },
+      {
+        title: "7. Sütik",
+        body: [
+          "Csak a működéshez szükséges sütiket használjuk: a belépve maradáshoz (és a neved megjelenítéséhez a menüben), rövid életű sütiket Google-belépéskor, egyet a nyelvhez, és egyet, amely megjegyzi, mely ételek tetszettek az étterem étlapján (csak a ♥ megérintése után jön létre, és véletlenszerű kódot tartalmaz, nem a nevedet). Analitikai vagy reklámsütit nem használunk, ezért nem kérünk sütihozzájárulást.",
+        ],
+      },
+      {
+        title: "8. Jogaid",
+        body: [
+          `Kérheted az adataidhoz való hozzáférést, azok helyesbítését vagy törlését, a kezelés korlátozását, tiltakozhatsz, és hordozható formátumban megkaphatod az adataidat. Írj a(z) ${o.email} címre; egy hónapon belül válaszolunk. Ha az adatokat a szalonnak továbbítottuk, a kérésedet is továbbítjuk neki. Panaszt tehetsz a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (www.naih.hu) vagy a portugál CNPD-nél (www.cnpd.pt) is.`,
+        ],
+      },
+      {
+        title: "9. Biztonság",
+        body: [
+          "A szolgáltatás kizárólag HTTPS-en fut, a jelszavakat titkosítva tároljuk, a foglalási és értékelési linkek pedig személyesek és nehezen kitalálhatók. Ne oszd meg másokkal a személyes linkedet.",
+        ],
+      },
+      {
+        title: "10. Változások",
+        body: ["Ha módosítjuk ezt a tájékoztatót, itt tesszük közzé az új változatot dátummal. A fontos változásokról a szolgáltatásban értesítünk."],
+      },
+    ],
+  };
+}
+
+function termsHu(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Felhasználási feltételek",
+    updated: "Utolsó frissítés: 2026. november 1.",
+    intro: `Ezek a feltételek az astrabela.com használatát szabályozzák, amelyet ${who()} üzemeltet. A szolgáltatás használatával vagy vállalkozói fiók létrehozásával elfogadod őket.`,
+    sections: [
+      {
+        title: "1. A szolgáltatás",
+        body: [
+          "Az Astrabelán a vendégek szépségszalonokat, borbélyokat és éttermeket találhatnak, online foglalhatnak, értékelhetik a szakembereket és böngészhetik az éttermek étlapjait. A szalonok és éttermek vállalkozói fiókjukban kezelik a profilt, a csapatot, a szolgáltatásokat, a naptárat és az étlapot.",
+        ],
+      },
+      {
+        title: "2. Vendégeknek",
+        body: [
+          [
+            "Az Astrabela használata ingyenes, és nem kell hozzá fiók.",
+            "A foglalás közted és a szalon között jön létre. A szolgáltatásokat, árakat és időtartamokat a szalon határozza meg, és a szolgáltatást a szalon nyújtja, nem az Astrabela.",
+            "Az Astrabela nem fogad fizetést: közvetlenül a szalonban fizetsz.",
+            "A látogatást a kapott személyes linken mondhatod le. Mondd le, ha nem tudsz elmenni.",
+          ],
+        ],
+      },
+      {
+        title: "3. Értékelések",
+        body: [
+          "Minden, az Astrabelán belépett vendég értékelheti a szalon egy szakemberét, ugyanazt a szakembert 30 naponta egyszer. Az Astrabelán foglalt vagy a szalon által igazolt látogatással rendelkező vendégek személyes linken is értékelhetnek; ezek az értékelések igazolt látogatás jelölést kapnak. Az értékelésnek:",
+          [
+            "a saját, valós tapasztalatodat kell leírnia;",
+            "sértésektől, fenyegetéstől és megkülönböztetéstől mentesnek kell lennie;",
+            "nem tartalmazhat mások személyes adatait, reklámot vagy linkeket.",
+          ],
+          "Az ezeket a szabályokat megsértő értékeléseket elrejthetjük. A szalon nem törölheti és nem módosíthatja az értékeléseket; nyilvánosan válaszolhat, vagy moderálásra jelentheti az értékelést.",
+        ],
+      },
+      {
+        title: "4. Szalonoknak és éttermeknek",
+        body: [
+          [
+            "A profil adatainak, az áraknak és az étlapnak valósnak és naprakésznek kell lenniük. Felelsz értük és a szolgáltatásaidért.",
+            "Védd a jelszavadat; felelsz a fiókodban végzett tevékenységért.",
+            "Ne hozz létre hamis foglalásokat, értékeléseket vagy értékeléskéréseket, és ne kérj értékelést jutalomért cserébe.",
+            "A keresésben csak az aktív előfizetéssel vagy próbaidőszakban lévő profilok jelennek meg.",
+          ],
+        ],
+      },
+      {
+        title: "5. Árak",
+        body: [
+          "Szalonok, borbélyok és éttermek számára az első 3 hónap ingyenes, az induláshoz nem kell bankkártya. Utána a megjelenéshez előfizetés szükséges:",
+          PRICES.hu,
+          "A fizetési feltételeket minden terhelés előtt megmutatjuk. Az árakat legalább 30 nappal előre jelezve módosíthatjuk; a változás a következő számlázási időszaktól érvényes.",
+        ],
+      },
+      {
+        title: "6. Adatfeldolgozási megállapodás (vállalkozások)",
+        body: [
+          "A foglalásokban szereplő vendégadatok tekintetében a vállalkozás az adatkezelő, az Astrabela az adatfeldolgozó (GDPR 28. cikk). Az Astrabela:",
+          [
+            "ezeket az adatokat kizárólag a szolgáltatás nyújtásához és a vállalkozás által a szolgáltatáson keresztül adott utasítások szerint kezeli;",
+            "bizalmasan kezeli őket, és megfelelő biztonsági intézkedésekkel védi;",
+            "csak az adatvédelmi tájékoztatóban felsorolt további adatfeldolgozókat veszi igénybe, és újak bevonása előtt tájékoztatja a vállalkozásokat;",
+            "segíti a vállalkozást a vendégek kéréseinek és az adatvédelmi incidensek kezelésében;",
+            "a fiók megszűnése után törli vagy átadja az adatokat, kivéve, ha jogszabály megőrzést ír elő.",
+          ],
+        ],
+      },
+      {
+        title: "7. Felfüggesztés és megszüntetés",
+        body: [
+          "A vállalkozói fiókot bármikor megszüntetheted, ha írsz nekünk. Az ezeket a feltételeket, a jogszabályokat vagy mások jogait sértő profilt indoklással felfüggeszthetjük vagy eltávolíthatjuk.",
+        ],
+      },
+      {
+        title: "8. Felelősség",
+        body: [
+          "Igyekszünk, hogy a szolgáltatás elérhető és pontos legyen, de nem garantálhatjuk, hogy mindig megszakítás és hiba nélkül működik. Az Astrabela nem részese a vendég és a szalon közötti szerződésnek, és nem felel a szalonok szolgáltatásaiért. E feltételek semmi sem korlátozza a fogyasztók törvényes jogait.",
+        ],
+      },
+      {
+        title: "9. Irányadó jog és panaszok",
+        body: [
+          `A feltételekre a portugál jog az irányadó, nem érintve azt a védelmet, amelyet fogyasztóként a lakóhelyed szerinti ország joga biztosít. Panaszaidat a(z) ${o.email} címre küldd.`,
+        ],
+      },
+      {
+        title: "10. Változások",
+        body: ["Ezeket a feltételeket frissíthetjük. Az új változatot itt tesszük közzé dátummal; a fontos változásokról előre értesítjük a vállalkozásokat."],
       },
     ],
   };

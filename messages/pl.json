@@ -76,6 +76,7 @@
     "pl": "Polski",
     "cs": "Czeski",
     "sk": "Słowacki",
+    "hu": "Węgierski",
     "ru": "Rosyjski",
     "uk": "Ukraiński"
   },
@@ -498,7 +499,8 @@
     "ch": "Szwajcaria",
     "pl": "Polska",
     "cz": "Czechy",
-    "sk": "Słowacja"
+    "sk": "Słowacja",
+    "hu": "Węgry"
   },
   "restaurants": {
     "metaTitle": "Restauracje i menu",
