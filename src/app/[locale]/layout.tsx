@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteIsPublic } from "@/lib/indexing";
-import { Bodoni_Moda, Manrope } from "next/font/google";
+import { Bodoni_Moda, Manrope, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -13,8 +13,12 @@ import { Logo } from "@/components/Logo";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
-const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-bodoni", display: "swap" });
+const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-bodoni", display: "swap", adjustFontFallback: false });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+// Bodoni Moda has no Cyrillic; Bulgarian headings take the same high-contrast style from Playfair Display.
+// Browsers download it only for Cyrillic text, so other languages load nothing extra. Bodoni has no adjusted
+// fallback, because that local Times would draw the Cyrillic before Playfair gets the chance.
+const playfair = Playfair_Display({ subsets: ["cyrillic"], weight: ["500", "600"], variable: "--font-cyrillic-display", display: "swap", preload: false });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -37,7 +41,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getTranslations("nav");
 
   return (
-    <html lang={locale} className={`${bodoni.variable} ${manrope.variable}`}>
+    <html lang={locale} className={`${bodoni.variable} ${manrope.variable} ${playfair.variable}`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
           <header className="z-20 border-b border-line bg-white/90 backdrop-blur md:sticky md:top-0">

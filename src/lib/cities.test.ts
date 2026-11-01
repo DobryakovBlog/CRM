@@ -361,3 +361,18 @@ describe("Romanian places", () => {
     expect(phoneCountry("constanta")).toBe("RO");
   });
 });
+
+describe("Bulgarian places", () => {
+  it("lists GeoNames towns by province and finds them from Cyrillic", () => {
+    expect(placeBySlug("sofia")).toMatchObject({ name: "Sofia", country: "bg", area: "Sofia-grad" });
+    expect(searchPlaces("софия", [], 30, "bg")[0].name).toBe("Sofia");
+    expect(searchPlaces("търново", [], 30, "bg")[0].name).toBe("Veliko Tarnovo");
+    expect(searchPlaces("пловдив", [], 30, "bg")[0]).toMatchObject({ name: "Plovdiv", area: "Plovdiv" });
+  });
+
+  it("uses Sofia time and starts Bulgarian visitors in Sofia", () => {
+    expect(placeTimezone("plovdiv")).toBe("Europe/Sofia");
+    expect(cityFieldSetup([], undefined, "bg")).toMatchObject({ defaultCountry: "bg", defaultSlugs: { bg: "sofia" } });
+    expect(phoneCountry("burgas")).toBe("BG");
+  });
+});

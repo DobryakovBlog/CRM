@@ -29,7 +29,7 @@ function parseUrl(input: string): URL | null {
 
 // National numbers typed without the country code: Portuguese 9xx/2xx, Spanish 6xx-9xx,
 // French 0x xx xx xx xx (the leading 0 drops after +33), Italian mobiles 3xx xxx xxxx,
-// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx, Swiss mobiles 07x xxx xx xx, Polish mobiles xxx xxx xxx, Czech mobiles 6xx/7xx xxx xxx, Slovak mobiles 09xx xxx xxx (the leading 0 drops after +421), Hungarian mobiles 06 20/30/31/50/70 xxx xxxx (the leading 06 drops after +36), Slovenian mobiles 0xx xxx xxx (the leading 0 drops after +386), Croatian mobiles 09x xxx xxxx (the leading 0 drops after +385), Romanian mobiles 07xx xxx xxx (the leading 0 drops after +40).
+// German mobiles 015x/016x/017x (the leading 0 drops after +49), Dutch mobiles 06 xxxxxxxx, Belgian mobiles 04xx xx xx xx, Irish mobiles 08x xxx xxxx, Luxembourg mobiles 6xx xxx xxx, Austrian mobiles 06xx xxxxxxx, Swiss mobiles 07x xxx xx xx, Polish mobiles xxx xxx xxx, Czech mobiles 6xx/7xx xxx xxx, Slovak mobiles 09xx xxx xxx (the leading 0 drops after +421), Hungarian mobiles 06 20/30/31/50/70 xxx xxxx (the leading 06 drops after +36), Slovenian mobiles 0xx xxx xxx (the leading 0 drops after +386), Croatian mobiles 09x xxx xxxx (the leading 0 drops after +385), Romanian mobiles 07xx xxx xxx (the leading 0 drops after +40), Bulgarian mobiles 08x xxx xxxx (the leading 0 drops after +359).
 const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp; trunk?: RegExp }> = {
   pt: { code: "351", pattern: /^[29]\d{8}$/ },
   es: { code: "34", pattern: /^[6789]\d{8}$/ },
@@ -48,6 +48,7 @@ const LOCAL_NUMBER: Record<Country, { code: string; pattern: RegExp; trunk?: Reg
   si: { code: "386", pattern: /^0?(30|31|40|41|51|6[4-9]|7[01])\d{6}$/ },
   hr: { code: "385", pattern: /^0?9[125789]\d{6,7}$/ },
   ro: { code: "40", pattern: /^0?7\d{8}$/ },
+  bg: { code: "359", pattern: /^0?8[789]\d{7}$/ },
   hu: { code: "36", pattern: /^(06)?(20|30|31|50|70)\d{7}$/, trunk: /^06/ },
 };
 

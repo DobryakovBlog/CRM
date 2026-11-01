@@ -80,6 +80,7 @@
     "sl": "Slovenski",
     "hr": "Hrvatski",
     "ro": "Rumunjski",
+    "bg": "Bugarski",
     "ru": "Ruski",
     "uk": "Ukrajinski"
   },
@@ -506,7 +507,8 @@
     "hu": "Mađarska",
     "si": "Slovenija",
     "hr": "Hrvatska",
-    "ro": "Rumunjska"
+    "ro": "Rumunjska",
+    "bg": "Bugarska"
   },
   "restaurants": {
     "metaTitle": "Restorani i jelovnici",

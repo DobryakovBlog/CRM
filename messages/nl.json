@@ -80,6 +80,7 @@
     "sl": "Sloveens",
     "hr": "Kroatisch",
     "ro": "Roemeens",
+    "bg": "Bulgaars",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -506,7 +507,8 @@
     "hu": "Hongarije",
     "si": "Slovenië",
     "hr": "Kroatië",
-    "ro": "Roemenië"
+    "ro": "Roemenië",
+    "bg": "Bulgarije"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

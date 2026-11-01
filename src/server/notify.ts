@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  bg: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Потвърден час: ${r.salon.name}`,
+      text: `Здравейте, ${r.client.name},\n\n${r.service.name} при ${r.staff.name}\n${when}\n${r.salon.address}\n\nПромяна или отказ: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Напомняне: утре в ${r.salon.name}`,
+      text: `Здравейте, ${r.client.name},\n\nнапомняме Ви за Вашия час: ${r.service.name} при ${r.staff.name}, ${when}.\nНе можете да дойдете? Откажете тук: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Как беше в ${r.salon.name}?`,
+      text: `Здравейте, ${r.client.name},\n\nоценете ${r.staff.name}. Отзиви могат да оставят само клиенти с потвърдено посещение.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} Ви моли за отзив`,
+      text: `Здравейте, ${r.client.name},\n\n${r.staff.name} от ${r.salon.name} Ви благодари за посещението (${r.service.name}) и ще се радва да научи мнението Ви в Astrabela. Отнема минута и не е нужен профил.\nТози линк е личен и важи за един отзив: ${link}`,
     }),
   },
   ro: {
