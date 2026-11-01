@@ -86,6 +86,7 @@
     "nb": "Nórčina",
     "fi": "Fínčina",
     "et": "Estónčina",
+    "lv": "Lotyština",
     "ru": "Ruština",
     "uk": "Ukrajinčina"
   },
@@ -518,7 +519,8 @@
     "se": "Švédsko",
     "no": "Nórsko",
     "fi": "Fínsko",
-    "ee": "Estónsko"
+    "ee": "Estónsko",
+    "lv": "Lotyšsko"
   },
   "restaurants": {
     "metaTitle": "Reštaurácie a menu",

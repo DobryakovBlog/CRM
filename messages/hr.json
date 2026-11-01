@@ -86,6 +86,7 @@
     "nb": "Norveški",
     "fi": "Finski",
     "et": "Estonski",
+    "lv": "Latvijski",
     "ru": "Ruski",
     "uk": "Ukrajinski"
   },
@@ -518,7 +519,8 @@
     "se": "Švedska",
     "no": "Norveška",
     "fi": "Finska",
-    "ee": "Estonija"
+    "ee": "Estonija",
+    "lv": "Latvija"
   },
   "restaurants": {
     "metaTitle": "Restorani i jelovnici",

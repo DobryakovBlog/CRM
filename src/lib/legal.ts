@@ -43,6 +43,7 @@ const PRICES = {
   nb: ["12,99 € per måned ved månedlig betaling;", "10,99 € per måned ved betaling for 6 måneder;", "9,99 € per måned ved årlig betaling."],
   fi: ["12,99 € kuukaudessa kuukausimaksulla;", "10,99 € kuukaudessa 6 kuukauden maksulla;", "9,99 € kuukaudessa vuosimaksulla."],
   et: ["12,99 € kuus igakuise maksega;", "10,99 € kuus 6 kuu maksega;", "9,99 € kuus aastamaksega."],
+  lv: ["12,99 € mēnesī, maksājot katru mēnesi;", "10,99 € mēnesī, maksājot par 6 mēnešiem;", "9,99 € mēnesī, maksājot par gadu."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -65,6 +66,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "nb") return privacyNb();
   if (locale === "fi") return privacyFi();
   if (locale === "et") return privacyEt();
+  if (locale === "lv") return privacyLv();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -275,6 +277,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "nb") return termsNb();
   if (locale === "fi") return termsFi();
   if (locale === "et") return termsEt();
+  if (locale === "lv") return termsLv();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -3892,6 +3895,197 @@ function termsEt(): LegalDoc {
       {
         title: "10. Muudatused",
         body: ["Võime neid tingimusi uuendada. Uus versioon avaldatakse siin koos kuupäevaga; olulistest muudatustest teavitame ettevõtteid ette."],
+      },
+    ],
+  };
+}
+
+function privacyLv(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Privātuma politika",
+    updated: "Pēdējo reizi atjaunināta: 2026. gada 1. novembrī",
+    intro:
+      "Astrabela ir Eiropas skaistumkopšanas salonu, bārddziņu un restorānu katalogs ar pierakstu tiešsaistē un klientu atsauksmēm par katru speciālistu. Šī politika skaidro, kādus personas datus mēs apstrādājam, kāpēc un kādas ir Jūsu tiesības saskaņā ar VDAR.",
+    sections: [
+      { title: "1. Kas mēs esam", body: [`Pakalpojumu astrabela.com pārvalda ${who()}. Jautājumus par saviem datiem varat sūtīt uz ${o.email}.`] },
+      {
+        title: "2. Kādus datus mēs apstrādājam",
+        body: [
+          "Kad piesakāties vai rakstāt atsauksmi (klienti):",
+          [
+            "pierakstā norādītais vārds, e-pasts un mobilā tālruņa numurs, kā arī Jūsu ziņa salonam;",
+            "pats pieraksts: salons, speciālists, pakalpojums, datums, laiks un statuss;",
+            "Jūsu atsauksme: zvaigznes, teksts un vārds, ko vēlaties rādīt;",
+            "ja izveidojat klienta kontu: vārds un e-pasts, kā arī parole, kas tiek glabāta tikai šifrētā veidā (jaucējvērtība), vai, piesakoties ar Google, Jūsu Google konta identifikators (Jūsu Google paroli mēs nekad neredzam).",
+          ],
+          "Kad salons vai restorāns izmanto Astrabela (uzņēmumi):",
+          [
+            "konta īpašnieka vārds un e-pasts, kā arī parole (glabāta tikai šifrēti);",
+            "uzņēmuma dati: nosaukums, adrese, tālrunis, e-pasts, reģistrācijas numurs, komanda, pakalpojumi, cenas, darba laiks, ēdienkarte un saites uz sociālajiem tīkliem.",
+          ],
+          "Tehniskie dati: pieteikšanās sīkdatnes, valodas sīkdatne un servera žurnāli (piem., IP adrese un pieprasījuma laiks), ko glabājam drošības nolūkos.",
+        ],
+      },
+      {
+        title: "3. Nolūki un tiesiskais pamats",
+        body: [
+          [
+            "pierakstu veikšana un pārvaldība: līguma izpilde (VDAR 6. panta 1. punkta b) apakšpunkts);",
+            "uzņēmumu kontu un abonementu pārvaldība: līguma izpilde;",
+            "atsauksmju publicēšana un viltotu atsauksmju novēršana: leģitīmās intereses uzticamā katalogā (6. panta 1. punkta f) apakšpunkts);",
+            "droša pakalpojuma darbība: leģitīmās intereses;",
+            "nodokļu un grāmatvedības pienākumi: juridisks pienākums (6. panta 1. punkta c) apakšpunkts).",
+          ],
+          "Mēs nepārdodam personas datus un neizmantojam tos reklāmai.",
+        ],
+      },
+      {
+        title: "4. Salona loma un mūsu loma",
+        body: [
+          "Pierakstu gadījumā Jūsu izvēlētais salons nosaka, kā tiek izmantoti tā klientu dati, un ir to pārzinis. Astrabela apstrādā šos datus salona vārdā kā apstrādātājs (VDAR 28. pants) un tikai pakalpojuma sniegšanai. Attiecībā uz atsauksmēm, publisko katalogu un pakalpojuma drošību pārzinis ir Astrabela.",
+        ],
+      },
+      {
+        title: "5. Datu saņēmēji",
+        body: [
+          "Salons vai restorāns, kurā piesakāties. Mēs izmantojam arī šādus pakalpojumu sniedzējus, kurus saista datu apstrādes līgumi:",
+          [
+            "Vercel Inc. – mitināšana; pakalpojums darbojas Frankfurtē (ES). Vercel ir ASV uzņēmums; datu nosūtīšanu ārpus ES nodrošina ES standarta līguma klauzulas un EU-US Data Privacy Framework;",
+            "Neon – datubāze Frankfurtē (ES);",
+            "Cloudflare – domēna vārdu pakalpojums (DNS);",
+            "Google – tikai tad, ja piesakāties ar Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Glabāšanas termiņš",
+        body: [
+          [
+            "klientu un pierakstu dati: kamēr salona konts ir aktīvs, ne ilgāk kā 2 gadus pēc Jūsu pēdējā apmeklējuma;",
+            "atsauksmes: kamēr salons ir Astrabela;",
+            "klientu konti: līdz to dzēšanai (poga konta lapā);",
+            "uzņēmumu konti: līdz konta slēgšanai;",
+            "rēķini un maksājumu dati: 10 gadus saskaņā ar Portugāles nodokļu tiesībām;",
+            "uzņēmumu reģistrācijas pieteikumi: 30 dienas.",
+          ],
+        ],
+      },
+      {
+        title: "7. Sīkdatnes",
+        body: [
+          "Mēs izmantojam tikai pakalpojuma darbībai nepieciešamās sīkdatnes: lai Jūs paliktu pieteicies (un Jūsu vārds būtu redzams izvēlnē), īslaicīgas, piesakoties ar Google, vienu valodai un vienu, kas atceras restorāna ēdienkartē Jums iepatikušos ēdienus (tā tiek izveidota tikai tad, kad pieskaraties ♥, un satur nejaušu kodu, nevis Jūsu vārdu). Mēs neizmantojam analītikas vai reklāmas sīkdatnes, tāpēc nelūdzam piekrišanu sīkdatnēm.",
+        ],
+      },
+      {
+        title: "8. Jūsu tiesības",
+        body: [
+          `Jūs varat pieprasīt piekļuvi saviem datiem, to labošanu vai dzēšanu, apstrādes ierobežošanu, iebilst pret apstrādi un saņemt savus datus pārnesamā formātā. Rakstiet uz ${o.email}; atbildam viena mēneša laikā. Ja dati ir nodoti salonam, mēs pārsūtīsim tam arī Jūsu pieprasījumu. Sūdzību varat iesniegt arī Datu valsts inspekcijai (www.dvi.gov.lv) vai Portugāles uzraudzības iestādei CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Drošība",
+        body: [
+          "Pakalpojums darbojas tikai caur HTTPS, paroles tiek glabātas šifrētas, un pierakstu un atsauksmju saites ir personīgas un grūti uzminamas. Nedalieties ar savu personīgo saiti ar citiem.",
+        ],
+      },
+      {
+        title: "10. Izmaiņas",
+        body: ["Ja mainīsim šo politiku, šeit publicēsim jauno versiju ar datumu. Par būtiskām izmaiņām informēsim pakalpojumā."],
+      },
+    ],
+  };
+}
+
+function termsLv(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Lietošanas noteikumi",
+    updated: "Pēdējo reizi atjaunināti: 2026. gada 1. novembrī",
+    intro: `Šie noteikumi regulē pakalpojuma astrabela.com lietošanu. Pakalpojumu pārvalda ${who()}. Lietojot pakalpojumu vai izveidojot uzņēmuma kontu, Jūs tos pieņemat.`,
+    sections: [
+      {
+        title: "1. Pakalpojums",
+        body: [
+          "Astrabela ļauj klientiem atrast skaistumkopšanas salonus, bārddziņus un restorānus, pieteikties pakalpojumiem tiešsaistē, novērtēt speciālistus un aplūkot restorānu ēdienkartes. Saloni un restorāni uzņēmuma kontā pārvalda savu profilu, komandu, pakalpojumus, kalendāru un ēdienkarti.",
+        ],
+      },
+      {
+        title: "2. Klientiem",
+        body: [
+          [
+            "Astrabela lietošana ir bez maksas un neprasa kontu.",
+            "Pieraksts ir līgums starp Jums un salonu. Pakalpojumus, cenas un ilgumu nosaka salons, un pakalpojumu sniedz salons, nevis Astrabela.",
+            "Astrabela nepieņem maksājumus: Jūs maksājat tieši salonā.",
+            "Apmeklējumu varat atcelt ar saņemto personīgo saiti. Lūdzu, atceliet to, ja nevarat ierasties.",
+          ],
+        ],
+      },
+      {
+        title: "3. Atsauksmes",
+        body: [
+          "Ikviens Astrabela pieteicies klients var novērtēt salona speciālistu reizi 30 dienās par vienu un to pašu speciālistu. Klienti, kuru apmeklējums pieteikts caur Astrabela vai apstiprināts salonā, var rakstīt atsauksmes arī ar personīgu saiti; šīm atsauksmēm ir apstiprināta apmeklējuma atzīme. Atsauksmei jābūt:",
+          [
+            "par Jūsu pašu reālo pieredzi;",
+            "bez apvainojumiem, draudiem un diskriminācijas;",
+            "bez citu personu datiem, reklāmas vai saitēm.",
+          ],
+          "Mēs varam paslēpt atsauksmes, kas pārkāpj šos noteikumus. Salons nevar dzēst vai mainīt atsauksmes; tas var atbildēt publiski vai ziņot par atsauksmi moderācijai.",
+        ],
+      },
+      {
+        title: "4. Saloniem un restorāniem",
+        body: [
+          [
+            "Profila dati, cenas un ēdienkarte jābūt patiesiem un aktuāliem. Jūs atbildat par tiem un saviem pakalpojumiem.",
+            "Glabājiet paroli drošībā; Jūs atbildat par darbībām savā kontā.",
+            "Neveidojiet viltotus pierakstus, atsauksmes vai atsauksmju lūgumus un neprasiet atsauksmes apmaiņā pret atlīdzību.",
+            "Meklēšanā tiek rādīti tikai profili ar aktīvu abonementu vai izmēģinājuma periodā.",
+          ],
+        ],
+      },
+      {
+        title: "5. Cenas",
+        body: [
+          "Saloniem, bārddziņiem un restorāniem pirmie 3 mēneši ir bez maksas, sākumam nav vajadzīga karte. Pēc tam, lai būtu redzams, nepieciešams abonements:",
+          PRICES.lv,
+          "Maksājuma nosacījumi tiek parādīti pirms katras iekasēšanas. Mēs varam mainīt cenas, brīdinot vismaz 30 dienas iepriekš; izmaiņas stājas spēkā no nākamā norēķinu perioda.",
+        ],
+      },
+      {
+        title: "6. Datu apstrādes līgums (uzņēmumi)",
+        body: [
+          "Attiecībā uz klientu datiem pierakstos uzņēmums ir pārzinis, bet Astrabela – apstrādātājs (VDAR 28. pants). Astrabela:",
+          [
+            "apstrādā šos datus tikai pakalpojuma sniegšanai un saskaņā ar norādījumiem, ko uzņēmums sniedz pakalpojumā;",
+            "nodrošina to konfidencialitāti un aizsargā tos ar atbilstošiem drošības pasākumiem;",
+            "izmanto tikai privātuma politikā minētos apakšapstrādātājus un par jauniem iepriekš informē uzņēmumus;",
+            "palīdz uzņēmumam ar klientu pieprasījumiem un paziņošanu par datu aizsardzības pārkāpumiem;",
+            "pēc konta slēgšanas dzēš vai nodod datus, ja vien likums neprasa tos glabāt.",
+          ],
+        ],
+      },
+      {
+        title: "7. Konta apturēšana un slēgšana",
+        body: [
+          "Uzņēmuma kontu varat slēgt jebkurā laikā, rakstot mums. Mēs varam apturēt vai noņemt profilu, kas pārkāpj šos noteikumus, likumu vai citu tiesības, norādot iemeslu.",
+        ],
+      },
+      {
+        title: "8. Atbildība",
+        body: [
+          "Mēs cenšamies, lai pakalpojums būtu pieejams un precīzs, taču nevaram garantēt, ka tas vienmēr darbosies bez pārtraukumiem un kļūdām. Astrabela nav līguma starp klientu un salonu puse un neatbild par salona pakalpojumiem. Nekas šajos noteikumos neierobežo patērētāju likumīgās tiesības.",
+        ],
+      },
+      {
+        title: "9. Piemērojamie tiesību akti un sūdzības",
+        body: [
+          `Noteikumiem piemēro Portugāles tiesības, neskarot aizsardzību, ko Jums kā patērētājam sniedz Jūsu dzīvesvietas valsts tiesības. Sūdzības sūtiet uz ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Izmaiņas",
+        body: ["Mēs varam atjaunināt šos noteikumus. Jaunā versija tiks publicēta šeit ar datumu; par būtiskām izmaiņām uzņēmumus informējam iepriekš."],
       },
     ],
   };

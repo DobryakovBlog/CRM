@@ -86,6 +86,7 @@
     "nb": "Norvegiană",
     "fi": "Finlandeză",
     "et": "Estonă",
+    "lv": "Letonă",
     "ru": "Rusă",
     "uk": "Ucraineană"
   },
@@ -518,7 +519,8 @@
     "se": "Suedia",
     "no": "Norvegia",
     "fi": "Finlanda",
-    "ee": "Estonia"
+    "ee": "Estonia",
+    "lv": "Letonia"
   },
   "restaurants": {
     "metaTitle": "Restaurante și meniuri",

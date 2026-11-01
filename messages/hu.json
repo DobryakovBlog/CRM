@@ -86,6 +86,7 @@
     "nb": "Norvég",
     "fi": "Finn",
     "et": "Észt",
+    "lv": "Lett",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -518,7 +519,8 @@
     "se": "Svédország",
     "no": "Norvégia",
     "fi": "Finnország",
-    "ee": "Észtország"
+    "ee": "Észtország",
+    "lv": "Lettország"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",

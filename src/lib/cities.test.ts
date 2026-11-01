@@ -449,3 +449,17 @@ describe("Estonian places", () => {
     expect(phoneCountry("viljandi")).toBe("EE");
   });
 });
+
+describe("Latvian places", () => {
+  it("lists GeoNames towns by historical region", () => {
+    expect(placeBySlug("riga")).toMatchObject({ name: "Rīga", country: "lv", area: "Rīga" });
+    expect(searchPlaces("liepaja", [], 30, "lv")[0]).toMatchObject({ name: "Liepāja", area: "Kurzeme" });
+    expect(searchPlaces("daugavpils", [], 30, "lv")[0]).toMatchObject({ name: "Daugavpils", area: "Latgale" });
+  });
+
+  it("uses Riga time and starts Latvian visitors in Riga", () => {
+    expect(placeTimezone("jelgava")).toBe("Europe/Riga");
+    expect(cityFieldSetup([], undefined, "lv")).toMatchObject({ defaultCountry: "lv", defaultSlugs: { lv: "riga" } });
+    expect(phoneCountry("valmiera")).toBe("LV");
+  });
+});

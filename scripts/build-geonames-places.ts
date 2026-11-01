@@ -12,7 +12,15 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 // commaBelow: GeoNames often spells Romanian ș/ț with a cedilla (ş/ţ); the builder writes the correct letters.
-type Config = { regions: Record<string, string> | "admin1"; regionFixes?: Record<string, string>; names?: Record<string, string>; commaBelow?: boolean };
+// byName: the region of each town by its GeoNames name, for a country whose GeoNames region codes are a tangle of old
+// and new municipalities (Latvia); every town must be listed.
+type Config = {
+  regions: Record<string, string> | "admin1";
+  regionFixes?: Record<string, string>;
+  names?: Record<string, string>;
+  commaBelow?: boolean;
+  byName?: Record<string, string>;
+};
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -125,6 +133,24 @@ const COUNTRIES: Record<string, Config> = {
       "19": "Valgamaa", "20": "Viljandimaa", "21": "Võrumaa",
     },
   },
+  lv: {
+    regions: {},
+    names: { Riga: "Rīga", Bolderaja: "Bolderāja" },
+    byName: {
+      // Rīga
+      Riga: "Rīga", Bolderaja: "Rīga", "Berģi": "Rīga", "Daugavgrīva": "Rīga", Jaunciems: "Rīga", "Mežaparks": "Rīga",
+      // Pierīga
+      "Ādaži": "Pierīga", "Baloži": "Pierīga", Baldone: "Pierīga", Carnikava: "Pierīga", Garkalne: "Pierīga", "Ikšķile": "Pierīga", "Inčukalns": "Pierīga", "Jūrmala": "Pierīga", "Ķekava": "Pierīga", "Ķegums": "Pierīga", "Lielvārde": "Pierīga", Jumprava: "Pierīga", Loja: "Pierīga", "Mālpils": "Pierīga", "Mārupe": "Pierīga", Ogre: "Pierīga", Olaine: "Pierīga", "Piņķi": "Pierīga", Ragana: "Pierīga", "Ropaži": "Pierīga", Salaspils: "Pierīga", Saulkrasti: "Pierīga", Sigulda: "Pierīga", "Tīreļi": "Pierīga", Ulbroka: "Pierīga", "Vangaži": "Pierīga",
+      // Kurzeme
+      Aizpute: "Kurzeme", Alsunga: "Kurzeme", "Brocēni": "Kurzeme", Dundaga: "Kurzeme", Engure: "Kurzeme", "Grobiņa": "Kurzeme", Jaunpils: "Kurzeme", Kandava: "Kurzeme", Karosta: "Kurzeme", "Kuldīga": "Kurzeme", "Liepāja": "Kurzeme", "Lieģi": "Kurzeme", "Mērsrags": "Kurzeme", "Nīca": "Kurzeme", "Pāvilosta": "Kurzeme", Piltene: "Kurzeme", Priekule: "Kurzeme", Roja: "Kurzeme", Rucava: "Kurzeme", Sabile: "Kurzeme", Saldus: "Kurzeme", Skrunda: "Kurzeme", "Smārde": "Kurzeme", Stende: "Kurzeme", Talsi: "Kurzeme", Tukums: "Kurzeme", "Vaiņode": "Kurzeme", "Valdemārpils": "Kurzeme", Ventspils: "Kurzeme",
+      // Zemgale
+      Aizkraukle: "Zemgale", "Aknīste": "Zemgale", Auce: "Zemgale", Bauska: "Zemgale", Dobele: "Zemgale", Iecava: "Zemgale", Jaunjelgava: "Zemgale", Jelgava: "Zemgale", "Jēkabpils": "Zemgale", Krustpils: "Zemgale", Koknese: "Zemgale", Nereta: "Zemgale", Ozolnieki: "Zemgale", "Pilsrundāle": "Zemgale", "Pļaviņas": "Zemgale", Sala: "Zemgale", "Skrīveri": "Zemgale", "Tērvete": "Zemgale", Vecumnieki: "Zemgale", "Viesīte": "Zemgale", "Zelmeņi": "Zemgale",
+      // Vidzeme
+      "Ainaži": "Vidzeme", Aloja: "Vidzeme", "Alūksne": "Vidzeme", Ape: "Vidzeme", Cesvaine: "Vidzeme", "Cēsis": "Vidzeme", "Drabeši": "Vidzeme", "Ērgļi": "Vidzeme", Gulbene: "Vidzeme", Jaunpiebalga: "Vidzeme", "Kocēni": "Vidzeme", "Limbaži": "Vidzeme", "Līgatne": "Vidzeme", "Lubāna": "Vidzeme", Madona: "Vidzeme", "Matīši": "Vidzeme", Mazsalaca: "Vidzeme", "Mūrmuiža": "Vidzeme", "Naukšēni": "Vidzeme", "Priekuļi": "Vidzeme", Rauna: "Vidzeme", "Rūjiena": "Vidzeme", "Salacgrīva": "Vidzeme", Seda: "Vidzeme", Smiltene: "Vidzeme", Staicele: "Vidzeme", Stalbe: "Vidzeme", "Strenči": "Vidzeme", Valka: "Vidzeme", Valmiera: "Vidzeme", Vecpiebalga: "Vidzeme",
+      // Latgale
+      Aglona: "Latgale", Balvi: "Latgale", Baltinava: "Latgale", Cibla: "Latgale", Dagda: "Latgale", Daugavpils: "Latgale", "Ilūkste": "Latgale", Jaunaglona: "Latgale", "Kārsava": "Latgale", "Krāslava": "Latgale", "Līvāni": "Latgale", Ludza: "Latgale", "Preiļi": "Latgale", "Rēzekne": "Latgale", "Riebiņi": "Latgale", "Rugāji": "Latgale", "Varakļāni": "Latgale", "Vecvārkava": "Latgale", "Viļaka": "Latgale", "Viļāni": "Latgale", Zilupe: "Latgale",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
@@ -178,18 +204,19 @@ function* readCities(buf: Buffer) {
 const admin1 = (JSON.parse(readFileSync(join(cjDir, "admin1.json"), "utf8")) as { code: string; name: string }[])
   .filter((r) => r.code.startsWith(`${cc.toUpperCase()}.`))
   .map((r) => [r.code.split(".")[1], r.name.replace(/^(Urban )?Municipality of /, "")] as const);
-const regions: Record<string, string> =
-  config.regions === "admin1"
+const regions: Record<string, string> = config.byName
+  ? {}
+  : config.regions === "admin1"
     ? Object.fromEntries(admin1.map(([code, name]) => [code, config.regionFixes?.[name] ?? name]))
     : config.regions;
-const missingRegions = admin1.map(([code]) => code).filter((r) => !regions[r]);
+const missingRegions = config.byName ? [] : admin1.map(([code]) => code).filter((r) => !regions[r]);
 if (missingRegions.length) throw new Error(`no local name for regions ${missingRegions.join(", ")}`);
 
-const areas = [...new Set(Object.values(regions))].sort((a, b) => a.localeCompare(b, cc));
+const areas = [...new Set(Object.values(config.byName ?? regions))].sort((a, b) => a.localeCompare(b, cc));
 const best = new Map<string, [string, number, number]>();
 for (const c of readCities(readFileSync(join(atcDir, "cities.pbf")))) {
   if (c.country !== cc.toUpperCase()) continue;
-  const area = regions[c.region];
+  const area = config.byName ? config.byName[c.name] : regions[c.region];
   if (!area) throw new Error(`unknown region ${c.region} for ${c.name}`);
   const raw = config.names?.[c.name] ?? c.name;
   const name = config.commaBelow ? raw.replace(/ş/g, "ș").replace(/Ş/g, "Ș").replace(/ţ/g, "ț").replace(/Ţ/g, "Ț") : raw;
