@@ -74,6 +74,7 @@
     "it": "Italien",
     "nl": "Néerlandais",
     "pl": "Polonais",
+    "cs": "Tchèque",
     "ru": "Russe",
     "uk": "Ukrainien"
   },
@@ -494,7 +495,8 @@
     "lu": "Luxembourg",
     "at": "Autriche",
     "ch": "Suisse",
-    "pl": "Pologne"
+    "pl": "Pologne",
+    "cz": "Tchéquie"
   },
   "restaurants": {
     "metaTitle": "Restaurants et cartes",

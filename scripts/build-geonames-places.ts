@@ -36,6 +36,15 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Warsaw: "Warszawa", "Bielsko-Biala": "Bielsko-Biała" },
   },
+  cz: {
+    regions: {
+      "52": "Hlavní město Praha", "78": "Jihomoravský kraj", "79": "Jihočeský kraj", "80": "Kraj Vysočina",
+      "81": "Karlovarský kraj", "82": "Královéhradecký kraj", "83": "Liberecký kraj", "84": "Olomoucký kraj",
+      "85": "Moravskoslezský kraj", "86": "Pardubický kraj", "87": "Plzeňský kraj", "88": "Středočeský kraj",
+      "89": "Ústecký kraj", "90": "Zlínský kraj",
+    },
+    names: { Prague: "Praha", Pilsen: "Plzeň", Vysehrad: "Vyšehrad" },
+  },
 };
 
 const [cc, atcDir, cjDir] = process.argv.slice(2);
