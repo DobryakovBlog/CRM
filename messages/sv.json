@@ -1,0 +1,611 @@
+{
+  "meta": {
+    "title": "Astrabela: skönhetssalonger och barberare med onlinebokning",
+    "description": "Hitta en skönhetssalong eller barberare i Europa, läs kundernas omdömen om varje behandlare och boka online."
+  },
+  "nav": {
+    "forSalons": "För företag",
+    "footer": "Astrabela · Kundomdömen om varje behandlare",
+    "language": "Språk",
+    "forClients": "Hitta en salong",
+    "salons": "Salonger",
+    "restaurants": "Restauranger",
+    "privacy": "Integritet",
+    "terms": "Villkor",
+    "signIn": "Logga in",
+    "support": "Hjälp"
+  },
+  "home": {
+    "title": "Boka det bästa. Lita på stjärnorna.",
+    "subtitle": "De bästa skönhetssalongerna och barberarna i Europa, betygsatta av kunderna behandlare för behandlare. Välj och boka online på några sekunder.",
+    "why": {
+      "verified": {
+        "title": "Omdömen om varje behandlare",
+        "text": "Varje omdöme gäller en behandlare. Bekräftade besök har en egen märkning."
+      },
+      "masters": {
+        "title": "Välj din behandlare",
+        "text": "Varje behandlare har sitt eget betyg."
+      },
+      "direct": {
+        "title": "Du betalar i salongen",
+        "text": "Gratis bokning, ingen betalning online."
+      }
+    },
+    "eyebrow": "Europa · Skönhetssalonger och barberare",
+    "featuredEyebrow": "Vi rekommenderar",
+    "featuredTitle": "Högst betygsatta salonger",
+    "browse": "Sök efter behandling"
+  },
+  "search": {
+    "city": "Ort",
+    "service": "Behandling",
+    "anyService": "Alla behandlingar",
+    "language": "Språk",
+    "anyLanguage": "Alla språk",
+    "submit": "Sök",
+    "resultsTitle": "{count, plural, =0 {Inga salonger} one {# salong} other {# salonger}} {city, select, other {i {city}}}",
+    "empty": "Inga salonger matchar de här filtren ännu.",
+    "new": "Ny",
+    "from": "Från {price}",
+    "cityEmpty": "Det finns inga salonger på Astrabela i {city} ännu. Vi öppnar ort för ort.",
+    "cityEmptyCta": "Har du en salong eller barberare här? Gå med",
+    "country": "Land",
+    "comingSoon": "snart",
+    "cityPlaceholder": "Skriv en ort",
+    "cityNoMatch": "Vi finns inte på den här orten ännu"
+  },
+  "categories": {
+    "hair": "Hår",
+    "barber": "Barberare",
+    "nails": "Naglar",
+    "brows_lashes": "Bryn och fransar",
+    "skin": "Ansiktsvård",
+    "makeup": "Smink",
+    "massage": "Massage",
+    "other": "Övrigt"
+  },
+  "languages": {
+    "pt": "Portugisiska",
+    "en": "Engelska",
+    "es": "Spanska",
+    "fr": "Franska",
+    "de": "Tyska",
+    "it": "Italienska",
+    "nl": "Nederländska",
+    "pl": "Polska",
+    "cs": "Tjeckiska",
+    "sk": "Slovakiska",
+    "hu": "Ungerska",
+    "sl": "Slovenska",
+    "hr": "Kroatiska",
+    "ro": "Rumänska",
+    "bg": "Bulgariska",
+    "da": "Danska",
+    "sv": "Svenska",
+    "ru": "Ryska",
+    "uk": "Ukrainska"
+  },
+  "weekdays": {
+    "0": "Söndag",
+    "1": "Måndag",
+    "2": "Tisdag",
+    "3": "Onsdag",
+    "4": "Torsdag",
+    "5": "Fredag",
+    "6": "Lördag"
+  },
+  "salon": {
+    "verifiedNote": "kundomdömen om varje behandlare",
+    "services": "Behandlingar",
+    "minutes": "{n} min",
+    "book": "Boka",
+    "reviews": "Omdömen",
+    "reportThanks": "Tack. Vi granskar anmälan.",
+    "noReviews": "Inga omdömen ännu.",
+    "withMaster": "hos {name}",
+    "verifiedVisit": "bekräftat besök",
+    "salonReply": "Salongens svar",
+    "report": "Anmäl omdöme",
+    "reportReason": "Anledning",
+    "send": "Skicka",
+    "team": "Team",
+    "payOnSite": "Betalning i salongen.",
+    "viaAstrabela": "bokat via Astrabela",
+    "viaSalon": "besök bekräftat av salongen",
+    "writeReview": "Betygsätt en behandlare",
+    "master": "Behandlare",
+    "rating": "Betyg",
+    "yourReview": "Din åsikt (valfritt)",
+    "publish": "Publicera omdöme",
+    "signInToReview": "Logga in för att skriva ett omdöme.",
+    "signIn": "Logga in",
+    "reviewThanks": "Tack! Ditt omdöme är publicerat.",
+    "reviewTooSoon": "Du har redan betygsatt den här behandlaren de senaste 30 dagarna.",
+    "reviewInvalid": "Välj behandlare och betyg.",
+    "viaClient": "kundomdöme"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "betalning i salongen",
+    "errors": {
+      "invalid": "Kontrollera dina uppgifter och försök igen.",
+      "slot_taken": "Den tiden blev just bokad. Välj en annan.",
+      "not_found": "Behandlingen eller behandlaren är inte tillgänglig.",
+      "not_allowed": "Den här behandlaren erbjuder inte den här behandlingen.",
+      "phone": "Ange ett giltigt mobilnummer med rätt landsnummer."
+    },
+    "master": "Behandlare",
+    "anyMaster": "Valfri behandlare",
+    "day": "Dag",
+    "time": "Tid",
+    "noSlots": "Inga lediga tider den här dagen.",
+    "yourDetails": "Dina uppgifter",
+    "name": "Namn",
+    "email": "E-post",
+    "phone": "Telefon",
+    "note": "Meddelande till salongen (valfritt)",
+    "privacy": "Jag godkänner att salongen och Astrabela behandlar mina uppgifter för den här bokningen (<privacy>integritetspolicy</privacy>).",
+    "confirm": "Bekräfta bokning",
+    "gateTitle": "Hur vill du fortsätta?",
+    "gateText": "Med ett konto ser du alla dina bokningar på ett ställe och slipper skriva dina uppgifter igen.",
+    "guest": "Utan konto",
+    "signIn": "Logga in"
+  },
+  "booking": {
+    "created": "Bokningen är bekräftad! Vi har skickat detaljerna via e-post.",
+    "reviewThanks": "Tack för ditt omdöme!",
+    "error": "Åtgärden kunde inte genomföras.",
+    "status": {
+      "confirmed": "Bekräftad",
+      "cancelled": "Avbokad",
+      "completed": "Genomförd",
+      "no_show": "Uteblev"
+    },
+    "with": "hos {name}",
+    "payOnSite": "betalning i salongen",
+    "cancel": "Avboka",
+    "reviewTitle": "Betygsätt ditt besök hos {name}",
+    "rating": "Betyg",
+    "reviewText": "Kommentar",
+    "authorName": "Visat namn",
+    "submitReview": "Publicera omdöme",
+    "visitOn": "Besök {date}",
+    "moreTitle": "Fler salonger i {city}",
+    "moreLink": "Visa alla salonger"
+  },
+  "business": {
+    "landing": {
+      "title": "Fler kunder till din salong",
+      "subtitle": "Onlinekalender och kundomdömen. Ingen provision, ett fast pris för hela teamet.",
+      "start": "Prova {months} månader gratis",
+      "features": {
+        "noCommission": "0 % provision på kunderna",
+        "unlimitedStaff": "Obegränsat antal medarbetare",
+        "calendar": "Onlinekalender och manuella bokningar",
+        "verifiedReviews": "Omdömen om varje behandlare",
+        "ownClients": "Dina kunder förblir dina"
+      },
+      "restaurants": {
+        "eyebrow": "Restauranger",
+        "title": "Din meny online, alltid uppdaterad",
+        "text": "Publicera menyn med priser och allergener på ditt språk och på engelska. Skriv ut en QR-kod till borden och ändra priserna när du vill. De första 3 månaderna är gratis.",
+        "cta": "Prova 3 månader gratis"
+      },
+      "trialNote": "De första {months} månaderna är gratis. Du behöver inget kort för att börja."
+    },
+    "plans": {
+      "monthly": "Månadsvis",
+      "semiannual": "6 månader",
+      "annual": "12 månader",
+      "perMonth": "per månad + moms"
+    },
+    "login": {
+      "title": "Logga in",
+      "error": "Fel e-post eller lösenord.",
+      "email": "E-post",
+      "password": "Lösenord",
+      "submit": "Logga in",
+      "noAccount": "Inget konto än? Registrera din salong"
+    },
+    "register": {
+      "title": "Registrera ditt företag",
+      "errors": {
+        "invalid": "Kontrollera fälten (lösenordet ska ha minst 8 tecken).",
+        "email_taken": "Den här e-postadressen är redan registrerad."
+      },
+      "fields": {
+        "salonName": "Företagets namn",
+        "city": "Ort",
+        "address": "Adress",
+        "phone": "Telefon",
+        "name": "Ditt namn",
+        "email": "E-post",
+        "password": "Lösenord"
+      },
+      "terms": "Jag godkänner <terms>användarvillkoren</terms>, inklusive personuppgiftsbiträdesavtalet (GDPR), och <privacy>integritetspolicyn</privacy>.",
+      "submit": "Skapa konto",
+      "kind": "Typ av företag",
+      "kinds": {
+        "salon": "Salong",
+        "restaurant": "Restaurang"
+      },
+      "kindHint": "Skönhetssalonger, barberare, naglar och hudvård väljer ”Salong”. Välj sedan dina behandlingskategorier, till exempel ”Barberare”.",
+      "googleAs": "Du registrerar dig med Google som {email}. Inget lösenord behövs."
+    },
+    "salonStatus": {
+      "draft": "Utkast",
+      "pending": "Granskas",
+      "active": "Publicerad",
+      "suspended": "Avstängd"
+    },
+    "logout": "Logga ut",
+    "tabs": {
+      "calendar": "Kalender",
+      "services": "Behandlingar",
+      "team": "Team",
+      "reviews": "Omdömen",
+      "profile": "Profil",
+      "admin": "Administration",
+      "menu": "Meny",
+      "qr": "QR-kod"
+    },
+    "calendar": {
+      "today": "I dag",
+      "errors": {
+        "invalid": "Ogiltiga uppgifter.",
+        "slot_taken": "Den tiden är redan bokad.",
+        "not_found": "Behandling eller behandlare hittades inte.",
+        "not_allowed": "Den här behandlaren erbjuder inte den här behandlingen.",
+        "phone": "Ogiltigt telefonnummer. Välj land och skriv hela numret."
+      },
+      "noTeam": "Lägg till behandlare under fliken Team.",
+      "free": "Inga bokningar.",
+      "noShows": "{n, plural, one {# uteblivet besök} other {# uteblivna besök}}",
+      "mark": {
+        "completed": "Kom",
+        "no_show": "Uteblev",
+        "cancelled": "Avboka"
+      },
+      "manualTitle": "Ny bokning (telefon, drop-in)",
+      "master": "Behandlare",
+      "service": "Behandling",
+      "time": "Tid",
+      "clientName": "Kundens namn",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-post (valfritt)",
+      "add": "Lägg till"
+    },
+    "services": {
+      "empty": "Inga behandlingar ännu.",
+      "disable": "Inaktivera",
+      "enable": "Aktivera",
+      "addTitle": "Ny behandling",
+      "name": "Namn",
+      "category": "Kategori",
+      "duration": "Längd (min)",
+      "price": "Pris (€)",
+      "add": "Lägg till"
+    },
+    "team": {
+      "name": "Namn",
+      "title": "Roll",
+      "titlePlaceholder": "t.ex. Färgspecialist",
+      "languages": "Språk",
+      "services": "Behandlingar",
+      "noServices": "Lägg först till behandlingar.",
+      "schedule": "Veckoschema",
+      "save": "Spara",
+      "servicesCount": "{n, plural, one {# behandling} other {# behandlingar}}",
+      "deactivate": "Inaktivera",
+      "activate": "Aktivera",
+      "add": "Lägg till behandlare"
+    },
+    "profile": {
+      "welcome": "Välkommen! Fyll i profilen, lägg till behandlingar och ditt team och skicka sedan salongen för publicering.",
+      "saved": "Sparat.",
+      "submitted": "Skickat! Vi granskar och publicerar din salong snart.",
+      "notReady": "Lägg till minst en behandlare med behandlingar och schema innan du skickar.",
+      "listing": "Publicering i katalogen",
+      "statusHelp": {
+        "draft": "Din salong finns inte i katalogen ännu.",
+        "pending": "Vi granskar din salong.",
+        "active": "Din salong är publicerad och tar emot bokningar.",
+        "suspended": "Din salong är avstängd. Kontakta oss."
+      },
+      "submit": "Skicka för publicering",
+      "viewPublic": "Visa offentlig sida",
+      "subscription": "Abonnemang",
+      "sub": {
+        "trial": "Gratis provperiod till {date}.",
+        "active": "Aktivt till {date}.",
+        "past_due": "Betalning förfallen sedan {date}.",
+        "cancelled": "Avslutat {date}.",
+        "complimentary": "Gratis från Astrabela till {date}."
+      },
+      "details": "Salongens uppgifter",
+      "fields": {
+        "name": "Namn",
+        "district": "Stadsdel",
+        "address": "Adress",
+        "postalCode": "Postnummer",
+        "phone": "Telefon",
+        "nif": "Organisationsnummer",
+        "description": "Beskrivning",
+        "cuisine": "Kök"
+      },
+      "save": "Spara",
+      "restaurant": {
+        "welcome": "Välkommen! Fyll i profilen, bygg upp menyn och skicka restaurangen för publicering.",
+        "notReady": "Lägg till minst en rätt i menyn innan du skickar.",
+        "details": "Restaurangens uppgifter",
+        "statusHelp": {
+          "draft": "Restaurangen finns inte i katalogen ännu.",
+          "pending": "Vi granskar restaurangen.",
+          "active": "Restaurangen är publicerad och menyn syns.",
+          "suspended": "Restaurangen är avstängd. Kontakta oss."
+        }
+      },
+      "social": {
+        "title": "Sociala medier",
+        "hint": "Visas på din offentliga sida. Skriv användarnamnet (@exempel) eller klistra in länken.",
+        "invalid": "Vi kände inte igen länken till {network}. Kontrollera den och spara igen.",
+        "placeholders": {
+          "instagram": "@din_salong",
+          "facebook": "facebook.com/din-salong",
+          "tiktok": "@din_salong",
+          "whatsapp": "070-123 45 67",
+          "website": "www.din-salong.se"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Inga omdömen ännu.",
+      "hidden": "dolt av moderering",
+      "replyPlaceholder": "Svara offentligt…",
+      "updateReply": "Uppdatera svar",
+      "reply": "Svara",
+      "inviteTitle": "Be en stamkund om ett omdöme",
+      "inviteHint": "Registrera ett besök som redan har ägt rum och få en personlig länk så att kunden kan betygsätta behandlaren. Skicka den via WhatsApp, sms eller hur du vill. Inget konto behövs.",
+      "inviteMasterService": "Behandlare och behandling",
+      "inviteDate": "Datum för besöket",
+      "inviteClientName": "Kundens namn",
+      "inviteClientEmail": "E-post (valfritt)",
+      "inviteClientPhone": "Mobil (valfritt)",
+      "inviteLanguage": "Meddelandets språk",
+      "inviteSend": "Be om omdöme",
+      "inviteRules": "En länk gäller ett omdöme om ett besök. Besök från de senaste 90 dagarna, en förfrågan per kund och behandlare var 30:e dag. Dessa omdömen märks ”besök bekräftat av salongen” och salongen kan inte radera eller dölja dem, inte heller de negativa.",
+      "inviteNoTeam": "Lägg till en behandlare med behandlingar under fliken Team för att be om omdömen.",
+      "invited": "Förfrågan skapad. Skicka nu meddelandet till kunden: kopiera det eller öppna WhatsApp med knapparna nedan.",
+      "inviteErrors": {
+        "invalid": "Kontrollera namnet, e-postadressen (om angiven) och datumet (upp till 90 dagar bakåt, inte i framtiden).",
+        "not_found": "Behandlare eller behandling hittades inte.",
+        "not_allowed": "Den här förfrågan kan inte skickas.",
+        "duplicate": "Du har redan bett den här kunden att betygsätta den här behandlaren de senaste 30 dagarna.",
+        "limit": "Du har nått dagens gräns för förfrågningar. Försök igen i morgon.",
+        "phone": "Ogiltigt telefonnummer. Välj land och skriv hela numret."
+      },
+      "invitationsTitle": "Skickade förfrågningar",
+      "invitationWaiting": "väntar",
+      "invitationReviewed": "betygsatt",
+      "listTitle": "Omdömen",
+      "viaAstrabela": "bokat via Astrabela",
+      "viaSalon": "besök bekräftat av salongen",
+      "cannotDelete": "Salonger kan inte radera omdömen. Du kan svara offentligt eller anmäla ett falskt omdöme för moderering.",
+      "shareCopy": "Kopiera meddelande",
+      "shareCopied": "Kopierat ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "Sms",
+      "viaClient": "kundomdöme"
+    },
+    "admin": {
+      "pending": "Salonger som väntar på publicering",
+      "none": "Inget väntar.",
+      "approve": "Godkänn",
+      "reject": "Skicka tillbaka",
+      "reports": "Anmälda omdömen",
+      "reason": "Anledning",
+      "hide": "Dölj omdöme",
+      "keep": "Behåll",
+      "subs": {
+        "title": "Abonnemang",
+        "hint": "Ge gratis månader eller ange datumet då det kostnadsfria abonnemanget upphör. En gåva börjar när salongens nuvarande period tar slut.",
+        "search": "Sök på namn, ort eller organisationsnummer",
+        "find": "Sök",
+        "empty": "Inga salonger hittades.",
+        "none": "Inget abonnemang",
+        "manage": "Hantera",
+        "months": "Gratis månader",
+        "monthsN": "{n, plural, one {# månad} other {# månader}}",
+        "note": "Anteckning (valfritt)",
+        "notePlaceholder": "T.ex. grundande partner",
+        "grant": "Ge",
+        "until": "Gratis till",
+        "set": "Ange datum",
+        "cancel": "Avsluta abonnemanget nu",
+        "cancelHint": "Salongen försvinner från sökningen tills den tecknar abonnemang igen.",
+        "saved": "Abonnemanget har uppdaterats.",
+        "invalid": "Välj ett datum i framtiden.",
+        "salonStatus": {
+          "draft": "Utkast",
+          "pending": "Väntar",
+          "active": "Publicerad",
+          "suspended": "Avstängd"
+        },
+        "status": {
+          "trial": "Prov",
+          "active": "Aktivt",
+          "past_due": "Förfallet",
+          "cancelled": "Avslutat",
+          "complimentary": "Gratis"
+        },
+        "endsOn": "till {date}",
+        "endedOn": "sedan {date}",
+        "kind": {
+          "salon": "Salong",
+          "restaurant": "Restaurang"
+        }
+      },
+      "title": "Administration"
+    },
+    "menu": {
+      "hint": "Dela in menyn i avsnitt. Ändringar syns direkt på den offentliga sidan och bakom QR-koden på borden.",
+      "viewPublic": "Visa offentlig meny",
+      "invalid": "Kontrollera namnet och priset (till exempel 12,50).",
+      "empty": "Börja med ett avsnitt som ”Förrätter” och lägg sedan till rätter.",
+      "editSection": "Redigera avsnitt",
+      "sectionName": "Nytt avsnitt",
+      "sectionNameEn": "Namn på engelska (valfritt)",
+      "sectionPlaceholder": "Förrätter",
+      "save": "Spara",
+      "deleteSection": "Radera avsnittet och dess rätter",
+      "addSection": "Lägg till avsnitt",
+      "addDish": "Lägg till rätt",
+      "editDish": "Redigera rätt",
+      "deleteDish": "Radera rätt",
+      "available": "tillgänglig",
+      "soldOut": "slutsåld",
+      "dishName": "Rättens namn",
+      "dishNameEn": "Namn på engelska (valfritt)",
+      "description": "Beskrivning",
+      "descriptionEn": "Beskrivning på engelska (valfritt)",
+      "price": "Pris inkl. moms, €",
+      "portion": "Portion (valfritt)",
+      "portionPlaceholder": "300 g, 0,33 l, för 2",
+      "allergens": "Allergener",
+      "tags": "Taggar",
+      "likes": "Gillamarkeringar från gäster"
+    },
+    "qr": {
+      "hint": "Skriv ut kortet och ställ det på borden. Gästerna skannar det med mobilkameran och menyn öppnas på mobilens språk.",
+      "notListed": "Koden fungerar redan, men gästerna kan öppna menyn först när restaurangen är publicerad (fliken Profil).",
+      "scan": "Skanna koden för att se menyn",
+      "scanEn": "Scan to see the menu",
+      "print": "Skriv ut kort",
+      "salon": {
+        "hint": "Skriv ut kortet och ställ det i receptionen eller vid spegeln. Kunderna skannar det med mobilkameran, bokar nästa besök och betygsätter sin behandlare.",
+        "notListed": "Koden fungerar redan, men kunderna kan öppna sidan först när salongen är publicerad (fliken Profil).",
+        "scan": "Boka online och betygsätt din behandlare",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Hjälp"
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Spanien",
+    "fr": "Frankrike",
+    "it": "Italien",
+    "de": "Tyskland",
+    "nl": "Nederländerna",
+    "be": "Belgien",
+    "ie": "Irland",
+    "lu": "Luxemburg",
+    "at": "Österrike",
+    "ch": "Schweiz",
+    "pl": "Polen",
+    "cz": "Tjeckien",
+    "sk": "Slovakien",
+    "hu": "Ungern",
+    "si": "Slovenien",
+    "hr": "Kroatien",
+    "ro": "Rumänien",
+    "bg": "Bulgarien",
+    "dk": "Danmark",
+    "se": "Sverige"
+  },
+  "restaurants": {
+    "metaTitle": "Restauranger och menyer",
+    "eyebrow": "Europa · Restauranger",
+    "title": "Se menyn innan du sätter dig.",
+    "subtitle": "Hela menyer med priser som restaurangerna själva håller uppdaterade, på det lokala språket och på engelska, med allergener.",
+    "searchPlaceholder": "Namn eller kök",
+    "resultsTitle": "{count, plural, =0 {Inga restauranger} one {# restaurang} other {# restauranger}} i {city}",
+    "cityEmpty": "Det finns inga restauranger på Astrabela i {city} ännu.",
+    "noMatch": "Inga restauranger matchar sökningen.",
+    "join": "Har du en restaurang? Publicera din meny",
+    "dishes": "{count, plural, one {# rätt} other {# rätter}}",
+    "from": "Från {price}"
+  },
+  "restaurant": {
+    "menu": "Meny",
+    "allergens": "Allergener",
+    "vatIncluded": "Priser i euro inklusive moms.",
+    "allergyNote": "Har du allergier? Säg till personalen innan du beställer.",
+    "like": "Gilla"
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "kräftdjur",
+    "eggs": "ägg",
+    "fish": "fisk",
+    "peanuts": "jordnötter",
+    "soy": "soja",
+    "milk": "mjölk",
+    "nuts": "nötter",
+    "celery": "selleri",
+    "mustard": "senap",
+    "sesame": "sesam",
+    "sulphites": "sulfiter",
+    "lupin": "lupin",
+    "molluscs": "blötdjur"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarisk",
+    "vegan": "Vegansk",
+    "gluten_free": "Glutenfri",
+    "spicy": "Stark"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Webbplats"
+  },
+  "account": {
+    "title": "Logga in",
+    "google": "Fortsätt med Google",
+    "or": "eller",
+    "googleError": "Inloggningen med Google misslyckades. Försök igen.",
+    "openCabinet": "Öppna ditt företagskonto",
+    "hello": "Hej, {name}",
+    "logout": "Logga ut",
+    "upcoming": "Kommande bokningar",
+    "noUpcoming": "Du har inga kommande bokningar.",
+    "findSalon": "Hitta en salong",
+    "past": "Tidigare bokningar",
+    "open": "Visa",
+    "bookingsHint": "Här visas bokningar du gjort medan du var inloggad.",
+    "deleteTitle": "Radera konto",
+    "deleteText": "Ditt konto och din inloggning raderas. Bokningarna finns kvar hos salongerna, som sparar dem för att kunna utföra behandlingen.",
+    "deleteConfirm": "Radera mitt konto",
+    "deleted": "Ditt konto har raderats.",
+    "email": "E-post",
+    "password": "Lösenord",
+    "submit": "Logga in",
+    "loginError": "Fel e-post eller lösenord.",
+    "noAccount": "Inget konto än?",
+    "createAccount": "Skapa konto",
+    "businessQuestion": "Har du en salong eller restaurang?",
+    "businessLink": "Astrabela för företag",
+    "signedInBusiness": "Inloggad som {name}.",
+    "adminPanel": "Administration",
+    "welcome": "Kontot är skapat. Här visas bokningar du gör medan du är inloggad.",
+    "bookingsHintGoogle": "Här visas bokningar du gjort medan du var inloggad eller med din Google-e-post.",
+    "registerTitle": "Skapa konto",
+    "name": "Namn",
+    "passwordHint": "Minst 8 tecken.",
+    "terms": "Jag godkänner <terms>användarvillkoren</terms> och <privacy>integritetspolicyn</privacy>.",
+    "registerSubmit": "Skapa konto",
+    "haveAccount": "Har du redan ett konto?",
+    "registerErrors": {
+      "invalid": "Kontrollera namn, e-post och lösenord (minst 8 tecken).",
+      "email_taken": "Det finns redan ett konto med den här e-postadressen. Logga in med det."
+    }
+  },
+  "petFriendly": {
+    "label": "Husdjursvänlig",
+    "hint": "Husdjur är välkomna."
+  }
+}

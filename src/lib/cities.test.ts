@@ -391,3 +391,17 @@ describe("Danish places", () => {
     expect(phoneCountry("aalborg")).toBe("DK");
   });
 });
+
+describe("Swedish places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("stockholm")).toMatchObject({ name: "Stockholm", country: "se", area: "Stockholms län" });
+    expect(searchPlaces("goteborg", [], 30, "se")[0]).toMatchObject({ name: "Göteborg", area: "Västra Götalands län" });
+    expect(searchPlaces("malmo", [], 30, "se")[0].name).toBe("Malmö");
+  });
+
+  it("uses Stockholm time and starts Swedish visitors in Stockholm", () => {
+    expect(placeTimezone("uppsala")).toBe("Europe/Stockholm");
+    expect(cityFieldSetup([], undefined, "sv")).toMatchObject({ defaultCountry: "se", defaultSlugs: { se: "stockholm" } });
+    expect(phoneCountry("orebro")).toBe("SE");
+  });
+});

@@ -85,6 +85,15 @@ const COUNTRIES: Record<string, Config> = {
     regions: { "17": "Region Hovedstaden", "18": "Region Midtjylland", "19": "Region Nordjylland", "20": "Region Sjælland", "21": "Region Syddanmark" },
     names: { Copenhagen: "København", Århus: "Aarhus" },
   },
+  se: {
+    regions: {
+      "02": "Blekinge län", "03": "Gävleborgs län", "05": "Gotlands län", "06": "Hallands län", "07": "Jämtlands län",
+      "08": "Jönköpings län", "09": "Kalmar län", "10": "Dalarnas län", "12": "Kronobergs län", "14": "Norrbottens län",
+      "15": "Örebro län", "16": "Östergötlands län", "18": "Södermanlands län", "21": "Uppsala län", "22": "Värmlands län",
+      "23": "Västerbottens län", "24": "Västernorrlands län", "25": "Västmanlands län", "26": "Stockholms län",
+      "27": "Skåne län", "28": "Västra Götalands län",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
