@@ -1,0 +1,595 @@
+{
+  "meta": {
+    "title": "Astrabela: kosmetické salony a barbershopy s online rezervací",
+    "description": "Najděte kosmetický salon nebo barbershop v Evropě, čtěte hodnocení klientů u každého specialisty a rezervujte online."
+  },
+  "nav": {
+    "forSalons": "Pro firmy",
+    "footer": "Astrabela · Hodnocení klientů u každého specialisty",
+    "language": "Jazyk",
+    "forClients": "Najít salon",
+    "salons": "Salony",
+    "restaurants": "Restaurace",
+    "privacy": "Soukromí",
+    "terms": "Podmínky",
+    "signIn": "Přihlásit se",
+    "support": "Podpora"
+  },
+  "home": {
+    "title": "Rezervujte ty nejlepší. Věřte hvězdám.",
+    "subtitle": "Nejlepší kosmetické salony a barbershopy v Evropě, hodnocené klienty u každého specialisty zvlášť. Vyberte si a rezervujte online během pár vteřin.",
+    "why": {
+      "verified": {
+        "title": "Hodnocení každého specialisty",
+        "text": "Každé hodnocení patří jednomu specialistovi. Potvrzené návštěvy mají vlastní označení."
+      },
+      "masters": {
+        "title": "Vyberte si specialistu",
+        "text": "Každý specialista má vlastní hodnocení."
+      },
+      "direct": {
+        "title": "Platíte v salonu",
+        "text": "Rezervace zdarma, bez online platby."
+      }
+    },
+    "eyebrow": "Evropa · Kosmetické salony a barbershopy",
+    "featuredEyebrow": "Doporučujeme",
+    "featuredTitle": "Nejlépe hodnocené salony",
+    "browse": "Hledat podle služby"
+  },
+  "search": {
+    "city": "Obec",
+    "service": "Služba",
+    "anyService": "Všechny služby",
+    "language": "Jazyk",
+    "anyLanguage": "Jakýkoli jazyk",
+    "submit": "Hledat",
+    "resultsTitle": "{count, plural, =0 {Žádné salony} one {# salon} few {# salony} many {# salonu} other {# salonů}} {city, select, other {v obci {city}}}",
+    "empty": "Těmto filtrům zatím neodpovídá žádný salon.",
+    "new": "Nový",
+    "from": "Od {price}",
+    "cityEmpty": "V obci {city} zatím na Astrabele nejsou žádné salony. Otevíráme město po městě.",
+    "cityEmptyCta": "Máte tu salon nebo barbershop? Přidejte se",
+    "country": "Země",
+    "comingSoon": "brzy",
+    "cityPlaceholder": "Zadejte obec",
+    "cityNoMatch": "V této obci zatím nejsme"
+  },
+  "categories": {
+    "hair": "Vlasy",
+    "barber": "Barber",
+    "nails": "Nehty",
+    "brows_lashes": "Obočí a řasy",
+    "skin": "Péče o pleť",
+    "makeup": "Make-up",
+    "massage": "Masáž",
+    "other": "Ostatní"
+  },
+  "languages": {
+    "pt": "Portugalština",
+    "en": "Angličtina",
+    "es": "Španělština",
+    "fr": "Francouzština",
+    "de": "Němčina",
+    "it": "Italština",
+    "nl": "Nizozemština",
+    "pl": "Polština",
+    "cs": "Čeština",
+    "ru": "Ruština",
+    "uk": "Ukrajinština"
+  },
+  "weekdays": {
+    "0": "Neděle",
+    "1": "Pondělí",
+    "2": "Úterý",
+    "3": "Středa",
+    "4": "Čtvrtek",
+    "5": "Pátek",
+    "6": "Sobota"
+  },
+  "salon": {
+    "verifiedNote": "hodnocení klientů u každého specialisty",
+    "services": "Služby",
+    "minutes": "{n} min",
+    "book": "Rezervovat",
+    "reviews": "Hodnocení",
+    "reportThanks": "Děkujeme. Nahlášení prověříme.",
+    "noReviews": "Zatím žádná hodnocení.",
+    "withMaster": "u: {name}",
+    "verifiedVisit": "potvrzená návštěva",
+    "salonReply": "Odpověď salonu",
+    "report": "Nahlásit hodnocení",
+    "reportReason": "Důvod",
+    "send": "Odeslat",
+    "team": "Tým",
+    "payOnSite": "Platba v salonu.",
+    "viaAstrabela": "rezervace přes Astrabelu",
+    "viaSalon": "návštěva potvrzená salonem",
+    "writeReview": "Ohodnotit specialistu",
+    "master": "Specialista",
+    "rating": "Hodnocení",
+    "yourReview": "Vaše hodnocení (nepovinné)",
+    "publish": "Zveřejnit hodnocení",
+    "signInToReview": "Pro hodnocení se přihlaste.",
+    "signIn": "Přihlásit se",
+    "reviewThanks": "Děkujeme! Vaše hodnocení bylo zveřejněno.",
+    "reviewTooSoon": "Tohoto specialistu jste už v posledních 30 dnech hodnotili.",
+    "reviewInvalid": "Vyberte specialistu a hodnocení.",
+    "viaClient": "hodnocení klienta"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "platba v salonu",
+    "errors": {
+      "invalid": "Zkontrolujte své údaje a zkuste to znovu.",
+      "slot_taken": "Tento termín byl právě obsazen. Vyberte jiný.",
+      "not_found": "Služba nebo specialista nejsou k dispozici.",
+      "not_allowed": "Tento specialista tuto službu neposkytuje.",
+      "phone": "Zadejte platné číslo mobilu se správnou předvolbou země."
+    },
+    "master": "Specialista",
+    "anyMaster": "Kterýkoli specialista",
+    "day": "Den",
+    "time": "Čas",
+    "noSlots": "V tento den nejsou volné termíny.",
+    "yourDetails": "Vaše údaje",
+    "name": "Jméno",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "note": "Zpráva pro salon (nepovinné)",
+    "privacy": "Souhlasím, aby salon a Astrabela zpracovávaly mé údaje za účelem vyřízení této rezervace (<privacy>zásady ochrany soukromí</privacy>).",
+    "confirm": "Potvrdit rezervaci",
+    "gateTitle": "Jak chcete pokračovat?",
+    "gateText": "S účtem vidíte všechny rezervace na jednom místě a nemusíte znovu vyplňovat údaje.",
+    "guest": "Bez účtu",
+    "signIn": "Přihlásit se"
+  },
+  "booking": {
+    "created": "Rezervace potvrzena! Podrobnosti jsme poslali e-mailem.",
+    "reviewThanks": "Děkujeme za hodnocení!",
+    "error": "Tuto akci se nepodařilo provést.",
+    "status": {
+      "confirmed": "Potvrzená",
+      "cancelled": "Zrušená",
+      "completed": "Dokončená",
+      "no_show": "Nedostavil(a) se"
+    },
+    "with": "u: {name}",
+    "payOnSite": "platba v salonu",
+    "cancel": "Zrušit rezervaci",
+    "reviewTitle": "Ohodnoťte návštěvu u: {name}",
+    "rating": "Hodnocení",
+    "reviewText": "Komentář",
+    "authorName": "Zobrazované jméno",
+    "submitReview": "Zveřejnit hodnocení",
+    "visitOn": "Návštěva {date}",
+    "moreTitle": "Další salony v obci {city}",
+    "moreLink": "Zobrazit všechny salony"
+  },
+  "business": {
+    "landing": {
+      "title": "Více klientů pro váš salon",
+      "subtitle": "Online kalendář a hodnocení klientů. Bez provizí, jedna pevná cena pro celý tým.",
+      "start": "Vyzkoušejte {months} měsíce zdarma",
+      "features": {
+        "noCommission": "0 % provize z klientů",
+        "unlimitedStaff": "Neomezený počet pracovníků",
+        "calendar": "Online kalendář a ruční rezervace",
+        "verifiedReviews": "Hodnocení každého specialisty",
+        "ownClients": "Vaši klienti zůstávají vaši"
+      },
+      "restaurants": {
+        "eyebrow": "Restaurace",
+        "title": "Vaše menu online, vždy aktuální",
+        "text": "Zveřejněte menu s cenami a alergeny ve svém jazyce i v angličtině. Vytiskněte QR kód na stoly a měňte ceny kdykoli. První 3 měsíce zdarma.",
+        "cta": "Vyzkoušejte 3 měsíce zdarma"
+      },
+      "trialNote": "První {months} měsíce jsou zdarma. Na začátek nepotřebujete kartu."
+    },
+    "plans": {
+      "monthly": "Měsíčně",
+      "semiannual": "6 měsíců",
+      "annual": "12 měsíců",
+      "perMonth": "měsíčně + DPH"
+    },
+    "login": {
+      "title": "Přihlásit se",
+      "error": "Nesprávný e-mail nebo heslo.",
+      "email": "E-mail",
+      "password": "Heslo",
+      "submit": "Přihlásit se",
+      "noAccount": "Nemáte účet? Zaregistrujte salon"
+    },
+    "register": {
+      "title": "Registrace firmy",
+      "errors": {
+        "invalid": "Zkontrolujte pole (heslo alespoň 8 znaků).",
+        "email_taken": "Tento e-mail je už registrován."
+      },
+      "fields": {
+        "salonName": "Název firmy",
+        "city": "Obec",
+        "address": "Adresa",
+        "phone": "Telefon",
+        "name": "Vaše jméno",
+        "email": "E-mail",
+        "password": "Heslo"
+      },
+      "terms": "Přijímám <terms>podmínky</terms>, včetně smlouvy o zpracování osobních údajů (GDPR), a <privacy>zásady ochrany soukromí</privacy>.",
+      "submit": "Vytvořit účet",
+      "kind": "Typ podnikání",
+      "kinds": {
+        "salon": "Salon",
+        "restaurant": "Restaurace"
+      },
+      "kindHint": "Kosmetické salony, barbershopy, nehtová studia a kosmetičky volí „Salon“. Potom vyberte kategorie služeb, např. „Barber“.",
+      "googleAs": "Registrujete se přes Google jako {email}. Heslo není potřeba."
+    },
+    "salonStatus": {
+      "draft": "Koncept",
+      "pending": "Ve schvalování",
+      "active": "Zveřejněno",
+      "suspended": "Pozastaveno"
+    },
+    "logout": "Odhlásit se",
+    "tabs": {
+      "calendar": "Kalendář",
+      "services": "Služby",
+      "team": "Tým",
+      "reviews": "Hodnocení",
+      "profile": "Profil",
+      "admin": "Administrace",
+      "menu": "Menu",
+      "qr": "QR kód"
+    },
+    "calendar": {
+      "today": "Dnes",
+      "errors": {
+        "invalid": "Neplatné údaje.",
+        "slot_taken": "Tento termín je už obsazen.",
+        "not_found": "Služba nebo specialista nenalezeni.",
+        "not_allowed": "Tento specialista tuto službu neposkytuje.",
+        "phone": "Neplatné telefonní číslo. Vyberte zemi a zadejte celé číslo."
+      },
+      "noTeam": "Přidejte specialisty v záložce Tým.",
+      "free": "Žádné rezervace.",
+      "noShows": "{n, plural, one {# nedostavení} few {# nedostavení} many {# nedostavení} other {# nedostavení}}",
+      "mark": {
+        "completed": "Přišel(a)",
+        "no_show": "Nedostavil(a) se",
+        "cancelled": "Zrušit"
+      },
+      "manualTitle": "Nová rezervace (telefon, bez objednání)",
+      "master": "Specialista",
+      "service": "Služba",
+      "time": "Čas",
+      "clientName": "Jméno klienta",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-mail (nepovinné)",
+      "add": "Přidat"
+    },
+    "services": {
+      "empty": "Zatím žádné služby.",
+      "disable": "Vypnout",
+      "enable": "Zapnout",
+      "addTitle": "Nová služba",
+      "name": "Název",
+      "category": "Kategorie",
+      "duration": "Délka (min)",
+      "price": "Cena (€)",
+      "add": "Přidat"
+    },
+    "team": {
+      "name": "Jméno",
+      "title": "Pozice",
+      "titlePlaceholder": "např. Koloristka",
+      "languages": "Jazyky",
+      "services": "Služby",
+      "noServices": "Nejdřív přidejte služby.",
+      "schedule": "Týdenní rozvrh",
+      "save": "Uložit",
+      "servicesCount": "{n, plural, one {# služba} few {# služby} many {# služby} other {# služeb}}",
+      "deactivate": "Deaktivovat",
+      "activate": "Aktivovat",
+      "add": "Přidat specialistu"
+    },
+    "profile": {
+      "welcome": "Vítejte! Vyplňte profil, přidejte služby a tým a pak salon odešlete ke zveřejnění.",
+      "saved": "Uloženo.",
+      "submitted": "Odesláno! Salon prověříme a brzy ho zveřejníme.",
+      "notReady": "Před odesláním přidejte alespoň jednoho specialistu se službami a rozvrhem.",
+      "listing": "Viditelnost v katalogu",
+      "statusHelp": {
+        "draft": "Váš salon zatím v katalogu není.",
+        "pending": "Váš salon prověřujeme.",
+        "active": "Váš salon je zveřejněn a přijímá rezervace.",
+        "suspended": "Váš salon je pozastaven. Kontaktujte nás."
+      },
+      "submit": "Odeslat ke zveřejnění",
+      "viewPublic": "Zobrazit veřejnou stránku",
+      "subscription": "Předplatné",
+      "sub": {
+        "trial": "Zkušební období zdarma do {date}.",
+        "active": "Aktivní do {date}.",
+        "past_due": "Neuhrazená platba od {date}.",
+        "cancelled": "Zrušeno {date}.",
+        "complimentary": "Zdarma od Astrabely do {date}."
+      },
+      "details": "Údaje o salonu",
+      "fields": {
+        "name": "Název",
+        "district": "Čtvrť",
+        "address": "Adresa",
+        "postalCode": "PSČ",
+        "phone": "Telefon",
+        "nif": "IČO / DIČ",
+        "description": "Popis",
+        "cuisine": "Kuchyně"
+      },
+      "save": "Uložit",
+      "restaurant": {
+        "welcome": "Vítejte! Vyplňte profil, připravte menu a pak restauraci odešlete ke zveřejnění.",
+        "notReady": "Před odesláním přidejte do menu alespoň jedno jídlo.",
+        "details": "Údaje o restauraci",
+        "statusHelp": {
+          "draft": "Restaurace zatím v katalogu není.",
+          "pending": "Restauraci prověřujeme.",
+          "active": "Restaurace je zveřejněna a menu je vidět.",
+          "suspended": "Restaurace je pozastavena. Kontaktujte nás."
+        }
+      },
+      "social": {
+        "title": "Sociální sítě",
+        "hint": "Zobrazí se na vaší veřejné stránce. Zadejte uživatelské jméno (@priklad) nebo vložte odkaz.",
+        "invalid": "Odkaz na {network} jsme nepoznali. Zkontrolujte ho a uložte znovu.",
+        "placeholders": {
+          "instagram": "@vas_salon",
+          "facebook": "facebook.com/vas-salon",
+          "tiktok": "@vas_salon",
+          "whatsapp": "601 234 567",
+          "website": "www.vas-salon.cz"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Zatím žádná hodnocení.",
+      "hidden": "skryto moderací",
+      "replyPlaceholder": "Odpovědět veřejně…",
+      "updateReply": "Upravit odpověď",
+      "reply": "Odpovědět",
+      "inviteTitle": "Požádejte stálého klienta o hodnocení",
+      "inviteHint": "Zapište návštěvu, která už proběhla, a získejte osobní odkaz, přes který klient ohodnotí specialistu. Pošlete ho přes WhatsApp, SMS nebo jak chcete. Účet není potřeba.",
+      "inviteMasterService": "Specialista a služba",
+      "inviteDate": "Datum návštěvy",
+      "inviteClientName": "Jméno klienta",
+      "inviteClientEmail": "E-mail (nepovinné)",
+      "inviteClientPhone": "Mobil (nepovinné)",
+      "inviteLanguage": "Jazyk zprávy",
+      "inviteSend": "Požádat o hodnocení",
+      "inviteRules": "Jeden odkaz slouží k jednomu hodnocení jedné návštěvy. Návštěvy z posledních 90 dnů, jedna žádost na klienta a specialistu každých 30 dnů. Tato hodnocení mají označení „návštěva potvrzená salonem“ a salon je nemůže smazat ani skrýt, ani ta negativní.",
+      "inviteNoTeam": "Abyste mohli žádat o hodnocení, přidejte v záložce Tým specialistu se službami.",
+      "invited": "Žádost vytvořena. Teď pošlete zprávu klientovi: zkopírujte ji nebo otevřete WhatsApp tlačítky níže.",
+      "inviteErrors": {
+        "invalid": "Zkontrolujte jméno, e-mail (pokud je uveden) a datum (max. 90 dnů zpět, ne v budoucnosti).",
+        "not_found": "Specialista nebo služba nenalezeni.",
+        "not_allowed": "Tuto žádost nelze odeslat.",
+        "duplicate": "V posledních 30 dnech jste tohoto klienta už požádali o hodnocení tohoto specialisty.",
+        "limit": "Dnešní limit žádostí je vyčerpán. Zkuste to zítra.",
+        "phone": "Neplatné telefonní číslo. Vyberte zemi a zadejte celé číslo."
+      },
+      "invitationsTitle": "Odeslané žádosti",
+      "invitationWaiting": "čeká",
+      "invitationReviewed": "ohodnoceno",
+      "listTitle": "Hodnocení",
+      "viaAstrabela": "rezervace přes Astrabelu",
+      "viaSalon": "návštěva potvrzená salonem",
+      "cannotDelete": "Salony nemohou mazat hodnocení. Můžete odpovědět veřejně nebo nahlásit falešné hodnocení k moderaci.",
+      "shareCopy": "Kopírovat zprávu",
+      "shareCopied": "Zkopírováno ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "hodnocení klienta"
+    },
+    "admin": {
+      "pending": "Salony čekající na zveřejnění",
+      "none": "Nic nečeká.",
+      "approve": "Schválit",
+      "reject": "Vrátit",
+      "reports": "Nahlášená hodnocení",
+      "reason": "Důvod",
+      "hide": "Skrýt hodnocení",
+      "keep": "Ponechat",
+      "subs": {
+        "title": "Předplatné",
+        "hint": "Darujte měsíce zdarma nebo nastavte datum, do kterého předplatné běží zdarma. Dar začíná, až skončí čas, který salon už má.",
+        "search": "Hledat podle názvu, obce nebo IČO",
+        "find": "Hledat",
+        "empty": "Žádné salony nenalezeny.",
+        "none": "Bez předplatného",
+        "manage": "Spravovat",
+        "months": "Měsíce zdarma",
+        "monthsN": "{n, plural, one {# měsíc} few {# měsíce} many {# měsíce} other {# měsíců}}",
+        "note": "Poznámka (nepovinné)",
+        "notePlaceholder": "Např. partner od začátku",
+        "grant": "Darovat",
+        "until": "Zdarma do",
+        "set": "Nastavit datum",
+        "cancel": "Ukončit předplatné hned",
+        "cancelHint": "Salon zmizí z vyhledávání, dokud si předplatné znovu nekoupí.",
+        "saved": "Předplatné aktualizováno.",
+        "invalid": "Vyberte datum v budoucnosti.",
+        "salonStatus": {
+          "draft": "Koncept",
+          "pending": "Čeká",
+          "active": "Zveřejněno",
+          "suspended": "Pozastaveno"
+        },
+        "status": {
+          "trial": "Zkušební",
+          "active": "Aktivní",
+          "past_due": "Neuhrazené",
+          "cancelled": "Zrušené",
+          "complimentary": "Zdarma"
+        },
+        "endsOn": "do {date}",
+        "endedOn": "od {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restaurace"
+        }
+      },
+      "title": "Administrace"
+    },
+    "menu": {
+      "hint": "Rozdělte menu do sekcí. Změny se hned objeví na veřejné stránce i pod QR kódem na stole.",
+      "viewPublic": "Zobrazit veřejné menu",
+      "invalid": "Zkontrolujte název a cenu (například 12,50).",
+      "empty": "Začněte sekcí, např. „Předkrmy“, a pak přidejte jídla.",
+      "editSection": "Upravit sekci",
+      "sectionName": "Nová sekce",
+      "sectionNameEn": "Název anglicky (nepovinné)",
+      "sectionPlaceholder": "Předkrmy",
+      "save": "Uložit",
+      "deleteSection": "Smazat sekci i její jídla",
+      "addSection": "Přidat sekci",
+      "addDish": "Přidat jídlo",
+      "editDish": "Upravit jídlo",
+      "deleteDish": "Smazat jídlo",
+      "available": "k dispozici",
+      "soldOut": "vyprodáno",
+      "dishName": "Název jídla",
+      "dishNameEn": "Název anglicky (nepovinné)",
+      "description": "Popis",
+      "descriptionEn": "Popis anglicky (nepovinné)",
+      "price": "Cena s DPH, €",
+      "portion": "Porce (nepovinné)",
+      "portionPlaceholder": "300 g, 0,33 l, pro 2 osoby",
+      "allergens": "Alergeny",
+      "tags": "Označení",
+      "likes": "Oblíbené u hostů"
+    },
+    "qr": {
+      "hint": "Vytiskněte tento list a postavte ho na stoly. Hosté ho naskenují fotoaparátem telefonu a menu se otevře v jazyce jejich telefonu.",
+      "notListed": "Kód už funguje, ale hosté menu uvidí až po zveřejnění restaurace (záložka Profil).",
+      "scan": "Naskenujte kód a prohlédněte si menu",
+      "scanEn": "Scan to see the menu",
+      "print": "Vytisknout list",
+      "salon": {
+        "hint": "Vytiskněte tento list a dejte ho na recepci nebo k zrcadlu. Klienti ho naskenují telefonem, rezervují další návštěvu a ohodnotí svého specialistu.",
+        "notListed": "Kód už funguje, ale klienti stránku uvidí až po zveřejnění salonu (záložka Profil).",
+        "scan": "Rezervujte online a ohodnoťte svého specialistu",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Podpora"
+  },
+  "countries": {
+    "pt": "Portugalsko",
+    "es": "Španělsko",
+    "fr": "Francie",
+    "it": "Itálie",
+    "de": "Německo",
+    "nl": "Nizozemsko",
+    "be": "Belgie",
+    "ie": "Irsko",
+    "lu": "Lucembursko",
+    "at": "Rakousko",
+    "ch": "Švýcarsko",
+    "pl": "Polsko",
+    "cz": "Česko"
+  },
+  "restaurants": {
+    "metaTitle": "Restaurace a menu",
+    "eyebrow": "Evropa · Restaurace",
+    "title": "Prohlédněte si menu dřív, než si sednete.",
+    "subtitle": "Celá menu s aktuálními cenami, která vedou samy restaurace, v místním jazyce i v angličtině, s alergeny.",
+    "searchPlaceholder": "Název nebo kuchyně",
+    "resultsTitle": "{count, plural, =0 {Žádné restaurace} one {# restaurace} few {# restaurace} many {# restaurace} other {# restaurací}} v obci {city}",
+    "cityEmpty": "V obci {city} zatím na Astrabele nejsou žádné restaurace.",
+    "noMatch": "Hledání neodpovídá žádná restaurace.",
+    "join": "Máte restauraci? Zveřejněte své menu",
+    "dishes": "{count, plural, one {# jídlo} few {# jídla} many {# jídla} other {# jídel}}",
+    "from": "Od {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Alergeny",
+    "vatIncluded": "Ceny v eurech, včetně DPH.",
+    "allergyNote": "Máte alergii? Řekněte to obsluze před objednáním.",
+    "like": "Líbí se mi"
+  },
+  "allergens": {
+    "gluten": "lepek",
+    "crustaceans": "korýši",
+    "eggs": "vejce",
+    "fish": "ryby",
+    "peanuts": "arašídy",
+    "soy": "sója",
+    "milk": "mléko",
+    "nuts": "ořechy",
+    "celery": "celer",
+    "mustard": "hořčice",
+    "sesame": "sezam",
+    "sulphites": "siřičitany",
+    "lupin": "vlčí bob",
+    "molluscs": "měkkýši"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetariánské",
+    "vegan": "Veganské",
+    "gluten_free": "Bez lepku",
+    "spicy": "Pálivé"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Web"
+  },
+  "account": {
+    "title": "Přihlásit se",
+    "google": "Pokračovat přes Google",
+    "or": "nebo",
+    "googleError": "Přihlášení přes Google se nepodařilo. Zkuste to znovu.",
+    "openCabinet": "Otevřít firemní účet",
+    "hello": "Dobrý den, {name}",
+    "logout": "Odhlásit se",
+    "upcoming": "Nadcházející rezervace",
+    "noUpcoming": "Nemáte žádné nadcházející rezervace.",
+    "findSalon": "Najít salon",
+    "past": "Minulé rezervace",
+    "open": "Zobrazit",
+    "bookingsHint": "Zde se zobrazují rezervace provedené po přihlášení.",
+    "deleteTitle": "Smazat účet",
+    "deleteText": "Váš účet a přihlašovací údaje budou smazány. Rezervace zůstávají v salonech, které je uchovávají, aby mohly službu poskytnout.",
+    "deleteConfirm": "Smazat můj účet",
+    "deleted": "Váš účet byl smazán.",
+    "email": "E-mail",
+    "password": "Heslo",
+    "submit": "Přihlásit se",
+    "loginError": "Nesprávný e-mail nebo heslo.",
+    "noAccount": "Nemáte účet?",
+    "createAccount": "Vytvořit účet",
+    "businessQuestion": "Máte salon nebo restauraci?",
+    "businessLink": "Astrabela pro firmy",
+    "signedInBusiness": "Přihlášeni jako {name}.",
+    "adminPanel": "Administrace",
+    "welcome": "Účet vytvořen. Zde se zobrazí rezervace provedené po přihlášení.",
+    "bookingsHintGoogle": "Zde se zobrazují rezervace provedené po přihlášení nebo s vaším e-mailem Google.",
+    "registerTitle": "Vytvořit účet",
+    "name": "Jméno",
+    "passwordHint": "Alespoň 8 znaků.",
+    "terms": "Přijímám <terms>podmínky</terms> a <privacy>zásady ochrany soukromí</privacy>.",
+    "registerSubmit": "Vytvořit účet",
+    "haveAccount": "Už máte účet?",
+    "registerErrors": {
+      "invalid": "Zkontrolujte jméno, e-mail a heslo (alespoň 8 znaků).",
+      "email_taken": "Účet s tímto e-mailem už existuje. Přihlaste se jím."
+    }
+  },
+  "petFriendly": {
+    "label": "Vhodné pro zvířata",
+    "hint": "Zvířata jsou vítána."
+  }
+}

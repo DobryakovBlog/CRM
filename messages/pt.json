@@ -74,6 +74,7 @@
     "it": "Italiano",
     "nl": "Neerlandês",
     "pl": "Polaco",
+    "cs": "Checo",
     "ru": "Russo",
     "uk": "Ucraniano"
   },
@@ -494,7 +495,8 @@
     "lu": "Luxemburgo",
     "at": "Áustria",
     "ch": "Suíça",
-    "pl": "Polónia"
+    "pl": "Polónia",
+    "cz": "Chéquia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes e menus",

@@ -31,6 +31,7 @@ const PRICES = {
   de: ["12,99 € pro Monat bei monatlicher Zahlung;", "10,99 € pro Monat bei halbjährlicher Zahlung;", "9,99 € pro Monat bei jährlicher Zahlung."],
   nl: ["€ 12,99 per maand bij maandelijkse betaling;", "€ 10,99 per maand bij halfjaarlijkse betaling;", "€ 9,99 per maand bij jaarlijkse betaling."],
   pl: ["12,99 € miesięcznie przy płatności miesięcznej;", "10,99 € miesięcznie przy płatności co 6 miesięcy;", "9,99 € miesięcznie przy płatności rocznej."],
+  cs: ["12,99 € měsíčně při měsíční platbě;", "10,99 € měsíčně při platbě na 6 měsíců;", "9,99 € měsíčně při roční platbě."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -41,6 +42,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "de") return privacyDe();
   if (locale === "nl") return privacyNl();
   if (locale === "pl") return privacyPl();
+  if (locale === "cs") return privacyCs();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -239,6 +241,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "de") return termsDe();
   if (locale === "nl") return termsNl();
   if (locale === "pl") return termsPl();
+  if (locale === "cs") return termsCs();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -1564,6 +1567,197 @@ function termsPl(): LegalDoc {
       {
         title: "10. Zmiany",
         body: ["Możemy aktualizować ten regulamin. Nowa wersja zostanie opublikowana tutaj z datą; o ważnych zmianach firmy informujemy z wyprzedzeniem."],
+      },
+    ],
+  };
+}
+
+function privacyCs(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Zásady ochrany soukromí",
+    updated: "Poslední aktualizace: 1. listopadu 2026",
+    intro:
+      "Astrabela je katalog kosmetických salonů, barbershopů a restaurací v Evropě s online rezervací a hodnocením klientů u každého specialisty. Tyto zásady vysvětlují, jaké osobní údaje zpracováváme, za jakým účelem a jaká máte práva podle GDPR.",
+    sections: [
+      { title: "1. Kdo jsme", body: [`Službu astrabela.com provozuje ${who()}. Dotazy k vašim údajům posílejte na ${o.email}.`] },
+      {
+        title: "2. Jaké údaje zpracováváme",
+        body: [
+          "Když rezervujete nebo hodnotíte (klienti):",
+          [
+            "jméno, e-mail a číslo mobilu zadané při rezervaci a vaše zpráva salonu;",
+            "samotná rezervace: salon, specialista, služba, datum, čas a stav;",
+            "vaše hodnocení: hvězdičky, text a jméno, které chcete zobrazit;",
+            "pokud si vytvoříte klientský účet: jméno a e-mail a heslo uložené pouze v zašifrované podobě (hash), nebo při přihlášení přes Google identifikátor vašeho účtu Google (vaše heslo Google nikdy nevidíme).",
+          ],
+          "Když salon nebo restaurace používá Astrabelu (firmy):",
+          [
+            "jméno a e-mail majitele účtu a heslo (uložené pouze zašifrované);",
+            "údaje o firmě: název, adresa, telefon, e-mail, daňové číslo, tým, služby, ceny, otevírací doba, menu a odkazy na sociální sítě.",
+          ],
+          "Technické údaje: soubory cookie přihlášení, soubor cookie jazyka a serverové záznamy (např. IP adresa a čas požadavku), uchovávané z bezpečnostních důvodů.",
+        ],
+      },
+      {
+        title: "3. Účely a právní základy",
+        body: [
+          [
+            "vyřízení a správa rezervací: plnění smlouvy (čl. 6 odst. 1 písm. b GDPR);",
+            "správa účtů a předplatného firem: plnění smlouvy;",
+            "zveřejňování hodnocení a prevence falešných hodnocení: oprávněný zájem na důvěryhodném katalogu (čl. 6 odst. 1 písm. f);",
+            "bezpečný provoz služby: oprávněný zájem;",
+            "daňové a účetní povinnosti: právní povinnost (čl. 6 odst. 1 písm. c).",
+          ],
+          "Osobní údaje neprodáváme a nepoužíváme je k reklamě.",
+        ],
+      },
+      {
+        title: "4. Role salonu a naše role",
+        body: [
+          "U rezervací rozhoduje o použití údajů svých klientů salon, který si vyberete, a je jejich správcem. Astrabela tyto údaje zpracovává jménem salonu jako zpracovatel (čl. 28 GDPR) a pouze za účelem poskytování služby. Za hodnocení, veřejný katalog a bezpečnost služby je správcem Astrabela.",
+        ],
+      },
+      {
+        title: "5. Příjemci údajů",
+        body: [
+          "Salon nebo restaurace, kde rezervujete. Dále využíváme tyto poskytovatele, vázané smlouvami o zpracování údajů:",
+          [
+            "Vercel Inc. – hosting; služba běží ve Frankfurtu (EU). Vercel je americká společnost; předávání údajů mimo EU zajišťují standardní smluvní doložky EU a rámec EU-US Data Privacy Framework;",
+            "Neon – databáze uložená ve Frankfurtu (EU);",
+            "Cloudflare – služba doménových jmen (DNS);",
+            "Google – pouze pokud se přihlašujete přes Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Doba uchování",
+        body: [
+          [
+            "údaje klientů a rezervací: dokud je účet salonu aktivní, nejdéle 2 roky od vaší poslední návštěvy;",
+            "hodnocení: dokud je salon na Astrabele;",
+            "klientské účty: do jejich smazání (tlačítko na stránce účtu);",
+            "firemní účty: do zrušení účtu;",
+            "faktury a platební údaje: 10 let podle portugalského daňového práva;",
+            "přihlášení firem: 30 dnů.",
+          ],
+        ],
+      },
+      {
+        title: "7. Soubory cookie",
+        body: [
+          "Používáme pouze soubory cookie nezbytné pro provoz služby: pro udržení přihlášení (a zobrazení vašeho jména v menu), krátkodobé při přihlášení přes Google, jeden pro jazyk a jeden, který si pamatuje jídla, která se vám líbí v menu restaurace (vzniká až po klepnutí na ♥ a obsahuje náhodný kód, ne vaše jméno). Analytické ani reklamní soubory cookie nepoužíváme, proto nežádáme o souhlas s cookie.",
+        ],
+      },
+      {
+        title: "8. Vaše práva",
+        body: [
+          `Můžete požádat o přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování nebo vznést námitku a získat údaje ve formátu vhodném pro přenos. Napište na ${o.email}; odpovíme do jednoho měsíce. Pokud byly údaje předány salonu, předáme mu i vaši žádost. Můžete také podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.gov.cz) nebo u portugalského úřadu CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Bezpečnost",
+        body: [
+          "Služba běží pouze přes HTTPS, hesla jsou uložena zašifrovaná a odkazy na rezervace a hodnocení jsou osobní a těžko uhodnutelné. Svůj osobní odkaz s nikým nesdílejte.",
+        ],
+      },
+      {
+        title: "10. Změny",
+        body: ["Pokud tyto zásady změníme, zveřejníme zde novou verzi s datem. O důležitých změnách vás informujeme ve službě."],
+      },
+    ],
+  };
+}
+
+function termsCs(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Obchodní podmínky",
+    updated: "Poslední aktualizace: 1. listopadu 2026",
+    intro: `Tyto podmínky upravují používání astrabela.com, kterou provozuje ${who()}. Používáním služby nebo vytvořením firemního účtu je přijímáte.`,
+    sections: [
+      {
+        title: "1. Služba",
+        body: [
+          "Astrabela umožňuje klientům najít kosmetické salony, barbershopy a restaurace, rezervovat služby online, hodnotit specialisty a prohlížet menu restaurací. Salony a restaurace spravují profil, tým, služby, kalendář a menu ve svém firemním účtu.",
+        ],
+      },
+      {
+        title: "2. Pro klienty",
+        body: [
+          [
+            "Používání Astrabely je zdarma a nevyžaduje účet.",
+            "Rezervace je smlouva mezi vámi a salonem. Služby, ceny a délku určuje salon a službu poskytuje salon, ne Astrabela.",
+            "Astrabela nepřijímá platby: platíte přímo v salonu.",
+            "Návštěvu můžete zrušit přes osobní odkaz, který dostanete. Zrušte ji, pokud nemůžete přijít.",
+          ],
+        ],
+      },
+      {
+        title: "3. Hodnocení",
+        body: [
+          "Každý klient přihlášený na Astrabele může ohodnotit specialistu salonu, jednou za 30 dnů u téhož specialisty. Klienti s návštěvou rezervovanou přes Astrabelu nebo potvrzenou salonem mohou hodnotit také přes osobní odkaz; tato hodnocení mají označení potvrzené návštěvy. Hodnocení musí:",
+          [
+            "popisovat vaši vlastní skutečnou zkušenost;",
+            "být bez urážek, výhrůžek a diskriminace;",
+            "neobsahovat osobní údaje jiných lidí, reklamu ani odkazy.",
+          ],
+          "Hodnocení porušující tato pravidla můžeme skrýt. Salon nemůže hodnocení mazat ani měnit; může veřejně odpovědět nebo hodnocení nahlásit k moderaci.",
+        ],
+      },
+      {
+        title: "4. Pro salony a restaurace",
+        body: [
+          [
+            "Údaje v profilu, ceny a menu musí být pravdivé a aktuální. Odpovídáte za ně i za své služby.",
+            "Chraňte své heslo; odpovídáte za činnost ve svém účtu.",
+            "Nevytvářejte falešné rezervace, hodnocení ani žádosti o hodnocení a nežádejte o hodnocení výměnou za odměnu.",
+            "Ve vyhledávání se zobrazují pouze profily s aktivním předplatným nebo ve zkušebním období.",
+          ],
+        ],
+      },
+      {
+        title: "5. Ceny",
+        body: [
+          "Pro salony, barbershopy a restaurace jsou první 3 měsíce zdarma, bez karty na začátek. Poté je pro zobrazení potřeba předplatné:",
+          PRICES.cs,
+          "Platební podmínky se zobrazí před každou platbou. Ceny můžeme změnit s alespoň 30denním předstihem; změna platí od dalšího zúčtovacího období.",
+        ],
+      },
+      {
+        title: "6. Smlouva o zpracování osobních údajů (firmy)",
+        body: [
+          "U údajů klientů v rezervacích je firma správcem a Astrabela zpracovatelem (čl. 28 GDPR). Astrabela:",
+          [
+            "zpracovává tyto údaje pouze za účelem poskytování služby a podle pokynů, které firma dává prostřednictvím služby;",
+            "zachovává jejich důvěrnost a chrání je přiměřenými bezpečnostními opatřeními;",
+            "využívá pouze dílčí zpracovatele uvedené v zásadách ochrany soukromí a o nových firmy předem informuje;",
+            "pomáhá firmě s žádostmi klientů a s hlášením porušení zabezpečení údajů;",
+            "po zrušení účtu údaje smaže nebo předá, pokud zákon nevyžaduje jejich uchování.",
+          ],
+        ],
+      },
+      {
+        title: "7. Pozastavení a zrušení účtu",
+        body: [
+          "Firemní účet můžete kdykoli zrušit tím, že nám napíšete. Profil porušující tyto podmínky, zákon nebo práva jiných můžeme pozastavit nebo odstranit, s uvedením důvodu.",
+        ],
+      },
+      {
+        title: "8. Odpovědnost",
+        body: [
+          "Snažíme se, aby služba byla dostupná a správná, ale nemůžeme zaručit, že bude vždy fungovat bez přerušení a chyb. Astrabela není stranou smlouvy mezi klientem a salonem a neodpovídá za služby salonů. Nic v těchto podmínkách neomezuje zákonná práva spotřebitelů.",
+        ],
+      },
+      {
+        title: "9. Rozhodné právo a stížnosti",
+        body: [
+          `Podmínky se řídí portugalským právem, aniž by tím byla dotčena ochrana, kterou vám jako spotřebiteli poskytuje právo země vašeho bydliště. Stížnosti posílejte na ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Změny",
+        body: ["Tyto podmínky můžeme aktualizovat. Nová verze bude zveřejněna zde s datem; o důležitých změnách informujeme firmy předem."],
       },
     ],
   };

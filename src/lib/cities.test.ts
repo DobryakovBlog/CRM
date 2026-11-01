@@ -85,7 +85,7 @@ describe("Spanish places", () => {
     // The visitor's country (from the IP) wins over the language when we are open there.
     expect(cityFieldSetup([], undefined, "en", "es").defaultCountry).toBe("es");
     expect(cityFieldSetup([], undefined, "es", "pt").defaultCountry).toBe("pt");
-    expect(cityFieldSetup([], undefined, "es", "cz").defaultCountry).toBe("es");
+    expect(cityFieldSetup([], undefined, "es", "dk").defaultCountry).toBe("es");
     expect(cityFieldSetup([], "porto", "en", "es").defaultCountry).toBe("pt");
     expect(cityFieldSetup(["porto", "sevilla"], "sevilla", "pt")).toMatchObject({
       defaultCountry: "es",
@@ -275,5 +275,19 @@ describe("Polish places", () => {
     expect(placeTimezone("gdansk")).toBe("Europe/Warsaw");
     expect(cityFieldSetup([], undefined, "pl")).toMatchObject({ defaultCountry: "pl", defaultSlugs: { pl: "warszawa" } });
     expect(phoneCountry("poznan")).toBe("PL");
+  });
+});
+
+describe("Czech places", () => {
+  it("lists GeoNames towns by region under their Czech names", () => {
+    expect(placeBySlug("praha")).toMatchObject({ name: "Praha", country: "cz", area: "Hlavní město Praha" });
+    expect(searchPlaces("plzen", [], 30, "cz")[0]).toMatchObject({ name: "Plzeň", area: "Plzeňský kraj" });
+    expect(searchPlaces("usti nad labem", [], 30, "cz")[0].name).toBe("Ústí nad Labem");
+  });
+
+  it("uses Prague time and starts Czech visitors in Prague", () => {
+    expect(placeTimezone("brno")).toBe("Europe/Prague");
+    expect(cityFieldSetup([], undefined, "cs")).toMatchObject({ defaultCountry: "cz", defaultSlugs: { cz: "praha" } });
+    expect(phoneCountry("ostrava")).toBe("CZ");
   });
 });

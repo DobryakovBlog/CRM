@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  cs: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Rezervace potvrzena: ${r.salon.name}`,
+      text: `Dobrý den, ${r.client.name},\n\n${r.service.name} u ${r.staff.name}\n${when}\n${r.salon.address}\n\nSpravovat nebo zrušit: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Připomínka: zítra v ${r.salon.name}`,
+      text: `Dobrý den, ${r.client.name},\n\npřipomínáme vaši rezervaci: ${r.service.name} u ${r.staff.name}, ${when}.\nNemůžete přijít? Zrušte ji zde: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Jak se vám líbilo v ${r.salon.name}?`,
+      text: `Dobrý den, ${r.client.name},\n\nohodnoťte ${r.staff.name}. Hodnotit mohou jen klienti s potvrzenou návštěvou.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} vás prosí o hodnocení`,
+      text: `Dobrý den, ${r.client.name},\n\n${r.staff.name} ze salonu ${r.salon.name} děkuje za návštěvu (${r.service.name}) a rád(a) by znal(a) váš názor na Astrabele. Zabere to minutu a nepotřebujete účet.\nTento odkaz je osobní a slouží k jednomu hodnocení: ${link}`,
     }),
   },
   pl: {
