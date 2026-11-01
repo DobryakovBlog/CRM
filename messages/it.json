@@ -75,6 +75,7 @@
     "nl": "Olandese",
     "pl": "Polacco",
     "cs": "Ceco",
+    "sk": "Slovacco",
     "ru": "Russo",
     "uk": "Ucraino"
   },
@@ -496,7 +497,8 @@
     "at": "Austria",
     "ch": "Svizzera",
     "pl": "Polonia",
-    "cz": "Cechia"
+    "cz": "Cechia",
+    "sk": "Slovacchia"
   },
   "restaurants": {
     "metaTitle": "Ristoranti e menu",

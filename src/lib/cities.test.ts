@@ -291,3 +291,17 @@ describe("Czech places", () => {
     expect(phoneCountry("ostrava")).toBe("CZ");
   });
 });
+
+describe("Slovak places", () => {
+  it("lists GeoNames towns by region", () => {
+    expect(placeBySlug("bratislava")).toMatchObject({ name: "Bratislava", country: "sk", area: "Bratislavský kraj" });
+    expect(searchPlaces("kosice", [], 30, "sk")[0]).toMatchObject({ name: "Košice", area: "Košický kraj" });
+    expect(searchPlaces("zilina", [], 30, "sk")[0].name).toBe("Žilina");
+  });
+
+  it("uses Bratislava time and starts Slovak visitors in Bratislava", () => {
+    expect(placeTimezone("nitra")).toBe("Europe/Bratislava");
+    expect(cityFieldSetup([], undefined, "sk")).toMatchObject({ defaultCountry: "sk", defaultSlugs: { sk: "bratislava" } });
+    expect(phoneCountry("presov")).toBe("SK");
+  });
+});
