@@ -85,7 +85,7 @@ describe("Spanish places", () => {
     // The visitor's country (from the IP) wins over the language when we are open there.
     expect(cityFieldSetup([], undefined, "en", "es").defaultCountry).toBe("es");
     expect(cityFieldSetup([], undefined, "es", "pt").defaultCountry).toBe("pt");
-    expect(cityFieldSetup([], undefined, "es", "pl").defaultCountry).toBe("es");
+    expect(cityFieldSetup([], undefined, "es", "cz").defaultCountry).toBe("es");
     expect(cityFieldSetup([], "porto", "en", "es").defaultCountry).toBe("pt");
     expect(cityFieldSetup(["porto", "sevilla"], "sevilla", "pt")).toMatchObject({
       defaultCountry: "es",
@@ -261,5 +261,19 @@ describe("Swiss places", () => {
     expect(placeTimezone("lausanne")).toBe("Europe/Zurich");
     expect(cityFieldSetup([], undefined, "fr", "ch")).toMatchObject({ defaultCountry: "ch", defaultSlugs: { ch: "zurich" } });
     expect(phoneCountry("bern")).toBe("CH");
+  });
+});
+
+describe("Polish places", () => {
+  it("lists GeoNames towns by voivodeship under their Polish names", () => {
+    expect(placeBySlug("warszawa")).toMatchObject({ name: "Warszawa", country: "pl", area: "Mazowieckie" });
+    expect(searchPlaces("krakow", [], 30, "pl")[0]).toMatchObject({ name: "Kraków", area: "Małopolskie" });
+    expect(searchPlaces("bielsko", [], 30, "pl")[0].name).toBe("Bielsko-Biała");
+  });
+
+  it("uses Warsaw time and starts Polish visitors in Warsaw", () => {
+    expect(placeTimezone("gdansk")).toBe("Europe/Warsaw");
+    expect(cityFieldSetup([], undefined, "pl")).toMatchObject({ defaultCountry: "pl", defaultSlugs: { pl: "warszawa" } });
+    expect(phoneCountry("poznan")).toBe("PL");
   });
 });

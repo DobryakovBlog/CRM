@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  pl: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Wizyta potwierdzona: ${r.salon.name}`,
+      text: `Cześć ${r.client.name},\n\n${r.service.name} u ${r.staff.name}\n${when}\n${r.salon.address}\n\nZarządzaj lub odwołaj: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Przypomnienie: jutro w ${r.salon.name}`,
+      text: `Cześć ${r.client.name},\n\nPrzypominamy o wizycie: ${r.service.name} u ${r.staff.name}, ${when}.\nNie możesz przyjść? Odwołaj tutaj: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Jak było w ${r.salon.name}?`,
+      text: `Cześć ${r.client.name},\n\nOceń ${r.staff.name}. Opinie mogą wystawiać tylko klienci z potwierdzoną wizytą.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} prosi o Twoją opinię`,
+      text: `Cześć ${r.client.name},\n\n${r.staff.name} z ${r.salon.name} dziękuje za wizytę (${r.service.name}) i chętnie pozna Twoją opinię na Astrabeli. To zajmie minutę i nie potrzebujesz konta.\nTen link jest osobisty i służy do jednej opinii: ${link}`,
     }),
   },
   nl: {

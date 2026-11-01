@@ -73,6 +73,7 @@
     "de": "Alemão",
     "it": "Italiano",
     "nl": "Neerlandês",
+    "pl": "Polaco",
     "ru": "Russo",
     "uk": "Ucraniano"
   },
@@ -492,7 +493,8 @@
     "ie": "Irlanda",
     "lu": "Luxemburgo",
     "at": "Áustria",
-    "ch": "Suíça"
+    "ch": "Suíça",
+    "pl": "Polónia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes e menus",

@@ -73,6 +73,7 @@
     "de": "Allemand",
     "it": "Italien",
     "nl": "Néerlandais",
+    "pl": "Polonais",
     "ru": "Russe",
     "uk": "Ukrainien"
   },
@@ -492,7 +493,8 @@
     "ie": "Irlande",
     "lu": "Luxembourg",
     "at": "Autriche",
-    "ch": "Suisse"
+    "ch": "Suisse",
+    "pl": "Pologne"
   },
   "restaurants": {
     "metaTitle": "Restaurants et cartes",

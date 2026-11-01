@@ -73,6 +73,7 @@
     "de": "Duits",
     "it": "Italiaans",
     "nl": "Nederlands",
+    "pl": "Pools",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -492,7 +493,8 @@
     "ie": "Ierland",
     "lu": "Luxemburg",
     "at": "Oostenrijk",
-    "ch": "Zwitserland"
+    "ch": "Zwitserland",
+    "pl": "Polen"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

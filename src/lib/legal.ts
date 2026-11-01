@@ -30,6 +30,7 @@ const PRICES = {
   it: ["12,99 € al mese, con pagamento mensile;", "10,99 € al mese, con pagamento semestrale;", "9,99 € al mese, con pagamento annuale."],
   de: ["12,99 € pro Monat bei monatlicher Zahlung;", "10,99 € pro Monat bei halbjährlicher Zahlung;", "9,99 € pro Monat bei jährlicher Zahlung."],
   nl: ["€ 12,99 per maand bij maandelijkse betaling;", "€ 10,99 per maand bij halfjaarlijkse betaling;", "€ 9,99 per maand bij jaarlijkse betaling."],
+  pl: ["12,99 € miesięcznie przy płatności miesięcznej;", "10,99 € miesięcznie przy płatności co 6 miesięcy;", "9,99 € miesięcznie przy płatności rocznej."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -39,6 +40,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "it") return privacyIt();
   if (locale === "de") return privacyDe();
   if (locale === "nl") return privacyNl();
+  if (locale === "pl") return privacyPl();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -236,6 +238,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "it") return termsIt();
   if (locale === "de") return termsDe();
   if (locale === "nl") return termsNl();
+  if (locale === "pl") return termsPl();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -1370,6 +1373,197 @@ function termsNl(): LegalDoc {
       {
         title: "10. Wijzigingen",
         body: ["We kunnen deze voorwaarden bijwerken. De nieuwe versie wordt hier met datum gepubliceerd; bedrijven informeren we vooraf over belangrijke wijzigingen."],
+      },
+    ],
+  };
+}
+
+function privacyPl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Polityka prywatności",
+    updated: "Ostatnia aktualizacja: 1 listopada 2026",
+    intro:
+      "Astrabela to katalog salonów kosmetycznych, barberów i restauracji w Europie, z rezerwacją online i opiniami klientów o każdym specjaliście. Ta polityka wyjaśnia, jakie dane osobowe przetwarzamy, w jakim celu i jakie masz prawa zgodnie z RODO.",
+    sections: [
+      { title: "1. Kim jesteśmy", body: [`Serwis astrabela.com prowadzi ${who()}. Pytania dotyczące Twoich danych wyślij na adres ${o.email}.`] },
+      {
+        title: "2. Jakie dane przetwarzamy",
+        body: [
+          "Gdy rezerwujesz lub wystawiasz opinię (klienci):",
+          [
+            "imię, e-mail i numer komórkowy podane przy rezerwacji oraz Twoja wiadomość do salonu;",
+            "sama rezerwacja: salon, specjalista, usługa, data, godzina i status;",
+            "Twoja opinia: gwiazdki, tekst i imię, które chcesz pokazać;",
+            "jeśli zakładasz konto klienta: imię i e-mail oraz hasło przechowywane wyłącznie w postaci zaszyfrowanej (hash) albo, przy logowaniu przez Google, identyfikator Twojego konta Google (Twojego hasła Google nigdy nie widzimy).",
+          ],
+          "Gdy salon lub restauracja korzysta z Astrabeli (firmy):",
+          [
+            "imię i e-mail właściciela konta oraz hasło (przechowywane wyłącznie zaszyfrowane);",
+            "dane firmy: nazwa, adres, telefon, e-mail, numer podatkowy, zespół, usługi, ceny, godziny otwarcia, menu i linki do mediów społecznościowych.",
+          ],
+          "Dane techniczne: pliki cookie sesji zalogowanych kont, plik cookie języka oraz logi serwera (np. adres IP i czas zapytania), przechowywane ze względów bezpieczeństwa.",
+        ],
+      },
+      {
+        title: "3. Cele i podstawy prawne",
+        body: [
+          [
+            "realizacja i obsługa rezerwacji: wykonanie umowy (art. 6 ust. 1 lit. b RODO);",
+            "obsługa kont i subskrypcji firm: wykonanie umowy;",
+            "publikowanie opinii i zapobieganie fałszywym opiniom: prawnie uzasadniony interes w wiarygodnym katalogu (art. 6 ust. 1 lit. f);",
+            "bezpieczne działanie serwisu: prawnie uzasadniony interes;",
+            "obowiązki podatkowe i księgowe: obowiązek prawny (art. 6 ust. 1 lit. c).",
+          ],
+          "Nie sprzedajemy danych osobowych i nie wykorzystujemy ich do reklam.",
+        ],
+      },
+      {
+        title: "4. Rola salonu i nasza",
+        body: [
+          "Przy rezerwacjach to wybrany przez Ciebie salon decyduje, jak wykorzystuje dane swoich klientów, i jest ich administratorem. Astrabela przetwarza te dane w imieniu salonu jako podmiot przetwarzający (art. 28 RODO) i wyłącznie w celu świadczenia usługi. Za opinie, publiczny katalog i bezpieczeństwo serwisu administratorem jest Astrabela.",
+        ],
+      },
+      {
+        title: "5. Odbiorcy danych",
+        body: [
+          "Salon lub restauracja, w której rezerwujesz. Korzystamy też z następujących dostawców, związanych umowami powierzenia przetwarzania danych:",
+          [
+            "Vercel Inc. – hosting; serwis działa we Frankfurcie (UE). Vercel to firma amerykańska; przekazywanie danych poza UE zabezpieczają standardowe klauzule umowne UE oraz EU-US Data Privacy Framework;",
+            "Neon – baza danych przechowywana we Frankfurcie (UE);",
+            "Cloudflare – usługa nazw domen (DNS);",
+            "Google – tylko jeśli logujesz się przez Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Okres przechowywania",
+        body: [
+          [
+            "dane klientów i rezerwacji: dopóki konto salonu jest aktywne i nie dłużej niż 2 lata od Twojej ostatniej wizyty;",
+            "opinie: dopóki salon jest na Astrabeli;",
+            "konta klientów: do czasu ich usunięcia (przycisk na stronie konta);",
+            "konta firm: do zamknięcia konta;",
+            "faktury i dane rozliczeniowe: 10 lat, zgodnie z portugalskim prawem podatkowym;",
+            "sesje logowania firm: 30 dni.",
+          ],
+        ],
+      },
+      {
+        title: "7. Pliki cookie",
+        body: [
+          "Używamy wyłącznie plików cookie niezbędnych do działania serwisu: utrzymujących zalogowanie (i pokazujących Twoje imię w menu), krótkotrwałych podczas logowania przez Google, jednego dla języka i jednego, który zapamiętuje dania polubione w menu restauracji (powstaje dopiero po dotknięciu ♥ i zawiera losowy kod, nie Twoje imię). Nie używamy analitycznych ani reklamowych plików cookie, dlatego nie prosimy o zgodę na cookie.",
+        ],
+      },
+      {
+        title: "8. Twoje prawa",
+        body: [
+          `Możesz żądać dostępu do swoich danych, ich sprostowania lub usunięcia, ograniczenia przetwarzania lub wnieść sprzeciw oraz otrzymać dane w formacie umożliwiającym ich przeniesienie. Napisz na ${o.email}; odpowiadamy w ciągu miesiąca. Jeśli dane zostały przekazane salonowi, przekażemy mu również Twoje żądanie. Możesz też złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (www.uodo.gov.pl) lub do portugalskiego organu CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Bezpieczeństwo",
+        body: [
+          "Serwis działa wyłącznie przez HTTPS, hasła są przechowywane w postaci zaszyfrowanej, a linki do rezerwacji i opinii są osobiste i trudne do odgadnięcia. Nie udostępniaj innym swojego osobistego linku.",
+        ],
+      },
+      {
+        title: "10. Zmiany",
+        body: ["Jeśli zmienimy tę politykę, opublikujemy tu nową wersję z datą. O ważnych zmianach poinformujemy w serwisie."],
+      },
+    ],
+  };
+}
+
+function termsPl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Regulamin",
+    updated: "Ostatnia aktualizacja: 1 listopada 2026",
+    intro: `Ten regulamin określa zasady korzystania z astrabela.com, prowadzonego przez ${who()}. Korzystając z serwisu lub zakładając konto firmy, akceptujesz go.`,
+    sections: [
+      {
+        title: "1. Usługa",
+        body: [
+          "Astrabela pozwala klientom znaleźć salony kosmetyczne, barberów i restauracje, rezerwować usługi online, oceniać specjalistów i przeglądać menu restauracji. Salony i restauracje zarządzają profilem, zespołem, usługami, kalendarzem i menu w swoim koncie firmy.",
+        ],
+      },
+      {
+        title: "2. Dla klientów",
+        body: [
+          [
+            "Korzystanie z Astrabeli jest bezpłatne i nie wymaga konta.",
+            "Rezerwacja to umowa między Tobą a salonem. Usługi, ceny i czas trwania ustala salon, a usługę wykonuje salon, nie Astrabela.",
+            "Astrabela nie przyjmuje płatności: płacisz bezpośrednio w salonie.",
+            "Możesz odwołać wizytę przez otrzymany osobisty link. Odwołaj ją, jeśli nie możesz przyjść.",
+          ],
+        ],
+      },
+      {
+        title: "3. Opinie",
+        body: [
+          "Każdy klient zalogowany na Astrabeli może ocenić specjalistę salonu, raz na 30 dni dla danego specjalisty. Klienci z wizytą zarezerwowaną przez Astrabelę lub potwierdzoną przez salon mogą też wystawić opinię przez osobisty link; takie opinie mają oznaczenie potwierdzonej wizyty. Opinia musi:",
+          [
+            "opisywać Twoje własne, prawdziwe doświadczenie;",
+            "być wolna od obraźliwych treści, gróźb i dyskryminacji;",
+            "nie zawierać danych osobowych innych osób, reklam ani linków.",
+          ],
+          "Możemy ukryć opinie naruszające te zasady. Salon nie może usuwać ani zmieniać opinii; może odpowiedzieć publicznie lub zgłosić opinię do moderacji.",
+        ],
+      },
+      {
+        title: "4. Dla salonów i restauracji",
+        body: [
+          [
+            "Dane profilu, ceny i menu muszą być prawdziwe i aktualne. Odpowiadasz za nie i za swoje usługi.",
+            "Chroń swoje hasło; odpowiadasz za działania na swoim koncie.",
+            "Nie twórz fałszywych rezerwacji, opinii ani próśb o opinie i nie proś o opinie w zamian za nagrodę.",
+            "W wyszukiwaniu pojawiają się tylko profile z aktywną subskrypcją lub w okresie bezpłatnym.",
+          ],
+        ],
+      },
+      {
+        title: "5. Ceny",
+        body: [
+          "Dla salonów, barberów i restauracji pierwsze 3 miesiące są bezpłatne, bez karty na start. Potem do bycia widocznym potrzebna jest subskrypcja:",
+          PRICES.pl,
+          "Warunki płatności są pokazywane przed każdym obciążeniem. Możemy zmienić ceny z co najmniej 30-dniowym wyprzedzeniem; zmiana obowiązuje od następnego okresu rozliczeniowego.",
+        ],
+      },
+      {
+        title: "6. Umowa powierzenia przetwarzania danych (firmy)",
+        body: [
+          "W odniesieniu do danych klientów w rezerwacjach firma jest administratorem, a Astrabela podmiotem przetwarzającym (art. 28 RODO). Astrabela:",
+          [
+            "przetwarza te dane wyłącznie w celu świadczenia usługi i zgodnie z poleceniami, które firma wydaje przez serwis;",
+            "zachowuje je w poufności i chroni odpowiednimi środkami bezpieczeństwa;",
+            "korzysta tylko z podprocesorów wymienionych w polityce prywatności i informuje firmy przed dodaniem nowych;",
+            "pomaga firmie przy żądaniach klientów i zgłaszaniu naruszeń ochrony danych;",
+            "po zamknięciu konta usuwa lub przekazuje dane, chyba że prawo wymaga ich przechowywania.",
+          ],
+        ],
+      },
+      {
+        title: "7. Zawieszenie i zamknięcie konta",
+        body: [
+          "Możesz w każdej chwili zamknąć konto firmy, pisząc do nas. Możemy zawiesić lub usunąć profil naruszający ten regulamin, prawo lub prawa innych osób, podając powód.",
+        ],
+      },
+      {
+        title: "8. Odpowiedzialność",
+        body: [
+          "Staramy się, aby serwis był dostępny i poprawny, ale nie możemy zagwarantować, że zawsze będzie działał bez przerw i błędów. Astrabela nie jest stroną umowy między klientem a salonem i nie odpowiada za usługi salonów. Nic w tym regulaminie nie ogranicza ustawowych praw konsumentów.",
+        ],
+      },
+      {
+        title: "9. Prawo właściwe i reklamacje",
+        body: [
+          `Regulamin podlega prawu portugalskiemu, bez uszczerbku dla ochrony, jaką zapewnia Ci jako konsumentowi prawo kraju Twojego zamieszkania. Reklamacje wyślij na ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Zmiany",
+        body: ["Możemy aktualizować ten regulamin. Nowa wersja zostanie opublikowana tutaj z datą; o ważnych zmianach firmy informujemy z wyprzedzeniem."],
       },
     ],
   };
