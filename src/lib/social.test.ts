@@ -20,6 +20,7 @@ describe("social links", () => {
     expect(normalizeSocial("whatsapp", "0470 12 34 56", "be")).toBe("https://wa.me/32470123456");
     expect(normalizeSocial("whatsapp", "087 123 4567", "ie")).toBe("https://wa.me/353871234567");
     expect(normalizeSocial("whatsapp", "621 123 456", "lu")).toBe("https://wa.me/352621123456");
+    expect(normalizeSocial("whatsapp", "0664 1234567", "at")).toBe("https://wa.me/436641234567");
     expect(normalizeSocial("instagram", "  ")).toBe("");
   });
 

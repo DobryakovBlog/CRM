@@ -7,6 +7,7 @@ import nlData from "@/data/nl-places.json";
 import beData from "@/data/be-places.json";
 import ieData from "@/data/ie-places.json";
 import luData from "@/data/lu-places.json";
+import atData from "@/data/at-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
@@ -15,10 +16,12 @@ import { slugify } from "./slug";
 // Other countries: every municipality, built by scripts/build-<country>-places.ts
 // (Spain 8,132, France 34,875 communes, Italy 7,904 comuni, Germany 11,054 Gemeinden,
 // the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten, Luxembourg 100 communes;
-// Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county). Its slug is its name ("madrid"), with the
+// Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county).
+// Countries without a municipality list we can fetch get every GeoNames town of 1,000+ people
+// by region (scripts/build-geonames-places.ts): Austria 2,238. Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -31,6 +34,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["be", beData],
   ["ie", ieData],
   ["lu", luData],
+  ["at", atData],
 ];
 
 export type Place = {
@@ -127,7 +131,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -148,7 +152,7 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
 const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl" };
@@ -174,6 +178,7 @@ export const COUNTRIES = [
   { code: "be", open: true },
   { code: "ie", open: true },
   { code: "lu", open: true },
+  { code: "at", open: true },
 ] as const;
 
 function withSalons(listed: string[]) {
@@ -222,8 +227,8 @@ export function searchPlaces(query: string, listed: string[] = [], limit = 30, c
   const q = fold(query);
   if (!q) return [];
   const has = withSalons(listed);
-  // Germans without an umlaut key type "muenchen" for "München".
-  const qs = country === "de" ? [...new Set([q, q.replace(/([aou])e/g, "$1")])] : [q];
+  // Germans and Austrians without an umlaut key type "muenchen" for "München".
+  const qs = country === "de" || country === "at" ? [...new Set([q, q.replace(/([aou])e/g, "$1")])] : [q];
   const hits: { p: Place; r: number }[] = [];
   for (const p of places().all) {
     if (country && p.country !== country) continue;
