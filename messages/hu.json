@@ -81,6 +81,7 @@
     "hr": "Horvát",
     "ro": "Román",
     "bg": "Bolgár",
+    "da": "Dán",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -508,7 +509,8 @@
     "si": "Szlovénia",
     "hr": "Horvátország",
     "ro": "Románia",
-    "bg": "Bulgária"
+    "bg": "Bulgária",
+    "dk": "Dánia"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",

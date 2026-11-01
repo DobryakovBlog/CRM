@@ -4,7 +4,7 @@ import { CountryCity } from "./CountryCity";
 import { CATEGORIES } from "@/server/catalog";
 import { visitorCountry } from "@/server/visitor";
 
-export const LANGUAGES = ["en", "es", "fr", "de", "it", "nl", "pl", "cs", "sk", "hu", "sl", "hr", "ro", "bg", "ru", "uk"] as const;
+export const LANGUAGES = ["en", "es", "fr", "de", "it", "nl", "pl", "cs", "sk", "hu", "sl", "hr", "ro", "bg", "da", "ru", "uk"] as const;
 
 export async function SearchForm({
   listed,

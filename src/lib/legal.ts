@@ -38,6 +38,7 @@ const PRICES = {
   hr: ["12,99 € mjesečno uz mjesečno plaćanje;", "10,99 € mjesečno uz plaćanje za 6 mjeseci;", "9,99 € mjesečno uz godišnje plaćanje."],
   ro: ["12,99 € pe lună cu plată lunară;", "10,99 € pe lună cu plată la 6 luni;", "9,99 € pe lună cu plată anuală."],
   bg: ["12,99 € на месец при месечно плащане;", "10,99 € на месец при плащане за 6 месеца;", "9,99 € на месец при годишно плащане."],
+  da: ["12,99 € om måneden ved månedlig betaling;", "10,99 € om måneden ved betaling for 6 måneder;", "9,99 € om måneden ved årlig betaling."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -55,6 +56,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "hr") return privacyHr();
   if (locale === "ro") return privacyRo();
   if (locale === "bg") return privacyBg();
+  if (locale === "da") return privacyDa();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -260,6 +262,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "hr") return termsHr();
   if (locale === "ro") return termsRo();
   if (locale === "bg") return termsBg();
+  if (locale === "da") return termsDa();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -2922,6 +2925,197 @@ function termsBg(): LegalDoc {
       {
         title: "10. Промени",
         body: ["Можем да актуализираме тези условия. Новата версия ще бъде публикувана тук с дата; за важни промени уведомяваме бизнесите предварително."],
+      },
+    ],
+  };
+}
+
+function privacyDa(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Privatlivspolitik",
+    updated: "Senest opdateret: 1. november 2026",
+    intro:
+      "Astrabela er et katalog over skønhedssaloner, barbershops og restauranter i Europa med onlinebooking og kundeanmeldelser af hver behandler. Denne politik forklarer, hvilke personoplysninger vi behandler, hvorfor, og hvilke rettigheder du har efter GDPR.",
+    sections: [
+      { title: "1. Hvem vi er", body: [`Tjenesten astrabela.com drives af ${who()}. Spørgsmål om dine oplysninger kan sendes til ${o.email}.`] },
+      {
+        title: "2. Hvilke oplysninger vi behandler",
+        body: [
+          "Når du booker eller skriver en anmeldelse (kunder):",
+          [
+            "navn, e-mail og mobilnummer, som du angiver ved booking, samt din besked til salonen;",
+            "selve bookingen: salon, behandler, behandling, dato, tidspunkt og status;",
+            "din anmeldelse: stjerner, tekst og det navn, du vil vise;",
+            "hvis du opretter en kundekonto: navn og e-mail samt en adgangskode, der kun gemmes krypteret (hash), eller ved login med Google id'et for din Google-konto (vi ser aldrig din Google-adgangskode).",
+          ],
+          "Når en salon eller restaurant bruger Astrabela (virksomheder):",
+          [
+            "kontoindehaverens navn og e-mail samt adgangskode (kun gemt krypteret);",
+            "virksomhedens oplysninger: navn, adresse, telefon, e-mail, CVR-nummer, team, behandlinger, priser, åbningstider, menu og links til sociale medier.",
+          ],
+          "Tekniske oplysninger: cookies til login, en cookie til sprog og serverlogs (f.eks. IP-adresse og tidspunkt for forespørgslen), som vi gemmer af sikkerhedshensyn.",
+        ],
+      },
+      {
+        title: "3. Formål og retsgrundlag",
+        body: [
+          [
+            "gennemførelse og administration af bookinger: opfyldelse af en kontrakt (art. 6, stk. 1, litra b, i GDPR);",
+            "administration af virksomhedernes konti og abonnementer: opfyldelse af en kontrakt;",
+            "offentliggørelse af anmeldelser og forebyggelse af falske anmeldelser: legitim interesse i et pålideligt katalog (art. 6, stk. 1, litra f);",
+            "sikker drift af tjenesten: legitim interesse;",
+            "skatte- og regnskabsforpligtelser: retlig forpligtelse (art. 6, stk. 1, litra c).",
+          ],
+          "Vi sælger ikke personoplysninger og bruger dem ikke til reklame.",
+        ],
+      },
+      {
+        title: "4. Salonens rolle og vores rolle",
+        body: [
+          "Ved bookinger er det den salon, du vælger, der bestemmer, hvordan dens kunders oplysninger bruges, og den er dataansvarlig for dem. Astrabela behandler disse oplysninger på salonens vegne som databehandler (art. 28 i GDPR) og kun for at levere tjenesten. For anmeldelser, det offentlige katalog og tjenestens sikkerhed er Astrabela dataansvarlig.",
+        ],
+      },
+      {
+        title: "5. Modtagere af oplysningerne",
+        body: [
+          "Den salon eller restaurant, du booker hos. Vi bruger også følgende leverandører, som er bundet af databehandleraftaler:",
+          [
+            "Vercel Inc. – hosting; tjenesten kører i Frankfurt (EU). Vercel er en amerikansk virksomhed; overførsel uden for EU er dækket af EU's standardkontraktbestemmelser og EU-US Data Privacy Framework;",
+            "Neon – database i Frankfurt (EU);",
+            "Cloudflare – domænenavnetjeneste (DNS);",
+            "Google – kun hvis du logger ind med Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Opbevaringsperiode",
+        body: [
+          [
+            "kunde- og bookingoplysninger: så længe salonens konto er aktiv, højst 2 år efter dit seneste besøg;",
+            "anmeldelser: så længe salonen er på Astrabela;",
+            "kundekonti: indtil de slettes (knap på kontosiden);",
+            "virksomhedskonti: indtil kontoen lukkes;",
+            "fakturaer og betalingsoplysninger: 10 år efter portugisisk skatteret;",
+            "virksomheders tilmeldingsanmodninger: 30 dage.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookies",
+        body: [
+          "Vi bruger kun cookies, der er nødvendige for tjenesten: til at holde dig logget ind (og vise dit navn i menuen), kortvarige ved login med Google, én til sproget og én, der husker de retter, du synes om i en restaurants menu (den oprettes først, når du trykker på ♥, og indeholder en tilfældig kode, ikke dit navn). Vi bruger ikke analyse- eller reklamecookies og beder derfor ikke om samtykke til cookies.",
+        ],
+      },
+      {
+        title: "8. Dine rettigheder",
+        body: [
+          `Du kan anmode om indsigt i dine oplysninger, berigtigelse eller sletning af dem, begrænsning af behandlingen, gøre indsigelse og få dine oplysninger i et overførbart format. Skriv til ${o.email}; vi svarer inden for en måned. Hvis oplysningerne er videregivet til en salon, sender vi også din anmodning videre til den. Du kan også klage til Datatilsynet (www.datatilsynet.dk) eller til den portugisiske myndighed CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Sikkerhed",
+        body: [
+          "Tjenesten kører kun over HTTPS, adgangskoder gemmes krypteret, og links til bookinger og anmeldelser er personlige og svære at gætte. Del ikke dit personlige link med andre.",
+        ],
+      },
+      {
+        title: "10. Ændringer",
+        body: ["Hvis vi ændrer denne politik, offentliggør vi den nye version her med dato. Om væsentlige ændringer giver vi besked i tjenesten."],
+      },
+    ],
+  };
+}
+
+function termsDa(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Vilkår for brug",
+    updated: "Senest opdateret: 1. november 2026",
+    intro: `Disse vilkår gælder for brugen af tjenesten astrabela.com, som drives af ${who()}. Ved at bruge tjenesten eller oprette en virksomhedskonto accepterer du dem.`,
+    sections: [
+      {
+        title: "1. Tjenesten",
+        body: [
+          "Astrabela giver kunder mulighed for at finde skønhedssaloner, barbershops og restauranter, booke behandlinger online, bedømme behandlere og se restauranters menuer. Saloner og restauranter administrerer deres profil, team, behandlinger, kalender og menu i virksomhedskontoen.",
+        ],
+      },
+      {
+        title: "2. For kunder",
+        body: [
+          [
+            "Det er gratis at bruge Astrabela, og det kræver ingen konto.",
+            "En booking er en aftale mellem dig og salonen. Behandlinger, priser og varighed fastsættes af salonen, og behandlingen udføres af salonen, ikke af Astrabela.",
+            "Astrabela modtager ingen betalinger: du betaler direkte i salonen.",
+            "Du kan aflyse dit besøg via det personlige link, du får. Aflys venligst, hvis du ikke kan komme.",
+          ],
+        ],
+      },
+      {
+        title: "3. Anmeldelser",
+        body: [
+          "Alle kunder, der er logget ind på Astrabela, kan bedømme en behandler i en salon, én gang hver 30. dag for den samme behandler. Kunder med et besøg booket via Astrabela eller bekræftet af salonen kan også anmelde via et personligt link; disse anmeldelser er mærket som bekræftet besøg. En anmeldelse skal:",
+          [
+            "beskrive din egen, reelle oplevelse;",
+            "være fri for fornærmelser, trusler og diskrimination;",
+            "ikke indeholde andres personoplysninger, reklame eller links.",
+          ],
+          "Vi kan skjule anmeldelser, der bryder disse regler. Salonen kan ikke slette eller ændre anmeldelser; den kan svare offentligt eller indberette en anmeldelse til moderering.",
+        ],
+      },
+      {
+        title: "4. For saloner og restauranter",
+        body: [
+          [
+            "Oplysninger i profilen, priser og menu skal være korrekte og opdaterede. Du er ansvarlig for dem og for dine ydelser.",
+            "Pas på din adgangskode; du er ansvarlig for aktiviteten på din konto.",
+            "Opret ikke falske bookinger, anmeldelser eller anmodninger om anmeldelser, og bed ikke om anmeldelser mod en belønning.",
+            "Kun profiler med aktivt abonnement eller i prøveperioden vises i søgningen.",
+          ],
+        ],
+      },
+      {
+        title: "5. Priser",
+        body: [
+          "For saloner, barbershops og restauranter er de første 3 måneder gratis, uden kort for at komme i gang. Derefter kræver det et abonnement at blive vist:",
+          PRICES.da,
+          "Betalingsbetingelserne vises før hver opkrævning. Vi kan ændre priserne med mindst 30 dages varsel; ændringen gælder fra næste faktureringsperiode.",
+        ],
+      },
+      {
+        title: "6. Databehandleraftale (virksomheder)",
+        body: [
+          "For kundeoplysninger i bookinger er virksomheden dataansvarlig og Astrabela databehandler (art. 28 i GDPR). Astrabela:",
+          [
+            "behandler kun disse oplysninger for at levere tjenesten og efter de instrukser, virksomheden giver via tjenesten;",
+            "holder dem fortrolige og beskytter dem med passende sikkerhedsforanstaltninger;",
+            "bruger kun de underdatabehandlere, der er nævnt i privatlivspolitikken, og giver virksomhederne besked på forhånd om nye;",
+            "hjælper virksomheden med kunders anmodninger og anmeldelse af brud på persondatasikkerheden;",
+            "sletter eller udleverer oplysningerne, når kontoen lukkes, medmindre loven kræver, at de opbevares.",
+          ],
+        ],
+      },
+      {
+        title: "7. Suspension og lukning af konto",
+        body: [
+          "Du kan til enhver tid lukke din virksomhedskonto ved at skrive til os. Vi kan suspendere eller fjerne en profil, der bryder disse vilkår, loven eller andres rettigheder, med angivelse af grunden.",
+        ],
+      },
+      {
+        title: "8. Ansvar",
+        body: [
+          "Vi gør vores bedste for, at tjenesten er tilgængelig og korrekt, men kan ikke garantere, at den altid fungerer uden afbrydelser og fejl. Astrabela er ikke part i aftalen mellem kunde og salon og er ikke ansvarlig for salonens ydelser. Intet i disse vilkår begrænser forbrugernes lovbestemte rettigheder.",
+        ],
+      },
+      {
+        title: "9. Lovvalg og klager",
+        body: [
+          `Vilkårene er underlagt portugisisk ret, uden at det berører den beskyttelse, du som forbruger har efter loven i det land, hvor du bor. Klager kan sendes til ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Ændringer",
+        body: ["Vi kan opdatere disse vilkår. Den nye version offentliggøres her med dato; om væsentlige ændringer giver vi virksomhederne besked på forhånd."],
       },
     ],
   };

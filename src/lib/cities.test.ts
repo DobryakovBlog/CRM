@@ -85,7 +85,7 @@ describe("Spanish places", () => {
     // The visitor's country (from the IP) wins over the language when we are open there.
     expect(cityFieldSetup([], undefined, "en", "es").defaultCountry).toBe("es");
     expect(cityFieldSetup([], undefined, "es", "pt").defaultCountry).toBe("pt");
-    expect(cityFieldSetup([], undefined, "es", "dk").defaultCountry).toBe("es");
+    expect(cityFieldSetup([], undefined, "es", "us").defaultCountry).toBe("es");
     expect(cityFieldSetup([], "porto", "en", "es").defaultCountry).toBe("pt");
     expect(cityFieldSetup(["porto", "sevilla"], "sevilla", "pt")).toMatchObject({
       defaultCountry: "es",
@@ -374,5 +374,20 @@ describe("Bulgarian places", () => {
     expect(placeTimezone("plovdiv")).toBe("Europe/Sofia");
     expect(cityFieldSetup([], undefined, "bg")).toMatchObject({ defaultCountry: "bg", defaultSlugs: { bg: "sofia" } });
     expect(phoneCountry("burgas")).toBe("BG");
+  });
+});
+
+describe("Danish places", () => {
+  it("lists GeoNames towns by region under their Danish names", () => {
+    expect(placeBySlug("kobenhavn")).toMatchObject({ name: "København", country: "dk", area: "Region Hovedstaden" });
+    expect(searchPlaces("aarhus", [], 30, "dk")[0]).toMatchObject({ name: "Aarhus", area: "Region Midtjylland" });
+    expect(searchPlaces("koge", [], 30, "dk")[0].name).toBe("Køge");
+    expect(searchPlaces("køge", [], 30, "dk")[0].name).toBe("Køge");
+  });
+
+  it("uses Copenhagen time and starts Danish visitors in Copenhagen", () => {
+    expect(placeTimezone("odense")).toBe("Europe/Copenhagen");
+    expect(cityFieldSetup([], undefined, "da")).toMatchObject({ defaultCountry: "dk", defaultSlugs: { dk: "kobenhavn" } });
+    expect(phoneCountry("aalborg")).toBe("DK");
   });
 });
