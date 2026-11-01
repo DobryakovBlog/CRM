@@ -73,6 +73,7 @@
     "de": "Deutsch",
     "it": "Italienisch",
     "nl": "Niederländisch",
+    "pl": "Polnisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -492,7 +493,8 @@
     "ie": "Irland",
     "lu": "Luxemburg",
     "at": "Österreich",
-    "ch": "Schweiz"
+    "ch": "Schweiz",
+    "pl": "Polen"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",

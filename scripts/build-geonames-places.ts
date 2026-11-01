@@ -27,6 +27,15 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Sitten: "Sion", "Sankt Gallen": "St. Gallen" },
   },
+  pl: {
+    regions: {
+      "72": "Dolnośląskie", "73": "Kujawsko-Pomorskie", "74": "Łódzkie", "75": "Lubelskie", "76": "Lubuskie",
+      "77": "Małopolskie", "78": "Mazowieckie", "79": "Opolskie", "80": "Podkarpackie", "81": "Podlaskie",
+      "82": "Pomorskie", "83": "Śląskie", "84": "Świętokrzyskie", "85": "Warmińsko-Mazurskie", "86": "Wielkopolskie",
+      "87": "Zachodniopomorskie",
+    },
+    names: { Warsaw: "Warszawa", "Bielsko-Biala": "Bielsko-Biała" },
+  },
 };
 
 const [cc, atcDir, cjDir] = process.argv.slice(2);
