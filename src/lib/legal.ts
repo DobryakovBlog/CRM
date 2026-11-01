@@ -1073,7 +1073,7 @@ function privacyDe(): LegalDoc {
       {
         title: "8. Ihre Rechte",
         body: [
-          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes, in Belgien bei der Datenschutzbehörde (www.datenschutzbehorde.be), in Luxemburg bei der CNPD (www.cnpd.lu), oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
+          `Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen, die Einschränkung der Verarbeitung oder Widerspruch dagegen, und Ihre Daten in einem übertragbaren Format erhalten. Schreiben Sie an ${o.email}; wir antworten innerhalb eines Monats. Wurden die Daten einem Salon übermittelt, leiten wir Ihre Anfrage auch an ihn weiter. Sie können sich außerdem bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes, in Belgien bei der Datenschutzbehörde (www.datenschutzbehorde.be), in Luxemburg bei der CNPD (www.cnpd.lu), in Österreich bei der Datenschutzbehörde (www.dsb.gv.at), oder bei der portugiesischen Behörde CNPD (www.cnpd.pt) beschweren.`,
         ],
       },
       {

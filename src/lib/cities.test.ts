@@ -232,3 +232,19 @@ describe("Luxembourg places", () => {
     expect(phoneCountry("dudelange")).toBe("LU");
   });
 });
+
+describe("Austrian places", () => {
+  it("lists GeoNames towns by Bundesland under their local names", () => {
+    expect(placeBySlug("wien")).toMatchObject({ name: "Wien", country: "at", area: "Wien" });
+    expect(searchPlaces("graz", [], 30, "at")[0]).toMatchObject({ name: "Graz", area: "Steiermark" });
+    expect(searchPlaces("klagenfurt", [], 30, "at")[0].area).toBe("Kärnten");
+    expect(searchPlaces("woergl", [], 30, "at")[0].name).toBe("Wörgl");
+    expect(cityOptions([], undefined, "at").map((o) => o.slug)).toContain("favoriten");
+  });
+
+  it("uses Vienna time and starts Austrian visitors in Vienna", () => {
+    expect(placeTimezone("innsbruck")).toBe("Europe/Vienna");
+    expect(cityFieldSetup([], undefined, "de", "at")).toMatchObject({ defaultCountry: "at", defaultSlugs: { at: "wien" } });
+    expect(phoneCountry("linz")).toBe("AT");
+  });
+});
