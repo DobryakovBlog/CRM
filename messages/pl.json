@@ -81,6 +81,7 @@
     "hr": "Chorwacki",
     "ro": "Rumuński",
     "bg": "Bułgarski",
+    "da": "Duński",
     "ru": "Rosyjski",
     "uk": "Ukraiński"
   },
@@ -508,7 +509,8 @@
     "si": "Słowenia",
     "hr": "Chorwacja",
     "ro": "Rumunia",
-    "bg": "Bułgaria"
+    "bg": "Bułgaria",
+    "dk": "Dania"
   },
   "restaurants": {
     "metaTitle": "Restauracje i menu",

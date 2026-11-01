@@ -1,0 +1,609 @@
+{
+  "meta": {
+    "title": "Astrabela: skønhedssaloner og barbershops med onlinebooking",
+    "description": "Find en skønhedssalon eller barbershop i Europa, læs kundernes anmeldelser af hver behandler, og book online."
+  },
+  "nav": {
+    "forSalons": "For virksomheder",
+    "footer": "Astrabela · Kundeanmeldelser af hver behandler",
+    "language": "Sprog",
+    "forClients": "Find en salon",
+    "salons": "Saloner",
+    "restaurants": "Restauranter",
+    "privacy": "Privatliv",
+    "terms": "Vilkår",
+    "signIn": "Log ind",
+    "support": "Hjælp"
+  },
+  "home": {
+    "title": "Book det bedste. Stol på stjernerne.",
+    "subtitle": "De bedste skønhedssaloner og barbershops i Europa, bedømt af kunderne behandler for behandler. Vælg og book online på få sekunder.",
+    "why": {
+      "verified": {
+        "title": "Anmeldelser af hver behandler",
+        "text": "Hver anmeldelse gælder én behandler. Bekræftede besøg har deres eget mærke."
+      },
+      "masters": {
+        "title": "Vælg din behandler",
+        "text": "Hver behandler har sin egen bedømmelse."
+      },
+      "direct": {
+        "title": "Du betaler i salonen",
+        "text": "Gratis booking, ingen onlinebetaling."
+      }
+    },
+    "eyebrow": "Europa · Skønhedssaloner og barbershops",
+    "featuredEyebrow": "Vi anbefaler",
+    "featuredTitle": "Bedst bedømte saloner",
+    "browse": "Søg efter behandling"
+  },
+  "search": {
+    "city": "By",
+    "service": "Behandling",
+    "anyService": "Alle behandlinger",
+    "language": "Sprog",
+    "anyLanguage": "Alle sprog",
+    "submit": "Søg",
+    "resultsTitle": "{count, plural, =0 {Ingen saloner} one {# salon} other {# saloner}} {city, select, other {i {city}}}",
+    "empty": "Ingen saloner matcher disse filtre endnu.",
+    "new": "Ny",
+    "from": "Fra {price}",
+    "cityEmpty": "Der er endnu ingen saloner på Astrabela i {city}. Vi åbner by for by.",
+    "cityEmptyCta": "Har du en salon eller barbershop her? Bliv en del af det",
+    "country": "Land",
+    "comingSoon": "snart",
+    "cityPlaceholder": "Skriv en by",
+    "cityNoMatch": "Vi er ikke i denne by endnu"
+  },
+  "categories": {
+    "hair": "Hår",
+    "barber": "Barbershop",
+    "nails": "Negle",
+    "brows_lashes": "Bryn og vipper",
+    "skin": "Ansigtspleje",
+    "makeup": "Makeup",
+    "massage": "Massage",
+    "other": "Andet"
+  },
+  "languages": {
+    "pt": "Portugisisk",
+    "en": "Engelsk",
+    "es": "Spansk",
+    "fr": "Fransk",
+    "de": "Tysk",
+    "it": "Italiensk",
+    "nl": "Nederlandsk",
+    "pl": "Polsk",
+    "cs": "Tjekkisk",
+    "sk": "Slovakisk",
+    "hu": "Ungarsk",
+    "sl": "Slovensk",
+    "hr": "Kroatisk",
+    "ro": "Rumænsk",
+    "bg": "Bulgarsk",
+    "da": "Dansk",
+    "ru": "Russisk",
+    "uk": "Ukrainsk"
+  },
+  "weekdays": {
+    "0": "Søndag",
+    "1": "Mandag",
+    "2": "Tirsdag",
+    "3": "Onsdag",
+    "4": "Torsdag",
+    "5": "Fredag",
+    "6": "Lørdag"
+  },
+  "salon": {
+    "verifiedNote": "kundeanmeldelser af hver behandler",
+    "services": "Behandlinger",
+    "minutes": "{n} min",
+    "book": "Book",
+    "reviews": "Anmeldelser",
+    "reportThanks": "Tak. Vi kigger på indberetningen.",
+    "noReviews": "Ingen anmeldelser endnu.",
+    "withMaster": "hos {name}",
+    "verifiedVisit": "bekræftet besøg",
+    "salonReply": "Salonens svar",
+    "report": "Indberet anmeldelse",
+    "reportReason": "Årsag",
+    "send": "Send",
+    "team": "Team",
+    "payOnSite": "Betaling i salonen.",
+    "viaAstrabela": "booket via Astrabela",
+    "viaSalon": "besøg bekræftet af salonen",
+    "writeReview": "Bedøm en behandler",
+    "master": "Behandler",
+    "rating": "Bedømmelse",
+    "yourReview": "Din mening (valgfrit)",
+    "publish": "Offentliggør anmeldelse",
+    "signInToReview": "Log ind for at skrive en anmeldelse.",
+    "signIn": "Log ind",
+    "reviewThanks": "Tak! Din anmeldelse er offentliggjort.",
+    "reviewTooSoon": "Du har allerede bedømt denne behandler inden for de sidste 30 dage.",
+    "reviewInvalid": "Vælg behandler og bedømmelse.",
+    "viaClient": "kundeanmeldelse"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "betaling i salonen",
+    "errors": {
+      "invalid": "Tjek dine oplysninger, og prøv igen.",
+      "slot_taken": "Tiden er lige blevet taget. Vælg en anden.",
+      "not_found": "Behandlingen eller behandleren er ikke tilgængelig.",
+      "not_allowed": "Denne behandler tilbyder ikke denne behandling.",
+      "phone": "Skriv et gyldigt mobilnummer med den rigtige landekode."
+    },
+    "master": "Behandler",
+    "anyMaster": "Alle behandlere",
+    "day": "Dag",
+    "time": "Tid",
+    "noSlots": "Ingen ledige tider denne dag.",
+    "yourDetails": "Dine oplysninger",
+    "name": "Navn",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "note": "Besked til salonen (valgfrit)",
+    "privacy": "Jeg accepterer, at salonen og Astrabela behandler mine oplysninger til denne booking (<privacy>privatlivspolitik</privacy>).",
+    "confirm": "Bekræft booking",
+    "gateTitle": "Hvordan vil du fortsætte?",
+    "gateText": "Med en konto ser du alle dine bookinger ét sted og skal ikke skrive dine oplysninger igen.",
+    "guest": "Uden konto",
+    "signIn": "Log ind"
+  },
+  "booking": {
+    "created": "Booking bekræftet! Vi har sendt detaljerne på e-mail.",
+    "reviewThanks": "Tak for din anmeldelse!",
+    "error": "Handlingen kunne ikke gennemføres.",
+    "status": {
+      "confirmed": "Bekræftet",
+      "cancelled": "Aflyst",
+      "completed": "Gennemført",
+      "no_show": "Udeblevet"
+    },
+    "with": "hos {name}",
+    "payOnSite": "betaling i salonen",
+    "cancel": "Aflys booking",
+    "reviewTitle": "Bedøm dit besøg hos {name}",
+    "rating": "Bedømmelse",
+    "reviewText": "Kommentar",
+    "authorName": "Vist navn",
+    "submitReview": "Offentliggør anmeldelse",
+    "visitOn": "Besøg {date}",
+    "moreTitle": "Flere saloner i {city}",
+    "moreLink": "Se alle saloner"
+  },
+  "business": {
+    "landing": {
+      "title": "Flere kunder til din salon",
+      "subtitle": "Onlinekalender og kundeanmeldelser. Ingen provision, én fast pris for hele teamet.",
+      "start": "Prøv {months} måneder gratis",
+      "features": {
+        "noCommission": "0 % provision af kunderne",
+        "unlimitedStaff": "Ubegrænset antal medarbejdere",
+        "calendar": "Onlinekalender og manuelle bookinger",
+        "verifiedReviews": "Anmeldelser af hver behandler",
+        "ownClients": "Dine kunder forbliver dine"
+      },
+      "restaurants": {
+        "eyebrow": "Restauranter",
+        "title": "Din menu online, altid opdateret",
+        "text": "Offentliggør din menu med priser og allergener på dit sprog og på engelsk. Print en QR-kode til bordene, og ret priserne, når du vil. De første 3 måneder er gratis.",
+        "cta": "Prøv 3 måneder gratis"
+      },
+      "trialNote": "De første {months} måneder er gratis. Du behøver intet kort for at starte."
+    },
+    "plans": {
+      "monthly": "Månedlig",
+      "semiannual": "6 måneder",
+      "annual": "12 måneder",
+      "perMonth": "om måneden + moms"
+    },
+    "login": {
+      "title": "Log ind",
+      "error": "Forkert e-mail eller adgangskode.",
+      "email": "E-mail",
+      "password": "Adgangskode",
+      "submit": "Log ind",
+      "noAccount": "Ingen konto endnu? Tilmeld din salon"
+    },
+    "register": {
+      "title": "Tilmeld din virksomhed",
+      "errors": {
+        "invalid": "Tjek felterne (adgangskoden skal have mindst 8 tegn).",
+        "email_taken": "Denne e-mail er allerede registreret."
+      },
+      "fields": {
+        "salonName": "Virksomhedens navn",
+        "city": "By",
+        "address": "Adresse",
+        "phone": "Telefon",
+        "name": "Dit navn",
+        "email": "E-mail",
+        "password": "Adgangskode"
+      },
+      "terms": "Jeg accepterer <terms>vilkårene for brug</terms>, herunder databehandleraftalen (GDPR), og <privacy>privatlivspolitikken</privacy>.",
+      "submit": "Opret konto",
+      "kind": "Type virksomhed",
+      "kinds": {
+        "salon": "Salon",
+        "restaurant": "Restaurant"
+      },
+      "kindHint": "Skønhedssaloner, barbershops, negle og kosmetik vælger “Salon”. Vælg derefter dine behandlingskategorier, f.eks. “Barbershop”.",
+      "googleAs": "Du tilmelder dig med Google som {email}. Ingen adgangskode nødvendig."
+    },
+    "salonStatus": {
+      "draft": "Kladde",
+      "pending": "Under gennemgang",
+      "active": "Offentliggjort",
+      "suspended": "Suspenderet"
+    },
+    "logout": "Log ud",
+    "tabs": {
+      "calendar": "Kalender",
+      "services": "Behandlinger",
+      "team": "Team",
+      "reviews": "Anmeldelser",
+      "profile": "Profil",
+      "admin": "Administration",
+      "menu": "Menu",
+      "qr": "QR-kode"
+    },
+    "calendar": {
+      "today": "I dag",
+      "errors": {
+        "invalid": "Ugyldige oplysninger.",
+        "slot_taken": "Denne tid er allerede taget.",
+        "not_found": "Behandling eller behandler ikke fundet.",
+        "not_allowed": "Denne behandler tilbyder ikke denne behandling.",
+        "phone": "Ugyldigt telefonnummer. Vælg land, og skriv hele nummeret."
+      },
+      "noTeam": "Tilføj behandlere under fanen Team.",
+      "free": "Ingen bookinger.",
+      "noShows": "{n, plural, one {# udeblivelse} other {# udeblivelser}}",
+      "mark": {
+        "completed": "Kom",
+        "no_show": "Udeblev",
+        "cancelled": "Aflys"
+      },
+      "manualTitle": "Ny booking (telefon, walk-in)",
+      "master": "Behandler",
+      "service": "Behandling",
+      "time": "Tid",
+      "clientName": "Kundens navn",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-mail (valgfrit)",
+      "add": "Tilføj"
+    },
+    "services": {
+      "empty": "Ingen behandlinger endnu.",
+      "disable": "Deaktiver",
+      "enable": "Aktiver",
+      "addTitle": "Ny behandling",
+      "name": "Navn",
+      "category": "Kategori",
+      "duration": "Varighed (min)",
+      "price": "Pris (€)",
+      "add": "Tilføj"
+    },
+    "team": {
+      "name": "Navn",
+      "title": "Rolle",
+      "titlePlaceholder": "f.eks. Farvespecialist",
+      "languages": "Sprog",
+      "services": "Behandlinger",
+      "noServices": "Tilføj først behandlinger.",
+      "schedule": "Ugeskema",
+      "save": "Gem",
+      "servicesCount": "{n, plural, one {# behandling} other {# behandlinger}}",
+      "deactivate": "Deaktiver",
+      "activate": "Aktiver",
+      "add": "Tilføj behandler"
+    },
+    "profile": {
+      "welcome": "Velkommen! Udfyld profilen, tilføj behandlinger og dit team, og send derefter salonen til offentliggørelse.",
+      "saved": "Gemt.",
+      "submitted": "Sendt! Vi tjekker og offentliggør din salon snart.",
+      "notReady": "Tilføj mindst én behandler med behandlinger og skema, før du sender.",
+      "listing": "Offentliggørelse i kataloget",
+      "statusHelp": {
+        "draft": "Din salon er ikke i kataloget endnu.",
+        "pending": "Vi tjekker din salon.",
+        "active": "Din salon er offentliggjort og tager imod bookinger.",
+        "suspended": "Din salon er suspenderet. Kontakt os."
+      },
+      "submit": "Send til offentliggørelse",
+      "viewPublic": "Se offentlig side",
+      "subscription": "Abonnement",
+      "sub": {
+        "trial": "Gratis prøveperiode til {date}.",
+        "active": "Aktivt til {date}.",
+        "past_due": "Betaling forfalden siden {date}.",
+        "cancelled": "Opsagt {date}.",
+        "complimentary": "Gratis fra Astrabela til {date}."
+      },
+      "details": "Salonens oplysninger",
+      "fields": {
+        "name": "Navn",
+        "district": "Bydel",
+        "address": "Adresse",
+        "postalCode": "Postnummer",
+        "phone": "Telefon",
+        "nif": "CVR-nummer",
+        "description": "Beskrivelse",
+        "cuisine": "Køkken"
+      },
+      "save": "Gem",
+      "restaurant": {
+        "welcome": "Velkommen! Udfyld profilen, opbyg din menu, og send restauranten til offentliggørelse.",
+        "notReady": "Tilføj mindst én ret til menuen, før du sender.",
+        "details": "Restaurantens oplysninger",
+        "statusHelp": {
+          "draft": "Restauranten er ikke i kataloget endnu.",
+          "pending": "Vi gennemgår restauranten.",
+          "active": "Restauranten er offentliggjort, og menuen er synlig.",
+          "suspended": "Restauranten er suspenderet. Kontakt os."
+        }
+      },
+      "social": {
+        "title": "Sociale medier",
+        "hint": "Vises på din offentlige side. Skriv brugernavnet (@eksempel), eller indsæt linket.",
+        "invalid": "Vi kunne ikke genkende linket til {network}. Tjek det, og gem igen.",
+        "placeholders": {
+          "instagram": "@din_salon",
+          "facebook": "facebook.com/din-salon",
+          "tiktok": "@din_salon",
+          "whatsapp": "20 12 34 56",
+          "website": "www.din-salon.dk"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Ingen anmeldelser endnu.",
+      "hidden": "skjult af moderering",
+      "replyPlaceholder": "Svar offentligt…",
+      "updateReply": "Opdater svar",
+      "reply": "Svar",
+      "inviteTitle": "Bed en fast kunde om en anmeldelse",
+      "inviteHint": "Registrer et besøg, der allerede har fundet sted, og få et personligt link, så kunden kan bedømme behandleren. Send det på WhatsApp, SMS eller som du vil. Ingen konto nødvendig.",
+      "inviteMasterService": "Behandler og behandling",
+      "inviteDate": "Dato for besøget",
+      "inviteClientName": "Kundens navn",
+      "inviteClientEmail": "E-mail (valgfrit)",
+      "inviteClientPhone": "Mobil (valgfrit)",
+      "inviteLanguage": "Beskedens sprog",
+      "inviteSend": "Bed om anmeldelse",
+      "inviteRules": "Ét link gælder én anmeldelse af ét besøg. Besøg inden for de sidste 90 dage, én anmodning pr. kunde og behandler hver 30. dag. Disse anmeldelser er mærket “besøg bekræftet af salonen”, og salonen kan ikke slette eller skjule dem, heller ikke de negative.",
+      "inviteNoTeam": "Tilføj en behandler med behandlinger under fanen Team for at bede om anmeldelser.",
+      "invited": "Anmodning oprettet. Send nu beskeden til kunden: kopier den, eller åbn WhatsApp med knapperne nedenfor.",
+      "inviteErrors": {
+        "invalid": "Tjek navnet, e-mailen (hvis angivet) og datoen (op til 90 dage tilbage, ikke i fremtiden).",
+        "not_found": "Behandler eller behandling ikke fundet.",
+        "not_allowed": "Denne anmodning kan ikke sendes.",
+        "duplicate": "Du har allerede bedt denne kunde om at bedømme denne behandler inden for de sidste 30 dage.",
+        "limit": "Du har nået dagens grænse for anmodninger. Prøv igen i morgen.",
+        "phone": "Ugyldigt telefonnummer. Vælg land, og skriv hele nummeret."
+      },
+      "invitationsTitle": "Sendte anmodninger",
+      "invitationWaiting": "venter",
+      "invitationReviewed": "bedømt",
+      "listTitle": "Anmeldelser",
+      "viaAstrabela": "booket via Astrabela",
+      "viaSalon": "besøg bekræftet af salonen",
+      "cannotDelete": "Saloner kan ikke slette anmeldelser. Du kan svare offentligt eller indberette en falsk anmeldelse til moderering.",
+      "shareCopy": "Kopier besked",
+      "shareCopied": "Kopieret ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "kundeanmeldelse"
+    },
+    "admin": {
+      "pending": "Saloner, der venter på offentliggørelse",
+      "none": "Intet venter.",
+      "approve": "Godkend",
+      "reject": "Send tilbage",
+      "reports": "Indberettede anmeldelser",
+      "reason": "Årsag",
+      "hide": "Skjul anmeldelse",
+      "keep": "Behold",
+      "subs": {
+        "title": "Abonnementer",
+        "hint": "Giv gratis måneder, eller angiv datoen, hvor det gratis abonnement udløber. En gave starter, når salonens nuværende periode udløber.",
+        "search": "Søg på navn, by eller CVR",
+        "find": "Søg",
+        "empty": "Ingen saloner fundet.",
+        "none": "Intet abonnement",
+        "manage": "Administrer",
+        "months": "Gratis måneder",
+        "monthsN": "{n, plural, one {# måned} other {# måneder}}",
+        "note": "Note (valgfrit)",
+        "notePlaceholder": "F.eks. stiftende partner",
+        "grant": "Giv",
+        "until": "Gratis til",
+        "set": "Angiv dato",
+        "cancel": "Afslut abonnement nu",
+        "cancelHint": "Salonen forsvinder fra søgningen, indtil den abonnerer igen.",
+        "saved": "Abonnement opdateret.",
+        "invalid": "Vælg en dato i fremtiden.",
+        "salonStatus": {
+          "draft": "Kladde",
+          "pending": "Afventer",
+          "active": "Offentliggjort",
+          "suspended": "Suspenderet"
+        },
+        "status": {
+          "trial": "Prøve",
+          "active": "Aktiv",
+          "past_due": "Forfalden",
+          "cancelled": "Opsagt",
+          "complimentary": "Gratis"
+        },
+        "endsOn": "til {date}",
+        "endedOn": "siden {date}",
+        "kind": {
+          "salon": "Salon",
+          "restaurant": "Restaurant"
+        }
+      },
+      "title": "Administration"
+    },
+    "menu": {
+      "hint": "Opdel menuen i sektioner. Ændringer vises med det samme på den offentlige side og bag QR-koden på bordene.",
+      "viewPublic": "Se offentlig menu",
+      "invalid": "Tjek navnet og prisen (f.eks. 12,50).",
+      "empty": "Start med en sektion som “Forretter”, og tilføj derefter retter.",
+      "editSection": "Rediger sektion",
+      "sectionName": "Ny sektion",
+      "sectionNameEn": "Navn på engelsk (valgfrit)",
+      "sectionPlaceholder": "Forretter",
+      "save": "Gem",
+      "deleteSection": "Slet sektionen og dens retter",
+      "addSection": "Tilføj sektion",
+      "addDish": "Tilføj ret",
+      "editDish": "Rediger ret",
+      "deleteDish": "Slet ret",
+      "available": "tilgængelig",
+      "soldOut": "udsolgt",
+      "dishName": "Rettens navn",
+      "dishNameEn": "Navn på engelsk (valgfrit)",
+      "description": "Beskrivelse",
+      "descriptionEn": "Beskrivelse på engelsk (valgfrit)",
+      "price": "Pris inkl. moms, €",
+      "portion": "Portion (valgfrit)",
+      "portionPlaceholder": "300 g, 0,33 l, til 2",
+      "allergens": "Allergener",
+      "tags": "Mærker",
+      "likes": "Synes godt om fra gæster"
+    },
+    "qr": {
+      "hint": "Print dette kort, og stil det på bordene. Gæsterne scanner det med telefonens kamera, og menuen åbner på telefonens sprog.",
+      "notListed": "Koden virker allerede, men gæsterne kan først åbne menuen, når restauranten er offentliggjort (fanen Profil).",
+      "scan": "Scan koden for at se menuen",
+      "scanEn": "Scan to see the menu",
+      "print": "Print kort",
+      "salon": {
+        "hint": "Print dette kort, og stil det i receptionen eller ved spejlet. Kunderne scanner det med telefonens kamera, booker næste besøg og bedømmer deres behandler.",
+        "notListed": "Koden virker allerede, men kunderne kan først åbne siden, når salonen er offentliggjort (fanen Profil).",
+        "scan": "Book online, og bedøm din behandler",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Hjælp"
+  },
+  "countries": {
+    "pt": "Portugal",
+    "es": "Spanien",
+    "fr": "Frankrig",
+    "it": "Italien",
+    "de": "Tyskland",
+    "nl": "Nederlandene",
+    "be": "Belgien",
+    "ie": "Irland",
+    "lu": "Luxembourg",
+    "at": "Østrig",
+    "ch": "Schweiz",
+    "pl": "Polen",
+    "cz": "Tjekkiet",
+    "sk": "Slovakiet",
+    "hu": "Ungarn",
+    "si": "Slovenien",
+    "hr": "Kroatien",
+    "ro": "Rumænien",
+    "bg": "Bulgarien",
+    "dk": "Danmark"
+  },
+  "restaurants": {
+    "metaTitle": "Restauranter og menuer",
+    "eyebrow": "Europa · Restauranter",
+    "title": "Se menuen, før du sætter dig.",
+    "subtitle": "Hele menuer med priser, som restauranterne selv holder opdateret, på det lokale sprog og på engelsk, med allergener.",
+    "searchPlaceholder": "Navn eller køkken",
+    "resultsTitle": "{count, plural, =0 {Ingen restauranter} one {# restaurant} other {# restauranter}} i {city}",
+    "cityEmpty": "Der er endnu ingen restauranter på Astrabela i {city}.",
+    "noMatch": "Ingen restauranter matcher denne søgning.",
+    "join": "Har du en restaurant? Offentliggør din menu",
+    "dishes": "{count, plural, one {# ret} other {# retter}}",
+    "from": "Fra {price}"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "allergens": "Allergener",
+    "vatIncluded": "Priser i euro inkl. moms.",
+    "allergyNote": "Har du allergier? Sig det til personalet, før du bestiller.",
+    "like": "Synes godt om"
+  },
+  "allergens": {
+    "gluten": "gluten",
+    "crustaceans": "krebsdyr",
+    "eggs": "æg",
+    "fish": "fisk",
+    "peanuts": "jordnødder",
+    "soy": "soja",
+    "milk": "mælk",
+    "nuts": "nødder",
+    "celery": "selleri",
+    "mustard": "sennep",
+    "sesame": "sesam",
+    "sulphites": "sulfitter",
+    "lupin": "lupin",
+    "molluscs": "bløddyr"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetarisk",
+    "vegan": "Vegansk",
+    "gluten_free": "Glutenfri",
+    "spicy": "Stærk"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Hjemmeside"
+  },
+  "account": {
+    "title": "Log ind",
+    "google": "Fortsæt med Google",
+    "or": "eller",
+    "googleError": "Login med Google mislykkedes. Prøv igen.",
+    "openCabinet": "Åbn din virksomhedskonto",
+    "hello": "Hej, {name}",
+    "logout": "Log ud",
+    "upcoming": "Kommende bookinger",
+    "noUpcoming": "Du har ingen kommende bookinger.",
+    "findSalon": "Find en salon",
+    "past": "Tidligere bookinger",
+    "open": "Se",
+    "bookingsHint": "Her vises de bookinger, du har lavet, mens du var logget ind.",
+    "deleteTitle": "Slet konto",
+    "deleteText": "Din konto og dit login slettes. Bookingerne bliver hos salonerne, som opbevarer dem for at kunne levere behandlingen.",
+    "deleteConfirm": "Slet min konto",
+    "deleted": "Din konto er slettet.",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "submit": "Log ind",
+    "loginError": "Forkert e-mail eller adgangskode.",
+    "noAccount": "Ingen konto endnu?",
+    "createAccount": "Opret konto",
+    "businessQuestion": "Har du en salon eller restaurant?",
+    "businessLink": "Astrabela for virksomheder",
+    "signedInBusiness": "Logget ind som {name}.",
+    "adminPanel": "Administration",
+    "welcome": "Konto oprettet. Her vises de bookinger, du laver, mens du er logget ind.",
+    "bookingsHintGoogle": "Her vises de bookinger, du har lavet, mens du var logget ind eller med din Google-e-mail.",
+    "registerTitle": "Opret konto",
+    "name": "Navn",
+    "passwordHint": "Mindst 8 tegn.",
+    "terms": "Jeg accepterer <terms>vilkårene for brug</terms> og <privacy>privatlivspolitikken</privacy>.",
+    "registerSubmit": "Opret konto",
+    "haveAccount": "Har du allerede en konto?",
+    "registerErrors": {
+      "invalid": "Tjek navn, e-mail og adgangskode (mindst 8 tegn).",
+      "email_taken": "Der findes allerede en konto med denne e-mail. Log ind med den."
+    }
+  },
+  "petFriendly": {
+    "label": "Kæledyrsvenlig",
+    "hint": "Kæledyr er velkomne."
+  }
+}

@@ -81,6 +81,10 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { "Veliko Tŭrnovo": "Veliko Tarnovo", "Gŭlŭbovo": "Galabovo" },
   },
+  dk: {
+    regions: { "17": "Region Hovedstaden", "18": "Region Midtjylland", "19": "Region Nordjylland", "20": "Region Sjælland", "21": "Region Syddanmark" },
+    names: { Copenhagen: "København", Århus: "Aarhus" },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

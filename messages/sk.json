@@ -81,6 +81,7 @@
     "hr": "Chorvátčina",
     "ro": "Rumunčina",
     "bg": "Bulharčina",
+    "da": "Dánčina",
     "ru": "Ruština",
     "uk": "Ukrajinčina"
   },
@@ -508,7 +509,8 @@
     "si": "Slovinsko",
     "hr": "Chorvátsko",
     "ro": "Rumunsko",
-    "bg": "Bulharsko"
+    "bg": "Bulharsko",
+    "dk": "Dánsko"
   },
   "restaurants": {
     "metaTitle": "Reštaurácie a menu",

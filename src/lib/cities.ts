@@ -17,6 +17,7 @@ import siData from "@/data/si-places.json";
 import hrData from "@/data/hr-places.json";
 import roData from "@/data/ro-places.json";
 import bgData from "@/data/bg-places.json";
+import dkData from "@/data/dk-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
@@ -27,10 +28,10 @@ import { slugify } from "./slug";
 // the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten, Luxembourg 100 communes;
 // Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county).
 // Countries without a municipality list we can fetch get every GeoNames town of 1,000+ people
-// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290. Its slug is its name ("madrid"), with the
+// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290, Denmark 338. Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg" | "dk";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -53,6 +54,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["hr", hrData],
   ["ro", roData],
   ["bg", bgData],
+  ["dk", dkData],
 ];
 
 export type Place = {
@@ -88,6 +90,10 @@ export const fold = (s: string) =>
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
     .replace(/ß/g, "ss")
+    .replace(/ø/g, "o")
+    .replace(/æ/g, "ae")
+    .replace(/ð/g, "d")
+    .replace(/þ/g, "th")
     .trim();
 
 type Index = {
@@ -160,7 +166,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia", dk: "Europe/Copenhagen" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -181,10 +187,10 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia", dk: "kobenhavn" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
-const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl", pl: "pl", cs: "cz", sk: "sk", hu: "hu", sl: "si", hr: "hr", ro: "ro", bg: "bg" };
+const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl", pl: "pl", cs: "cz", sk: "sk", hu: "hu", sl: "si", hr: "hr", ro: "ro", bg: "bg", da: "dk" };
 export const localeCountry = (locale: string): Country => LOCALE_COUNTRY[locale] ?? "pt";
 
 export function cityName(slug: string): string {
@@ -217,6 +223,7 @@ export const COUNTRIES = [
   { code: "hr", open: true },
   { code: "ro", open: true },
   { code: "bg", open: true },
+  { code: "dk", open: true },
 ] as const;
 
 function withSalons(listed: string[]) {
