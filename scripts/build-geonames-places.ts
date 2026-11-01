@@ -51,6 +51,14 @@ const COUNTRIES: Record<string, Config> = {
       "05": "Prešovský kraj", "06": "Trenčiansky kraj", "07": "Trnavský kraj", "08": "Žilinský kraj",
     },
   },
+  hu: {
+    regions: {
+      "01": "Bács-Kiskun", "02": "Baranya", "03": "Békés", "04": "Borsod-Abaúj-Zemplén", "05": "Budapest",
+      "06": "Csongrád-Csanád", "08": "Fejér", "09": "Győr-Moson-Sopron", "10": "Hajdú-Bihar", "11": "Heves",
+      "12": "Komárom-Esztergom", "14": "Nógrád", "16": "Pest", "17": "Somogy", "18": "Szabolcs-Szatmár-Bereg",
+      "20": "Jász-Nagykun-Szolnok", "21": "Tolna", "22": "Vas", "23": "Veszprém", "24": "Zala",
+    },
+  },
 };
 
 const [cc, atcDir, cjDir] = process.argv.slice(2);

@@ -305,3 +305,17 @@ describe("Slovak places", () => {
     expect(phoneCountry("presov")).toBe("SK");
   });
 });
+
+describe("Hungarian places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("budapest")).toMatchObject({ name: "Budapest", country: "hu", area: "Budapest" });
+    expect(searchPlaces("szekesfehervar", [], 30, "hu")[0]).toMatchObject({ name: "Székesfehérvár", area: "Fejér" });
+    expect(searchPlaces("gyor", [], 30, "hu")[0].name).toBe("Győr");
+  });
+
+  it("uses Budapest time and starts Hungarian visitors in Budapest", () => {
+    expect(placeTimezone("debrecen")).toBe("Europe/Budapest");
+    expect(cityFieldSetup([], undefined, "hu")).toMatchObject({ defaultCountry: "hu", defaultSlugs: { hu: "budapest" } });
+    expect(phoneCountry("szeged")).toBe("HU");
+  });
+});

@@ -1,0 +1,599 @@
+{
+  "meta": {
+    "title": "Astrabela: szépségszalonok és borbélyok online foglalással",
+    "description": "Találj szépségszalont vagy borbélyt Európában, olvasd el a vendégek értékeléseit minden szakemberről, és foglalj online."
+  },
+  "nav": {
+    "forSalons": "Vállalkozásoknak",
+    "footer": "Astrabela · Vendégértékelések minden szakemberről",
+    "language": "Nyelv",
+    "forClients": "Szalon keresése",
+    "salons": "Szalonok",
+    "restaurants": "Éttermek",
+    "privacy": "Adatvédelem",
+    "terms": "Feltételek",
+    "signIn": "Belépés",
+    "support": "Segítség"
+  },
+  "home": {
+    "title": "Foglald a legjobbat. Bízz a csillagokban.",
+    "subtitle": "Európa legjobb szépségszalonjai és borbélyai, szakemberenként értékelve a vendégek által. Válassz, és foglalj online pár másodperc alatt.",
+    "why": {
+      "verified": {
+        "title": "Értékelés minden szakemberről",
+        "text": "Minden értékelés egy szakemberre vonatkozik. Az igazolt látogatások külön jelölést kapnak."
+      },
+      "masters": {
+        "title": "Válaszd ki a szakembert",
+        "text": "Minden szakembernek saját értékelése van."
+      },
+      "direct": {
+        "title": "A szalonban fizetsz",
+        "text": "Ingyenes foglalás, online fizetés nélkül."
+      }
+    },
+    "eyebrow": "Európa · Szépségszalonok és borbélyok",
+    "featuredEyebrow": "Ajánlott",
+    "featuredTitle": "A legjobbra értékelt szalonok",
+    "browse": "Keresés szolgáltatás szerint"
+  },
+  "search": {
+    "city": "Település",
+    "service": "Szolgáltatás",
+    "anyService": "Minden szolgáltatás",
+    "language": "Nyelv",
+    "anyLanguage": "Bármilyen nyelv",
+    "submit": "Keresés",
+    "resultsTitle": "{count, plural, =0 {Nincs szalon} other {# szalon}} {city, select, other {itt: {city}}}",
+    "empty": "Még egy szalon sem felel meg ezeknek a szűrőknek.",
+    "new": "Új",
+    "from": "{price}-tól",
+    "cityEmpty": "{city} településen még nincs szalon az Astrabelán. Városról városra nyitunk.",
+    "cityEmptyCta": "Van itt szalonod vagy borbélyüzleted? Csatlakozz",
+    "country": "Ország",
+    "comingSoon": "hamarosan",
+    "cityPlaceholder": "Írd be a települést",
+    "cityNoMatch": "Ezen a településen még nem vagyunk jelen"
+  },
+  "categories": {
+    "hair": "Haj",
+    "barber": "Borbély",
+    "nails": "Köröm",
+    "brows_lashes": "Szemöldök és szempilla",
+    "skin": "Arcápolás",
+    "makeup": "Smink",
+    "massage": "Masszázs",
+    "other": "Egyéb"
+  },
+  "languages": {
+    "pt": "Portugál",
+    "en": "Angol",
+    "es": "Spanyol",
+    "fr": "Francia",
+    "de": "Német",
+    "it": "Olasz",
+    "nl": "Holland",
+    "pl": "Lengyel",
+    "cs": "Cseh",
+    "sk": "Szlovák",
+    "hu": "Magyar",
+    "ru": "Orosz",
+    "uk": "Ukrán"
+  },
+  "weekdays": {
+    "0": "Vasárnap",
+    "1": "Hétfő",
+    "2": "Kedd",
+    "3": "Szerda",
+    "4": "Csütörtök",
+    "5": "Péntek",
+    "6": "Szombat"
+  },
+  "salon": {
+    "verifiedNote": "vendégértékelések minden szakemberről",
+    "services": "Szolgáltatások",
+    "minutes": "{n} perc",
+    "book": "Foglalás",
+    "reviews": "Értékelések",
+    "reportThanks": "Köszönjük. Megvizsgáljuk a bejelentést.",
+    "noReviews": "Még nincs értékelés.",
+    "withMaster": "szakember: {name}",
+    "verifiedVisit": "igazolt látogatás",
+    "salonReply": "A szalon válasza",
+    "report": "Értékelés bejelentése",
+    "reportReason": "Indok",
+    "send": "Küldés",
+    "team": "Csapat",
+    "payOnSite": "Fizetés a szalonban.",
+    "viaAstrabela": "foglalás az Astrabelán",
+    "viaSalon": "a szalon által igazolt látogatás",
+    "writeReview": "Szakember értékelése",
+    "master": "Szakember",
+    "rating": "Értékelés",
+    "yourReview": "Véleményed (nem kötelező)",
+    "publish": "Értékelés közzététele",
+    "signInToReview": "Az értékeléshez lépj be.",
+    "signIn": "Belépés",
+    "reviewThanks": "Köszönjük! Az értékelésed megjelent.",
+    "reviewTooSoon": "Ezt a szakembert az elmúlt 30 napban már értékelted.",
+    "reviewInvalid": "Válassz szakembert és értékelést.",
+    "viaClient": "vendég értékelése"
+  },
+  "book": {
+    "minutes": "{n} perc",
+    "payOnSite": "fizetés a szalonban",
+    "errors": {
+      "invalid": "Ellenőrizd az adataidat, és próbáld újra.",
+      "slot_taken": "Ezt az időpontot épp most foglalták le. Válassz másikat.",
+      "not_found": "A szolgáltatás vagy a szakember nem elérhető.",
+      "not_allowed": "Ez a szakember nem végzi ezt a szolgáltatást.",
+      "phone": "Adj meg érvényes mobilszámot a megfelelő országkóddal."
+    },
+    "master": "Szakember",
+    "anyMaster": "Bármelyik szakember",
+    "day": "Nap",
+    "time": "Időpont",
+    "noSlots": "Ezen a napon nincs szabad időpont.",
+    "yourDetails": "Adataid",
+    "name": "Név",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "note": "Üzenet a szalonnak (nem kötelező)",
+    "privacy": "Hozzájárulok, hogy a szalon és az Astrabela kezelje az adataimat e foglalás teljesítéséhez (<privacy>adatvédelmi tájékoztató</privacy>).",
+    "confirm": "Foglalás megerősítése",
+    "gateTitle": "Hogyan szeretnéd folytatni?",
+    "gateText": "Fiókkal minden foglalásodat egy helyen látod, és nem kell újra beírnod az adataidat.",
+    "guest": "Fiók nélkül",
+    "signIn": "Belépés"
+  },
+  "booking": {
+    "created": "Foglalás visszaigazolva! A részleteket e-mailben elküldtük.",
+    "reviewThanks": "Köszönjük az értékelést!",
+    "error": "Ezt a műveletet nem sikerült végrehajtani.",
+    "status": {
+      "confirmed": "Visszaigazolva",
+      "cancelled": "Lemondva",
+      "completed": "Teljesítve",
+      "no_show": "Nem jelent meg"
+    },
+    "with": "szakember: {name}",
+    "payOnSite": "fizetés a szalonban",
+    "cancel": "Foglalás lemondása",
+    "reviewTitle": "Értékeld a látogatást, szakember: {name}",
+    "rating": "Értékelés",
+    "reviewText": "Megjegyzés",
+    "authorName": "Megjelenített név",
+    "submitReview": "Értékelés közzététele",
+    "visitOn": "Látogatás: {date}",
+    "moreTitle": "További szalonok itt: {city}",
+    "moreLink": "Összes szalon megtekintése"
+  },
+  "business": {
+    "landing": {
+      "title": "Több vendég a szalonodnak",
+      "subtitle": "Online naptár és vendégértékelések. Jutalék nélkül, egy fix ár az egész csapatnak.",
+      "start": "Próbáld ki {months} hónapig ingyen",
+      "features": {
+        "noCommission": "0% jutalék a vendégek után",
+        "unlimitedStaff": "Korlátlan számú munkatárs",
+        "calendar": "Online naptár és kézi foglalások",
+        "verifiedReviews": "Értékelés minden szakemberről",
+        "ownClients": "A vendégeid a tieid maradnak"
+      },
+      "restaurants": {
+        "eyebrow": "Éttermek",
+        "title": "Az étlapod online, mindig naprakészen",
+        "text": "Tedd közzé az étlapot árakkal és allergénekkel, a saját nyelveden és angolul. Nyomtass QR-kódot az asztalokra, és változtasd az árakat bármikor. Az első 3 hónap ingyenes.",
+        "cta": "Próbáld ki 3 hónapig ingyen"
+      },
+      "trialNote": "Az első {months} hónap ingyenes. Az induláshoz nem kell bankkártya."
+    },
+    "plans": {
+      "monthly": "Havi",
+      "semiannual": "6 hónap",
+      "annual": "12 hónap",
+      "perMonth": "havonta + áfa"
+    },
+    "login": {
+      "title": "Belépés",
+      "error": "Hibás e-mail vagy jelszó.",
+      "email": "E-mail",
+      "password": "Jelszó",
+      "submit": "Belépés",
+      "noAccount": "Nincs fiókod? Regisztráld a szalonodat"
+    },
+    "register": {
+      "title": "Vállalkozás regisztrálása",
+      "errors": {
+        "invalid": "Ellenőrizd a mezőket (a jelszó legalább 8 karakter).",
+        "email_taken": "Ez az e-mail már regisztrálva van."
+      },
+      "fields": {
+        "salonName": "Vállalkozás neve",
+        "city": "Település",
+        "address": "Cím",
+        "phone": "Telefon",
+        "name": "Neved",
+        "email": "E-mail",
+        "password": "Jelszó"
+      },
+      "terms": "Elfogadom a <terms>feltételeket</terms>, beleértve az adatfeldolgozási megállapodást (GDPR), valamint az <privacy>adatvédelmi tájékoztatót</privacy>.",
+      "submit": "Fiók létrehozása",
+      "kind": "Vállalkozás típusa",
+      "kinds": {
+        "salon": "Szalon",
+        "restaurant": "Étterem"
+      },
+      "kindHint": "Szépségszalonok, borbélyok, körmösök és kozmetikusok a „Szalon” lehetőséget válasszák. Utána válaszd ki a szolgáltatási kategóriákat, pl. „Borbély”.",
+      "googleAs": "Google-lel regisztrálsz ezzel a címmel: {email}. Jelszóra nincs szükség."
+    },
+    "salonStatus": {
+      "draft": "Piszkozat",
+      "pending": "Ellenőrzés alatt",
+      "active": "Közzétéve",
+      "suspended": "Felfüggesztve"
+    },
+    "logout": "Kilépés",
+    "tabs": {
+      "calendar": "Naptár",
+      "services": "Szolgáltatások",
+      "team": "Csapat",
+      "reviews": "Értékelések",
+      "profile": "Profil",
+      "admin": "Adminisztráció",
+      "menu": "Étlap",
+      "qr": "QR-kód"
+    },
+    "calendar": {
+      "today": "Ma",
+      "errors": {
+        "invalid": "Érvénytelen adatok.",
+        "slot_taken": "Ez az időpont már foglalt.",
+        "not_found": "A szolgáltatás vagy a szakember nem található.",
+        "not_allowed": "Ez a szakember nem végzi ezt a szolgáltatást.",
+        "phone": "Érvénytelen telefonszám. Válaszd ki az országot, és add meg a teljes számot."
+      },
+      "noTeam": "Adj hozzá szakembereket a Csapat fülön.",
+      "free": "Nincs foglalás.",
+      "noShows": "{n, plural, one {# meg nem jelenés} other {# meg nem jelenés}}",
+      "mark": {
+        "completed": "Megjelent",
+        "no_show": "Nem jelent meg",
+        "cancelled": "Lemondás"
+      },
+      "manualTitle": "Új foglalás (telefonon vagy személyesen)",
+      "master": "Szakember",
+      "service": "Szolgáltatás",
+      "time": "Időpont",
+      "clientName": "Vendég neve",
+      "clientPhone": "Telefon",
+      "clientEmail": "E-mail (nem kötelező)",
+      "add": "Hozzáadás"
+    },
+    "services": {
+      "empty": "Még nincs szolgáltatás.",
+      "disable": "Kikapcsolás",
+      "enable": "Bekapcsolás",
+      "addTitle": "Új szolgáltatás",
+      "name": "Név",
+      "category": "Kategória",
+      "duration": "Időtartam (perc)",
+      "price": "Ár (€)",
+      "add": "Hozzáadás"
+    },
+    "team": {
+      "name": "Név",
+      "title": "Beosztás",
+      "titlePlaceholder": "pl. Hajfestő",
+      "languages": "Nyelvek",
+      "services": "Szolgáltatások",
+      "noServices": "Először adj hozzá szolgáltatásokat.",
+      "schedule": "Heti beosztás",
+      "save": "Mentés",
+      "servicesCount": "{n, plural, one {# szolgáltatás} other {# szolgáltatás}}",
+      "deactivate": "Inaktiválás",
+      "activate": "Aktiválás",
+      "add": "Szakember hozzáadása"
+    },
+    "profile": {
+      "welcome": "Üdv! Töltsd ki a profilt, add hozzá a szolgáltatásokat és a csapatot, majd küldd be a szalont közzétételre.",
+      "saved": "Mentve.",
+      "submitted": "Beküldve! Ellenőrizzük a szalont, és hamarosan közzétesszük.",
+      "notReady": "Beküldés előtt adj hozzá legalább egy szakembert szolgáltatásokkal és beosztással.",
+      "listing": "Megjelenés a katalógusban",
+      "statusHelp": {
+        "draft": "A szalonod még nincs a katalógusban.",
+        "pending": "Ellenőrizzük a szalonodat.",
+        "active": "A szalonod közzé van téve, és fogad foglalásokat.",
+        "suspended": "A szalonod fel van függesztve. Vedd fel velünk a kapcsolatot."
+      },
+      "submit": "Beküldés közzétételre",
+      "viewPublic": "Nyilvános oldal megtekintése",
+      "subscription": "Előfizetés",
+      "sub": {
+        "trial": "Ingyenes próbaidőszak eddig: {date}.",
+        "active": "Aktív eddig: {date}.",
+        "past_due": "Elmaradt fizetés ekkortól: {date}.",
+        "cancelled": "Lemondva: {date}.",
+        "complimentary": "Az Astrabela ajándéka eddig: {date}."
+      },
+      "details": "Szalon adatai",
+      "fields": {
+        "name": "Név",
+        "district": "Kerület",
+        "address": "Cím",
+        "postalCode": "Irányítószám",
+        "phone": "Telefon",
+        "nif": "Adószám",
+        "description": "Leírás",
+        "cuisine": "Konyha"
+      },
+      "save": "Mentés",
+      "restaurant": {
+        "welcome": "Üdv! Töltsd ki a profilt, készítsd el az étlapot, majd küldd be az éttermet közzétételre.",
+        "notReady": "Beküldés előtt adj hozzá legalább egy ételt az étlaphoz.",
+        "details": "Étterem adatai",
+        "statusHelp": {
+          "draft": "Az étterem még nincs a katalógusban.",
+          "pending": "Ellenőrizzük az éttermet.",
+          "active": "Az étterem közzé van téve, az étlap látható.",
+          "suspended": "Az étterem fel van függesztve. Vedd fel velünk a kapcsolatot."
+        }
+      },
+      "social": {
+        "title": "Közösségi média",
+        "hint": "A nyilvános oldaladon jelenik meg. Írd be a felhasználónevet (@pelda), vagy illeszd be a linket.",
+        "invalid": "Nem ismertük fel a(z) {network} linket. Ellenőrizd, és mentsd újra.",
+        "placeholders": {
+          "instagram": "@szalonod",
+          "facebook": "facebook.com/szalonod",
+          "tiktok": "@szalonod",
+          "whatsapp": "06 30 123 4567",
+          "website": "www.szalonod.hu"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Még nincs értékelés.",
+      "hidden": "moderálás miatt elrejtve",
+      "replyPlaceholder": "Nyilvános válasz…",
+      "updateReply": "Válasz módosítása",
+      "reply": "Válasz",
+      "inviteTitle": "Kérj értékelést törzsvendégtől",
+      "inviteHint": "Rögzíts egy már megtörtént látogatást, és kapsz egy személyes linket, amellyel a vendég értékelheti a szakembert. Küldd el WhatsAppon, SMS-ben vagy ahogy szeretnéd. Fiók nem kell hozzá.",
+      "inviteMasterService": "Szakember és szolgáltatás",
+      "inviteDate": "Látogatás dátuma",
+      "inviteClientName": "Vendég neve",
+      "inviteClientEmail": "E-mail (nem kötelező)",
+      "inviteClientPhone": "Mobil (nem kötelező)",
+      "inviteLanguage": "Üzenet nyelve",
+      "inviteSend": "Értékelés kérése",
+      "inviteRules": "Egy link egy látogatás egy értékelésére szól. Az elmúlt 90 nap látogatásai, vendégenként és szakemberenként 30 naponta egy kérés. Ezek az értékelések „a szalon által igazolt látogatás” jelölést kapnak, és a szalon nem törölheti vagy rejtheti el őket, a negatívakat sem.",
+      "inviteNoTeam": "Értékelés kéréséhez adj hozzá szakembert szolgáltatásokkal a Csapat fülön.",
+      "invited": "Kérés létrehozva. Most küldd el az üzenetet a vendégnek: másold ki, vagy nyisd meg a WhatsAppot az alábbi gombokkal.",
+      "inviteErrors": {
+        "invalid": "Ellenőrizd a nevet, az e-mailt (ha megadtad) és a dátumot (legfeljebb 90 nappal korábbi, nem jövőbeli).",
+        "not_found": "A szakember vagy a szolgáltatás nem található.",
+        "not_allowed": "Ez a kérés nem küldhető el.",
+        "duplicate": "Az elmúlt 30 napban már kérted ezt a vendéget, hogy értékelje ezt a szakembert.",
+        "limit": "Elérted a mai kéréskorlátot. Próbáld újra holnap.",
+        "phone": "Érvénytelen telefonszám. Válaszd ki az országot, és add meg a teljes számot."
+      },
+      "invitationsTitle": "Elküldött kérések",
+      "invitationWaiting": "várakozik",
+      "invitationReviewed": "értékelve",
+      "listTitle": "Értékelések",
+      "viaAstrabela": "foglalás az Astrabelán",
+      "viaSalon": "a szalon által igazolt látogatás",
+      "cannotDelete": "A szalonok nem törölhetnek értékelést. Válaszolhatsz nyilvánosan, vagy moderálásra jelentheted a hamis értékelést.",
+      "shareCopy": "Üzenet másolása",
+      "shareCopied": "Kimásolva ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "vendég értékelése"
+    },
+    "admin": {
+      "pending": "Közzétételre váró szalonok",
+      "none": "Nincs várakozó.",
+      "approve": "Jóváhagyás",
+      "reject": "Visszaküldés",
+      "reports": "Bejelentett értékelések",
+      "reason": "Indok",
+      "hide": "Értékelés elrejtése",
+      "keep": "Megtartás",
+      "subs": {
+        "title": "Előfizetések",
+        "hint": "Adj ingyenes hónapokat, vagy állíts be dátumot, ameddig az előfizetés ingyenes. Az ajándék akkor kezdődik, amikor a szalon meglévő ideje lejár.",
+        "search": "Keresés név, település vagy adószám alapján",
+        "find": "Keresés",
+        "empty": "Nem található szalon.",
+        "none": "Nincs előfizetés",
+        "manage": "Kezelés",
+        "months": "Ingyenes hónapok",
+        "monthsN": "{n, plural, one {# hónap} other {# hónap}}",
+        "note": "Megjegyzés (nem kötelező)",
+        "notePlaceholder": "Pl. kezdeti partner",
+        "grant": "Ajándékozás",
+        "until": "Ingyenes eddig",
+        "set": "Dátum beállítása",
+        "cancel": "Előfizetés azonnali megszüntetése",
+        "cancelHint": "A szalon eltűnik a keresésből, amíg újra elő nem fizet.",
+        "saved": "Előfizetés frissítve.",
+        "invalid": "Válassz jövőbeli dátumot.",
+        "salonStatus": {
+          "draft": "Piszkozat",
+          "pending": "Várakozik",
+          "active": "Közzétéve",
+          "suspended": "Felfüggesztve"
+        },
+        "status": {
+          "trial": "Próbaidőszak",
+          "active": "Aktív",
+          "past_due": "Elmaradt",
+          "cancelled": "Lemondva",
+          "complimentary": "Ingyenes"
+        },
+        "endsOn": "eddig: {date}",
+        "endedOn": "ekkortól: {date}",
+        "kind": {
+          "salon": "Szalon",
+          "restaurant": "Étterem"
+        }
+      },
+      "title": "Adminisztráció"
+    },
+    "menu": {
+      "hint": "Oszd szakaszokra az étlapot. A változások azonnal megjelennek a nyilvános oldalon és az asztali QR-kód mögött.",
+      "viewPublic": "Nyilvános étlap megtekintése",
+      "invalid": "Ellenőrizd a nevet és az árat (például 12,50).",
+      "empty": "Kezdd egy szakasszal, pl. „Előételek”, majd adj hozzá ételeket.",
+      "editSection": "Szakasz szerkesztése",
+      "sectionName": "Új szakasz",
+      "sectionNameEn": "Név angolul (nem kötelező)",
+      "sectionPlaceholder": "Előételek",
+      "save": "Mentés",
+      "deleteSection": "Szakasz és ételeinek törlése",
+      "addSection": "Szakasz hozzáadása",
+      "addDish": "Étel hozzáadása",
+      "editDish": "Étel szerkesztése",
+      "deleteDish": "Étel törlése",
+      "available": "elérhető",
+      "soldOut": "elfogyott",
+      "dishName": "Étel neve",
+      "dishNameEn": "Név angolul (nem kötelező)",
+      "description": "Leírás",
+      "descriptionEn": "Leírás angolul (nem kötelező)",
+      "price": "Ár áfával, €",
+      "portion": "Adag (nem kötelező)",
+      "portionPlaceholder": "300 g, 0,33 l, 2 főre",
+      "allergens": "Allergének",
+      "tags": "Jelölések",
+      "likes": "Vendégek kedvencei"
+    },
+    "qr": {
+      "hint": "Nyomtasd ki ezt a lapot, és tedd az asztalokra. A vendégek a telefonjuk kamerájával beolvassák, és az étlap a telefonjuk nyelvén nyílik meg.",
+      "notListed": "A kód már működik, de a vendégek csak az étterem közzététele után látják az étlapot (Profil fül).",
+      "scan": "Olvasd be a kódot az étlaphoz",
+      "scanEn": "Scan to see the menu",
+      "print": "Lap nyomtatása",
+      "salon": {
+        "hint": "Nyomtasd ki ezt a lapot, és tedd a recepcióra vagy a tükör mellé. A vendégek telefonnal beolvassák, lefoglalják a következő látogatást, és értékelik a szakemberüket.",
+        "notListed": "A kód már működik, de a vendégek csak a szalon közzététele után látják az oldalt (Profil fül).",
+        "scan": "Foglalj online, és értékeld a szakemberedet",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Segítség"
+  },
+  "countries": {
+    "pt": "Portugália",
+    "es": "Spanyolország",
+    "fr": "Franciaország",
+    "it": "Olaszország",
+    "de": "Németország",
+    "nl": "Hollandia",
+    "be": "Belgium",
+    "ie": "Írország",
+    "lu": "Luxemburg",
+    "at": "Ausztria",
+    "ch": "Svájc",
+    "pl": "Lengyelország",
+    "cz": "Csehország",
+    "sk": "Szlovákia",
+    "hu": "Magyarország"
+  },
+  "restaurants": {
+    "metaTitle": "Éttermek és étlapok",
+    "eyebrow": "Európa · Éttermek",
+    "title": "Nézd meg az étlapot, mielőtt leülsz.",
+    "subtitle": "Teljes étlapok aktuális árakkal, maguk az éttermek vezetik, helyi nyelven és angolul, allergénekkel.",
+    "searchPlaceholder": "Név vagy konyha",
+    "resultsTitle": "{count, plural, =0 {Nincs étterem} other {# étterem}} itt: {city}",
+    "cityEmpty": "{city} településen még nincs étterem az Astrabelán.",
+    "noMatch": "Egy étterem sem felel meg a keresésnek.",
+    "join": "Van éttermed? Tedd közzé az étlapodat",
+    "dishes": "{count, plural, one {# étel} other {# étel}}",
+    "from": "{price}-tól"
+  },
+  "restaurant": {
+    "menu": "Étlap",
+    "allergens": "Allergének",
+    "vatIncluded": "Árak euróban, áfával.",
+    "allergyNote": "Allergiás vagy? Rendelés előtt szólj a felszolgálónak.",
+    "like": "Tetszik"
+  },
+  "allergens": {
+    "gluten": "glutén",
+    "crustaceans": "rákfélék",
+    "eggs": "tojás",
+    "fish": "hal",
+    "peanuts": "földimogyoró",
+    "soy": "szója",
+    "milk": "tej",
+    "nuts": "diófélék",
+    "celery": "zeller",
+    "mustard": "mustár",
+    "sesame": "szezám",
+    "sulphites": "szulfitok",
+    "lupin": "csillagfürt",
+    "molluscs": "puhatestűek"
+  },
+  "dishTags": {
+    "vegetarian": "Vegetáriánus",
+    "vegan": "Vegán",
+    "gluten_free": "Gluténmentes",
+    "spicy": "Csípős"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Weboldal"
+  },
+  "account": {
+    "title": "Belépés",
+    "google": "Folytatás Google-lel",
+    "or": "vagy",
+    "googleError": "Nem sikerült belépni Google-lel. Próbáld újra.",
+    "openCabinet": "Vállalkozói fiók megnyitása",
+    "hello": "Szia, {name}",
+    "logout": "Kilépés",
+    "upcoming": "Közelgő foglalások",
+    "noUpcoming": "Nincs közelgő foglalásod.",
+    "findSalon": "Szalon keresése",
+    "past": "Korábbi foglalások",
+    "open": "Megnyitás",
+    "bookingsHint": "Itt jelennek meg a belépés után létrehozott foglalások.",
+    "deleteTitle": "Fiók törlése",
+    "deleteText": "A fiókod és a belépési adataid törlődnek. A foglalások a szalonoknál maradnak, amelyek a szolgáltatás teljesítéséhez megőrzik őket.",
+    "deleteConfirm": "Fiókom törlése",
+    "deleted": "A fiókodat töröltük.",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "submit": "Belépés",
+    "loginError": "Hibás e-mail vagy jelszó.",
+    "noAccount": "Nincs fiókod?",
+    "createAccount": "Fiók létrehozása",
+    "businessQuestion": "Van szalonod vagy éttermed?",
+    "businessLink": "Astrabela vállalkozásoknak",
+    "signedInBusiness": "Belépve mint {name}.",
+    "adminPanel": "Adminisztráció",
+    "welcome": "Fiók létrehozva. Itt jelennek meg a belépés után létrehozott foglalások.",
+    "bookingsHintGoogle": "Itt jelennek meg a belépés után vagy a Google e-mail-címeddel létrehozott foglalások.",
+    "registerTitle": "Fiók létrehozása",
+    "name": "Név",
+    "passwordHint": "Legalább 8 karakter.",
+    "terms": "Elfogadom a <terms>feltételeket</terms> és az <privacy>adatvédelmi tájékoztatót</privacy>.",
+    "registerSubmit": "Fiók létrehozása",
+    "haveAccount": "Már van fiókod?",
+    "registerErrors": {
+      "invalid": "Ellenőrizd a nevet, az e-mailt és a jelszót (legalább 8 karakter).",
+      "email_taken": "Ezzel az e-maillel már van fiók. Lépj be vele."
+    }
+  },
+  "petFriendly": {
+    "label": "Kisállatbarát",
+    "hint": "A kisállatokat szívesen látjuk."
+  }
+}

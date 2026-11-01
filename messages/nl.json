@@ -76,6 +76,7 @@
     "pl": "Pools",
     "cs": "Tsjechisch",
     "sk": "Slowaaks",
+    "hu": "Hongaars",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -498,7 +499,8 @@
     "ch": "Zwitserland",
     "pl": "Polen",
     "cz": "Tsjechië",
-    "sk": "Slowakije"
+    "sk": "Slowakije",
+    "hu": "Hongarije"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

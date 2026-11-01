@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  hu: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Foglalás visszaigazolva: ${r.salon.name}`,
+      text: `Szia ${r.client.name}!\n\n${r.service.name}, ${r.staff.name}\n${when}\n${r.salon.address}\n\nKezelés vagy lemondás: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Emlékeztető: holnap itt: ${r.salon.name}`,
+      text: `Szia ${r.client.name}!\n\nEmlékeztetünk a foglalásodra: ${r.service.name}, ${r.staff.name}, ${when}.\nNem tudsz eljönni? Itt lemondhatod: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Milyen volt itt: ${r.salon.name}?`,
+      text: `Szia ${r.client.name}!\n\nÉrtékeld ${r.staff.name} munkáját. Csak igazolt látogatással rendelkező vendégek értékelhetnek.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} kíváncsi a véleményedre`,
+      text: `Szia ${r.client.name}!\n\n${r.staff.name} (${r.salon.name}) köszöni a látogatást (${r.service.name}), és szívesen olvasná a véleményedet az Astrabelán. Egy percig tart, és nem kell hozzá fiók.\nEz a link személyes, és egy értékelésre szól: ${link}`,
     }),
   },
   sk: {
