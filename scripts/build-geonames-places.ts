@@ -45,6 +45,12 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Prague: "Praha", Pilsen: "Plzeň", Vysehrad: "Vyšehrad" },
   },
+  sk: {
+    regions: {
+      "01": "Banskobystrický kraj", "02": "Bratislavský kraj", "03": "Košický kraj", "04": "Nitriansky kraj",
+      "05": "Prešovský kraj", "06": "Trenčiansky kraj", "07": "Trnavský kraj", "08": "Žilinský kraj",
+    },
+  },
 };
 
 const [cc, atcDir, cjDir] = process.argv.slice(2);

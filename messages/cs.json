@@ -75,6 +75,7 @@
     "nl": "Nizozemština",
     "pl": "Polština",
     "cs": "Čeština",
+    "sk": "Slovenština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -496,7 +497,8 @@
     "at": "Rakousko",
     "ch": "Švýcarsko",
     "pl": "Polsko",
-    "cz": "Česko"
+    "cz": "Česko",
+    "sk": "Slovensko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

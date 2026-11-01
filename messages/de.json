@@ -75,6 +75,7 @@
     "nl": "Niederländisch",
     "pl": "Polnisch",
     "cs": "Tschechisch",
+    "sk": "Slowakisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -496,7 +497,8 @@
     "at": "Österreich",
     "ch": "Schweiz",
     "pl": "Polen",
-    "cz": "Tschechien"
+    "cz": "Tschechien",
+    "sk": "Slowakei"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",
