@@ -84,6 +84,7 @@
     "da": "Dán",
     "sv": "Svéd",
     "nb": "Norvég",
+    "fi": "Finn",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -514,7 +515,8 @@
     "bg": "Bulgária",
     "dk": "Dánia",
     "se": "Svédország",
-    "no": "Norvégia"
+    "no": "Norvégia",
+    "fi": "Finnország"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",

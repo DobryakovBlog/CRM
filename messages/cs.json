@@ -84,6 +84,7 @@
     "da": "Dánština",
     "sv": "Švédština",
     "nb": "Norština",
+    "fi": "Finština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -514,7 +515,8 @@
     "bg": "Bulharsko",
     "dk": "Dánsko",
     "se": "Švédsko",
-    "no": "Norsko"
+    "no": "Norsko",
+    "fi": "Finsko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

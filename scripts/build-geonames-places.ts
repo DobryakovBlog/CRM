@@ -103,6 +103,21 @@ const COUNTRIES: Record<string, Config> = {
       "46": "Vestlandet", "21": "Trøndelag", "05": "Nord-Norge", "09": "Nord-Norge", "18": "Nord-Norge", "54": "Nord-Norge",
     },
   },
+  fi: {
+    regions: {
+      "01": "Uusimaa", "02": "Varsinais-Suomi", "04": "Satakunta", "05": "Kanta-Häme", "06": "Pirkanmaa", "07": "Päijät-Häme",
+      "08": "Kymenlaakso", "09": "Etelä-Karjala", "10": "Etelä-Savo", "11": "Pohjois-Savo", "12": "Pohjois-Karjala",
+      "13": "Keski-Suomi", "14": "Etelä-Pohjanmaa", "15": "Pohjanmaa", "16": "Keski-Pohjanmaa", "17": "Pohjois-Pohjanmaa",
+      "18": "Kainuu", "19": "Lappi",
+    },
+    // GeoNames gives some towns only their Swedish name: Finnish-majority towns get the Finnish one, Swedish-majority
+    // towns both, so either finds them.
+    names: {
+      Hyvinge: "Hyvinkää", Lovisa: "Loviisa", Jakobstad: "Jakobstad/Pietarsaari", Korsholm: "Korsholm/Mustasaari",
+      Kristinestad: "Kristinestad/Kristiinankaupunki", Ekenäs: "Ekenäs/Tammisaari", Karis: "Karis/Karjaa", Ingå: "Ingå/Inkoo",
+      Nykarleby: "Nykarleby/Uusikaarlepyy", Kronoby: "Kronoby/Kruunupyy", Vörå: "Vörå/Vöyri", Pernå: "Pernå/Pernaja",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

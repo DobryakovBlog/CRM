@@ -1,0 +1,615 @@
+{
+  "meta": {
+    "title": "Astrabela: kauneushoitolat ja parturit, ajanvaraus verkossa",
+    "description": "Löydä kauneushoitola tai parturi Euroopasta, lue asiakkaiden arviot jokaisesta tekijästä ja varaa aika verkossa."
+  },
+  "nav": {
+    "forSalons": "Yrityksille",
+    "footer": "Astrabela · Asiakkaiden arviot jokaisesta tekijästä",
+    "language": "Kieli",
+    "forClients": "Etsi liike",
+    "salons": "Liikkeet",
+    "restaurants": "Ravintolat",
+    "privacy": "Tietosuoja",
+    "terms": "Ehdot",
+    "signIn": "Kirjaudu",
+    "support": "Tuki"
+  },
+  "home": {
+    "title": "Varaa paras. Luota tähtiin.",
+    "subtitle": "Euroopan parhaat kauneushoitolat ja parturit, asiakkaiden arvioimina tekijä kerrallaan. Valitse ja varaa aika verkossa sekunneissa.",
+    "why": {
+      "verified": {
+        "title": "Arviot jokaisesta tekijästä",
+        "text": "Jokainen arvio koskee yhtä tekijää. Vahvistetuilla käynneillä on oma merkintänsä."
+      },
+      "masters": {
+        "title": "Valitse tekijä",
+        "text": "Jokaisella tekijällä on oma arvosanansa."
+      },
+      "direct": {
+        "title": "Maksat liikkeessä",
+        "text": "Maksuton varaus, ei verkkomaksua."
+      }
+    },
+    "eyebrow": "Eurooppa · Kauneushoitolat ja parturit",
+    "featuredEyebrow": "Suosittelemme",
+    "featuredTitle": "Parhaiksi arvioidut liikkeet",
+    "browse": "Hae palvelun mukaan"
+  },
+  "search": {
+    "city": "Paikkakunta",
+    "service": "Palvelu",
+    "anyService": "Kaikki palvelut",
+    "language": "Kieli",
+    "anyLanguage": "Mikä tahansa kieli",
+    "submit": "Hae",
+    "resultsTitle": "{count, plural, =0 {Ei liikkeitä} one {# liike} other {# liikettä}} {city, select, other {paikkakunnalla {city}}}",
+    "empty": "Mikään liike ei vielä vastaa näitä suodattimia.",
+    "new": "Uusi",
+    "from": "Alkaen {price}",
+    "cityEmpty": "Paikkakunnalla {city} ei ole vielä liikkeitä Astrabelassa. Laajennamme paikkakunta kerrallaan.",
+    "cityEmptyCta": "Onko sinulla täällä kauneushoitola tai parturi? Liity mukaan",
+    "country": "Maa",
+    "comingSoon": "tulossa",
+    "cityPlaceholder": "Kirjoita paikkakunta",
+    "cityNoMatch": "Emme ole vielä tällä paikkakunnalla"
+  },
+  "categories": {
+    "hair": "Hiukset",
+    "barber": "Parturi",
+    "nails": "Kynnet",
+    "brows_lashes": "Kulmat ja ripset",
+    "skin": "Kasvohoidot",
+    "makeup": "Meikki",
+    "massage": "Hieronta",
+    "other": "Muut"
+  },
+  "languages": {
+    "pt": "Portugali",
+    "en": "Englanti",
+    "es": "Espanja",
+    "fr": "Ranska",
+    "de": "Saksa",
+    "it": "Italia",
+    "nl": "Hollanti",
+    "pl": "Puola",
+    "cs": "Tšekki",
+    "sk": "Slovakki",
+    "hu": "Unkari",
+    "sl": "Sloveeni",
+    "hr": "Kroatia",
+    "ro": "Romania",
+    "bg": "Bulgaria",
+    "da": "Tanska",
+    "sv": "Ruotsi",
+    "nb": "Norja",
+    "fi": "Suomi",
+    "ru": "Venäjä",
+    "uk": "Ukraina"
+  },
+  "weekdays": {
+    "0": "Sunnuntai",
+    "1": "Maanantai",
+    "2": "Tiistai",
+    "3": "Keskiviikko",
+    "4": "Torstai",
+    "5": "Perjantai",
+    "6": "Lauantai"
+  },
+  "salon": {
+    "verifiedNote": "asiakkaiden arviot jokaisesta tekijästä",
+    "services": "Palvelut",
+    "minutes": "{n} min",
+    "book": "Varaa",
+    "reviews": "Arviot",
+    "reportThanks": "Kiitos. Tarkistamme ilmoituksen.",
+    "noReviews": "Ei vielä arvioita.",
+    "withMaster": "tekijä {name}",
+    "verifiedVisit": "vahvistettu käynti",
+    "salonReply": "Liikkeen vastaus",
+    "report": "Ilmoita arviosta",
+    "reportReason": "Syy",
+    "send": "Lähetä",
+    "team": "Tiimi",
+    "payOnSite": "Maksu liikkeessä.",
+    "viaAstrabela": "varattu Astrabelan kautta",
+    "viaSalon": "liikkeen vahvistama käynti",
+    "writeReview": "Arvioi tekijä",
+    "master": "Tekijä",
+    "rating": "Arvosana",
+    "yourReview": "Mielipiteesi (vapaaehtoinen)",
+    "publish": "Julkaise arvio",
+    "signInToReview": "Kirjaudu sisään kirjoittaaksesi arvion.",
+    "signIn": "Kirjaudu",
+    "reviewThanks": "Kiitos! Arviosi on julkaistu.",
+    "reviewTooSoon": "Olet jo arvioinut tämän tekijän viimeisen 30 päivän aikana.",
+    "reviewInvalid": "Valitse tekijä ja arvosana.",
+    "viaClient": "asiakkaan arvio"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "maksu liikkeessä",
+    "errors": {
+      "invalid": "Tarkista tietosi ja yritä uudelleen.",
+      "slot_taken": "Aika varattiin juuri. Valitse toinen.",
+      "not_found": "Palvelu tai tekijä ei ole saatavilla.",
+      "not_allowed": "Tämä tekijä ei tarjoa tätä palvelua.",
+      "phone": "Anna kelvollinen matkapuhelinnumero oikealla maatunnuksella."
+    },
+    "master": "Tekijä",
+    "anyMaster": "Kuka tahansa tekijä",
+    "day": "Päivä",
+    "time": "Aika",
+    "noSlots": "Tälle päivälle ei ole vapaita aikoja.",
+    "yourDetails": "Tietosi",
+    "name": "Nimi",
+    "email": "Sähköposti",
+    "phone": "Puhelin",
+    "note": "Viesti liikkeelle (vapaaehtoinen)",
+    "privacy": "Hyväksyn, että liike ja Astrabela käsittelevät tietojani tätä varausta varten (<privacy>tietosuojaseloste</privacy>).",
+    "confirm": "Vahvista varaus",
+    "gateTitle": "Miten haluat jatkaa?",
+    "gateText": "Tilillä näet kaikki varauksesi yhdessä paikassa, eikä tietoja tarvitse kirjoittaa uudelleen.",
+    "guest": "Ilman tiliä",
+    "signIn": "Kirjaudu"
+  },
+  "booking": {
+    "created": "Varaus vahvistettu! Lähetimme tiedot sähköpostiisi.",
+    "reviewThanks": "Kiitos arviostasi!",
+    "error": "Toimintoa ei voitu suorittaa.",
+    "status": {
+      "confirmed": "Vahvistettu",
+      "cancelled": "Peruttu",
+      "completed": "Toteutunut",
+      "no_show": "Ei saapunut"
+    },
+    "with": "tekijä {name}",
+    "payOnSite": "maksu liikkeessä",
+    "cancel": "Peru varaus",
+    "reviewTitle": "Arvioi käyntisi: {name}",
+    "rating": "Arvosana",
+    "reviewText": "Kommentti",
+    "authorName": "Näytettävä nimi",
+    "submitReview": "Julkaise arvio",
+    "visitOn": "Käynti {date}",
+    "moreTitle": "Lisää liikkeitä paikkakunnalla {city}",
+    "moreLink": "Näytä kaikki liikkeet"
+  },
+  "business": {
+    "landing": {
+      "title": "Lisää asiakkaita liikkeellesi",
+      "subtitle": "Verkkokalenteri ja asiakasarviot. Ei provisioita, yksi kiinteä hinta koko tiimille.",
+      "start": "Kokeile {months} kuukautta maksutta",
+      "features": {
+        "noCommission": "0 % provisiota asiakkaista",
+        "unlimitedStaff": "Rajaton määrä työntekijöitä",
+        "calendar": "Verkkokalenteri ja manuaaliset varaukset",
+        "verifiedReviews": "Arviot jokaisesta tekijästä",
+        "ownClients": "Asiakkaasi pysyvät sinun"
+      },
+      "restaurants": {
+        "eyebrow": "Ravintolat",
+        "title": "Ruokalistasi verkossa, aina ajan tasalla",
+        "text": "Julkaise ruokalista hintoineen ja allergeeneineen omalla kielelläsi ja englanniksi. Tulosta pöytiin QR-koodi ja muuta hintoja milloin haluat. Kolme ensimmäistä kuukautta ovat maksuttomia.",
+        "cta": "Kokeile 3 kuukautta maksutta"
+      },
+      "trialNote": "{months} ensimmäistä kuukautta ovat maksuttomia. Aloittamiseen ei tarvita korttia."
+    },
+    "plans": {
+      "monthly": "Kuukausittain",
+      "semiannual": "6 kuukautta",
+      "annual": "12 kuukautta",
+      "perMonth": "kuukaudessa + alv"
+    },
+    "login": {
+      "title": "Kirjaudu",
+      "error": "Väärä sähköposti tai salasana.",
+      "email": "Sähköposti",
+      "password": "Salasana",
+      "submit": "Kirjaudu",
+      "noAccount": "Eikö sinulla ole tiliä? Rekisteröi liikkeesi"
+    },
+    "register": {
+      "title": "Rekisteröi yrityksesi",
+      "errors": {
+        "invalid": "Tarkista kentät (salasanassa vähintään 8 merkkiä).",
+        "email_taken": "Tämä sähköposti on jo rekisteröity."
+      },
+      "fields": {
+        "salonName": "Yrityksen nimi",
+        "city": "Paikkakunta",
+        "address": "Osoite",
+        "phone": "Puhelin",
+        "name": "Nimesi",
+        "email": "Sähköposti",
+        "password": "Salasana"
+      },
+      "terms": "Hyväksyn <terms>käyttöehdot</terms>, mukaan lukien tietojenkäsittelysopimuksen (GDPR), ja <privacy>tietosuojaselosteen</privacy>.",
+      "submit": "Luo tili",
+      "kind": "Yrityksen tyyppi",
+      "kinds": {
+        "salon": "Liike",
+        "restaurant": "Ravintola"
+      },
+      "kindHint": "Kauneushoitolat, parturit, kynsistudiot ja kosmetologit valitsevat ”Liike”. Valitse sitten palvelukategoriasi, esimerkiksi ”Parturi”.",
+      "googleAs": "Rekisteröidyt Googlella osoitteella {email}. Salasanaa ei tarvita."
+    },
+    "salonStatus": {
+      "draft": "Luonnos",
+      "pending": "Tarkastettavana",
+      "active": "Julkaistu",
+      "suspended": "Jäädytetty"
+    },
+    "logout": "Kirjaudu ulos",
+    "tabs": {
+      "calendar": "Kalenteri",
+      "services": "Palvelut",
+      "team": "Tiimi",
+      "reviews": "Arviot",
+      "profile": "Profiili",
+      "admin": "Ylläpito",
+      "menu": "Ruokalista",
+      "qr": "QR-koodi"
+    },
+    "calendar": {
+      "today": "Tänään",
+      "errors": {
+        "invalid": "Virheelliset tiedot.",
+        "slot_taken": "Tämä aika on jo varattu.",
+        "not_found": "Palvelua tai tekijää ei löytynyt.",
+        "not_allowed": "Tämä tekijä ei tarjoa tätä palvelua.",
+        "phone": "Virheellinen puhelinnumero. Valitse maa ja kirjoita koko numero."
+      },
+      "noTeam": "Lisää tekijöitä Tiimi-välilehdellä.",
+      "free": "Ei varauksia.",
+      "noShows": "{n, plural, one {# saapumatta jäänyt} other {# saapumatta jäänyttä}}",
+      "mark": {
+        "completed": "Saapui",
+        "no_show": "Ei saapunut",
+        "cancelled": "Peru"
+      },
+      "manualTitle": "Uusi varaus (puhelin, walk-in)",
+      "master": "Tekijä",
+      "service": "Palvelu",
+      "time": "Aika",
+      "clientName": "Asiakkaan nimi",
+      "clientPhone": "Puhelin",
+      "clientEmail": "Sähköposti (vapaaehtoinen)",
+      "add": "Lisää"
+    },
+    "services": {
+      "empty": "Ei vielä palveluita.",
+      "disable": "Poista käytöstä",
+      "enable": "Ota käyttöön",
+      "addTitle": "Uusi palvelu",
+      "name": "Nimi",
+      "category": "Kategoria",
+      "duration": "Kesto (min)",
+      "price": "Hinta (€)",
+      "add": "Lisää"
+    },
+    "team": {
+      "name": "Nimi",
+      "title": "Rooli",
+      "titlePlaceholder": "esim. Värjäysasiantuntija",
+      "languages": "Kielet",
+      "services": "Palvelut",
+      "noServices": "Lisää ensin palveluita.",
+      "schedule": "Viikkoaikataulu",
+      "save": "Tallenna",
+      "servicesCount": "{n, plural, one {# palvelu} other {# palvelua}}",
+      "deactivate": "Poista käytöstä",
+      "activate": "Ota käyttöön",
+      "add": "Lisää tekijä"
+    },
+    "profile": {
+      "welcome": "Tervetuloa! Täytä profiili, lisää palvelut ja tiimisi ja lähetä sitten liike julkaistavaksi.",
+      "saved": "Tallennettu.",
+      "submitted": "Lähetetty! Tarkistamme ja julkaisemme liikkeesi pian.",
+      "notReady": "Lisää ennen lähettämistä vähintään yksi tekijä, jolla on palvelut ja aikataulu.",
+      "listing": "Julkaisu luettelossa",
+      "statusHelp": {
+        "draft": "Liikkeesi ei ole vielä luettelossa.",
+        "pending": "Tarkistamme liikettäsi.",
+        "active": "Liikkeesi on julkaistu ja ottaa vastaan varauksia.",
+        "suspended": "Liikkeesi on jäädytetty. Ota yhteyttä meihin."
+      },
+      "submit": "Lähetä julkaistavaksi",
+      "viewPublic": "Näytä julkinen sivu",
+      "subscription": "Tilaus",
+      "sub": {
+        "trial": "Maksuton kokeilu {date} asti.",
+        "active": "Voimassa {date} asti.",
+        "past_due": "Maksu erääntynyt {date} alkaen.",
+        "cancelled": "Peruttu {date}.",
+        "complimentary": "Astrabelan tarjoama maksuton käyttö {date} asti."
+      },
+      "details": "Liikkeen tiedot",
+      "fields": {
+        "name": "Nimi",
+        "district": "Kaupunginosa",
+        "address": "Osoite",
+        "postalCode": "Postinumero",
+        "phone": "Puhelin",
+        "nif": "Y-tunnus",
+        "description": "Kuvaus",
+        "cuisine": "Keittiö"
+      },
+      "save": "Tallenna",
+      "restaurant": {
+        "welcome": "Tervetuloa! Täytä profiili, rakenna ruokalista ja lähetä ravintola julkaistavaksi.",
+        "notReady": "Lisää ruokalistaan vähintään yksi annos ennen lähettämistä.",
+        "details": "Ravintolan tiedot",
+        "statusHelp": {
+          "draft": "Ravintola ei ole vielä luettelossa.",
+          "pending": "Tarkistamme ravintolaa.",
+          "active": "Ravintola on julkaistu, ja ruokalista näkyy.",
+          "suspended": "Ravintola on jäädytetty. Ota yhteyttä meihin."
+        }
+      },
+      "social": {
+        "title": "Sosiaalinen media",
+        "hint": "Näkyvät julkisella sivullasi. Kirjoita käyttäjänimi (@esimerkki) tai liitä linkki.",
+        "invalid": "Emme tunnistaneet palvelun {network} linkkiä. Tarkista se ja tallenna uudelleen.",
+        "placeholders": {
+          "instagram": "@liikkeesi",
+          "facebook": "facebook.com/liikkeesi",
+          "tiktok": "@liikkeesi",
+          "whatsapp": "040 123 4567",
+          "website": "www.liikkeesi.fi"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Ei vielä arvioita.",
+      "hidden": "moderoinnin piilottama",
+      "replyPlaceholder": "Vastaa julkisesti…",
+      "updateReply": "Päivitä vastaus",
+      "reply": "Vastaa",
+      "inviteTitle": "Pyydä kanta-asiakkaalta arviota",
+      "inviteHint": "Kirjaa jo toteutunut käynti ja saat henkilökohtaisen linkin, jolla asiakas voi arvioida tekijän. Lähetä se WhatsAppilla, tekstiviestillä tai haluamallasi tavalla. Tiliä ei tarvita.",
+      "inviteMasterService": "Tekijä ja palvelu",
+      "inviteDate": "Käynnin päivämäärä",
+      "inviteClientName": "Asiakkaan nimi",
+      "inviteClientEmail": "Sähköposti (vapaaehtoinen)",
+      "inviteClientPhone": "Matkapuhelin (vapaaehtoinen)",
+      "inviteLanguage": "Viestin kieli",
+      "inviteSend": "Pyydä arviota",
+      "inviteRules": "Yksi linkki käy yhteen arvioon yhdestä käynnistä. Käynnit viimeisen 90 päivän ajalta, yksi pyyntö asiakasta ja tekijää kohden 30 päivän välein. Näissä arvioissa on merkintä ”liikkeen vahvistama käynti”, eikä liike voi poistaa tai piilottaa niitä, ei myöskään kielteisiä.",
+      "inviteNoTeam": "Lisää Tiimi-välilehdellä tekijä, jolla on palveluita, jotta voit pyytää arvioita.",
+      "invited": "Pyyntö luotu. Lähetä nyt viesti asiakkaalle: kopioi se tai avaa WhatsApp alla olevilla painikkeilla.",
+      "inviteErrors": {
+        "invalid": "Tarkista nimi, sähköposti (jos annettu) ja päivämäärä (enintään 90 päivää sitten, ei tulevaisuudessa).",
+        "not_found": "Tekijää tai palvelua ei löytynyt.",
+        "not_allowed": "Tätä pyyntöä ei voi lähettää.",
+        "duplicate": "Olet jo pyytänyt tätä asiakasta arvioimaan tämän tekijän viimeisen 30 päivän aikana.",
+        "limit": "Tämän päivän pyyntöraja on täynnä. Yritä huomenna uudelleen.",
+        "phone": "Virheellinen puhelinnumero. Valitse maa ja kirjoita koko numero."
+      },
+      "invitationsTitle": "Lähetetyt pyynnöt",
+      "invitationWaiting": "odottaa",
+      "invitationReviewed": "arvioitu",
+      "listTitle": "Arviot",
+      "viaAstrabela": "varattu Astrabelan kautta",
+      "viaSalon": "liikkeen vahvistama käynti",
+      "cannotDelete": "Liikkeet eivät voi poistaa arvioita. Voit vastata julkisesti tai ilmoittaa väärennetystä arviosta moderointiin.",
+      "shareCopy": "Kopioi viesti",
+      "shareCopied": "Kopioitu ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "Tekstiviesti",
+      "viaClient": "asiakkaan arvio"
+    },
+    "admin": {
+      "pending": "Julkaisua odottavat liikkeet",
+      "none": "Ei odottavia.",
+      "approve": "Hyväksy",
+      "reject": "Palauta",
+      "reports": "Ilmoitetut arviot",
+      "reason": "Syy",
+      "hide": "Piilota arvio",
+      "keep": "Säilytä",
+      "subs": {
+        "title": "Tilaukset",
+        "hint": "Anna maksuttomia kuukausia tai aseta päivä, johon asti maksuton tilaus on voimassa. Lahja alkaa, kun liikkeen nykyinen jakso päättyy.",
+        "search": "Hae nimellä, paikkakunnalla tai Y-tunnuksella",
+        "find": "Hae",
+        "empty": "Liikkeitä ei löytynyt.",
+        "none": "Ei tilausta",
+        "manage": "Hallinnoi",
+        "months": "Maksuttomat kuukaudet",
+        "monthsN": "{n, plural, one {# kuukausi} other {# kuukautta}}",
+        "note": "Huomautus (vapaaehtoinen)",
+        "notePlaceholder": "Esim. perustajakumppani",
+        "grant": "Anna",
+        "until": "Maksuton asti",
+        "set": "Aseta päivä",
+        "cancel": "Lopeta tilaus nyt",
+        "cancelHint": "Liike poistuu hausta, kunnes se tilaa uudelleen.",
+        "saved": "Tilaus päivitetty.",
+        "invalid": "Valitse tuleva päivämäärä.",
+        "salonStatus": {
+          "draft": "Luonnos",
+          "pending": "Odottaa",
+          "active": "Julkaistu",
+          "suspended": "Jäädytetty"
+        },
+        "status": {
+          "trial": "Kokeilu",
+          "active": "Voimassa",
+          "past_due": "Erääntynyt",
+          "cancelled": "Peruttu",
+          "complimentary": "Maksuton"
+        },
+        "endsOn": "{date} asti",
+        "endedOn": "{date} alkaen",
+        "kind": {
+          "salon": "Liike",
+          "restaurant": "Ravintola"
+        }
+      },
+      "title": "Ylläpito"
+    },
+    "menu": {
+      "hint": "Jaa ruokalista osioihin. Muutokset näkyvät heti julkisella sivulla ja pöytien QR-koodin takana.",
+      "viewPublic": "Näytä julkinen ruokalista",
+      "invalid": "Tarkista nimi ja hinta (esimerkiksi 12,50).",
+      "empty": "Aloita osiolla, kuten ”Alkuruoat”, ja lisää sitten annoksia.",
+      "editSection": "Muokkaa osiota",
+      "sectionName": "Uusi osio",
+      "sectionNameEn": "Nimi englanniksi (vapaaehtoinen)",
+      "sectionPlaceholder": "Alkuruoat",
+      "save": "Tallenna",
+      "deleteSection": "Poista osio ja sen annokset",
+      "addSection": "Lisää osio",
+      "addDish": "Lisää annos",
+      "editDish": "Muokkaa annosta",
+      "deleteDish": "Poista annos",
+      "available": "saatavilla",
+      "soldOut": "loppunut",
+      "dishName": "Annoksen nimi",
+      "dishNameEn": "Nimi englanniksi (vapaaehtoinen)",
+      "description": "Kuvaus",
+      "descriptionEn": "Kuvaus englanniksi (vapaaehtoinen)",
+      "price": "Hinta sis. alv, €",
+      "portion": "Annoskoko (vapaaehtoinen)",
+      "portionPlaceholder": "300 g, 0,33 l, kahdelle",
+      "allergens": "Allergeenit",
+      "tags": "Tunnisteet",
+      "likes": "Asiakkaiden tykkäykset"
+    },
+    "qr": {
+      "hint": "Tulosta tämä kortti ja aseta se pöytiin. Asiakkaat skannaavat sen puhelimen kameralla, ja ruokalista avautuu puhelimen kielellä.",
+      "notListed": "Koodi toimii jo, mutta asiakkaat voivat avata ruokalistan vasta, kun ravintola on julkaistu (Profiili-välilehti).",
+      "scan": "Skannaa koodi nähdäksesi ruokalistan",
+      "scanEn": "Scan to see the menu",
+      "print": "Tulosta kortti",
+      "salon": {
+        "hint": "Tulosta tämä kortti ja aseta se vastaanottoon tai peilin viereen. Asiakkaat skannaavat sen puhelimen kameralla, varaavat seuraavan käyntinsä ja arvioivat tekijänsä.",
+        "notListed": "Koodi toimii jo, mutta asiakkaat voivat avata sivun vasta, kun liike on julkaistu (Profiili-välilehti).",
+        "scan": "Varaa verkossa ja arvioi tekijäsi",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Tuki"
+  },
+  "countries": {
+    "pt": "Portugali",
+    "es": "Espanja",
+    "fr": "Ranska",
+    "it": "Italia",
+    "de": "Saksa",
+    "nl": "Alankomaat",
+    "be": "Belgia",
+    "ie": "Irlanti",
+    "lu": "Luxemburg",
+    "at": "Itävalta",
+    "ch": "Sveitsi",
+    "pl": "Puola",
+    "cz": "Tšekki",
+    "sk": "Slovakia",
+    "hu": "Unkari",
+    "si": "Slovenia",
+    "hr": "Kroatia",
+    "ro": "Romania",
+    "bg": "Bulgaria",
+    "dk": "Tanska",
+    "se": "Ruotsi",
+    "no": "Norja",
+    "fi": "Suomi"
+  },
+  "restaurants": {
+    "metaTitle": "Ravintolat ja ruokalistat",
+    "eyebrow": "Eurooppa · Ravintolat",
+    "title": "Katso ruokalista ennen kuin istut pöytään.",
+    "subtitle": "Kokonaiset ruokalistat hintoineen, ravintoloiden itse ajan tasalla pitäminä, paikallisella kielellä ja englanniksi, allergeeneineen.",
+    "searchPlaceholder": "Nimi tai keittiö",
+    "resultsTitle": "{count, plural, =0 {Ei ravintoloita} one {# ravintola} other {# ravintolaa}} paikkakunnalla {city}",
+    "cityEmpty": "Paikkakunnalla {city} ei ole vielä ravintoloita Astrabelassa.",
+    "noMatch": "Mikään ravintola ei vastaa hakua.",
+    "join": "Onko sinulla ravintola? Julkaise ruokalistasi",
+    "dishes": "{count, plural, one {# annos} other {# annosta}}",
+    "from": "Alkaen {price}"
+  },
+  "restaurant": {
+    "menu": "Ruokalista",
+    "allergens": "Allergeenit",
+    "vatIncluded": "Hinnat euroina, sisältävät alv:n.",
+    "allergyNote": "Onko sinulla allergioita? Kerro henkilökunnalle ennen tilaamista.",
+    "like": "Tykkää"
+  },
+  "allergens": {
+    "gluten": "gluteeni",
+    "crustaceans": "äyriäiset",
+    "eggs": "kananmuna",
+    "fish": "kala",
+    "peanuts": "maapähkinä",
+    "soy": "soija",
+    "milk": "maito",
+    "nuts": "pähkinät",
+    "celery": "selleri",
+    "mustard": "sinappi",
+    "sesame": "seesami",
+    "sulphites": "sulfiitit",
+    "lupin": "lupiini",
+    "molluscs": "nilviäiset"
+  },
+  "dishTags": {
+    "vegetarian": "Kasvis",
+    "vegan": "Vegaaninen",
+    "gluten_free": "Gluteeniton",
+    "spicy": "Tulinen"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Verkkosivusto"
+  },
+  "account": {
+    "title": "Kirjaudu",
+    "google": "Jatka Googlella",
+    "or": "tai",
+    "googleError": "Kirjautuminen Googlella epäonnistui. Yritä uudelleen.",
+    "openCabinet": "Avaa yritystilisi",
+    "hello": "Hei, {name}",
+    "logout": "Kirjaudu ulos",
+    "upcoming": "Tulevat varaukset",
+    "noUpcoming": "Sinulla ei ole tulevia varauksia.",
+    "findSalon": "Etsi liike",
+    "past": "Aiemmat varaukset",
+    "open": "Näytä",
+    "bookingsHint": "Tässä näkyvät varaukset, jotka teit sisäänkirjautuneena.",
+    "deleteTitle": "Poista tili",
+    "deleteText": "Tilisi ja kirjautumistietosi poistetaan. Varaukset jäävät liikkeille, jotka säilyttävät ne palvelun tuottamiseksi.",
+    "deleteConfirm": "Poista tilini",
+    "deleted": "Tilisi on poistettu.",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "submit": "Kirjaudu",
+    "loginError": "Väärä sähköposti tai salasana.",
+    "noAccount": "Eikö sinulla ole tiliä?",
+    "createAccount": "Luo tili",
+    "businessQuestion": "Onko sinulla liike tai ravintola?",
+    "businessLink": "Astrabela yrityksille",
+    "signedInBusiness": "Kirjautunut: {name}.",
+    "adminPanel": "Ylläpito",
+    "welcome": "Tili luotu. Tässä näkyvät varaukset, jotka teet sisäänkirjautuneena.",
+    "bookingsHintGoogle": "Tässä näkyvät varaukset, jotka teit sisäänkirjautuneena tai Google-sähköpostillasi.",
+    "registerTitle": "Luo tili",
+    "name": "Nimi",
+    "passwordHint": "Vähintään 8 merkkiä.",
+    "terms": "Hyväksyn <terms>käyttöehdot</terms> ja <privacy>tietosuojaselosteen</privacy>.",
+    "registerSubmit": "Luo tili",
+    "haveAccount": "Onko sinulla jo tili?",
+    "registerErrors": {
+      "invalid": "Tarkista nimi, sähköposti ja salasana (vähintään 8 merkkiä).",
+      "email_taken": "Tällä sähköpostilla on jo tili. Kirjaudu sillä."
+    }
+  },
+  "petFriendly": {
+    "label": "Lemmikkiystävällinen",
+    "hint": "Lemmikit ovat tervetulleita."
+  }
+}

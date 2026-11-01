@@ -84,6 +84,7 @@
     "da": "Danish",
     "sv": "Swedish",
     "nb": "Norwegian",
+    "fi": "Finnish",
     "ru": "Russian",
     "uk": "Ukrainian"
   },
@@ -514,7 +515,8 @@
     "bg": "Bulgaria",
     "dk": "Denmark",
     "se": "Sweden",
-    "no": "Norway"
+    "no": "Norway",
+    "fi": "Finland"
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",
