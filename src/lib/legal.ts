@@ -41,6 +41,7 @@ const PRICES = {
   da: ["12,99 € om måneden ved månedlig betaling;", "10,99 € om måneden ved betaling for 6 måneder;", "9,99 € om måneden ved årlig betaling."],
   sv: ["12,99 € per månad vid månadsbetalning;", "10,99 € per månad vid betalning för 6 månader;", "9,99 € per månad vid årsbetalning."],
   nb: ["12,99 € per måned ved månedlig betaling;", "10,99 € per måned ved betaling for 6 måneder;", "9,99 € per måned ved årlig betaling."],
+  fi: ["12,99 € kuukaudessa kuukausimaksulla;", "10,99 € kuukaudessa 6 kuukauden maksulla;", "9,99 € kuukaudessa vuosimaksulla."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -61,6 +62,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "da") return privacyDa();
   if (locale === "sv") return privacySv();
   if (locale === "nb") return privacyNb();
+  if (locale === "fi") return privacyFi();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -269,6 +271,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "da") return termsDa();
   if (locale === "sv") return termsSv();
   if (locale === "nb") return termsNb();
+  if (locale === "fi") return termsFi();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -3504,6 +3507,197 @@ function termsNb(): LegalDoc {
       {
         title: "10. Endringer",
         body: ["Vi kan oppdatere disse vilkårene. Den nye versjonen publiseres her med dato; om viktige endringer varsler vi bedriftene på forhånd."],
+      },
+    ],
+  };
+}
+
+function privacyFi(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Tietosuojaseloste",
+    updated: "Päivitetty viimeksi: 1.11.2026",
+    intro:
+      "Astrabela on luettelo Euroopan kauneushoitoloista, parturiliikkeistä ja ravintoloista, jossa voi varata ajan verkossa ja lukea asiakkaiden arvioita jokaisesta tekijästä. Tämä seloste kertoo, mitä henkilötietoja käsittelemme, miksi ja mitä oikeuksia sinulla on GDPR:n mukaan.",
+    sections: [
+      { title: "1. Keitä olemme", body: [`Palvelua astrabela.com ylläpitää ${who()}. Tietojasi koskevat kysymykset voit lähettää osoitteeseen ${o.email}.`] },
+      {
+        title: "2. Mitä tietoja käsittelemme",
+        body: [
+          "Kun varaat ajan tai kirjoitat arvion (asiakkaat):",
+          [
+            "varauksen yhteydessä antamasi nimi, sähköposti ja matkapuhelinnumero sekä viestisi liikkeelle;",
+            "itse varaus: liike, tekijä, palvelu, päivä, kellonaika ja tila;",
+            "arviosi: tähdet, teksti ja nimi, jonka haluat näyttää;",
+            "jos luot asiakastilin: nimi ja sähköposti sekä salasana, joka tallennetaan vain salattuna (tiiviste), tai Google-kirjautumisessa Google-tilisi tunniste (emme koskaan näe Google-salasanaasi).",
+          ],
+          "Kun liike tai ravintola käyttää Astrabelaa (yritykset):",
+          [
+            "tilin haltijan nimi ja sähköposti sekä salasana (tallennetaan vain salattuna);",
+            "yrityksen tiedot: nimi, osoite, puhelin, sähköposti, Y-tunnus, tiimi, palvelut, hinnat, aukioloajat, ruokalista ja linkit sosiaaliseen mediaan.",
+          ],
+          "Tekniset tiedot: kirjautumisevästeet, kielievästeet ja palvelinlokit (esim. IP-osoite ja pyynnön ajankohta), joita säilytämme tietoturvasyistä.",
+        ],
+      },
+      {
+        title: "3. Käsittelyn tarkoitukset ja perusteet",
+        body: [
+          [
+            "varausten toteuttaminen ja hallinta: sopimuksen täytäntöönpano (GDPR 6 artiklan 1 kohdan b alakohta);",
+            "yritysten tilien ja tilausten hallinta: sopimuksen täytäntöönpano;",
+            "arvioiden julkaiseminen ja väärennettyjen arvioiden estäminen: oikeutettu etu luotettavaan luetteloon (6 artiklan 1 kohdan f alakohta);",
+            "palvelun turvallinen toiminta: oikeutettu etu;",
+            "vero- ja kirjanpitovelvoitteet: lakisääteinen velvoite (6 artiklan 1 kohdan c alakohta).",
+          ],
+          "Emme myy henkilötietoja emmekä käytä niitä mainontaan.",
+        ],
+      },
+      {
+        title: "4. Liikkeen rooli ja meidän roolimme",
+        body: [
+          "Varauksissa valitsemasi liike päättää, miten sen asiakkaiden tietoja käytetään, ja on niiden rekisterinpitäjä. Astrabela käsittelee näitä tietoja liikkeen puolesta henkilötietojen käsittelijänä (GDPR 28 artikla) ja vain palvelun tarjoamiseksi. Arvioiden, julkisen luettelon ja palvelun turvallisuuden osalta rekisterinpitäjä on Astrabela.",
+        ],
+      },
+      {
+        title: "5. Tietojen vastaanottajat",
+        body: [
+          "Liike tai ravintola, josta varaat. Käytämme lisäksi seuraavia palveluntarjoajia, joita sitovat tietojenkäsittelysopimukset:",
+          [
+            "Vercel Inc. – palvelinpalvelut; palvelu toimii Frankfurtissa (EU). Vercel on yhdysvaltalainen yhtiö; siirrot EU:n ulkopuolelle perustuvat EU:n vakiosopimuslausekkeisiin ja EU-US Data Privacy Framework -järjestelyyn;",
+            "Neon – tietokanta Frankfurtissa (EU);",
+            "Cloudflare – verkkotunnuspalvelu (DNS);",
+            "Google – vain jos kirjaudut Googlella.",
+          ],
+        ],
+      },
+      {
+        title: "6. Säilytysaika",
+        body: [
+          [
+            "asiakas- ja varaustiedot: niin kauan kuin liikkeen tili on aktiivinen, enintään 2 vuotta viimeisestä käynnistäsi;",
+            "arviot: niin kauan kuin liike on Astrabelassa;",
+            "asiakastilit: kunnes ne poistetaan (painike tilisivulla);",
+            "yritystilit: kunnes tili suljetaan;",
+            "laskut ja maksutiedot: 10 vuotta Portugalin verolainsäädännön mukaan;",
+            "yritysten rekisteröitymispyynnöt: 30 päivää.",
+          ],
+        ],
+      },
+      {
+        title: "7. Evästeet",
+        body: [
+          "Käytämme vain palvelun toiminnalle välttämättömiä evästeitä: kirjautumisen ylläpitoon (ja nimesi näyttämiseen valikossa), lyhytaikaisia Google-kirjautumisessa, yhtä kielelle ja yhtä, joka muistaa ravintolan ruokalistasta pitämäsi annokset (se luodaan vasta, kun napautat ♥, ja se sisältää satunnaisen koodin, ei nimeäsi). Emme käytä analytiikka- tai mainosevästeitä, joten emme pyydä suostumusta evästeisiin.",
+        ],
+      },
+      {
+        title: "8. Oikeutesi",
+        body: [
+          `Voit pyytää pääsyä tietoihisi, niiden oikaisemista tai poistamista, käsittelyn rajoittamista, vastustaa käsittelyä ja saada tietosi siirrettävässä muodossa. Kirjoita osoitteeseen ${o.email}; vastaamme kuukauden kuluessa. Jos tiedot on luovutettu liikkeelle, välitämme pyyntösi myös sille. Voit myös tehdä valituksen tietosuojavaltuutetun toimistolle (tietosuoja.fi) tai Portugalin valvontaviranomaiselle CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Tietoturva",
+        body: [
+          "Palvelu toimii vain HTTPS-yhteydellä, salasanat tallennetaan salattuina, ja varaus- ja arviolinkit ovat henkilökohtaisia ja vaikeasti arvattavia. Älä jaa henkilökohtaista linkkiäsi muille.",
+        ],
+      },
+      {
+        title: "10. Muutokset",
+        body: ["Jos muutamme tätä selostetta, julkaisemme uuden version tässä päivämäärän kanssa. Tärkeistä muutoksista kerromme palvelussa."],
+      },
+    ],
+  };
+}
+
+function termsFi(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Käyttöehdot",
+    updated: "Päivitetty viimeksi: 1.11.2026",
+    intro: `Nämä ehdot koskevat palvelun astrabela.com käyttöä. Palvelua ylläpitää ${who()}. Käyttämällä palvelua tai luomalla yritystilin hyväksyt ehdot.`,
+    sections: [
+      {
+        title: "1. Palvelu",
+        body: [
+          "Astrabelan avulla asiakkaat löytävät kauneushoitoloita, parturiliikkeitä ja ravintoloita, varaavat palveluita verkossa, arvioivat tekijöitä ja katsovat ravintoloiden ruokalistoja. Liikkeet ja ravintolat hallinnoivat yritystilillään profiiliaan, tiimiään, palveluitaan, kalenteriaan ja ruokalistaansa.",
+        ],
+      },
+      {
+        title: "2. Asiakkaille",
+        body: [
+          [
+            "Astrabelan käyttö on maksutonta eikä vaadi tiliä.",
+            "Varaus on sopimus sinun ja liikkeen välillä. Liike päättää palveluista, hinnoista ja kestosta, ja palvelun tuottaa liike, ei Astrabela.",
+            "Astrabela ei ota vastaan maksuja: maksat suoraan liikkeessä.",
+            "Voit perua käynnin saamasi henkilökohtaisen linkin kautta. Peru käynti, jos et pääse paikalle.",
+          ],
+        ],
+      },
+      {
+        title: "3. Arviot",
+        body: [
+          "Jokainen Astrabelaan kirjautunut asiakas voi arvioida liikkeen tekijän kerran 30 päivässä samaa tekijää kohden. Asiakkaat, joiden käynti on varattu Astrabelan kautta tai liikkeen vahvistama, voivat arvioida myös henkilökohtaisen linkin kautta; näissä arvioissa on merkintä vahvistetusta käynnistä. Arvion on:",
+          [
+            "kuvattava omaa, todellista kokemustasi;",
+            "oltava vapaa loukkauksista, uhkauksista ja syrjinnästä;",
+            "oltava sisältämättä muiden henkilötietoja, mainoksia tai linkkejä.",
+          ],
+          "Voimme piilottaa näitä sääntöjä rikkovat arviot. Liike ei voi poistaa tai muuttaa arvioita; se voi vastata julkisesti tai ilmoittaa arviosta moderointiin.",
+        ],
+      },
+      {
+        title: "4. Liikkeille ja ravintoloille",
+        body: [
+          [
+            "Profiilin tietojen, hintojen ja ruokalistan on oltava oikeita ja ajan tasalla. Vastaat niistä ja palveluistasi.",
+            "Pidä salasanasi tallessa; vastaat tililläsi tapahtuvasta toiminnasta.",
+            "Älä luo vääriä varauksia, arvioita tai arviopyyntöjä äläkä pyydä arvioita palkkiota vastaan.",
+            "Haussa näytetään vain profiilit, joilla on voimassa oleva tilaus tai kokeilujakso.",
+          ],
+        ],
+      },
+      {
+        title: "5. Hinnat",
+        body: [
+          "Liikkeille, parturiliikkeille ja ravintoloille 3 ensimmäistä kuukautta ovat maksuttomia, eikä aloittamiseen tarvita korttia. Sen jälkeen näkyminen edellyttää tilausta:",
+          PRICES.fi,
+          "Maksuehdot näytetään ennen jokaista veloitusta. Voimme muuttaa hintoja vähintään 30 päivän ilmoitusajalla; muutos koskee seuraavaa laskutuskautta.",
+        ],
+      },
+      {
+        title: "6. Tietojenkäsittelysopimus (yritykset)",
+        body: [
+          "Varausten asiakastietojen osalta yritys on rekisterinpitäjä ja Astrabela henkilötietojen käsittelijä (GDPR 28 artikla). Astrabela:",
+          [
+            "käsittelee tietoja vain palvelun tarjoamiseksi ja yrityksen palvelun kautta antamien ohjeiden mukaisesti;",
+            "pitää ne luottamuksellisina ja suojaa ne asianmukaisin turvatoimin;",
+            "käyttää vain tietosuojaselosteessa mainittuja alikäsittelijöitä ja ilmoittaa uusista yrityksille etukäteen;",
+            "auttaa yritystä asiakkaiden pyynnöissä ja tietoturvaloukkauksista ilmoittamisessa;",
+            "poistaa tai luovuttaa tiedot tilin sulkemisen jälkeen, ellei laki edellytä niiden säilyttämistä.",
+          ],
+        ],
+      },
+      {
+        title: "7. Tilin jäädyttäminen ja sulkeminen",
+        body: [
+          "Voit sulkea yritystilisi milloin tahansa kirjoittamalla meille. Voimme jäädyttää tai poistaa profiilin, joka rikkoo näitä ehtoja, lakia tai muiden oikeuksia, ja kerromme syyn.",
+        ],
+      },
+      {
+        title: "8. Vastuu",
+        body: [
+          "Pyrimme siihen, että palvelu on saatavilla ja oikein, mutta emme voi taata, että se toimii aina ilman katkoja ja virheitä. Astrabela ei ole osapuoli asiakkaan ja liikkeen välisessä sopimuksessa eikä vastaa liikkeen palveluista. Mikään näissä ehdoissa ei rajoita kuluttajien lakisääteisiä oikeuksia.",
+        ],
+      },
+      {
+        title: "9. Sovellettava laki ja valitukset",
+        body: [
+          `Ehtoihin sovelletaan Portugalin lakia, rajoittamatta suojaa, joka sinulla on kuluttajana asuinmaasi lain mukaan. Valitukset voit lähettää osoitteeseen ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Muutokset",
+        body: ["Voimme päivittää näitä ehtoja. Uusi versio julkaistaan tässä päivämäärän kanssa; tärkeistä muutoksista ilmoitamme yrityksille etukäteen."],
       },
     ],
   };

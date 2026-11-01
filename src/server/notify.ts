@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  fi: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Varaus vahvistettu: ${r.salon.name}`,
+      text: `Hei ${r.client.name},\n\n${r.service.name}, tekijä ${r.staff.name}\n${when}\n${r.salon.address}\n\nMuuta tai peru: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Muistutus: huomenna ${r.salon.name}`,
+      text: `Hei ${r.client.name},\n\nmuistutamme varauksestasi: ${r.service.name}, tekijä ${r.staff.name}, ${when}.\nEtkö pääse? Peru tästä: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Millainen oli käyntisi: ${r.salon.name}?`,
+      text: `Hei ${r.client.name},\n\narvioi ${r.staff.name}. Vain asiakkaat, joiden käynti on vahvistettu, voivat kirjoittaa arvioita.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} pyytää arviotasi`,
+      text: `Hei ${r.client.name},\n\n${r.staff.name} (${r.salon.name}) kiittää käynnistäsi (${r.service.name}) ja haluaisi kuulla mielipiteesi Astrabelassa. Se vie minuutin, eikä tiliä tarvita.\nLinkki on henkilökohtainen ja käy yhteen arvioon: ${link}`,
     }),
   },
   nb: {

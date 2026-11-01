@@ -420,3 +420,18 @@ describe("Norwegian places", () => {
     expect(phoneCountry("stavanger")).toBe("NO");
   });
 });
+
+describe("Finnish places", () => {
+  it("lists GeoNames towns by region, with both names for Swedish-speaking towns", () => {
+    expect(placeBySlug("helsinki")).toMatchObject({ name: "Helsinki", country: "fi", area: "Uusimaa" });
+    expect(searchPlaces("jyvaskyla", [], 30, "fi")[0]).toMatchObject({ name: "Jyväskylä", area: "Keski-Suomi" });
+    expect(searchPlaces("pietarsaari", [], 30, "fi")[0].name).toBe("Jakobstad/Pietarsaari");
+    expect(searchPlaces("hyvinkaa", [], 30, "fi")[0].name).toBe("Hyvinkää");
+  });
+
+  it("uses Helsinki time and starts Finnish visitors in Helsinki", () => {
+    expect(placeTimezone("tampere")).toBe("Europe/Helsinki");
+    expect(cityFieldSetup([], undefined, "fi")).toMatchObject({ defaultCountry: "fi", defaultSlugs: { fi: "helsinki" } });
+    expect(phoneCountry("turku")).toBe("FI");
+  });
+});
