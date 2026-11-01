@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  sl: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Rezervacija potrjena: ${r.salon.name}`,
+      text: `Pozdravljeni, ${r.client.name},\n\n${r.service.name} pri ${r.staff.name}\n${when}\n${r.salon.address}\n\nUpravljanje ali odpoved: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Opomnik: jutri v ${r.salon.name}`,
+      text: `Pozdravljeni, ${r.client.name},\n\nopominjamo vas na rezervacijo: ${r.service.name} pri ${r.staff.name}, ${when}.\nNe morete priti? Odpovejte tukaj: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Kako je bilo v ${r.salon.name}?`,
+      text: `Pozdravljeni, ${r.client.name},\n\nocenite ${r.staff.name}. Ocenjujejo lahko samo stranke s potrjenim obiskom.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} vas prosi za oceno`,
+      text: `Pozdravljeni, ${r.client.name},\n\n${r.staff.name} iz salona ${r.salon.name} se vam zahvaljuje za obisk (${r.service.name}) in bi rad(a) slišal(a) vaše mnenje na Astrabeli. Vzame le minuto in ne potrebujete računa.\nTa povezava je osebna in velja za eno oceno: ${link}`,
     }),
   },
   hu: {

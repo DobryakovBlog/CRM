@@ -34,6 +34,7 @@ const PRICES = {
   cs: ["12,99 € měsíčně při měsíční platbě;", "10,99 € měsíčně při platbě na 6 měsíců;", "9,99 € měsíčně při roční platbě."],
   sk: ["12,99 € mesačne pri mesačnej platbe;", "10,99 € mesačne pri platbe na 6 mesiacov;", "9,99 € mesačne pri ročnej platbe."],
   hu: ["havi 12,99 € havi fizetés esetén;", "havi 10,99 € féléves fizetés esetén;", "havi 9,99 € éves fizetés esetén."],
+  sl: ["12,99 € na mesec pri mesečnem plačilu;", "10,99 € na mesec pri plačilu za 6 mesecev;", "9,99 € na mesec pri letnem plačilu."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -47,6 +48,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "cs") return privacyCs();
   if (locale === "sk") return privacySk();
   if (locale === "hu") return privacyHu();
+  if (locale === "sl") return privacySl();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -248,6 +250,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "cs") return termsCs();
   if (locale === "sk") return termsSk();
   if (locale === "hu") return termsHu();
+  if (locale === "sl") return termsSl();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -2146,6 +2149,197 @@ function termsHu(): LegalDoc {
       {
         title: "10. Változások",
         body: ["Ezeket a feltételeket frissíthetjük. Az új változatot itt tesszük közzé dátummal; a fontos változásokról előre értesítjük a vállalkozásokat."],
+      },
+    ],
+  };
+}
+
+function privacySl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Politika zasebnosti",
+    updated: "Zadnja posodobitev: 1. november 2026",
+    intro:
+      "Astrabela je katalog kozmetičnih salonov, brivnic in restavracij v Evropi s spletno rezervacijo in ocenami strank za vsakega strokovnjaka. Ta politika pojasnjuje, katere osebne podatke obdelujemo, za kaj in kakšne pravice imate po GDPR.",
+    sections: [
+      { title: "1. Kdo smo", body: [`Storitev astrabela.com upravlja ${who()}. Vprašanja o vaših podatkih pošljite na ${o.email}.`] },
+      {
+        title: "2. Katere podatke obdelujemo",
+        body: [
+          "Ko rezervirate ali ocenjujete (stranke):",
+          [
+            "ime, e-naslov in številka mobilnega telefona, vpisani ob rezervaciji, ter vaše sporočilo salonu;",
+            "sama rezervacija: salon, strokovnjak, storitev, datum, ura in stanje;",
+            "vaša ocena: zvezdice, besedilo in ime, ki ga želite prikazati;",
+            "če ustvarite račun stranke: ime in e-naslov ter geslo, shranjeno le v šifrirani obliki (hash), ali pri prijavi z Googlom identifikator vašega računa Google (vašega gesla Google nikoli ne vidimo).",
+          ],
+          "Ko salon ali restavracija uporablja Astrabelo (podjetja):",
+          [
+            "ime in e-naslov lastnika računa ter geslo (shranjeno le šifrirano);",
+            "podatki o podjetju: ime, naslov, telefon, e-pošta, davčna številka, ekipa, storitve, cene, delovni čas, jedilnik in povezave do družbenih omrežij.",
+          ],
+          "Tehnični podatki: piškotki za prijavo, piškotek za jezik in strežniški dnevniki (npr. naslov IP in čas zahteve), ki jih hranimo iz varnostnih razlogov.",
+        ],
+      },
+      {
+        title: "3. Nameni in pravne podlage",
+        body: [
+          [
+            "izvedba in upravljanje rezervacij: izvajanje pogodbe (člen 6(1)(b) GDPR);",
+            "upravljanje računov in naročnin podjetij: izvajanje pogodbe;",
+            "objava ocen in preprečevanje lažnih ocen: zakoniti interes za zanesljiv katalog (člen 6(1)(f));",
+            "varno delovanje storitve: zakoniti interes;",
+            "davčne in računovodske obveznosti: zakonska obveznost (člen 6(1)(c)).",
+          ],
+          "Osebnih podatkov ne prodajamo in jih ne uporabljamo za oglaševanje.",
+        ],
+      },
+      {
+        title: "4. Vloga salona in naša vloga",
+        body: [
+          "Pri rezervacijah o uporabi podatkov svojih strank odloča salon, ki ga izberete, in je njihov upravljavec. Astrabela te podatke obdeluje v imenu salona kot obdelovalec (člen 28 GDPR) in le za izvajanje storitve. Za ocene, javni katalog in varnost storitve je upravljavec Astrabela.",
+        ],
+      },
+      {
+        title: "5. Prejemniki podatkov",
+        body: [
+          "Salon ali restavracija, kjer rezervirate. Uporabljamo tudi naslednje ponudnike, vezane s pogodbami o obdelavi podatkov:",
+          [
+            "Vercel Inc. – gostovanje; storitev deluje v Frankfurtu (EU). Vercel je ameriško podjetje; prenos podatkov iz EU zagotavljajo standardna pogodbena določila EU in okvir EU-US Data Privacy Framework;",
+            "Neon – podatkovna baza v Frankfurtu (EU);",
+            "Cloudflare – storitev domenskih imen (DNS);",
+            "Google – le če se prijavite z Googlom.",
+          ],
+        ],
+      },
+      {
+        title: "6. Obdobje hrambe",
+        body: [
+          [
+            "podatki strank in rezervacij: dokler je račun salona aktiven, največ 2 leti od vašega zadnjega obiska;",
+            "ocene: dokler je salon na Astrabeli;",
+            "računi strank: do izbrisa (gumb na strani računa);",
+            "računi podjetij: do zaprtja računa;",
+            "računi in podatki o obračunu: 10 let po portugalskem davčnem pravu;",
+            "prijave podjetij: 30 dni.",
+          ],
+        ],
+      },
+      {
+        title: "7. Piškotki",
+        body: [
+          "Uporabljamo le piškotke, nujne za delovanje storitve: za ohranitev prijave (in prikaz vašega imena v meniju), kratkotrajne ob prijavi z Googlom, enega za jezik in enega, ki si zapomni jedi, ki so vam všeč v jedilniku restavracije (nastane šele, ko se dotaknete ♥, in vsebuje naključno kodo, ne vašega imena). Analitičnih ali oglaševalskih piškotkov ne uporabljamo, zato ne prosimo za soglasje za piškotke.",
+        ],
+      },
+      {
+        title: "8. Vaše pravice",
+        body: [
+          `Zahtevate lahko dostop do svojih podatkov, njihov popravek ali izbris, omejitev obdelave, ugovarjate obdelavi in prejmete podatke v prenosljivi obliki. Pišite na ${o.email}; odgovorimo v enem mesecu. Če so bili podatki posredovani salonu, mu posredujemo tudi vašo zahtevo. Pritožbo lahko vložite tudi pri Informacijskem pooblaščencu (www.ip-rs.si) ali pri portugalskem organu CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Varnost",
+        body: [
+          "Storitev deluje le prek HTTPS, gesla so shranjena šifrirano, povezave do rezervacij in ocen pa so osebne in težko uganljive. Svoje osebne povezave ne delite z drugimi.",
+        ],
+      },
+      {
+        title: "10. Spremembe",
+        body: ["Če to politiko spremenimo, bomo tukaj objavili novo različico z datumom. O pomembnih spremembah vas obvestimo v storitvi."],
+      },
+    ],
+  };
+}
+
+function termsSl(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Pogoji uporabe",
+    updated: "Zadnja posodobitev: 1. november 2026",
+    intro: `Ti pogoji urejajo uporabo astrabela.com, ki jo upravlja ${who()}. Z uporabo storitve ali ustvarjanjem poslovnega računa jih sprejemate.`,
+    sections: [
+      {
+        title: "1. Storitev",
+        body: [
+          "Astrabela strankam omogoča iskanje kozmetičnih salonov, brivnic in restavracij, spletno rezervacijo storitev, ocenjevanje strokovnjakov in ogled jedilnikov restavracij. Saloni in restavracije v svojem poslovnem računu upravljajo profil, ekipo, storitve, koledar in jedilnik.",
+        ],
+      },
+      {
+        title: "2. Za stranke",
+        body: [
+          [
+            "Uporaba Astrabele je brezplačna in ne zahteva računa.",
+            "Rezervacija je pogodba med vami in salonom. Storitve, cene in trajanje določa salon, storitev pa izvede salon, ne Astrabela.",
+            "Astrabela ne sprejema plačil: plačate neposredno v salonu.",
+            "Obisk lahko odpoveste prek osebne povezave, ki jo prejmete. Odpovejte ga, če ne morete priti.",
+          ],
+        ],
+      },
+      {
+        title: "3. Ocene",
+        body: [
+          "Vsaka stranka, prijavljena na Astrabeli, lahko oceni strokovnjaka salona, enkrat na 30 dni za istega strokovnjaka. Stranke z obiskom, rezerviranim prek Astrabele ali potrjenim s strani salona, lahko ocenjujejo tudi prek osebne povezave; te ocene imajo oznako potrjenega obiska. Ocena mora:",
+          [
+            "opisovati vašo lastno, resnično izkušnjo;",
+            "biti brez žalitev, groženj in diskriminacije;",
+            "ne vsebovati osebnih podatkov drugih, oglasov ali povezav.",
+          ],
+          "Ocene, ki kršijo ta pravila, lahko skrijemo. Salon ocen ne more brisati ali spreminjati; lahko javno odgovori ali oceno prijavi v moderiranje.",
+        ],
+      },
+      {
+        title: "4. Za salone in restavracije",
+        body: [
+          [
+            "Podatki v profilu, cene in jedilnik morajo biti resnični in posodobljeni. Zanje in za svoje storitve odgovarjate vi.",
+            "Varujte svoje geslo; odgovarjate za dejavnosti v svojem računu.",
+            "Ne ustvarjajte lažnih rezervacij, ocen ali prošenj za oceno in ne prosite za ocene v zameno za nagrado.",
+            "V iskanju se prikažejo le profili z aktivno naročnino ali v preizkusnem obdobju.",
+          ],
+        ],
+      },
+      {
+        title: "5. Cene",
+        body: [
+          "Za salone, brivnice in restavracije so prvi 3 meseci brezplačni, za začetek brez kartice. Nato je za prikaz potrebna naročnina:",
+          PRICES.sl,
+          "Plačilni pogoji so prikazani pred vsakim plačilom. Cene lahko spremenimo z vsaj 30-dnevnim obvestilom; sprememba velja od naslednjega obračunskega obdobja.",
+        ],
+      },
+      {
+        title: "6. Pogodba o obdelavi osebnih podatkov (podjetja)",
+        body: [
+          "Za podatke strank v rezervacijah je podjetje upravljavec, Astrabela pa obdelovalec (člen 28 GDPR). Astrabela:",
+          [
+            "te podatke obdeluje le za izvajanje storitve in po navodilih, ki jih podjetje daje prek storitve;",
+            "jih varuje kot zaupne in z ustreznimi varnostnimi ukrepi;",
+            "uporablja le podobdelovalce, navedene v politiki zasebnosti, in podjetja vnaprej obvesti o novih;",
+            "pomaga podjetju pri zahtevah strank in prijavi kršitev varstva podatkov;",
+            "po zaprtju računa podatke izbriše ali preda, razen če zakon zahteva njihovo hrambo.",
+          ],
+        ],
+      },
+      {
+        title: "7. Začasna ustavitev in zaprtje računa",
+        body: [
+          "Poslovni račun lahko kadar koli zaprete tako, da nam pišete. Profil, ki krši te pogoje, zakon ali pravice drugih, lahko z obrazložitvijo začasno ustavimo ali odstranimo.",
+        ],
+      },
+      {
+        title: "8. Odgovornost",
+        body: [
+          "Trudimo se, da je storitev dostopna in pravilna, ne moremo pa zagotoviti, da bo vedno delovala brez prekinitev in napak. Astrabela ni stranka pogodbe med stranko in salonom in ne odgovarja za storitve salonov. Nič v teh pogojih ne omejuje zakonskih pravic potrošnikov.",
+        ],
+      },
+      {
+        title: "9. Veljavno pravo in pritožbe",
+        body: [
+          `Za pogoje velja portugalsko pravo, brez poseganja v varstvo, ki vam ga kot potrošniku zagotavlja pravo države vašega prebivališča. Pritožbe pošljite na ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Spremembe",
+        body: ["Te pogoje lahko posodobimo. Nova različica bo objavljena tukaj z datumom; o pomembnih spremembah podjetja obvestimo vnaprej."],
       },
     ],
   };
