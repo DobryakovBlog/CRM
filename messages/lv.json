@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "title": "Astrabela: skaistumkopšanas saloni un bārddziņi ar pierakstu tiešsaistē",
+    "description": "Atrodiet skaistumkopšanas salonu vai bārddzini Eiropā, lasiet klientu atsauksmes par katru speciālistu un piesakieties tiešsaistē."
+  },
+  "nav": {
+    "forSalons": "Uzņēmumiem",
+    "footer": "Astrabela · Klientu atsauksmes par katru speciālistu",
+    "language": "Valoda",
+    "forClients": "Atrast salonu",
+    "salons": "Saloni",
+    "restaurants": "Restorāni",
+    "privacy": "Privātums",
+    "terms": "Noteikumi",
+    "signIn": "Pieteikties",
+    "support": "Palīdzība"
+  },
+  "home": {
+    "title": "Izvēlieties labāko. Uzticieties zvaigznēm.",
+    "subtitle": "Labākie Eiropas skaistumkopšanas saloni un bārddziņi, ko klienti vērtē katram speciālistam atsevišķi. Izvēlieties un piesakieties tiešsaistē dažās sekundēs.",
+    "why": {
+      "verified": {
+        "title": "Atsauksmes par katru speciālistu",
+        "text": "Katra atsauksme attiecas uz vienu speciālistu. Apstiprinātiem apmeklējumiem ir sava atzīme."
+      },
+      "masters": {
+        "title": "Izvēlieties speciālistu",
+        "text": "Katram speciālistam ir savs vērtējums."
+      },
+      "direct": {
+        "title": "Maksājiet salonā",
+        "text": "Bezmaksas pieraksts, bez maksājuma tiešsaistē."
+      }
+    },
+    "eyebrow": "Eiropa · Skaistumkopšanas saloni un bārddziņi",
+    "featuredEyebrow": "Iesakām",
+    "featuredTitle": "Augstāk novērtētie saloni",
+    "browse": "Meklēt pēc pakalpojuma"
+  },
+  "search": {
+    "city": "Apdzīvota vieta",
+    "service": "Pakalpojums",
+    "anyService": "Visi pakalpojumi",
+    "language": "Valoda",
+    "anyLanguage": "Jebkura valoda",
+    "submit": "Meklēt",
+    "resultsTitle": "{count, plural, =0 {Nav salonu} zero {# salonu} one {# salons} other {# saloni}} {city, select, other {vietā {city}}}",
+    "empty": "Šiem filtriem vēl neatbilst neviens salons.",
+    "new": "Jauns",
+    "from": "No {price}",
+    "cityEmpty": "Vietā {city} Astrabela vēl nav salonu. Mēs paplašināmies vietu pēc vietas.",
+    "cityEmptyCta": "Jums šeit ir salons vai bārddzinis? Pievienojieties",
+    "country": "Valsts",
+    "comingSoon": "drīzumā",
+    "cityPlaceholder": "Ierakstiet vietu",
+    "cityNoMatch": "Šajā vietā mēs vēl neesam"
+  },
+  "categories": {
+    "hair": "Mati",
+    "barber": "Bārddzinis",
+    "nails": "Nagi",
+    "brows_lashes": "Uzacis un skropstas",
+    "skin": "Sejas kopšana",
+    "makeup": "Grims",
+    "massage": "Masāža",
+    "other": "Cits"
+  },
+  "languages": {
+    "pt": "Portugāļu",
+    "en": "Angļu",
+    "es": "Spāņu",
+    "fr": "Franču",
+    "de": "Vācu",
+    "it": "Itāļu",
+    "nl": "Nīderlandiešu",
+    "pl": "Poļu",
+    "cs": "Čehu",
+    "sk": "Slovāku",
+    "hu": "Ungāru",
+    "sl": "Slovēņu",
+    "hr": "Horvātu",
+    "ro": "Rumāņu",
+    "bg": "Bulgāru",
+    "da": "Dāņu",
+    "sv": "Zviedru",
+    "nb": "Norvēģu",
+    "fi": "Somu",
+    "et": "Igauņu",
+    "lv": "Latviešu",
+    "ru": "Krievu",
+    "uk": "Ukraiņu"
+  },
+  "weekdays": {
+    "0": "Svētdiena",
+    "1": "Pirmdiena",
+    "2": "Otrdiena",
+    "3": "Trešdiena",
+    "4": "Ceturtdiena",
+    "5": "Piektdiena",
+    "6": "Sestdiena"
+  },
+  "salon": {
+    "verifiedNote": "klientu atsauksmes par katru speciālistu",
+    "services": "Pakalpojumi",
+    "minutes": "{n} min",
+    "book": "Pieteikties",
+    "reviews": "Atsauksmes",
+    "reportThanks": "Paldies. Mēs pārbaudīsim ziņojumu.",
+    "noReviews": "Atsauksmju vēl nav.",
+    "withMaster": "speciālists {name}",
+    "verifiedVisit": "apstiprināts apmeklējums",
+    "salonReply": "Salona atbilde",
+    "report": "Ziņot par atsauksmi",
+    "reportReason": "Iemesls",
+    "send": "Sūtīt",
+    "team": "Komanda",
+    "payOnSite": "Samaksa salonā.",
+    "viaAstrabela": "pieteikts caur Astrabela",
+    "viaSalon": "salona apstiprināts apmeklējums",
+    "writeReview": "Novērtēt speciālistu",
+    "master": "Speciālists",
+    "rating": "Vērtējums",
+    "yourReview": "Jūsu viedoklis (nav obligāti)",
+    "publish": "Publicēt atsauksmi",
+    "signInToReview": "Piesakieties, lai rakstītu atsauksmi.",
+    "signIn": "Pieteikties",
+    "reviewThanks": "Paldies! Jūsu atsauksme ir publicēta.",
+    "reviewTooSoon": "Jūs jau novērtējāt šo speciālistu pēdējo 30 dienu laikā.",
+    "reviewInvalid": "Izvēlieties speciālistu un vērtējumu.",
+    "viaClient": "klienta atsauksme"
+  },
+  "book": {
+    "minutes": "{n} min",
+    "payOnSite": "samaksa salonā",
+    "errors": {
+      "invalid": "Pārbaudiet savus datus un mēģiniet vēlreiz.",
+      "slot_taken": "Šis laiks tikko tika aizņemts. Izvēlieties citu.",
+      "not_found": "Pakalpojums vai speciālists nav pieejams.",
+      "not_allowed": "Šis speciālists nesniedz šo pakalpojumu.",
+      "phone": "Ievadiet derīgu mobilā tālruņa numuru ar pareizu valsts kodu."
+    },
+    "master": "Speciālists",
+    "anyMaster": "Jebkurš speciālists",
+    "day": "Diena",
+    "time": "Laiks",
+    "noSlots": "Šajā dienā nav brīvu laiku.",
+    "yourDetails": "Jūsu dati",
+    "name": "Vārds",
+    "email": "E-pasts",
+    "phone": "Tālrunis",
+    "note": "Ziņa salonam (nav obligāti)",
+    "privacy": "Piekrītu, ka salons un Astrabela apstrādā manus datus šim pierakstam (<privacy>privātuma politika</privacy>).",
+    "confirm": "Apstiprināt pierakstu",
+    "gateTitle": "Kā vēlaties turpināt?",
+    "gateText": "Ar kontu redzat visus savus pierakstus vienuviet un nav atkārtoti jāievada dati.",
+    "guest": "Bez konta",
+    "signIn": "Pieteikties"
+  },
+  "booking": {
+    "created": "Pieraksts apstiprināts! Informāciju nosūtījām uz e-pastu.",
+    "reviewThanks": "Paldies par atsauksmi!",
+    "error": "Šo darbību neizdevās veikt.",
+    "status": {
+      "confirmed": "Apstiprināts",
+      "cancelled": "Atcelts",
+      "completed": "Notika",
+      "no_show": "Neieradās"
+    },
+    "with": "speciālists {name}",
+    "payOnSite": "samaksa salonā",
+    "cancel": "Atcelt pierakstu",
+    "reviewTitle": "Novērtējiet apmeklējumu: {name}",
+    "rating": "Vērtējums",
+    "reviewText": "Komentārs",
+    "authorName": "Rādāmais vārds",
+    "submitReview": "Publicēt atsauksmi",
+    "visitOn": "Apmeklējums {date}",
+    "moreTitle": "Vēl saloni vietā {city}",
+    "moreLink": "Skatīt visus salonus"
+  },
+  "business": {
+    "landing": {
+      "title": "Vairāk klientu Jūsu salonam",
+      "subtitle": "Tiešsaistes kalendārs un klientu atsauksmes. Bez komisijas, viena fiksēta cena visai komandai.",
+      "start": "Izmēģiniet {months} mēnešus bez maksas",
+      "features": {
+        "noCommission": "0 % komisija no klientiem",
+        "unlimitedStaff": "Neierobežots darbinieku skaits",
+        "calendar": "Tiešsaistes kalendārs un manuāli pieraksti",
+        "verifiedReviews": "Atsauksmes par katru speciālistu",
+        "ownClients": "Jūsu klienti paliek Jūsu"
+      },
+      "restaurants": {
+        "eyebrow": "Restorāni",
+        "title": "Jūsu ēdienkarte tiešsaistē, vienmēr aktuāla",
+        "text": "Publicējiet ēdienkarti ar cenām un alergēniem savā valodā un angļu valodā. Izdrukājiet galdiem QR kodu un mainiet cenas, kad vēlaties. Pirmie 3 mēneši ir bez maksas.",
+        "cta": "Izmēģiniet 3 mēnešus bez maksas"
+      },
+      "trialNote": "Pirmie {months} mēneši ir bez maksas. Sākumam karte nav vajadzīga."
+    },
+    "plans": {
+      "monthly": "Ik mēnesi",
+      "semiannual": "6 mēneši",
+      "annual": "12 mēneši",
+      "perMonth": "mēnesī + PVN"
+    },
+    "login": {
+      "title": "Pieteikties",
+      "error": "Nepareizs e-pasts vai parole.",
+      "email": "E-pasts",
+      "password": "Parole",
+      "submit": "Pieteikties",
+      "noAccount": "Vēl nav konta? Reģistrējiet savu salonu"
+    },
+    "register": {
+      "title": "Reģistrējiet savu uzņēmumu",
+      "errors": {
+        "invalid": "Pārbaudiet laukus (parolē vismaz 8 rakstzīmes).",
+        "email_taken": "Šis e-pasts jau ir reģistrēts."
+      },
+      "fields": {
+        "salonName": "Uzņēmuma nosaukums",
+        "city": "Apdzīvota vieta",
+        "address": "Adrese",
+        "phone": "Tālrunis",
+        "name": "Jūsu vārds",
+        "email": "E-pasts",
+        "password": "Parole"
+      },
+      "terms": "Piekrītu <terms>lietošanas noteikumiem</terms>, tostarp datu apstrādes līgumam (VDAR), un <privacy>privātuma politikai</privacy>.",
+      "submit": "Izveidot kontu",
+      "kind": "Uzņēmuma veids",
+      "kinds": {
+        "salon": "Salons",
+        "restaurant": "Restorāns"
+      },
+      "kindHint": "Skaistumkopšanas saloni, bārddziņi, nagu un kosmētikas studijas izvēlas “Salons”. Pēc tam izvēlieties pakalpojumu kategorijas, piemēram, “Bārddzinis”.",
+      "googleAs": "Jūs reģistrējaties ar Google kā {email}. Parole nav vajadzīga."
+    },
+    "salonStatus": {
+      "draft": "Melnraksts",
+      "pending": "Pārbaudē",
+      "active": "Publicēts",
+      "suspended": "Apturēts"
+    },
+    "logout": "Iziet",
+    "tabs": {
+      "calendar": "Kalendārs",
+      "services": "Pakalpojumi",
+      "team": "Komanda",
+      "reviews": "Atsauksmes",
+      "profile": "Profils",
+      "admin": "Administrēšana",
+      "menu": "Ēdienkarte",
+      "qr": "QR kods"
+    },
+    "calendar": {
+      "today": "Šodien",
+      "errors": {
+        "invalid": "Nederīgi dati.",
+        "slot_taken": "Šis laiks jau ir aizņemts.",
+        "not_found": "Pakalpojums vai speciālists nav atrasts.",
+        "not_allowed": "Šis speciālists nesniedz šo pakalpojumu.",
+        "phone": "Nederīgs tālruņa numurs. Izvēlieties valsti un ierakstiet pilnu numuru."
+      },
+      "noTeam": "Pievienojiet speciālistus cilnē Komanda.",
+      "free": "Nav pierakstu.",
+      "noShows": "{n, plural, zero {# neierašanās} one {# neierašanās} other {# neierašanās}}",
+      "mark": {
+        "completed": "Ieradās",
+        "no_show": "Neieradās",
+        "cancelled": "Atcelt"
+      },
+      "manualTitle": "Jauns pieraksts (pa tālruni, uz vietas)",
+      "master": "Speciālists",
+      "service": "Pakalpojums",
+      "time": "Laiks",
+      "clientName": "Klienta vārds",
+      "clientPhone": "Tālrunis",
+      "clientEmail": "E-pasts (nav obligāti)",
+      "add": "Pievienot"
+    },
+    "services": {
+      "empty": "Pakalpojumu vēl nav.",
+      "disable": "Izslēgt",
+      "enable": "Ieslēgt",
+      "addTitle": "Jauns pakalpojums",
+      "name": "Nosaukums",
+      "category": "Kategorija",
+      "duration": "Ilgums (min)",
+      "price": "Cena (€)",
+      "add": "Pievienot"
+    },
+    "team": {
+      "name": "Vārds",
+      "title": "Amats",
+      "titlePlaceholder": "piem., kolorists",
+      "languages": "Valodas",
+      "services": "Pakalpojumi",
+      "noServices": "Vispirms pievienojiet pakalpojumus.",
+      "schedule": "Nedēļas grafiks",
+      "save": "Saglabāt",
+      "servicesCount": "{n, plural, zero {# pakalpojumu} one {# pakalpojums} other {# pakalpojumi}}",
+      "deactivate": "Deaktivizēt",
+      "activate": "Aktivizēt",
+      "add": "Pievienot speciālistu"
+    },
+    "profile": {
+      "welcome": "Laipni lūdzam! Aizpildiet profilu, pievienojiet pakalpojumus un komandu, pēc tam nosūtiet salonu publicēšanai.",
+      "saved": "Saglabāts.",
+      "submitted": "Nosūtīts! Drīzumā pārbaudīsim un publicēsim Jūsu salonu.",
+      "notReady": "Pirms nosūtīšanas pievienojiet vismaz vienu speciālistu ar pakalpojumiem un grafiku.",
+      "listing": "Publicēšana katalogā",
+      "statusHelp": {
+        "draft": "Jūsu salons vēl nav katalogā.",
+        "pending": "Mēs pārbaudām Jūsu salonu.",
+        "active": "Jūsu salons ir publicēts un pieņem pierakstus.",
+        "suspended": "Jūsu salons ir apturēts. Lūdzu, sazinieties ar mums."
+      },
+      "submit": "Nosūtīt publicēšanai",
+      "viewPublic": "Skatīt publisko lapu",
+      "subscription": "Abonements",
+      "sub": {
+        "trial": "Bezmaksas izmēģinājums līdz {date}.",
+        "active": "Aktīvs līdz {date}.",
+        "past_due": "Maksājums kavēts kopš {date}.",
+        "cancelled": "Atcelts {date}.",
+        "complimentary": "Bez maksas no Astrabela līdz {date}."
+      },
+      "details": "Salona dati",
+      "fields": {
+        "name": "Nosaukums",
+        "district": "Apkaime",
+        "address": "Adrese",
+        "postalCode": "Pasta indekss",
+        "phone": "Tālrunis",
+        "nif": "Reģistrācijas numurs",
+        "description": "Apraksts",
+        "cuisine": "Virtuve"
+      },
+      "save": "Saglabāt",
+      "restaurant": {
+        "welcome": "Laipni lūdzam! Aizpildiet profilu, izveidojiet ēdienkarti un nosūtiet restorānu publicēšanai.",
+        "notReady": "Pirms nosūtīšanas pievienojiet ēdienkartei vismaz vienu ēdienu.",
+        "details": "Restorāna dati",
+        "statusHelp": {
+          "draft": "Restorāns vēl nav katalogā.",
+          "pending": "Mēs pārbaudām restorānu.",
+          "active": "Restorāns ir publicēts, un ēdienkarte ir redzama.",
+          "suspended": "Restorāns ir apturēts. Lūdzu, sazinieties ar mums."
+        }
+      },
+      "social": {
+        "title": "Sociālie tīkli",
+        "hint": "Redzami Jūsu publiskajā lapā. Ierakstiet lietotājvārdu (@piemers) vai ielīmējiet saiti.",
+        "invalid": "Mēs neatpazinām {network} saiti. Pārbaudiet to un saglabājiet vēlreiz.",
+        "placeholders": {
+          "instagram": "@jusu_salons",
+          "facebook": "facebook.com/jusu-salons",
+          "tiktok": "@jusu_salons",
+          "whatsapp": "2123 4567",
+          "website": "www.jusu-salons.lv"
+        }
+      }
+    },
+    "reviews": {
+      "empty": "Atsauksmju vēl nav.",
+      "hidden": "paslēpta moderācijā",
+      "replyPlaceholder": "Atbildiet publiski…",
+      "updateReply": "Atjaunināt atbildi",
+      "reply": "Atbildēt",
+      "inviteTitle": "Palūdziet atsauksmi pastāvīgam klientam",
+      "inviteHint": "Ievadiet jau notikušu apmeklējumu un saņemiet personīgu saiti, ar kuru klients var novērtēt speciālistu. Nosūtiet to WhatsApp, SMS vai citādi. Konts nav vajadzīgs.",
+      "inviteMasterService": "Speciālists un pakalpojums",
+      "inviteDate": "Apmeklējuma datums",
+      "inviteClientName": "Klienta vārds",
+      "inviteClientEmail": "E-pasts (nav obligāti)",
+      "inviteClientPhone": "Mobilais (nav obligāti)",
+      "inviteLanguage": "Ziņas valoda",
+      "inviteSend": "Lūgt atsauksmi",
+      "inviteRules": "Viena saite der vienai atsauksmei par vienu apmeklējumu. Apmeklējumi pēdējo 90 dienu laikā, viens lūgums katram klientam un speciālistam reizi 30 dienās. Šīm atsauksmēm ir atzīme “salona apstiprināts apmeklējums”, un salons nevar tās dzēst vai paslēpt, arī negatīvās.",
+      "inviteNoTeam": "Lai lūgtu atsauksmes, cilnē Komanda pievienojiet speciālistu ar pakalpojumiem.",
+      "invited": "Lūgums izveidots. Tagad nosūtiet ziņu klientam: nokopējiet to vai atveriet WhatsApp ar pogām zemāk.",
+      "inviteErrors": {
+        "invalid": "Pārbaudiet vārdu, e-pastu (ja norādīts) un datumu (līdz 90 dienām atpakaļ, ne nākotnē).",
+        "not_found": "Speciālists vai pakalpojums nav atrasts.",
+        "not_allowed": "Šo lūgumu nevar nosūtīt.",
+        "duplicate": "Jūs jau lūdzāt šim klientam novērtēt šo speciālistu pēdējo 30 dienu laikā.",
+        "limit": "Šodienas lūgumu limits ir sasniegts. Mēģiniet rīt.",
+        "phone": "Nederīgs tālruņa numurs. Izvēlieties valsti un ierakstiet pilnu numuru."
+      },
+      "invitationsTitle": "Nosūtītie lūgumi",
+      "invitationWaiting": "gaida",
+      "invitationReviewed": "novērtēts",
+      "listTitle": "Atsauksmes",
+      "viaAstrabela": "pieteikts caur Astrabela",
+      "viaSalon": "salona apstiprināts apmeklējums",
+      "cannotDelete": "Saloni nevar dzēst atsauksmes. Varat atbildēt publiski vai ziņot par viltotu atsauksmi moderācijai.",
+      "shareCopy": "Kopēt ziņu",
+      "shareCopied": "Nokopēts ✓",
+      "shareWhatsapp": "WhatsApp",
+      "shareSms": "SMS",
+      "viaClient": "klienta atsauksme"
+    },
+    "admin": {
+      "pending": "Saloni, kas gaida publicēšanu",
+      "none": "Nekas negaida.",
+      "approve": "Apstiprināt",
+      "reject": "Atgriezt",
+      "reports": "Ziņotās atsauksmes",
+      "reason": "Iemesls",
+      "hide": "Paslēpt atsauksmi",
+      "keep": "Atstāt",
+      "subs": {
+        "title": "Abonementi",
+        "hint": "Dāviniet bezmaksas mēnešus vai iestatiet datumu, līdz kuram bezmaksas abonements ir spēkā. Dāvana sākas, kad beidzas salona pašreizējais periods.",
+        "search": "Meklēt pēc nosaukuma, vietas vai reģistrācijas numura",
+        "find": "Meklēt",
+        "empty": "Saloni nav atrasti.",
+        "none": "Nav abonementa",
+        "manage": "Pārvaldīt",
+        "months": "Bezmaksas mēneši",
+        "monthsN": "{n, plural, zero {# mēnešu} one {# mēnesis} other {# mēneši}}",
+        "note": "Piezīme (nav obligāti)",
+        "notePlaceholder": "Piem., dibinātājpartneris",
+        "grant": "Dāvināt",
+        "until": "Bez maksas līdz",
+        "set": "Iestatīt datumu",
+        "cancel": "Beigt abonementu tagad",
+        "cancelHint": "Salons pazūd no meklēšanas, līdz atkal abonē.",
+        "saved": "Abonements atjaunināts.",
+        "invalid": "Izvēlieties datumu nākotnē.",
+        "salonStatus": {
+          "draft": "Melnraksts",
+          "pending": "Gaida",
+          "active": "Publicēts",
+          "suspended": "Apturēts"
+        },
+        "status": {
+          "trial": "Izmēģinājums",
+          "active": "Aktīvs",
+          "past_due": "Kavēts",
+          "cancelled": "Atcelts",
+          "complimentary": "Bez maksas"
+        },
+        "endsOn": "līdz {date}",
+        "endedOn": "kopš {date}",
+        "kind": {
+          "salon": "Salons",
+          "restaurant": "Restorāns"
+        }
+      },
+      "title": "Administrēšana"
+    },
+    "menu": {
+      "hint": "Sadaliet ēdienkarti sadaļās. Izmaiņas uzreiz parādās publiskajā lapā un aiz galdu QR koda.",
+      "viewPublic": "Skatīt publisko ēdienkarti",
+      "invalid": "Pārbaudiet nosaukumu un cenu (piemēram, 12,50).",
+      "empty": "Sāciet ar sadaļu, piemēram, “Uzkodas”, un tad pievienojiet ēdienus.",
+      "editSection": "Rediģēt sadaļu",
+      "sectionName": "Jauna sadaļa",
+      "sectionNameEn": "Nosaukums angļu valodā (nav obligāti)",
+      "sectionPlaceholder": "Uzkodas",
+      "save": "Saglabāt",
+      "deleteSection": "Dzēst sadaļu un tās ēdienus",
+      "addSection": "Pievienot sadaļu",
+      "addDish": "Pievienot ēdienu",
+      "editDish": "Rediģēt ēdienu",
+      "deleteDish": "Dzēst ēdienu",
+      "available": "pieejams",
+      "soldOut": "izpārdots",
+      "dishName": "Ēdiena nosaukums",
+      "dishNameEn": "Nosaukums angļu valodā (nav obligāti)",
+      "description": "Apraksts",
+      "descriptionEn": "Apraksts angļu valodā (nav obligāti)",
+      "price": "Cena ar PVN, €",
+      "portion": "Porcija (nav obligāti)",
+      "portionPlaceholder": "300 g, 0,33 l, diviem",
+      "allergens": "Alergēni",
+      "tags": "Birkas",
+      "likes": "Viesu atzīmes “Patīk”"
+    },
+    "qr": {
+      "hint": "Izdrukājiet šo karti un novietojiet uz galdiem. Viesi to noskenē ar tālruņa kameru, un ēdienkarte atveras tālruņa valodā.",
+      "notListed": "Kods jau darbojas, bet viesi var atvērt ēdienkarti tikai pēc restorāna publicēšanas (cilne Profils).",
+      "scan": "Noskenējiet kodu, lai redzētu ēdienkarti",
+      "scanEn": "Scan to see the menu",
+      "print": "Drukāt karti",
+      "salon": {
+        "hint": "Izdrukājiet šo karti un novietojiet to reģistratūrā vai pie spoguļa. Klienti to noskenē ar tālruņa kameru, piesakās nākamajam apmeklējumam un novērtē savu speciālistu.",
+        "notListed": "Kods jau darbojas, bet klienti var atvērt lapu tikai pēc salona publicēšanas (cilne Profils).",
+        "scan": "Piesakieties tiešsaistē un novērtējiet savu speciālistu",
+        "scanEn": "Book online and review your professional"
+      }
+    },
+    "support": "Palīdzība"
+  },
+  "countries": {
+    "pt": "Portugāle",
+    "es": "Spānija",
+    "fr": "Francija",
+    "it": "Itālija",
+    "de": "Vācija",
+    "nl": "Nīderlande",
+    "be": "Beļģija",
+    "ie": "Īrija",
+    "lu": "Luksemburga",
+    "at": "Austrija",
+    "ch": "Šveice",
+    "pl": "Polija",
+    "cz": "Čehija",
+    "sk": "Slovākija",
+    "hu": "Ungārija",
+    "si": "Slovēnija",
+    "hr": "Horvātija",
+    "ro": "Rumānija",
+    "bg": "Bulgārija",
+    "dk": "Dānija",
+    "se": "Zviedrija",
+    "no": "Norvēģija",
+    "fi": "Somija",
+    "ee": "Igaunija",
+    "lv": "Latvija"
+  },
+  "restaurants": {
+    "metaTitle": "Restorāni un ēdienkartes",
+    "eyebrow": "Eiropa · Restorāni",
+    "title": "Apskatiet ēdienkarti, pirms apsēžaties.",
+    "subtitle": "Pilnas ēdienkartes ar cenām, ko restorāni paši uztur aktuālas, vietējā valodā un angļu valodā, ar alergēniem.",
+    "searchPlaceholder": "Nosaukums vai virtuve",
+    "resultsTitle": "{count, plural, =0 {Nav restorānu} zero {# restorānu} one {# restorāns} other {# restorāni}} vietā {city}",
+    "cityEmpty": "Vietā {city} Astrabela vēl nav restorānu.",
+    "noMatch": "Šim meklējumam neatbilst neviens restorāns.",
+    "join": "Jums ir restorāns? Publicējiet ēdienkarti",
+    "dishes": "{count, plural, zero {# ēdienu} one {# ēdiens} other {# ēdieni}}",
+    "from": "No {price}"
+  },
+  "restaurant": {
+    "menu": "Ēdienkarte",
+    "allergens": "Alergēni",
+    "vatIncluded": "Cenas eiro, ieskaitot PVN.",
+    "allergyNote": "Vai Jums ir alerģijas? Pastāstiet personālam pirms pasūtīšanas.",
+    "like": "Patīk"
+  },
+  "allergens": {
+    "gluten": "glutēns",
+    "crustaceans": "vēžveidīgie",
+    "eggs": "olas",
+    "fish": "zivis",
+    "peanuts": "zemesrieksti",
+    "soy": "soja",
+    "milk": "piens",
+    "nuts": "rieksti",
+    "celery": "selerija",
+    "mustard": "sinepes",
+    "sesame": "sezams",
+    "sulphites": "sulfīti",
+    "lupin": "lupīna",
+    "molluscs": "gliemji"
+  },
+  "dishTags": {
+    "vegetarian": "Veģetārs",
+    "vegan": "Vegānisks",
+    "gluten_free": "Bez glutēna",
+    "spicy": "Ass"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok",
+    "whatsapp": "WhatsApp",
+    "website": "Mājaslapa"
+  },
+  "account": {
+    "title": "Pieteikties",
+    "google": "Turpināt ar Google",
+    "or": "vai",
+    "googleError": "Neizdevās pieteikties ar Google. Mēģiniet vēlreiz.",
+    "openCabinet": "Atvērt uzņēmuma kontu",
+    "hello": "Labdien, {name}",
+    "logout": "Iziet",
+    "upcoming": "Gaidāmie pieraksti",
+    "noUpcoming": "Jums nav gaidāmu pierakstu.",
+    "findSalon": "Atrast salonu",
+    "past": "Iepriekšējie pieraksti",
+    "open": "Skatīt",
+    "bookingsHint": "Šeit redzami pieraksti, ko veicāt, būdami pieteikušies.",
+    "deleteTitle": "Dzēst kontu",
+    "deleteText": "Jūsu konts un pieteikšanās dati tiek dzēsti. Pieraksti paliek saloniem, kas tos glabā pakalpojuma sniegšanai.",
+    "deleteConfirm": "Dzēst manu kontu",
+    "deleted": "Jūsu konts ir dzēsts.",
+    "email": "E-pasts",
+    "password": "Parole",
+    "submit": "Pieteikties",
+    "loginError": "Nepareizs e-pasts vai parole.",
+    "noAccount": "Vēl nav konta?",
+    "createAccount": "Izveidot kontu",
+    "businessQuestion": "Jums ir salons vai restorāns?",
+    "businessLink": "Astrabela uzņēmumiem",
+    "signedInBusiness": "Pieteicies kā {name}.",
+    "adminPanel": "Administrēšana",
+    "welcome": "Konts izveidots. Šeit būs redzami pieraksti, ko veiksiet, būdami pieteikušies.",
+    "bookingsHintGoogle": "Šeit redzami pieraksti, ko veicāt, būdami pieteikušies vai ar savu Google e-pastu.",
+    "registerTitle": "Izveidot kontu",
+    "name": "Vārds",
+    "passwordHint": "Vismaz 8 rakstzīmes.",
+    "terms": "Piekrītu <terms>lietošanas noteikumiem</terms> un <privacy>privātuma politikai</privacy>.",
+    "registerSubmit": "Izveidot kontu",
+    "haveAccount": "Jau ir konts?",
+    "registerErrors": {
+      "invalid": "Pārbaudiet vārdu, e-pastu un paroli (vismaz 8 rakstzīmes).",
+      "email_taken": "Konts ar šo e-pastu jau pastāv. Piesakieties ar to."
+    }
+  },
+  "petFriendly": {
+    "label": "Draudzīgs mājdzīvniekiem",
+    "hint": "Mājdzīvnieki ir gaidīti."
+  }
+}

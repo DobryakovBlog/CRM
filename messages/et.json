@@ -86,6 +86,7 @@
     "nb": "Norra",
     "fi": "Soome",
     "et": "Eesti",
+    "lv": "Läti",
     "ru": "Vene",
     "uk": "Ukraina"
   },
@@ -518,7 +519,8 @@
     "se": "Rootsi",
     "no": "Norra",
     "fi": "Soome",
-    "ee": "Eesti"
+    "ee": "Eesti",
+    "lv": "Läti"
   },
   "restaurants": {
     "metaTitle": "Restoranid ja menüüd",

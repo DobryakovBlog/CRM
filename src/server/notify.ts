@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  lv: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Pieraksts apstiprināts: ${r.salon.name}`,
+      text: `Labdien, ${r.client.name}!\n\n${r.service.name}, speciālists ${r.staff.name}\n${when}\n${r.salon.address}\n\nMainīt vai atcelt: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Atgādinājums: rīt ${r.salon.name}`,
+      text: `Labdien, ${r.client.name}!\n\natgādinām par Jūsu pierakstu: ${r.service.name}, speciālists ${r.staff.name}, ${when}.\nNevarat ierasties? Atceliet šeit: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Kā Jums patika ${r.salon.name}?`,
+      text: `Labdien, ${r.client.name}!\n\nnovērtējiet speciālistu ${r.staff.name}. Atsauksmes var rakstīt tikai klienti ar apstiprinātu apmeklējumu.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} lūdz Jūsu atsauksmi`,
+      text: `Labdien, ${r.client.name}!\n\n${r.staff.name} (${r.salon.name}) pateicas par apmeklējumu (${r.service.name}) un labprāt uzzinātu Jūsu viedokli Astrabela. Tas aizņems minūti, un konts nav vajadzīgs.\nŠī saite ir personīga un derīga vienai atsauksmei: ${link}`,
     }),
   },
   et: {
