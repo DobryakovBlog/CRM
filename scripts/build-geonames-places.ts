@@ -47,6 +47,16 @@ const COUNTRIES: Record<string, Config> = {
     },
     names: { Prague: "Praha", Pilsen: "Plzeň", Vysehrad: "Vyšehrad" },
   },
+  hr: {
+    regions: {
+      "01": "Bjelovarsko-bilogorska", "02": "Brodsko-posavska", "03": "Dubrovačko-neretvanska", "04": "Istarska",
+      "05": "Karlovačka", "06": "Koprivničko-križevačka", "07": "Krapinsko-zagorska", "08": "Ličko-senjska",
+      "09": "Međimurska", "10": "Osječko-baranjska", "11": "Požeško-slavonska", "12": "Primorsko-goranska",
+      "13": "Šibensko-kninska", "14": "Sisačko-moslavačka", "15": "Splitsko-dalmatinska", "16": "Varaždinska",
+      "17": "Virovitičko-podravska", "18": "Vukovarsko-srijemska", "19": "Zadarska", "20": "Zagrebačka", "21": "Grad Zagreb",
+    },
+    names: { "Biograd na Moru": "Biograd na moru" },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

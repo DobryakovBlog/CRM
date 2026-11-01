@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  hr: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Rezervacija potvrđena: ${r.salon.name}`,
+      text: `Poštovani/a ${r.client.name},\n\n${r.service.name} kod ${r.staff.name}\n${when}\n${r.salon.address}\n\nUpravljanje ili otkazivanje: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Podsjetnik: sutra u ${r.salon.name}`,
+      text: `Poštovani/a ${r.client.name},\n\npodsjećamo vas na rezervaciju: ${r.service.name} kod ${r.staff.name}, ${when}.\nNe možete doći? Otkažite ovdje: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Kako vam je bilo u ${r.salon.name}?`,
+      text: `Poštovani/a ${r.client.name},\n\nocijenite ${r.staff.name}. Ocjenjivati mogu samo klijenti s potvrđenim posjetom.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} moli za vašu ocjenu`,
+      text: `Poštovani/a ${r.client.name},\n\n${r.staff.name} iz salona ${r.salon.name} zahvaljuje na posjetu (${r.service.name}) i rado bi čuo/la vaše mišljenje na Astrabeli. Traje minutu i ne trebate račun.\nOva poveznica je osobna i vrijedi za jednu ocjenu: ${link}`,
     }),
   },
   sl: {

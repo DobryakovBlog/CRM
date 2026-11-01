@@ -333,3 +333,17 @@ describe("Slovenian places", () => {
     expect(phoneCountry("celje")).toBe("SI");
   });
 });
+
+describe("Croatian places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("zagreb")).toMatchObject({ name: "Zagreb", country: "hr", area: "Grad Zagreb" });
+    expect(searchPlaces("split", [], 30, "hr")[0]).toMatchObject({ name: "Split", area: "Splitsko-dalmatinska" });
+    expect(searchPlaces("cakovec", [], 30, "hr")[0].name).toBe("Čakovec");
+  });
+
+  it("uses Zagreb time and starts Croatian visitors in Zagreb", () => {
+    expect(placeTimezone("rijeka")).toBe("Europe/Zagreb");
+    expect(cityFieldSetup([], undefined, "hr")).toMatchObject({ defaultCountry: "hr", defaultSlugs: { hr: "zagreb" } });
+    expect(phoneCountry("osijek")).toBe("HR");
+  });
+});
