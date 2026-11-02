@@ -276,6 +276,11 @@ const COUNTRIES: Record<string, Config> = {
       "Novomoskovs’k": "Samar", Yuzhne: "Pivdenne",
     },
   },
+  ad: {
+    regions: "admin1",
+    regionFixes: { "Sant Julià de Loria": "Sant Julià de Lòria" },
+    names: { "les Escaldes": "Escaldes-Engordany", "la Massana": "La Massana" },
+  },
   md: {
     regions: {
       "51": "UTA Găgăuzia", "57": "Municipiul Chișinău", "58": "Stânga Nistrului", "59": "Anenii Noi", "60": "Municipiul Bălți",

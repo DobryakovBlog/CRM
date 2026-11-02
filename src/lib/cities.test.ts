@@ -672,3 +672,13 @@ describe("Ukrainian places", () => {
     expect(phoneCountry("lviv")).toBe("UA");
   });
 });
+
+describe("Andorran places", () => {
+  it("lists towns by parish and starts in Andorra la Vella", () => {
+    expect(placeBySlug("andorra-la-vella")).toMatchObject({ name: "Andorra la Vella", country: "ad", area: "Andorra la Vella" });
+    expect(searchPlaces("escaldes", [], 30, "ad")[0].name).toBe("Escaldes-Engordany");
+    expect(placeTimezone("andorra-la-vella")).toBe("Europe/Andorra");
+    expect(cityFieldSetup([], undefined, "es", "ad")).toMatchObject({ defaultCountry: "ad", defaultSlugs: { ad: "andorra-la-vella" } });
+    expect(phoneCountry("andorra-la-vella")).toBe("AD");
+  });
+});
