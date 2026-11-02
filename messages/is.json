@@ -92,6 +92,7 @@
     "is": "Íslenska",
     "sr": "Serbneska",
     "mk": "Makedónska",
+    "sq": "Albanska",
     "ru": "Rússneska",
     "uk": "Úkraínska"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbía",
     "ba": "Bosnía og Hersegóvína",
     "me": "Svartfjallaland",
-    "mk": "Norður-Makedónía"
+    "mk": "Norður-Makedónía",
+    "al": "Albanía"
   },
   "restaurants": {
     "metaTitle": "Veitingastaðir og matseðlar",

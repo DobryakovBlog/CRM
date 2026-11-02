@@ -92,6 +92,7 @@
     "is": "Islandų",
     "sr": "Serbų",
     "mk": "Makedonų",
+    "sq": "Albanų",
     "ru": "Rusų",
     "uk": "Ukrainiečių"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbija",
     "ba": "Bosnija ir Hercegovina",
     "me": "Juodkalnija",
-    "mk": "Šiaurės Makedonija"
+    "mk": "Šiaurės Makedonija",
+    "al": "Albanija"
   },
   "restaurants": {
     "metaTitle": "Restoranai ir meniu",

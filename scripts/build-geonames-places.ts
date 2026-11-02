@@ -240,6 +240,12 @@ const COUNTRIES: Record<string, Config> = {
     regions: { "01": "Federacija Bosne i Hercegovine", "02": "Republika Srpska", BRC: "Brčko distrikt" },
     regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
   },
+  al: {
+    regions: {
+      "40": "Berat", "41": "Dibër", "42": "Durrës", "43": "Elbasan", "44": "Fier", "45": "Gjirokastër", "46": "Korçë",
+      "47": "Kukës", "48": "Lezhë", "49": "Shkodër", "50": "Tiranë", "51": "Vlorë",
+    },
+  },
   mk: {
     regions: "admin1",
     respell: macedonianRespell,

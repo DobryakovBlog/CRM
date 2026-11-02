@@ -92,6 +92,7 @@
     "is": "Icelandic",
     "sr": "Serbian",
     "mk": "Macedonian",
+    "sq": "Albanian",
     "ru": "Russian",
     "uk": "Ukrainian"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbia",
     "ba": "Bosnia and Herzegovina",
     "me": "Montenegro",
-    "mk": "North Macedonia"
+    "mk": "North Macedonia",
+    "al": "Albania"
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",

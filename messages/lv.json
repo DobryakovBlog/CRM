@@ -92,6 +92,7 @@
     "is": "Islandiešu",
     "sr": "Serbu",
     "mk": "Maķedoniešu",
+    "sq": "Albāņu",
     "ru": "Krievu",
     "uk": "Ukraiņu"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbija",
     "ba": "Bosnija un Hercegovina",
     "me": "Melnkalne",
-    "mk": "Ziemeļmaķedonija"
+    "mk": "Ziemeļmaķedonija",
+    "al": "Albānija"
   },
   "restaurants": {
     "metaTitle": "Restorāni un ēdienkartes",

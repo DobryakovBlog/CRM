@@ -92,6 +92,7 @@
     "is": "Islandi",
     "sr": "Serbia",
     "mk": "Makedoonia",
+    "sq": "Albaania",
     "ru": "Vene",
     "uk": "Ukraina"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbia",
     "ba": "Bosnia ja Hertsegoviina",
     "me": "Montenegro",
-    "mk": "Põhja-Makedoonia"
+    "mk": "Põhja-Makedoonia",
+    "al": "Albaania"
   },
   "restaurants": {
     "metaTitle": "Restoranid ja menüüd",

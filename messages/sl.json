@@ -92,6 +92,7 @@
     "is": "Islandščina",
     "sr": "Srbščina",
     "mk": "Makedonščina",
+    "sq": "Albanščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -534,7 +535,8 @@
     "rs": "Srbija",
     "ba": "Bosna in Hercegovina",
     "me": "Črna gora",
-    "mk": "Severna Makedonija"
+    "mk": "Severna Makedonija",
+    "al": "Albanija"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",

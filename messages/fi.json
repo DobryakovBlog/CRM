@@ -92,6 +92,7 @@
     "is": "Islanti",
     "sr": "Serbia",
     "mk": "Makedonia",
+    "sq": "Albania",
     "ru": "Venäjä",
     "uk": "Ukraina"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbia",
     "ba": "Bosnia ja Hertsegovina",
     "me": "Montenegro",
-    "mk": "Pohjois-Makedonia"
+    "mk": "Pohjois-Makedonia",
+    "al": "Albania"
   },
   "restaurants": {
     "metaTitle": "Ravintolat ja ruokalistat",

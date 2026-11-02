@@ -92,6 +92,7 @@
     "is": "IJslands",
     "sr": "Servisch",
     "mk": "Macedonisch",
+    "sq": "Albanees",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -534,7 +535,8 @@
     "rs": "Servië",
     "ba": "Bosnië en Herzegovina",
     "me": "Montenegro",
-    "mk": "Noord-Macedonië"
+    "mk": "Noord-Macedonië",
+    "al": "Albanië"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

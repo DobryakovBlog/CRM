@@ -607,3 +607,17 @@ describe("Macedonian places", () => {
     expect(phoneCountry("ohrid")).toBe("MK");
   });
 });
+
+describe("Albanian places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("tirana")).toMatchObject({ name: "Tirana", country: "al", area: "Tiranë" });
+    expect(searchPlaces("durres", [], 30, "al")[0]).toMatchObject({ name: "Durrës", area: "Durrës" });
+    expect(searchPlaces("korce", [], 30, "al")[0].name).toBe("Korçë");
+  });
+
+  it("uses Tirana time and starts Albanian visitors in Tirana", () => {
+    expect(placeTimezone("vlore")).toBe("Europe/Tirane");
+    expect(cityFieldSetup([], undefined, "sq")).toMatchObject({ defaultCountry: "al", defaultSlugs: { al: "tirana" } });
+    expect(phoneCountry("vlore")).toBe("AL");
+  });
+});
