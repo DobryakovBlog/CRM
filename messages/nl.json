@@ -90,6 +90,7 @@
     "lt": "Litouws",
     "el": "Grieks",
     "is": "IJslands",
+    "sr": "Servisch",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -528,7 +529,8 @@
     "gr": "Griekenland",
     "cy": "Cyprus",
     "mt": "Malta",
-    "is": "IJsland"
+    "is": "IJsland",
+    "rs": "Servië"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

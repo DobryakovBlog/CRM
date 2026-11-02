@@ -90,6 +90,7 @@
     "lt": "Lituaniană",
     "el": "Greacă",
     "is": "Islandeză",
+    "sr": "Sârbă",
     "ru": "Rusă",
     "uk": "Ucraineană"
   },
@@ -528,7 +529,8 @@
     "gr": "Grecia",
     "cy": "Cipru",
     "mt": "Malta",
-    "is": "Islanda"
+    "is": "Islanda",
+    "rs": "Serbia"
   },
   "restaurants": {
     "metaTitle": "Restaurante și meniuri",

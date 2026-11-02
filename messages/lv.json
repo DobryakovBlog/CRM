@@ -90,6 +90,7 @@
     "lt": "Lietuviešu",
     "el": "Grieķu",
     "is": "Islandiešu",
+    "sr": "Serbu",
     "ru": "Krievu",
     "uk": "Ukraiņu"
   },
@@ -528,7 +529,8 @@
     "gr": "Grieķija",
     "cy": "Kipra",
     "mt": "Malta",
-    "is": "Islande"
+    "is": "Islande",
+    "rs": "Serbija"
   },
   "restaurants": {
     "metaTitle": "Restorāni un ēdienkartes",

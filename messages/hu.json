@@ -90,6 +90,7 @@
     "lt": "Litván",
     "el": "Görög",
     "is": "Izlandi",
+    "sr": "Szerb",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -528,7 +529,8 @@
     "gr": "Görögország",
     "cy": "Ciprus",
     "mt": "Málta",
-    "is": "Izland"
+    "is": "Izland",
+    "rs": "Szerbia"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",

@@ -218,6 +218,11 @@ const COUNTRIES: Record<string, Config> = {
       "42": "Suðurland", "43": "Suðurnes", "44": "Vestfirðir", "45": "Vesturland",
     },
   },
+  rs: {
+    regions: { VO: "Vojvodina", SE: "Centralna Srbija" },
+    respell: (name) => name.replace(/\u00d0/g, "Đ"),
+    names: { Belgrade: "Beograd", Knjazevac: "Knjaževac" },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

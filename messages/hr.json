@@ -90,6 +90,7 @@
     "lt": "Litavski",
     "el": "Grčki",
     "is": "Islandski",
+    "sr": "Srpski",
     "ru": "Ruski",
     "uk": "Ukrajinski"
   },
@@ -528,7 +529,8 @@
     "gr": "Grčka",
     "cy": "Cipar",
     "mt": "Malta",
-    "is": "Island"
+    "is": "Island",
+    "rs": "Srbija"
   },
   "restaurants": {
     "metaTitle": "Restorani i jelovnici",

@@ -90,6 +90,7 @@
     "lt": "Leedu",
     "el": "Kreeka",
     "is": "Islandi",
+    "sr": "Serbia",
     "ru": "Vene",
     "uk": "Ukraina"
   },
@@ -528,7 +529,8 @@
     "gr": "Kreeka",
     "cy": "Küpros",
     "mt": "Malta",
-    "is": "Island"
+    "is": "Island",
+    "rs": "Serbia"
   },
   "restaurants": {
     "metaTitle": "Restoranid ja menüüd",
