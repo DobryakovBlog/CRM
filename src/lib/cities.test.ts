@@ -702,3 +702,13 @@ describe("San Marino places", () => {
     expect(phoneCountry("san-marino")).toBe("SM");
   });
 });
+
+describe("Liechtenstein places", () => {
+  it("lists the municipalities and starts in Vaduz", () => {
+    expect(placeBySlug("vaduz")).toMatchObject({ name: "Vaduz", country: "li", area: "Vaduz" });
+    expect(searchPlaces("schaan", [], 30, "li")[0].name).toBe("Schaan");
+    expect(placeTimezone("vaduz")).toBe("Europe/Vaduz");
+    expect(cityFieldSetup([], undefined, "de", "li")).toMatchObject({ defaultCountry: "li", defaultSlugs: { li: "vaduz" } });
+    expect(phoneCountry("vaduz")).toBe("LI");
+  });
+});
