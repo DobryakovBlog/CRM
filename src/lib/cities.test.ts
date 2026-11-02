@@ -712,3 +712,14 @@ describe("Liechtenstein places", () => {
     expect(phoneCountry("vaduz")).toBe("LI");
   });
 });
+
+describe("United Kingdom places", () => {
+  it("lists GeoNames towns by nation and starts in London", () => {
+    expect(placeBySlug("london")).toMatchObject({ name: "London", country: "gb", area: "England" });
+    expect(searchPlaces("edinburgh", [], 30, "gb")[0]).toMatchObject({ name: "Edinburgh", area: "Scotland" });
+    expect(searchPlaces("belfast", [], 30, "gb")[0].area).toBe("Northern Ireland");
+    expect(placeTimezone("cardiff")).toBe("Europe/London");
+    expect(cityFieldSetup([], undefined, "en", "gb")).toMatchObject({ defaultCountry: "gb", defaultSlugs: { gb: "london" } });
+    expect(phoneCountry("cardiff")).toBe("GB");
+  });
+});
