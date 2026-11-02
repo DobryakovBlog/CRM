@@ -9,6 +9,8 @@ import { AccountLink } from "@/components/AccountLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionNav } from "@/components/SectionNav";
 import { SupportLink } from "@/components/SupportLink";
+import { BottomTabs } from "@/components/BottomTabs";
+import { supportUrl } from "@/lib/support";
 import { Logo } from "@/components/Logo";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -64,12 +66,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                 </Suspense>
               </nav>
             </div>
-            <div className="flex justify-center px-4 pb-3 md:hidden">
-              <SectionNav salons={t("salons")} restaurants={t("restaurants")} />
-            </div>
           </header>
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">{children}</main>
-          <footer className="bg-navy text-mist">
+          <footer className="bg-navy pb-16 text-mist md:pb-0">
             <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-6">
               <div className="space-y-2">
                 <Logo inverted className="h-12 w-auto" />
@@ -85,6 +84,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
               </div>
             </div>
           </footer>
+          <BottomTabs
+            salons={t("salons")}
+            restaurants={t("restaurants")}
+            bookings={t("bookings")}
+            support={t("support")}
+            supportHref={supportUrl()}
+          />
         </NextIntlClientProvider>
       </body>
     </html>
