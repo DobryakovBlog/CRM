@@ -650,3 +650,25 @@ describe("Moldovan places", () => {
     expect(phoneCountry("cahul")).toBe("MD");
   });
 });
+
+describe("Ukrainian places", () => {
+  it("lists GeoNames towns by oblast in the national Latin spelling", () => {
+    expect(placeBySlug("kyiv")).toMatchObject({ name: "Kyiv", country: "ua", area: "Kyiv" });
+    expect(searchPlaces("odesa", [], 30, "ua")[0]).toMatchObject({ name: "Odesa", area: "Odeska oblast" });
+    expect(searchPlaces("kramatorsk", [], 30, "ua")[0].name).toBe("Kramatorsk");
+    expect(searchPlaces("makiivka", [], 30, "ua")[0].name).toBe("Makiivka");
+  });
+
+  it("finds Ukrainian towns typed in Cyrillic", () => {
+    expect(searchPlaces("Харків", [], 30, "ua")[0].name).toBe("Kharkiv");
+    expect(searchPlaces("Запоріжжя", [], 30, "ua")[0].name).toBe("Zaporizhzhia");
+    expect(searchPlaces("Львів", [], 30, "ua")[0].name).toBe("Lviv");
+    expect(searchPlaces("Івано-Франківськ", [], 30, "ua")[0].name).toBe("Ivano-Frankivsk");
+  });
+
+  it("uses Kyiv time and starts Ukrainian visitors in Kyiv", () => {
+    expect(placeTimezone("lviv")).toBe("Europe/Kyiv");
+    expect(cityFieldSetup([], undefined, "uk")).toMatchObject({ defaultCountry: "ua", defaultSlugs: { ua: "kyiv" } });
+    expect(phoneCountry("lviv")).toBe("UA");
+  });
+});

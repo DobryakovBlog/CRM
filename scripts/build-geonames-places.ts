@@ -49,6 +49,20 @@ const macedonianRespell = (name: string) =>
     .replace(/Sh/g, "Š").replace(/sh/g, "š").replace(/Ch/g, "Č").replace(/ch/g, "č").replace(/Zh/g, "Ž").replace(/zh/g, "ž")
     .replace(/ - /g, "-");
 
+// Ukraine: GeoNames mixes the national Latin spelling (Kharkiv) with the older BGN one (Kramators’k, Berdyansk,
+// Makiyivka). This brings the BGN forms to the national system of 2010: no soft-sign marks, ia/iu/ie/ii inside a word,
+// i after a vowel (Pervomaisk), -yi at the end (Khmelnytskyi).
+const ukrainianRespell = (name: string) =>
+  name
+    .replace(/[’ʹ'”]/g, "")
+    .replace(/yy\b/g, "yi")
+    .replace(/(?<=[A-Za-z])y([aue])/g, "i$1")
+    .replace(/(?<=[aeiou])yi/g, "i")
+    .replace(/(?<=[aeiou])y(?![aeiou])/g, "i")
+    // Crimean names GeoNames keeps in Russian form (Mirnoye, Sovetskiy): Ukrainian endings.
+    .replace(/oie\b/g, "e")
+    .replace(/(?<=[a-z])ii\b/g, "yi");
+
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -241,6 +255,27 @@ const COUNTRIES: Record<string, Config> = {
     regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
   },
   // Kosovo: both official names, Albanian first ("Prishtinë/Priština"), where they differ.
+  ua: {
+    regions: {
+      "01": "Cherkaska oblast", "02": "Chernihivska oblast", "03": "Chernivetska oblast", "04": "Dnipropetrovska oblast",
+      "05": "Donetska oblast", "06": "Ivano-Frankivska oblast", "07": "Kharkivska oblast", "08": "Khersonska oblast",
+      "09": "Khmelnytska oblast", "10": "Kirovohradska oblast", "11": "Avtonomna Respublika Krym", "12": "Kyiv",
+      "13": "Kyivska oblast", "14": "Luhanska oblast", "15": "Lvivska oblast", "16": "Mykolaivska oblast",
+      "17": "Odeska oblast", "18": "Poltavska oblast", "19": "Rivnenska oblast", "20": "Sevastopol", "21": "Sumska oblast",
+      "22": "Ternopilska oblast", "23": "Vinnytska oblast", "24": "Volynska oblast", "25": "Zakarpatska oblast",
+      "26": "Zaporizka oblast", "27": "Zhytomyrska oblast",
+    },
+    respell: ukrainianRespell,
+    // Official Ukrainian names, including towns renamed since GeoNames last updated them.
+    names: {
+      Odessa: "Odesa", Zaporizhia: "Zaporizhzhia", Uzhgorod: "Uzhhorod", "Krasnyy Luch": "Khrustalnyi",
+      Chervonohrad: "Sheptytskyi", "Sverdlovs’k": "Dovzhansk", Energodar: "Enerhodar", "Yuzhnoukrains'k": "Pivdennoukrainsk",
+      "Novohrad-Volynskyi": "Zviahel", Krasnohrad: "Berestyn", Kupjansk: "Kupiansk", Znomenka: "Znamianka",
+      Svetlodarsk: "Svitlodarsk", Kurakhovo: "Kurakhove", "Бережани": "Berezhany", Gaspra: "Haspra", Gurzuf: "Hurzuf",
+      Shchyolkino: "Shcholkine", "Hołoby": "Holoby", "Tsyurupyns’k": "Oleshky", "Pereiaslav-Khmelnytskyi": "Pereiaslav",
+      "Novomoskovs’k": "Samar", Yuzhne: "Pivdenne",
+    },
+  },
   md: {
     regions: {
       "51": "UTA Găgăuzia", "57": "Municipiul Chișinău", "58": "Stânga Nistrului", "59": "Anenii Noi", "60": "Municipiul Bălți",
