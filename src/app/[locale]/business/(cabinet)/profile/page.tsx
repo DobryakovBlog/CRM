@@ -1,11 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
-import { formatDateTime } from "@/lib/format";
 import { SOCIAL_NETWORKS, type SocialNetwork } from "@/lib/social";
 import { PetFriendlyToggle } from "@/components/PetFriendly";
 import { requireOwner } from "@/server/auth";
-import { salonSubscription } from "@/server/cabinet";
 import { saveProfileAction, submitForReviewAction } from "../actions";
 
 const FIELDS = ["name", "district", "address", "postalCode", "phone", "nif"] as const;
@@ -20,7 +17,6 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
   const tn = await getTranslations("social");
   const tp = await getTranslations("petFriendly");
   const badNet = SOCIAL_NETWORKS.find((n) => n === sp.net) as SocialNetwork | undefined;
-  const sub = await salonSubscription(db, salon.id);
   const restaurant = salon.kind === "restaurant";
   // Restaurants get their own wording where it differs from salons.
   const k = (key: string) => (restaurant ? `restaurant.${key}` : key) as never;
@@ -47,17 +43,6 @@ export default async function ProfilePage({ params, searchParams }: PageProps<"/
           </Link>
         )}
       </div>
-
-      {sub && (
-        <div className="card text-sm">
-          <h2 className="mb-1 font-semibold">{t("subscription")}</h2>
-          <p>
-            {t(`sub.${sub.status}`, {
-              date: formatDateTime(sub.currentPeriodEnd, salon.timezone, locale, { dateStyle: "long" }),
-            })}
-          </p>
-        </div>
-      )}
 
       <form action={saveProfileAction} className="card grid gap-3 sm:grid-cols-2">
         <h2 className="font-semibold sm:col-span-2">{t(k("details"))}</h2>

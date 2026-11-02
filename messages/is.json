@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Fleiri viðskiptavinir fyrir stofuna þína",
-      "subtitle": "Dagatal á netinu og umsagnir viðskiptavina. Engin þóknun, eitt verð fyrir allt starfsfólkið.",
-      "start": "Prófaðu {months} mánuði frítt",
+      "subtitle": "Netdagatal og umsagnir viðskiptavina. Ókeypis fyrir allt teymið, engin þóknun.",
+      "start": "Skráðu þig ókeypis",
       "features": {
         "noCommission": "0% þóknun af viðskiptavinum",
         "unlimitedStaff": "Ótakmarkað starfsfólk",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Veitingastaðir",
         "title": "Matseðillinn þinn á netinu, alltaf uppfærður",
-        "text": "Birtu matseðilinn með verðum og ofnæmisvöldum á þínu tungumáli og á ensku. Prentaðu QR-kóðann fyrir borðin og breyttu verðum hvenær sem er. Fyrstu 3 mánuðirnir eru ókeypis.",
-        "cta": "Prófaðu 3 mánuði frítt"
+        "text": "Birtu matseðilinn með verðum og ofnæmisvöldum á þínu tungumáli og á ensku. Prentaðu QR-kóðann fyrir borðin og breyttu verðum hvenær sem er.",
+        "cta": "Skráðu þig ókeypis"
       },
-      "trialNote": "Fyrstu {months} mánuðirnir eru ókeypis. Ekkert kort þarf til að byrja."
-    },
-    "plans": {
-      "monthly": "Mánaðarlega",
-      "semiannual": "6 mánuðir",
-      "annual": "12 mánuðir",
-      "perMonth": "á mánuði + VSK"
+      "freeTitle": "Ókeypis",
+      "freeNote": "Engin áskrift, engin þóknun og ekkert kort. Fyrir stofur, rakarastofur og veitingastaði."
     },
     "login": {
       "title": "Innskráning",
@@ -325,14 +320,6 @@
       },
       "submit": "Senda til birtingar",
       "viewPublic": "Skoða opinbera síðu",
-      "subscription": "Áskrift",
-      "sub": {
-        "trial": "Ókeypis prufutími til {date}.",
-        "active": "Virk til {date}.",
-        "past_due": "Greiðsla í vanskilum frá {date}.",
-        "cancelled": "Sagt upp {date}.",
-        "complimentary": "Gjöf frá Astrabela til {date}."
-      },
       "details": "Upplýsingar um stofuna",
       "fields": {
         "name": "Nafn",
@@ -417,45 +404,6 @@
       "reason": "Ástæða",
       "hide": "Fela umsögn",
       "keep": "Halda",
-      "subs": {
-        "title": "Áskriftir",
-        "hint": "Gefðu ókeypis mánuði eða veldu dagsetningu sem ókeypis áskriftin gildir til. Gjöfin hefst þegar tíminn sem stofan á þegar rennur út.",
-        "search": "Leita eftir nafni, bæ eða kennitölu",
-        "find": "Leita",
-        "empty": "Engar stofur fundust.",
-        "none": "Engin áskrift",
-        "manage": "Stjórna",
-        "months": "Ókeypis mánuðir",
-        "monthsN": "{n, plural, one {# mánuður} other {# mánuðir}}",
-        "note": "Athugasemd (valfrjálst)",
-        "notePlaceholder": "T.d. stofnfélagi",
-        "grant": "Gefa",
-        "until": "Ókeypis til",
-        "set": "Setja dagsetningu",
-        "cancel": "Ljúka áskrift núna",
-        "cancelHint": "Stofan hverfur úr leit þar til hún gerist áskrifandi aftur.",
-        "saved": "Áskrift uppfærð.",
-        "invalid": "Veldu dagsetningu í framtíðinni.",
-        "salonStatus": {
-          "draft": "Drög",
-          "pending": "Í bið",
-          "active": "Birt",
-          "suspended": "Í biðstöðu"
-        },
-        "status": {
-          "trial": "Prufa",
-          "active": "Virk",
-          "past_due": "Í vanskilum",
-          "cancelled": "Sagt upp",
-          "complimentary": "Ókeypis"
-        },
-        "endsOn": "til {date}",
-        "endedOn": "frá {date}",
-        "kind": {
-          "salon": "Stofa",
-          "restaurant": "Veitingastaður"
-        }
-      },
       "title": "Stjórnun"
     },
     "menu": {

@@ -10,7 +10,6 @@ import {
   services,
   staff,
   staffServices,
-  subscriptions,
   workingHours,
 } from "@/db/schema";
 import { localMinuteToDate, nextDate } from "@/lib/availability";
@@ -165,11 +164,6 @@ export async function submitForReview(db: Db, salonId: string) {
     .update(salons)
     .set({ status: "pending" })
     .where(and(eq(salons.id, salonId), eq(salons.status, "draft")));
-}
-
-export async function salonSubscription(db: Db, salonId: string) {
-  const [s] = await db.select().from(subscriptions).where(eq(subscriptions.salonId, salonId));
-  return s ?? null;
 }
 
 export async function salonReviews(db: Db, salonId: string) {

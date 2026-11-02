@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Vairāk klientu Jūsu salonam",
-      "subtitle": "Tiešsaistes kalendārs un klientu atsauksmes. Bez komisijas, viena fiksēta cena visai komandai.",
-      "start": "Izmēģiniet {months} mēnešus bez maksas",
+      "subtitle": "Tiešsaistes kalendārs un klientu atsauksmes. Bez maksas visai komandai, bez komisijas.",
+      "start": "Pievienojieties bez maksas",
       "features": {
         "noCommission": "0 % komisija no klientiem",
         "unlimitedStaff": "Neierobežots darbinieku skaits",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restorāni",
         "title": "Jūsu ēdienkarte tiešsaistē, vienmēr aktuāla",
-        "text": "Publicējiet ēdienkarti ar cenām un alergēniem savā valodā un angļu valodā. Izdrukājiet galdiem QR kodu un mainiet cenas, kad vēlaties. Pirmie 3 mēneši ir bez maksas.",
-        "cta": "Izmēģiniet 3 mēnešus bez maksas"
+        "text": "Publicējiet ēdienkarti ar cenām un alergēniem savā valodā un angļu valodā. Izdrukājiet galdiem QR kodu un mainiet cenas, kad vēlaties.",
+        "cta": "Pievienojieties bez maksas"
       },
-      "trialNote": "Pirmie {months} mēneši ir bez maksas. Sākumam karte nav vajadzīga."
-    },
-    "plans": {
-      "monthly": "Ik mēnesi",
-      "semiannual": "6 mēneši",
-      "annual": "12 mēneši",
-      "perMonth": "mēnesī + PVN"
+      "freeTitle": "Bez maksas",
+      "freeNote": "Bez abonementa, bez komisijas un bez kartes. Saloniem, bārddziņiem un restorāniem."
     },
     "login": {
       "title": "Pieteikties",
@@ -325,14 +320,6 @@
       },
       "submit": "Nosūtīt publicēšanai",
       "viewPublic": "Skatīt publisko lapu",
-      "subscription": "Abonements",
-      "sub": {
-        "trial": "Bezmaksas izmēģinājums līdz {date}.",
-        "active": "Aktīvs līdz {date}.",
-        "past_due": "Maksājums kavēts kopš {date}.",
-        "cancelled": "Atcelts {date}.",
-        "complimentary": "Bez maksas no Astrabela līdz {date}."
-      },
       "details": "Salona dati",
       "fields": {
         "name": "Nosaukums",
@@ -417,45 +404,6 @@
       "reason": "Iemesls",
       "hide": "Paslēpt atsauksmi",
       "keep": "Atstāt",
-      "subs": {
-        "title": "Abonementi",
-        "hint": "Dāviniet bezmaksas mēnešus vai iestatiet datumu, līdz kuram bezmaksas abonements ir spēkā. Dāvana sākas, kad beidzas salona pašreizējais periods.",
-        "search": "Meklēt pēc nosaukuma, vietas vai reģistrācijas numura",
-        "find": "Meklēt",
-        "empty": "Saloni nav atrasti.",
-        "none": "Nav abonementa",
-        "manage": "Pārvaldīt",
-        "months": "Bezmaksas mēneši",
-        "monthsN": "{n, plural, zero {# mēnešu} one {# mēnesis} other {# mēneši}}",
-        "note": "Piezīme (nav obligāti)",
-        "notePlaceholder": "Piem., dibinātājpartneris",
-        "grant": "Dāvināt",
-        "until": "Bez maksas līdz",
-        "set": "Iestatīt datumu",
-        "cancel": "Beigt abonementu tagad",
-        "cancelHint": "Salons pazūd no meklēšanas, līdz atkal abonē.",
-        "saved": "Abonements atjaunināts.",
-        "invalid": "Izvēlieties datumu nākotnē.",
-        "salonStatus": {
-          "draft": "Melnraksts",
-          "pending": "Gaida",
-          "active": "Publicēts",
-          "suspended": "Apturēts"
-        },
-        "status": {
-          "trial": "Izmēģinājums",
-          "active": "Aktīvs",
-          "past_due": "Kavēts",
-          "cancelled": "Atcelts",
-          "complimentary": "Bez maksas"
-        },
-        "endsOn": "līdz {date}",
-        "endedOn": "kopš {date}",
-        "kind": {
-          "salon": "Salons",
-          "restaurant": "Restorāns"
-        }
-      },
       "title": "Administrēšana"
     },
     "menu": {

@@ -4,33 +4,19 @@ import { and, eq, gt } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { db, type Db } from "@/db";
-import { salons, sessions, subscriptions, users } from "@/db/schema";
+import { salons, sessions, users } from "@/db/schema";
 import { placeTimezone } from "@/lib/cities";
 import { slugify } from "@/lib/slug";
 
 const COOKIE = "ba_session";
 const SESSION_DAYS = 30;
-/** Salons and restaurants start with three free months, then a paid subscription. */
-export const TRIAL_MONTHS = 3;
-
-/** Same day of the month, N months later (clamped to the month's last day). */
-export function addMonths(date: Date, months: number) {
-  const d = new Date(date);
-  const day = d.getUTCDate();
-  d.setUTCDate(1);
-  d.setUTCMonth(d.getUTCMonth() + months);
-  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
-  d.setUTCDate(Math.min(day, last));
-  return d;
-}
-
 export const hashToken = (token: string) => createHash("sha256").update(token).digest("hex");
 
 export async function hashPassword(password: string) {
   return bcrypt.hash(password, 10);
 }
 
-/** Creates the owner account, the salon (as draft) and its trial subscription. */
+/** Creates the owner account and the salon (as draft). Astrabela is free for businesses. */
 export async function registerSalonOwner(
   database: Db,
   input: {
@@ -44,7 +30,6 @@ export async function registerSalonOwner(
     kind?: "salon" | "restaurant";
     petFriendly?: boolean;
   },
-  now = new Date(),
 ) {
   const email = input.email.trim().toLowerCase();
   return database.transaction(async (tx) => {
@@ -83,12 +68,6 @@ export async function registerSalonOwner(
         petFriendly: input.petFriendly ?? false,
       })
       .returning();
-
-    await tx.insert(subscriptions).values({
-      salonId: salon.id,
-      status: "trial",
-      currentPeriodEnd: addMonths(now, TRIAL_MONTHS),
-    });
     return { user, salon };
   });
 }

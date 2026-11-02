@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Fler kunder till din salong",
-      "subtitle": "Onlinekalender och kundomdömen. Ingen provision, ett fast pris för hela teamet.",
-      "start": "Prova {months} månader gratis",
+      "subtitle": "Onlinekalender och kundrecensioner. Gratis för hela teamet, utan provision.",
+      "start": "Gå med gratis",
       "features": {
         "noCommission": "0 % provision på kunderna",
         "unlimitedStaff": "Obegränsat antal medarbetare",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restauranger",
         "title": "Din meny online, alltid uppdaterad",
-        "text": "Publicera menyn med priser och allergener på ditt språk och på engelska. Skriv ut en QR-kod till borden och ändra priserna när du vill. De första 3 månaderna är gratis.",
-        "cta": "Prova 3 månader gratis"
+        "text": "Publicera menyn med priser och allergener på ditt språk och på engelska. Skriv ut en QR-kod till borden och ändra priserna när du vill.",
+        "cta": "Gå med gratis"
       },
-      "trialNote": "De första {months} månaderna är gratis. Du behöver inget kort för att börja."
-    },
-    "plans": {
-      "monthly": "Månadsvis",
-      "semiannual": "6 månader",
-      "annual": "12 månader",
-      "perMonth": "per månad + moms"
+      "freeTitle": "Gratis",
+      "freeNote": "Ingen prenumeration, ingen provision och inget kort. För salonger, barberare och restauranger."
     },
     "login": {
       "title": "Logga in",
@@ -325,14 +320,6 @@
       },
       "submit": "Skicka för publicering",
       "viewPublic": "Visa offentlig sida",
-      "subscription": "Abonnemang",
-      "sub": {
-        "trial": "Gratis provperiod till {date}.",
-        "active": "Aktivt till {date}.",
-        "past_due": "Betalning förfallen sedan {date}.",
-        "cancelled": "Avslutat {date}.",
-        "complimentary": "Gratis från Astrabela till {date}."
-      },
       "details": "Salongens uppgifter",
       "fields": {
         "name": "Namn",
@@ -417,45 +404,6 @@
       "reason": "Anledning",
       "hide": "Dölj omdöme",
       "keep": "Behåll",
-      "subs": {
-        "title": "Abonnemang",
-        "hint": "Ge gratis månader eller ange datumet då det kostnadsfria abonnemanget upphör. En gåva börjar när salongens nuvarande period tar slut.",
-        "search": "Sök på namn, ort eller organisationsnummer",
-        "find": "Sök",
-        "empty": "Inga salonger hittades.",
-        "none": "Inget abonnemang",
-        "manage": "Hantera",
-        "months": "Gratis månader",
-        "monthsN": "{n, plural, one {# månad} other {# månader}}",
-        "note": "Anteckning (valfritt)",
-        "notePlaceholder": "T.ex. grundande partner",
-        "grant": "Ge",
-        "until": "Gratis till",
-        "set": "Ange datum",
-        "cancel": "Avsluta abonnemanget nu",
-        "cancelHint": "Salongen försvinner från sökningen tills den tecknar abonnemang igen.",
-        "saved": "Abonnemanget har uppdaterats.",
-        "invalid": "Välj ett datum i framtiden.",
-        "salonStatus": {
-          "draft": "Utkast",
-          "pending": "Väntar",
-          "active": "Publicerad",
-          "suspended": "Avstängd"
-        },
-        "status": {
-          "trial": "Prov",
-          "active": "Aktivt",
-          "past_due": "Förfallet",
-          "cancelled": "Avslutat",
-          "complimentary": "Gratis"
-        },
-        "endsOn": "till {date}",
-        "endedOn": "sedan {date}",
-        "kind": {
-          "salon": "Salong",
-          "restaurant": "Restaurang"
-        }
-      },
       "title": "Administration"
     },
     "menu": {

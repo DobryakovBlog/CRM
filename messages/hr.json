@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Više klijenata za vaš salon",
-      "subtitle": "Online kalendar i ocjene klijenata. Bez provizija, jedna fiksna cijena za cijeli tim.",
-      "start": "Isprobajte {months} mjeseca besplatno",
+      "subtitle": "Online kalendar i recenzije klijenata. Besplatno za cijeli tim, bez provizije.",
+      "start": "Pridružite se besplatno",
       "features": {
         "noCommission": "0 % provizije od klijenata",
         "unlimitedStaff": "Neograničen broj zaposlenika",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restorani",
         "title": "Vaš jelovnik online, uvijek ažuran",
-        "text": "Objavite jelovnik s cijenama i alergenima na svom jeziku i na engleskom. Isprintajte QR kod za stolove i mijenjajte cijene kad god želite. Prva 3 mjeseca su besplatna.",
-        "cta": "Isprobajte 3 mjeseca besplatno"
+        "text": "Objavite jelovnik s cijenama i alergenima na svom jeziku i na engleskom. Isprintajte QR kod za stolove i mijenjajte cijene kad god želite.",
+        "cta": "Pridružite se besplatno"
       },
-      "trialNote": "Prva {months} mjeseca su besplatna. Za početak ne trebate karticu."
-    },
-    "plans": {
-      "monthly": "Mjesečno",
-      "semiannual": "6 mjeseci",
-      "annual": "12 mjeseci",
-      "perMonth": "mjesečno + PDV"
+      "freeTitle": "Besplatno",
+      "freeNote": "Bez pretplate, bez provizije i bez kartice. Za salone, brijačnice i restorane."
     },
     "login": {
       "title": "Prijava",
@@ -325,14 +320,6 @@
       },
       "submit": "Pošalji na objavu",
       "viewPublic": "Pogledaj javnu stranicu",
-      "subscription": "Pretplata",
-      "sub": {
-        "trial": "Besplatno probno razdoblje do {date}.",
-        "active": "Aktivna do {date}.",
-        "past_due": "Neplaćeno od {date}.",
-        "cancelled": "Otkazana {date}.",
-        "complimentary": "Besplatno od Astrabele do {date}."
-      },
       "details": "Podaci o salonu",
       "fields": {
         "name": "Naziv",
@@ -417,45 +404,6 @@
       "reason": "Razlog",
       "hide": "Sakrij ocjenu",
       "keep": "Zadrži",
-      "subs": {
-        "title": "Pretplate",
-        "hint": "Poklonite besplatne mjesece ili postavite datum do kojeg je pretplata besplatna. Poklon počinje kad istekne vrijeme koje salon već ima.",
-        "search": "Traži po nazivu, mjestu ili OIB-u",
-        "find": "Traži",
-        "empty": "Nema pronađenih salona.",
-        "none": "Bez pretplate",
-        "manage": "Upravljaj",
-        "months": "Besplatni mjeseci",
-        "monthsN": "{n, plural, one {# mjesec} few {# mjeseca} other {# mjeseci}}",
-        "note": "Napomena (neobavezno)",
-        "notePlaceholder": "Npr. partner od početka",
-        "grant": "Pokloni",
-        "until": "Besplatno do",
-        "set": "Postavi datum",
-        "cancel": "Odmah završi pretplatu",
-        "cancelHint": "Salon nestaje iz pretraživanja dok ponovno ne kupi pretplatu.",
-        "saved": "Pretplata ažurirana.",
-        "invalid": "Odaberite datum u budućnosti.",
-        "salonStatus": {
-          "draft": "Skica",
-          "pending": "Čeka",
-          "active": "Objavljeno",
-          "suspended": "Obustavljeno"
-        },
-        "status": {
-          "trial": "Probno",
-          "active": "Aktivna",
-          "past_due": "Neplaćeno",
-          "cancelled": "Otkazana",
-          "complimentary": "Besplatna"
-        },
-        "endsOn": "do {date}",
-        "endedOn": "od {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restoran"
-        }
-      },
       "title": "Administracija"
     },
     "menu": {

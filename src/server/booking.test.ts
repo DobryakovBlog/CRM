@@ -28,7 +28,6 @@ async function setup() {
   const { salon } = await registerSalonOwner(
     db,
     { name: "Owner", email: "owner@test.pt", password: "secret123", salonName: "Salão Teste", city: "Lisboa", address: "Rua 1", phone: "" },
-    NOW,
   );
   salonId = salon.id;
   await db.update(salons).set({ status: "active" }).where(eq(salons.id, salonId));
@@ -184,7 +183,7 @@ describe("no-shows", () => {
 });
 
 describe("catalogue", () => {
-  it("lists only active salons with a bookable service and a running subscription", async () => {
+  it("lists only active salons with a bookable service", async () => {
     const [listed] = await searchSalons(db, { city: "lisboa" });
     expect(listed.id).toBe(salonId);
     expect(listed.minPriceCents).toBe(3500);

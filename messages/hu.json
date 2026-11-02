@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Több vendég a szalonodnak",
-      "subtitle": "Online naptár és vendégértékelések. Jutalék nélkül, egy fix ár az egész csapatnak.",
-      "start": "Próbáld ki {months} hónapig ingyen",
+      "subtitle": "Online naptár és ügyfélértékelések. Ingyenes az egész csapatnak, jutalék nélkül.",
+      "start": "Csatlakozz ingyen",
       "features": {
         "noCommission": "0% jutalék a vendégek után",
         "unlimitedStaff": "Korlátlan számú munkatárs",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Éttermek",
         "title": "Az étlapod online, mindig naprakészen",
-        "text": "Tedd közzé az étlapot árakkal és allergénekkel, a saját nyelveden és angolul. Nyomtass QR-kódot az asztalokra, és változtasd az árakat bármikor. Az első 3 hónap ingyenes.",
-        "cta": "Próbáld ki 3 hónapig ingyen"
+        "text": "Tedd közzé az étlapot árakkal és allergénekkel, a saját nyelveden és angolul. Nyomtass QR-kódot az asztalokra, és változtasd az árakat bármikor.",
+        "cta": "Csatlakozz ingyen"
       },
-      "trialNote": "Az első {months} hónap ingyenes. Az induláshoz nem kell bankkártya."
-    },
-    "plans": {
-      "monthly": "Havi",
-      "semiannual": "6 hónap",
-      "annual": "12 hónap",
-      "perMonth": "havonta + áfa"
+      "freeTitle": "Ingyenes",
+      "freeNote": "Nincs előfizetés, nincs jutalék, nincs bankkártya. Szalonoknak, borbélyoknak és éttermeknek."
     },
     "login": {
       "title": "Belépés",
@@ -325,14 +320,6 @@
       },
       "submit": "Beküldés közzétételre",
       "viewPublic": "Nyilvános oldal megtekintése",
-      "subscription": "Előfizetés",
-      "sub": {
-        "trial": "Ingyenes próbaidőszak eddig: {date}.",
-        "active": "Aktív eddig: {date}.",
-        "past_due": "Elmaradt fizetés ekkortól: {date}.",
-        "cancelled": "Lemondva: {date}.",
-        "complimentary": "Az Astrabela ajándéka eddig: {date}."
-      },
       "details": "Szalon adatai",
       "fields": {
         "name": "Név",
@@ -417,45 +404,6 @@
       "reason": "Indok",
       "hide": "Értékelés elrejtése",
       "keep": "Megtartás",
-      "subs": {
-        "title": "Előfizetések",
-        "hint": "Adj ingyenes hónapokat, vagy állíts be dátumot, ameddig az előfizetés ingyenes. Az ajándék akkor kezdődik, amikor a szalon meglévő ideje lejár.",
-        "search": "Keresés név, település vagy adószám alapján",
-        "find": "Keresés",
-        "empty": "Nem található szalon.",
-        "none": "Nincs előfizetés",
-        "manage": "Kezelés",
-        "months": "Ingyenes hónapok",
-        "monthsN": "{n, plural, one {# hónap} other {# hónap}}",
-        "note": "Megjegyzés (nem kötelező)",
-        "notePlaceholder": "Pl. kezdeti partner",
-        "grant": "Ajándékozás",
-        "until": "Ingyenes eddig",
-        "set": "Dátum beállítása",
-        "cancel": "Előfizetés azonnali megszüntetése",
-        "cancelHint": "A szalon eltűnik a keresésből, amíg újra elő nem fizet.",
-        "saved": "Előfizetés frissítve.",
-        "invalid": "Válassz jövőbeli dátumot.",
-        "salonStatus": {
-          "draft": "Piszkozat",
-          "pending": "Várakozik",
-          "active": "Közzétéve",
-          "suspended": "Felfüggesztve"
-        },
-        "status": {
-          "trial": "Próbaidőszak",
-          "active": "Aktív",
-          "past_due": "Elmaradt",
-          "cancelled": "Lemondva",
-          "complimentary": "Ingyenes"
-        },
-        "endsOn": "eddig: {date}",
-        "endedOn": "ekkortól: {date}",
-        "kind": {
-          "salon": "Szalon",
-          "restaurant": "Étterem"
-        }
-      },
       "title": "Adminisztráció"
     },
     "menu": {

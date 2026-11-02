@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Více klientů pro váš salon",
-      "subtitle": "Online kalendář a hodnocení klientů. Bez provizí, jedna pevná cena pro celý tým.",
-      "start": "Vyzkoušejte {months} měsíce zdarma",
+      "subtitle": "Online kalendář a hodnocení klientů. Zdarma pro celý tým, bez provize.",
+      "start": "Připojte se zdarma",
       "features": {
         "noCommission": "0 % provize z klientů",
         "unlimitedStaff": "Neomezený počet pracovníků",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restaurace",
         "title": "Vaše menu online, vždy aktuální",
-        "text": "Zveřejněte menu s cenami a alergeny ve svém jazyce i v angličtině. Vytiskněte QR kód na stoly a měňte ceny kdykoli. První 3 měsíce zdarma.",
-        "cta": "Vyzkoušejte 3 měsíce zdarma"
+        "text": "Zveřejněte menu s cenami a alergeny ve svém jazyce i v angličtině. Vytiskněte QR kód na stoly a měňte ceny kdykoli.",
+        "cta": "Připojte se zdarma"
       },
-      "trialNote": "První {months} měsíce jsou zdarma. Na začátek nepotřebujete kartu."
-    },
-    "plans": {
-      "monthly": "Měsíčně",
-      "semiannual": "6 měsíců",
-      "annual": "12 měsíců",
-      "perMonth": "měsíčně + DPH"
+      "freeTitle": "Zdarma",
+      "freeNote": "Bez předplatného, bez provize a bez karty. Pro salony, barbershopy a restaurace."
     },
     "login": {
       "title": "Přihlásit se",
@@ -325,14 +320,6 @@
       },
       "submit": "Odeslat ke zveřejnění",
       "viewPublic": "Zobrazit veřejnou stránku",
-      "subscription": "Předplatné",
-      "sub": {
-        "trial": "Zkušební období zdarma do {date}.",
-        "active": "Aktivní do {date}.",
-        "past_due": "Neuhrazená platba od {date}.",
-        "cancelled": "Zrušeno {date}.",
-        "complimentary": "Zdarma od Astrabely do {date}."
-      },
       "details": "Údaje o salonu",
       "fields": {
         "name": "Název",
@@ -417,45 +404,6 @@
       "reason": "Důvod",
       "hide": "Skrýt hodnocení",
       "keep": "Ponechat",
-      "subs": {
-        "title": "Předplatné",
-        "hint": "Darujte měsíce zdarma nebo nastavte datum, do kterého předplatné běží zdarma. Dar začíná, až skončí čas, který salon už má.",
-        "search": "Hledat podle názvu, obce nebo IČO",
-        "find": "Hledat",
-        "empty": "Žádné salony nenalezeny.",
-        "none": "Bez předplatného",
-        "manage": "Spravovat",
-        "months": "Měsíce zdarma",
-        "monthsN": "{n, plural, one {# měsíc} few {# měsíce} many {# měsíce} other {# měsíců}}",
-        "note": "Poznámka (nepovinné)",
-        "notePlaceholder": "Např. partner od začátku",
-        "grant": "Darovat",
-        "until": "Zdarma do",
-        "set": "Nastavit datum",
-        "cancel": "Ukončit předplatné hned",
-        "cancelHint": "Salon zmizí z vyhledávání, dokud si předplatné znovu nekoupí.",
-        "saved": "Předplatné aktualizováno.",
-        "invalid": "Vyberte datum v budoucnosti.",
-        "salonStatus": {
-          "draft": "Koncept",
-          "pending": "Čeká",
-          "active": "Zveřejněno",
-          "suspended": "Pozastaveno"
-        },
-        "status": {
-          "trial": "Zkušební",
-          "active": "Aktivní",
-          "past_due": "Neuhrazené",
-          "cancelled": "Zrušené",
-          "complimentary": "Zdarma"
-        },
-        "endsOn": "do {date}",
-        "endedOn": "od {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restaurace"
-        }
-      },
       "title": "Administrace"
     },
     "menu": {

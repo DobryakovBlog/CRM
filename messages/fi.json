@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Lisää asiakkaita liikkeellesi",
-      "subtitle": "Verkkokalenteri ja asiakasarviot. Ei provisioita, yksi kiinteä hinta koko tiimille.",
-      "start": "Kokeile {months} kuukautta maksutta",
+      "subtitle": "Verkkokalenteri ja asiakasarviot. Ilmainen koko tiimille, ei provisiota.",
+      "start": "Liity ilmaiseksi",
       "features": {
         "noCommission": "0 % provisiota asiakkaista",
         "unlimitedStaff": "Rajaton määrä työntekijöitä",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Ravintolat",
         "title": "Ruokalistasi verkossa, aina ajan tasalla",
-        "text": "Julkaise ruokalista hintoineen ja allergeeneineen omalla kielelläsi ja englanniksi. Tulosta pöytiin QR-koodi ja muuta hintoja milloin haluat. Kolme ensimmäistä kuukautta ovat maksuttomia.",
-        "cta": "Kokeile 3 kuukautta maksutta"
+        "text": "Julkaise ruokalista hintoineen ja allergeeneineen omalla kielelläsi ja englanniksi. Tulosta pöytiin QR-koodi ja muuta hintoja milloin haluat.",
+        "cta": "Liity ilmaiseksi"
       },
-      "trialNote": "{months} ensimmäistä kuukautta ovat maksuttomia. Aloittamiseen ei tarvita korttia."
-    },
-    "plans": {
-      "monthly": "Kuukausittain",
-      "semiannual": "6 kuukautta",
-      "annual": "12 kuukautta",
-      "perMonth": "kuukaudessa + alv"
+      "freeTitle": "Ilmainen",
+      "freeNote": "Ei tilausta, ei provisiota eikä korttia. Kampaamoille, parturiliikkeille ja ravintoloille."
     },
     "login": {
       "title": "Kirjaudu",
@@ -325,14 +320,6 @@
       },
       "submit": "Lähetä julkaistavaksi",
       "viewPublic": "Näytä julkinen sivu",
-      "subscription": "Tilaus",
-      "sub": {
-        "trial": "Maksuton kokeilu {date} asti.",
-        "active": "Voimassa {date} asti.",
-        "past_due": "Maksu erääntynyt {date} alkaen.",
-        "cancelled": "Peruttu {date}.",
-        "complimentary": "Astrabelan tarjoama maksuton käyttö {date} asti."
-      },
       "details": "Liikkeen tiedot",
       "fields": {
         "name": "Nimi",
@@ -417,45 +404,6 @@
       "reason": "Syy",
       "hide": "Piilota arvio",
       "keep": "Säilytä",
-      "subs": {
-        "title": "Tilaukset",
-        "hint": "Anna maksuttomia kuukausia tai aseta päivä, johon asti maksuton tilaus on voimassa. Lahja alkaa, kun liikkeen nykyinen jakso päättyy.",
-        "search": "Hae nimellä, paikkakunnalla tai Y-tunnuksella",
-        "find": "Hae",
-        "empty": "Liikkeitä ei löytynyt.",
-        "none": "Ei tilausta",
-        "manage": "Hallinnoi",
-        "months": "Maksuttomat kuukaudet",
-        "monthsN": "{n, plural, one {# kuukausi} other {# kuukautta}}",
-        "note": "Huomautus (vapaaehtoinen)",
-        "notePlaceholder": "Esim. perustajakumppani",
-        "grant": "Anna",
-        "until": "Maksuton asti",
-        "set": "Aseta päivä",
-        "cancel": "Lopeta tilaus nyt",
-        "cancelHint": "Liike poistuu hausta, kunnes se tilaa uudelleen.",
-        "saved": "Tilaus päivitetty.",
-        "invalid": "Valitse tuleva päivämäärä.",
-        "salonStatus": {
-          "draft": "Luonnos",
-          "pending": "Odottaa",
-          "active": "Julkaistu",
-          "suspended": "Jäädytetty"
-        },
-        "status": {
-          "trial": "Kokeilu",
-          "active": "Voimassa",
-          "past_due": "Erääntynyt",
-          "cancelled": "Peruttu",
-          "complimentary": "Maksuton"
-        },
-        "endsOn": "{date} asti",
-        "endedOn": "{date} alkaen",
-        "kind": {
-          "salon": "Liike",
-          "restaurant": "Ravintola"
-        }
-      },
       "title": "Ylläpito"
     },
     "menu": {

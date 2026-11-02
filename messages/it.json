@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Più clienti per il tuo salone",
-      "subtitle": "Agenda online e recensioni dei clienti. Nessuna commissione, un prezzo unico per tutto il team.",
-      "start": "Prova {months} mesi gratis",
+      "subtitle": "Agenda online e recensioni dei clienti. Gratis per tutto il team, senza commissioni.",
+      "start": "Iscriviti gratis",
       "features": {
         "noCommission": "0% di commissione sui clienti",
         "unlimitedStaff": "Team illimitato",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Ristoranti",
         "title": "Il tuo menu online, sempre aggiornato",
-        "text": "Pubblica il menu con prezzi e allergeni, nella tua lingua e in inglese. Stampa il codice QR per i tavoli e cambia i prezzi quando vuoi. I primi 3 mesi sono gratis.",
-        "cta": "Prova 3 mesi gratis"
+        "text": "Pubblica il menu con prezzi e allergeni, nella tua lingua e in inglese. Stampa il codice QR per i tavoli e cambia i prezzi quando vuoi.",
+        "cta": "Iscriviti gratis"
       },
-      "trialNote": "I primi {months} mesi sono gratis. Nessuna carta per iniziare."
-    },
-    "plans": {
-      "monthly": "Mensile",
-      "semiannual": "6 mesi",
-      "annual": "12 mesi",
-      "perMonth": "al mese + IVA"
+      "freeTitle": "Gratis",
+      "freeNote": "Nessun abbonamento, nessuna commissione e nessuna carta. Per saloni, barbieri e ristoranti."
     },
     "login": {
       "title": "Accedi",
@@ -325,14 +320,6 @@
       },
       "submit": "Invia per la pubblicazione",
       "viewPublic": "Vedi la pagina pubblica",
-      "subscription": "Abbonamento",
-      "sub": {
-        "trial": "Prova gratuita fino al {date}.",
-        "active": "Attivo fino al {date}.",
-        "past_due": "Pagamento scaduto dal {date}.",
-        "cancelled": "Annullato il {date}.",
-        "complimentary": "Offerto da Astrabela fino al {date}."
-      },
       "details": "Dati del salone",
       "fields": {
         "name": "Nome",
@@ -417,45 +404,6 @@
       "reason": "Motivo",
       "hide": "Nascondi recensione",
       "keep": "Mantieni",
-      "subs": {
-        "title": "Abbonamenti",
-        "hint": "Regala mesi gratis o imposta la data fino a cui vale l'abbonamento gratuito. Un regalo inizia quando finisce il periodo che il salone ha già.",
-        "search": "Cerca per nome, città o NIF",
-        "find": "Cerca",
-        "empty": "Nessun salone trovato.",
-        "none": "Nessun abbonamento",
-        "manage": "Gestisci",
-        "months": "Mesi gratis",
-        "monthsN": "{n, plural, one {# mese} other {# mesi}}",
-        "note": "Nota (facoltativa)",
-        "notePlaceholder": "Es. partner fondatore",
-        "grant": "Regala",
-        "until": "Gratis fino al",
-        "set": "Imposta data",
-        "cancel": "Termina abbonamento ora",
-        "cancelHint": "Il salone esce dalla ricerca finché non si abbona di nuovo.",
-        "saved": "Abbonamento aggiornato.",
-        "invalid": "Scegli una data futura.",
-        "salonStatus": {
-          "draft": "Bozza",
-          "pending": "In attesa",
-          "active": "Pubblicato",
-          "suspended": "Sospeso"
-        },
-        "status": {
-          "trial": "Prova",
-          "active": "Attivo",
-          "past_due": "Scaduto",
-          "cancelled": "Annullato",
-          "complimentary": "Gratis"
-        },
-        "endsOn": "fino al {date}",
-        "endedOn": "dal {date}",
-        "kind": {
-          "salon": "Salone",
-          "restaurant": "Ristorante"
-        }
-      },
       "title": "Amministrazione"
     },
     "menu": {

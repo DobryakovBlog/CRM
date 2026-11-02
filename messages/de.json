@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Mehr Kunden für Ihren Salon",
-      "subtitle": "Online-Kalender und Kundenbewertungen. Keine Provision, ein Festpreis für das ganze Team.",
-      "start": "{months} Monate kostenlos testen",
+      "subtitle": "Online-Kalender und Kundenbewertungen. Kostenlos für das ganze Team, ohne Provision.",
+      "start": "Kostenlos mitmachen",
       "features": {
         "noCommission": "0 % Provision auf Kunden",
         "unlimitedStaff": "Unbegrenztes Team",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restaurants",
         "title": "Ihre Speisekarte online, immer aktuell",
-        "text": "Veröffentlichen Sie Ihre Speisekarte mit Preisen und Allergenen, in Ihrer Sprache und auf Englisch. Drucken Sie den QR-Code für Ihre Tische und ändern Sie Preise jederzeit. Die ersten 3 Monate sind kostenlos.",
-        "cta": "3 Monate kostenlos testen"
+        "text": "Veröffentlichen Sie Ihre Speisekarte mit Preisen und Allergenen, in Ihrer Sprache und auf Englisch. Drucken Sie den QR-Code für Ihre Tische und ändern Sie Preise jederzeit.",
+        "cta": "Kostenlos mitmachen"
       },
-      "trialNote": "Die ersten {months} Monate sind kostenlos. Keine Karte zum Start nötig."
-    },
-    "plans": {
-      "monthly": "Monatlich",
-      "semiannual": "6 Monate",
-      "annual": "12 Monate",
-      "perMonth": "pro Monat zzgl. MwSt."
+      "freeTitle": "Kostenlos",
+      "freeNote": "Kein Abo, keine Provision, keine Karte. Für Salons, Barbershops und Restaurants."
     },
     "login": {
       "title": "Anmelden",
@@ -325,14 +320,6 @@
       },
       "submit": "Zur Veröffentlichung einreichen",
       "viewPublic": "Öffentliche Seite ansehen",
-      "subscription": "Abonnement",
-      "sub": {
-        "trial": "Kostenloser Test bis {date}.",
-        "active": "Aktiv bis {date}.",
-        "past_due": "Zahlung überfällig seit {date}.",
-        "cancelled": "Gekündigt am {date}.",
-        "complimentary": "Kostenlos von Astrabela bis {date}."
-      },
       "details": "Angaben zum Salon",
       "fields": {
         "name": "Name",
@@ -417,45 +404,6 @@
       "reason": "Grund",
       "hide": "Bewertung ausblenden",
       "keep": "Behalten",
-      "subs": {
-        "title": "Abonnements",
-        "hint": "Verschenken Sie kostenlose Monate oder legen Sie fest, bis wann das kostenlose Abonnement läuft. Ein Geschenk beginnt, wenn die bereits vorhandene Zeit des Salons endet.",
-        "search": "Nach Name, Stadt oder NIF suchen",
-        "find": "Suchen",
-        "empty": "Keine Salons gefunden.",
-        "none": "Kein Abonnement",
-        "manage": "Verwalten",
-        "months": "Kostenlose Monate",
-        "monthsN": "{n, plural, one {# Monat} other {# Monate}}",
-        "note": "Notiz (optional)",
-        "notePlaceholder": "Z. B. Gründungspartner",
-        "grant": "Verschenken",
-        "until": "Kostenlos bis",
-        "set": "Datum festlegen",
-        "cancel": "Abonnement jetzt beenden",
-        "cancelHint": "Der Salon verschwindet aus der Suche, bis er wieder abonniert.",
-        "saved": "Abonnement aktualisiert.",
-        "invalid": "Wählen Sie ein Datum in der Zukunft.",
-        "salonStatus": {
-          "draft": "Entwurf",
-          "pending": "Ausstehend",
-          "active": "Veröffentlicht",
-          "suspended": "Gesperrt"
-        },
-        "status": {
-          "trial": "Test",
-          "active": "Aktiv",
-          "past_due": "Überfällig",
-          "cancelled": "Gekündigt",
-          "complimentary": "Kostenlos"
-        },
-        "endsOn": "bis {date}",
-        "endedOn": "seit {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restaurant"
-        }
-      },
       "title": "Verwaltung"
     },
     "menu": {

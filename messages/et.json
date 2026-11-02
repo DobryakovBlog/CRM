@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Rohkem kliente sinu salongile",
-      "subtitle": "Veebikalender ja klientide arvustused. Ilma vahendustasuta, üks fikseeritud hind kogu meeskonnale.",
-      "start": "Proovi {months} kuud tasuta",
+      "subtitle": "Veebikalender ja klientide arvustused. Tasuta kogu meeskonnale, ilma vahendustasuta.",
+      "start": "Liitu tasuta",
       "features": {
         "noCommission": "0 % vahendustasu klientidelt",
         "unlimitedStaff": "Piiramatu arv töötajaid",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restoranid",
         "title": "Sinu menüü veebis, alati ajakohane",
-        "text": "Avalda menüü hindade ja allergeenidega oma keeles ja inglise keeles. Prindi laudadele QR-kood ja muuda hindu, millal soovid. Esimesed 3 kuud on tasuta.",
-        "cta": "Proovi 3 kuud tasuta"
+        "text": "Avalda menüü hindade ja allergeenidega oma keeles ja inglise keeles. Prindi laudadele QR-kood ja muuda hindu, millal soovid.",
+        "cta": "Liitu tasuta"
       },
-      "trialNote": "Esimesed {months} kuud on tasuta. Alustamiseks pole kaarti vaja."
-    },
-    "plans": {
-      "monthly": "Kuupõhine",
-      "semiannual": "6 kuud",
-      "annual": "12 kuud",
-      "perMonth": "kuus + käibemaks"
+      "freeTitle": "Tasuta",
+      "freeNote": "Ilma tellimuse, vahendustasu ja kaardita. Salongidele, juuksuritele ja restoranidele."
     },
     "login": {
       "title": "Logi sisse",
@@ -325,14 +320,6 @@
       },
       "submit": "Saada avaldamiseks",
       "viewPublic": "Vaata avalikku lehte",
-      "subscription": "Tellimus",
-      "sub": {
-        "trial": "Tasuta prooviperiood kuni {date}.",
-        "active": "Aktiivne kuni {date}.",
-        "past_due": "Makse hilinenud alates {date}.",
-        "cancelled": "Tühistatud {date}.",
-        "complimentary": "Astrabela poolt tasuta kuni {date}."
-      },
       "details": "Salongi andmed",
       "fields": {
         "name": "Nimi",
@@ -417,45 +404,6 @@
       "reason": "Põhjus",
       "hide": "Peida arvustus",
       "keep": "Jäta alles",
-      "subs": {
-        "title": "Tellimused",
-        "hint": "Anna tasuta kuid või määra kuupäev, milleni tasuta tellimus kehtib. Kingitus algab, kui salongi praegune periood lõpeb.",
-        "search": "Otsi nime, asula või registrikoodi järgi",
-        "find": "Otsi",
-        "empty": "Salonge ei leitud.",
-        "none": "Tellimust pole",
-        "manage": "Halda",
-        "months": "Tasuta kuud",
-        "monthsN": "{n, plural, one {# kuu} other {# kuud}}",
-        "note": "Märkus (valikuline)",
-        "notePlaceholder": "Nt asutajapartner",
-        "grant": "Anna",
-        "until": "Tasuta kuni",
-        "set": "Määra kuupäev",
-        "cancel": "Lõpeta tellimus kohe",
-        "cancelHint": "Salong kaob otsingust, kuni tellib uuesti.",
-        "saved": "Tellimus uuendatud.",
-        "invalid": "Vali tulevane kuupäev.",
-        "salonStatus": {
-          "draft": "Mustand",
-          "pending": "Ootel",
-          "active": "Avaldatud",
-          "suspended": "Peatatud"
-        },
-        "status": {
-          "trial": "Proov",
-          "active": "Aktiivne",
-          "past_due": "Hilinenud",
-          "cancelled": "Tühistatud",
-          "complimentary": "Tasuta"
-        },
-        "endsOn": "kuni {date}",
-        "endedOn": "alates {date}",
-        "kind": {
-          "salon": "Salong",
-          "restaurant": "Restoran"
-        }
-      },
       "title": "Haldus"
     },
     "menu": {

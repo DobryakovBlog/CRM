@@ -17,12 +17,11 @@ const STATIC_PAGES = ["", "/restaurants", "/business", "/privacy", "/terms"];
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!siteIsPublic()) return [];
   const origin = await siteOrigin();
-  const now = new Date();
   const [listed, salonCities, restaurantCities] = await Promise.all([
     db
       .select({ slug: salons.slug, kind: salons.kind })
       .from(salons)
-      .where(or(listedCondition(now), restaurantListedCondition(now))),
+      .where(or(listedCondition(), restaurantListedCondition())),
     listedCities(db),
     listedRestaurantCities(db),
   ]);
