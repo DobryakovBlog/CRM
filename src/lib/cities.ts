@@ -38,6 +38,7 @@ import mdData from "@/data/md-places.json";
 import uaData from "@/data/ua-places.json";
 import adData from "@/data/ad-places.json";
 import mcData from "@/data/mc-places.json";
+import smData from "@/data/sm-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
@@ -48,10 +49,10 @@ import { slugify } from "./slug";
 // the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten, Luxembourg 100 communes;
 // Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county).
 // Countries without a municipality list we can fetch get every GeoNames town of 1,000+ people
-// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290, Denmark 338, Sweden 812, Norway 537 (by the five traditional parts of the country), Finland 460, Estonia 111, Latvia 134 (by historical region), Lithuania 122, Greece 1,068 (respelt in ELOT 743), Cyprus 91, Malta 67 (one per local council, by island), Iceland 33, Serbia 399 (Vojvodina and Central Serbia), Bosnia and Herzegovina 259 (by entity), Montenegro 39 (by municipality), North Macedonia 199 (by municipality, in Latin with č, š, ž, gj, kj), Albania 354 (by county), Kosovo 58 (by district, Albanian and Serbian names), Moldova 73 (by district), Ukraine 1,599 (by oblast, in the national Latin spelling of 2010), Andorra 10 (by parish), Monaco 6 (its quarters). Its slug is its name ("madrid"), with the
+// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290, Denmark 338, Sweden 812, Norway 537 (by the five traditional parts of the country), Finland 460, Estonia 111, Latvia 134 (by historical region), Lithuania 122, Greece 1,068 (respelt in ELOT 743), Cyprus 91, Malta 67 (one per local council, by island), Iceland 33, Serbia 399 (Vojvodina and Central Serbia), Bosnia and Herzegovina 259 (by entity), Montenegro 39 (by municipality), North Macedonia 199 (by municipality, in Latin with č, š, ž, gj, kj), Albania 354 (by county), Kosovo 58 (by district, Albanian and Serbian names), Moldova 73 (by district), Ukraine 1,599 (by oblast, in the national Latin spelling of 2010), Andorra 10 (by parish), Monaco 6 (its quarters), San Marino 9 (by castello). Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg" | "dk" | "se" | "no" | "fi" | "ee" | "lv" | "lt" | "gr" | "cy" | "mt" | "is" | "rs" | "ba" | "me" | "mk" | "al" | "xk" | "md" | "ua" | "ad" | "mc";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg" | "dk" | "se" | "no" | "fi" | "ee" | "lv" | "lt" | "gr" | "cy" | "mt" | "is" | "rs" | "ba" | "me" | "mk" | "al" | "xk" | "md" | "ua" | "ad" | "mc" | "sm";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -95,6 +96,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["ua", uaData],
   ["ad", adData],
   ["mc", mcData],
+  ["sm", smData],
 ];
 
 export type Place = {
@@ -239,7 +241,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia", dk: "Europe/Copenhagen", se: "Europe/Stockholm", no: "Europe/Oslo", fi: "Europe/Helsinki", ee: "Europe/Tallinn", lv: "Europe/Riga", lt: "Europe/Vilnius", gr: "Europe/Athens", cy: "Asia/Nicosia", mt: "Europe/Malta", is: "Atlantic/Reykjavik", rs: "Europe/Belgrade", ba: "Europe/Sarajevo", me: "Europe/Podgorica", mk: "Europe/Skopje", al: "Europe/Tirane", xk: "Europe/Belgrade", md: "Europe/Chisinau", ua: "Europe/Kyiv", ad: "Europe/Andorra", mc: "Europe/Monaco" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia", dk: "Europe/Copenhagen", se: "Europe/Stockholm", no: "Europe/Oslo", fi: "Europe/Helsinki", ee: "Europe/Tallinn", lv: "Europe/Riga", lt: "Europe/Vilnius", gr: "Europe/Athens", cy: "Asia/Nicosia", mt: "Europe/Malta", is: "Atlantic/Reykjavik", rs: "Europe/Belgrade", ba: "Europe/Sarajevo", me: "Europe/Podgorica", mk: "Europe/Skopje", al: "Europe/Tirane", xk: "Europe/Belgrade", md: "Europe/Chisinau", ua: "Europe/Kyiv", ad: "Europe/Andorra", mc: "Europe/Monaco", sm: "Europe/San_Marino" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -260,7 +262,7 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia", dk: "kobenhavn", se: "stockholm", no: "oslo-oslo", fi: "helsinki", ee: "tallinn", lv: "riga", lt: "vilnius", gr: "athina", cy: "lefkosia-nicosia", mt: "valletta", is: "reykjavik", rs: "beograd", ba: "sarajevo", me: "podgorica", mk: "skopje", al: "tirana", xk: "prishtine-pristina", md: "chisinau", ua: "kyiv", ad: "andorra-la-vella", mc: "monaco" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia", dk: "kobenhavn", se: "stockholm", no: "oslo-oslo", fi: "helsinki", ee: "tallinn", lv: "riga", lt: "vilnius", gr: "athina", cy: "lefkosia-nicosia", mt: "valletta", is: "reykjavik", rs: "beograd", ba: "sarajevo", me: "podgorica", mk: "skopje", al: "tirana", xk: "prishtine-pristina", md: "chisinau", ua: "kyiv", ad: "andorra-la-vella", mc: "monaco", sm: "san-marino" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
 const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl", pl: "pl", cs: "cz", sk: "sk", hu: "hu", sl: "si", hr: "hr", ro: "ro", bg: "bg", da: "dk", sv: "se", nb: "no", fi: "fi", et: "ee", lv: "lv", lt: "lt", el: "gr", is: "is", sr: "rs", mk: "mk", sq: "al", uk: "ua" };
@@ -317,6 +319,7 @@ export const COUNTRIES = [
   { code: "ua", open: true },
   { code: "ad", open: true },
   { code: "mc", open: true },
+  { code: "sm", open: true },
 ] as const;
 
 function withSalons(listed: string[]) {
