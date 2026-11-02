@@ -692,3 +692,13 @@ describe("Monegasque places", () => {
     expect(phoneCountry("monaco")).toBe("MC");
   });
 });
+
+describe("San Marino places", () => {
+  it("lists towns by castello and starts in San Marino", () => {
+    expect(placeBySlug("san-marino")).toMatchObject({ name: "San Marino", country: "sm", area: "Città di San Marino" });
+    expect(searchPlaces("serravalle", [], 30, "sm")[0].name).toBe("Serravalle");
+    expect(placeTimezone("san-marino")).toBe("Europe/San_Marino");
+    expect(cityFieldSetup([], undefined, "it", "sm")).toMatchObject({ defaultCountry: "sm", defaultSlugs: { sm: "san-marino" } });
+    expect(phoneCountry("san-marino")).toBe("SM");
+  });
+});

@@ -282,6 +282,7 @@ const COUNTRIES: Record<string, Config> = {
     names: { "les Escaldes": "Escaldes-Engordany", "la Massana": "La Massana" },
   },
   mc: { regions: { "00": "Monaco" } },
+  sm: { regions: "admin1", regionFixes: { "San Marino": "Città di San Marino" } },
   md: {
     regions: {
       "51": "UTA Găgăuzia", "57": "Municipiul Chișinău", "58": "Stânga Nistrului", "59": "Anenii Noi", "60": "Municipiul Bălți",
