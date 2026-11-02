@@ -59,6 +59,7 @@ describe("social links", () => {
     expect(normalizeSocial("facebook", "javascript:alert(1)")).toBeNull();
     expect(normalizeSocial("website", "not a site")).toBeNull();
     expect(normalizeSocial("whatsapp", "12")).toBeNull();
+    expect(normalizeSocial("whatsapp", "312 345", "ad")).toBe("https://wa.me/376312345");
   });
 
   it("labels links for display", () => {
