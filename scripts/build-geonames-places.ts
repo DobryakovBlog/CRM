@@ -241,6 +241,18 @@ const COUNTRIES: Record<string, Config> = {
     regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
   },
   // Kosovo: both official names, Albanian first ("Prishtinë/Priština"), where they differ.
+  md: {
+    regions: {
+      "51": "UTA Găgăuzia", "57": "Municipiul Chișinău", "58": "Stânga Nistrului", "59": "Anenii Noi", "60": "Municipiul Bălți",
+      "61": "Basarabeasca", "62": "Municipiul Bender", "63": "Briceni", "64": "Cahul", "65": "Cantemir", "66": "Călărași",
+      "67": "Căușeni", "68": "Cimișlia", "69": "Criuleni", "70": "Dondușeni", "71": "Drochia", "72": "Dubăsari", "73": "Edineț",
+      "74": "Fălești", "75": "Florești", "76": "Glodeni", "77": "Hîncești", "78": "Ialoveni", "79": "Leova", "80": "Nisporeni",
+      "81": "Ocnița", "82": "Orhei", "83": "Rezina", "84": "Rîșcani", "85": "Sîngerei", "86": "Șoldănești", "87": "Soroca",
+      "88": "Ștefan Vodă", "89": "Strășeni", "90": "Taraclia", "91": "Telenești", "92": "Ungheni",
+    },
+    commaBelow: true,
+    names: { Chisinau: "Chișinău", Hryhoriopol: "Grigoriopol" },
+  },
   xk: {
     regions: {
       "10096138": "Ferizaj/Uroševac", "10096859": "Gjakovë/Đakovica", "10097357": "Gjilan/Gnjilane",

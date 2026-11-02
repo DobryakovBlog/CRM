@@ -636,3 +636,17 @@ describe("Kosovo places", () => {
     expect(phoneCountry("prizren")).toBe("XK");
   });
 });
+
+describe("Moldovan places", () => {
+  it("lists GeoNames towns by district with Romanian comma-below letters", () => {
+    expect(placeBySlug("chisinau")).toMatchObject({ name: "Chișinău", country: "md", area: "Municipiul Chișinău" });
+    expect(searchPlaces("balti", [], 30, "md")[0]).toMatchObject({ name: "Bălți", area: "Municipiul Bălți" });
+    expect(searchPlaces("comrat", [], 30, "md")[0].area).toBe("UTA Găgăuzia");
+  });
+
+  it("uses Chisinau time and starts in Chișinău", () => {
+    expect(placeTimezone("cahul")).toBe("Europe/Chisinau");
+    expect(cityFieldSetup([], undefined, "ro", "md")).toMatchObject({ defaultCountry: "md", defaultSlugs: { md: "chisinau" } });
+    expect(phoneCountry("cahul")).toBe("MD");
+  });
+});
