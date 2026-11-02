@@ -13,7 +13,11 @@
     "privacy": "Privatumas",
     "terms": "Sąlygos",
     "signIn": "Prisijungti",
-    "support": "Pagalba"
+    "support": "Pagalba",
+    "installApp": "Įdiekite programėlę",
+    "installHintIos": "Safari naršyklėje bakstelėkite Bendrinti (kvadratas su rodykle), tada „Įtraukti į pradžios ekraną“.",
+    "installHintOther": "Atidarykite naršyklės meniu ir pasirinkite „Įdiegti programą“ arba „Pridėti prie pagrindinio ekrano“.",
+    "close": "Uždaryti"
   },
   "home": {
     "title": "Rinkitės geriausius. Pasitikėkite žvaigždėmis.",

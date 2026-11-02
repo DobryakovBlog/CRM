@@ -13,7 +13,11 @@
     "privacy": "Persónuvernd",
     "terms": "Skilmálar",
     "signIn": "Innskráning",
-    "support": "Aðstoð"
+    "support": "Aðstoð",
+    "installApp": "Settu upp appið",
+    "installHintIos": "Í Safari skaltu ýta á Deila (ferningurinn með örinni) og svo á „Bæta á heimaskjá“.",
+    "installHintOther": "Opnaðu valmynd vafrans og veldu „Setja upp forrit“ eða „Bæta við heimaskjá“.",
+    "close": "Loka"
   },
   "home": {
     "title": "Bókaðu þá bestu. Treystu stjörnunum.",

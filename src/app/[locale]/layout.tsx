@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { siteIsPublic } from "@/lib/indexing";
 import { Bodoni_Moda, GFS_Didot, Manrope, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -9,6 +9,7 @@ import { AccountLink } from "@/components/AccountLink";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionNav } from "@/components/SectionNav";
 import { SupportLink } from "@/components/SupportLink";
+import { InstallAppLink } from "@/components/InstallAppLink";
 import { Logo } from "@/components/Logo";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -32,9 +33,13 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
   return {
     title: { default: t("title"), template: `%s · Astrabela` },
     description: t("description"),
+    // Installed on an iPhone home screen, the site opens full screen under this name.
+    appleWebApp: { capable: true, title: "Astrabela", statusBarStyle: "default" },
     ...(siteIsPublic() ? {} : { robots: { index: false, follow: false } }),
   };
 }
+
+export const viewport: Viewport = { themeColor: "#ffffff" };
 
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
@@ -82,6 +87,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
                 <Link href="/privacy" className="hover:text-white">{t("privacy")}</Link>
                 <Link href="/terms" className="hover:text-white">{t("terms")}</Link>
                 <SupportLink label={t("support")} className="hover:text-white" />
+                <InstallAppLink
+                  label={t("installApp")}
+                  hintIos={t("installHintIos")}
+                  hintOther={t("installHintOther")}
+                  close={t("close")}
+                  className="hover:text-white"
+                />
               </div>
             </div>
           </footer>

@@ -13,7 +13,11 @@
     "privacy": "Soukromí",
     "terms": "Podmínky",
     "signIn": "Přihlásit se",
-    "support": "Podpora"
+    "support": "Podpora",
+    "installApp": "Nainstalovat aplikaci",
+    "installHintIos": "V Safari klepněte na Sdílet (čtverec se šipkou) a pak na „Přidat na plochu“.",
+    "installHintOther": "Otevřete nabídku prohlížeče a zvolte „Instalovat aplikaci“ nebo „Přidat na plochu“.",
+    "close": "Zavřít"
   },
   "home": {
     "title": "Rezervujte ty nejlepší. Věřte hvězdám.",

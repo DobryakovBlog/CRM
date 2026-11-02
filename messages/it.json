@@ -13,7 +13,11 @@
     "privacy": "Privacy",
     "terms": "Termini",
     "signIn": "Accedi",
-    "support": "Assistenza"
+    "support": "Assistenza",
+    "installApp": "Installa l'app",
+    "installHintIos": "In Safari tocca Condividi (il quadrato con la freccia), poi «Aggiungi alla schermata Home».",
+    "installHintOther": "Apri il menu del browser e scegli «Installa app» o «Aggiungi a schermata Home».",
+    "close": "Chiudi"
   },
   "home": {
     "title": "Prenota il meglio. Fidati delle stelle.",
