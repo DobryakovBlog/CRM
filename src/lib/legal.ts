@@ -46,6 +46,7 @@ const PRICES = {
   lv: ["12,99 € mēnesī, maksājot katru mēnesi;", "10,99 € mēnesī, maksājot par 6 mēnešiem;", "9,99 € mēnesī, maksājot par gadu."],
   lt: ["12,99 € per mėnesį mokant kas mėnesį;", "10,99 € per mėnesį mokant už 6 mėnesius;", "9,99 € per mėnesį mokant už metus."],
   el: ["12,99 € τον μήνα με μηνιαία πληρωμή·", "10,99 € τον μήνα με πληρωμή για 6 μήνες·", "9,99 € τον μήνα με ετήσια πληρωμή."],
+  sq: ["12,99 € në muaj me pagesë mujore;", "10,99 € në muaj me pagesë për 6 muaj;", "9,99 € në muaj me pagesë vjetore."],
   mk: ["12,99 € месечно со месечно плаќање;", "10,99 € месечно со плаќање за 6 месеци;", "9,99 € месечно со годишно плаќање."],
   sr: ["12,99 € mesečno uz mesečno plaćanje;", "10,99 € mesečno uz plaćanje za 6 meseci;", "9,99 € mesečno uz godišnje plaćanje."],
   is: ["12,99 € á mánuði með mánaðarlegri greiðslu;", "10,99 € á mánuði þegar greitt er fyrir 6 mánuði;", "9,99 € á mánuði þegar greitt er fyrir árið."],
@@ -77,6 +78,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "is") return privacyIs();
   if (locale === "sr") return privacySr();
   if (locale === "mk") return privacyMk();
+  if (locale === "sq") return privacySq();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -293,6 +295,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "is") return termsIs();
   if (locale === "sr") return termsSr();
   if (locale === "mk") return termsMk();
+  if (locale === "sq") return termsSq();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -5056,6 +5059,197 @@ function termsMk(): LegalDoc {
       {
         title: "10. Измени",
         body: ["Овие услови можеме да ги ажурираме. Новата верзија ќе биде објавена тука со датум; за важни измени бизнисите ги известуваме однапред."],
+      },
+    ],
+  };
+}
+
+function privacySq(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Politika e privatësisë",
+    updated: "Përditësuar së fundi: 2 nëntor 2026.",
+    intro:
+      "Astrabela është një katalog sallonesh bukurie, berberësh dhe restorantesh në Evropë me rezervim online dhe vlerësime klientësh për çdo profesionist. Kjo politikë shpjegon cilat të dhëna personale përpunojmë, për çfarë qëllimi dhe cilat janë të drejtat tuaja sipas GDPR-së dhe ligjit shqiptar për mbrojtjen e të dhënave personale.",
+    sections: [
+      { title: "1. Kush jemi", body: [`Shërbimi astrabela.com drejtohet nga ${who()}. Pyetjet për të dhënat tuaja dërgojini në ${o.email}.`] },
+      {
+        title: "2. Cilat të dhëna përpunojmë",
+        body: [
+          "Kur rezervoni ose vlerësoni (klientët):",
+          [
+            "emri, e-maili dhe numri i celularit i dhënë gjatë rezervimit, si dhe mesazhi juaj për sallonin;",
+            "vetë rezervimi: salloni, profesionisti, shërbimi, data, ora dhe statusi;",
+            "vlerësimi juaj: yjet, teksti dhe emri që doni të shfaqet;",
+            "nëse krijoni llogari klienti: emri dhe e-maili, si dhe fjalëkalimi i ruajtur vetëm në formë të koduar (hash) ose, kur hyni me Google, identifikuesi i llogarisë suaj Google (fjalëkalimin tuaj të Google nuk e shohim kurrë).",
+          ],
+          "Kur një sallon ose restorant përdor Astrabela (bizneset):",
+          [
+            "emri dhe e-maili i pronarit të llogarisë, si dhe fjalëkalimi (i ruajtur vetëm i koduar);",
+            "të dhënat e biznesit: emri, adresa, telefoni, e-maili, NIPT-i, ekipi, shërbimet, çmimet, orari, menuja dhe lidhjet e rrjeteve sociale.",
+          ],
+          "Të dhëna teknike: cookies për hyrjen, një cookie për gjuhën dhe regjistrat e serverit (p.sh. adresa IP dhe ora e kërkesës), që i ruajmë për arsye sigurie.",
+        ],
+      },
+      {
+        title: "3. Qëllimet dhe baza ligjore",
+        body: [
+          [
+            "kryerja dhe menaxhimi i rezervimeve: zbatimi i kontratës (neni 6(1)(b) i GDPR-së);",
+            "menaxhimi i llogarive dhe abonimeve të bizneseve: zbatimi i kontratës;",
+            "publikimi i vlerësimeve dhe parandalimi i vlerësimeve të rreme: interes legjitim për një katalog të besueshëm (neni 6(1)(f));",
+            "funksionimi i sigurt i shërbimit: interes legjitim;",
+            "detyrimet tatimore dhe kontabël: detyrim ligjor (neni 6(1)(c)).",
+          ],
+          "Nuk i shesim të dhënat personale dhe nuk i përdorim për reklama.",
+        ],
+      },
+      {
+        title: "4. Roli i sallonit dhe roli ynë",
+        body: [
+          "Te rezervimet, për përdorimin e të dhënave të klientëve vendos salloni që zgjidhni dhe ai është kontrolluesi i tyre. Astrabela i përpunon këto të dhëna në emër të sallonit si përpunues (neni 28 i GDPR-së) dhe vetëm për të ofruar shërbimin. Për vlerësimet, katalogun publik dhe sigurinë e shërbimit, kontrollues është Astrabela.",
+        ],
+      },
+      {
+        title: "5. Marrësit e të dhënave",
+        body: [
+          "Salloni ose restoranti ku rezervoni. Përdorim edhe këta ofrues shërbimesh, të lidhur me marrëveshje për përpunimin e të dhënave:",
+          [
+            "Vercel Inc. – hostimi; shërbimi funksionon në Frankfurt (BE). Vercel është kompani amerikane; transferimi i të dhënave jashtë BE-së mbrohet me klauzolat standarde kontraktuale të BE-së dhe kuadrin EU-US Data Privacy Framework;",
+            "Neon – baza e të dhënave në Frankfurt (BE);",
+            "Cloudflare – shërbimi i emrave të domenit (DNS);",
+            "Google – vetëm nëse hyni me Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Afati i ruajtjes",
+        body: [
+          [
+            "të dhënat e klientëve dhe rezervimeve: sa kohë që llogaria e sallonit është aktive, deri në 2 vjet nga vizita juaj e fundit;",
+            "vlerësimet: sa kohë që salloni është në Astrabela;",
+            "llogaritë e klientëve: deri në fshirje (butoni në faqen e llogarisë);",
+            "llogaritë e bizneseve: deri në mbylljen e llogarisë;",
+            "faturat dhe të dhënat e pagesave: 10 vjet sipas ligjit tatimor portugez;",
+            "sinjalizimet e bizneseve: 30 ditë.",
+          ],
+        ],
+      },
+      {
+        title: "7. Cookies",
+        body: [
+          "Përdorim vetëm cookies të domosdoshme për funksionimin e shërbimit: për t'ju mbajtur të hyrë (dhe për të shfaqur emrin tuaj në menu), cookies afatshkurtra gjatë hyrjes me Google, një për gjuhën dhe një që mban mend pjatat që ju pëlqejnë në menunë e restorantit (krijohet vetëm kur prekni ♥ dhe përmban një kod të rastësishëm, jo emrin tuaj). Nuk përdorim cookies analitike apo reklamuese, prandaj nuk kërkojmë pëlqim për cookies.",
+        ],
+      },
+      {
+        title: "8. Të drejtat tuaja",
+        body: [
+          `Mund të kërkoni qasje në të dhënat tuaja, korrigjimin ose fshirjen e tyre, kufizimin e përpunimit, të kundërshtoni dhe t'i merrni të dhënat në formë të transferueshme. Shkruani në ${o.email}; përgjigjemi brenda një muaji. Nëse të dhënat janë te salloni, ia përcjellim edhe atij kërkesën tuaj. Ankesë mund të paraqisni edhe te Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale (www.idp.al) ose te autoriteti portugez CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Siguria",
+        body: [
+          "Shërbimi funksionon vetëm me HTTPS, fjalëkalimet ruhen të koduara dhe lidhjet për rezervime dhe vlerësime janë personale dhe të vështira për t'u gjetur. Mos e ndani lidhjen tuaj personale me të tjerët.",
+        ],
+      },
+      {
+        title: "10. Ndryshime",
+        body: ["Nëse e ndryshojmë këtë politikë, do të publikojmë këtu versionin e ri me datë. Për ndryshime të rëndësishme do t'ju njoftojmë në shërbim."],
+      },
+    ],
+  };
+}
+
+function termsSq(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Kushtet e përdorimit",
+    updated: "Përditësuar së fundi: 2 nëntor 2026.",
+    intro: `Këto kushte rregullojnë përdorimin e shërbimit astrabela.com, të drejtuar nga ${who()}. Duke përdorur shërbimin ose duke hapur një llogari biznesi, i pranoni ato.`,
+    sections: [
+      {
+        title: "1. Shërbimi",
+        body: [
+          "Astrabela u mundëson klientëve të gjejnë sallone bukurie, berberë dhe restorante, të rezervojnë shërbime online, të vlerësojnë profesionistët dhe të shohin menutë e restoranteve. Sallonet dhe restorantet menaxhojnë në llogarinë e tyre të biznesit profilin, ekipin, shërbimet, kalendarin dhe menunë.",
+        ],
+      },
+      {
+        title: "2. Për klientët",
+        body: [
+          [
+            "Përdorimi i Astrabela është falas dhe nuk kërkon llogari.",
+            "Rezervimi është kontratë mes jush dhe sallonit. Shërbimet, çmimet dhe kohëzgjatjen i cakton salloni, dhe shërbimin e ofron salloni, jo Astrabela.",
+            "Astrabela nuk merr pagesa: paguani drejtpërdrejt në sallon.",
+            "Vizitën mund ta anuloni me lidhjen personale që merrni. Anulojeni nëse nuk mund të vini.",
+          ],
+        ],
+      },
+      {
+        title: "3. Vlerësimet",
+        body: [
+          "Çdo klient i hyrë në Astrabela mund të vlerësojë një profesionist të sallonit, një herë në 30 ditë për të njëjtin profesionist. Klientët me vizitë të rezervuar në Astrabela ose të konfirmuar nga salloni mund të vlerësojnë edhe me lidhje personale; këto vlerësime kanë shenjën e vizitës së konfirmuar. Vlerësimi duhet:",
+          [
+            "të përshkruajë përvojën tuaj të vërtetë;",
+            "të jetë pa fyerje, kërcënime dhe diskriminim;",
+            "të mos përmbajë të dhëna personale të të tjerëve, reklama apo lidhje.",
+          ],
+          "Vlerësimet që shkelin këto rregulla mund t'i fshehim. Salloni nuk mund të fshijë apo ndryshojë vlerësime; mund të përgjigjet publikisht ose ta sinjalizojë vlerësimin për moderim.",
+        ],
+      },
+      {
+        title: "4. Për sallonet dhe restorantet",
+        body: [
+          [
+            "Të dhënat e profilit, çmimet dhe menuja duhet të jenë të vërteta dhe të përditësuara. Për to dhe për shërbimet tuaja përgjigjeni ju.",
+            "Ruajeni fjalëkalimin; përgjigjeni për veprimet në llogarinë tuaj.",
+            "Mos krijoni rezervime, vlerësime apo kërkesa vlerësimi të rreme dhe mos kërkoni vlerësime në këmbim të shpërblimeve.",
+            "Në kërkim shfaqen vetëm profilet me abonim aktiv ose në periudhë prove.",
+          ],
+        ],
+      },
+      {
+        title: "5. Çmimet",
+        body: [
+          "Për sallonet, berberët dhe restorantet 3 muajt e parë janë falas, pa kartë për të filluar. Më pas, për t'u shfaqur nevojitet abonim:",
+          PRICES.sq,
+          "Kushtet e pagesës shfaqen para çdo pagese. Çmimet mund t'i ndryshojmë me njoftim të paktën 30 ditë përpara; ndryshimi vlen nga periudha e ardhshme e faturimit.",
+        ],
+      },
+      {
+        title: "6. Marrëveshja për përpunimin e të dhënave personale (bizneset)",
+        body: [
+          "Për të dhënat e klientëve në rezervime, biznesi është kontrollues dhe Astrabela përpunues (neni 28 i GDPR-së). Astrabela:",
+          [
+            "i përpunon këto të dhëna vetëm për të ofruar shërbimin dhe sipas udhëzimeve që biznesi jep përmes shërbimit;",
+            "ruan konfidencialitetin e tyre dhe i mbron me masa të përshtatshme sigurie;",
+            "përdor vetëm nënpërpunuesit e listuar në politikën e privatësisë dhe i njofton bizneset paraprakisht për të rinjtë;",
+            "e ndihmon biznesin me kërkesat e klientëve dhe me njoftimin e cenimeve të të dhënave personale;",
+            "pas mbylljes së llogarisë i fshin ose i dorëzon të dhënat, përveç kur ligji kërkon ruajtjen e tyre.",
+          ],
+        ],
+      },
+      {
+        title: "7. Pezullimi dhe mbyllja e llogarisë",
+        body: [
+          "Llogarinë e biznesit mund ta mbyllni në çdo kohë duke na shkruar. Një profil që shkel këto kushte, ligjin ose të drejtat e të tjerëve mund ta pezullojmë ose heqim, duke treguar arsyen.",
+        ],
+      },
+      {
+        title: "8. Përgjegjësia",
+        body: [
+          "Përpiqemi që shërbimi të jetë i disponueshëm dhe i saktë, por nuk mund të garantojmë që do të funksionojë gjithmonë pa ndërprerje dhe gabime. Astrabela nuk është palë në kontratën mes klientit dhe sallonit dhe nuk përgjigjet për shërbimet e sallonit. Asgjë në këto kushte nuk kufizon të drejtat ligjore të konsumatorëve.",
+        ],
+      },
+      {
+        title: "9. Ligji i zbatueshëm dhe ankesat",
+        body: [
+          `Për këto kushte zbatohet ligji portugez, pa cenuar mbrojtjen që ju jep si konsumator ligji i vendit ku banoni. Ankesat dërgojini në ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Ndryshime",
+        body: ["Këto kushte mund t'i përditësojmë. Versioni i ri do të publikohet këtu me datë; për ndryshime të rëndësishme bizneset i njoftojmë paraprakisht."],
       },
     ],
   };

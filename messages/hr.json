@@ -92,6 +92,7 @@
     "is": "Islandski",
     "sr": "Srpski",
     "mk": "Makedonski",
+    "sq": "Albanski",
     "ru": "Ruski",
     "uk": "Ukrajinski"
   },
@@ -534,7 +535,8 @@
     "rs": "Srbija",
     "ba": "Bosna i Hercegovina",
     "me": "Crna Gora",
-    "mk": "Sjeverna Makedonija"
+    "mk": "Sjeverna Makedonija",
+    "al": "Albanija"
   },
   "restaurants": {
     "metaTitle": "Restorani i jelovnici",

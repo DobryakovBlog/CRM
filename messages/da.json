@@ -92,6 +92,7 @@
     "is": "Islandsk",
     "sr": "Serbisk",
     "mk": "Makedonsk",
+    "sq": "Albansk",
     "ru": "Russisk",
     "uk": "Ukrainsk"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbien",
     "ba": "Bosnien-Hercegovina",
     "me": "Montenegro",
-    "mk": "Nordmakedonien"
+    "mk": "Nordmakedonien",
+    "al": "Albanien"
   },
   "restaurants": {
     "metaTitle": "Restauranter og menuer",

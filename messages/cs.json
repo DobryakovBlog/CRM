@@ -92,6 +92,7 @@
     "is": "Islandština",
     "sr": "Srbština",
     "mk": "Makedonština",
+    "sq": "Albánština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -534,7 +535,8 @@
     "rs": "Srbsko",
     "ba": "Bosna a Hercegovina",
     "me": "Černá Hora",
-    "mk": "Severní Makedonie"
+    "mk": "Severní Makedonie",
+    "al": "Albánie"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

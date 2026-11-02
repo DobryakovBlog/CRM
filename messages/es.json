@@ -92,6 +92,7 @@
     "is": "Islandés",
     "sr": "Serbio",
     "mk": "Macedonio",
+    "sq": "Albanés",
     "ru": "Ruso",
     "uk": "Ucraniano"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbia",
     "ba": "Bosnia y Herzegovina",
     "me": "Montenegro",
-    "mk": "Macedonia del Norte"
+    "mk": "Macedonia del Norte",
+    "al": "Albania"
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",

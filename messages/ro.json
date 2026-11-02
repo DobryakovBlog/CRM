@@ -92,6 +92,7 @@
     "is": "Islandeză",
     "sr": "Sârbă",
     "mk": "Macedoneană",
+    "sq": "Albaneză",
     "ru": "Rusă",
     "uk": "Ucraineană"
   },
@@ -534,7 +535,8 @@
     "rs": "Serbia",
     "ba": "Bosnia și Herțegovina",
     "me": "Muntenegru",
-    "mk": "Macedonia de Nord"
+    "mk": "Macedonia de Nord",
+    "al": "Albania"
   },
   "restaurants": {
     "metaTitle": "Restaurante și meniuri",
