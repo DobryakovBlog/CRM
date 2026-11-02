@@ -21,6 +21,8 @@ type Config = {
   commaBelow?: boolean;
   byName?: Record<string, string>;
   respell?: (name: string) => string;
+  // regionOf: the region code of towns GeoNames files under no region (code 00).
+  regionOf?: Record<string, string>;
 };
 
 // Greek GeoNames names mix the old BGN romanisation (Áyios, Khalándrion, Galaxídhion) with the modern ELOT 743 one
@@ -218,6 +220,10 @@ const COUNTRIES: Record<string, Config> = {
       "42": "Suðurland", "43": "Suðurnes", "44": "Vestfirðir", "45": "Vesturland",
     },
   },
+  ba: {
+    regions: { "01": "Federacija Bosne i Hercegovine", "02": "Republika Srpska", BRC: "Brčko distrikt" },
+    regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
+  },
   rs: {
     regions: { VO: "Vojvodina", SE: "Centralna Srbija" },
     respell: (name) => name.replace(/\u00d0/g, "Đ"),
@@ -288,7 +294,7 @@ const areas = [...new Set(Object.values(config.byName ?? regions))].sort((a, b) 
 const best = new Map<string, [string, number, number]>();
 for (const c of readCities(readFileSync(join(atcDir, "cities.pbf")))) {
   if (c.country !== cc.toUpperCase()) continue;
-  const area = config.byName ? config.byName[c.name] : regions[c.region];
+  const area = config.byName ? config.byName[c.name] : regions[config.regionOf?.[c.name] ?? c.region];
   if (!area) throw new Error(`unknown region ${c.region} for ${c.name}`);
   const raw = config.names?.[c.name] ?? config.respell?.(c.name) ?? c.name;
   const name = config.commaBelow ? raw.replace(/ş/g, "ș").replace(/Ş/g, "Ș").replace(/ţ/g, "ț").replace(/Ţ/g, "Ț") : raw;
