@@ -1,12 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, redirect } from "@/i18n/navigation";
-import { cabinetHome, currentOwner, TRIAL_MONTHS } from "@/server/auth";
-
-const PLANS = [
-  { key: "monthly", price: "12,99 €" },
-  { key: "semiannual", price: "10,99 €" },
-  { key: "annual", price: "9,99 €" },
-] as const;
+import { cabinetHome, currentOwner } from "@/server/auth";
 
 export default async function BusinessLanding({ params }: PageProps<"/[locale]/business">) {
   const { locale } = await params;
@@ -23,22 +17,16 @@ export default async function BusinessLanding({ params }: PageProps<"/[locale]/b
         <p className="mx-auto mt-4 max-w-xl text-mist">{t("landing.subtitle")}</p>
         <div className="mt-6 flex justify-center gap-3">
           <Link href="/business/register" className="btn-gold">
-            {t("landing.start", { months: TRIAL_MONTHS })}
+            {t("landing.start")}
           </Link>
           <Link href="/account" className="btn-outline border-white/30 bg-transparent text-white hover:border-white">
             {t("login.title")}
           </Link>
         </div>
       </section>
-      <p className="text-center text-sm text-muted">{t("landing.trialNote", { months: TRIAL_MONTHS })}</p>
-      <section className="grid gap-4 sm:grid-cols-3">
-        {PLANS.map((p) => (
-          <div key={p.key} className="card text-center">
-            <p className="eyebrow">{t(`plans.${p.key}`)}</p>
-            <p className="font-display mt-3 text-4xl">{p.price}</p>
-            <p className="text-sm text-muted">{t("plans.perMonth")}</p>
-          </div>
-        ))}
+      <section className="card mx-auto max-w-xl text-center">
+        <p className="font-display text-4xl">{t("landing.freeTitle")}</p>
+        <p className="mt-2 text-sm text-muted">{t("landing.freeNote")}</p>
       </section>
       <ul className="mx-auto grid max-w-3xl gap-2 text-ink sm:grid-cols-2">
         {(["noCommission", "unlimitedStaff", "calendar", "verifiedReviews", "ownClients"] as const).map((k) => (

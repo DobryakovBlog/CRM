@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Meer klanten voor je salon",
-      "subtitle": "Online agenda en klantreviews. Geen commissie, één vaste prijs voor het hele team.",
-      "start": "Probeer {months} maanden gratis",
+      "subtitle": "Online agenda en klantbeoordelingen. Gratis voor het hele team, zonder commissie.",
+      "start": "Gratis aanmelden",
       "features": {
         "noCommission": "0% commissie op klanten",
         "unlimitedStaff": "Onbeperkt aantal medewerkers",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restaurants",
         "title": "Je menukaart online, altijd actueel",
-        "text": "Publiceer je menukaart met prijzen en allergenen, in je eigen taal en in het Engels. Print de QR-code voor je tafels en pas prijzen op elk moment aan. De eerste 3 maanden zijn gratis.",
-        "cta": "Probeer 3 maanden gratis"
+        "text": "Publiceer je menukaart met prijzen en allergenen, in je eigen taal en in het Engels. Print de QR-code voor je tafels en pas prijzen op elk moment aan.",
+        "cta": "Gratis aanmelden"
       },
-      "trialNote": "De eerste {months} maanden zijn gratis. Geen kaart nodig om te beginnen."
-    },
-    "plans": {
-      "monthly": "Maandelijks",
-      "semiannual": "6 maanden",
-      "annual": "12 maanden",
-      "perMonth": "per maand + btw"
+      "freeTitle": "Gratis",
+      "freeNote": "Geen abonnement, geen commissie en geen kaart. Voor salons, barbiers en restaurants."
     },
     "login": {
       "title": "Inloggen",
@@ -325,14 +320,6 @@
       },
       "submit": "Insturen voor publicatie",
       "viewPublic": "Openbare pagina bekijken",
-      "subscription": "Abonnement",
-      "sub": {
-        "trial": "Gratis proefperiode tot {date}.",
-        "active": "Actief tot {date}.",
-        "past_due": "Betaling achterstallig sinds {date}.",
-        "cancelled": "Opgezegd op {date}.",
-        "complimentary": "Gratis van Astrabela tot {date}."
-      },
       "details": "Gegevens van de salon",
       "fields": {
         "name": "Naam",
@@ -417,45 +404,6 @@
       "reason": "Reden",
       "hide": "Review verbergen",
       "keep": "Behouden",
-      "subs": {
-        "title": "Abonnementen",
-        "hint": "Geef gratis maanden of stel de datum in tot wanneer het gratis abonnement loopt. Een cadeau begint als de tijd die de salon al heeft afloopt.",
-        "search": "Zoek op naam, plaats of fiscaal nummer",
-        "find": "Zoeken",
-        "empty": "Geen salons gevonden.",
-        "none": "Geen abonnement",
-        "manage": "Beheren",
-        "months": "Gratis maanden",
-        "monthsN": "{n, plural, one {# maand} other {# maanden}}",
-        "note": "Notitie (optioneel)",
-        "notePlaceholder": "Bijv. partner van het eerste uur",
-        "grant": "Geven",
-        "until": "Gratis tot",
-        "set": "Datum instellen",
-        "cancel": "Abonnement nu beëindigen",
-        "cancelHint": "De salon verdwijnt uit de zoekresultaten tot hij opnieuw een abonnement neemt.",
-        "saved": "Abonnement bijgewerkt.",
-        "invalid": "Kies een datum in de toekomst.",
-        "salonStatus": {
-          "draft": "Concept",
-          "pending": "In behandeling",
-          "active": "Gepubliceerd",
-          "suspended": "Opgeschort"
-        },
-        "status": {
-          "trial": "Proefperiode",
-          "active": "Actief",
-          "past_due": "Achterstallig",
-          "cancelled": "Opgezegd",
-          "complimentary": "Gratis"
-        },
-        "endsOn": "tot {date}",
-        "endedOn": "sinds {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restaurant"
-        }
-      },
       "title": "Beheer"
     },
     "menu": {

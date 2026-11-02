@@ -1,24 +1,18 @@
 import { and, asc, desc, eq, exists, gte, ilike, inArray, or, sql } from "drizzle-orm";
 import { placesIn } from "@/lib/cities";
 import type { Db } from "@/db";
-import { salons, services, staff, staffServices, subscriptions } from "@/db/schema";
+import { salons, services, staff, staffServices } from "@/db/schema";
 
 export type Category = (typeof services.category.enumValues)[number];
 export const CATEGORIES = services.category.enumValues;
 
 /**
- * A salon is listed only when it is approved, has a running subscription or trial,
- * and offers at least one bookable service (active service with an active master).
+ * A salon is listed when it is approved and offers at least one bookable service (active service with an active master).
  */
-export function listedCondition(now = new Date()) {
+export function listedCondition() {
   return and(
     eq(salons.kind, "salon"),
     eq(salons.status, "active"),
-    exists(
-      sql`(select 1 from ${subscriptions} where ${subscriptions.salonId} = ${salons.id}
-        and ${subscriptions.status} in ('trial', 'active', 'complimentary')
-        and ${subscriptions.currentPeriodEnd} >= ${now})`,
-    ),
     exists(
       sql`(select 1 from ${services}
         join ${staffServices} on ${staffServices.serviceId} = ${services.id}

@@ -6,8 +6,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import * as schema from "@/db/schema";
 import { menuItems, salons } from "@/db/schema";
 import type { Db } from "@/db";
-import { addMonths, registerSalonOwner } from "./auth";
-import { salonSubscription } from "./cabinet";
+import { registerSalonOwner } from "./auth";
 import { submitForReview } from "./cabinet";
 import { searchSalons } from "./catalog";
 import {
@@ -58,22 +57,6 @@ beforeEach(async () => {
 
 afterAll(async () => {
   await pool.end();
-});
-
-describe("pricing", () => {
-  it("gives salons and restaurants three free months", async () => {
-    const now = new Date("2026-10-31T10:00:00Z");
-    const { salon } = await registerSalonOwner(
-      db,
-      { name: "S", email: "s@test.pt", password: "secret123", salonName: "Salão", city: "lisboa", address: "Rua 2", phone: "" },
-      now,
-    );
-    const sub = await salonSubscription(db, salon.id);
-    expect(sub?.status).toBe("trial");
-    expect(sub?.currentPeriodEnd.toISOString()).toBe("2027-01-31T10:00:00.000Z");
-    expect(addMonths(new Date("2026-11-30T00:00:00Z"), 3).toISOString()).toBe("2027-02-28T00:00:00.000Z");
-    expect((await salonSubscription(db, restaurantId))?.status).toBe("trial");
-  });
 });
 
 describe("restaurant menu", () => {
@@ -137,14 +120,12 @@ describe("restaurant menu", () => {
     expect(likes.liked.has(item.id)).toBe(true);
   });
 
-  it("hides a restaurant whose trial ran out", async () => {
-    expect((await salonSubscription(db, restaurantId))?.status).toBe("trial");
+  it("stays listed with no subscription, since Astrabela is free", async () => {
+    expect(await db.execute(sql`select 1 from subscriptions where salon_id = ${restaurantId}`)).toMatchObject({ rowCount: 0 });
     const section = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
     await addDish(db, restaurantId, section.id, dish("Bacalhau", 14));
     await db.update(salons).set({ status: "active" }).where(eq(salons.id, restaurantId));
     expect(await restaurantBySlug(db, slug)).not.toBeNull();
-    await db.execute(sql`update subscriptions set current_period_end = now() - interval '1 day' where salon_id = ${restaurantId}`);
-    expect(await restaurantBySlug(db, slug)).toBeNull();
   });
 });
 

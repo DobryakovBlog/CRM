@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Më shumë klientë për sallonin tuaj",
-      "subtitle": "Kalendar online dhe vlerësime klientësh. Pa komision, një çmim fiks për gjithë ekipin.",
-      "start": "Provoni {months} muaj falas",
+      "subtitle": "Kalendar online dhe vlerësime nga klientët. Falas për të gjithë ekipin, pa komision.",
+      "start": "Bashkohuni falas",
       "features": {
         "noCommission": "0 % komision për klientët",
         "unlimitedStaff": "Punonjës pa kufi",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restorante",
         "title": "Menuja juaj online, gjithmonë e përditësuar",
-        "text": "Publikoni menunë me çmime dhe alergjenë në gjuhën tuaj dhe në anglisht. Printoni kodin QR për tavolinat dhe ndryshoni çmimet kur të doni. 3 muajt e parë janë falas.",
-        "cta": "Provoni 3 muaj falas"
+        "text": "Publikoni menunë me çmime dhe alergjenë në gjuhën tuaj dhe në anglisht. Printoni kodin QR për tavolinat dhe ndryshoni çmimet kur të doni.",
+        "cta": "Bashkohuni falas"
       },
-      "trialNote": "{months} muajt e parë janë falas. Nuk ju duhet kartë për të filluar."
-    },
-    "plans": {
-      "monthly": "Mujore",
-      "semiannual": "6 muaj",
-      "annual": "12 muaj",
-      "perMonth": "në muaj + TVSH"
+      "freeTitle": "Falas",
+      "freeNote": "Pa abonim, pa komision dhe pa kartë. Për sallone, berberë dhe restorante."
     },
     "login": {
       "title": "Hyrje",
@@ -325,14 +320,6 @@
       },
       "submit": "Dërgo për publikim",
       "viewPublic": "Shihni faqen publike",
-      "subscription": "Abonimi",
-      "sub": {
-        "trial": "Provë falas deri më {date}.",
-        "active": "Aktiv deri më {date}.",
-        "past_due": "Pagesë e vonuar që nga {date}.",
-        "cancelled": "Anuluar më {date}.",
-        "complimentary": "Falas nga Astrabela deri më {date}."
-      },
       "details": "Të dhënat e sallonit",
       "fields": {
         "name": "Emri",
@@ -417,45 +404,6 @@
       "reason": "Arsyeja",
       "hide": "Fshih vlerësimin",
       "keep": "Mbaje",
-      "subs": {
-        "title": "Abonimet",
-        "hint": "Dhuroni muaj falas ose caktoni datën deri kur vlen abonimi falas. Dhurata fillon kur mbaron koha që salloni ka tashmë.",
-        "search": "Kërkoni sipas emrit, qytetit ose NIPT",
-        "find": "Kërko",
-        "empty": "Nuk u gjet asnjë sallon.",
-        "none": "Pa abonim",
-        "manage": "Menaxho",
-        "months": "Muaj falas",
-        "monthsN": "{n, plural, one {# muaj} other {# muaj}}",
-        "note": "Shënim (sipas dëshirës)",
-        "notePlaceholder": "P.sh. partner themelues",
-        "grant": "Dhuro",
-        "until": "Falas deri më",
-        "set": "Cakto datën",
-        "cancel": "Mbyll abonimin tani",
-        "cancelHint": "Salloni del nga kërkimi deri në një abonim të ri.",
-        "saved": "Abonimi u përditësua.",
-        "invalid": "Zgjidhni një datë në të ardhmen.",
-        "salonStatus": {
-          "draft": "Draft",
-          "pending": "Në pritje",
-          "active": "I publikuar",
-          "suspended": "I pezulluar"
-        },
-        "status": {
-          "trial": "Provë",
-          "active": "Aktiv",
-          "past_due": "I vonuar",
-          "cancelled": "Anuluar",
-          "complimentary": "Falas"
-        },
-        "endsOn": "deri më {date}",
-        "endedOn": "që nga {date}",
-        "kind": {
-          "salon": "Sallon",
-          "restaurant": "Restorant"
-        }
-      },
       "title": "Administrimi"
     },
     "menu": {

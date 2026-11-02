@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Daugiau klientų Jūsų salonui",
-      "subtitle": "Kalendorius internete ir klientų atsiliepimai. Jokių komisinių, viena kaina visai komandai.",
-      "start": "Išbandykite {months} mėn. nemokamai",
+      "subtitle": "Internetinis kalendorius ir klientų atsiliepimai. Nemokamai visai komandai, be komisinių.",
+      "start": "Prisijunkite nemokamai",
       "features": {
         "noCommission": "0 % komisinių nuo klientų",
         "unlimitedStaff": "Neribotas darbuotojų skaičius",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restoranai",
         "title": "Jūsų meniu internete, visada aktualus",
-        "text": "Paskelbkite meniu su kainomis ir alergenais savo kalba ir anglų kalba. Atsispausdinkite QR kodą staliukams ir keiskite kainas bet kada. Pirmieji 3 mėnesiai nemokami.",
-        "cta": "Išbandykite 3 mėn. nemokamai"
+        "text": "Paskelbkite meniu su kainomis ir alergenais savo kalba ir anglų kalba. Atsispausdinkite QR kodą staliukams ir keiskite kainas bet kada.",
+        "cta": "Prisijunkite nemokamai"
       },
-      "trialNote": "Pirmieji {months} mėn. nemokami. Pradėti galima be kortelės."
-    },
-    "plans": {
-      "monthly": "Kas mėnesį",
-      "semiannual": "6 mėnesiai",
-      "annual": "12 mėnesių",
-      "perMonth": "per mėnesį + PVM"
+      "freeTitle": "Nemokamai",
+      "freeNote": "Be prenumeratos, be komisinių ir be kortelės. Salonams, barberiams ir restoranams."
     },
     "login": {
       "title": "Prisijungti",
@@ -325,14 +320,6 @@
       },
       "submit": "Pateikti paskelbti",
       "viewPublic": "Peržiūrėti viešą puslapį",
-      "subscription": "Prenumerata",
-      "sub": {
-        "trial": "Nemokamas laikotarpis iki {date}.",
-        "active": "Galioja iki {date}.",
-        "past_due": "Mokėjimas vėluoja nuo {date}.",
-        "cancelled": "Atšaukta {date}.",
-        "complimentary": "Astrabela dovana iki {date}."
-      },
       "details": "Salono duomenys",
       "fields": {
         "name": "Pavadinimas",
@@ -417,45 +404,6 @@
       "reason": "Priežastis",
       "hide": "Paslėpti atsiliepimą",
       "keep": "Palikti",
-      "subs": {
-        "title": "Prenumeratos",
-        "hint": "Dovanokite nemokamų mėnesių arba nustatykite datą, iki kurios galioja nemokama prenumerata. Dovana prasideda, kai baigiasi salono jau turimas laikas.",
-        "search": "Ieškoti pagal pavadinimą, miestą ar kodą",
-        "find": "Ieškoti",
-        "empty": "Salonų nerasta.",
-        "none": "Prenumeratos nėra",
-        "manage": "Valdyti",
-        "months": "Nemokami mėnesiai",
-        "monthsN": "{n, plural, one {# mėnuo} few {# mėnesiai} many {# mėnesio} other {# mėnesių}}",
-        "note": "Pastaba (neprivaloma)",
-        "notePlaceholder": "Pvz., partneris nuo pradžių",
-        "grant": "Dovanoti",
-        "until": "Nemokamai iki",
-        "set": "Nustatyti datą",
-        "cancel": "Baigti prenumeratą dabar",
-        "cancelHint": "Salonas dingsta iš paieškos, kol vėl užsiprenumeruos.",
-        "saved": "Prenumerata atnaujinta.",
-        "invalid": "Pasirinkite būsimą datą.",
-        "salonStatus": {
-          "draft": "Juodraštis",
-          "pending": "Laukia",
-          "active": "Paskelbtas",
-          "suspended": "Sustabdytas"
-        },
-        "status": {
-          "trial": "Bandomasis",
-          "active": "Aktyvi",
-          "past_due": "Vėluoja",
-          "cancelled": "Atšaukta",
-          "complimentary": "Nemokama"
-        },
-        "endsOn": "iki {date}",
-        "endedOn": "nuo {date}",
-        "kind": {
-          "salon": "Salonas",
-          "restaurant": "Restoranas"
-        }
-      },
       "title": "Administravimas"
     },
     "menu": {

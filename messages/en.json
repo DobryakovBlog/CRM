@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "More clients for your salon",
-      "subtitle": "Online calendar and client reviews. No commission, one flat price for the whole team.",
-      "start": "Try {months} months free",
+      "subtitle": "Online calendar and client reviews. Free for the whole team, no commission.",
+      "start": "Join for free",
       "features": {
         "noCommission": "0% commission on clients",
         "unlimitedStaff": "Unlimited staff",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restaurants",
         "title": "Your menu online, always up to date",
-        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time. The first 3 months are free.",
-        "cta": "Try 3 months free"
+        "text": "Publish your menu with prices and allergens in Portuguese and English. Print the QR code for your tables and change prices at any time.",
+        "cta": "Join for free"
       },
-      "trialNote": "The first {months} months are free. No card needed to start."
-    },
-    "plans": {
-      "monthly": "Monthly",
-      "semiannual": "6 months",
-      "annual": "12 months",
-      "perMonth": "per month + VAT"
+      "freeTitle": "Free",
+      "freeNote": "No subscription, no commission and no card. For salons, barbershops and restaurants."
     },
     "login": {
       "title": "Sign in",
@@ -325,14 +320,6 @@
       },
       "submit": "Submit for listing",
       "viewPublic": "View public page",
-      "subscription": "Subscription",
-      "sub": {
-        "trial": "Free trial until {date}.",
-        "active": "Active until {date}.",
-        "past_due": "Payment overdue since {date}.",
-        "cancelled": "Cancelled on {date}.",
-        "complimentary": "Free from Astrabela until {date}."
-      },
       "details": "Salon details",
       "fields": {
         "name": "Name",
@@ -417,45 +404,6 @@
       "reason": "Reason",
       "hide": "Hide review",
       "keep": "Keep",
-      "subs": {
-        "title": "Subscriptions",
-        "hint": "Give free months or set the date the free subscription runs until. A gift starts when the time the salon already has runs out.",
-        "search": "Search by name, city or NIF",
-        "find": "Search",
-        "empty": "No salons found.",
-        "none": "No subscription",
-        "manage": "Manage",
-        "months": "Free months",
-        "monthsN": "{n, plural, one {# month} other {# months}}",
-        "note": "Note (optional)",
-        "notePlaceholder": "E.g. founding partner",
-        "grant": "Give",
-        "until": "Free until",
-        "set": "Set date",
-        "cancel": "End subscription now",
-        "cancelHint": "The salon leaves search until it subscribes again.",
-        "saved": "Subscription updated.",
-        "invalid": "Choose a future date.",
-        "salonStatus": {
-          "draft": "Draft",
-          "pending": "Pending",
-          "active": "Listed",
-          "suspended": "Suspended"
-        },
-        "status": {
-          "trial": "Trial",
-          "active": "Active",
-          "past_due": "Overdue",
-          "cancelled": "Cancelled",
-          "complimentary": "Free"
-        },
-        "endsOn": "until {date}",
-        "endedOn": "since {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restaurant"
-        }
-      },
       "title": "Admin"
     },
     "menu": {

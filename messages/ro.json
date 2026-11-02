@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Mai mulți clienți pentru salonul dvs.",
-      "subtitle": "Calendar online și recenzii ale clienților. Fără comisioane, un preț fix pentru toată echipa.",
-      "start": "Încercați gratuit {months} luni",
+      "subtitle": "Calendar online și recenzii ale clienților. Gratuit pentru toată echipa, fără comision.",
+      "start": "Înscrieți-vă gratuit",
       "features": {
         "noCommission": "0 % comision din clienți",
         "unlimitedStaff": "Număr nelimitat de angajați",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restaurante",
         "title": "Meniul dvs. online, mereu actualizat",
-        "text": "Publicați meniul cu prețuri și alergeni în limba dvs. și în engleză. Tipăriți un cod QR pentru mese și schimbați prețurile oricând doriți. Primele 3 luni sunt gratuite.",
-        "cta": "Încercați gratuit 3 luni"
+        "text": "Publicați meniul cu prețuri și alergeni în limba dvs. și în engleză. Tipăriți un cod QR pentru mese și schimbați prețurile oricând doriți.",
+        "cta": "Înscrieți-vă gratuit"
       },
-      "trialNote": "Primele {months} luni sunt gratuite. Nu aveți nevoie de card pentru a începe."
-    },
-    "plans": {
-      "monthly": "Lunar",
-      "semiannual": "6 luni",
-      "annual": "12 luni",
-      "perMonth": "pe lună + TVA"
+      "freeTitle": "Gratuit",
+      "freeNote": "Fără abonament, fără comision și fără card. Pentru saloane, frizerii și restaurante."
     },
     "login": {
       "title": "Autentificare",
@@ -325,14 +320,6 @@
       },
       "submit": "Trimite spre publicare",
       "viewPublic": "Vezi pagina publică",
-      "subscription": "Abonament",
-      "sub": {
-        "trial": "Perioadă de probă gratuită până la {date}.",
-        "active": "Activ până la {date}.",
-        "past_due": "Plată restantă din {date}.",
-        "cancelled": "Anulat pe {date}.",
-        "complimentary": "Gratuit din partea Astrabela până la {date}."
-      },
       "details": "Datele salonului",
       "fields": {
         "name": "Denumire",
@@ -417,45 +404,6 @@
       "reason": "Motiv",
       "hide": "Ascunde recenzia",
       "keep": "Păstrează",
-      "subs": {
-        "title": "Abonamente",
-        "hint": "Oferiți luni gratuite sau stabiliți data până la care abonamentul gratuit este valabil. Cadoul începe când se termină perioada pe care salonul o are deja.",
-        "search": "Căutare după nume, localitate sau cod fiscal",
-        "find": "Caută",
-        "empty": "Niciun salon găsit.",
-        "none": "Fără abonament",
-        "manage": "Gestionează",
-        "months": "Luni gratuite",
-        "monthsN": "{n, plural, one {# lună} few {# luni} other {# de luni}}",
-        "note": "Notă (opțional)",
-        "notePlaceholder": "De ex. partener fondator",
-        "grant": "Oferă",
-        "until": "Gratuit până la",
-        "set": "Setează data",
-        "cancel": "Încheie abonamentul acum",
-        "cancelHint": "Salonul dispare din căutare până la un nou abonament.",
-        "saved": "Abonament actualizat.",
-        "invalid": "Alegeți o dată din viitor.",
-        "salonStatus": {
-          "draft": "Ciornă",
-          "pending": "În așteptare",
-          "active": "Publicat",
-          "suspended": "Suspendat"
-        },
-        "status": {
-          "trial": "Probă",
-          "active": "Activ",
-          "past_due": "Restant",
-          "cancelled": "Anulat",
-          "complimentary": "Gratuit"
-        },
-        "endsOn": "până la {date}",
-        "endedOn": "din {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restaurant"
-        }
-      },
       "title": "Administrare"
     },
     "menu": {

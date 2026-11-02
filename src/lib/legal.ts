@@ -22,36 +22,6 @@ function who() {
 
 import type { Locale } from "@/i18n/routing";
 
-const PRICES = {
-  pt: ["12,99 € por mês, com pagamento mensal;", "10,99 € por mês, com pagamento semestral;", "9,99 € por mês, com pagamento anual."],
-  en: ["€12.99 a month, billed monthly;", "€10.99 a month, billed every 6 months;", "€9.99 a month, billed yearly."],
-  es: ["12,99 € al mes, con pago mensual;", "10,99 € al mes, con pago semestral;", "9,99 € al mes, con pago anual."],
-  fr: ["12,99 € par mois, en paiement mensuel ;", "10,99 € par mois, en paiement semestriel ;", "9,99 € par mois, en paiement annuel."],
-  it: ["12,99 € al mese, con pagamento mensile;", "10,99 € al mese, con pagamento semestrale;", "9,99 € al mese, con pagamento annuale."],
-  de: ["12,99 € pro Monat bei monatlicher Zahlung;", "10,99 € pro Monat bei halbjährlicher Zahlung;", "9,99 € pro Monat bei jährlicher Zahlung."],
-  nl: ["€ 12,99 per maand bij maandelijkse betaling;", "€ 10,99 per maand bij halfjaarlijkse betaling;", "€ 9,99 per maand bij jaarlijkse betaling."],
-  pl: ["12,99 € miesięcznie przy płatności miesięcznej;", "10,99 € miesięcznie przy płatności co 6 miesięcy;", "9,99 € miesięcznie przy płatności rocznej."],
-  cs: ["12,99 € měsíčně při měsíční platbě;", "10,99 € měsíčně při platbě na 6 měsíců;", "9,99 € měsíčně při roční platbě."],
-  sk: ["12,99 € mesačne pri mesačnej platbe;", "10,99 € mesačne pri platbe na 6 mesiacov;", "9,99 € mesačne pri ročnej platbe."],
-  hu: ["havi 12,99 € havi fizetés esetén;", "havi 10,99 € féléves fizetés esetén;", "havi 9,99 € éves fizetés esetén."],
-  sl: ["12,99 € na mesec pri mesečnem plačilu;", "10,99 € na mesec pri plačilu za 6 mesecev;", "9,99 € na mesec pri letnem plačilu."],
-  hr: ["12,99 € mjesečno uz mjesečno plaćanje;", "10,99 € mjesečno uz plaćanje za 6 mjeseci;", "9,99 € mjesečno uz godišnje plaćanje."],
-  ro: ["12,99 € pe lună cu plată lunară;", "10,99 € pe lună cu plată la 6 luni;", "9,99 € pe lună cu plată anuală."],
-  bg: ["12,99 € на месец при месечно плащане;", "10,99 € на месец при плащане за 6 месеца;", "9,99 € на месец при годишно плащане."],
-  da: ["12,99 € om måneden ved månedlig betaling;", "10,99 € om måneden ved betaling for 6 måneder;", "9,99 € om måneden ved årlig betaling."],
-  sv: ["12,99 € per månad vid månadsbetalning;", "10,99 € per månad vid betalning för 6 månader;", "9,99 € per månad vid årsbetalning."],
-  nb: ["12,99 € per måned ved månedlig betaling;", "10,99 € per måned ved betaling for 6 måneder;", "9,99 € per måned ved årlig betaling."],
-  fi: ["12,99 € kuukaudessa kuukausimaksulla;", "10,99 € kuukaudessa 6 kuukauden maksulla;", "9,99 € kuukaudessa vuosimaksulla."],
-  et: ["12,99 € kuus igakuise maksega;", "10,99 € kuus 6 kuu maksega;", "9,99 € kuus aastamaksega."],
-  lv: ["12,99 € mēnesī, maksājot katru mēnesi;", "10,99 € mēnesī, maksājot par 6 mēnešiem;", "9,99 € mēnesī, maksājot par gadu."],
-  lt: ["12,99 € per mėnesį mokant kas mėnesį;", "10,99 € per mėnesį mokant už 6 mėnesius;", "9,99 € per mėnesį mokant už metus."],
-  el: ["12,99 € τον μήνα με μηνιαία πληρωμή·", "10,99 € τον μήνα με πληρωμή για 6 μήνες·", "9,99 € τον μήνα με ετήσια πληρωμή."],
-  uk: ["12,99 € на місяць при щомісячній оплаті;", "10,99 € на місяць при оплаті за 6 місяців;", "9,99 € на місяць при оплаті за рік."],
-  sq: ["12,99 € në muaj me pagesë mujore;", "10,99 € në muaj me pagesë për 6 muaj;", "9,99 € në muaj me pagesë vjetore."],
-  mk: ["12,99 € месечно со месечно плаќање;", "10,99 € месечно со плаќање за 6 месеци;", "9,99 € месечно со годишно плаќање."],
-  sr: ["12,99 € mesečno uz mesečno plaćanje;", "10,99 € mesečno uz plaćanje za 6 meseci;", "9,99 € mesečno uz godišnje plaćanje."],
-  is: ["12,99 € á mánuði með mánaðarlegri greiðslu;", "10,99 € á mánuði þegar greitt er fyrir 6 mánuði;", "9,99 € á mánuði þegar greitt er fyrir árið."],
-};
 
 export function privacyPolicy(locale: Locale): LegalDoc {
   const o = operator();
@@ -341,16 +311,13 @@ export function termsOfUse(locale: Locale): LegalDoc {
               "The information in your profile, prices and menu must be true and kept up to date. You are responsible for it and for the services you provide.",
               "Keep your password secret; you are responsible for activity in your account.",
               "Do not create fake bookings, reviews or invitations, and do not ask for reviews in exchange for rewards.",
-              "Only listings with an active subscription or free period appear in search.",
             ],
           ],
         },
         {
           title: "5. Prices",
           body: [
-            "For salons, barbershops and restaurants the first 3 months are free and no card is needed to start. After that, staying listed needs a subscription:",
-            PRICES.en,
-            "Payment terms are shown before any charge. We may change prices with at least 30 days' notice; the change applies from your next billing period.",
+            "Astrabela is free for salons, barbershops and restaurants: no subscription, no commission and no card.",
           ],
         },
         {
@@ -432,16 +399,13 @@ export function termsOfUse(locale: Locale): LegalDoc {
             "A informação do perfil, os preços e o menu devem ser verdadeiros e estar atualizados. É responsável por eles e pelos serviços que presta.",
             "Mantenha a palavra-passe em segredo; é responsável pela atividade na sua conta.",
             "Não crie marcações, avaliações ou pedidos de avaliação falsos, nem peça avaliações em troca de recompensas.",
-            "Só aparecem na pesquisa os perfis com subscrição ativa ou período gratuito.",
           ],
         ],
       },
       {
         title: "5. Preços",
         body: [
-          "Para salões, barbearias e restaurantes, os primeiros 3 meses são grátis e não é preciso cartão para começar. Depois, para continuar visível é necessária uma subscrição:",
-          PRICES.pt,
-          "As condições de pagamento são apresentadas antes de qualquer cobrança. Podemos alterar os preços com pelo menos 30 dias de aviso; a alteração aplica-se a partir do período de faturação seguinte.",
+          "A Astrabela é gratuita para salões, barbearias e restaurantes: sem subscrição, sem comissões e sem cartão.",
         ],
       },
       {
@@ -623,16 +587,13 @@ function termsEs(): LegalDoc {
             "La información del perfil, los precios y la carta deben ser veraces y estar actualizados. Eres responsable de ellos y de los servicios que prestas.",
             "Mantén la contraseña en secreto; eres responsable de la actividad en tu cuenta.",
             "No crees reservas, valoraciones ni peticiones de valoración falsas, ni pidas valoraciones a cambio de recompensas.",
-            "Solo aparecen en la búsqueda los perfiles con suscripción activa o periodo gratuito.",
           ],
         ],
       },
       {
         title: "5. Precios",
         body: [
-          "Para salones, barberías y restaurantes los 3 primeros meses son gratis y no hace falta tarjeta para empezar. Después, para seguir visible se necesita una suscripción:",
-          PRICES.es,
-          "Las condiciones de pago se muestran antes de cualquier cobro. Podemos cambiar los precios con al menos 30 días de aviso; el cambio se aplica desde el siguiente periodo de facturación.",
+          "Astrabela es gratuita para salones, barberías y restaurantes: sin suscripción, sin comisiones y sin tarjeta.",
         ],
       },
       {
@@ -814,16 +775,13 @@ function termsFr(): LegalDoc {
             "Les informations du profil, les prix et la carte doivent être exacts et à jour. Vous en êtes responsable, ainsi que des prestations que vous fournissez.",
             "Gardez votre mot de passe secret ; vous êtes responsable de l'activité de votre compte.",
             "Ne créez pas de fausses réservations, de faux avis ni de fausses demandes d'avis, et ne demandez pas d'avis en échange d'une récompense.",
-            "Seuls les profils avec un abonnement actif ou une période gratuite apparaissent dans la recherche.",
           ],
         ],
       },
       {
         title: "5. Tarifs",
         body: [
-          "Pour les salons, barbiers et restaurants, les 3 premiers mois sont gratuits, sans carte bancaire pour commencer. Ensuite, un abonnement est nécessaire pour rester visible :",
-          PRICES.fr,
-          "Les conditions de paiement sont affichées avant tout prélèvement. Nous pouvons modifier les prix avec un préavis d'au moins 30 jours ; le changement s'applique à partir de la période de facturation suivante.",
+          "Astrabela est gratuit pour les salons, barbiers et restaurants : sans abonnement, sans commission et sans carte bancaire.",
         ],
       },
       {
@@ -1005,16 +963,13 @@ function termsIt(): LegalDoc {
             "Le informazioni del profilo, i prezzi e il menu devono essere veritieri e aggiornati. Ne sei responsabile, come dei servizi che fornisci.",
             "Mantieni segreta la password; sei responsabile dell'attività nel tuo account.",
             "Non creare prenotazioni, recensioni o richieste di recensione false, e non chiedere recensioni in cambio di premi.",
-            "Nella ricerca compaiono solo i profili con un abbonamento attivo o un periodo gratuito.",
           ],
         ],
       },
       {
         title: "5. Prezzi",
         body: [
-          "Per saloni, barbieri e ristoranti i primi 3 mesi sono gratuiti e non serve una carta per iniziare. Dopo, per restare visibili serve un abbonamento:",
-          PRICES.it,
-          "Le condizioni di pagamento sono mostrate prima di qualsiasi addebito. Possiamo cambiare i prezzi con almeno 30 giorni di preavviso; il cambio si applica dal periodo di fatturazione successivo.",
+          "Astrabela è gratuita per saloni, barbieri e ristoranti: nessun abbonamento, nessuna commissione e nessuna carta.",
         ],
       },
       {
@@ -1196,16 +1151,13 @@ function termsDe(): LegalDoc {
             "Profilangaben, Preise und Speisekarte müssen wahr und aktuell sein. Sie sind dafür und für Ihre Leistungen verantwortlich.",
             "Halten Sie Ihr Passwort geheim; Sie sind für die Aktivitäten in Ihrem Konto verantwortlich.",
             "Erstellen Sie keine gefälschten Buchungen, Bewertungen oder Bewertungsanfragen und bitten Sie nicht gegen Belohnung um Bewertungen.",
-            "In der Suche erscheinen nur Profile mit aktivem Abonnement oder kostenlosem Zeitraum.",
           ],
         ],
       },
       {
         title: "5. Preise",
         body: [
-          "Für Salons, Barbershops und Restaurants sind die ersten 3 Monate kostenlos, ohne Karte zum Start. Danach ist für die Sichtbarkeit ein Abonnement nötig:",
-          PRICES.de,
-          "Die Zahlungsbedingungen werden vor jeder Abbuchung angezeigt. Wir können die Preise mit mindestens 30 Tagen Vorankündigung ändern; die Änderung gilt ab dem nächsten Abrechnungszeitraum.",
+          "Astrabela ist für Salons, Barbershops und Restaurants kostenlos: kein Abo, keine Provision, keine Karte.",
         ],
       },
       {
@@ -1387,16 +1339,13 @@ function termsNl(): LegalDoc {
             "Profielgegevens, prijzen en menukaart moeten juist en actueel zijn. Je bent daarvoor en voor je diensten verantwoordelijk.",
             "Houd je wachtwoord geheim; je bent verantwoordelijk voor wat er in je account gebeurt.",
             "Maak geen nepboekingen, nepreviews of nepverzoeken om reviews, en vraag niet om reviews in ruil voor een beloning.",
-            "Alleen profielen met een actief abonnement of gratis periode verschijnen in de zoekresultaten.",
           ],
         ],
       },
       {
         title: "5. Prijzen",
         body: [
-          "Voor salons, barbershops en restaurants zijn de eerste 3 maanden gratis, zonder kaart om te beginnen. Daarna is een abonnement nodig om zichtbaar te blijven:",
-          PRICES.nl,
-          "De betalingsvoorwaarden worden vóór elke afschrijving getoond. We kunnen de prijzen wijzigen met minstens 30 dagen vooraankondiging; de wijziging geldt vanaf de volgende betaalperiode.",
+          "Astrabela is gratis voor salons, barbiers en restaurants: geen abonnement, geen commissie en geen kaart.",
         ],
       },
       {
@@ -1578,16 +1527,13 @@ function termsPl(): LegalDoc {
             "Dane profilu, ceny i menu muszą być prawdziwe i aktualne. Odpowiadasz za nie i za swoje usługi.",
             "Chroń swoje hasło; odpowiadasz za działania na swoim koncie.",
             "Nie twórz fałszywych rezerwacji, opinii ani próśb o opinie i nie proś o opinie w zamian za nagrodę.",
-            "W wyszukiwaniu pojawiają się tylko profile z aktywną subskrypcją lub w okresie bezpłatnym.",
           ],
         ],
       },
       {
         title: "5. Ceny",
         body: [
-          "Dla salonów, barberów i restauracji pierwsze 3 miesiące są bezpłatne, bez karty na start. Potem do bycia widocznym potrzebna jest subskrypcja:",
-          PRICES.pl,
-          "Warunki płatności są pokazywane przed każdym obciążeniem. Możemy zmienić ceny z co najmniej 30-dniowym wyprzedzeniem; zmiana obowiązuje od następnego okresu rozliczeniowego.",
+          "Astrabela jest bezpłatna dla salonów, barberów i restauracji: bez abonamentu, bez prowizji i bez karty.",
         ],
       },
       {
@@ -1769,16 +1715,13 @@ function termsCs(): LegalDoc {
             "Údaje v profilu, ceny a menu musí být pravdivé a aktuální. Odpovídáte za ně i za své služby.",
             "Chraňte své heslo; odpovídáte za činnost ve svém účtu.",
             "Nevytvářejte falešné rezervace, hodnocení ani žádosti o hodnocení a nežádejte o hodnocení výměnou za odměnu.",
-            "Ve vyhledávání se zobrazují pouze profily s aktivním předplatným nebo ve zkušebním období.",
           ],
         ],
       },
       {
         title: "5. Ceny",
         body: [
-          "Pro salony, barbershopy a restaurace jsou první 3 měsíce zdarma, bez karty na začátek. Poté je pro zobrazení potřeba předplatné:",
-          PRICES.cs,
-          "Platební podmínky se zobrazí před každou platbou. Ceny můžeme změnit s alespoň 30denním předstihem; změna platí od dalšího zúčtovacího období.",
+          "Astrabela je pro salony, barbershopy a restaurace zdarma: bez předplatného, bez provize a bez karty.",
         ],
       },
       {
@@ -1960,16 +1903,13 @@ function termsSk(): LegalDoc {
             "Údaje v profile, ceny a menu musia byť pravdivé a aktuálne. Zodpovedáte za ne aj za svoje služby.",
             "Chráňte svoje heslo; zodpovedáte za činnosť vo svojom účte.",
             "Nevytvárajte falošné rezervácie, hodnotenia ani žiadosti o hodnotenie a nežiadajte o hodnotenia výmenou za odmenu.",
-            "Vo vyhľadávaní sa zobrazujú iba profily s aktívnym predplatným alebo v skúšobnom období.",
           ],
         ],
       },
       {
         title: "5. Ceny",
         body: [
-          "Pre salóny, barbershopy a reštaurácie sú prvé 3 mesiace zadarmo, bez karty na začiatok. Potom je na zobrazenie potrebné predplatné:",
-          PRICES.sk,
-          "Platobné podmienky sa zobrazia pred každou platbou. Ceny môžeme zmeniť s aspoň 30-dňovým predstihom; zmena platí od ďalšieho zúčtovacieho obdobia.",
+          "Astrabela je pre salóny, barbershopy a reštaurácie zadarmo: bez predplatného, bez provízie a bez karty.",
         ],
       },
       {
@@ -2151,16 +2091,13 @@ function termsHu(): LegalDoc {
             "A profil adatainak, az áraknak és az étlapnak valósnak és naprakésznek kell lenniük. Felelsz értük és a szolgáltatásaidért.",
             "Védd a jelszavadat; felelsz a fiókodban végzett tevékenységért.",
             "Ne hozz létre hamis foglalásokat, értékeléseket vagy értékeléskéréseket, és ne kérj értékelést jutalomért cserébe.",
-            "A keresésben csak az aktív előfizetéssel vagy próbaidőszakban lévő profilok jelennek meg.",
           ],
         ],
       },
       {
         title: "5. Árak",
         body: [
-          "Szalonok, borbélyok és éttermek számára az első 3 hónap ingyenes, az induláshoz nem kell bankkártya. Utána a megjelenéshez előfizetés szükséges:",
-          PRICES.hu,
-          "A fizetési feltételeket minden terhelés előtt megmutatjuk. Az árakat legalább 30 nappal előre jelezve módosíthatjuk; a változás a következő számlázási időszaktól érvényes.",
+          "Az Astrabela ingyenes a szalonok, borbélyok és éttermek számára: nincs előfizetés, nincs jutalék, nincs bankkártya.",
         ],
       },
       {
@@ -2342,16 +2279,13 @@ function termsSl(): LegalDoc {
             "Podatki v profilu, cene in jedilnik morajo biti resnični in posodobljeni. Zanje in za svoje storitve odgovarjate vi.",
             "Varujte svoje geslo; odgovarjate za dejavnosti v svojem računu.",
             "Ne ustvarjajte lažnih rezervacij, ocen ali prošenj za oceno in ne prosite za ocene v zameno za nagrado.",
-            "V iskanju se prikažejo le profili z aktivno naročnino ali v preizkusnem obdobju.",
           ],
         ],
       },
       {
         title: "5. Cene",
         body: [
-          "Za salone, brivnice in restavracije so prvi 3 meseci brezplačni, za začetek brez kartice. Nato je za prikaz potrebna naročnina:",
-          PRICES.sl,
-          "Plačilni pogoji so prikazani pred vsakim plačilom. Cene lahko spremenimo z vsaj 30-dnevnim obvestilom; sprememba velja od naslednjega obračunskega obdobja.",
+          "Astrabela je za salone, brivnice in restavracije brezplačna: brez naročnine, brez provizije in brez kartice.",
         ],
       },
       {
@@ -2533,16 +2467,13 @@ function termsHr(): LegalDoc {
             "Podaci u profilu, cijene i jelovnik moraju biti istiniti i ažurni. Za njih i za svoje usluge odgovarate vi.",
             "Čuvajte svoju lozinku; odgovarate za aktivnosti na svom računu.",
             "Ne izrađujte lažne rezervacije, ocjene ni zahtjeve za ocjenu i ne tražite ocjene u zamjenu za nagradu.",
-            "U pretraživanju se prikazuju samo profili s aktivnom pretplatom ili u probnom razdoblju.",
           ],
         ],
       },
       {
         title: "5. Cijene",
         body: [
-          "Za salone, brijačnice i restorane prva 3 mjeseca su besplatna, bez kartice za početak. Nakon toga za prikazivanje je potrebna pretplata:",
-          PRICES.hr,
-          "Uvjeti plaćanja prikazuju se prije svake naplate. Cijene možemo promijeniti uz najavu od najmanje 30 dana; promjena vrijedi od sljedećeg obračunskog razdoblja.",
+          "Astrabela je besplatna za salone, brijačnice i restorane: bez pretplate, bez provizije i bez kartice.",
         ],
       },
       {
@@ -2724,16 +2655,13 @@ function termsRo(): LegalDoc {
             "Datele din profil, prețurile și meniul trebuie să fie corecte și actualizate. Dvs. răspundeți pentru ele și pentru serviciile dvs.",
             "Păstrați-vă parola în siguranță; răspundeți pentru activitatea din contul dvs.",
             "Nu creați programări, recenzii sau cereri de recenzie false și nu cereți recenzii în schimbul unei recompense.",
-            "În căutare apar doar profilurile cu abonament activ sau aflate în perioada de probă.",
           ],
         ],
       },
       {
         title: "5. Prețuri",
         body: [
-          "Pentru saloane, frizerii și restaurante primele 3 luni sunt gratuite, fără card la început. După aceea, pentru a fi afișat este necesar un abonament:",
-          PRICES.ro,
-          "Condițiile de plată sunt afișate înainte de fiecare debitare. Putem modifica prețurile cu un preaviz de cel puțin 30 de zile; modificarea se aplică de la următoarea perioadă de facturare.",
+          "Astrabela este gratuită pentru saloane, frizerii și restaurante: fără abonament, fără comision și fără card.",
         ],
       },
       {
@@ -2915,16 +2843,13 @@ function termsBg(): LegalDoc {
             "Данните в профила, цените и менюто трябва да са верни и актуални. Вие отговаряте за тях и за своите услуги.",
             "Пазете паролата си; отговаряте за действията в своя профил.",
             "Не създавайте фалшиви записвания, отзиви или покани за отзив и не искайте отзиви срещу награда.",
-            "В търсенето се показват само профили с активен абонамент или в пробен период.",
           ],
         ],
       },
       {
         title: "5. Цени",
         body: [
-          "За салони, бръснарници и ресторанти първите 3 месеца са безплатни, без карта за начало. След това за показване е необходим абонамент:",
-          PRICES.bg,
-          "Условията за плащане се показват преди всяко таксуване. Можем да променим цените с предизвестие от поне 30 дни; промяната важи от следващия период на фактуриране.",
+          "Astrabela е безплатна за салони, бръснарници и ресторанти: без абонамент, без комисиона и без карта.",
         ],
       },
       {
@@ -3106,16 +3031,13 @@ function termsDa(): LegalDoc {
             "Oplysninger i profilen, priser og menu skal være korrekte og opdaterede. Du er ansvarlig for dem og for dine ydelser.",
             "Pas på din adgangskode; du er ansvarlig for aktiviteten på din konto.",
             "Opret ikke falske bookinger, anmeldelser eller anmodninger om anmeldelser, og bed ikke om anmeldelser mod en belønning.",
-            "Kun profiler med aktivt abonnement eller i prøveperioden vises i søgningen.",
           ],
         ],
       },
       {
         title: "5. Priser",
         body: [
-          "For saloner, barbershops og restauranter er de første 3 måneder gratis, uden kort for at komme i gang. Derefter kræver det et abonnement at blive vist:",
-          PRICES.da,
-          "Betalingsbetingelserne vises før hver opkrævning. Vi kan ændre priserne med mindst 30 dages varsel; ændringen gælder fra næste faktureringsperiode.",
+          "Astrabela er gratis for saloner, barberer og restauranter: intet abonnement, ingen kommission og intet kort.",
         ],
       },
       {
@@ -3297,16 +3219,13 @@ function termsSv(): LegalDoc {
             "Uppgifter i profilen, priser och meny ska vara korrekta och aktuella. Du ansvarar för dem och för dina tjänster.",
             "Skydda ditt lösenord; du ansvarar för aktiviteten på ditt konto.",
             "Skapa inte falska bokningar, omdömen eller förfrågningar om omdömen och be inte om omdömen mot en belöning.",
-            "Bara profiler med aktivt abonnemang eller under provperioden visas i sökningen.",
           ],
         ],
       },
       {
         title: "5. Priser",
         body: [
-          "För salonger, barberare och restauranger är de första 3 månaderna gratis, utan kort för att komma igång. Därefter krävs ett abonnemang för att synas:",
-          PRICES.sv,
-          "Betalningsvillkoren visas före varje debitering. Vi kan ändra priserna med minst 30 dagars varsel; ändringen gäller från nästa faktureringsperiod.",
+          "Astrabela är gratis för salonger, barberare och restauranger: ingen prenumeration, ingen provision och inget kort.",
         ],
       },
       {
@@ -3488,16 +3407,13 @@ function termsNb(): LegalDoc {
             "Opplysninger i profilen, priser og meny skal være riktige og oppdaterte. Du er ansvarlig for dem og for tjenestene dine.",
             "Ta vare på passordet ditt; du er ansvarlig for aktiviteten på kontoen din.",
             "Ikke lag falske bestillinger, anmeldelser eller forespørsler om anmeldelser, og ikke be om anmeldelser mot en belønning.",
-            "Bare profiler med aktivt abonnement eller i prøveperioden vises i søket.",
           ],
         ],
       },
       {
         title: "5. Priser",
         body: [
-          "For salonger, barbersjapper og restauranter er de første 3 månedene gratis, uten kort for å komme i gang. Deretter kreves et abonnement for å bli vist:",
-          PRICES.nb,
-          "Betalingsvilkårene vises før hver belastning. Vi kan endre prisene med minst 30 dagers varsel; endringen gjelder fra neste faktureringsperiode.",
+          "Astrabela er gratis for salonger, barberere og restauranter: ingen abonnement, ingen provisjon og ikke noe kort.",
         ],
       },
       {
@@ -3679,16 +3595,13 @@ function termsFi(): LegalDoc {
             "Profiilin tietojen, hintojen ja ruokalistan on oltava oikeita ja ajan tasalla. Vastaat niistä ja palveluistasi.",
             "Pidä salasanasi tallessa; vastaat tililläsi tapahtuvasta toiminnasta.",
             "Älä luo vääriä varauksia, arvioita tai arviopyyntöjä äläkä pyydä arvioita palkkiota vastaan.",
-            "Haussa näytetään vain profiilit, joilla on voimassa oleva tilaus tai kokeilujakso.",
           ],
         ],
       },
       {
         title: "5. Hinnat",
         body: [
-          "Liikkeille, parturiliikkeille ja ravintoloille 3 ensimmäistä kuukautta ovat maksuttomia, eikä aloittamiseen tarvita korttia. Sen jälkeen näkyminen edellyttää tilausta:",
-          PRICES.fi,
-          "Maksuehdot näytetään ennen jokaista veloitusta. Voimme muuttaa hintoja vähintään 30 päivän ilmoitusajalla; muutos koskee seuraavaa laskutuskautta.",
+          "Astrabela on ilmainen kampaamoille, parturiliikkeille ja ravintoloille: ei tilausta, ei provisiota eikä korttia.",
         ],
       },
       {
@@ -3870,16 +3783,13 @@ function termsEt(): LegalDoc {
             "Profiili andmed, hinnad ja menüü peavad olema õiged ja ajakohased. Vastutad nende ja oma teenuste eest.",
             "Hoia oma parool turvaliselt; vastutad oma kontol toimuva eest.",
             "Ära loo võltsbroneeringuid, -arvustusi ega -arvustuse palveid ega küsi arvustusi tasu eest.",
-            "Otsingus kuvatakse ainult aktiivse tellimuse või prooviperioodiga profiile.",
           ],
         ],
       },
       {
         title: "5. Hinnad",
         body: [
-          "Salongidele, barbershoppidele ja restoranidele on esimesed 3 kuud tasuta, alustamiseks pole kaarti vaja. Seejärel on nähtavaks jäämiseks vaja tellimust:",
-          PRICES.et,
-          "Maksetingimused kuvatakse enne iga makset. Võime hindu muuta vähemalt 30-päevase etteteatamisega; muudatus kehtib järgmisest arveldusperioodist.",
+          "Astrabela on salongidele, juuksuritele ja restoranidele tasuta: ilma tellimuse, vahendustasu ja kaardita.",
         ],
       },
       {
@@ -4061,16 +3971,13 @@ function termsLv(): LegalDoc {
             "Profila dati, cenas un ēdienkarte jābūt patiesiem un aktuāliem. Jūs atbildat par tiem un saviem pakalpojumiem.",
             "Glabājiet paroli drošībā; Jūs atbildat par darbībām savā kontā.",
             "Neveidojiet viltotus pierakstus, atsauksmes vai atsauksmju lūgumus un neprasiet atsauksmes apmaiņā pret atlīdzību.",
-            "Meklēšanā tiek rādīti tikai profili ar aktīvu abonementu vai izmēģinājuma periodā.",
           ],
         ],
       },
       {
         title: "5. Cenas",
         body: [
-          "Saloniem, bārddziņiem un restorāniem pirmie 3 mēneši ir bez maksas, sākumam nav vajadzīga karte. Pēc tam, lai būtu redzams, nepieciešams abonements:",
-          PRICES.lv,
-          "Maksājuma nosacījumi tiek parādīti pirms katras iekasēšanas. Mēs varam mainīt cenas, brīdinot vismaz 30 dienas iepriekš; izmaiņas stājas spēkā no nākamā norēķinu perioda.",
+          "Astrabela ir bez maksas saloniem, bārddziņiem un restorāniem: bez abonementa, bez komisijas un bez kartes.",
         ],
       },
       {
@@ -4252,16 +4159,13 @@ function termsLt(): LegalDoc {
             "Profilio duomenys, kainos ir meniu turi būti teisingi ir aktualūs. Už juos ir savo paslaugas atsakote Jūs.",
             "Saugokite slaptažodį; už veiksmus savo paskyroje atsakote Jūs.",
             "Nekurkite netikrų registracijų, atsiliepimų ar atsiliepimų prašymų ir neprašykite atsiliepimų už atlygį.",
-            "Paieškoje rodomi tik profiliai su aktyvia prenumerata arba bandomuoju laikotarpiu.",
           ],
         ],
       },
       {
         title: "5. Kainos",
         body: [
-          "Salonams, barbershopams ir restoranams pirmieji 3 mėnesiai nemokami, pradėti galima be kortelės. Vėliau, kad profilis būtų matomas, reikia prenumeratos:",
-          PRICES.lt,
-          "Mokėjimo sąlygos rodomos prieš kiekvieną nuskaitymą. Kainas galime keisti įspėję bent prieš 30 dienų; pakeitimai galioja nuo kito atsiskaitymo laikotarpio.",
+          "Astrabela salonams, barberiams ir restoranams yra nemokama: be prenumeratos, be komisinių ir be kortelės.",
         ],
       },
       {
@@ -4443,16 +4347,13 @@ function termsEl(): LegalDoc {
             "Τα στοιχεία του προφίλ, οι τιμές και ο κατάλογος πρέπει να είναι αληθινά και ενημερωμένα. Εσείς ευθύνεστε για αυτά και για τις υπηρεσίες σας.",
             "Φυλάξτε τον κωδικό σας· ευθύνεστε για τις ενέργειες στον λογαριασμό σας.",
             "Μη δημιουργείτε ψεύτικες κρατήσεις, κριτικές ή αιτήματα κριτικών και μη ζητάτε κριτικές με αντάλλαγμα.",
-            "Στην αναζήτηση εμφανίζονται μόνο προφίλ με ενεργή συνδρομή ή σε περίοδο δοκιμής.",
           ],
         ],
       },
       {
         title: "5. Τιμές",
         body: [
-          "Για σαλόνια, barbershops και εστιατόρια οι πρώτοι 3 μήνες είναι δωρεάν, χωρίς κάρτα για να ξεκινήσετε. Στη συνέχεια, για να είναι ορατό το προφίλ χρειάζεται συνδρομή:",
-          PRICES.el,
-          "Οι όροι πληρωμής εμφανίζονται πριν από κάθε χρέωση. Μπορούμε να αλλάξουμε τις τιμές με προειδοποίηση τουλάχιστον 30 ημερών· οι αλλαγές ισχύουν από την επόμενη περίοδο χρέωσης.",
+          "Η Astrabela είναι δωρεάν για κομμωτήρια, κουρεία και εστιατόρια: χωρίς συνδρομή, χωρίς προμήθεια και χωρίς κάρτα.",
         ],
       },
       {
@@ -4634,16 +4535,13 @@ function termsIs(): LegalDoc {
             "Upplýsingar í prófíl, verð og matseðill skulu vera rétt og uppfærð. Þú berð ábyrgð á þeim og á þjónustu þinni.",
             "Gættu lykilorðsins; þú berð ábyrgð á aðgerðum í aðganginum þínum.",
             "Ekki búa til falsaðar bókanir, umsagnir eða umsagnabeiðnir og ekki biðja um umsagnir gegn umbun.",
-            "Aðeins prófílar með virka áskrift eða í prufutíma birtast í leit.",
           ],
         ],
       },
       {
         title: "5. Verð",
         body: [
-          "Fyrir stofur, rakarastofur og veitingastaði eru fyrstu 3 mánuðirnir ókeypis og ekkert kort þarf til að byrja. Eftir það þarf áskrift til að prófíllinn sé sýnilegur:",
-          PRICES.is,
-          "Greiðsluskilmálar birtast fyrir hverja færslu. Við getum breytt verðum með minnst 30 daga fyrirvara; breytingar gilda frá næsta greiðslutímabili.",
+          "Astrabela er ókeypis fyrir stofur, rakarastofur og veitingastaði: engin áskrift, engin þóknun og ekkert kort.",
         ],
       },
       {
@@ -4825,16 +4723,13 @@ function termsSr(): LegalDoc {
             "Podaci u profilu, cene i jelovnik moraju biti istiniti i ažurni. Za njih i za svoje usluge odgovarate vi.",
             "Čuvajte svoju lozinku; odgovarate za aktivnosti na svom nalogu.",
             "Ne pravite lažne rezervacije, ocene ni zahteve za ocenu i ne tražite ocene u zamenu za nagradu.",
-            "U pretrazi se prikazuju samo profili sa aktivnom pretplatom ili u probnom periodu.",
           ],
         ],
       },
       {
         title: "5. Cene",
         body: [
-          "Za salone, berbernice i restorane prva 3 meseca su besplatna, bez kartice za početak. Nakon toga je za prikazivanje potrebna pretplata:",
-          PRICES.sr,
-          "Uslovi plaćanja prikazuju se pre svake naplate. Cene možemo promeniti uz najavu od najmanje 30 dana; promena važi od sledećeg obračunskog perioda.",
+          "Astrabela je besplatna za salone, berbernice i restorane: bez pretplate, bez provizije i bez kartice.",
         ],
       },
       {
@@ -5016,16 +4911,13 @@ function termsMk(): LegalDoc {
             "Податоците во профилот, цените и менито мора да бидат вистинити и ажурни. За нив и за Вашите услуги одговарате Вие.",
             "Чувајте ја Вашата лозинка; одговарате за активностите на Вашиот профил.",
             "Не правете лажни закажувања, мислења ниту барања за мислење и не барајте мислења во замена за награда.",
-            "Во пребарувањето се прикажуваат само профили со активна претплата или во пробен период.",
           ],
         ],
       },
       {
         title: "5. Цени",
         body: [
-          "За салони, бербернички и ресторани првите 3 месеци се бесплатни, без картичка за почеток. Потоа за прикажување е потребна претплата:",
-          PRICES.mk,
-          "Условите за плаќање се прикажуваат пред секоја наплата. Цените можеме да ги смениме со најава од најмалку 30 дена; промената важи од следниот пресметковен период.",
+          "Astrabela е бесплатна за салони, берберници и ресторани: без претплата, без провизија и без картичка.",
         ],
       },
       {
@@ -5207,16 +5099,13 @@ function termsSq(): LegalDoc {
             "Të dhënat e profilit, çmimet dhe menuja duhet të jenë të vërteta dhe të përditësuara. Për to dhe për shërbimet tuaja përgjigjeni ju.",
             "Ruajeni fjalëkalimin; përgjigjeni për veprimet në llogarinë tuaj.",
             "Mos krijoni rezervime, vlerësime apo kërkesa vlerësimi të rreme dhe mos kërkoni vlerësime në këmbim të shpërblimeve.",
-            "Në kërkim shfaqen vetëm profilet me abonim aktiv ose në periudhë prove.",
           ],
         ],
       },
       {
         title: "5. Çmimet",
         body: [
-          "Për sallonet, berberët dhe restorantet 3 muajt e parë janë falas, pa kartë për të filluar. Më pas, për t'u shfaqur nevojitet abonim:",
-          PRICES.sq,
-          "Kushtet e pagesës shfaqen para çdo pagese. Çmimet mund t'i ndryshojmë me njoftim të paktën 30 ditë përpara; ndryshimi vlen nga periudha e ardhshme e faturimit.",
+          "Astrabela është falas për sallone, berberë dhe restorante: pa abonim, pa komision dhe pa kartë.",
         ],
       },
       {
@@ -5398,16 +5287,13 @@ function termsUk(): LegalDoc {
             "Дані профілю, ціни й меню мають бути правдивими та актуальними. За них і за свої послуги відповідаєте Ви.",
             "Бережіть свій пароль; Ви відповідаєте за дії у своєму обліковому записі.",
             "Не створюйте фальшивих записів, відгуків чи запитів на відгук і не просіть відгуків в обмін на винагороду.",
-            "У пошуку показуються лише профілі з активною підпискою або в пробному періоді.",
           ],
         ],
       },
       {
         title: "5. Ціни",
         body: [
-          "Для салонів, барбершопів і ресторанів перші 3 місяці безкоштовні, картка для початку не потрібна. Далі для показу потрібна підписка:",
-          PRICES.uk,
-          "Умови оплати показуються перед кожним списанням. Ми можемо змінити ціни, попередивши щонайменше за 30 днів; зміна діє з наступного розрахункового періоду.",
+          "Astrabela безкоштовна для салонів, барбершопів і ресторанів: без підписки, без комісії і без картки.",
         ],
       },
       {

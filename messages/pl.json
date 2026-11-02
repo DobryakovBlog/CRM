@@ -187,8 +187,8 @@
   "business": {
     "landing": {
       "title": "Więcej klientów dla Twojego salonu",
-      "subtitle": "Kalendarz online i opinie klientów. Bez prowizji, jedna stała cena dla całego zespołu.",
-      "start": "Wypróbuj {months} miesiące za darmo",
+      "subtitle": "Kalendarz online i opinie klientów. Za darmo dla całego zespołu, bez prowizji.",
+      "start": "Dołącz za darmo",
       "features": {
         "noCommission": "0% prowizji od klientów",
         "unlimitedStaff": "Nieograniczona liczba pracowników",
@@ -199,16 +199,11 @@
       "restaurants": {
         "eyebrow": "Restauracje",
         "title": "Twoje menu online, zawsze aktualne",
-        "text": "Opublikuj menu z cenami i alergenami, w swoim języku i po angielsku. Wydrukuj kod QR na stoliki i zmieniaj ceny w każdej chwili. Pierwsze 3 miesiące są bezpłatne.",
-        "cta": "Wypróbuj 3 miesiące za darmo"
+        "text": "Opublikuj menu z cenami i alergenami, w swoim języku i po angielsku. Wydrukuj kod QR na stoliki i zmieniaj ceny w każdej chwili.",
+        "cta": "Dołącz za darmo"
       },
-      "trialNote": "Pierwsze {months} miesiące są bezpłatne. Na start nie potrzebujesz karty."
-    },
-    "plans": {
-      "monthly": "Miesięcznie",
-      "semiannual": "6 miesięcy",
-      "annual": "12 miesięcy",
-      "perMonth": "miesięcznie + VAT"
+      "freeTitle": "Za darmo",
+      "freeNote": "Bez abonamentu, bez prowizji i bez karty. Dla salonów, barberów i restauracji."
     },
     "login": {
       "title": "Zaloguj się",
@@ -325,14 +320,6 @@
       },
       "submit": "Wyślij do publikacji",
       "viewPublic": "Zobacz stronę publiczną",
-      "subscription": "Subskrypcja",
-      "sub": {
-        "trial": "Bezpłatny okres próbny do {date}.",
-        "active": "Aktywna do {date}.",
-        "past_due": "Zaległa płatność od {date}.",
-        "cancelled": "Anulowana {date}.",
-        "complimentary": "Bezpłatnie od Astrabeli do {date}."
-      },
       "details": "Dane salonu",
       "fields": {
         "name": "Nazwa",
@@ -417,45 +404,6 @@
       "reason": "Powód",
       "hide": "Ukryj opinię",
       "keep": "Zostaw",
-      "subs": {
-        "title": "Subskrypcje",
-        "hint": "Daj darmowe miesiące lub ustaw datę, do której trwa darmowa subskrypcja. Prezent zaczyna się, gdy skończy się czas, który salon już ma.",
-        "search": "Szukaj po nazwie, miejscowości lub NIP",
-        "find": "Szukaj",
-        "empty": "Nie znaleziono salonów.",
-        "none": "Brak subskrypcji",
-        "manage": "Zarządzaj",
-        "months": "Darmowe miesiące",
-        "monthsN": "{n, plural, one {# miesiąc} few {# miesiące} many {# miesięcy} other {# miesiąca}}",
-        "note": "Notatka (opcjonalnie)",
-        "notePlaceholder": "Np. partner od początku",
-        "grant": "Daj",
-        "until": "Bezpłatnie do",
-        "set": "Ustaw datę",
-        "cancel": "Zakończ subskrypcję teraz",
-        "cancelHint": "Salon znika z wyszukiwania, dopóki nie wykupi subskrypcji ponownie.",
-        "saved": "Subskrypcja zaktualizowana.",
-        "invalid": "Wybierz datę w przyszłości.",
-        "salonStatus": {
-          "draft": "Szkic",
-          "pending": "Oczekuje",
-          "active": "Opublikowany",
-          "suspended": "Zawieszony"
-        },
-        "status": {
-          "trial": "Okres próbny",
-          "active": "Aktywna",
-          "past_due": "Zaległa",
-          "cancelled": "Anulowana",
-          "complimentary": "Bezpłatna"
-        },
-        "endsOn": "do {date}",
-        "endedOn": "od {date}",
-        "kind": {
-          "salon": "Salon",
-          "restaurant": "Restauracja"
-        }
-      },
       "title": "Administracja"
     },
     "menu": {

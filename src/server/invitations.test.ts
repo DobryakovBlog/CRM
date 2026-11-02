@@ -32,7 +32,6 @@ beforeEach(async () => {
   const { salon } = await registerSalonOwner(
     db,
     { name: "Owner", email: "owner@test.pt", password: "secret123", salonName: "Salão Teste", city: "Lisboa", address: "Rua 1", phone: "" },
-    NOW,
   );
   salonId = salon.id;
   await db.update(salons).set({ status: "active" }).where(eq(salons.id, salonId));
