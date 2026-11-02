@@ -14,6 +14,10 @@
     "terms": "Podmienky",
     "signIn": "Prihlásiť sa",
     "support": "Podpora",
+    "installApp": "Nainštalovať aplikáciu",
+    "installHintIos": "V Safari ťuknite na Zdieľať (štvorec so šípkou) a potom na „Pridať na plochu“.",
+    "installHintOther": "Otvorte ponuku prehliadača a vyberte „Inštalovať aplikáciu“ alebo „Pridať na plochu“.",
+    "close": "Zavrieť",
     "bookings": "Rezervácie"
   },
   "home": {

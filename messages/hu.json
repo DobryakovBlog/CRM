@@ -14,6 +14,10 @@
     "terms": "Feltételek",
     "signIn": "Belépés",
     "support": "Segítség",
+    "installApp": "Alkalmazás telepítése",
+    "installHintIos": "A Safariban koppints a Megosztás gombra (négyzet nyíllal), majd a „Főképernyőhöz adás” lehetőségre.",
+    "installHintOther": "Nyisd meg a böngésző menüjét, és válaszd az „Alkalmazás telepítése” vagy a „Hozzáadás a kezdőképernyőhöz” lehetőséget.",
+    "close": "Bezárás",
     "bookings": "Foglalások"
   },
   "home": {

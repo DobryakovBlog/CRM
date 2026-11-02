@@ -14,6 +14,10 @@
     "terms": "Uvjeti",
     "signIn": "Prijava",
     "support": "Pomoć",
+    "installApp": "Instaliraj aplikaciju",
+    "installHintIos": "U Safariju dodirnite Dijeli (kvadrat sa strelicom), zatim „Dodaj na početni zaslon”.",
+    "installHintOther": "Otvorite izbornik preglednika i odaberite „Instaliraj aplikaciju” ili „Dodaj na početni zaslon”.",
+    "close": "Zatvori",
     "bookings": "Rezervacije"
   },
   "home": {

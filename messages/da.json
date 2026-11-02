@@ -14,6 +14,10 @@
     "terms": "Vilkår",
     "signIn": "Log ind",
     "support": "Hjælp",
+    "installApp": "Installer appen",
+    "installHintIos": "Tryk på Del i Safari (firkanten med en pil) og derefter på “Føj til hjemmeskærm”.",
+    "installHintOther": "Åbn browserens menu, og vælg “Installer app” eller “Føj til startskærm”.",
+    "close": "Luk",
     "bookings": "Bookinger"
   },
   "home": {

@@ -14,6 +14,10 @@
     "terms": "Uslovi",
     "signIn": "Prijava",
     "support": "Podrška",
+    "installApp": "Instalirajte aplikaciju",
+    "installHintIos": "U Safariju dodirnite Deli (kvadrat sa strelicom), zatim „Dodaj na početni ekran”.",
+    "installHintOther": "Otvorite meni pregledača i izaberite „Instaliraj aplikaciju” ili „Dodaj na početni ekran”.",
+    "close": "Zatvori",
     "bookings": "Rezervacije"
   },
   "home": {

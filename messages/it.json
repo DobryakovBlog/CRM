@@ -14,6 +14,10 @@
     "terms": "Termini",
     "signIn": "Accedi",
     "support": "Assistenza",
+    "installApp": "Installa l'app",
+    "installHintIos": "In Safari tocca Condividi (il quadrato con la freccia), poi «Aggiungi alla schermata Home».",
+    "installHintOther": "Apri il menu del browser e scegli «Installa app» o «Aggiungi a schermata Home».",
+    "close": "Chiudi",
     "bookings": "Prenotazioni"
   },
   "home": {

@@ -14,6 +14,10 @@
     "terms": "Pogoji",
     "signIn": "Prijava",
     "support": "Pomoč",
+    "installApp": "Namesti aplikacijo",
+    "installHintIos": "V Safariju tapnite Deli (kvadrat s puščico) in nato »Dodaj na začetni zaslon«.",
+    "installHintOther": "Odprite meni brskalnika in izberite »Namesti aplikacijo« ali »Dodaj na začetni zaslon«.",
+    "close": "Zapri",
     "bookings": "Rezervacije"
   },
   "home": {

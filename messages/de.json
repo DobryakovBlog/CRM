@@ -14,6 +14,10 @@
     "terms": "Nutzungsbedingungen",
     "signIn": "Anmelden",
     "support": "Support",
+    "installApp": "App installieren",
+    "installHintIos": "Tippen Sie in Safari auf Teilen (das Quadrat mit dem Pfeil) und dann auf „Zum Home-Bildschirm“.",
+    "installHintOther": "Öffnen Sie das Browsermenü und wählen Sie „App installieren“ oder „Zum Startbildschirm hinzufügen“.",
+    "close": "Schließen",
     "bookings": "Buchungen"
   },
   "home": {

@@ -14,6 +14,10 @@
     "terms": "Termos",
     "signIn": "Entrar",
     "support": "Suporte",
+    "installApp": "Instalar a app",
+    "installHintIos": "No Safari, toque em Partilhar (o quadrado com a seta) e depois em «Adicionar ao ecrã principal».",
+    "installHintOther": "Abra o menu do navegador e escolha «Instalar app» ou «Adicionar ao ecrã principal».",
+    "close": "Fechar",
     "bookings": "Marcações"
   },
   "home": {
