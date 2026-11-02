@@ -91,6 +91,7 @@
     "el": "Grekiska",
     "is": "Isländska",
     "sr": "Serbiska",
+    "mk": "Makedonska",
     "ru": "Ryska",
     "uk": "Ukrainska"
   },
@@ -532,7 +533,8 @@
     "is": "Island",
     "rs": "Serbien",
     "ba": "Bosnien och Hercegovina",
-    "me": "Montenegro"
+    "me": "Montenegro",
+    "mk": "Nordmakedonien"
   },
   "restaurants": {
     "metaTitle": "Restauranger och menyer",

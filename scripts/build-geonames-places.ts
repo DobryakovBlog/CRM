@@ -33,6 +33,22 @@ const greekRespell = (name: string) =>
     .replace(/Kh/g, "Ch").replace(/kh/g, "ch").replace(/Dh/g, "D").replace(/dh/g, "d")
     .replace(/Aghi/g, "Ági").replace(/y(?=[iíeé])/g, "g").replace(/Y(?=[iíeé])/g, "G")
     .replace(/\bNéon\b/g, "Néo").replace(/ion\b/g, "i");
+// North Macedonia: GeoNames mixes Cyrillic, English (Shtip, Kochani) and Serbo-Croatian (Kičevo) spellings; all
+// become Latin with č, š, ž and gj, kj for ѓ, ќ (Штип, Štip).
+const MK_LATIN: Record<string, string> = {
+  а: "a", б: "b", в: "v", г: "g", д: "d", ѓ: "gj", е: "e", ж: "ž", з: "z", ѕ: "dz", и: "i", ј: "j", к: "k", л: "l",
+  љ: "lj", м: "m", н: "n", њ: "nj", о: "o", п: "p", р: "r", с: "s", т: "t", ќ: "kj", у: "u", ф: "f", х: "h", ц: "c",
+  ч: "č", џ: "dž", ш: "š",
+};
+const macedonianRespell = (name: string) =>
+  name
+    .replace(/[\u0400-\u04ff]/g, (c) => {
+      const l = MK_LATIN[c.toLowerCase()] ?? c;
+      return c === c.toLowerCase() ? l : l[0].toUpperCase() + l.slice(1);
+    })
+    .replace(/Sh/g, "Š").replace(/sh/g, "š").replace(/Ch/g, "Č").replace(/ch/g, "č").replace(/Zh/g, "Ž").replace(/zh/g, "ž")
+    .replace(/ - /g, "-");
+
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -224,6 +240,18 @@ const COUNTRIES: Record<string, Config> = {
     regions: { "01": "Federacija Bosne i Hercegovine", "02": "Republika Srpska", BRC: "Brčko distrikt" },
     regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
   },
+  mk: {
+    regions: "admin1",
+    respell: macedonianRespell,
+    regionFixes: { "Grad Skopje": "Skopje", "Mavrovo and Rostuša": "Mavrovo i Rostuša", "Chucher Sandevo": "Čučer-Sandevo" },
+    // Towns filed under a former municipality (75 Orašac, 45 Klečevce) or none: their present one.
+    regionOf: { Orashac: "D7", "Клечовце": "D7", Ognjaci: "79", "Булачани": "F6" },
+    names: {
+      "Gjorče Petro": "Gjorče Petrov", Delcevo: "Delčevo", Radovis: "Radoviš", Rostusa: "Rostuša",
+      Labunista: "Labuništa", Cegrane: "Čegrane", Krusevo: "Kruševo", Cresevo: "Creševo", Mislesevo: "Mislešovo",
+      Oblesevo: "Obleševo", Zelino: "Želino", Radolista: "Radolišta", Kuklis: "Kukliš",
+    },
+  },
   me: {
     regions: {
       "01": "Andrijevica", "02": "Bar", "03": "Berane", "04": "Bijelo Polje", "05": "Budva", "06": "Cetinje",
@@ -294,7 +322,7 @@ const admin1 = (JSON.parse(readFileSync(join(cjDir, "admin1.json"), "utf8")) as 
 const regions: Record<string, string> = config.byName
   ? {}
   : config.regions === "admin1"
-    ? Object.fromEntries(admin1.map(([code, name]) => [code, config.regionFixes?.[name] ?? name]))
+    ? Object.fromEntries(admin1.map(([code, name]) => [code, config.regionFixes?.[name] ?? config.respell?.(name) ?? name]))
     : config.regions;
 const missingRegions = config.byName ? [] : admin1.map(([code]) => code).filter((r) => !regions[r]);
 if (missingRegions.length) throw new Error(`no local name for regions ${missingRegions.join(", ")}`);

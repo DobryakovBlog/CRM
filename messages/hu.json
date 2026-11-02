@@ -91,6 +91,7 @@
     "el": "Görög",
     "is": "Izlandi",
     "sr": "Szerb",
+    "mk": "Macedón",
     "ru": "Orosz",
     "uk": "Ukrán"
   },
@@ -532,7 +533,8 @@
     "is": "Izland",
     "rs": "Szerbia",
     "ba": "Bosznia-Hercegovina",
-    "me": "Montenegró"
+    "me": "Montenegró",
+    "mk": "Észak-Macedónia"
   },
   "restaurants": {
     "metaTitle": "Éttermek és étlapok",
