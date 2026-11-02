@@ -87,6 +87,7 @@
     "fi": "Finska",
     "et": "Estniska",
     "lv": "Lettiska",
+    "lt": "Litauiska",
     "ru": "Ryska",
     "uk": "Ukrainska"
   },
@@ -520,7 +521,8 @@
     "no": "Norge",
     "fi": "Finland",
     "ee": "Estland",
-    "lv": "Lettland"
+    "lv": "Lettland",
+    "lt": "Litauen"
   },
   "restaurants": {
     "metaTitle": "Restauranger och menyer",

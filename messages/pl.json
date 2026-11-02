@@ -87,6 +87,7 @@
     "fi": "Fiński",
     "et": "Estoński",
     "lv": "Łotewski",
+    "lt": "Litewski",
     "ru": "Rosyjski",
     "uk": "Ukraiński"
   },
@@ -520,7 +521,8 @@
     "no": "Norwegia",
     "fi": "Finlandia",
     "ee": "Estonia",
-    "lv": "Łotwa"
+    "lv": "Łotwa",
+    "lt": "Litwa"
   },
   "restaurants": {
     "metaTitle": "Restauracje i menu",

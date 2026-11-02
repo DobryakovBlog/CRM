@@ -463,3 +463,17 @@ describe("Latvian places", () => {
     expect(phoneCountry("valmiera")).toBe("LV");
   });
 });
+
+describe("Lithuanian places", () => {
+  it("lists GeoNames towns by county", () => {
+    expect(placeBySlug("vilnius")).toMatchObject({ name: "Vilnius", country: "lt", area: "Vilniaus apskritis" });
+    expect(searchPlaces("klaipeda", [], 30, "lt")[0]).toMatchObject({ name: "Klaipėda", area: "Klaipėdos apskritis" });
+    expect(searchPlaces("mazeikiai", [], 30, "lt")[0].name).toBe("Mažeikiai");
+  });
+
+  it("uses Vilnius time and starts Lithuanian visitors in Vilnius", () => {
+    expect(placeTimezone("kaunas")).toBe("Europe/Vilnius");
+    expect(cityFieldSetup([], undefined, "lt")).toMatchObject({ defaultCountry: "lt", defaultSlugs: { lt: "vilnius" } });
+    expect(phoneCountry("siauliai")).toBe("LT");
+  });
+});

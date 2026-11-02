@@ -11,6 +11,15 @@ export function Flag({ locale, className = "h-3.5 w-5" }: { locale: string; clas
       </svg>
     );
   }
+  if (locale === "lt") {
+    return (
+      <svg viewBox="0 0 30 18" className={`${className} shrink-0 rounded-[2px] ring-1 ring-black/10`} aria-hidden>
+        <rect width="30" height="18" fill="#C1272D" />
+        <rect width="30" height="12" fill="#006A44" />
+        <rect width="30" height="6" fill="#FDB913" />
+      </svg>
+    );
+  }
   if (locale === "lv") {
     return (
       <svg viewBox="0 0 20 10" className={`${className} shrink-0 rounded-[2px] ring-1 ring-black/10`} aria-hidden>
