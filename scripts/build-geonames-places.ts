@@ -203,6 +203,15 @@ const COUNTRIES: Record<string, Config> = {
       Parekklisha: "Parekklisiá", Meneou: "Meneoú", Pyrgos: "Pýrgos", Xylotymbou: "Xylotýmvou",
     },
   },
+  // Malta: every GeoNames region is one local council, so towns are grouped by island.
+  mt: {
+    regions: { "01": "Malta", "02": "Malta", "03": "Malta", "04": "Malta", "05": "Malta", "06": "Malta", "07": "Malta", "08": "Malta", "09": "Malta", "10": "Malta", "11": "Għawdex (Gozo)", "12": "Għawdex (Gozo)", "13": "Malta", "14": "Għawdex (Gozo)", "15": "Malta", "16": "Malta", "17": "Malta", "18": "Malta", "19": "Malta", "20": "Malta", "21": "Malta", "22": "Malta", "23": "Malta", "24": "Malta", "25": "Malta", "26": "Malta", "27": "Għawdex (Gozo)", "28": "Malta", "29": "Malta", "30": "Malta", "31": "Malta", "32": "Malta", "33": "Malta", "34": "Malta", "35": "Malta", "36": "Għawdex (Gozo)", "37": "Għawdex (Gozo)", "38": "Malta", "39": "Malta", "40": "Malta", "41": "Malta", "42": "Għawdex (Gozo)", "43": "Malta", "44": "Malta", "45": "Malta", "46": "Għawdex (Gozo)", "47": "Malta", "48": "Malta", "49": "Malta", "50": "Għawdex (Gozo)", "51": "Malta", "52": "Malta", "53": "Malta", "54": "Għawdex (Gozo)", "55": "Malta", "56": "Malta", "57": "Malta", "58": "Malta", "59": "Malta", "60": "Malta", "61": "Għawdex (Gozo)", "62": "Għawdex (Gozo)", "63": "Malta", "64": "Malta", "65": "Malta", "66": "Għawdex (Gozo)", "67": "Malta", "68": "Malta" },
+    names: {
+      "Haz-Zebbug": "Ħaż-Żebbuġ", "Hal Gharghur": "Għargħur", "Saint John": "San Ġwann", "Saint Lucia": "Santa Luċija",
+      Imġarr: "Mġarr", Imtarfa: "Mtarfa", Imsida: "Msida", Imdina: "Mdina", Cospicua: "Bormla/Cospicua",
+      Vittoriosa: "Birgu/Vittoriosa", Senglea: "Isla/Senglea", Victoria: "Rabat/Victoria", "L-Iklin": "Iklin",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

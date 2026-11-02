@@ -512,3 +512,17 @@ describe("Cypriot places", () => {
     expect(phoneCountry("larnaka")).toBe("CY");
   });
 });
+
+describe("Maltese places", () => {
+  it("lists local councils by island and finds them without Maltese letters", () => {
+    expect(placeBySlug("valletta")).toMatchObject({ country: "mt", area: "Malta" });
+    expect(searchPlaces("hamrun", [], 30, "mt")[0].name).toBe("Ħamrun");
+    expect(searchPlaces("victoria", [], 30, "mt")[0]).toMatchObject({ name: "Rabat/Victoria", area: "Għawdex (Gozo)" });
+    expect(placeBySlug("hamrun")?.name).toBe("Ħamrun");
+  });
+
+  it("uses Malta time and +356 phones", () => {
+    expect(placeTimezone("sliema")).toBe("Europe/Malta");
+    expect(phoneCountry("sliema")).toBe("MT");
+  });
+});
