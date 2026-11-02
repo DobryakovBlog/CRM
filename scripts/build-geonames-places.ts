@@ -240,6 +240,24 @@ const COUNTRIES: Record<string, Config> = {
     regions: { "01": "Federacija Bosne i Hercegovine", "02": "Republika Srpska", BRC: "Brčko distrikt" },
     regionOf: { "Vozuća": "01", Stupari: "01", "Careva Ćuprija": "01", Svojat: "02" },
   },
+  // Kosovo: both official names, Albanian first ("Prishtinë/Priština"), where they differ.
+  xk: {
+    regions: {
+      "10096138": "Ferizaj/Uroševac", "10096859": "Gjakovë/Đakovica", "10097357": "Gjilan/Gnjilane",
+      "10097358": "Mitrovicë/Mitrovica", "10097359": "Pejë/Peć", "10097360": "Prishtinë/Priština", "10097361": "Prizren",
+    },
+    names: {
+      Pristina: "Prishtinë/Priština", "Mitrovicë": "Mitrovicë/Mitrovica", "Gjakovë": "Gjakovë", "Suva Reka": "Suharekë/Suva Reka",
+      Ferizaj: "Ferizaj/Uroševac", Glogovac: "Drenas/Glogovac", Gjilan: "Gjilan/Gnjilane", "Deçan": "Deçan/Dečani",
+      "Peć": "Pejë/Peć", Vitina: "Viti/Vitina", Istok: "Istog/Istok", Shtime: "Shtime/Štimlje", Podujeva: "Podujevë/Podujevo",
+      Dragash: "Dragash/Dragaš", Vushtrri: "Vushtrri/Vučitrn", Orahovac: "Rahovec/Orahovac", Leposaviq: "Leposaviq/Leposavić",
+      "Zvečan": "Zveçan/Zvečan", "Kosovo Polje": "Fushë Kosovë/Kosovo Polje", Obiliq: "Obiliq/Obilić",
+      "Kačanik": "Kaçanik/Kačanik", "Hani i Elezit": "Hani i Elezit/Elez Han", Kamenica: "Kamenicë/Kamenica",
+      Lipljan: "Lipjan/Lipljan", Klina: "Klinë/Klina", "Štrpce": "Shtërpcë/Štrpce", "Novo Brdo": "Novobërdë/Novo Brdo",
+      "Mamuša": "Mamushë/Mamuša", Srbica: "Skenderaj/Srbica", Ranilug: "Ranillug/Ranilug", Klokot: "Kllokot/Klokot",
+      "Mališevo": "Malishevë/Mališevo",
+    },
+  },
   al: {
     regions: {
       "40": "Berat", "41": "Dibër", "42": "Durrës", "43": "Elbasan", "44": "Fier", "45": "Gjirokastër", "46": "Korçë",
