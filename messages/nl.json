@@ -91,6 +91,7 @@
     "el": "Grieks",
     "is": "IJslands",
     "sr": "Servisch",
+    "mk": "Macedonisch",
     "ru": "Russisch",
     "uk": "Oekraïens"
   },
@@ -532,7 +533,8 @@
     "is": "IJsland",
     "rs": "Servië",
     "ba": "Bosnië en Herzegovina",
-    "me": "Montenegro"
+    "me": "Montenegro",
+    "mk": "Noord-Macedonië"
   },
   "restaurants": {
     "metaTitle": "Restaurants en menukaarten",

@@ -91,6 +91,7 @@
     "el": "Gresk",
     "is": "Islandsk",
     "sr": "Serbisk",
+    "mk": "Makedonsk",
     "ru": "Russisk",
     "uk": "Ukrainsk"
   },
@@ -532,7 +533,8 @@
     "is": "Island",
     "rs": "Serbia",
     "ba": "Bosnia-Hercegovina",
-    "me": "Montenegro"
+    "me": "Montenegro",
+    "mk": "Nord-Makedonia"
   },
   "restaurants": {
     "metaTitle": "Restauranter og menyer",

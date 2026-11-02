@@ -91,6 +91,7 @@
     "el": "Řečtina",
     "is": "Islandština",
     "sr": "Srbština",
+    "mk": "Makedonština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -532,7 +533,8 @@
     "is": "Island",
     "rs": "Srbsko",
     "ba": "Bosna a Hercegovina",
-    "me": "Černá Hora"
+    "me": "Černá Hora",
+    "mk": "Severní Makedonie"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

@@ -591,3 +591,19 @@ describe("Montenegrin places", () => {
     expect(phoneCountry("budva")).toBe("ME");
   });
 });
+
+describe("Macedonian places", () => {
+  it("lists GeoNames towns by municipality in one Latin spelling", () => {
+    expect(placeBySlug("skopje")).toMatchObject({ name: "Skopje", country: "mk", area: "Skopje" });
+    expect(searchPlaces("stip", [], 30, "mk")[0]).toMatchObject({ name: "Štip", area: "Štip" });
+    expect(searchPlaces("shtip", [], 30, "mk")[0].name).toBe("Štip");
+    expect(searchPlaces("Штип", [], 30, "mk")[0].name).toBe("Štip");
+    expect(searchPlaces("Ѓорче", [], 30, "mk")[0].name).toBe("Gjorče Petrov");
+  });
+
+  it("uses Skopje time and starts Macedonian visitors in Skopje", () => {
+    expect(placeTimezone("ohrid")).toBe("Europe/Skopje");
+    expect(cityFieldSetup([], undefined, "mk")).toMatchObject({ defaultCountry: "mk", defaultSlugs: { mk: "skopje" } });
+    expect(phoneCountry("ohrid")).toBe("MK");
+  });
+});
