@@ -88,6 +88,7 @@
     "et": "Estisk",
     "lv": "Lettisk",
     "lt": "Litauisk",
+    "el": "Græsk",
     "ru": "Russisk",
     "uk": "Ukrainsk"
   },
@@ -522,7 +523,8 @@
     "fi": "Finland",
     "ee": "Estland",
     "lv": "Letland",
-    "lt": "Litauen"
+    "lt": "Litauen",
+    "gr": "Grækenland"
   },
   "restaurants": {
     "metaTitle": "Restauranter og menuer",

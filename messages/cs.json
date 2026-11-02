@@ -88,6 +88,7 @@
     "et": "Estonština",
     "lv": "Lotyština",
     "lt": "Litevština",
+    "el": "Řečtina",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -522,7 +523,8 @@
     "fi": "Finsko",
     "ee": "Estonsko",
     "lv": "Lotyšsko",
-    "lt": "Litva"
+    "lt": "Litva",
+    "gr": "Řecko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

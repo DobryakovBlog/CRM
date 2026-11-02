@@ -88,6 +88,7 @@
     "et": "Eesti",
     "lv": "Läti",
     "lt": "Leedu",
+    "el": "Kreeka",
     "ru": "Vene",
     "uk": "Ukraina"
   },
@@ -522,7 +523,8 @@
     "fi": "Soome",
     "ee": "Eesti",
     "lv": "Läti",
-    "lt": "Leedu"
+    "lt": "Leedu",
+    "gr": "Kreeka"
   },
   "restaurants": {
     "metaTitle": "Restoranid ja menüüd",

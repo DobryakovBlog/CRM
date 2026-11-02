@@ -15,7 +15,7 @@
   --color-line: #e3e0d8;
   --color-muted: #5d6b80;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-bodoni), var(--font-cyrillic-display), "Didot", "Bodoni 72", Georgia, serif;
+  --font-display: var(--font-bodoni), var(--font-cyrillic-display), var(--font-greek-display), "Didot", "Bodoni 72", Georgia, serif;
 }
 
 @layer base {

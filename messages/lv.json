@@ -88,6 +88,7 @@
     "et": "Igauņu",
     "lv": "Latviešu",
     "lt": "Lietuviešu",
+    "el": "Grieķu",
     "ru": "Krievu",
     "uk": "Ukraiņu"
   },
@@ -522,7 +523,8 @@
     "fi": "Somija",
     "ee": "Igaunija",
     "lv": "Latvija",
-    "lt": "Lietuva"
+    "lt": "Lietuva",
+    "gr": "Grieķija"
   },
   "restaurants": {
     "metaTitle": "Restorāni un ēdienkartes",
