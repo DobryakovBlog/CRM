@@ -90,6 +90,7 @@
     "lt": "Lituano",
     "el": "Griego",
     "is": "Islandés",
+    "sr": "Serbio",
     "ru": "Ruso",
     "uk": "Ucraniano"
   },
@@ -528,7 +529,8 @@
     "gr": "Grecia",
     "cy": "Chipre",
     "mt": "Malta",
-    "is": "Islandia"
+    "is": "Islandia",
+    "rs": "Serbia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",

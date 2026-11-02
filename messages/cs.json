@@ -90,6 +90,7 @@
     "lt": "Litevština",
     "el": "Řečtina",
     "is": "Islandština",
+    "sr": "Srbština",
     "ru": "Ruština",
     "uk": "Ukrajinština"
   },
@@ -528,7 +529,8 @@
     "gr": "Řecko",
     "cy": "Kypr",
     "mt": "Malta",
-    "is": "Island"
+    "is": "Island",
+    "rs": "Srbsko"
   },
   "restaurants": {
     "metaTitle": "Restaurace a menu",

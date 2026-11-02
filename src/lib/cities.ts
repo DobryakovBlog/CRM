@@ -28,6 +28,7 @@ import grData from "@/data/gr-places.json";
 import cyData from "@/data/cy-places.json";
 import mtData from "@/data/mt-places.json";
 import isData from "@/data/is-places.json";
+import rsData from "@/data/rs-places.json";
 import { slugify } from "./slug";
 
 // Portugal: every municipality (308) and every locality in the CTT postal tables
@@ -38,10 +39,10 @@ import { slugify } from "./slug";
 // the Netherlands 342 gemeenten, Belgium 565 communes / gemeenten, Luxembourg 100 communes;
 // Ireland, which has no such municipalities, its 368 towns of 1,000+ people by county).
 // Countries without a municipality list we can fetch get every GeoNames town of 1,000+ people
-// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290, Denmark 338, Sweden 812, Norway 537 (by the five traditional parts of the country), Finland 460, Estonia 111, Latvia 134 (by historical region), Lithuania 122, Greece 1,068 (respelt in ELOT 743), Cyprus 91, Malta 67 (one per local council, by island), Iceland 33. Its slug is its name ("madrid"), with the
+// by region (scripts/build-geonames-places.ts): Austria 2,238, Switzerland 1,415, Poland 2,830, Czechia 1,274, Slovakia 155, Hungary 875, Slovenia 301 (by municipality), Croatia 707, Romania 4,520, Bulgaria 290, Denmark 338, Sweden 812, Norway 537 (by the five traditional parts of the country), Finland 460, Estonia 111, Latvia 134 (by historical region), Lithuania 122, Greece 1,068 (respelt in ELOT 743), Cyprus 91, Malta 67 (one per local council, by island), Iceland 33, Serbia 399 (Vojvodina and Central Serbia). Its slug is its name ("madrid"), with the
 // province or department added when the name is taken ("castejon-navarra").
 
-export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg" | "dk" | "se" | "no" | "fi" | "ee" | "lv" | "lt" | "gr" | "cy" | "mt" | "is";
+export type Country = "pt" | "es" | "fr" | "it" | "de" | "nl" | "be" | "ie" | "lu" | "at" | "ch" | "pl" | "cz" | "sk" | "hu" | "si" | "hr" | "ro" | "bg" | "dk" | "se" | "no" | "fi" | "ee" | "lv" | "lt" | "gr" | "cy" | "mt" | "is" | "rs";
 
 type MunicipalData = { areas: string[]; municipalities: unknown };
 // Order matters: a name already taken by an earlier country gets its area added.
@@ -75,6 +76,7 @@ const MUNICIPAL: [Exclude<Country, "pt">, MunicipalData][] = [
   ["cy", cyData],
   ["mt", mtData],
   ["is", isData],
+  ["rs", rsData],
 ];
 
 export type Place = {
@@ -100,7 +102,11 @@ const CYRILLIC: Record<string, string> = {
   а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ж: "zh", з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n",
   о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "h", ц: "ts", ч: "ch", ш: "sh", щ: "sht", ъ: "a", ь: "y",
   ю: "yu", я: "ya", ё: "yo", ы: "y", э: "e", і: "i", ї: "yi", є: "ye", ґ: "g",
+  ђ: "d", ј: "j", љ: "lj", њ: "nj", ћ: "c", џ: "dz", ѓ: "g", ќ: "k", ѕ: "dz",
 };
+// Serbian Cyrillic maps one to one onto Serbian Latin (Ниш, Niš; Чачак, Čačak), so a Cyrillic query is also
+// tried with č, š, ž and c in place of the Bulgarian ch, sh, zh and ts.
+const SOUTH_SLAVIC: Record<string, string> = { ж: "ž", ч: "č", ш: "š", ц: "c", х: "h", й: "j", ђ: "đ", ћ: "ć", џ: "dž" };
 
 const GREEK: Record<string, string> = {
   α: "a", β: "v", γ: "g", δ: "d", ε: "e", ζ: "z", η: "i", θ: "th", ι: "i", κ: "k", λ: "l", μ: "m", ν: "n", ξ: "x",
@@ -117,8 +123,8 @@ const greekToLatin = (s: string) =>
 export const fold = (s: string) =>
   s
     .toLowerCase()
-    .replace(/ия(?![а-яёіїєґ])/g, "ia")
-    .replace(/[а-яёіїєґ]/g, (c) => CYRILLIC[c] ?? c)
+    .replace(/ия(?![а-яѐ-џґ])/g, "ia")
+    .replace(/[а-яѐ-џґ]/g, (c) => CYRILLIC[c] ?? c)
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
@@ -129,6 +135,7 @@ export const fold = (s: string) =>
     .replace(/ð/g, "d")
     .replace(/þ/g, "th")
     .replace(/ħ/g, "h")
+    .replace(/đ/g, "d")
     .trim();
 
 type Index = {
@@ -201,7 +208,7 @@ export const isPlace = (slug: string) => places().bySlug.has(slug);
 export const placeBySlug = (slug: string) => places().bySlug.get(slug);
 export const placeCountry = (slug: string): Country => placeBySlug(slug)?.country ?? "pt";
 
-const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia", dk: "Europe/Copenhagen", se: "Europe/Stockholm", no: "Europe/Oslo", fi: "Europe/Helsinki", ee: "Europe/Tallinn", lv: "Europe/Riga", lt: "Europe/Vilnius", gr: "Europe/Athens", cy: "Asia/Nicosia", mt: "Europe/Malta", is: "Atlantic/Reykjavik" };
+const TIMEZONES: Record<Country, string> = { pt: "Europe/Lisbon", es: "Europe/Madrid", fr: "Europe/Paris", it: "Europe/Rome", de: "Europe/Berlin", nl: "Europe/Amsterdam", be: "Europe/Brussels", ie: "Europe/Dublin", lu: "Europe/Luxembourg", at: "Europe/Vienna", ch: "Europe/Zurich", pl: "Europe/Warsaw", cz: "Europe/Prague", sk: "Europe/Bratislava", hu: "Europe/Budapest", si: "Europe/Ljubljana", hr: "Europe/Zagreb", ro: "Europe/Bucharest", bg: "Europe/Sofia", dk: "Europe/Copenhagen", se: "Europe/Stockholm", no: "Europe/Oslo", fi: "Europe/Helsinki", ee: "Europe/Tallinn", lv: "Europe/Riga", lt: "Europe/Vilnius", gr: "Europe/Athens", cy: "Asia/Nicosia", mt: "Europe/Malta", is: "Atlantic/Reykjavik", rs: "Europe/Belgrade" };
 // Areas on another clock than their country's capital.
 const AREA_TIMEZONES: Record<string, string> = {
   "Açores": "Atlantic/Azores",
@@ -222,10 +229,10 @@ export function placeTimezone(slug: string) {
 }
 
 /** City a country's search starts with when nothing else is known. */
-export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia", dk: "kobenhavn", se: "stockholm", no: "oslo-oslo", fi: "helsinki", ee: "tallinn", lv: "riga", lt: "vilnius", gr: "athina", cy: "lefkosia-nicosia", mt: "valletta", is: "reykjavik" };
+export const DEFAULT_CITY: Record<Country, string> = { pt: "lisboa", es: "madrid", fr: "paris", it: "roma", de: "berlin", nl: "amsterdam", be: "bruxelles-brussel", ie: "dublin", lu: "luxembourg", at: "wien", ch: "zurich", pl: "warszawa", cz: "praha", sk: "bratislava", hu: "budapest", si: "ljubljana", hr: "zagreb", ro: "bucuresti", bg: "sofia", dk: "kobenhavn", se: "stockholm", no: "oslo-oslo", fi: "helsinki", ee: "tallinn", lv: "riga", lt: "vilnius", gr: "athina", cy: "lefkosia-nicosia", mt: "valletta", is: "reykjavik", rs: "beograd" };
 
 /** Country a visitor reading this language most likely searches in; Portugal otherwise. */
-const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl", pl: "pl", cs: "cz", sk: "sk", hu: "hu", sl: "si", hr: "hr", ro: "ro", bg: "bg", da: "dk", sv: "se", nb: "no", fi: "fi", et: "ee", lv: "lv", lt: "lt", el: "gr", is: "is" };
+const LOCALE_COUNTRY: Record<string, Country> = { es: "es", fr: "fr", it: "it", de: "de", nl: "nl", pl: "pl", cs: "cz", sk: "sk", hu: "hu", sl: "si", hr: "hr", ro: "ro", bg: "bg", da: "dk", sv: "se", nb: "no", fi: "fi", et: "ee", lv: "lv", lt: "lt", el: "gr", is: "is", sr: "rs" };
 export const localeCountry = (locale: string): Country => LOCALE_COUNTRY[locale] ?? "pt";
 
 export function cityName(slug: string): string {
@@ -269,6 +276,7 @@ export const COUNTRIES = [
   { code: "cy", open: true },
   { code: "mt", open: true },
   { code: "is", open: true },
+  { code: "rs", open: true },
 ] as const;
 
 function withSalons(listed: string[]) {
@@ -318,7 +326,12 @@ export function searchPlaces(query: string, listed: string[] = [], limit = 30, c
   if (!q) return [];
   const has = withSalons(listed);
   // German speakers without an umlaut key type "muenchen" for "München".
-  const qs = country === "de" || country === "at" || country === "ch" ? [...new Set([q, q.replace(/([aou])e/g, "$1")])] : [q];
+  const variants = [q];
+  if (country === "de" || country === "at" || country === "ch") variants.push(q.replace(/([aou])e/g, "$1"));
+  // Serbian and Croatian Latin typed without diacritics often writes đ as "dj" ("Djurdjevo" for Đurđevo).
+  if (q.includes("dj")) variants.push(q.replace(/dj/g, "d"));
+  if (/[а-яѐ-џґ]/i.test(query)) variants.push(fold(query.toLowerCase().replace(/[жчшцхйђћџ]/g, (c) => SOUTH_SLAVIC[c])));
+  const qs = [...new Set(variants)];
   const hits: { p: Place; r: number }[] = [];
   for (const p of places().all) {
     if (country && p.country !== country) continue;

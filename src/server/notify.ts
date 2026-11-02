@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR", is: "is-IS" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR", is: "is-IS", sr: "sr-Latn-RS" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  sr: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Rezervacija potvrđena: ${r.salon.name}`,
+      text: `Zdravo ${r.client.name},\n\n${r.service.name} kod ${r.staff.name}\n${when}\n${r.salon.address}\n\nIzmena ili otkazivanje: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Podsetnik: sutra u ${r.salon.name}`,
+      text: `Zdravo ${r.client.name},\n\npodsećamo Vas na rezervaciju: ${r.service.name} kod ${r.staff.name}, ${when}.\nNe možete da dođete? Otkažite ovde: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Kako je bilo u ${r.salon.name}?`,
+      text: `Zdravo ${r.client.name},\n\nocenite ${r.staff.name}. Ocene mogu ostaviti samo klijenti sa potvrđenom posetom.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} Vas moli za ocenu`,
+      text: `Zdravo ${r.client.name},\n\n${r.staff.name} (${r.salon.name}) Vam zahvaljuje na poseti (${r.service.name}) i moli Vas da ostavite ocenu na Astrabeli. Traje minut i nije potreban nalog.\nOvaj link je ličan i važi za jednu ocenu: ${link}`,
     }),
   },
   is: {

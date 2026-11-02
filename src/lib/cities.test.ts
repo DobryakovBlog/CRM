@@ -540,3 +540,25 @@ describe("Icelandic places", () => {
     expect(phoneCountry("akureyri")).toBe("IS");
   });
 });
+
+describe("Serbian places", () => {
+  it("lists GeoNames towns in Vojvodina and Central Serbia", () => {
+    expect(placeBySlug("beograd")).toMatchObject({ name: "Beograd", country: "rs", area: "Centralna Srbija" });
+    expect(placeBySlug("novi-sad")).toMatchObject({ country: "rs", area: "Vojvodina" });
+    expect(searchPlaces("cacak", [], 30, "rs")[0].name).toBe("Čačak");
+  });
+
+  it("finds Serbian towns typed in Cyrillic or with dj for đ", () => {
+    expect(searchPlaces("Ниш", [], 30, "rs")[0].name).toBe("Niš");
+    expect(searchPlaces("Чачак", [], 30, "rs")[0].name).toBe("Čačak");
+    expect(searchPlaces("Аранђеловац", [], 30, "rs")[0].name).toBe("Aranđelovac");
+    expect(searchPlaces("arandjelovac", [], 30, "rs")[0].name).toBe("Aranđelovac");
+    expect(searchPlaces("София", [], 30, "bg")[0].name).toBe("Sofia");
+  });
+
+  it("uses Belgrade time and starts Serbian visitors in Beograd", () => {
+    expect(placeTimezone("kragujevac")).toBe("Europe/Belgrade");
+    expect(cityFieldSetup([], undefined, "sr")).toMatchObject({ defaultCountry: "rs", defaultSlugs: { rs: "beograd" } });
+    expect(phoneCountry("kragujevac")).toBe("RS");
+  });
+});

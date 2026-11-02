@@ -90,6 +90,7 @@
     "lt": "Litháíska",
     "el": "Gríska",
     "is": "Íslenska",
+    "sr": "Serbneska",
     "ru": "Rússneska",
     "uk": "Úkraínska"
   },
@@ -528,7 +529,8 @@
     "gr": "Grikkland",
     "cy": "Kýpur",
     "mt": "Malta",
-    "is": "Ísland"
+    "is": "Ísland",
+    "rs": "Serbía"
   },
   "restaurants": {
     "metaTitle": "Veitingastaðir og matseðlar",
