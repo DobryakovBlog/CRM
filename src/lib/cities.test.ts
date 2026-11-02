@@ -682,3 +682,13 @@ describe("Andorran places", () => {
     expect(phoneCountry("andorra-la-vella")).toBe("AD");
   });
 });
+
+describe("Monegasque places", () => {
+  it("lists the quarters and starts in Monaco", () => {
+    expect(placeBySlug("monaco")).toMatchObject({ name: "Monaco", country: "mc", area: "Monaco" });
+    expect(searchPlaces("monte", [], 30, "mc")[0].name).toBe("Monte-Carlo");
+    expect(placeTimezone("monaco")).toBe("Europe/Monaco");
+    expect(cityFieldSetup([], undefined, "fr", "mc")).toMatchObject({ defaultCountry: "mc", defaultSlugs: { mc: "monaco" } });
+    expect(phoneCountry("monaco")).toBe("MC");
+  });
+});
