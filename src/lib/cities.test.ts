@@ -621,3 +621,18 @@ describe("Albanian places", () => {
     expect(phoneCountry("vlore")).toBe("AL");
   });
 });
+
+describe("Kosovo places", () => {
+  it("lists GeoNames towns by district under both official names", () => {
+    expect(placeBySlug("prishtine-pristina")).toMatchObject({ name: "Prishtinë/Priština", country: "xk", area: "Prishtinë/Priština" });
+    expect(searchPlaces("pristina", [], 30, "xk")[0].name).toBe("Prishtinë/Priština");
+    expect(searchPlaces("prishtine", [], 30, "xk")[0].name).toBe("Prishtinë/Priština");
+    expect(searchPlaces("pec", [], 30, "xk")[0].name).toBe("Pejë/Peć");
+  });
+
+  it("uses Belgrade time and starts in Prishtinë", () => {
+    expect(placeTimezone("prizren")).toBe("Europe/Belgrade");
+    expect(cityFieldSetup([], undefined, "sq", "xk")).toMatchObject({ defaultCountry: "xk", defaultSlugs: { xk: "prishtine-pristina" } });
+    expect(phoneCountry("prizren")).toBe("XK");
+  });
+});
