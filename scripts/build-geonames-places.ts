@@ -20,7 +20,17 @@ type Config = {
   names?: Record<string, string>;
   commaBelow?: boolean;
   byName?: Record<string, string>;
+  respell?: (name: string) => string;
 };
+
+// Greek GeoNames names mix the old BGN romanisation (Áyios, Khalándrion, Galaxídhion) with the modern ELOT 743 one
+// used on Greek road signs (Ágios, Chalándri). The builder turns the old one into the modern one, so a Greek query
+// transliterated by fold() finds them; NAMES covers the towns these rules get wrong and the English names.
+const greekRespell = (name: string) =>
+  name
+    .replace(/Kh/g, "Ch").replace(/kh/g, "ch").replace(/Dh/g, "D").replace(/dh/g, "d")
+    .replace(/Aghi/g, "Ági").replace(/y(?=[iíeé])/g, "g").replace(/Y(?=[iíeé])/g, "G")
+    .replace(/\bNéon\b/g, "Néo").replace(/ion\b/g, "i");
 const COUNTRIES: Record<string, Config> = {
   at: {
     regions: {
@@ -164,6 +174,23 @@ const COUNTRIES: Record<string, Config> = {
       Ukmerge: "Ukmergė", Vilkaviskis: "Vilkaviškis",
     },
   },
+  gr: {
+    regions: {
+      ESYE11: "Anatolikí Makedonía kai Thráki", ESYE12: "Kentrikí Makedonía", ESYE13: "Dytikí Makedonía",
+      ESYE14: "Thessalía", ESYE21: "Ípeiros", ESYE22: "Iónia Nisiá", ESYE23: "Dytikí Elláda", ESYE24: "Stereá Elláda",
+      ESYE25: "Pelopónnisos", ESYE31: "Attikí", ESYE41: "Vóreio Aigaío", ESYE42: "Nótio Aigaío", ESYE43: "Kríti",
+      "736572": "Ágio Óros",
+    },
+    respell: greekRespell,
+    names: {
+      Athens: "Athína", Piraeus: "Peiraiás", Corfu: "Kérkyra", Aegina: "Aígina", Delphi: "Delfoí", Mytilene: "Mytilíni",
+      Chios: "Chíos", Rethymno: "Réthymno", Zakynthos: "Zákynthos", Mykonos: "Mýkonos", Volos: "Vólos",
+      Kalamata: "Kalamáta", Alexandroupoli: "Alexandroúpoli", "Ano Arhanes": "Áno Archánes",
+      "Mosynopolis, Maximianopolis, Μαξιμιανούπολις": "Mosynópoli", Ílion: "Ílio", Irákleion: "Irákleio",
+      Kainoúryion: "Kainoúrgio", "Limín Khersonísou": "Liménas Chersonísou", Leondárion: "Leontári",
+      Kamaterón: "Kamateró", Pappadhátai: "Papadátes",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
@@ -231,7 +258,7 @@ for (const c of readCities(readFileSync(join(atcDir, "cities.pbf")))) {
   if (c.country !== cc.toUpperCase()) continue;
   const area = config.byName ? config.byName[c.name] : regions[c.region];
   if (!area) throw new Error(`unknown region ${c.region} for ${c.name}`);
-  const raw = config.names?.[c.name] ?? c.name;
+  const raw = config.names?.[c.name] ?? config.respell?.(c.name) ?? c.name;
   const name = config.commaBelow ? raw.replace(/ş/g, "ș").replace(/Ş/g, "Ș").replace(/ţ/g, "ț").replace(/Ţ/g, "Ț") : raw;
   const size = Math.max(1, Math.round(c.population / 1000));
   // Romanian GeoNames lists some towns twice, with and without diacritics (Bucuresti, București): keep the bigger one.

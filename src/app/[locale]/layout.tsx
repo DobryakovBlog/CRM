@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteIsPublic } from "@/lib/indexing";
-import { Bodoni_Moda, Manrope, Playfair_Display } from "next/font/google";
+import { Bodoni_Moda, GFS_Didot, Manrope, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -19,6 +19,8 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", displa
 // Browsers download it only for Cyrillic text, so other languages load nothing extra. Bodoni has no adjusted
 // fallback, because that local Times would draw the Cyrillic before Playfair gets the chance.
 const playfair = Playfair_Display({ subsets: ["cyrillic"], weight: ["500", "600"], variable: "--font-cyrillic-display", display: "swap", preload: false });
+// Greek headings use GFS Didot, a Didone like Bodoni, likewise downloaded only for Greek text.
+const didot = GFS_Didot({ subsets: ["greek"], weight: "400", variable: "--font-greek-display", display: "swap", preload: false });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -41,7 +43,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getTranslations("nav");
 
   return (
-    <html lang={locale} className={`${bodoni.variable} ${manrope.variable} ${playfair.variable}`}>
+    <html lang={locale} className={`${bodoni.variable} ${manrope.variable} ${playfair.variable} ${didot.variable}`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider>
           <header className="z-20 border-b border-line bg-white/90 backdrop-blur md:sticky md:top-0">

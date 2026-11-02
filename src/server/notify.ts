@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  el: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Το ραντεβού επιβεβαιώθηκε: ${r.salon.name}`,
+      text: `Γεια σας, ${r.client.name},\n\n${r.service.name} με ${r.staff.name}\n${when}\n${r.salon.address}\n\nΑλλαγή ή ακύρωση: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Υπενθύμιση: αύριο στο ${r.salon.name}`,
+      text: `Γεια σας, ${r.client.name},\n\nσας υπενθυμίζουμε το ραντεβού σας: ${r.service.name} με ${r.staff.name}, ${when}.\nΔεν μπορείτε να έρθετε; Ακυρώστε εδώ: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Πώς ήταν στο ${r.salon.name};`,
+      text: `Γεια σας, ${r.client.name},\n\nαξιολογήστε τον/την ${r.staff.name}. Κριτικές γράφουν μόνο πελάτες με επιβεβαιωμένη επίσκεψη.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} ζητά τη γνώμη σας`,
+      text: `Γεια σας, ${r.client.name},\n\n${r.staff.name} (${r.salon.name}) σας ευχαριστεί για την επίσκεψη (${r.service.name}) και θα ήθελε τη γνώμη σας στην Astrabela. Χρειάζεται ένα λεπτό, χωρίς λογαριασμό.\nΟ σύνδεσμος είναι προσωπικός και ισχύει για μία κριτική: ${link}`,
     }),
   },
   lt: {

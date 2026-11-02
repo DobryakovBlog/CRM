@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cityFieldSetup, cityName, cityOptions, isPlace, placeBySlug, phoneCountry, placeTimezone, placesIn, searchPlaces } from "./cities";
+import { cityFieldSetup, cityName, cityOptions, fold, isPlace, placeBySlug, phoneCountry, placeTimezone, placesIn, searchPlaces } from "./cities";
 
 // Slugs salons were registered with before the full list existed.
 const OLD_SLUGS = [
@@ -475,5 +475,26 @@ describe("Lithuanian places", () => {
     expect(placeTimezone("kaunas")).toBe("Europe/Vilnius");
     expect(cityFieldSetup([], undefined, "lt")).toMatchObject({ defaultCountry: "lt", defaultSlugs: { lt: "vilnius" } });
     expect(phoneCountry("siauliai")).toBe("LT");
+  });
+});
+
+describe("Greek places", () => {
+  it("lists GeoNames towns by region in ELOT 743", () => {
+    expect(placeBySlug("athina")).toMatchObject({ name: "Athína", country: "gr", area: "Attikí" });
+    expect(searchPlaces("chalandri", [], 30, "gr")[0]).toMatchObject({ name: "Chalándri", area: "Attikí" });
+  });
+
+  it("finds towns typed in Greek", () => {
+    expect(fold("Θεσσαλονίκη")).toBe("thessaloniki");
+    expect(fold("Λευκάδα")).toBe("lefkada");
+    expect(fold("Αυλώνας")).toBe("avlonas");
+    expect(searchPlaces("Ηράκλειο", [], 30, "gr").map((p) => p.area)).toContain("Kríti");
+    expect(searchPlaces("Πειραιάς", [], 30, "gr")[0].name).toBe("Peiraiás");
+  });
+
+  it("uses Athens time and starts Greek visitors in Athens", () => {
+    expect(placeTimezone("thessaloniki")).toBe("Europe/Athens");
+    expect(cityFieldSetup([], undefined, "el")).toMatchObject({ defaultCountry: "gr", defaultSlugs: { gr: "athina" } });
+    expect(phoneCountry("patra")).toBe("GR");
   });
 });

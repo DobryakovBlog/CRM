@@ -88,6 +88,7 @@
     "et": "Estnisch",
     "lv": "Lettisch",
     "lt": "Litauisch",
+    "el": "Griechisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -522,7 +523,8 @@
     "fi": "Finnland",
     "ee": "Estland",
     "lv": "Lettland",
-    "lt": "Litauen"
+    "lt": "Litauen",
+    "gr": "Griechenland"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",

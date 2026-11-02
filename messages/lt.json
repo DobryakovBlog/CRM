@@ -88,6 +88,7 @@
     "et": "Estų",
     "lv": "Latvių",
     "lt": "Lietuvių",
+    "el": "Graikų",
     "ru": "Rusų",
     "uk": "Ukrainiečių"
   },
@@ -522,7 +523,8 @@
     "fi": "Suomija",
     "ee": "Estija",
     "lv": "Latvija",
-    "lt": "Lietuva"
+    "lt": "Lietuva",
+    "gr": "Graikija"
   },
   "restaurants": {
     "metaTitle": "Restoranai ir meniu",
