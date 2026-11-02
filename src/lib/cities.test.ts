@@ -562,3 +562,18 @@ describe("Serbian places", () => {
     expect(phoneCountry("kragujevac")).toBe("RS");
   });
 });
+
+describe("Bosnian places", () => {
+  it("lists GeoNames towns by entity", () => {
+    expect(placeBySlug("sarajevo")).toMatchObject({ name: "Sarajevo", country: "ba", area: "Federacija Bosne i Hercegovine" });
+    expect(placeBySlug("banja-luka")).toMatchObject({ country: "ba", area: "Republika Srpska" });
+    expect(searchPlaces("brcko", [], 30, "ba")[0]).toMatchObject({ name: "Brčko", area: "Brčko distrikt" });
+    expect(searchPlaces("Бања Лука", [], 30, "ba")[0].name).toBe("Banja Luka");
+  });
+
+  it("uses Sarajevo time and starts in Sarajevo", () => {
+    expect(placeTimezone("mostar")).toBe("Europe/Sarajevo");
+    expect(cityFieldSetup([], undefined, "en", "ba")).toMatchObject({ defaultCountry: "ba", defaultSlugs: { ba: "sarajevo" } });
+    expect(phoneCountry("mostar")).toBe("BA");
+  });
+});
