@@ -191,6 +191,18 @@ const COUNTRIES: Record<string, Config> = {
       Kamaterón: "Kamateró", Pappadhátai: "Papadátes",
     },
   },
+  // Cyprus: the six districts, the two in the north included as the EU counts them. Greek-script names in ELOT 743
+  // like Greece, with the English name kept for the district capitals people know in English.
+  cy: {
+    regions: { "01": "Ammóchostos", "02": "Kerýneia", "03": "Lárnaka", "04": "Lefkosía", "05": "Lemesós", "06": "Páfos" },
+    respell: greekRespell,
+    names: {
+      Nicosia: "Lefkosía/Nicosia", Limassol: "Lemesós/Limassol", Larnaca: "Lárnaka", Paphos: "Páfos/Paphos",
+      Famagusta: "Ammóchostos/Famagusta", Kyrenia: "Kerýneia/Kyrenia", Geroskipou: "Geroskípou", Emba: "Émpa",
+      Kolossi: "Kolóssi", Konia: "Kóneia", Kissonerga: "Kissónerga", Psimolofou: "Psimolófou",
+      Parekklisha: "Parekklisiá", Meneou: "Meneoú", Pyrgos: "Pýrgos", Xylotymbou: "Xylotýmvou",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {
