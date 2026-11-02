@@ -498,3 +498,17 @@ describe("Greek places", () => {
     expect(phoneCountry("patra")).toBe("GR");
   });
 });
+
+describe("Cypriot places", () => {
+  it("lists towns by district, findable in English and Greek", () => {
+    expect(placeBySlug("lefkosia-nicosia")).toMatchObject({ country: "cy", area: "Lefkosía" });
+    expect(searchPlaces("limassol", [], 30, "cy")[0].name).toBe("Lemesós/Limassol");
+    expect(searchPlaces("Λεμεσός", [], 30, "cy")[0].name).toBe("Lemesós/Limassol");
+    expect(searchPlaces("agia napa", [], 30, "cy")[0].area).toBe("Ammóchostos");
+  });
+
+  it("uses Nicosia time and +357 phones", () => {
+    expect(placeTimezone("larnaka")).toBe("Asia/Nicosia");
+    expect(phoneCountry("larnaka")).toBe("CY");
+  });
+});
