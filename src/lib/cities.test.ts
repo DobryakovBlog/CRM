@@ -526,3 +526,17 @@ describe("Maltese places", () => {
     expect(phoneCountry("sliema")).toBe("MT");
   });
 });
+
+describe("Icelandic places", () => {
+  it("lists GeoNames towns by region", () => {
+    expect(placeBySlug("reykjavik")).toMatchObject({ name: "Reykjavík", country: "is", area: "Höfuðborgarsvæðið" });
+    expect(searchPlaces("hafnarfjordur", [], 30, "is")[0].name).toBe("Hafnarfjörður");
+    expect(searchPlaces("thorlakshofn", [], 30, "is")[0].name).toBe("Þorlákshöfn");
+  });
+
+  it("uses Reykjavik time and starts Icelandic visitors in Reykjavík", () => {
+    expect(placeTimezone("akureyri")).toBe("Atlantic/Reykjavik");
+    expect(cityFieldSetup([], undefined, "is")).toMatchObject({ defaultCountry: "is", defaultSlugs: { is: "reykjavik" } });
+    expect(phoneCountry("akureyri")).toBe("IS");
+  });
+});

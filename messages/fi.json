@@ -89,6 +89,7 @@
     "lv": "Latvia",
     "lt": "Liettua",
     "el": "Kreikka",
+    "is": "Islanti",
     "ru": "Venäjä",
     "uk": "Ukraina"
   },
@@ -526,7 +527,8 @@
     "lt": "Liettua",
     "gr": "Kreikka",
     "cy": "Kypros",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Islanti"
   },
   "restaurants": {
     "metaTitle": "Ravintolat ja ruokalistat",
