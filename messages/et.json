@@ -17,7 +17,8 @@
     "installApp": "Paigalda rakendus",
     "installHintIos": "Puuduta Safaris nuppu Jaga (ruut noolega) ja seejärel „Lisa avakuvale”.",
     "installHintOther": "Ava brauseri menüü ja vali „Installi rakendus” või „Lisa avakuvale”.",
-    "close": "Sulge"
+    "close": "Sulge",
+    "bookings": "Broneeringud"
   },
   "home": {
     "title": "Broneeri parim. Usalda tähti.",

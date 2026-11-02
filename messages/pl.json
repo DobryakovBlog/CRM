@@ -17,7 +17,8 @@
     "installApp": "Zainstaluj aplikację",
     "installHintIos": "W Safari stuknij Udostępnij (kwadrat ze strzałką), a potem „Do ekranu początkowego”.",
     "installHintOther": "Otwórz menu przeglądarki i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.",
-    "close": "Zamknij"
+    "close": "Zamknij",
+    "bookings": "Rezerwacje"
   },
   "home": {
     "title": "Rezerwuj najlepszych. Zaufaj gwiazdkom.",

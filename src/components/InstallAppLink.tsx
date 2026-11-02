@@ -86,7 +86,7 @@ export function InstallAppLink({
         {label}
       </button>
       {hint && (
-        <div role="dialog" aria-label={label} className="fixed inset-x-4 bottom-4 z-30 mx-auto flex max-w-md items-start gap-3 rounded-md bg-white p-4 text-sm text-ink shadow-lg ring-1 ring-black/10">
+        <div role="dialog" aria-label={label} className="fixed inset-x-4 bottom-20 z-40 md:bottom-4 mx-auto flex max-w-md items-start gap-3 rounded-md bg-white p-4 text-sm text-ink shadow-lg ring-1 ring-black/10">
           <p className="flex-1">{hint}</p>
           <button type="button" onClick={() => setHint(null)} aria-label={close} className="text-lg leading-none text-muted hover:text-ink">
             ×

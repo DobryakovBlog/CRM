@@ -17,7 +17,8 @@
     "installApp": "App installieren",
     "installHintIos": "Tippen Sie in Safari auf Teilen (das Quadrat mit dem Pfeil) und dann auf „Zum Home-Bildschirm“.",
     "installHintOther": "Öffnen Sie das Browsermenü und wählen Sie „App installieren“ oder „Zum Startbildschirm hinzufügen“.",
-    "close": "Schließen"
+    "close": "Schließen",
+    "bookings": "Buchungen"
   },
   "home": {
     "title": "Buchen Sie die Besten. Vertrauen Sie den Sternen.",

@@ -17,7 +17,8 @@
     "installApp": "Installer l'app",
     "installHintIos": "Dans Safari, touchez Partager (le carré avec une flèche), puis « Sur l'écran d'accueil ».",
     "installHintOther": "Ouvrez le menu du navigateur et choisissez « Installer l'application » ou « Ajouter à l'écran d'accueil ».",
-    "close": "Fermer"
+    "close": "Fermer",
+    "bookings": "Réservations"
   },
   "home": {
     "title": "Réservez le meilleur. Fiez-vous aux étoiles.",

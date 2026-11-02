@@ -17,7 +17,8 @@
     "installApp": "Installer appen",
     "installHintIos": "Trykk på Del i Safari (firkanten med en pil) og deretter på «Legg til på Hjem-skjerm».",
     "installHintOther": "Åpne nettlesermenyen og velg «Installer appen» eller «Legg til på startskjermen».",
-    "close": "Lukk"
+    "close": "Lukk",
+    "bookings": "Bestillinger"
   },
   "home": {
     "title": "Bestill det beste. Stol på stjernene.",

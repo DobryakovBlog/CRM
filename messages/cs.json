@@ -17,7 +17,8 @@
     "installApp": "Nainstalovat aplikaci",
     "installHintIos": "V Safari klepněte na Sdílet (čtverec se šipkou) a pak na „Přidat na plochu“.",
     "installHintOther": "Otevřete nabídku prohlížeče a zvolte „Instalovat aplikaci“ nebo „Přidat na plochu“.",
-    "close": "Zavřít"
+    "close": "Zavřít",
+    "bookings": "Rezervace"
   },
   "home": {
     "title": "Rezervujte ty nejlepší. Věřte hvězdám.",

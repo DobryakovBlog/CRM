@@ -17,7 +17,8 @@
     "installApp": "Instalați aplicația",
     "installHintIos": "În Safari, atingeți Partajați (pătratul cu săgeată), apoi „Adaugă pe ecranul principal”.",
     "installHintOther": "Deschideți meniul browserului și alegeți „Instalează aplicația” sau „Adaugă pe ecranul de pornire”.",
-    "close": "Închide"
+    "close": "Închide",
+    "bookings": "Rezervări"
   },
   "home": {
     "title": "Rezervați ce e mai bun. Aveți încredere în stele.",

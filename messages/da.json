@@ -17,7 +17,8 @@
     "installApp": "Installer appen",
     "installHintIos": "Tryk på Del i Safari (firkanten med en pil) og derefter på “Føj til hjemmeskærm”.",
     "installHintOther": "Åbn browserens menu, og vælg “Installer app” eller “Føj til startskærm”.",
-    "close": "Luk"
+    "close": "Luk",
+    "bookings": "Bookinger"
   },
   "home": {
     "title": "Book det bedste. Stol på stjernerne.",

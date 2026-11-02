@@ -17,7 +17,8 @@
     "installApp": "Instalar la app",
     "installHintIos": "En Safari, toca Compartir (el cuadrado con la flecha) y luego «Añadir a pantalla de inicio».",
     "installHintOther": "Abre el menú del navegador y elige «Instalar aplicación» o «Añadir a pantalla de inicio».",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "bookings": "Reservas"
   },
   "home": {
     "title": "Reserva lo mejor. Confía en las estrellas.",

@@ -17,7 +17,8 @@
     "installApp": "App installeren",
     "installHintIos": "Tik in Safari op Deel (het vierkant met de pijl) en daarna op ‘Zet op beginscherm’.",
     "installHintOther": "Open het browsermenu en kies ‘App installeren’ of ‘Toevoegen aan startscherm’.",
-    "close": "Sluiten"
+    "close": "Sluiten",
+    "bookings": "Boekingen"
   },
   "home": {
     "title": "Boek de beste. Vertrouw op de sterren.",

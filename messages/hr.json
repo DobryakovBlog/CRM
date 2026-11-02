@@ -17,7 +17,8 @@
     "installApp": "Instaliraj aplikaciju",
     "installHintIos": "U Safariju dodirnite Dijeli (kvadrat sa strelicom), zatim „Dodaj na početni zaslon”.",
     "installHintOther": "Otvorite izbornik preglednika i odaberite „Instaliraj aplikaciju” ili „Dodaj na početni zaslon”.",
-    "close": "Zatvori"
+    "close": "Zatvori",
+    "bookings": "Rezervacije"
   },
   "home": {
     "title": "Rezervirajte najbolje. Vjerujte zvjezdicama.",

@@ -17,7 +17,8 @@
     "installApp": "Instalirajte aplikaciju",
     "installHintIos": "U Safariju dodirnite Deli (kvadrat sa strelicom), zatim „Dodaj na početni ekran”.",
     "installHintOther": "Otvorite meni pregledača i izaberite „Instaliraj aplikaciju” ili „Dodaj na početni ekran”.",
-    "close": "Zatvori"
+    "close": "Zatvori",
+    "bookings": "Rezervacije"
   },
   "home": {
     "title": "Rezervišite najbolje. Verujte zvezdicama.",

@@ -17,7 +17,8 @@
     "installApp": "Install the app",
     "installHintIos": "In Safari, tap Share (the square with an arrow), then “Add to Home Screen”.",
     "installHintOther": "Open the browser menu and choose “Install app” or “Add to Home screen”.",
-    "close": "Close"
+    "close": "Close",
+    "bookings": "Bookings"
   },
   "home": {
     "title": "Book the best. Trust the stars.",

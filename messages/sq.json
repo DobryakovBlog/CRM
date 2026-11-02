@@ -17,7 +17,8 @@
     "installApp": "Instaloni aplikacionin",
     "installHintIos": "Në Safari prekni Ndaj (katrori me shigjetë), pastaj „Shto në ekranin bazë”.",
     "installHintOther": "Hapni menynë e shfletuesit dhe zgjidhni „Instalo aplikacionin” ose „Shto në ekranin kryesor”.",
-    "close": "Mbyll"
+    "close": "Mbyll",
+    "bookings": "Rezervimet"
   },
   "home": {
     "title": "Rezervoni më të mirën. Besojuni yjeve.",

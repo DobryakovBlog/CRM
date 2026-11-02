@@ -17,7 +17,8 @@
     "installApp": "Įdiekite programėlę",
     "installHintIos": "Safari naršyklėje bakstelėkite Bendrinti (kvadratas su rodykle), tada „Įtraukti į pradžios ekraną“.",
     "installHintOther": "Atidarykite naršyklės meniu ir pasirinkite „Įdiegti programą“ arba „Pridėti prie pagrindinio ekrano“.",
-    "close": "Uždaryti"
+    "close": "Uždaryti",
+    "bookings": "Rezervacijos"
   },
   "home": {
     "title": "Rinkitės geriausius. Pasitikėkite žvaigždėmis.",
