@@ -13,7 +13,11 @@
     "privacy": "Privātums",
     "terms": "Noteikumi",
     "signIn": "Pieteikties",
-    "support": "Palīdzība"
+    "support": "Palīdzība",
+    "installApp": "Instalējiet lietotni",
+    "installHintIos": "Safari pieskarieties Kopīgot (kvadrāts ar bultiņu), pēc tam “Pievienot sākuma ekrānam”.",
+    "installHintOther": "Atveriet pārlūka izvēlni un izvēlieties “Instalēt lietotni” vai “Pievienot sākuma ekrānam”.",
+    "close": "Aizvērt"
   },
   "home": {
     "title": "Izvēlieties labāko. Uzticieties zvaigznēm.",

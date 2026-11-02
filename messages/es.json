@@ -13,7 +13,11 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "signIn": "Entrar",
-    "support": "Soporte"
+    "support": "Soporte",
+    "installApp": "Instalar la app",
+    "installHintIos": "En Safari, toca Compartir (el cuadrado con la flecha) y luego «Añadir a pantalla de inicio».",
+    "installHintOther": "Abre el menú del navegador y elige «Instalar aplicación» o «Añadir a pantalla de inicio».",
+    "close": "Cerrar"
   },
   "home": {
     "title": "Reserva lo mejor. Confía en las estrellas.",

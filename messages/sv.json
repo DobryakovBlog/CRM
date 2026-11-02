@@ -13,7 +13,11 @@
     "privacy": "Integritet",
     "terms": "Villkor",
     "signIn": "Logga in",
-    "support": "Hjälp"
+    "support": "Hjälp",
+    "installApp": "Installera appen",
+    "installHintIos": "Tryck på Dela i Safari (fyrkanten med en pil) och sedan på ”Lägg till på hemskärmen”.",
+    "installHintOther": "Öppna webbläsarens meny och välj ”Installera app” eller ”Lägg till på startskärmen”.",
+    "close": "Stäng"
   },
   "home": {
     "title": "Boka det bästa. Lita på stjärnorna.",

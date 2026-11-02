@@ -13,7 +13,11 @@
     "privacy": "Privaatsus",
     "terms": "Tingimused",
     "signIn": "Logi sisse",
-    "support": "Abi"
+    "support": "Abi",
+    "installApp": "Paigalda rakendus",
+    "installHintIos": "Puuduta Safaris nuppu Jaga (ruut noolega) ja seejärel „Lisa avakuvale”.",
+    "installHintOther": "Ava brauseri menüü ja vali „Installi rakendus” või „Lisa avakuvale”.",
+    "close": "Sulge"
   },
   "home": {
     "title": "Broneeri parim. Usalda tähti.",

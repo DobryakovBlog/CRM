@@ -13,7 +13,11 @@
     "privacy": "Prywatność",
     "terms": "Regulamin",
     "signIn": "Zaloguj się",
-    "support": "Pomoc"
+    "support": "Pomoc",
+    "installApp": "Zainstaluj aplikację",
+    "installHintIos": "W Safari stuknij Udostępnij (kwadrat ze strzałką), a potem „Do ekranu początkowego”.",
+    "installHintOther": "Otwórz menu przeglądarki i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.",
+    "close": "Zamknij"
   },
   "home": {
     "title": "Rezerwuj najlepszych. Zaufaj gwiazdkom.",

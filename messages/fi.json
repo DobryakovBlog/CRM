@@ -13,7 +13,11 @@
     "privacy": "Tietosuoja",
     "terms": "Ehdot",
     "signIn": "Kirjaudu",
-    "support": "Tuki"
+    "support": "Tuki",
+    "installApp": "Asenna sovellus",
+    "installHintIos": "Napauta Safarissa Jaa (neliö ja nuoli) ja sitten ”Lisää Koti-valikkoon”.",
+    "installHintOther": "Avaa selaimen valikko ja valitse ”Asenna sovellus” tai ”Lisää aloitusnäytölle”.",
+    "close": "Sulje"
   },
   "home": {
     "title": "Varaa paras. Luota tähtiin.",
