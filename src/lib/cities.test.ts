@@ -577,3 +577,17 @@ describe("Bosnian places", () => {
     expect(phoneCountry("mostar")).toBe("BA");
   });
 });
+
+describe("Montenegrin places", () => {
+  it("lists GeoNames towns by municipality", () => {
+    expect(placeBySlug("podgorica")).toMatchObject({ name: "Podgorica", country: "me", area: "Podgorica" });
+    expect(searchPlaces("niksic", [], 30, "me")[0]).toMatchObject({ name: "Nikšić", area: "Nikšić" });
+    expect(searchPlaces("Будва", [], 30, "me")[0].name).toBe("Budva");
+  });
+
+  it("uses Podgorica time and starts in Podgorica", () => {
+    expect(placeTimezone("budva")).toBe("Europe/Podgorica");
+    expect(cityFieldSetup([], undefined, "sr", "me")).toMatchObject({ defaultCountry: "me", defaultSlugs: { me: "podgorica" } });
+    expect(phoneCountry("budva")).toBe("ME");
+  });
+});
