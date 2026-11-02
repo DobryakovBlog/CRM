@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR", is: "is-IS", sr: "sr-Latn-RS", mk: "mk-MK", sq: "sq-AL" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR", is: "is-IS", sr: "sr-Latn-RS", mk: "mk-MK", sq: "sq-AL", uk: "uk-UA" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  uk: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Запис підтверджено: ${r.salon.name}`,
+      text: `Вітаємо, ${r.client.name}!\n\n${r.service.name}, майстер ${r.staff.name}\n${when}\n${r.salon.address}\n\nЗмінити або скасувати: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Нагадування: завтра в ${r.salon.name}`,
+      text: `Вітаємо, ${r.client.name}!\n\nнагадуємо про Ваш запис: ${r.service.name}, майстер ${r.staff.name}, ${when}.\nНе зможете прийти? Скасуйте тут: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Як Вам у ${r.salon.name}?`,
+      text: `Вітаємо, ${r.client.name}!\n\nоцініть майстра ${r.staff.name}. Відгуки можуть залишати лише клієнти з підтвердженим візитом.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} просить Ваш відгук`,
+      text: `Вітаємо, ${r.client.name}!\n\n${r.staff.name} (${r.salon.name}) дякує за візит (${r.service.name}) і просить залишити відгук на Astrabela. Це займе хвилину, обліковий запис не потрібен.\nПосилання особисте й діє для одного відгуку: ${link}`,
     }),
   },
   sq: {
