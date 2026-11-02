@@ -89,6 +89,7 @@
     "lv": "Lettisk",
     "lt": "Litauisk",
     "el": "Græsk",
+    "is": "Islandsk",
     "ru": "Russisk",
     "uk": "Ukrainsk"
   },
@@ -526,7 +527,8 @@
     "lt": "Litauen",
     "gr": "Grækenland",
     "cy": "Cypern",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Island"
   },
   "restaurants": {
     "metaTitle": "Restauranter og menuer",

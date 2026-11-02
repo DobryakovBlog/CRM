@@ -89,6 +89,7 @@
     "lv": "Lettiska",
     "lt": "Litauiska",
     "el": "Grekiska",
+    "is": "Isländska",
     "ru": "Ryska",
     "uk": "Ukrainska"
   },
@@ -526,7 +527,8 @@
     "lt": "Litauen",
     "gr": "Grekland",
     "cy": "Cypern",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Island"
   },
   "restaurants": {
     "metaTitle": "Restauranger och menyer",

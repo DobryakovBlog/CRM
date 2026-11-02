@@ -89,6 +89,7 @@
     "lv": "Latvian",
     "lt": "Lithuanian",
     "el": "Greek",
+    "is": "Icelandic",
     "ru": "Russian",
     "uk": "Ukrainian"
   },
@@ -526,7 +527,8 @@
     "lt": "Lithuania",
     "gr": "Greece",
     "cy": "Cyprus",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Iceland"
   },
   "restaurants": {
     "metaTitle": "Restaurants and menus",

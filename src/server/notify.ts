@@ -25,7 +25,7 @@ type Row = {
 };
 
 function formatWhen(date: Date, timezone: string, locale: string) {
-  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR" }[toLocale(locale)], {
+  return new Intl.DateTimeFormat({ pt: "pt-PT", en: "en-GB", es: "es-ES", fr: "fr-FR", it: "it-IT", de: "de-DE", nl: "nl-NL", pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", sl: "sl-SI", hr: "hr-HR", ro: "ro-RO", bg: "bg-BG", da: "da-DK", sv: "sv-SE", nb: "nb-NO", fi: "fi-FI", et: "et-EE", lv: "lv-LV", lt: "lt-LT", el: "el-GR", is: "is-IS" }[toLocale(locale)], {
     dateStyle: "full",
     timeStyle: "short",
     timeZone: timezone,
@@ -139,6 +139,24 @@ const texts = {
     invite: (r: Row, _when: string, link: string) => ({
       subject: `${r.staff.name} freut sich über Ihre Meinung`,
       text: `Hallo ${r.client.name},\n\n${r.staff.name} von ${r.salon.name} dankt Ihnen für Ihren Besuch (${r.service.name}) und würde sich über Ihre Bewertung auf Astrabela freuen. Es dauert eine Minute, ein Konto ist nicht nötig.\nDieser Link ist persönlich und gilt für eine Bewertung: ${link}`,
+    }),
+  },
+  is: {
+    confirmed: (r: Row, when: string, link: string) => ({
+      subject: `Bókun staðfest: ${r.salon.name}`,
+      text: `Hæ ${r.client.name},\n\n${r.service.name} hjá ${r.staff.name}\n${when}\n${r.salon.address}\n\nBreyta eða afbóka: ${link}`,
+    }),
+    reminder: (r: Row, when: string, link: string) => ({
+      subject: `Áminning: á morgun hjá ${r.salon.name}`,
+      text: `Hæ ${r.client.name},\n\nvið minnum á bókunina þína: ${r.service.name} hjá ${r.staff.name}, ${when}.\nKemstu ekki? Afbókaðu hér: ${link}`,
+    }),
+    review: (r: Row, _when: string, link: string) => ({
+      subject: `Hvernig var hjá ${r.salon.name}?`,
+      text: `Hæ ${r.client.name},\n\ngefðu ${r.staff.name} einkunn. Aðeins viðskiptavinir með staðfesta heimsókn geta skrifað umsögn.\n${link}`,
+    }),
+    invite: (r: Row, _when: string, link: string) => ({
+      subject: `${r.staff.name} biður um umsögn þína`,
+      text: `Hæ ${r.client.name},\n\n${r.staff.name} (${r.salon.name}) þakkar fyrir heimsóknina (${r.service.name}) og vill gjarnan heyra álit þitt á Astrabela. Það tekur eina mínútu og þú þarft ekki aðgang.\nTengillinn er persónulegur og gildir fyrir eina umsögn: ${link}`,
     }),
   },
   el: {

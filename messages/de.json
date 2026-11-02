@@ -89,6 +89,7 @@
     "lv": "Lettisch",
     "lt": "Litauisch",
     "el": "Griechisch",
+    "is": "Isländisch",
     "ru": "Russisch",
     "uk": "Ukrainisch"
   },
@@ -526,7 +527,8 @@
     "lt": "Litauen",
     "gr": "Griechenland",
     "cy": "Zypern",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Island"
   },
   "restaurants": {
     "metaTitle": "Restaurants und Speisekarten",

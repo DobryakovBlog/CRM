@@ -212,6 +212,12 @@ const COUNTRIES: Record<string, Config> = {
       Vittoriosa: "Birgu/Vittoriosa", Senglea: "Isla/Senglea", Victoria: "Rabat/Victoria", "L-Iklin": "Iklin",
     },
   },
+  is: {
+    regions: {
+      "38": "Austurland", "39": "Höfuðborgarsvæðið", "40": "Norðurland eystra", "41": "Norðurland vestra",
+      "42": "Suðurland", "43": "Suðurnes", "44": "Vestfirðir", "45": "Vesturland",
+    },
+  },
   si: { regions: "admin1", regionFixes: { Sentjur: "Šentjur" }, names: { "Novo Mesto": "Novo mesto" } },
   sk: {
     regions: {

@@ -89,6 +89,7 @@
     "lv": "Latvijščina",
     "lt": "Litovščina",
     "el": "Grščina",
+    "is": "Islandščina",
     "ru": "Ruščina",
     "uk": "Ukrajinščina"
   },
@@ -526,7 +527,8 @@
     "lt": "Litva",
     "gr": "Grčija",
     "cy": "Ciper",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Islandija"
   },
   "restaurants": {
     "metaTitle": "Restavracije in jedilniki",

@@ -89,6 +89,7 @@
     "lv": "Letón",
     "lt": "Lituano",
     "el": "Griego",
+    "is": "Islandés",
     "ru": "Ruso",
     "uk": "Ucraniano"
   },
@@ -526,7 +527,8 @@
     "lt": "Lituania",
     "gr": "Grecia",
     "cy": "Chipre",
-    "mt": "Malta"
+    "mt": "Malta",
+    "is": "Islandia"
   },
   "restaurants": {
     "metaTitle": "Restaurantes y cartas",

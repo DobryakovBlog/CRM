@@ -46,6 +46,7 @@ const PRICES = {
   lv: ["12,99 € mēnesī, maksājot katru mēnesi;", "10,99 € mēnesī, maksājot par 6 mēnešiem;", "9,99 € mēnesī, maksājot par gadu."],
   lt: ["12,99 € per mėnesį mokant kas mėnesį;", "10,99 € per mėnesį mokant už 6 mėnesius;", "9,99 € per mėnesį mokant už metus."],
   el: ["12,99 € τον μήνα με μηνιαία πληρωμή·", "10,99 € τον μήνα με πληρωμή για 6 μήνες·", "9,99 € τον μήνα με ετήσια πληρωμή."],
+  is: ["12,99 € á mánuði með mánaðarlegri greiðslu;", "10,99 € á mánuði þegar greitt er fyrir 6 mánuði;", "9,99 € á mánuði þegar greitt er fyrir árið."],
 };
 
 export function privacyPolicy(locale: Locale): LegalDoc {
@@ -71,6 +72,7 @@ export function privacyPolicy(locale: Locale): LegalDoc {
   if (locale === "lv") return privacyLv();
   if (locale === "lt") return privacyLt();
   if (locale === "el") return privacyEl();
+  if (locale === "is") return privacyIs();
   if (locale === "en") {
     return {
       title: "Privacy policy",
@@ -284,6 +286,7 @@ export function termsOfUse(locale: Locale): LegalDoc {
   if (locale === "lv") return termsLv();
   if (locale === "lt") return termsLt();
   if (locale === "el") return termsEl();
+  if (locale === "is") return termsIs();
   if (locale === "en") {
     return {
       title: "Terms of use",
@@ -4474,6 +4477,197 @@ function termsEl(): LegalDoc {
       {
         title: "10. Αλλαγές",
         body: ["Μπορούμε να ενημερώνουμε αυτούς τους όρους. Η νέα έκδοση θα δημοσιεύεται εδώ με ημερομηνία· για σημαντικές αλλαγές ενημερώνουμε τις επιχειρήσεις εκ των προτέρων."],
+      },
+    ],
+  };
+}
+
+function privacyIs(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Persónuverndarstefna",
+    updated: "Síðast uppfært: 1. nóvember 2026",
+    intro:
+      "Astrabela er evrópsk skrá yfir snyrtistofur, rakarastofur og veitingastaði með bókun á netinu og umsögnum viðskiptavina um hvern fagmann. Þessi stefna útskýrir hvaða persónuupplýsingar við vinnum með, hvers vegna og hvaða réttindi þú hefur samkvæmt persónuverndarreglugerðinni (GDPR).",
+    sections: [
+      { title: "1. Hver við erum", body: [`Þjónustan astrabela.com er rekin af ${who()}. Spurningar um upplýsingarnar þínar má senda á ${o.email}.`] },
+      {
+        title: "2. Hvaða upplýsingar við vinnum með",
+        body: [
+          "Þegar þú bókar eða skrifar umsögn (viðskiptavinir):",
+          [
+            "nafn, netfang og farsímanúmer sem þú gefur upp við bókun, ásamt skilaboðum þínum til stofunnar;",
+            "bókunin sjálf: stofa, fagmaður, þjónusta, dagsetning, tími og staða;",
+            "umsögn þín: stjörnur, texti og nafnið sem þú vilt birta;",
+            "ef þú stofnar aðgang: nafn og netfang, auk lykilorðs sem er aðeins geymt dulkóðað (tætigildi), eða, ef þú skráir þig inn með Google, auðkenni Google-aðgangsins þíns (við sjáum aldrei Google-lykilorðið þitt).",
+          ],
+          "Þegar stofa eða veitingastaður notar Astrabela (fyrirtæki):",
+          [
+            "nafn og netfang eiganda aðgangsins, auk lykilorðs (aðeins geymt dulkóðað);",
+            "upplýsingar um fyrirtækið: nafn, heimilisfang, sími, netfang, kennitala, starfsfólk, þjónusta, verð, opnunartími, matseðill og tenglar á samfélagsmiðla.",
+          ],
+          "Tæknilegar upplýsingar: vafrakökur fyrir innskráningu, vafrakaka fyrir tungumál og annálar netþjóns (t.d. IP-tala og tími beiðni), sem við geymum af öryggisástæðum.",
+        ],
+      },
+      {
+        title: "3. Tilgangur og lagagrundvöllur",
+        body: [
+          [
+            "að gera og halda utan um bókanir: efndir samnings (b-liður 1. mgr. 6. gr. GDPR);",
+            "að halda utan um aðganga og áskriftir fyrirtækja: efndir samnings;",
+            "að birta umsagnir og koma í veg fyrir falsaðar umsagnir: lögmætir hagsmunir af áreiðanlegri skrá (f-liður 1. mgr. 6. gr.);",
+            "örugg starfsemi þjónustunnar: lögmætir hagsmunir;",
+            "skyldur vegna skatta og bókhalds: lagaskylda (c-liður 1. mgr. 6. gr.).",
+          ],
+          "Við seljum ekki persónuupplýsingar og notum þær ekki í auglýsingaskyni.",
+        ],
+      },
+      {
+        title: "4. Hlutverk stofunnar og okkar",
+        body: [
+          "Varðandi bókanir ákveður stofan sem þú velur hvernig upplýsingar viðskiptavina hennar eru notaðar og er ábyrgðaraðili þeirra. Astrabela vinnur þessar upplýsingar fyrir hönd stofunnar sem vinnsluaðili (28. gr. GDPR) og eingöngu til að veita þjónustuna. Varðandi umsagnir, opinberu skrána og öryggi þjónustunnar er Astrabela ábyrgðaraðili.",
+        ],
+      },
+      {
+        title: "5. Viðtakendur",
+        body: [
+          "Stofan eða veitingastaðurinn sem þú bókar hjá. Við notum einnig eftirfarandi þjónustuaðila, sem eru bundnir vinnslusamningum:",
+          [
+            "Vercel Inc. – hýsing; þjónustan keyrir í Frankfurt (ESB). Vercel er bandarískt fyrirtæki; flutningur út fyrir ESB byggir á stöðluðum samningsákvæðum ESB og EU-US Data Privacy Framework;",
+            "Neon – gagnagrunnur í Frankfurt (ESB);",
+            "Cloudflare – lénaþjónusta (DNS);",
+            "Google – aðeins ef þú skráir þig inn með Google.",
+          ],
+        ],
+      },
+      {
+        title: "6. Varðveislutími",
+        body: [
+          [
+            "upplýsingar um viðskiptavini og bókanir: á meðan aðgangur stofunnar er virkur, þó ekki lengur en 2 ár eftir síðustu heimsókn þína;",
+            "umsagnir: á meðan stofan er á Astrabela;",
+            "aðgangar viðskiptavina: þar til þú eyðir þeim (hnappur á aðgangssíðunni);",
+            "aðgangar fyrirtækja: þar til aðganginum er lokað;",
+            "reikningar og greiðsluupplýsingar: 10 ár samkvæmt portúgölskum skattalögum;",
+            "umsóknir fyrirtækja um skráningu: 30 dagar.",
+          ],
+        ],
+      },
+      {
+        title: "7. Vafrakökur",
+        body: [
+          "Við notum aðeins vafrakökur sem eru nauðsynlegar fyrir þjónustuna: til að halda þér innskráðum (og sýna nafnið þitt í valmyndinni), tímabundnar við innskráningu með Google, eina fyrir tungumál og eina sem man hvaða réttum á matseðli veitingastaðar þér líkaði (hún verður aðeins til þegar þú ýtir á ♥ og inniheldur handahófskenndan kóða, ekki nafnið þitt). Við notum engar greiningar- eða auglýsingakökur og biðjum því ekki um samþykki fyrir vafrakökum.",
+        ],
+      },
+      {
+        title: "8. Réttindi þín",
+        body: [
+          `Þú getur óskað eftir aðgangi að upplýsingunum þínum, leiðréttingu eða eyðingu þeirra, takmörkun vinnslu, andmælt vinnslu og fengið upplýsingarnar þínar á flytjanlegu formi. Skrifaðu á ${o.email}; við svörum innan eins mánaðar. Ef upplýsingunum hefur verið deilt með stofu sendum við beiðnina þína einnig áfram til hennar. Þú getur einnig kvartað til Persónuverndar (www.personuvernd.is) eða portúgalska eftirlitsyfirvaldsins CNPD (www.cnpd.pt).`,
+        ],
+      },
+      {
+        title: "9. Öryggi",
+        body: [
+          "Þjónustan keyrir eingöngu um HTTPS, lykilorð eru geymd dulkóðuð og tenglar fyrir bókanir og umsagnir eru persónulegir og erfitt að giska á þá. Deildu ekki persónulega tenglinum þínum með öðrum.",
+        ],
+      },
+      {
+        title: "10. Breytingar",
+        body: ["Ef við breytum þessari stefnu birtum við nýju útgáfuna hér með dagsetningu. Við látum vita af verulegum breytingum í þjónustunni."],
+      },
+    ],
+  };
+}
+
+function termsIs(): LegalDoc {
+  const o = operator();
+  return {
+    title: "Notkunarskilmálar",
+    updated: "Síðast uppfært: 1. nóvember 2026",
+    intro: `Þessir skilmálar gilda um notkun þjónustunnar astrabela.com. Þjónustan er rekin af ${who()}. Með því að nota þjónustuna eða stofna aðgang fyrirtækis samþykkir þú þá.`,
+    sections: [
+      {
+        title: "1. Þjónustan",
+        body: [
+          "Astrabela gerir viðskiptavinum kleift að finna snyrtistofur, rakarastofur og veitingastaði, bóka þjónustu á netinu, gefa fagfólki einkunn og skoða matseðla veitingastaða. Stofur og veitingastaðir stýra prófíl sínum, starfsfólki, þjónustu, dagatali og matseðli í aðgangi fyrirtækisins.",
+        ],
+      },
+      {
+        title: "2. Fyrir viðskiptavini",
+        body: [
+          [
+            "Notkun Astrabela er ókeypis og krefst ekki aðgangs.",
+            "Bókun er samningur milli þín og stofunnar. Stofan ákveður þjónustu, verð og lengd og veitir þjónustuna, ekki Astrabela.",
+            "Astrabela tekur ekki við greiðslum: þú greiðir beint á stofunni.",
+            "Þú getur afbókað með persónulega tenglinum sem þú fékkst. Vinsamlegast afbókaðu ef þú kemst ekki.",
+          ],
+        ],
+      },
+      {
+        title: "3. Umsagnir",
+        body: [
+          "Allir innskráðir viðskiptavinir Astrabela geta gefið fagmanni á stofu einkunn einu sinni á 30 daga fresti fyrir sama fagmann. Viðskiptavinir sem bókuðu í gegnum Astrabela eða hafa heimsókn staðfesta af stofunni geta einnig skrifað umsögn með persónulegum tengli; þær umsagnir eru merktar sem staðfest heimsókn. Umsögn þarf að:",
+          [
+            "fjalla um þína eigin raunverulegu reynslu;",
+            "vera laus við móðganir, hótanir og mismunun;",
+            "vera án upplýsinga um aðra, auglýsinga eða tengla.",
+          ],
+          "Við getum falið umsagnir sem brjóta gegn þessum skilmálum. Stofan getur ekki eytt eða breytt umsögnum; hún getur svarað opinberlega eða tilkynnt umsögn til stjórnenda.",
+        ],
+      },
+      {
+        title: "4. Fyrir stofur og veitingastaði",
+        body: [
+          [
+            "Upplýsingar í prófíl, verð og matseðill skulu vera rétt og uppfærð. Þú berð ábyrgð á þeim og á þjónustu þinni.",
+            "Gættu lykilorðsins; þú berð ábyrgð á aðgerðum í aðganginum þínum.",
+            "Ekki búa til falsaðar bókanir, umsagnir eða umsagnabeiðnir og ekki biðja um umsagnir gegn umbun.",
+            "Aðeins prófílar með virka áskrift eða í prufutíma birtast í leit.",
+          ],
+        ],
+      },
+      {
+        title: "5. Verð",
+        body: [
+          "Fyrir stofur, rakarastofur og veitingastaði eru fyrstu 3 mánuðirnir ókeypis og ekkert kort þarf til að byrja. Eftir það þarf áskrift til að prófíllinn sé sýnilegur:",
+          PRICES.is,
+          "Greiðsluskilmálar birtast fyrir hverja færslu. Við getum breytt verðum með minnst 30 daga fyrirvara; breytingar gilda frá næsta greiðslutímabili.",
+        ],
+      },
+      {
+        title: "6. Vinnslusamningur (fyrirtæki)",
+        body: [
+          "Varðandi upplýsingar um viðskiptavini í bókunum er fyrirtækið ábyrgðaraðili og Astrabela vinnsluaðili (28. gr. GDPR). Astrabela:",
+          [
+            "vinnur þessar upplýsingar eingöngu til að veita þjónustuna og samkvæmt fyrirmælum sem fyrirtækið gefur í þjónustunni;",
+            "tryggir trúnað þeirra og verndar þær með viðeigandi öryggisráðstöfunum;",
+            "notar aðeins undirvinnsluaðila sem nefndir eru í persónuverndarstefnunni og lætur fyrirtæki vita fyrir fram af nýjum;",
+            "aðstoðar fyrirtækið við beiðnir viðskiptavina og tilkynningar um öryggisbresti;",
+            "eyðir eða skilar upplýsingunum eftir lokun aðgangs, nema lög krefjist varðveislu.",
+          ],
+        ],
+      },
+      {
+        title: "7. Biðstaða og lokun aðgangs",
+        body: [
+          "Þú getur lokað aðgangi fyrirtækisins hvenær sem er með því að skrifa okkur. Við getum sett í biðstöðu eða fjarlægt prófíl sem brýtur gegn þessum skilmálum, lögum eða réttindum annarra og tilgreinum þá ástæðuna.",
+        ],
+      },
+      {
+        title: "8. Ábyrgð",
+        body: [
+          "Við leggjum okkur fram um að þjónustan sé aðgengileg og nákvæm, en getum ekki tryggt að hún virki alltaf án truflana og villna. Astrabela er ekki aðili að samningi milli viðskiptavinar og stofu og ber ekki ábyrgð á þjónustu stofunnar. Ekkert í þessum skilmálum takmarkar lögbundin réttindi neytenda.",
+        ],
+      },
+      {
+        title: "9. Gildandi lög og kvartanir",
+        body: [
+          `Um skilmálana gilda portúgölsk lög, með fyrirvara um þá vernd sem lög búsetulands þíns veita þér sem neytanda. Sendu kvartanir á ${o.email}.`,
+        ],
+      },
+      {
+        title: "10. Breytingar",
+        body: ["Við getum uppfært þessa skilmála. Ný útgáfa verður birt hér með dagsetningu; við látum fyrirtæki vita fyrir fram af verulegum breytingum."],
       },
     ],
   };
