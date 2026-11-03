@@ -324,6 +324,9 @@ export const menuSections = pgTable(
       .notNull()
       .references(() => salons.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
+    // Old English-only field, copied into translations by migration 0011. Kept until the site no
+    // longer runs code that reads it, because preview builds migrate the shared database early.
+    nameEn: text("name_en").notNull().default(""),
     // { en: { name: "Starters" }, de: { name: "Vorspeisen" } }
     translations: jsonb("translations").$type<SectionTranslations>().notNull().default({}),
     position: integer("position").notNull().default(0),
@@ -344,6 +347,9 @@ export const menuItems = pgTable(
       .references(() => menuSections.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
     description: text("description").notNull().default(""),
+    // Old English-only fields, see menu_sections.name_en.
+    nameEn: text("name_en").notNull().default(""),
+    descriptionEn: text("description_en").notNull().default(""),
     // { en: { name: "Grilled sardines", description: "..." }, ... }
     translations: jsonb("translations").$type<DishTranslations>().notNull().default({}),
     priceCents: integer("price_cents").notNull(),
