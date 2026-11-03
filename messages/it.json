@@ -418,7 +418,6 @@
       "empty": "Inizia con una sezione come «Antipasti», poi aggiungi i piatti.",
       "editSection": "Modifica sezione",
       "sectionName": "Nuova sezione",
-      "sectionNameEn": "Nome in inglese (facoltativo)",
       "sectionPlaceholder": "Antipasti",
       "save": "Salva",
       "deleteSection": "Elimina la sezione e i suoi piatti",
@@ -429,15 +428,21 @@
       "available": "disponibile",
       "soldOut": "esaurito",
       "dishName": "Nome del piatto",
-      "dishNameEn": "Nome in inglese (facoltativo)",
       "description": "Descrizione",
-      "descriptionEn": "Descrizione in inglese (facoltativa)",
       "price": "Prezzo IVA inclusa, €",
       "portion": "Porzione (facoltativa)",
       "portionPlaceholder": "300 g, 0,33 l, per 2",
       "allergens": "Allergeni",
       "tags": "Etichette",
-      "likes": "Mi piace degli ospiti"
+      "likes": "Mi piace degli ospiti",
+      "languagesTitle": "Lingue del menu",
+      "languagesHint": "Scrivi il menu nella tua lingua e seleziona le lingue in cui lo tradurrai. I clienti scelgono la lingua in cima al menu; ciò che non è ancora tradotto appare nell’originale.",
+      "originalLanguage": "Lingua in cui è scritto il menu",
+      "translationLanguages": "Traduci in",
+      "saveLanguages": "Salva lingue",
+      "translationIn": "{language}",
+      "notTranslated": "non tradotto",
+      "translatedName": "Nome"
     },
     "qr": {
       "hint": "Stampa questa scheda e mettila sui tavoli. Gli ospiti la inquadrano con la fotocamera del telefono e il menu si apre nella lingua del telefono.",
@@ -517,7 +522,8 @@
     "allergens": "Allergeni",
     "vatIncluded": "Prezzi in euro, IVA inclusa.",
     "allergyNote": "Allergie? Avvisa il personale prima di ordinare.",
-    "like": "Mi piace"
+    "like": "Mi piace",
+    "menuLanguage": "Lingua del menu"
   },
   "allergens": {
     "gluten": "glutine",

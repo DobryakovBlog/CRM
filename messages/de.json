@@ -418,7 +418,6 @@
       "empty": "Beginnen Sie mit einem Abschnitt wie „Vorspeisen“ und fügen Sie dann Gerichte hinzu.",
       "editSection": "Abschnitt bearbeiten",
       "sectionName": "Neuer Abschnitt",
-      "sectionNameEn": "Name auf Englisch (optional)",
       "sectionPlaceholder": "Vorspeisen",
       "save": "Speichern",
       "deleteSection": "Abschnitt und seine Gerichte löschen",
@@ -429,15 +428,21 @@
       "available": "verfügbar",
       "soldOut": "ausverkauft",
       "dishName": "Name des Gerichts",
-      "dishNameEn": "Name auf Englisch (optional)",
       "description": "Beschreibung",
-      "descriptionEn": "Beschreibung auf Englisch (optional)",
       "price": "Preis inkl. MwSt., €",
       "portion": "Portion (optional)",
       "portionPlaceholder": "300 g, 0,33 l, für 2",
       "allergens": "Allergene",
       "tags": "Merkmale",
-      "likes": "Likes von Gästen"
+      "likes": "Likes von Gästen",
+      "languagesTitle": "Sprachen der Speisekarte",
+      "languagesHint": "Schreiben Sie die Karte in Ihrer Sprache und wählen Sie die Sprachen, in die Sie sie übersetzen. Gäste wählen die Sprache oben auf der Karte; noch nicht Übersetztes erscheint im Original.",
+      "originalLanguage": "Sprache, in der die Karte geschrieben ist",
+      "translationLanguages": "Übersetzen in",
+      "saveLanguages": "Sprachen speichern",
+      "translationIn": "{language}",
+      "notTranslated": "nicht übersetzt",
+      "translatedName": "Name"
     },
     "qr": {
       "hint": "Drucken Sie diese Karte aus und stellen Sie sie auf Ihre Tische. Gäste scannen sie mit der Handykamera, und die Speisekarte öffnet sich in der Sprache ihres Handys.",
@@ -517,7 +522,8 @@
     "allergens": "Allergene",
     "vatIncluded": "Preise in Euro, inkl. MwSt.",
     "allergyNote": "Allergien? Bitte sagen Sie dem Personal vor der Bestellung Bescheid.",
-    "like": "Gefällt mir"
+    "like": "Gefällt mir",
+    "menuLanguage": "Sprache der Karte"
   },
   "allergens": {
     "gluten": "Gluten",

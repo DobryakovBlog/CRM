@@ -418,7 +418,6 @@
       "empty": "Comece por criar uma secção, por exemplo «Entradas», e adicione os pratos.",
       "editSection": "Editar secção",
       "sectionName": "Nova secção",
-      "sectionNameEn": "Nome em inglês (opcional)",
       "sectionPlaceholder": "Entradas",
       "save": "Guardar",
       "deleteSection": "Apagar secção e os seus pratos",
@@ -429,15 +428,21 @@
       "available": "disponível",
       "soldOut": "esgotado",
       "dishName": "Nome do prato",
-      "dishNameEn": "Nome em inglês (opcional)",
       "description": "Descrição",
-      "descriptionEn": "Descrição em inglês (opcional)",
       "price": "Preço com IVA, €",
       "portion": "Dose (opcional)",
       "portionPlaceholder": "300 g, 0,33 l, para 2",
       "allergens": "Alergénios",
       "tags": "Etiquetas",
-      "likes": "Gostos dos clientes"
+      "likes": "Gostos dos clientes",
+      "languagesTitle": "Idiomas do menu",
+      "languagesHint": "Escreva o menu na sua língua e marque as línguas para as quais o vai traduzir. Os clientes escolhem a língua no topo do menu; o que ainda não estiver traduzido aparece no original.",
+      "originalLanguage": "Língua em que o menu está escrito",
+      "translationLanguages": "Traduzir para",
+      "saveLanguages": "Guardar idiomas",
+      "translationIn": "{language}",
+      "notTranslated": "sem tradução",
+      "translatedName": "Nome"
     },
     "qr": {
       "hint": "Imprima este cartão e coloque-o nas mesas. Os clientes leem o código com a câmara do telemóvel e abrem o menu na língua do telemóvel.",
@@ -517,7 +522,8 @@
     "allergens": "Alergénios",
     "vatIncluded": "Preços em euros com IVA incluído.",
     "allergyNote": "Tem alguma alergia? Fale com a equipa do restaurante antes de pedir.",
-    "like": "Gosto"
+    "like": "Gosto",
+    "menuLanguage": "Língua do menu"
   },
   "allergens": {
     "gluten": "glúten",

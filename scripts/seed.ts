@@ -172,11 +172,11 @@ for (const [i, r] of restaurants.entries()) {
     name: r.owner, email, password: "demo12345", salonName: r.name, city: r.city, address: r.address,
     phone: "+351 220 000 00" + i, kind: "restaurant",
   });
-  await db.update(salons).set({ status: "active", district: r.district, description: r.description, cuisine: r.cuisine, social: DEMO_SOCIAL[r.name] ?? {} }).where(eq(salons.id, salon.id));
+  await db.update(salons).set({ status: "active", district: r.district, description: r.description, cuisine: r.cuisine, social: DEMO_SOCIAL[r.name] ?? {}, menuLanguage: "pt", menuTranslations: ["en"] }).where(eq(salons.id, salon.id));
   for (const [si, sec] of r.menu.entries()) {
-    const [section] = await db.insert(menuSections).values({ salonId: salon.id, name: sec.section, nameEn: sec.sectionEn, position: si }).returning();
+    const [section] = await db.insert(menuSections).values({ salonId: salon.id, name: sec.section, translations: { en: { name: sec.sectionEn } }, position: si }).returning();
     await db.insert(menuItems).values(sec.dishes.map(([name, nameEn, euros, description = "", extra = {}], di) => ({
-      salonId: salon.id, sectionId: section.id, name, nameEn, description, descriptionEn: extra.descriptionEn ?? "",
+      salonId: salon.id, sectionId: section.id, name, description, translations: { en: { name: nameEn, description: extra.descriptionEn ?? "" } },
       priceCents: Math.round(euros * 100), portion: extra.portion ?? "", allergens: extra.allergens ?? [], tags: extra.tags ?? [], position: di,
     })));
   }

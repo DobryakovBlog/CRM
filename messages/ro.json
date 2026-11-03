@@ -418,7 +418,6 @@
       "empty": "Începeți cu o secțiune, de exemplu „Aperitive”, apoi adăugați preparate.",
       "editSection": "Editează secțiunea",
       "sectionName": "Secțiune nouă",
-      "sectionNameEn": "Denumire în engleză (opțional)",
       "sectionPlaceholder": "Aperitive",
       "save": "Salvează",
       "deleteSection": "Șterge secțiunea și preparatele ei",
@@ -429,15 +428,21 @@
       "available": "disponibil",
       "soldOut": "epuizat",
       "dishName": "Denumirea preparatului",
-      "dishNameEn": "Denumire în engleză (opțional)",
       "description": "Descriere",
-      "descriptionEn": "Descriere în engleză (opțional)",
       "price": "Preț cu TVA, €",
       "portion": "Porție (opțional)",
       "portionPlaceholder": "300 g, 0,33 l, pentru 2 persoane",
       "allergens": "Alergeni",
       "tags": "Etichete",
-      "likes": "Aprecieri de la clienți"
+      "likes": "Aprecieri de la clienți",
+      "languagesTitle": "Limbile meniului",
+      "languagesHint": "Scrieți meniul în limba dvs. și bifați limbile în care îl veți traduce. Clienții aleg limba în partea de sus a meniului; ce nu este încă tradus apare în original.",
+      "originalLanguage": "Limba în care este scris meniul",
+      "translationLanguages": "Tradu în",
+      "saveLanguages": "Salvează limbile",
+      "translationIn": "{language}",
+      "notTranslated": "netradus",
+      "translatedName": "Nume"
     },
     "qr": {
       "hint": "Tipăriți acest card și puneți-l pe mese. Clienții îl scanează cu camera telefonului, iar meniul se deschide în limba telefonului lor.",
@@ -517,7 +522,8 @@
     "allergens": "Alergeni",
     "vatIncluded": "Prețuri în euro, TVA inclus.",
     "allergyNote": "Aveți alergii? Spuneți-le personalului înainte de a comanda.",
-    "like": "Îmi place"
+    "like": "Îmi place",
+    "menuLanguage": "Limba meniului"
   },
   "allergens": {
     "gluten": "gluten",

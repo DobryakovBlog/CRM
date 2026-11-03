@@ -418,7 +418,6 @@
       "empty": "Počnite odjeljkom, npr. „Predjela”, a zatim dodajte jela.",
       "editSection": "Uredi odjeljak",
       "sectionName": "Novi odjeljak",
-      "sectionNameEn": "Naziv na engleskom (neobavezno)",
       "sectionPlaceholder": "Predjela",
       "save": "Spremi",
       "deleteSection": "Izbriši odjeljak i njegova jela",
@@ -429,15 +428,21 @@
       "available": "dostupno",
       "soldOut": "rasprodano",
       "dishName": "Naziv jela",
-      "dishNameEn": "Naziv na engleskom (neobavezno)",
       "description": "Opis",
-      "descriptionEn": "Opis na engleskom (neobavezno)",
       "price": "Cijena s PDV-om, €",
       "portion": "Porcija (neobavezno)",
       "portionPlaceholder": "300 g, 0,33 l, za 2 osobe",
       "allergens": "Alergeni",
       "tags": "Oznake",
-      "likes": "Sviđanja gostiju"
+      "likes": "Sviđanja gostiju",
+      "languagesTitle": "Jezici jelovnika",
+      "languagesHint": "Napišite jelovnik na svom jeziku i označite jezike na koje ćete ga prevesti. Gosti biraju jezik na vrhu jelovnika; ono što još nije prevedeno prikazuje se u izvorniku.",
+      "originalLanguage": "Jezik na kojem je jelovnik napisan",
+      "translationLanguages": "Prevedi na",
+      "saveLanguages": "Spremi jezike",
+      "translationIn": "{language}",
+      "notTranslated": "nije prevedeno",
+      "translatedName": "Naziv"
     },
     "qr": {
       "hint": "Isprintajte ovaj list i stavite ga na stolove. Gosti ga skeniraju kamerom mobitela i jelovnik se otvara na jeziku njihova mobitela.",
@@ -517,7 +522,8 @@
     "allergens": "Alergeni",
     "vatIncluded": "Cijene u eurima, s PDV-om.",
     "allergyNote": "Imate alergiju? Recite osoblju prije narudžbe.",
-    "like": "Sviđa mi se"
+    "like": "Sviđa mi se",
+    "menuLanguage": "Jezik jelovnika"
   },
   "allergens": {
     "gluten": "gluten",

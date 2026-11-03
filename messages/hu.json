@@ -418,7 +418,6 @@
       "empty": "Kezdd egy szakasszal, pl. „Előételek”, majd adj hozzá ételeket.",
       "editSection": "Szakasz szerkesztése",
       "sectionName": "Új szakasz",
-      "sectionNameEn": "Név angolul (nem kötelező)",
       "sectionPlaceholder": "Előételek",
       "save": "Mentés",
       "deleteSection": "Szakasz és ételeinek törlése",
@@ -429,15 +428,21 @@
       "available": "elérhető",
       "soldOut": "elfogyott",
       "dishName": "Étel neve",
-      "dishNameEn": "Név angolul (nem kötelező)",
       "description": "Leírás",
-      "descriptionEn": "Leírás angolul (nem kötelező)",
       "price": "Ár áfával, €",
       "portion": "Adag (nem kötelező)",
       "portionPlaceholder": "300 g, 0,33 l, 2 főre",
       "allergens": "Allergének",
       "tags": "Jelölések",
-      "likes": "Vendégek kedvencei"
+      "likes": "Vendégek kedvencei",
+      "languagesTitle": "Az étlap nyelvei",
+      "languagesHint": "Írd meg az étlapot a saját nyelveden, és jelöld be, milyen nyelvekre fordítod le. A vendégek az étlap tetején választanak nyelvet; ami még nincs lefordítva, az eredetiben jelenik meg.",
+      "originalLanguage": "Az étlap eredeti nyelve",
+      "translationLanguages": "Fordítás erre",
+      "saveLanguages": "Nyelvek mentése",
+      "translationIn": "{language}",
+      "notTranslated": "nincs lefordítva",
+      "translatedName": "Név"
     },
     "qr": {
       "hint": "Nyomtasd ki ezt a lapot, és tedd az asztalokra. A vendégek a telefonjuk kamerájával beolvassák, és az étlap a telefonjuk nyelvén nyílik meg.",
@@ -517,7 +522,8 @@
     "allergens": "Allergének",
     "vatIncluded": "Árak euróban, áfával.",
     "allergyNote": "Allergiás vagy? Rendelés előtt szólj a felszolgálónak.",
-    "like": "Tetszik"
+    "like": "Tetszik",
+    "menuLanguage": "Az étlap nyelve"
   },
   "allergens": {
     "gluten": "glutén",

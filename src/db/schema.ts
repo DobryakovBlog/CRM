@@ -12,6 +12,7 @@ import {
   uniqueIndex,
   uuid,
 } from "drizzle-orm/pg-core";
+import type { DishTranslations, SectionTranslations } from "@/lib/menu-languages";
 import type { SocialLinks } from "@/lib/social";
 
 const id = () => uuid("id").primaryKey().defaultRandom();
@@ -129,6 +130,9 @@ export const salons = pgTable(
     cuisine: text("cuisine").notNull().default(""), // restaurants only, e.g. "Portuguesa · Marisco"
     social: jsonb("social").$type<SocialLinks>().notNull().default({}), // Instagram, Facebook, TikTok, WhatsApp, website
     petFriendly: boolean("pet_friendly").notNull().default(false),
+    // Restaurants: the language the menu is written in, and the languages it is translated into.
+    menuLanguage: text("menu_language").notNull().default(""),
+    menuTranslations: text("menu_translations").array().notNull().default([]),
     status: salonStatus("status").notNull().default("draft"),
     // Cached aggregates, recomputed whenever a review changes.
     ratingAvg: integer("rating_avg_x100").notNull().default(0),
@@ -320,7 +324,8 @@ export const menuSections = pgTable(
       .notNull()
       .references(() => salons.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
-    nameEn: text("name_en").notNull().default(""),
+    // { en: { name: "Starters" }, de: { name: "Vorspeisen" } }
+    translations: jsonb("translations").$type<SectionTranslations>().notNull().default({}),
     position: integer("position").notNull().default(0),
     createdAt: createdAt(),
   },
@@ -338,9 +343,9 @@ export const menuItems = pgTable(
       .notNull()
       .references(() => menuSections.id, { onDelete: "cascade" }),
     name: text("name").notNull(),
-    nameEn: text("name_en").notNull().default(""),
     description: text("description").notNull().default(""),
-    descriptionEn: text("description_en").notNull().default(""),
+    // { en: { name: "Grilled sardines", description: "..." }, ... }
+    translations: jsonb("translations").$type<DishTranslations>().notNull().default({}),
     priceCents: integer("price_cents").notNull(),
     // Free text like "250 g" or "0,33 l".
     portion: text("portion").notNull().default(""),

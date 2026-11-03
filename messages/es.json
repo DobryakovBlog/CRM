@@ -418,7 +418,6 @@
       "empty": "Empieza creando una sección, por ejemplo «Entrantes», y añade los platos.",
       "editSection": "Editar sección",
       "sectionName": "Nueva sección",
-      "sectionNameEn": "Nombre en inglés (opcional)",
       "sectionPlaceholder": "Entrantes",
       "save": "Guardar",
       "deleteSection": "Borrar la sección y sus platos",
@@ -429,15 +428,21 @@
       "available": "disponible",
       "soldOut": "agotado",
       "dishName": "Nombre del plato",
-      "dishNameEn": "Nombre en inglés (opcional)",
       "description": "Descripción",
-      "descriptionEn": "Descripción en inglés (opcional)",
       "price": "Precio con IVA, €",
       "portion": "Ración (opcional)",
       "portionPlaceholder": "300 g, 0,33 l, para 2",
       "allergens": "Alérgenos",
       "tags": "Etiquetas",
-      "likes": "Me gusta de los clientes"
+      "likes": "Me gusta de los clientes",
+      "languagesTitle": "Idiomas del menú",
+      "languagesHint": "Escribe el menú en tu idioma y marca los idiomas a los que lo vas a traducir. Los clientes eligen el idioma arriba del menú; lo que aún no esté traducido aparece en el original.",
+      "originalLanguage": "Idioma en que está escrito el menú",
+      "translationLanguages": "Traducir a",
+      "saveLanguages": "Guardar idiomas",
+      "translationIn": "{language}",
+      "notTranslated": "sin traducir",
+      "translatedName": "Nombre"
     },
     "qr": {
       "hint": "Imprime esta tarjeta y ponla en las mesas. Los clientes leen el código con la cámara del móvil y abren la carta en el idioma del móvil.",
@@ -517,7 +522,8 @@
     "allergens": "Alérgenos",
     "vatIncluded": "Precios en euros con IVA incluido.",
     "allergyNote": "¿Tienes alguna alergia? Habla con el personal del restaurante antes de pedir.",
-    "like": "Me gusta"
+    "like": "Me gusta",
+    "menuLanguage": "Idioma del menú"
   },
   "allergens": {
     "gluten": "gluten",

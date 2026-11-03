@@ -418,7 +418,6 @@
       "empty": "Commencez par une rubrique comme « Entrées », puis ajoutez des plats.",
       "editSection": "Modifier la rubrique",
       "sectionName": "Nouvelle rubrique",
-      "sectionNameEn": "Nom en anglais (facultatif)",
       "sectionPlaceholder": "Entrées",
       "save": "Enregistrer",
       "deleteSection": "Supprimer la rubrique et ses plats",
@@ -429,15 +428,21 @@
       "available": "disponible",
       "soldOut": "épuisé",
       "dishName": "Nom du plat",
-      "dishNameEn": "Nom en anglais (facultatif)",
       "description": "Description",
-      "descriptionEn": "Description en anglais (facultatif)",
       "price": "Prix TTC, €",
       "portion": "Portion (facultatif)",
       "portionPlaceholder": "300 g, 33 cl, pour 2",
       "allergens": "Allergènes",
       "tags": "Étiquettes",
-      "likes": "J'aime des clients"
+      "likes": "J'aime des clients",
+      "languagesTitle": "Langues du menu",
+      "languagesHint": "Rédigez le menu dans votre langue et cochez les langues dans lesquelles vous le traduirez. Les clients choisissent la langue en haut du menu ; ce qui n’est pas encore traduit s’affiche dans l’original.",
+      "originalLanguage": "Langue dans laquelle le menu est rédigé",
+      "translationLanguages": "Traduire en",
+      "saveLanguages": "Enregistrer les langues",
+      "translationIn": "{language}",
+      "notTranslated": "non traduit",
+      "translatedName": "Nom"
     },
     "qr": {
       "hint": "Imprimez cette carte et posez-la sur vos tables. Les clients la scannent avec l'appareil photo de leur téléphone et la carte s'ouvre dans la langue de leur téléphone.",
@@ -517,7 +522,8 @@
     "allergens": "Allergènes",
     "vatIncluded": "Prix en euros, TVA comprise.",
     "allergyNote": "Des allergies ? Signalez-les au personnel avant de commander.",
-    "like": "J'aime"
+    "like": "J'aime",
+    "menuLanguage": "Langue du menu"
   },
   "allergens": {
     "gluten": "gluten",

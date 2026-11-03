@@ -418,7 +418,6 @@
       "empty": "Začnite z razdelkom, npr. »Predjedi«, nato dodajte jedi.",
       "editSection": "Uredi razdelek",
       "sectionName": "Nov razdelek",
-      "sectionNameEn": "Ime v angleščini (neobvezno)",
       "sectionPlaceholder": "Predjedi",
       "save": "Shrani",
       "deleteSection": "Izbriši razdelek in njegove jedi",
@@ -429,15 +428,21 @@
       "available": "na voljo",
       "soldOut": "razprodano",
       "dishName": "Ime jedi",
-      "dishNameEn": "Ime v angleščini (neobvezno)",
       "description": "Opis",
-      "descriptionEn": "Opis v angleščini (neobvezno)",
       "price": "Cena z DDV, €",
       "portion": "Porcija (neobvezno)",
       "portionPlaceholder": "300 g, 0,33 l, za 2 osebi",
       "allergens": "Alergeni",
       "tags": "Oznake",
-      "likes": "Všečki gostov"
+      "likes": "Všečki gostov",
+      "languagesTitle": "Jeziki jedilnika",
+      "languagesHint": "Jedilnik napišite v svojem jeziku in označite jezike, v katere ga boste prevedli. Gostje izberejo jezik na vrhu jedilnika; kar še ni prevedeno, se prikaže v izvirniku.",
+      "originalLanguage": "Jezik, v katerem je napisan jedilnik",
+      "translationLanguages": "Prevedi v",
+      "saveLanguages": "Shrani jezike",
+      "translationIn": "{language}",
+      "notTranslated": "ni prevedeno",
+      "translatedName": "Ime"
     },
     "qr": {
       "hint": "Natisnite ta list in ga postavite na mize. Gostje ga skenirajo s kamero telefona in jedilnik se odpre v jeziku njihovega telefona.",
@@ -517,7 +522,8 @@
     "allergens": "Alergeni",
     "vatIncluded": "Cene v evrih, z DDV.",
     "allergyNote": "Imate alergijo? Pred naročilom povejte osebju.",
-    "like": "Všeč mi je"
+    "like": "Všeč mi je",
+    "menuLanguage": "Jezik jedilnika"
   },
   "allergens": {
     "gluten": "gluten",

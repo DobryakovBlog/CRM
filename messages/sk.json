@@ -418,7 +418,6 @@
       "empty": "Začnite sekciou, napr. „Predjedlá“, a potom pridajte jedlá.",
       "editSection": "Upraviť sekciu",
       "sectionName": "Nová sekcia",
-      "sectionNameEn": "Názov po anglicky (nepovinné)",
       "sectionPlaceholder": "Predjedlá",
       "save": "Uložiť",
       "deleteSection": "Zmazať sekciu aj jej jedlá",
@@ -429,15 +428,21 @@
       "available": "k dispozícii",
       "soldOut": "vypredané",
       "dishName": "Názov jedla",
-      "dishNameEn": "Názov po anglicky (nepovinné)",
       "description": "Popis",
-      "descriptionEn": "Popis po anglicky (nepovinné)",
       "price": "Cena s DPH, €",
       "portion": "Porcia (nepovinné)",
       "portionPlaceholder": "300 g, 0,33 l, pre 2 osoby",
       "allergens": "Alergény",
       "tags": "Označenia",
-      "likes": "Obľúbené u hostí"
+      "likes": "Obľúbené u hostí",
+      "languagesTitle": "Jazyky menu",
+      "languagesHint": "Napíšte menu vo svojom jazyku a označte jazyky, do ktorých ho preložíte. Hostia si jazyk vyberú hore v menu; čo ešte nie je preložené, sa zobrazí v origináli.",
+      "originalLanguage": "Jazyk, v ktorom je menu napísané",
+      "translationLanguages": "Preložiť do",
+      "saveLanguages": "Uložiť jazyky",
+      "translationIn": "{language}",
+      "notTranslated": "nepreložené",
+      "translatedName": "Názov"
     },
     "qr": {
       "hint": "Vytlačte tento list a postavte ho na stoly. Hostia ho naskenujú fotoaparátom telefónu a menu sa otvorí v jazyku ich telefónu.",
@@ -517,7 +522,8 @@
     "allergens": "Alergény",
     "vatIncluded": "Ceny v eurách vrátane DPH.",
     "allergyNote": "Máte alergiu? Povedzte to obsluhe pred objednaním.",
-    "like": "Páči sa mi"
+    "like": "Páči sa mi",
+    "menuLanguage": "Jazyk menu"
   },
   "allergens": {
     "gluten": "lepok",

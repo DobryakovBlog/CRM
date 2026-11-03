@@ -418,7 +418,6 @@
       "empty": "Zacznij od sekcji, np. „Przystawki”, a potem dodaj dania.",
       "editSection": "Edytuj sekcję",
       "sectionName": "Nowa sekcja",
-      "sectionNameEn": "Nazwa po angielsku (opcjonalnie)",
       "sectionPlaceholder": "Przystawki",
       "save": "Zapisz",
       "deleteSection": "Usuń sekcję i jej dania",
@@ -429,15 +428,21 @@
       "available": "dostępne",
       "soldOut": "wyprzedane",
       "dishName": "Nazwa dania",
-      "dishNameEn": "Nazwa po angielsku (opcjonalnie)",
       "description": "Opis",
-      "descriptionEn": "Opis po angielsku (opcjonalnie)",
       "price": "Cena z VAT, €",
       "portion": "Porcja (opcjonalnie)",
       "portionPlaceholder": "300 g, 0,33 l, dla 2 osób",
       "allergens": "Alergeny",
       "tags": "Oznaczenia",
-      "likes": "Polubienia gości"
+      "likes": "Polubienia gości",
+      "languagesTitle": "Języki menu",
+      "languagesHint": "Napisz menu w swoim języku i zaznacz języki, na które je przetłumaczysz. Goście wybierają język u góry menu; to, co nie jest jeszcze przetłumaczone, wyświetla się w oryginale.",
+      "originalLanguage": "Język, w którym napisane jest menu",
+      "translationLanguages": "Przetłumacz na",
+      "saveLanguages": "Zapisz języki",
+      "translationIn": "{language}",
+      "notTranslated": "bez tłumaczenia",
+      "translatedName": "Nazwa"
     },
     "qr": {
       "hint": "Wydrukuj tę kartkę i postaw na stolikach. Goście skanują ją aparatem telefonu, a menu otwiera się w języku ich telefonu.",
@@ -517,7 +522,8 @@
     "allergens": "Alergeny",
     "vatIncluded": "Ceny w euro, z VAT.",
     "allergyNote": "Masz alergię? Powiedz obsłudze przed zamówieniem.",
-    "like": "Lubię"
+    "like": "Lubię",
+    "menuLanguage": "Język menu"
   },
   "allergens": {
     "gluten": "gluten",
