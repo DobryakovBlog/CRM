@@ -18,6 +18,9 @@ import {
   restaurantMenu,
   searchRestaurants,
   setDishAvailable,
+  setMenuLanguages,
+  updateSection,
+  menuLanguageOf,
   toggleDishLike,
   updateDish,
   type DishInput,
@@ -29,9 +32,8 @@ const db = drizzle(pool, { schema }) as unknown as Db;
 
 const dish = (name: string, euros: number, extra: Partial<DishInput> = {}): DishInput => ({
   name,
-  nameEn: "",
   description: "",
-  descriptionEn: "",
+  translations: {},
   priceCents: euros * 100,
   portion: "",
   allergens: [],
@@ -62,7 +64,7 @@ afterAll(async () => {
 describe("restaurant menu", () => {
   it("is listed only once approved and with a dish, and never among salons", async () => {
     await expect(submitForReview(db, restaurantId)).rejects.toThrow("not_ready");
-    const s = await addSection(db, restaurantId, { name: "Pratos", nameEn: "Mains" });
+    const s = await addSection(db, restaurantId, { name: "Pratos", translations: { en: { name: "Mains" } } });
     await addDish(db, restaurantId, s.id, dish("Bitoque", 13.5));
     await submitForReview(db, restaurantId);
     expect(await searchRestaurants(db, { city: "lisboa" })).toHaveLength(0); // pending, not approved yet
@@ -74,8 +76,8 @@ describe("restaurant menu", () => {
   });
 
   it("hides sold-out dishes and empty sections from guests but not from the owner", async () => {
-    const mains = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
-    const drinks = await addSection(db, restaurantId, { name: "Bebidas", nameEn: "" });
+    const mains = await addSection(db, restaurantId, { name: "Pratos", translations: {} });
+    const drinks = await addSection(db, restaurantId, { name: "Bebidas", translations: {} });
     await addDish(db, restaurantId, mains.id, dish("Bitoque", 13.5));
     const water = await addDish(db, restaurantId, drinks.id, dish("Água", 2));
     await setDishAvailable(db, restaurantId, water.id, false);
@@ -88,7 +90,7 @@ describe("restaurant menu", () => {
   });
 
   it("keeps the order the owner sets", async () => {
-    const s = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    const s = await addSection(db, restaurantId, { name: "Pratos", translations: {} });
     const a = await addDish(db, restaurantId, s.id, dish("A", 1));
     await addDish(db, restaurantId, s.id, dish("B", 1));
     await addDish(db, restaurantId, s.id, dish("C", 1));
@@ -98,7 +100,7 @@ describe("restaurant menu", () => {
   });
 
   it("only accepts known allergens and tags, and only from the dish's own restaurant", async () => {
-    const s = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    const s = await addSection(db, restaurantId, { name: "Pratos", translations: {} });
     const d = await addDish(db, restaurantId, s.id, dish("Polvo", 21, { allergens: ["molluscs", "nonsense"], tags: ["spicy", "x"] }));
     expect(d.allergens).toEqual(["molluscs"]);
     expect(d.tags).toEqual(["spicy"]);
@@ -110,7 +112,7 @@ describe("restaurant menu", () => {
   });
 
   it("counts one like per visitor and lets them take it back", async () => {
-    const section = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    const section = await addSection(db, restaurantId, { name: "Pratos", translations: {} });
     const item = await addDish(db, restaurantId, section.id, dish("Bacalhau", 14));
     expect(await toggleDishLike(db, item.id, "v1")).toEqual({ liked: true, count: 1 });
     expect(await toggleDishLike(db, item.id, "v2")).toEqual({ liked: true, count: 2 });
@@ -122,10 +124,27 @@ describe("restaurant menu", () => {
 
   it("stays listed with no subscription, since Astrabela is free", async () => {
     expect(await db.execute(sql`select 1 from subscriptions where salon_id = ${restaurantId}`)).toMatchObject({ rowCount: 0 });
-    const section = await addSection(db, restaurantId, { name: "Pratos", nameEn: "" });
+    const section = await addSection(db, restaurantId, { name: "Pratos", translations: {} });
     await addDish(db, restaurantId, section.id, dish("Bacalhau", 14));
     await db.update(salons).set({ status: "active" }).where(eq(salons.id, restaurantId));
     expect(await restaurantBySlug(db, slug)).not.toBeNull();
   });
-});
 
+  it("keeps translations per language and the restaurant's language choice", async () => {
+    await setMenuLanguages(db, restaurantId, "pt", ["en", "de", "pt", "xx"]);
+    const [r] = await db.select().from(salons).where(eq(salons.id, restaurantId));
+    expect(r.menuLanguage).toBe("pt");
+    expect(r.menuTranslations).toEqual(["en", "de"]);
+    expect(menuLanguageOf({ menuLanguage: "", city: "lisboa" })).toBe("pt");
+
+    const s = await addSection(db, restaurantId, { name: "Peixe", translations: { en: { name: "Fish" }, de: { name: "" } } });
+    expect(s.translations).toEqual({ en: { name: "Fish" } });
+    await updateSection(db, restaurantId, s.id, { name: "Peixe", translations: { de: { name: "Fisch" } } });
+    const d = await addDish(db, restaurantId, s.id, dish("Sardinhas", 12, { translations: { en: { name: "Sardines", description: "" } } }));
+    // The edit form only carries German now; English stays, an emptied German is dropped.
+    await updateDish(db, restaurantId, d.id, dish("Sardinhas", 12, { translations: { de: { name: "", description: "" } } }));
+    const [section] = await restaurantMenu(db, restaurantId, { publicView: false });
+    expect(section.translations).toEqual({ en: { name: "Fish" }, de: { name: "Fisch" } });
+    expect(section.items[0].translations).toEqual({ en: { name: "Sardines", description: "" } });
+  });
+});

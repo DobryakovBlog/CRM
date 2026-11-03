@@ -418,7 +418,6 @@
       "empty": "Alusta jaotisega, näiteks „Eelroad“, ja lisa siis road.",
       "editSection": "Muuda jaotist",
       "sectionName": "Uus jaotis",
-      "sectionNameEn": "Nimi inglise keeles (valikuline)",
       "sectionPlaceholder": "Eelroad",
       "save": "Salvesta",
       "deleteSection": "Kustuta jaotis koos roogadega",
@@ -429,15 +428,21 @@
       "available": "saadaval",
       "soldOut": "otsas",
       "dishName": "Roa nimi",
-      "dishNameEn": "Nimi inglise keeles (valikuline)",
       "description": "Kirjeldus",
-      "descriptionEn": "Kirjeldus inglise keeles (valikuline)",
       "price": "Hind koos käibemaksuga, €",
       "portion": "Portsjon (valikuline)",
       "portionPlaceholder": "300 g, 0,33 l, kahele",
       "allergens": "Allergeenid",
       "tags": "Sildid",
-      "likes": "Külaliste meeldimised"
+      "likes": "Külaliste meeldimised",
+      "languagesTitle": "Menüü keeled",
+      "languagesHint": "Kirjuta menüü oma keeles ja märgi keeled, millesse selle tõlgid. Külalised valivad keele menüü ülaosas; mis pole veel tõlgitud, näidatakse originaalis.",
+      "originalLanguage": "Keel, milles menüü on kirjutatud",
+      "translationLanguages": "Tõlgi keelde",
+      "saveLanguages": "Salvesta keeled",
+      "translationIn": "{language}",
+      "notTranslated": "tõlkimata",
+      "translatedName": "Nimi"
     },
     "qr": {
       "hint": "Prindi see kaart ja pane see laudadele. Külalised skannivad selle telefoni kaameraga ja menüü avaneb telefoni keeles.",
@@ -517,7 +522,8 @@
     "allergens": "Allergeenid",
     "vatIncluded": "Hinnad eurodes koos käibemaksuga.",
     "allergyNote": "Kas sul on allergiaid? Ütle teenindajale enne tellimist.",
-    "like": "Meeldib"
+    "like": "Meeldib",
+    "menuLanguage": "Menüü keel"
   },
   "allergens": {
     "gluten": "gluteen",

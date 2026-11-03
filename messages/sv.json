@@ -418,7 +418,6 @@
       "empty": "Börja med ett avsnitt som ”Förrätter” och lägg sedan till rätter.",
       "editSection": "Redigera avsnitt",
       "sectionName": "Nytt avsnitt",
-      "sectionNameEn": "Namn på engelska (valfritt)",
       "sectionPlaceholder": "Förrätter",
       "save": "Spara",
       "deleteSection": "Radera avsnittet och dess rätter",
@@ -429,15 +428,21 @@
       "available": "tillgänglig",
       "soldOut": "slutsåld",
       "dishName": "Rättens namn",
-      "dishNameEn": "Namn på engelska (valfritt)",
       "description": "Beskrivning",
-      "descriptionEn": "Beskrivning på engelska (valfritt)",
       "price": "Pris inkl. moms, €",
       "portion": "Portion (valfritt)",
       "portionPlaceholder": "300 g, 0,33 l, för 2",
       "allergens": "Allergener",
       "tags": "Taggar",
-      "likes": "Gillamarkeringar från gäster"
+      "likes": "Gillamarkeringar från gäster",
+      "languagesTitle": "Menyns språk",
+      "languagesHint": "Skriv menyn på ditt eget språk och kryssa i de språk du ska översätta den till. Gästerna väljer språk högst upp i menyn; det som ännu inte är översatt visas på originalspråket.",
+      "originalLanguage": "Språk som menyn är skriven på",
+      "translationLanguages": "Översätt till",
+      "saveLanguages": "Spara språk",
+      "translationIn": "{language}",
+      "notTranslated": "inte översatt",
+      "translatedName": "Namn"
     },
     "qr": {
       "hint": "Skriv ut kortet och ställ det på borden. Gästerna skannar det med mobilkameran och menyn öppnas på mobilens språk.",
@@ -517,7 +522,8 @@
     "allergens": "Allergener",
     "vatIncluded": "Priser i euro inklusive moms.",
     "allergyNote": "Har du allergier? Säg till personalen innan du beställer.",
-    "like": "Gilla"
+    "like": "Gilla",
+    "menuLanguage": "Menyns språk"
   },
   "allergens": {
     "gluten": "gluten",

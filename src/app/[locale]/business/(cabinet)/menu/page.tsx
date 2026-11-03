@@ -3,10 +3,12 @@ import { db } from "@/db";
 import { Link } from "@/i18n/navigation";
 import { formatPrice } from "@/lib/format";
 import { requireOwner } from "@/server/auth";
-import { dishLikes, restaurantMenu } from "@/server/menu";
+import { languageName, MENU_LANGUAGES } from "@/lib/menu-languages";
+import { dishLikes, menuLanguageOf, restaurantMenu } from "@/server/menu";
 import {
   addDishAction,
   addSectionAction,
+  menuLanguagesAction,
   deleteDishAction,
   deleteSectionAction,
   moveMenuEntryAction,
@@ -14,7 +16,7 @@ import {
   updateDishAction,
   updateSectionAction,
 } from "../actions";
-import { DishFields } from "./DishFields";
+import { DishFields, TranslationFields } from "./DishFields";
 
 function MoveButtons({ kind, id, first, last }: { kind: "section" | "dish"; id: string; first: boolean; last: boolean }) {
   return (
@@ -34,6 +36,10 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
   const { salon } = await requireOwner(locale, "restaurant");
   const t = await getTranslations("business.menu");
   const [sections, likes] = await Promise.all([restaurantMenu(db, salon.id, { publicView: false }), dishLikes(db, salon.id)]);
+  const original = menuLanguageOf(salon);
+  const langs = salon.menuTranslations.filter((l) => l !== original);
+  const byName = (a: string, b: string) => languageName(a, locale).localeCompare(languageName(b, locale), locale);
+  const choices = [...MENU_LANGUAGES].sort(byName);
 
   return (
     <div className="space-y-6">
@@ -45,6 +51,38 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
           </Link>
         )}
       </div>
+      <details id="languages" open={langs.length === 0} className="card scroll-mt-24">
+        <summary className="cursor-pointer font-display text-2xl">
+          {t("languagesTitle")}
+          <span className="ml-3 align-middle font-sans text-sm text-muted">
+            {[original, ...langs].map((l) => languageName(l, locale)).join(" · ")}
+          </span>
+        </summary>
+        <form action={menuLanguagesAction} className="mt-4 space-y-4">
+          <p className="max-w-2xl text-sm text-muted">{t("languagesHint")}</p>
+          <div className="max-w-xs">
+            <label className="label" htmlFor="menuOriginal">{t("originalLanguage")}</label>
+            <select id="menuOriginal" name="original" defaultValue={original} className="input">
+              {choices.map((l) => (
+                <option key={l} value={l}>{languageName(l, locale)}</option>
+              ))}
+            </select>
+          </div>
+          <fieldset>
+            <legend className="label">{t("translationLanguages")}</legend>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm sm:grid-cols-3 lg:grid-cols-4">
+              {choices.map((l) => (
+                <label key={l} className="flex items-center gap-1.5">
+                  <input type="checkbox" name="translations" value={l} defaultChecked={langs.includes(l)} />
+                  {languageName(l, locale)}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <button className="btn text-sm">{t("saveLanguages")}</button>
+        </form>
+      </details>
+
       {sp.error === "invalid" && <p className="notice-error">{t("invalid")}</p>}
       {sections.length === 0 && <p className="notice">{t("empty")}</p>}
 
@@ -53,17 +91,21 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 className="font-display text-2xl">
               {section.name}
-              {section.nameEn && <span className="ml-2 text-base text-muted">/ {section.nameEn}</span>}
+              {langs.map((l) => section.translations[l]?.name).filter(Boolean).length > 0 && (
+                <span className="ml-2 text-base text-muted">
+                  / {langs.map((l) => section.translations[l]?.name).filter(Boolean).join(" / ")}
+                </span>
+              )}
             </h2>
             <div className="flex items-center gap-3 text-sm">
               <MoveButtons kind="section" id={section.id} first={si === 0} last={si === sections.length - 1} />
               <details className="relative">
                 <summary className="cursor-pointer text-muted hover:text-ink">{t("editSection")}</summary>
-                <div className="absolute right-0 z-10 mt-2 w-72 space-y-3 rounded-md border border-line bg-white p-4 shadow-lg">
+                <div className="absolute right-0 z-10 mt-2 max-h-[70vh] w-80 space-y-3 overflow-y-auto rounded-md border border-line bg-white p-4 shadow-lg">
                   <form action={updateSectionAction} className="space-y-2">
                     <input type="hidden" name="sectionId" value={section.id} />
                     <input name="name" required defaultValue={section.name} className="input" aria-label={t("sectionName")} />
-                    <input name="nameEn" defaultValue={section.nameEn} placeholder={t("sectionNameEn")} className="input" aria-label={t("sectionNameEn")} />
+                    <TranslationFields langs={langs} values={section.translations} />
                     <button className="btn-outline w-full text-xs">{t("save")}</button>
                   </form>
                   <form action={deleteSectionAction}>
@@ -105,7 +147,7 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
                   <summary className="cursor-pointer text-xs text-muted hover:text-ink">{t("editDish")}</summary>
                   <form action={updateDishAction} className="mt-3 space-y-3">
                     <input type="hidden" name="dishId" value={d.id} />
-                    <DishFields dish={d} />
+                    <DishFields dish={d} langs={langs} />
                     <div className="flex items-center justify-between">
                       <button className="btn text-sm">{t("save")}</button>
                       <button formAction={deleteDishAction} name="sectionId" value={section.id} className="text-xs text-red-700 hover:underline">
@@ -122,23 +164,22 @@ export default async function MenuPage({ params, searchParams }: PageProps<"/[lo
             <summary className="cursor-pointer text-sm font-medium">{t("addDish")}</summary>
             <form action={addDishAction} className="mt-3 space-y-3">
               <input type="hidden" name="sectionId" value={section.id} />
-              <DishFields />
+              <DishFields langs={langs} />
               <button className="btn-gold text-sm">{t("addDish")}</button>
             </form>
           </details>
         </section>
       ))}
 
-      <form action={addSectionAction} className="card grid gap-3 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
-        <div>
-          <label className="label" htmlFor="sectionName">{t("sectionName")}</label>
-          <input id="sectionName" name="name" required maxLength={80} placeholder={t("sectionPlaceholder")} className="input" />
+      <form action={addSectionAction} className="card space-y-3">
+        <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-end">
+          <div>
+            <label className="label" htmlFor="sectionName">{t("sectionName")}</label>
+            <input id="sectionName" name="name" required maxLength={80} placeholder={t("sectionPlaceholder")} className="input" />
+          </div>
+          <button className="btn">{t("addSection")}</button>
         </div>
-        <div>
-          <label className="label" htmlFor="sectionNameEn">{t("sectionNameEn")}</label>
-          <input id="sectionNameEn" name="nameEn" maxLength={80} placeholder="Starters" className="input" />
-        </div>
-        <button className="btn">{t("addSection")}</button>
+        <TranslationFields langs={langs} />
       </form>
     </div>
   );

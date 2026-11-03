@@ -8,7 +8,8 @@ import { formatPrice } from "@/lib/format";
 import { cityName } from "@/lib/slug";
 import { cookies } from "next/headers";
 import { LikeButton } from "@/components/LikeButton";
-import { dishLikes, restaurantBySlug } from "@/server/menu";
+import { endonym, menuLanguageFor, textDirection } from "@/lib/menu-languages";
+import { dishLikes, menuLanguageOf, restaurantBySlug } from "@/server/menu";
 import { VISITOR_COOKIE } from "@/lib/visitor";
 import { likeDishAction } from "./actions";
 
@@ -19,8 +20,9 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/restaura
   return { title: `${data.restaurant.name} · ${t("menu")}`, description: data.restaurant.description || data.restaurant.cuisine };
 }
 
-export default async function RestaurantPage({ params }: PageProps<"/[locale]/restaurant/[slug]">) {
+export default async function RestaurantPage({ params, searchParams }: PageProps<"/[locale]/restaurant/[slug]">) {
   const { locale, slug } = await params;
+  const { lang: requested } = await searchParams;
   setRequestLocale(locale);
   const data = await restaurantBySlug(db, slug);
   if (!data) notFound();
@@ -30,9 +32,18 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
   const ta = await getTranslations("allergens");
   const tt = await getTranslations("dishTags");
   const tp = await getTranslations("petFriendly");
-  // English names are optional; fall back to Portuguese.
-  const en = locale === "en";
-  const pick = (pt: string, eng: string) => (en && eng ? eng : pt);
+  // Guests read the menu in the language they pick, else the site's language when the restaurant
+  // translated into it, else the original. Dishes left untranslated show in the original.
+  const original = menuLanguageOf(r);
+  const offered = [original, ...r.menuTranslations.filter((l) => l !== original)];
+  const lang = menuLanguageFor({
+    requested: typeof requested === "string" ? requested : undefined,
+    locale,
+    original,
+    translations: offered.slice(1),
+  });
+  const pick = (own: string, tr?: string) => (lang !== original && tr ? tr : own);
+  const textLang = (tr?: string) => (lang !== original && tr ? lang : original);
 
   return (
     <div className="mx-auto max-w-3xl space-y-8">
@@ -59,13 +70,32 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
         <SocialLinks links={r.social} onDark className="mt-5 justify-center" />
       </header>
 
+      {offered.length > 1 && (
+        <nav aria-label={t("menuLanguage")} className="flex flex-wrap justify-center gap-1.5">
+          {offered.map((l) => (
+            <a
+              key={l}
+              href={`?lang=${l}`}
+              lang={l}
+              hrefLang={l}
+              aria-current={l === lang ? "true" : undefined}
+              className={`rounded-full border px-3 py-1 text-sm transition-colors ${l === lang ? "border-navy bg-navy text-white" : "border-line text-muted hover:border-gold hover:text-ink"}`}
+            >
+              {endonym(l)}
+            </a>
+          ))}
+        </nav>
+      )}
+
       {sections.length > 1 && (
         <nav aria-label={t("menu")} className="z-10 -mx-4 overflow-x-auto border-b border-line bg-porcelain/95 px-4 backdrop-blur md:sticky md:top-[81px]">
           <ul className="flex gap-1 py-2">
             {sections.map((s) => (
               <li key={s.id}>
                 <a href={`#s-${s.id}`} className="block whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm text-muted transition-colors hover:bg-sand hover:text-ink">
-                  {pick(s.name, s.nameEn)}
+                  <span lang={textLang(s.translations[lang]?.name)} dir={textDirection(textLang(s.translations[lang]?.name))}>
+                    {pick(s.name, s.translations[lang]?.name)}
+                  </span>
                 </a>
               </li>
             ))}
@@ -76,20 +106,26 @@ export default async function RestaurantPage({ params }: PageProps<"/[locale]/re
       {sections.map((s) => (
         <section key={s.id} id={`s-${s.id}`} className="scroll-mt-36">
           <h2 className="font-display flex items-center gap-4 text-2xl sm:text-3xl">
-            {pick(s.name, s.nameEn)}
+            <span lang={textLang(s.translations[lang]?.name)} dir={textDirection(textLang(s.translations[lang]?.name))}>
+              {pick(s.name, s.translations[lang]?.name)}
+            </span>
             <span className="h-px flex-1 bg-gold/40" aria-hidden />
           </h2>
           <ul className="mt-4 space-y-5">
             {s.items.map((d) => (
               <li key={d.id}>
                 <div className="flex items-baseline gap-3">
-                  <h3 className="font-medium text-ink">{pick(d.name, d.nameEn)}</h3>
+                  <h3 className="font-medium text-ink" lang={textLang(d.translations[lang]?.name)} dir={textDirection(textLang(d.translations[lang]?.name))}>
+                    {pick(d.name, d.translations[lang]?.name)}
+                  </h3>
                   <span className="mb-1 flex-1 border-b border-dotted border-line" aria-hidden />
                   <span className="font-semibold tabular-nums text-ink">{formatPrice(d.priceCents, locale)}</span>
                 </div>
                 {(d.description || d.portion) && (
                   <p className="mt-1 text-sm leading-relaxed text-muted">
-                    {pick(d.description, d.descriptionEn)}
+                    <span lang={textLang(d.translations[lang]?.description)} dir={textDirection(textLang(d.translations[lang]?.description))}>
+                      {pick(d.description, d.translations[lang]?.description)}
+                    </span>
                     {d.portion && <span className="whitespace-nowrap">{d.description ? " · " : ""}{d.portion}</span>}
                   </p>
                 )}

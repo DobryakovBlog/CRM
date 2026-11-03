@@ -1,7 +1,8 @@
 import { and, asc, count, eq, exists, ilike, inArray, or, sql } from "drizzle-orm";
-import { placesIn } from "@/lib/cities";
+import { placeCountry, placesIn } from "@/lib/cities";
 import type { Db } from "@/db";
 import { menuItemLikes, menuItems, menuSections, salons } from "@/db/schema";
+import { COUNTRY_MENU_LANGUAGE, type DishTranslations, isMenuLanguage, mergeTranslations, type SectionTranslations } from "@/lib/menu-languages";
 
 // The 14 allergens restaurants must declare in the EU (Regulation 1169/2011, Annex II).
 export const ALLERGENS = [
@@ -109,14 +110,32 @@ async function nextPosition(db: Db, table: typeof menuSections | typeof menuItem
   return row.max + 1;
 }
 
-export async function addSection(db: Db, salonId: string, input: { name: string; nameEn: string }) {
+/** The language a restaurant's menu is written in: its own choice, else its country's language. */
+export const menuLanguageOf = (r: { menuLanguage: string; city: string }) =>
+  r.menuLanguage || COUNTRY_MENU_LANGUAGE[placeCountry(r.city)] || "pt";
+
+/** Sets the menu's own language and the languages it is translated into. */
+export async function setMenuLanguages(db: Db, salonId: string, original: string, translations: string[]) {
+  const menuLanguage = isMenuLanguage(original) ? original : "";
+  const menuTranslations = [...new Set(translations.filter((l) => isMenuLanguage(l) && l !== menuLanguage))];
+  await db.update(salons).set({ menuLanguage, menuTranslations }).where(eq(salons.id, salonId));
+}
+
+type SectionInput = { name: string; translations: Record<string, { name: string }> };
+
+export async function addSection(db: Db, salonId: string, input: SectionInput) {
   const position = await nextPosition(db, menuSections, eq(menuSections.salonId, salonId));
-  const [s] = await db.insert(menuSections).values({ salonId, ...input, position }).returning();
+  const translations = mergeTranslations<{ name: string }>({}, input.translations) as SectionTranslations;
+  const [s] = await db.insert(menuSections).values({ salonId, name: input.name, translations, position }).returning();
   return s;
 }
 
-export async function updateSection(db: Db, salonId: string, sectionId: string, input: { name: string; nameEn: string }) {
-  await db.update(menuSections).set(input).where(and(eq(menuSections.id, sectionId), eq(menuSections.salonId, salonId)));
+export async function updateSection(db: Db, salonId: string, sectionId: string, input: SectionInput) {
+  const where = and(eq(menuSections.id, sectionId), eq(menuSections.salonId, salonId));
+  const [row] = await db.select({ translations: menuSections.translations }).from(menuSections).where(where);
+  if (!row) return;
+  const translations = mergeTranslations<{ name: string }>(row.translations, input.translations) as SectionTranslations;
+  await db.update(menuSections).set({ name: input.name, translations }).where(where);
 }
 
 export async function deleteSection(db: Db, salonId: string, sectionId: string) {
@@ -125,17 +144,19 @@ export async function deleteSection(db: Db, salonId: string, sectionId: string) 
 
 export type DishInput = {
   name: string;
-  nameEn: string;
   description: string;
-  descriptionEn: string;
+  translations: Record<string, { name: string; description: string }>;
   priceCents: number;
   portion: string;
   allergens: string[];
   tags: string[];
 };
 
-const clean = (input: DishInput): DishInput => ({
-  ...input,
+const clean = (input: DishInput) => ({
+  name: input.name,
+  description: input.description,
+  priceCents: input.priceCents,
+  portion: input.portion,
   allergens: input.allergens.filter((a) => (ALLERGENS as readonly string[]).includes(a)),
   tags: input.tags.filter((t) => (DISH_TAGS as readonly string[]).includes(t)),
 });
@@ -149,13 +170,17 @@ export async function addDish(db: Db, salonId: string, sectionId: string, input:
   const position = await nextPosition(db, menuItems, eq(menuItems.sectionId, sectionId));
   const [d] = await db
     .insert(menuItems)
-    .values({ salonId, sectionId, ...clean(input), position })
+    .values({ salonId, sectionId, ...clean(input), translations: mergeTranslations({}, input.translations) as DishTranslations, position })
     .returning();
   return d;
 }
 
 export async function updateDish(db: Db, salonId: string, dishId: string, input: DishInput) {
-  await db.update(menuItems).set(clean(input)).where(and(eq(menuItems.id, dishId), eq(menuItems.salonId, salonId)));
+  const where = and(eq(menuItems.id, dishId), eq(menuItems.salonId, salonId));
+  const [row] = await db.select({ translations: menuItems.translations }).from(menuItems).where(where);
+  if (!row) return;
+  const translations = mergeTranslations(row.translations, input.translations) as DishTranslations;
+  await db.update(menuItems).set({ ...clean(input), translations }).where(where);
 }
 
 export async function setDishAvailable(db: Db, salonId: string, dishId: string, isAvailable: boolean) {

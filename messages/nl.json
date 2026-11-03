@@ -418,7 +418,6 @@
       "empty": "Begin met een sectie zoals „Voorgerechten” en voeg daarna gerechten toe.",
       "editSection": "Sectie bewerken",
       "sectionName": "Nieuwe sectie",
-      "sectionNameEn": "Naam in het Engels (optioneel)",
       "sectionPlaceholder": "Voorgerechten",
       "save": "Opslaan",
       "deleteSection": "Sectie en gerechten verwijderen",
@@ -429,15 +428,21 @@
       "available": "beschikbaar",
       "soldOut": "uitverkocht",
       "dishName": "Naam van het gerecht",
-      "dishNameEn": "Naam in het Engels (optioneel)",
       "description": "Beschrijving",
-      "descriptionEn": "Beschrijving in het Engels (optioneel)",
       "price": "Prijs incl. btw, €",
       "portion": "Portie (optioneel)",
       "portionPlaceholder": "300 g, 0,33 l, voor 2",
       "allergens": "Allergenen",
       "tags": "Labels",
-      "likes": "Likes van gasten"
+      "likes": "Likes van gasten",
+      "languagesTitle": "Talen van het menu",
+      "languagesHint": "Schrijf het menu in je eigen taal en vink de talen aan waarin je het vertaalt. Gasten kiezen de taal boven aan het menu; wat nog niet vertaald is, verschijnt in het origineel.",
+      "originalLanguage": "Taal waarin het menu is geschreven",
+      "translationLanguages": "Vertalen naar",
+      "saveLanguages": "Talen opslaan",
+      "translationIn": "{language}",
+      "notTranslated": "niet vertaald",
+      "translatedName": "Naam"
     },
     "qr": {
       "hint": "Print deze kaart en zet hem op je tafels. Gasten scannen hem met de camera van hun telefoon en de menukaart opent in de taal van hun telefoon.",
@@ -517,7 +522,8 @@
     "allergens": "Allergenen",
     "vatIncluded": "Prijzen in euro, inclusief btw.",
     "allergyNote": "Allergieën? Meld het aan het personeel voordat je bestelt.",
-    "like": "Lekker"
+    "like": "Lekker",
+    "menuLanguage": "Taal van het menu"
   },
   "allergens": {
     "gluten": "gluten",

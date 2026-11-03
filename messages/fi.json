@@ -418,7 +418,6 @@
       "empty": "Aloita osiolla, kuten ”Alkuruoat”, ja lisää sitten annoksia.",
       "editSection": "Muokkaa osiota",
       "sectionName": "Uusi osio",
-      "sectionNameEn": "Nimi englanniksi (vapaaehtoinen)",
       "sectionPlaceholder": "Alkuruoat",
       "save": "Tallenna",
       "deleteSection": "Poista osio ja sen annokset",
@@ -429,15 +428,21 @@
       "available": "saatavilla",
       "soldOut": "loppunut",
       "dishName": "Annoksen nimi",
-      "dishNameEn": "Nimi englanniksi (vapaaehtoinen)",
       "description": "Kuvaus",
-      "descriptionEn": "Kuvaus englanniksi (vapaaehtoinen)",
       "price": "Hinta sis. alv, €",
       "portion": "Annoskoko (vapaaehtoinen)",
       "portionPlaceholder": "300 g, 0,33 l, kahdelle",
       "allergens": "Allergeenit",
       "tags": "Tunnisteet",
-      "likes": "Asiakkaiden tykkäykset"
+      "likes": "Asiakkaiden tykkäykset",
+      "languagesTitle": "Ruokalistan kielet",
+      "languagesHint": "Kirjoita ruokalista omalla kielelläsi ja valitse kielet, joille käännät sen. Asiakkaat valitsevat kielen ruokalistan yläreunasta; kääntämätön teksti näkyy alkuperäisenä.",
+      "originalLanguage": "Kieli, jolla ruokalista on kirjoitettu",
+      "translationLanguages": "Käännä kielelle",
+      "saveLanguages": "Tallenna kielet",
+      "translationIn": "{language}",
+      "notTranslated": "ei käännetty",
+      "translatedName": "Nimi"
     },
     "qr": {
       "hint": "Tulosta tämä kortti ja aseta se pöytiin. Asiakkaat skannaavat sen puhelimen kameralla, ja ruokalista avautuu puhelimen kielellä.",
@@ -517,7 +522,8 @@
     "allergens": "Allergeenit",
     "vatIncluded": "Hinnat euroina, sisältävät alv:n.",
     "allergyNote": "Onko sinulla allergioita? Kerro henkilökunnalle ennen tilaamista.",
-    "like": "Tykkää"
+    "like": "Tykkää",
+    "menuLanguage": "Ruokalistan kieli"
   },
   "allergens": {
     "gluten": "gluteeni",

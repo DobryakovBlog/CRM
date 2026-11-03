@@ -418,7 +418,6 @@
       "empty": "Start with a section such as “Starters”, then add dishes.",
       "editSection": "Edit section",
       "sectionName": "New section",
-      "sectionNameEn": "English name (optional)",
       "sectionPlaceholder": "Entradas",
       "save": "Save",
       "deleteSection": "Delete section and its dishes",
@@ -429,15 +428,21 @@
       "available": "available",
       "soldOut": "sold out",
       "dishName": "Dish name",
-      "dishNameEn": "English name (optional)",
       "description": "Description",
-      "descriptionEn": "English description (optional)",
       "price": "Price incl. VAT, €",
       "portion": "Portion (optional)",
       "portionPlaceholder": "300 g, 0.33 l, for 2",
       "allergens": "Allergens",
       "tags": "Tags",
-      "likes": "Likes from guests"
+      "likes": "Likes from guests",
+      "languagesTitle": "Menu languages",
+      "languagesHint": "Write the menu in your own language and tick the languages you will translate it into. Guests choose the language at the top of the menu; anything not yet translated shows in the original.",
+      "originalLanguage": "Language the menu is written in",
+      "translationLanguages": "Translate into",
+      "saveLanguages": "Save languages",
+      "translationIn": "{language}",
+      "notTranslated": "not translated",
+      "translatedName": "Name"
     },
     "qr": {
       "hint": "Print this card and put it on your tables. Guests scan it with their phone camera and the menu opens in their phone's language.",
@@ -517,7 +522,8 @@
     "allergens": "Allergens",
     "vatIncluded": "Prices in euros, VAT included.",
     "allergyNote": "Any allergies? Please tell the staff before ordering.",
-    "like": "Like"
+    "like": "Like",
+    "menuLanguage": "Menu language"
   },
   "allergens": {
     "gluten": "gluten",

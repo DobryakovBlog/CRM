@@ -418,7 +418,6 @@
       "empty": "Filloni me një seksion si „Antipasta“, pastaj shtoni pjata.",
       "editSection": "Ndrysho seksionin",
       "sectionName": "Seksion i ri",
-      "sectionNameEn": "Emri në anglisht (sipas dëshirës)",
       "sectionPlaceholder": "Antipasta",
       "save": "Ruaj",
       "deleteSection": "Fshi seksionin dhe pjatat e tij",
@@ -429,15 +428,21 @@
       "available": "në dispozicion",
       "soldOut": "mbaroi",
       "dishName": "Emri i pjatës",
-      "dishNameEn": "Emri në anglisht (sipas dëshirës)",
       "description": "Përshkrimi",
-      "descriptionEn": "Përshkrimi në anglisht (sipas dëshirës)",
       "price": "Çmimi me TVSH, €",
       "portion": "Porcioni (sipas dëshirës)",
       "portionPlaceholder": "300 g, 0,33 l, për 2",
       "allergens": "Alergjenët",
       "tags": "Etiketat",
-      "likes": "Pëlqime nga mysafirët"
+      "likes": "Pëlqime nga mysafirët",
+      "languagesTitle": "Gjuhët e menysë",
+      "languagesHint": "Shkruani menynë në gjuhën tuaj dhe shënoni gjuhët në të cilat do ta përktheni. Klientët zgjedhin gjuhën në krye të menysë; ajo që nuk është përkthyer ende shfaqet në origjinal.",
+      "originalLanguage": "Gjuha në të cilën është shkruar menyja",
+      "translationLanguages": "Përkthe në",
+      "saveLanguages": "Ruaj gjuhët",
+      "translationIn": "{language}",
+      "notTranslated": "pa përkthim",
+      "translatedName": "Emri"
     },
     "qr": {
       "hint": "Printojeni këtë kartë dhe vendoseni në tavolina. Mysafirët e skanojnë me kamerën e telefonit dhe menuja hapet në gjuhën e telefonit të tyre.",
@@ -517,7 +522,8 @@
     "allergens": "Alergjenët",
     "vatIncluded": "Çmimet në euro, me TVSH të përfshirë.",
     "allergyNote": "Keni alergji? Ju lutemi tregojini stafit para se të porosisni.",
-    "like": "Më pëlqen"
+    "like": "Më pëlqen",
+    "menuLanguage": "Gjuha e menysë"
   },
   "allergens": {
     "gluten": "gluten",

@@ -418,7 +418,6 @@
       "empty": "Byrjaðu á kafla eins og „Forréttir“ og bættu svo við réttum.",
       "editSection": "Breyta kafla",
       "sectionName": "Nýr kafli",
-      "sectionNameEn": "Heiti á ensku (valfrjálst)",
       "sectionPlaceholder": "Forréttir",
       "save": "Vista",
       "deleteSection": "Eyða kafla og réttum hans",
@@ -429,15 +428,21 @@
       "available": "fáanlegt",
       "soldOut": "uppselt",
       "dishName": "Heiti réttar",
-      "dishNameEn": "Heiti á ensku (valfrjálst)",
       "description": "Lýsing",
-      "descriptionEn": "Lýsing á ensku (valfrjálst)",
       "price": "Verð með VSK, €",
       "portion": "Skammtur (valfrjálst)",
       "portionPlaceholder": "300 g, 0,33 l, fyrir 2",
       "allergens": "Ofnæmisvaldar",
       "tags": "Merki",
-      "likes": "Líkar frá gestum"
+      "likes": "Líkar frá gestum",
+      "languagesTitle": "Tungumál matseðilsins",
+      "languagesHint": "Skrifaðu matseðilinn á þínu tungumáli og hakaðu við tungumálin sem þú þýðir hann á. Gestir velja tungumál efst á matseðlinum; það sem er ekki enn þýtt birtist á frummálinu.",
+      "originalLanguage": "Tungumál sem matseðillinn er skrifaður á",
+      "translationLanguages": "Þýða á",
+      "saveLanguages": "Vista tungumál",
+      "translationIn": "{language}",
+      "notTranslated": "óþýtt",
+      "translatedName": "Heiti"
     },
     "qr": {
       "hint": "Prentaðu þetta spjald og settu það á borðin. Gestir skanna það með símamyndavélinni og matseðillinn opnast á tungumáli símans.",
@@ -517,7 +522,8 @@
     "allergens": "Ofnæmisvaldar",
     "vatIncluded": "Verð í evrum, VSK innifalinn.",
     "allergyNote": "Ertu með ofnæmi? Láttu starfsfólkið vita áður en þú pantar.",
-    "like": "Líkar"
+    "like": "Líkar",
+    "menuLanguage": "Tungumál matseðils"
   },
   "allergens": {
     "gluten": "glúten",

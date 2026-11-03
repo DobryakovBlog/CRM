@@ -418,7 +418,6 @@
       "empty": "Start med en seksjon som «Forretter», og legg deretter til retter.",
       "editSection": "Rediger seksjon",
       "sectionName": "Ny seksjon",
-      "sectionNameEn": "Navn på engelsk (valgfritt)",
       "sectionPlaceholder": "Forretter",
       "save": "Lagre",
       "deleteSection": "Slett seksjonen og rettene i den",
@@ -429,15 +428,21 @@
       "available": "tilgjengelig",
       "soldOut": "utsolgt",
       "dishName": "Rettens navn",
-      "dishNameEn": "Navn på engelsk (valgfritt)",
       "description": "Beskrivelse",
-      "descriptionEn": "Beskrivelse på engelsk (valgfritt)",
       "price": "Pris inkl. mva., €",
       "portion": "Porsjon (valgfritt)",
       "portionPlaceholder": "300 g, 0,33 l, for 2",
       "allergens": "Allergener",
       "tags": "Merker",
-      "likes": "Liker fra gjester"
+      "likes": "Liker fra gjester",
+      "languagesTitle": "Menyens språk",
+      "languagesHint": "Skriv menyen på ditt eget språk, og kryss av for språkene du skal oversette den til. Gjestene velger språk øverst i menyen; det som ikke er oversatt ennå, vises på originalspråket.",
+      "originalLanguage": "Språket menyen er skrevet på",
+      "translationLanguages": "Oversett til",
+      "saveLanguages": "Lagre språk",
+      "translationIn": "{language}",
+      "notTranslated": "ikke oversatt",
+      "translatedName": "Navn"
     },
     "qr": {
       "hint": "Skriv ut dette kortet og sett det på bordene. Gjestene skanner det med mobilkameraet, og menyen åpnes på mobilens språk.",
@@ -517,7 +522,8 @@
     "allergens": "Allergener",
     "vatIncluded": "Priser i euro inkludert mva.",
     "allergyNote": "Har du allergier? Si fra til personalet før du bestiller.",
-    "like": "Liker"
+    "like": "Liker",
+    "menuLanguage": "Menyens språk"
   },
   "allergens": {
     "gluten": "gluten",

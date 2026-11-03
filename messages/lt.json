@@ -418,7 +418,6 @@
       "empty": "Pradėkite nuo skyriaus, pvz., „Užkandžiai“, tada pridėkite patiekalų.",
       "editSection": "Redaguoti skyrių",
       "sectionName": "Naujas skyrius",
-      "sectionNameEn": "Pavadinimas anglų kalba (neprivaloma)",
       "sectionPlaceholder": "Užkandžiai",
       "save": "Išsaugoti",
       "deleteSection": "Ištrinti skyrių ir jo patiekalus",
@@ -429,15 +428,21 @@
       "available": "yra",
       "soldOut": "išparduota",
       "dishName": "Patiekalo pavadinimas",
-      "dishNameEn": "Pavadinimas anglų kalba (neprivaloma)",
       "description": "Aprašymas",
-      "descriptionEn": "Aprašymas anglų kalba (neprivaloma)",
       "price": "Kaina su PVM, €",
       "portion": "Porcija (neprivaloma)",
       "portionPlaceholder": "300 g, 0,33 l, dviem",
       "allergens": "Alergenai",
       "tags": "Žymos",
-      "likes": "Svečių patiktukai"
+      "likes": "Svečių patiktukai",
+      "languagesTitle": "Meniu kalbos",
+      "languagesHint": "Parašykite meniu savo kalba ir pažymėkite kalbas, į kurias jį išversite. Svečiai kalbą pasirenka meniu viršuje; tai, kas dar neišversta, rodoma originalo kalba.",
+      "originalLanguage": "Kalba, kuria parašytas meniu",
+      "translationLanguages": "Versti į",
+      "saveLanguages": "Išsaugoti kalbas",
+      "translationIn": "{language}",
+      "notTranslated": "neišversta",
+      "translatedName": "Pavadinimas"
     },
     "qr": {
       "hint": "Atsispausdinkite šią kortelę ir padėkite ant staliukų. Svečiai ją nuskenuoja telefono kamera, o meniu atsidaro telefono kalba.",
@@ -517,7 +522,8 @@
     "allergens": "Alergenai",
     "vatIncluded": "Kainos eurais su PVM.",
     "allergyNote": "Turite alergijų? Prieš užsisakydami pasakykite personalui.",
-    "like": "Patinka"
+    "like": "Patinka",
+    "menuLanguage": "Meniu kalba"
   },
   "allergens": {
     "gluten": "glitimas",

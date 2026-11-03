@@ -418,7 +418,6 @@
       "empty": "Sāciet ar sadaļu, piemēram, “Uzkodas”, un tad pievienojiet ēdienus.",
       "editSection": "Rediģēt sadaļu",
       "sectionName": "Jauna sadaļa",
-      "sectionNameEn": "Nosaukums angļu valodā (nav obligāti)",
       "sectionPlaceholder": "Uzkodas",
       "save": "Saglabāt",
       "deleteSection": "Dzēst sadaļu un tās ēdienus",
@@ -429,15 +428,21 @@
       "available": "pieejams",
       "soldOut": "izpārdots",
       "dishName": "Ēdiena nosaukums",
-      "dishNameEn": "Nosaukums angļu valodā (nav obligāti)",
       "description": "Apraksts",
-      "descriptionEn": "Apraksts angļu valodā (nav obligāti)",
       "price": "Cena ar PVN, €",
       "portion": "Porcija (nav obligāti)",
       "portionPlaceholder": "300 g, 0,33 l, diviem",
       "allergens": "Alergēni",
       "tags": "Birkas",
-      "likes": "Viesu atzīmes “Patīk”"
+      "likes": "Viesu atzīmes “Patīk”",
+      "languagesTitle": "Ēdienkartes valodas",
+      "languagesHint": "Uzrakstiet ēdienkarti savā valodā un atzīmējiet valodas, kurās to tulkosiet. Viesi izvēlas valodu ēdienkartes augšā; vēl netulkotais tiek rādīts oriģinālā.",
+      "originalLanguage": "Valoda, kurā rakstīta ēdienkarte",
+      "translationLanguages": "Tulkot uz",
+      "saveLanguages": "Saglabāt valodas",
+      "translationIn": "{language}",
+      "notTranslated": "nav tulkots",
+      "translatedName": "Nosaukums"
     },
     "qr": {
       "hint": "Izdrukājiet šo karti un novietojiet uz galdiem. Viesi to noskenē ar tālruņa kameru, un ēdienkarte atveras tālruņa valodā.",
@@ -517,7 +522,8 @@
     "allergens": "Alergēni",
     "vatIncluded": "Cenas eiro, ieskaitot PVN.",
     "allergyNote": "Vai Jums ir alerģijas? Pastāstiet personālam pirms pasūtīšanas.",
-    "like": "Patīk"
+    "like": "Patīk",
+    "menuLanguage": "Ēdienkartes valoda"
   },
   "allergens": {
     "gluten": "glutēns",
