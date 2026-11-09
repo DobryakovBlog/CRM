@@ -168,7 +168,7 @@
     "signIn": "Autentificare"
   },
   "booking": {
-    "created": "Programare confirmată! V-am trimis detaliile pe e-mail.",
+    "created": "Programare confirmată! Salvați această pagină sau adăugați-o la favorite: aici puteți vedea sau anula programarea.",
     "reviewThanks": "Mulțumim pentru recenzie!",
     "error": "Această acțiune nu a putut fi efectuată.",
     "status": {

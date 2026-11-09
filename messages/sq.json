@@ -168,7 +168,7 @@
     "signIn": "Hyrje"
   },
   "booking": {
-    "created": "Rezervimi u konfirmua! Ju dërguam detajet me e-mail.",
+    "created": "Rezervimi u konfirmua! Ruajeni këtë faqe ose shtojeni te faqeshënuesit: këtu mund ta shihni ose ta anuloni rezervimin.",
     "reviewThanks": "Faleminderit për vlerësimin!",
     "error": "Veprimi nuk mund të kryhej.",
     "status": {

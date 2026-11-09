@@ -168,7 +168,7 @@
     "signIn": "Kirjaudu"
   },
   "booking": {
-    "created": "Varaus vahvistettu! Lähetimme tiedot sähköpostiisi.",
+    "created": "Varaus vahvistettu! Tallenna tämä sivu tai lisää se kirjanmerkkeihin: täällä voit tarkistaa tai perua varauksen.",
     "reviewThanks": "Kiitos arviostasi!",
     "error": "Toimintoa ei voitu suorittaa.",
     "status": {

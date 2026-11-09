@@ -168,7 +168,7 @@
     "signIn": "Inloggen"
   },
   "booking": {
-    "created": "Boeking bevestigd! We hebben de gegevens per e-mail gestuurd.",
+    "created": "Boeking bevestigd! Bewaar deze pagina of voeg haar toe aan je favorieten: hier kun je de boeking bekijken of annuleren.",
     "reviewThanks": "Bedankt voor je review!",
     "error": "De actie kon niet worden uitgevoerd.",
     "status": {

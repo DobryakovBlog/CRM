@@ -168,7 +168,7 @@
     "signIn": "Pieteikties"
   },
   "booking": {
-    "created": "Pieraksts apstiprināts! Informāciju nosūtījām uz e-pastu.",
+    "created": "Rezervācija apstiprināta! Saglabājiet šo lapu vai pievienojiet to grāmatzīmēm: šeit varat rezervāciju apskatīt vai atcelt.",
     "reviewThanks": "Paldies par atsauksmi!",
     "error": "Šo darbību neizdevās veikt.",
     "status": {

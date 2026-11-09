@@ -168,7 +168,7 @@
     "signIn": "Anmelden"
   },
   "booking": {
-    "created": "Buchung bestätigt! Wir haben Ihnen die Details per E-Mail geschickt.",
+    "created": "Buchung bestätigt! Speichern Sie diese Seite oder setzen Sie ein Lesezeichen: Hier können Sie die Buchung ansehen oder stornieren.",
     "reviewThanks": "Danke für Ihre Bewertung!",
     "error": "Die Aktion konnte nicht ausgeführt werden.",
     "status": {

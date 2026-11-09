@@ -168,7 +168,7 @@
     "signIn": "Prihlásiť sa"
   },
   "booking": {
-    "created": "Rezervácia potvrdená! Podrobnosti sme poslali e-mailom.",
+    "created": "Rezervácia potvrdená! Uložte si túto stránku alebo ju pridajte medzi záložky: tu môžete rezerváciu skontrolovať alebo zrušiť.",
     "reviewThanks": "Ďakujeme za hodnotenie!",
     "error": "Túto akciu sa nepodarilo vykonať.",
     "status": {

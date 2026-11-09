@@ -168,7 +168,7 @@
     "signIn": "Prisijungti"
   },
   "booking": {
-    "created": "Registracija patvirtinta! Informaciją išsiuntėme el. paštu.",
+    "created": "Rezervacija patvirtinta! Išsaugokite šį puslapį arba pridėkite jį prie žymių: čia galite peržiūrėti arba atšaukti rezervaciją.",
     "reviewThanks": "Ačiū už atsiliepimą!",
     "error": "Veiksmo atlikti nepavyko.",
     "status": {
