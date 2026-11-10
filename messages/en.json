@@ -168,7 +168,7 @@
     "signIn": "Sign in"
   },
   "booking": {
-    "created": "Booking confirmed! We have sent the details by e-mail.",
+    "created": "Booking confirmed! Save this page or add it to your bookmarks: here you can check or cancel the booking.",
     "reviewThanks": "Thank you for your review!",
     "error": "The action could not be completed.",
     "status": {

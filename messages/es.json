@@ -168,7 +168,7 @@
     "signIn": "Entrar"
   },
   "booking": {
-    "created": "¡Reserva confirmada! Te hemos enviado los detalles por e-mail.",
+    "created": "¡Reserva confirmada! Guarda esta página o añádela a favoritos: aquí puedes ver o cancelar la reserva.",
     "reviewThanks": "¡Gracias por tu valoración!",
     "error": "No se ha podido completar la acción.",
     "status": {

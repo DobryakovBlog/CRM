@@ -168,7 +168,7 @@
     "signIn": "Logi sisse"
   },
   "booking": {
-    "created": "Broneering kinnitatud! Saatsime üksikasjad e-postiga.",
+    "created": "Broneering on kinnitatud! Salvesta see leht või lisa see järjehoidjatesse: siin saad broneeringut vaadata või tühistada.",
     "reviewThanks": "Aitäh arvustuse eest!",
     "error": "Toimingut ei õnnestunud teha.",
     "status": {

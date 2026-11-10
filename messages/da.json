@@ -168,7 +168,7 @@
     "signIn": "Log ind"
   },
   "booking": {
-    "created": "Booking bekræftet! Vi har sendt detaljerne på e-mail.",
+    "created": "Bookingen er bekræftet! Gem denne side eller sæt et bogmærke: her kan du se eller aflyse bookingen.",
     "reviewThanks": "Tak for din anmeldelse!",
     "error": "Handlingen kunne ikke gennemføres.",
     "status": {

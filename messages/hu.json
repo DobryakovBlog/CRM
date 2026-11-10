@@ -168,7 +168,7 @@
     "signIn": "Belépés"
   },
   "booking": {
-    "created": "Foglalás visszaigazolva! A részleteket e-mailben elküldtük.",
+    "created": "Foglalás megerősítve! Mentsd el ezt az oldalt, vagy tedd a könyvjelzők közé: itt megnézheted vagy lemondhatod a foglalást.",
     "reviewThanks": "Köszönjük az értékelést!",
     "error": "Ezt a műveletet nem sikerült végrehajtani.",
     "status": {

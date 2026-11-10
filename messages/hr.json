@@ -168,7 +168,7 @@
     "signIn": "Prijava"
   },
   "booking": {
-    "created": "Rezervacija potvrđena! Detalje smo poslali e-poštom.",
+    "created": "Rezervacija potvrđena! Spremite ovu stranicu ili je dodajte u oznake: ovdje možete provjeriti ili otkazati rezervaciju.",
     "reviewThanks": "Hvala na ocjeni!",
     "error": "Ovu radnju nije bilo moguće izvršiti.",
     "status": {

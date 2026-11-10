@@ -168,7 +168,7 @@
     "signIn": "Innskráning"
   },
   "booking": {
-    "created": "Bókun staðfest! Við sendum þér upplýsingarnar í tölvupósti.",
+    "created": "Bókun staðfest! Vistaðu þessa síðu eða settu bókamerki: hér getur þú skoðað eða afbókað.",
     "reviewThanks": "Takk fyrir umsögnina!",
     "error": "Ekki tókst að ljúka aðgerðinni.",
     "status": {
